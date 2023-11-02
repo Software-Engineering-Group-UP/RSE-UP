@@ -17,7 +17,7 @@ People who do this are called \gref{research software engineers}{rse};
 the aim of this book is to get you ready for this role by helping you go from
 writing code for yourself to creating tools that help your entire field advance.
 
-## The Big Picture {#intro-big-picture}
+## The Big Picture
 
 Our approach to research software engineering is based on three related concepts:
 
