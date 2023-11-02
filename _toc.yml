@@ -3,7 +3,7 @@ root: chapters/introduction
 title: Research Software Engineering
 options:
   numbered: True
-chapters: 
+sections: 
   - file: chapters/introduction.md
     title: CH1
     sections:
