@@ -3,6 +3,11 @@ root: chapters/introduction
 title: Research Software Engineering
 options:
   numbered: True
-sections:
-- file: chapters/introduction.md
-  title: Getting Started
+chapters: 
+  - file: chapters/introduction.md
+    title: CH1
+    sections:
+    - file: chapters/introduction.md
+      title: Getting Started
+  - file: chapters/glossary.md
+    title: Glossary 
