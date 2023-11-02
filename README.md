@@ -1,5 +1,4 @@
 # Research Software Engineering - University of Potsdam
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Software-Engineering-Group-UP/RSE-UP/HEAD?labpath=chapters)
 
 This repository contains material for a semester-long course on computing skills for researchers at the Univeristy of Potsdam. The course uses the material provided in the Merely-useful book (<https://merely-useful.tech/py-rse/>) as a base and makes some changes to the structure and adds additional topics.
  - TODO CITATION FOR THIS REPO

@@ -1,0 +1,8 @@
+format: jb-article
+root: chapters/intro
+title: Introduction
+options:
+  numbered: True
+sections:
+- file: chapters/01/intro.md
+  title: Hello World
