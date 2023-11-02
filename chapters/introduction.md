@@ -72,7 +72,7 @@ less mistakes, and work more openly and reproducibly.
 We hope that by having more researchers with these skills and knowledge,
 research culture can improve to address the issues raised above.
 
-## Intended Audience {#intro-personas}
+## Intended Audience
 
 This book is written for researchers who are already using Python for their data analysis,
 but who want to take their coding and software development to the next level.
