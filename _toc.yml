@@ -12,4 +12,17 @@ parts:
     numbered: True
   - caption: Supplementary
     numbered: False
+
+parts:
+  - caption: Name of Part 1
+    chapters:
+    - file: 
+    - file: path/to/part1/chapter2
+      sections:
+      - file: chapters/introduction.md
+  - caption: Name of Part 2
+    chapters:
+    - file: chapters/glossary/glossary.md 
+      title: Glossary
+      
     
