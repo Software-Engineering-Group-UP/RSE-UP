@@ -1,18 +1,6 @@
 format: jb-article
 root: chapters/introduction
 title: Research Software Engineering
-
-parts:
-  - caption: Chapters
-    numbered: True
-    sections:
-      - file: chapters/01/getting_started.md
-        title: Getting Started
-  - caption: Practical
-    numbered: True
-  - caption: Supplementary
-    numbered: False
-
 parts:
   - caption: Name of Part 1
     chapters:
@@ -25,4 +13,15 @@ parts:
     - file: chapters/glossary/glossary.md 
       title: Glossary
       
-    
+# parts:
+#   - caption: Chapters
+#     numbered: True
+#     sections:
+#       - file: chapters/01/getting_started.md
+#         title: Getting Started
+#   - caption: Practical
+#     numbered: True
+#   - caption: Supplementary
+#     numbered: False
+
+# parts:
