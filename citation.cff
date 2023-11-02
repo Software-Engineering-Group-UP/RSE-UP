@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Bertrand"
+  given-names: "Nikolas"
+  orcid: "0000-0001-7259-2111"
+- family-names: "Lamprecht"
+  given-names: "Anna-Lena"
+  orcid: "https://orcid.org/0000-0003-1953-5606"
+title: "Research Software Engineering XYZ"
+version: 0.1.0
+date-released: 2023-10-20
+url: "https://github.com/Software-Engineering-Group-UP/RSE-UP"
