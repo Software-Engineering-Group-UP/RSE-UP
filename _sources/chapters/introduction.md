@@ -21,7 +21,7 @@ writing code for yourself to creating tools that help your entire field advance.
 
 Our approach to research software engineering is based on three related concepts:
 
--   \gref{Open science}{open_science}: Making data, methods, and results
+-   {ref}'open_science': Making data, methods, and results
     freely available to all by publishing them under \gref{open
     licenses}{open_license}.
 
