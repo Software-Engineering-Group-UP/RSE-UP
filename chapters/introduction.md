@@ -95,7 +95,7 @@ Sami Virtanen
     this guide will teach them how to build and run data pipelines
     so that they can pass those skills on to their users.
 
-## What You Will Learn {#intro-syllabus}
+## What You Will Learn
 
 Rather than simply providing reference material about good coding practices,
 the book follows Amira and Sami as they work together to write an actual software package
@@ -125,7 +125,7 @@ we will show you how to do the following:
 -   Publish your code and research in open and reproducible ways.
 -   Create Python packages that can be installed in standard ways.
 
-## Using this Book  {#intro-using}
+## Using this Book
 
 This book was written to be used as the material for a (potentially) semester-long
 course at the university level,
@@ -170,7 +170,7 @@ and a
 so the material can be used, re-used, and modified, 
 as long as there is attribution to this source.
 
-## Acknowledgments {#intro-ack}
+## Acknowledgments
 
 This book was created on basis of the book 'Research Software Engineering with Python: Building Software that Makes Research Possible', that was created by: 
 Damien Irving and Kate Hertweck and Luke Johnston and Joel Ostblom and Charlotte Wickham and Greg Wilson. 
