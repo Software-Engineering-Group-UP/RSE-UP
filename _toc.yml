@@ -4,6 +4,6 @@ title: Research Software Engineering
 options:
   numbered: True
 sections: 
-  - file: chapters/introduction.md
-  - file: chapters/01/1_getting_started.md
-  - file: chapters/appendix/bibliography.md
+- file: chapters/introduction.md
+- file: chapters/01/1_getting_started.md
+- file: chapters/appendix/bibliography.md
