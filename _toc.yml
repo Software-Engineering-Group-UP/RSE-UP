@@ -1,16 +1,16 @@
 format: jb-article
 root: chapters/introduction
 title: Research Software Engineering
-numbered: True
 
-- part: Get started
-  chapters:
-  - file: chapters/introduction.md
-  - file: chapters/01/1_getting_started.md
+-file: chapters/introduction
+-part: Get started
+chapters:
+-file: chapters/introduction.md
+-file: chapters/01/1_getting_started.md
+-part: Reference and test pages
+chapters:
+-file: chapters/appendix/z_references.md
 
-- part: Reference and test pages
-  chapters:
-  - file: chapters/appendix/z_references.md
     # sections:
       # - file: test_pages/layout_elements
       # - file: test_pages/equations
