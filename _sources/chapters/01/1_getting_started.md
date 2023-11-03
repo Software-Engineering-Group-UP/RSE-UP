@@ -13,7 +13,7 @@ is to download the research data
 and install the required software.
 Before doing that,
 it's worth taking a moment to think about
-how we are going to organize everything. **TODO - CHECK LINK**
+how we are going to organize everything.
 We will soon have a number of books from [Project Gutenberg][project-gutenberg]
 in the form of a series of text files,
 plots we've produced showing the word frequency distribution in each book,
@@ -22,7 +22,7 @@ and to document and release our software package.
 If we aren't organized from the start,
 things could get messy later on.
 
-## Project Structure {#getting-started-structure}
+## Project Structure
 
 Project organization is like a diet:
 everyone has one,
@@ -95,7 +95,6 @@ open source or otherwise:
 
 -   `CITATION` explains how to cite the software. We'll add it in Section **TODO REF packaging-software-journals**.
 
-**TODO CHECK contribut... font below**
 Some projects also include a `CONTRIBUTORS` or `AUTHORS` file that
 lists everyone who has contributed to the project,
 while others include that information in the `README` (we do this in Chapter **TODO REF git-advanced**
@@ -103,7 +102,7 @@ or make it a section in `CITATION`.
 These files are often called **boilerplate,
 meaning they are copied without change from one use to the next.
 
-### Organizing project content {#getting-started-organize}
+### Organizing project content
 
 Following **TODO CITE** @Nobl2009,
 the directories in the repository's root are organized according to purpose:
@@ -142,7 +141,7 @@ when we talk about testing (Chapter **TODO** ref(testing)),
 provenance (Chapter **TODO** ref(provenance)),
 and packaging (Chapter **TODO** ref(packaging)).
 
-## Downloading the Data {#getting-started-download-data}
+## Downloading the Data
 
 The data files used in the book are archived
 at an online repository called Figshare (which we discuss in detail in Section **TODO** ref(provenance-data-where))
@@ -170,15 +169,17 @@ zipf/
     └── time_machine.txt
 ```
 
-## Installing the Software {#getting-started-install-software}
+## Installing the Software
 
 In order to conduct our analysis, we need to install the following software:
 
 1. A **Shell** ( Bash, ZSH, Fish,...)
 2. **Git** version control
 3. A text editor
-4. **TODO add officiel link** [Python 3][Python] (via the Anaconda distribution
+4. **TODO add officiel link** [Python 3][python] or using [Anaconda][anaconda]
 5. **TODO**[GNU Make][gnu-make]
+
+*Note* While Anaconda seems easy to install, depending on the use case it might be more efficient and simpler to use Python [Pip][pip] to install some necessary packages. 
 
 Comprehensive software installation instructions for Windows, Mac, and Linux operating systems
 (with video tutorials) are maintained by [The Carpentries][carpentries]
@@ -219,7 +220,7 @@ If it is not, you can install it as follows:
 > We'll help you understand how to interpret the output
 > so you can keep working and troubleshoot regardless of software version.
 
-## Summary {#getting-started-summary}
+## Summary 
 
 Now that our project structure is set up,
 our data is downloaded,
@@ -228,9 +229,9 @@ we are ready to start our analysis.
 
 \newpage
 
-## Exercises {#getting-started-exercises}
+## Exercises
 
-### Getting ready {#getting-started-install}
+### Getting ready 
 
 Make sure you've downloaded the required data files
 (following Section \@ref(getting-started-download-data))
@@ -245,7 +246,8 @@ before progressing to the next chapter.
 - Put raw/original data in a `data/` directory and never modify it.
 - Put results in a `results/` directory. This includes cleaned-up data and figures (i.e., everything created using what's in `bin` and `data`).
 - Put documentation and manuscripts in a `docs/` directory.
-- Refer to The Carpentries **TODO** [software installation guide][carpentries-install-instructions] if you're having trouble. 
+- Refer to The Carpentries [software installation guide][carpentries-install-instructions] if you're having trouble. 
 
 
-[project-gutenberg]: https://www.gutenberg.org/
+```{include} ../../links.md
+```
