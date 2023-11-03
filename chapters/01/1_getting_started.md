@@ -40,9 +40,9 @@ but experience teaches that we will be more productive if we make tidiness a hab
 
 In building the Zipf's Law project,
 we'll follow a widely used template
-for organizing small and medium-sized data analysis projects **TODO CITATION** [@Nobl2009].
+for organizing small and medium-sized data analysis projects **TODO** {cite:p}`Nobl2009`.
 The project will live in a directory called `zipf`,
-which will also be a Git repository stored on GitHub (Chapter \@ref(git-cmdline)).
+which will also be a Git repository stored on GitHub (Chapter **TODO** \@ref(git-cmdline)).
 The following is an abbreviated version of the project directory tree
 as it appears toward the end of the book:
 

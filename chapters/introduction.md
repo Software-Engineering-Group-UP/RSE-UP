@@ -22,8 +22,7 @@ writing code for yourself to creating tools that help your entire field advance.
 Our approach to research software engineering is based on three related concepts:
 
 -   **Open Science**: Making data, methods, and results
-    freely available to all by publishing them under \gref{open
-    licenses}{open_license}.
+    freely available to all by publishing them under **open license**.
 
 -   **Reproducible research**: Ensuring that anyone
     with access to the data and software can feasibly reproduce results, both to
