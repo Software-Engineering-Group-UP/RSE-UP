@@ -1,3 +1,4 @@
 # Bibliography
 
-{bibliography}
+```{bibliography} references.bib
+```
