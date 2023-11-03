@@ -15,7 +15,7 @@ execute:
 #######################################################################################
 # HTML-specific settings
 html:
-  use_multitoc_numbering    : True
+  #use_multitoc_numbering    : True
   #favicon                   : "favicon.png"  # A path to a favicon image
   navbar_number_sections    : True  # Add a number to each section in your left navbar
 #  google_analytics_id       : "UA-148221575-1"  # A GA id that can be used to track book views.
@@ -40,3 +40,4 @@ sphinx:
     html_extra_path: ['assets']
     bibtex_reference_style: author_year
     bibtex_bibfiles: bibliography.bib 
+    
