@@ -246,3 +246,6 @@ before progressing to the next chapter.
 - Put results in a `results/` directory. This includes cleaned-up data and figures (i.e., everything created using what's in `bin` and `data`).
 - Put documentation and manuscripts in a `docs/` directory.
 - Refer to The Carpentries **TODO** [software installation guide][carpentries-install-instructions] if you're having trouble. 
+
+
+[project-gutenberg]: https://www.gutenberg.org/
