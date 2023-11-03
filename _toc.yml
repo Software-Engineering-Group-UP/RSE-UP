@@ -6,5 +6,5 @@ options:
 sections: 
   - file: chapters/introduction.md
     title: Introduction
-
+  - file: chapters/01/1_getting_started.md
 
