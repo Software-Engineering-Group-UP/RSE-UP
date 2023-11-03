@@ -5,6 +5,8 @@ options:
   numbered: True
 sections: 
   - file: chapters/introduction.md
+    title: Introduction
   - file: chapters/01/1_getting_started.md
-sections:
+    title: Getting Started
   - file: chapters/appendix/bibliography.md
+    title: Bibliography
