@@ -3,24 +3,8 @@ root: chapters/introduction
 title: Research Software Engineering
 options:
   numbered: True
-# sections: 
-#   - file: chapters/introduction.md
-#     title: CH1
-#     sections:
-#     - file: chapters/introduction.md
-#       title: Getting Started
-parts:
-- caption: 教程
-  chapters:
-  - file: chapters/introduction
-    sections:
-    - file: chapters/introducion
-  - file: chapters/introduction
-- caption: 主题指南
-  chapters:
-  - file: chapters/introduction
-    sections:
-    - file: chapters/introduction
-      sections:
-      - file: chapters/introduction
-    - file: chapters/introduction
+sections: 
+  - file: chapters/introduction.md
+    title: Introduction
+
+
