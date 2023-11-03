@@ -1,0 +1,743 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>1. Getting Started &#8212; RSE-ING</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/book.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/01/1_getting_started';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/01/1_getting_started.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Welcome" href="../introduction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../introduction.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RSE-ING</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../introduction.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../introduction.html">Introduction</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. Getting Started</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Getting Started</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/01/1_getting_started.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/01/1_getting_started.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Getting Started</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-structure-getting-started-structure">1.1. Project Structure {#getting-started-structure}</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-information">1.1.1. Standard information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organizing-project-content-getting-started-organize">1.1.2. Organizing project content {#getting-started-organize}</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-the-data-getting-started-download-data">1.2. Downloading the Data {#getting-started-download-data}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-software-getting-started-install-software">1.3. Installing the Software {#getting-started-install-software}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-getting-started-summary">1.4. Summary {#getting-started-summary}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-getting-started-exercises">1.5. Exercises {#getting-started-exercises}</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-ready-getting-started-install">1.5.1. Getting ready {#getting-started-install}</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points">1.6. Key Points</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="getting-started">
+<h1><span class="section-number">1. </span>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h1>
+<p><strong>TODO CHECK CITE</strong></p>
+<blockquote>
+<div><p>Everything starts somewhere, though many physicists disagree.</p>
+<p>— Terry Pratchett\index{Pratchett, Terry}</p>
+</div></blockquote>
+<p><strong>TODO CHECK QUOTE</strong></p>
+<p>As with many research projects,
+the first step in our Zipf’s Law analysis
+is to download the research data
+and install the required software.
+Before doing that,
+it’s worth taking a moment to think about
+how we are going to organize everything. <strong>TODO - CHECK LINK</strong>
+We will soon have a number of books from [Project Gutenberg][project-gutenberg]
+in the form of a series of text files,
+plots we’ve produced showing the word frequency distribution in each book,
+as well as the code we’ve written to produce those plots
+and to document and release our software package.
+If we aren’t organized from the start,
+things could get messy later on.</p>
+<section id="project-structure-getting-started-structure">
+<h2><span class="section-number">1.1. </span>Project Structure {#getting-started-structure}<a class="headerlink" href="#project-structure-getting-started-structure" title="Permalink to this heading">#</a></h2>
+<p>Project organization is like a diet:
+everyone has one,
+it’s just a question of whether it’s healthy or not.
+In the case of a project,
+“healthy” means that people can find what they need and do what they want without becoming frustrated.
+This depends on how well organized the project is
+and how familiar people are with that style of organization.</p>
+<p>As with good coding style,
+small pieces in predictable places with readable names are easier to find and use
+than large chunks that vary from project to project and have names like “stuff”.
+We can be messy while we are working and then tidy up later,
+but experience teaches that we will be more productive if we make tidiness a habit.</p>
+<p>In building the Zipf’s Law project,
+we’ll follow a widely used template
+for organizing small and medium-sized data analysis projects <strong>TODO CITATION</strong> [&#64;Nobl2009].
+The project will live in a directory called <code class="docutils literal notranslate"><span class="pre">zipf</span></code>,
+which will also be a Git repository stored on GitHub (Chapter &#64;ref(git-cmdline)).
+The following is an abbreviated version of the project directory tree
+as it appears toward the end of the book:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zipf/
+├── .gitignore
+├── CITATION.md
+├── CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE.md
+├── README.md
+├── Makefile
+├── bin
+│   ├── book_summary.sh
+│   ├── collate.py
+│   ├── countwords.py
+│   └── ...
+├── data
+│   ├── README.md
+│   ├── dracula.txt
+│   ├── frankenstein.txt
+│   └── ...
+├── docs
+│   └── ...
+├── results
+│   ├── collated.csv
+│   ├── dracula.csv
+│   ├── dracula.png
+│   └── ...
+└── ...
+</pre></div>
+</div>
+<p>The full, final directory tree is documented in Appendix <strong>TODO CORRECT REF TO</strong></p>
+<section id="standard-information">
+<h3><span class="section-number">1.1.1. </span>Standard information<a class="headerlink" href="#standard-information" title="Permalink to this heading">#</a></h3>
+<p>Our project will contain a few standard files
+that should be present in every research software project,
+open source or otherwise:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">README</span></code> includes basic information on our project.
+We’ll create it in Chapter <strong>TODO REF TO GIT_ADVANCED SECTION</strong>,
+and extend it in Chapter <strong>TODO REF TO PACKAGING</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> is the project’s license. We’ll add it in Section <strong>TODO REF TO LICENSE</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CONTRIBUTING</span></code> explains how to contribute to the project. We’ll add it in Section <strong>TODO REF teams-documentation</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CONDUCT</span></code> is the project’s Code of Conduct. We’ll add it in Section <strong>TODO REF Teams-coc</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CITATION</span></code> explains how to cite the software. We’ll add it in Section <strong>TODO REF packaging-software-journals</strong>.</p></li>
+</ul>
+<p><strong>TODO CHECK contribut… font below</strong>
+Some projects also include a <code class="docutils literal notranslate"><span class="pre">CONTRIBUTORS</span></code> or <code class="docutils literal notranslate"><span class="pre">AUTHORS</span></code> file that
+lists everyone who has contributed to the project,
+while others include that information in the <code class="docutils literal notranslate"><span class="pre">README</span></code> (we do this in Chapter <strong>TODO REF git-advanced</strong>
+or make it a section in <code class="docutils literal notranslate"><span class="pre">CITATION</span></code>.
+These files are often called **boilerplate,
+meaning they are copied without change from one use to the next.</p>
+</section>
+<section id="organizing-project-content-getting-started-organize">
+<h3><span class="section-number">1.1.2. </span>Organizing project content {#getting-started-organize}<a class="headerlink" href="#organizing-project-content-getting-started-organize" title="Permalink to this heading">#</a></h3>
+<p>Following <strong>TODO CITE</strong> &#64;Nobl2009,
+the directories in the repository’s root are organized according to purpose:</p>
+<ul class="simple">
+<li><p>Runnable programs go in <code class="docutils literal notranslate"><span class="pre">bin/</span></code>
+(an old Unix abbreviation for “binary”, meaning “not text”).
+This will include both shell scripts,
+e.g., <code class="docutils literal notranslate"><span class="pre">book_summary.sh</span></code> developed in Chapter <strong>TODO</strong> ref(bash-advanced),
+and Python programs,
+e.g., <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code>, developed in Chapter **TODO ref(scripting).</p></li>
+<li><p>Raw data goes in <code class="docutils literal notranslate"><span class="pre">data/</span></code>
+and is never modified after being stored.
+You’ll set up this directory
+and its contents in Section <strong>TODO</strong> ref(getting-started-download-data).</p></li>
+<li><p>Results are put in <code class="docutils literal notranslate"><span class="pre">results/</span></code>.
+This includes cleaned-up data,
+figures,
+and everything else created using what’s in <code class="docutils literal notranslate"><span class="pre">bin</span></code> and <code class="docutils literal notranslate"><span class="pre">data</span></code>.
+In this project,
+we’ll describe exactly how <code class="docutils literal notranslate"><span class="pre">bin</span></code> and <code class="docutils literal notranslate"><span class="pre">data</span></code> are used
+with <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> created in Chapter <strong>TODO</strong> ref(automate).</p></li>
+<li><p>Finally,
+documentation and manuscripts go in <code class="docutils literal notranslate"><span class="pre">docs/</span></code>.
+In this project,
+<code class="docutils literal notranslate"><span class="pre">docs</span></code> will contain automatically generated
+documentation for the Python package, created in
+Section <strong>TODO</strong> ref(packaging-sphinx).</p></li>
+</ul>
+<p>This structure works well for many computational research projects and
+we encourage its use beyond just this book.
+We will add some more folders and files not directly addressed by <strong>TODO</strong>&#64;Nobl2009
+when we talk about testing (Chapter <strong>TODO</strong> ref(testing)),
+provenance (Chapter <strong>TODO</strong> ref(provenance)),
+and packaging (Chapter <strong>TODO</strong> ref(packaging)).</p>
+</section>
+</section>
+<section id="downloading-the-data-getting-started-download-data">
+<h2><span class="section-number">1.2. </span>Downloading the Data {#getting-started-download-data}<a class="headerlink" href="#downloading-the-data-getting-started-download-data" title="Permalink to this heading">#</a></h2>
+<p>The data files used in the book are archived
+at an online repository called Figshare (which we discuss in detail in Section <strong>TODO</strong> ref(provenance-data-where))
+and can be accessed at:</p>
+<p><a class="reference external" href="https://doi.org/10.6084/m9.figshare.13040516">https://doi.org/10.6084/m9.figshare.13040516</a></p>
+<p>We can download a zip file containing the data files by clicking
+“download all” at this URL
+and then unzipping the contents into a new <code class="docutils literal notranslate"><span class="pre">zipf/data</span></code> <strong>directory</strong>
+(also called a <strong>folder</strong>)
+that follows the project structure described above.
+Here’s how things look once we’re done:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zipf/
+└── data
+    ├── README.md
+    ├── dracula.txt
+    ├── frankenstein.txt
+    ├── jane_eyre.txt
+    ├── moby_dick.txt
+    ├── sense_and_sensibility.txt
+    ├── sherlock_holmes.txt
+    └── time_machine.txt
+</pre></div>
+</div>
+</section>
+<section id="installing-the-software-getting-started-install-software">
+<h2><span class="section-number">1.3. </span>Installing the Software {#getting-started-install-software}<a class="headerlink" href="#installing-the-software-getting-started-install-software" title="Permalink to this heading">#</a></h2>
+<p>In order to conduct our analysis, we need to install the following software:</p>
+<ol class="arabic simple">
+<li><p>A <strong>Shell</strong> ( Bash, ZSH, Fish,…)</p></li>
+<li><p><strong>Git</strong> version control</p></li>
+<li><p>A text editor</p></li>
+<li><p><strong>TODO add officiel link</strong> [Python 3][Python] (via the Anaconda distribution</p></li>
+<li><p><strong>TODO</strong>[GNU Make][gnu-make]</p></li>
+</ol>
+<p>Comprehensive software installation instructions for Windows, Mac, and Linux operating systems
+(with video tutorials) are maintained by [The Carpentries][carpentries]
+as part of their workshop website template at:</p>
+<p><a class="reference external" href="https://carpentries.github.io/workshop-template/#setup">https://carpentries.github.io/workshop-template/#setup</a></p>
+<p>We can follow those instructions to install the Bash shell, Git, a text editor and Anaconda.
+We recommend Anaconda as the method for installing Python,
+as it includes Conda as well as many of the packages we’ll use in this book.</p>
+<p>You can check if Make is already on your computer by typing <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-v</span></code> into the Bash shell.
+If it is not, you can install it as follows:</p>
+<ul class="simple">
+<li><p><em>Linux (Debian/Ubuntu)</em>: Install it from the Bash shell using <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">make</span></code>.</p></li>
+<li><p><em>Mac</em>: Install <strong>TODO</strong> [Xcode][xcode] (via the App Store).</p></li>
+<li><p><em>Windows</em>: Follow the <strong>TODO</strong> [installation instructions][ubc-mds-make-windows] maintained by the
+Master of Data Science program at the University of British Columbia.</p></li>
+</ul>
+<blockquote>
+<div><p><strong>conda in the Shell on Windows</strong></p>
+<p>If you are using Windows and the <code class="docutils literal notranslate"><span class="pre">conda</span></code> command isn’t available at the Bash shell,
+you’ll need to open the Anaconda Prompt program (via the Windows start menu)
+and run the command <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">init</span> <span class="pre">bash</span></code> (this only needs to be done once).
+After that, your shell will be configured to use conda going forward.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Software Versions</strong></p>
+<p>Throughout the book,
+we’ll be showing you examples of the output you can expect to see.
+This output is derived from running a Mac with:
+Git version 2.29.2, Python version 3.7.6,
+GNU bash version 3.2.57(1)-release (x86_64-apple-darwin19),
+GNU Make 3.81, and conda 4.9.2.
+In some cases,
+what you see printed to the screen may differ slightly
+based on software version.
+We’ll help you understand how to interpret the output
+so you can keep working and troubleshoot regardless of software version.</p>
+</div></blockquote>
+</section>
+<section id="summary-getting-started-summary">
+<h2><span class="section-number">1.4. </span>Summary {#getting-started-summary}<a class="headerlink" href="#summary-getting-started-summary" title="Permalink to this heading">#</a></h2>
+<p>Now that our project structure is set up,
+our data is downloaded,
+and our software is installed,
+we are ready to start our analysis.</p>
+<p>\newpage</p>
+</section>
+<section id="exercises-getting-started-exercises">
+<h2><span class="section-number">1.5. </span>Exercises {#getting-started-exercises}<a class="headerlink" href="#exercises-getting-started-exercises" title="Permalink to this heading">#</a></h2>
+<section id="getting-ready-getting-started-install">
+<h3><span class="section-number">1.5.1. </span>Getting ready {#getting-started-install}<a class="headerlink" href="#getting-ready-getting-started-install" title="Permalink to this heading">#</a></h3>
+<p>Make sure you’ve downloaded the required data files
+(following Section &#64;ref(getting-started-download-data))
+and installed the required software (following Section &#64;ref(getting-started-install-software))
+before progressing to the next chapter.</p>
+</section>
+</section>
+<section id="key-points">
+<h2><span class="section-number">1.6. </span>Key Points<a class="headerlink" href="#key-points" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Make tidiness a habit, rather than cleaning up your project files later.</p></li>
+<li><p>Include a few standard files in all your projects, such as README, LICENSE, CONTRIBUTING, CONDUCT and CITATION.</p></li>
+<li><p>Put runnable code in a <code class="docutils literal notranslate"><span class="pre">bin/</span></code> directory.</p></li>
+<li><p>Put raw/original data in a <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory and never modify it.</p></li>
+<li><p>Put results in a <code class="docutils literal notranslate"><span class="pre">results/</span></code> directory. This includes cleaned-up data and figures (i.e., everything created using what’s in <code class="docutils literal notranslate"><span class="pre">bin</span></code> and <code class="docutils literal notranslate"><span class="pre">data</span></code>).</p></li>
+<li><p>Put documentation and manuscripts in a <code class="docutils literal notranslate"><span class="pre">docs/</span></code> directory.</p></li>
+<li><p>Refer to The Carpentries <strong>TODO</strong> [software installation guide][carpentries-install-instructions] if you’re having trouble.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/01"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../introduction.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-structure-getting-started-structure">1.1. Project Structure {#getting-started-structure}</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-information">1.1.1. Standard information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organizing-project-content-getting-started-organize">1.1.2. Organizing project content {#getting-started-organize}</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-the-data-getting-started-download-data">1.2. Downloading the Data {#getting-started-download-data}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-software-getting-started-install-software">1.3. Installing the Software {#getting-started-install-software}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-getting-started-summary">1.4. Summary {#getting-started-summary}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-getting-started-exercises">1.5. Exercises {#getting-started-exercises}</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-ready-getting-started-install">1.5.1. Getting ready {#getting-started-install}</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points">1.6. Key Points</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Niko Bertrand
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
