@@ -7,4 +7,5 @@ sections:
   - file: chapters/introduction.md
 sections:
   - file: chapters/01/1_getting_started.md
-
+sections:
+  - file: chapters/appendix/bibliography.md
