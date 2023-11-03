@@ -378,7 +378,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="welcome">
 <h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this heading">#</a></h1>
 <p>Software is now as essential to research as telescopes, test tubes, and reference libraries.
-This means that researchers <em>need</em> to know how to build, check, use, and share programs.
+This means that researchers <strong>need</strong> to know how to build, check, use, and share programs.
 However,
 most introductions to programming focus on developing commercial applications,
 not on exploring problems whose answers aren’t yet known.
@@ -396,44 +396,34 @@ writing code for yourself to creating tools that help your entire field advance.
 <h2>The Big Picture<a class="headerlink" href="#the-big-picture" title="Permalink to this heading">#</a></h2>
 <p>Our approach to research software engineering is based on three related concepts:</p>
 <ul class="simple">
-<li><p>{ref}’open_science’: Making data, methods, and results
+<li><p><strong>Open Science</strong>: Making data, methods, and results
 freely available to all by publishing them under \gref{open
 licenses}{open_license}.</p></li>
-<li><p>\gref{Reproducible research}{reproducible_research}: Ensuring that anyone
+<li><p><strong>Reproducible research</strong>: Ensuring that anyone
 with access to the data and software can feasibly reproduce results, both to
 check them and to build on them.</p></li>
-<li><p>\gref{Sustainable software}{sustainable_software}: The ease with which to
+<li><p><strong>Sustainable software</strong>: The ease with which to
 maintain and extend it rather than to replace it. Sustainability isn’t
 just a property of the software: it also depends on the skills and culture
 of its users.</p></li>
 </ul>
-<p>People often conflate these three ideas,
-but they are distinct.
-For example,
-if you share your data and the programs that analyze it,
-but don’t document what steps to take in what order,
-your work is open but not reproducible.
-Conversely,
-if you completely automate your analysis,
-but your data is only available to people in your lab,
-your work is reproducible but not open.
-Finally,
-if a software package is being maintained by a couple of post-docs
+<p>People often conflate these three ideas, but they are distinct.
+For example, if you share your data and the programs that analyze it,
+but don’t document what steps to take in what order, your work is open but not reproducible.
+Conversely, if you completely automate your analysis, but your data is only available to people in your lab, your work is reproducible but not open.
+Finally, if a software package is being maintained by a couple of post-docs
 who are being paid a fraction of what they could earn in industry
-and have no realistic hope of promotion because their field doesn’t value tool building,
-then sooner or later it will become \gref{abandonware}{abandonware},
+and have no realistic hope of promotion because their field doesn’t value tool building, then sooner or later it will become \gref{abandonware}{abandonware},
 at which point openness and reproducibility become less relevant.</p>
 <p>Nobody argues that research should be irreproducible or unsustainable,
 but “not against it” and actively supporting it are very different things.
 Academia doesn’t yet know how to reward people for writing useful software,
-so while you may be thanked,
-the effort you put in may not translate into academic job security or decent pay.</p>
+so while you may be thanked, the effort you put in may not translate into academic job security or decent pay.</p>
 <p>Some people worry that if they make their data and code publicly available,
 someone else will use it and publish a result they could have come up with themselves.
-This is almost unheard of in practice,
-but that doesn’t stop it being used as a scare tactic.
+This is almost unheard of in practice, but that doesn’t stop it being used as a scare tactic.
 Other people are afraid of looking foolish or incompetent by sharing code that might contain bugs.
-This isn’t just \gref{impostor syndrome}{impostor_syndrome}:
+This isn’t just <strong>impostor syndrome</strong>:
 members of marginalized groups are frequently judged more harshly than others,
 so being wrong in public is much riskier for them.</p>
 <p>With this course, we hope to give researchers the tools and knowledge to be
@@ -444,13 +434,10 @@ research culture can improve to address the issues raised above.</p>
 </section>
 <section id="intended-audience">
 <h2>Intended Audience<a class="headerlink" href="#intended-audience" title="Permalink to this heading">#</a></h2>
-<p>This book is written for researchers who are already using Python for their data analysis,
-but who want to take their coding and software development to the next level.
-You don’t have to be highly proficient with Python,
+<p>This book is written for researchers who are already using Python for their data analysis, but who want to take their coding and software development to the next level. You don’t have to be highly proficient with Python,
 but you should already be comfortable doing things like reading data from files
 and writing loops, conditionals, and functions.
-The following personas are examples of the types of people
-that are our target audience.</p>
+The following personas are examples of the types of people that are our target audience.</p>
 <p>Amira Khan
 :   completed a master’s in library science five years ago
 and has since worked for a small aid organization.
@@ -461,7 +448,7 @@ Amira would like to tidy up the scripts, datasets, and reports she has created
 in order to share them with her colleagues.
 These lessons will show her how to do this.</p>
 <p>Jun Hsu
-:   completed an [Insight Data Science][insight] fellowship last year after doing a PhD in geology
+:   completed an Insight Data Science fellowship last year after doing a PhD in geology
 and now works for a company that does forensic audits.
 He uses a variety of machine learning and visualization packages,
 and would now like to turn some of his own work into an open source project.
@@ -530,7 +517,7 @@ and key points (Appendix &#64;ref(keypoints)) for each chapter.</p>
 </section>
 <section id="contributing-and-re-use">
 <h2>Contributing and Re-Use<a class="headerlink" href="#contributing-and-re-use" title="Permalink to this heading">#</a></h2>
-<p>The source for the book can be found at the <a class="reference external" href="https://github.com/merely-useful/py-rse"><code class="docutils literal notranslate"><span class="pre">py-rse</span></code> GitHub repository</a> and
+<p>The source for the book can be found at the <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP">‘RSE-UP’ GitHub repository</a> and
 any corrections, additions, or contributions are very welcome.
 Everyone whose work is included will be credited in the acknowledgments.
 Check out our
@@ -552,7 +539,7 @@ as long as there is attribution to this source.</p>
 <h2>Acknowledgments {#intro-ack}<a class="headerlink" href="#acknowledgments-intro-ack" title="Permalink to this heading">#</a></h2>
 <p>This book was created on basis of the book ‘Research Software Engineering with Python: Building Software that Makes Research Possible’, that was created by:
 Damien Irving and Kate Hertweck and Luke Johnston and Joel Ostblom and Charlotte Wickham and Greg Wilson.</p>
-<p>The online version can be found <a class="reference external" href="https://merely-useful.tech/py-rse/">here link</a></p>
+<p>The online version can be found <a class="reference external" href="https://merely-useful.tech/py-rse/">here!</a></p>
 </section>
 <div class="toctree-wrapper compound">
 </div>

@@ -1,7 +1,7 @@
 # Welcome 
 
 Software is now as essential to research as telescopes, test tubes, and reference libraries.
-This means that researchers *need* to know how to build, check, use, and share programs.
+This means that researchers **need** to know how to build, check, use, and share programs.
 However,
 most introductions to programming focus on developing commercial applications,
 not on exploring problems whose answers aren't yet known.
@@ -21,48 +21,38 @@ writing code for yourself to creating tools that help your entire field advance.
 
 Our approach to research software engineering is based on three related concepts:
 
--   {ref}'open_science': Making data, methods, and results
+-   **Open Science**: Making data, methods, and results
     freely available to all by publishing them under \gref{open
     licenses}{open_license}.
 
--   \gref{Reproducible research}{reproducible_research}: Ensuring that anyone
+-   **Reproducible research**: Ensuring that anyone
     with access to the data and software can feasibly reproduce results, both to
     check them and to build on them. 
 
--   \gref{Sustainable software}{sustainable_software}: The ease with which to
+-   **Sustainable software**: The ease with which to
     maintain and extend it rather than to replace it. Sustainability isn't
     just a property of the software: it also depends on the skills and culture
     of its users.
 
-People often conflate these three ideas,
-but they are distinct.
-For example,
-if you share your data and the programs that analyze it,
-but don't document what steps to take in what order,
-your work is open but not reproducible.
-Conversely,
-if you completely automate your analysis,
-but your data is only available to people in your lab,
-your work is reproducible but not open.
-Finally,
-if a software package is being maintained by a couple of post-docs
+People often conflate these three ideas, but they are distinct.
+For example, if you share your data and the programs that analyze it,
+but don't document what steps to take in what order, your work is open but not reproducible. 
+Conversely, if you completely automate your analysis, but your data is only available to people in your lab, your work is reproducible but not open.
+Finally, if a software package is being maintained by a couple of post-docs
 who are being paid a fraction of what they could earn in industry
-and have no realistic hope of promotion because their field doesn't value tool building,
-then sooner or later it will become \gref{abandonware}{abandonware},
+and have no realistic hope of promotion because their field doesn't value tool building, then sooner or later it will become \gref{abandonware}{abandonware},
 at which point openness and reproducibility become less relevant.
 
 Nobody argues that research should be irreproducible or unsustainable,
 but "not against it" and actively supporting it are very different things.
 Academia doesn't yet know how to reward people for writing useful software,
-so while you may be thanked,
-the effort you put in may not translate into academic job security or decent pay.
+so while you may be thanked, the effort you put in may not translate into academic job security or decent pay.
 
 Some people worry that if they make their data and code publicly available,
 someone else will use it and publish a result they could have come up with themselves.
-This is almost unheard of in practice,
-but that doesn't stop it being used as a scare tactic.
+This is almost unheard of in practice, but that doesn't stop it being used as a scare tactic. 
 Other people are afraid of looking foolish or incompetent by sharing code that might contain bugs.
-This isn't just \gref{impostor syndrome}{impostor_syndrome}:
+This isn't just **impostor syndrome**:
 members of marginalized groups are frequently judged more harshly than others,
 so being wrong in public is much riskier for them.
 
@@ -74,13 +64,10 @@ research culture can improve to address the issues raised above.
 
 ## Intended Audience
 
-This book is written for researchers who are already using Python for their data analysis,
-but who want to take their coding and software development to the next level.
-You don't have to be highly proficient with Python,
+This book is written for researchers who are already using Python for their data analysis, but who want to take their coding and software development to the next level. You don't have to be highly proficient with Python,
 but you should already be comfortable doing things like reading data from files
 and writing loops, conditionals, and functions.
-The following personas are examples of the types of people
-that are our target audience.
+The following personas are examples of the types of people that are our target audience.
 
 Amira Khan
 :   completed a master's in library science five years ago
@@ -93,7 +80,7 @@ Amira Khan
     These lessons will show her how to do this.
 
 Jun Hsu
-:   completed an [Insight Data Science][insight] fellowship last year after doing a PhD in geology
+:   completed an Insight Data Science fellowship last year after doing a PhD in geology
     and now works for a company that does forensic audits.
     He uses a variety of machine learning and visualization packages,
     and would now like to turn some of his own work into an open source project.
@@ -164,7 +151,7 @@ and key points (Appendix \@ref(keypoints)) for each chapter.
 
 ## Contributing and Re-Use
 
-The source for the book can be found at the [`py-rse` GitHub repository](https://github.com/merely-useful/py-rse) and
+The source for the book can be found at the ['RSE-UP' GitHub repository](https://software-engineering-group-up.github.io/RSE-UP) and
 any corrections, additions, or contributions are very welcome.
 Everyone whose work is included will be credited in the acknowledgments.
 Check out our
@@ -188,4 +175,4 @@ as long as there is attribution to this source.
 This book was created on basis of the book 'Research Software Engineering with Python: Building Software that Makes Research Possible', that was created by: 
 Damien Irving and Kate Hertweck and Luke Johnston and Joel Ostblom and Charlotte Wickham and Greg Wilson. 
 
-The online version can be found [here link](https://merely-useful.tech/py-rse/)
+The online version can be found [here!](https://merely-useful.tech/py-rse/)
