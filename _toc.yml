@@ -9,6 +9,7 @@ parts:
   - caption: Reference and test pages
     chapters:
       - file: chapters/appendix/z_references.md
+      - file: links.md
 
     # sections:
       # - file: test_pages/layout_elements
