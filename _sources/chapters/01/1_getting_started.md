@@ -251,6 +251,6 @@ before progressing to the next chapter.
 
 ```{include} ../../links.md
 ```
-```{bibliography} bibliography.bib
+```{bibliography} ../../bibliography.bib
 ```
 
