@@ -178,5 +178,12 @@ Damien Irving and Kate Hertweck and Luke Johnston and Joel Ostblom and Charlotte
 The online version can be found [here!](https://merely-useful.tech/py-rse/)
 
 ## References
-```{bibliography}
+
+```{include} ../../links.md
 ```
+## References 
+
+```{bibliography} 
+:filter: docname in docnames
+```
+
