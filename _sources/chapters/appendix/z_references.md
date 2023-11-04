@@ -1,4 +1,4 @@
 # Bibliography
 
-```{bibliography} ./bibliography.bib
+```{bibliography} ../../bibliography.bib
 ```
