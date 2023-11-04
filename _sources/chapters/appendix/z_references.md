@@ -1,6 +1,6 @@
 # Bibliography
 
-```{bibliography} ../../bibliography.bib
+```{bibliography} 
 :all:
 :filter: docname in docnames
 ```

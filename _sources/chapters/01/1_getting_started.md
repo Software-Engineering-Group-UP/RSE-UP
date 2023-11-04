@@ -251,7 +251,7 @@ before progressing to the next chapter.
 ```
 ## References 
 
-```{bibliography} ../../bibliography.bib
+```{bibliography} 
 :filter: docname in docnames
 ```
 
