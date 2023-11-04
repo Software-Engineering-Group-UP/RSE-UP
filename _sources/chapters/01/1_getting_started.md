@@ -249,5 +249,8 @@ before progressing to the next chapter.
 - Refer to The Carpentries [software installation guide][carpentries-install-instructions] if you're having trouble. 
 
 
-```{include} ../../links.md
 ```
+    {include} ../../links.md
+    {bibliography} bibliography.bib
+```
+
