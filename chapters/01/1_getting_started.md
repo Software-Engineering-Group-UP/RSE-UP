@@ -250,9 +250,5 @@ before progressing to the next chapter.
 
 ```{include} ../../links.md
 ```
-## References 
 
-```{bibliography} 
-:filter: docname in docnames
-```
 

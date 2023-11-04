@@ -181,9 +181,5 @@ The online version can be found [here!](https://merely-useful.tech/py-rse/)
 
 ```{include} ../../links.md
 ```
-## References 
 
-```{bibliography} 
-:filter: docname in docnames
-```
 
