@@ -1,4 +1,1 @@
-# Bibliography
-
-```{bibliography} ./bibliography.bib
-```
+# Link list
