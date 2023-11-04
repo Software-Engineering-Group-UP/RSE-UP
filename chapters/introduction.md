@@ -130,7 +130,7 @@ This book was written to be used as the material for a (potentially) semester-lo
 course at the university level,
 although it can also be used for independent self-study.
 Participatory live-coding is the anticipated style for teaching the material,
-rather than lectures simply talking about the code presented [@Brow2018; @Wils2018].
+rather than lectures simply talking about the code presented {cite:p}`Brow2018, Wils2018`
 The chapters and their content are generally designed to be used in the order
 given.
 
@@ -144,9 +144,10 @@ In order to break up long periods of live-coding while teaching,
 it may be preferable to stop and complete some of the exercises
 at key points throughout the chapter,
 rather than waiting until the end. 
-Possible exercise solutions are provided (Appendix \@ref(solutions)),
-in addition to learning objectives (Appendix \@ref(objectives)) 
-and key points (Appendix \@ref(keypoints)) for each chapter. 
+**TODO ADD REF WHEN DONE**
+Possible exercise solutions are provided (Appendix ref(solutions)),
+in addition to learning objectives (Appendix ref(objectives)) 
+and key points (Appendix ref(keypoints)) for each chapter. 
 
 ## Contributing and Re-Use
 
@@ -175,3 +176,7 @@ This book was created on basis of the book 'Research Software Engineering with P
 Damien Irving and Kate Hertweck and Luke Johnston and Joel Ostblom and Charlotte Wickham and Greg Wilson. 
 
 The online version can be found [here!](https://merely-useful.tech/py-rse/)
+
+## References
+```{bibliography}
+```
