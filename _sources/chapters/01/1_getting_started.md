@@ -1,11 +1,9 @@
 # Getting Started
 
-**TODO CHECK CITE**
 > Everything starts somewhere, though many physicists disagree.
 >
-> --- Terry Pratchett\index{Pratchett, Terry}
-
-**TODO CHECK QUOTE** 
+> --- Terry Pratchett
+ 
 
 As with many research projects,
 the first step in our Zipf's Law analysis
@@ -40,9 +38,9 @@ but experience teaches that we will be more productive if we make tidiness a hab
 
 In building the Zipf's Law project,
 we'll follow a widely used template
-for organizing small and medium-sized data analysis projects **TODO** {cite:p}`Nobl2009`.
+for organizing small and medium-sized data analysis projects {cite:p}`Nobl2009`.
 The project will live in a directory called `zipf`,
-which will also be a Git repository stored on GitHub (Chapter **TODO** \@ref(git-cmdline)).
+which will also be a Git repository stored on GitHub (Chapter **TODO** ref(git-cmdline)).
 The following is an abbreviated version of the project directory tree
 as it appears toward the end of the book:
 
@@ -104,7 +102,7 @@ meaning they are copied without change from one use to the next.
 
 ### Organizing project content
 
-Following **TODO CITE** @Nobl2009,
+Following {cite:p}`Nobl2009`,
 the directories in the repository's root are organized according to purpose:
 
 -   Runnable programs go in `bin/`
@@ -136,7 +134,7 @@ the directories in the repository's root are organized according to purpose:
 
 This structure works well for many computational research projects and
 we encourage its use beyond just this book.
-We will add some more folders and files not directly addressed by **TODO**@Nobl2009
+We will add some more folders and files not directly addressed by {cite:p}`Nobl2009`
 when we talk about testing (Chapter **TODO** ref(testing)),
 provenance (Chapter **TODO** ref(provenance)),
 and packaging (Chapter **TODO** ref(packaging)).
@@ -176,8 +174,8 @@ In order to conduct our analysis, we need to install the following software:
 1. A **Shell** ( Bash, ZSH, Fish,...)
 2. **Git** version control
 3. A text editor
-4. **TODO add officiel link** [Python 3][python] or using [Anaconda][anaconda]
-5. **TODO**[GNU Make][gnu-make]
+4. [Python 3][python] or using [Anaconda][anaconda]
+5. [GNU Make][gnu-make]
 
 *Note* While Anaconda seems easy to install, depending on the use case it might be more efficient and simpler to use Python [Pip][pip] to install some necessary packages. 
 
@@ -251,6 +249,8 @@ before progressing to the next chapter.
 
 ```{include} ../../links.md
 ```
+## References 
+
 ```{bibliography} ../../bibliography.bib
 :filter: docname in docnames
 ```
