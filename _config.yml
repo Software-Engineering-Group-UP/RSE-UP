@@ -40,7 +40,8 @@ bibtex_bibfiles:
 sphinx:
   config:
     html_extra_path: ['assets']
-    #bibtex_bibfiles: bibliography.bib 
-    # extra_extensions:
-    #   - sphinxcontrib.bibtex
+    bibtex_reference_style: author_year
+    bibtex_bibfiles: bibliography.bib
+    #extra_extensions:
+      
     
