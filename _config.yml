@@ -35,11 +35,11 @@ repository:
   url                       : https://github.com/Software-Engineering-Group-UP/RSE-UP # The URL to your book's repository
   branch                    : main  # Which branch of the repository should be used when creating links
 
-sphinx:
-  config:
-    html_extra_path: ['assets']
-    bibtex_reference_style: author_year
-    bibtex_bibfiles: bibliography.bib 
-    extra_extensions:
-      - sphinxcontrib.bibtex
+# sphinx:
+#   config:
+#     html_extra_path: ['assets']
+#     bibtex_reference_style: author_year
+#     bibtex_bibfiles: bibliography.bib 
+#     extra_extensions:
+#       - sphinxcontrib.bibtex
     
