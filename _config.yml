@@ -34,8 +34,7 @@ launch_buttons:
 repository:
   url                       : https://github.com/Software-Engineering-Group-UP/RSE-UP # The URL to your book's repository
   branch                    : main  # Which branch of the repository should be used when creating links
-bibtex_bibfiles:
-    - bibliography.bib
+bibtex_bibfiles: bibliography.bib
 
 sphinx:
   config:
