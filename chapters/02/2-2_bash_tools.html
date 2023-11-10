@@ -374,7 +374,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-pipes-work">How Pipes Work</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeating-commands-on-many-files">Repeating Commands on Many Files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-names">Variable Names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redoing-things-bash-tools-history">Redoing Things {#bash-tools-history}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redoing-things">Redoing Things</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-new-filenames-automatically">Creating New Filenames Automatically</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
@@ -400,25 +400,25 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">How Pipes Work</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Repeating Commands on Many Files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Variable Names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redoing-things">Redoing Things</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Creating New Filenames Automatically</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">What does <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> mean?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Appending data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Piping commands</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Why does <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only remove adjacent duplicates?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Pipe reading comprehension</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Pipe construction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Which pipe?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Doing a dry run</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Variables in loops</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Limiting sets of files</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Saving to a file in a loop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Why does <code class="docutils literal notranslate"><span class="pre">history</span></code> record commands before running them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Redoing Things</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Creating New Filenames Automatically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">What does <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> mean?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Appending data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Piping commands</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Why does <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only remove adjacent duplicates?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Pipe reading comprehension</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Pipe construction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Which pipe?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Doing a dry run</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Variables in loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Limiting sets of files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Saving to a file in a loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Why does <code class="docutils literal notranslate"><span class="pre">history</span></code> record commands before running them?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Key Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Key Points</a></li>
 </ul>
 </li>
 </ul>
@@ -960,8 +960,8 @@ Programs are only useful if people can understand them,
 so meaningless names like <code class="docutils literal notranslate"><span class="pre">x</span></code> and misleading names like <code class="docutils literal notranslate"><span class="pre">username</span></code>
 increase the odds of misunderstanding.</p>
 </section>
-<section id="redoing-things-bash-tools-history">
-<h2>Redoing Things {#bash-tools-history}<a class="headerlink" href="#redoing-things-bash-tools-history" title="Permalink to this heading">#</a></h2>
+<section id="redoing-things">
+<h2>Redoing Things<a class="headerlink" href="#redoing-things" title="Permalink to this heading">#</a></h2>
 <p>Loops are useful if we know in advance what we want to repeat,
 but we can also repeat commands that we have run recently.
 One way is to use <kbd>↑</kbd> and <kbd>↓</kbd>
@@ -1864,8 +1864,8 @@ Programs are only useful if people can understand them,
 so meaningless names like <code class="docutils literal notranslate"><span class="pre">x</span></code> and misleading names like <code class="docutils literal notranslate"><span class="pre">username</span></code>
 increase the odds of misunderstanding.</p>
 </section>
-<section id="redoing-things">
-<h2>Redoing Things<a class="headerlink" href="#redoing-things" title="Permalink to this heading">#</a></h2>
+<section id="id6">
+<h2>Redoing Things<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p>Loops are useful if we know in advance what we want to repeat,
 but we can also repeat commands that we have run recently.
 One way is to use <kbd>↑</kbd> and <kbd>↓</kbd>
@@ -1952,8 +1952,8 @@ both the original command prompt (<code class="docutils literal notranslate"><sp
 indicate the code is on separate lines;
 the absence of either in shell commands indicates it is a single line of code.</p>
 </section>
-<section id="id6">
-<h2>Creating New Filenames Automatically<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<section id="id7">
+<h2>Creating New Filenames Automatically<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
 <p>Suppose we want to create a backup copy of each book whose name ends in “e”.
 If we don’t want to change the files’ names,
 we can do this with <code class="docutils literal notranslate"><span class="pre">cp</span></code>:</p>
@@ -2011,14 +2011,14 @@ $<span class="w"> </span>ls<span class="w"> </span>../backup
 </pre></div>
 </div>
 </section>
-<section id="id7">
-<h2>Summary<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<section id="id8">
+<h2>Summary<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <p>The shell’s greatest strength is the way it combines a few powerful ideas with pipes and loops.
 The next chapter will show how we can make our work more reproducible
 by saving commands in files that we can run over and over again.</p>
 </section>
-<section id="id8">
-<h2>Exercises<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<section id="id9">
+<h2>Exercises<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 <p>The exercises below involve creating and moving new files,
 as well as considering hypothetical files.
 Please note that if you create or move any files or directories in your Zipf’s Law project,
@@ -2026,8 +2026,8 @@ you may want to reorganize your files following the outline at the beginning of 
 If you accidentally delete necessary files,
 you can start with a fresh copy of the data files
 by following the instructions in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/01/01_getting-started.html#downloading-the-data"></a>.</p>
-<section id="id9">
-<h3>What does <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> mean?<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<section id="id10">
+<h3>What does <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> mean?<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <p>We have seen the use of <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, but there is a similar operator <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> which works slightly differently.
 We’ll learn about the differences between these two operators by printing some strings.
 We can use the <code class="docutils literal notranslate"><span class="pre">echo</span></code> command to print strings as shown below:</p>
@@ -2048,8 +2048,8 @@ We can use the <code class="docutils literal notranslate"><span class="pre">echo
 </div>
 <p>Hint: Try executing each command twice in a row and then examining the output files.</p>
 </section>
-<section id="id10">
-<h3>Appending data<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<section id="id11">
+<h3>Appending data<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>Given the following commands,
 what will be included in the file <code class="docutils literal notranslate"><span class="pre">extracted.txt</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">3</span><span class="w"> </span>dracula.txt<span class="w"> </span>&gt;<span class="w"> </span>extracted.txt
@@ -2063,8 +2063,8 @@ $<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><
 <li><p>The second and third lines of <code class="docutils literal notranslate"><span class="pre">dracula.txt</span></code></p></li>
 </ol>
 </section>
-<section id="id11">
-<h3>Piping commands<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<section id="id12">
+<h3>Piping commands<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>In our current directory, we want to find the 3 files which have the least number of
 lines. Which command listed below would work?</p>
 <ol class="arabic simple">
@@ -2074,8 +2074,8 @@ lines. Which command listed below would work?</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-n</span> <span class="pre">3</span></code></p></li>
 </ol>
 </section>
-<section id="id12">
-<h3>Why does <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only remove adjacent duplicates?<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<section id="id13">
+<h3>Why does <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only remove adjacent duplicates?<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p>The command <code class="docutils literal notranslate"><span class="pre">uniq</span></code> removes adjacent duplicated lines from its input.
 Consider a hypothetical file <code class="docutils literal notranslate"><span class="pre">genres.txt</span></code> containing the following data:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>science fiction
@@ -2098,8 +2098,8 @@ science fiction
 (Hint: think about very large datasets.) What other command could
 you combine with it in a pipe to remove all duplicated lines?</p>
 </section>
-<section id="id13">
-<h3>Pipe reading comprehension<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<section id="id14">
+<h3>Pipe reading comprehension<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
 <p>A file called <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> contains a list of book titles and publication years:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Dracula,1897
 Frankenstein,1818
@@ -2118,16 +2118,16 @@ Wuthering Heights,1847
 </div>
 <p>Hint: build the pipeline up one command at a time to test your understanding</p>
 </section>
-<section id="id14">
-<h3>Pipe construction<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<section id="id15">
+<h3>Pipe construction<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <p>For the file <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> from the previous exercise, consider the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span>,<span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span>titles.txt
 </pre></div>
 </div>
 <p>What does the <code class="docutils literal notranslate"><span class="pre">cut</span></code> command (and its options) accomplish?</p>
 </section>
-<section id="id15">
-<h3>Which pipe?<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<section id="id16">
+<h3>Which pipe?<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <p>Consider the same <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> from the previous exercises.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">uniq</span></code> command has a <code class="docutils literal notranslate"><span class="pre">-c</span></code> option which gives a count of the
 number of times a line occurs in its input.
@@ -2142,8 +2142,8 @@ a table that shows the total count of each publication year in the file?</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">cut</span> <span class="pre">-d,</span> <span class="pre">-f</span> <span class="pre">2</span> <span class="pre">titles.txt</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></code></p></li>
 </ol>
 </section>
-<section id="id16">
-<h3>Doing a dry run<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<section id="id17">
+<h3>Doing a dry run<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
 <p>A loop is a way to do many things at once—or to make many mistakes at
 once if it does the wrong thing. One way to check what a loop <em>would</em> do
 is to <code class="docutils literal notranslate"><span class="pre">echo</span></code> the commands it would run instead of actually running them.</p>
@@ -2172,8 +2172,8 @@ and which one would we want to run?</p>
 </pre></div>
 </div>
 </section>
-<section id="id17">
-<h3>Variables in loops<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<section id="id18">
+<h3>Variables in loops<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
 <p>Given the files in <code class="docutils literal notranslate"><span class="pre">data/</span></code>,
 what is the output of the following code?</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>datafile<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
@@ -2191,8 +2191,8 @@ what is the output of the following code?</p>
 </div>
 <p>Why do these two loops give different outputs?</p>
 </section>
-<section id="id18">
-<h3>Limiting sets of files<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<section id="id19">
+<h3>Limiting sets of files<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h3>
 <p>What would be the output of running the following loop in your <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory?</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span>d*
 &gt;<span class="w"> </span><span class="k">do</span>
@@ -2208,8 +2208,8 @@ what is the output of the following code?</p>
 </pre></div>
 </div>
 </section>
-<section id="id19">
-<h3>Saving to a file in a loop<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h3>
+<section id="id20">
+<h3>Saving to a file in a loop<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
 <p>Consider running the following loop in the  <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>book<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
 &gt;<span class="w"> </span><span class="k">do</span>
@@ -2227,8 +2227,8 @@ what is the output of the following code?</p>
 </div>
 <p>\newpage</p>
 </section>
-<section id="id20">
-<h3>Why does <code class="docutils literal notranslate"><span class="pre">history</span></code> record commands before running them?<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
+<section id="id21">
+<h3>Why does <code class="docutils literal notranslate"><span class="pre">history</span></code> record commands before running them?<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h3>
 <p>If you run the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">history</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span>&gt;<span class="w"> </span>recent.sh
 </pre></div>
@@ -2239,8 +2239,8 @@ running it. In fact, the shell <em>always</em> adds commands to the log
 before running them. Why do you think it does this?</p>
 </section>
 </section>
-<section id="id21">
-<h2>Key Points<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h2>
+<section id="id22">
+<h2>Key Points<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cat</span></code> displays the contents of its inputs.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">head</span></code> displays the first few lines of its input.</p></li>
@@ -2330,7 +2330,7 @@ and a <strong>body</strong> containing commands to execute.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-pipes-work">How Pipes Work</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeating-commands-on-many-files">Repeating Commands on Many Files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-names">Variable Names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redoing-things-bash-tools-history">Redoing Things {#bash-tools-history}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redoing-things">Redoing Things</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-new-filenames-automatically">Creating New Filenames Automatically</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
@@ -2356,25 +2356,25 @@ and a <strong>body</strong> containing commands to execute.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">How Pipes Work</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Repeating Commands on Many Files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Variable Names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redoing-things">Redoing Things</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Creating New Filenames Automatically</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">What does <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> mean?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Appending data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Piping commands</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Why does <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only remove adjacent duplicates?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Pipe reading comprehension</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Pipe construction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Which pipe?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Doing a dry run</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Variables in loops</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Limiting sets of files</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Saving to a file in a loop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Why does <code class="docutils literal notranslate"><span class="pre">history</span></code> record commands before running them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Redoing Things</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Creating New Filenames Automatically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">What does <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> mean?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Appending data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Piping commands</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Why does <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only remove adjacent duplicates?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Pipe reading comprehension</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Pipe construction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Which pipe?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Doing a dry run</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Variables in loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Limiting sets of files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Saving to a file in a loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Why does <code class="docutils literal notranslate"><span class="pre">history</span></code> record commands before running them?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Key Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Key Points</a></li>
 </ul>
 </li>
 </ul>
