@@ -610,7 +610,7 @@ Programs are only useful if people can understand them,
 so meaningless names like `x` and misleading names like `username`
 increase the odds of misunderstanding.
 
-## Redoing Things {#bash-tools-history}
+## Redoing Things
 
 Loops are useful if we know in advance what we want to repeat,
 but we can also repeat commands that we have run recently.
