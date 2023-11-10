@@ -63,10 +63,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/02/2_bash_bashics';</script>
-    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/02/2_bash_bashics.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/02/2_bash_basics';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/02/2_bash_basics.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Bibliography" href="../appendix/0_references.html" />
+    <link rel="prev" title="Getting Started" href="../01/1_getting_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,6 +167,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01/1_getting_started.html">Getting Started</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Basics of the Unix Shell</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference and test pages</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../appendix/0_references.html">Bibliography</a></li>
@@ -239,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/02/2_bash_bashics.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/02/2_bash_basics.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -269,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/chapters/02/2_bash_bashics.md" target="_blank"
+      <li><a href="../../_sources/chapters/02/2_bash_basics.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -438,11 +444,9 @@ or how they do what they do.</p>
 <figure class="align-default" id="the-shell">
 <img alt="../../_images/the-shell.png" src="../../_images/the-shell.png" />
 <figcaption>
-<p><span class="caption-text">fig: The Shell</span><a class="headerlink" href="#the-shell" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">fig: The Shell</span><a class="headerlink" href="#the-shell" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>test case two
-<img alt="The Shell" src="chapters/02/figures/02/the_shell.png" /></p>
 <blockquote>
 <div><p><strong>What’s in a Name?</strong></p>
 <p>Programmers have written many different shells over the last forty years,
@@ -518,7 +522,7 @@ it looks like Figure <span class="xref myst">bash basics filesyetem</span>.</p>
 <figure class="align-default" id="bash-basic-filesystem">
 <img alt="../../_images/sample-filesystem.png" src="../../_images/sample-filesystem.png" />
 <figcaption>
-<p><span class="caption-text">fig: Bash basic filesystem</span><a class="headerlink" href="#bash-basic-filesystem" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">fig: Bash basic filesystem</span><a class="headerlink" href="#bash-basic-filesystem" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>At the top is the <strong>root directory</strong> that holds everything else, which we can refer to using a slash character <code class="docutils literal notranslate"><span class="pre">/</span></code> on its own.
@@ -911,7 +915,7 @@ $<span class="w"> </span>nano<span class="w"> </span>draft.txt
 <figure class="align-default" id="nano-editor">
 <img alt="../../_images/nano-editor.png" src="../../_images/nano-editor.png" />
 <figcaption>
-<p><span class="caption-text">fig: Nano Editor</span><a class="headerlink" href="#nano-editor" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">fig: Nano Editor</span><a class="headerlink" href="#nano-editor" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>When we say “Nano is a text editor” we really do mean “text”:
@@ -1284,9 +1288,9 @@ To quit, press <kbd>Q</kbd>.</p>
 <a class="reference internal" href="#man-callouts"><span class="std std-ref">Figure</span></a> includes excerpts from the manual on your screen,
 and highlights a few of features useful for beginners.</p>
 <figure class="align-default" id="man-callouts">
-<img alt="figures/bash-basics/man_callouts.png" src="figures/bash-basics/man_callouts.png" />
+<img alt="../../_images/man-callouts.png" src="../../_images/man-callouts.png" />
 <figcaption>
-<p><span class="caption-text">fig: Bash basics manual</span><a class="headerlink" href="#man-callouts" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">fig: Bash basics manual</span><a class="headerlink" href="#man-callouts" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Some commands have a <code class="docutils literal notranslate"><span class="pre">--help</span></code> option that provides a succinct summary of possibilities,
@@ -1390,13 +1394,13 @@ what will <code class="docutils literal notranslate"><span class="pre">ls</span>
 <figure class="align-default" id="exercise-filesystem">
 <img alt="chapters/.../figues/bash-basics/exercise-filesystem.png" src="chapters/.../figues/bash-basics/exercise-filesystem.png" />
 <figcaption>
-<p><span class="caption-text">fig: exercise filesystem</span><a class="headerlink" href="#exercise-filesystem" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">fig: exercise filesystem</span><a class="headerlink" href="#exercise-filesystem" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="ls-reading-comprehension">
 <h3><code class="docutils literal notranslate"><span class="pre">ls</span></code> reading comprehension<a class="headerlink" href="#ls-reading-comprehension" title="Permalink to this heading">#</a></h3>
-<p>Using the filesystem shown in <span class="xref myst">Figure</span>,
+<p>Using the filesystem shown in <a class="reference internal" href="#exercise-filesystem"><span class="std std-ref">Figure</span></a>,
 if <code class="docutils literal notranslate"><span class="pre">pwd</span></code> displays <code class="docutils literal notranslate"><span class="pre">/Users/backup</span></code>,
 and <code class="docutils literal notranslate"><span class="pre">-r</span></code> tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> to display things in reverse order,
 what command(s) will result in the following output:</p>
@@ -1682,6 +1686,24 @@ explain in plain language what (hypothetical) files the expression <code class="
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../01/1_getting_started.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Getting Started</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendix/0_references.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bibliography</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
