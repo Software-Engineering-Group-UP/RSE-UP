@@ -55,7 +55,7 @@ fig: The Shell
 > In particular, the most recent versions of MacOS use a shell called the Z Shell or `zsh`;
 > we will point out a few differences as we go along.
 
-Please see Section [1. getting started](01_getting_started#installing-the-software) for instructions
+Please see Section <a href="https://software-engineering-group-up.github.io/RSE-UP/chapters/01/1_getting_started.html#downloading-the-data"> 1 Getting started</a> for instructions
 on how to install and launch the shell on your computer.
 
 ## Exploring Files and Directories 
