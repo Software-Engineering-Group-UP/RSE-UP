@@ -163,25 +163,23 @@ as the input to the command on the right.
 
 Running a command with a file as input has a clear flow of information:
 the command performs a task on that file and prints the output to the screen
-([](bash_tools_pipe)a).
+([](bash_tools_pipe) a).
 When using pipes, however,
 the information flows differently after the first (upstream) command.
 The downstream command doesn't read from a file.
 Instead,
 it reads the output of the upstream command
-([](bash_tools_pipe).
+([](bash_tools_pipe) b).
 
 
 ```{figure} ../../figures/bash-tools/pipe.png
 :name: bash_toots_pipe
 
-Fig: Bash tool pipe
+Bash tool pipe
 ```
 
 We can use `|` to build pipes of any length.
-For example,
-we can use the command `head` to get just the first three lines of sorted data,\index{Unix commands!head}
-which shows us the three shortest books:
+For example, we can use the command `head` to get just the first three lines of sorted data,which shows us the three shortest books:
 
 ```bash
 $ wc -l *.txt | sort -n | head -n 3
@@ -213,7 +211,7 @@ just as we have:
 by starting with a single command and adding others one by one,
 checking the output after each change.
 The shell makes this easy
-by letting us move up and down in our \gref{command history}{command_history}
+by letting us move up and down in our **command history**
 with the <kbd>↑</kbd> and <kbd>↓</kbd> keys.
 We can also edit old commands to create new ones,
 so a very common sequence is:
@@ -242,16 +240,16 @@ it runs inside a process.
 Under normal circumstances its standard input is connected to our keyboard
 and its standard output to our screen,
 so it reads what we type
-and displays its output for us to see ([](standard_io)a).
+and displays its output for us to see ([](standard_io) a).
 When we tell the shell to run a program,
 it creates a new process
 and temporarily reconnects the keyboard and stream
-to that process's standard input and output ([](standard_io)).
+to that process's standard input and output ([](standard_io) b).
 
 ```{figure} ../../figures/standard-io.png
 :name: standard_io
 
-Fig: Bash tools stdio
+Bash tools stdio
 ```
 
 If we provide one or more files for the command to read,
@@ -1232,13 +1230,13 @@ the information flows differently after the first (upstream) command.
 The downstream command doesn't read from a file.
 Instead,
 it reads the output of the upstream command
-(Figure [](bash_tools_pipe)b).
+([](bash_tools_pipe) b).
 
 
 ```{figure} ../../figures/bash-tools/pipe.png
 :name: bash_tools_pipe
 
-Fig: Bash tools pip
+Bash tools pip
 ```
 
 We can use `|` to build pipes of any length.
@@ -1303,16 +1301,16 @@ and like any other, it runs inside a process.
 Under normal circumstances its standard input is connected to our keyboard
 and its standard output to our screen,
 so it reads what we type
-and displays its output for us to see ()[](bash_tools_stdio_2)a).
+and displays its output for us to see ()[](bash_tools_stdio_2) a).
 When we tell the shell to run a program,
 it creates a new process
 and temporarily reconnects the keyboard and stream
-to that process's standard input and output ([](bash_tools_stdio_2)b).
+to that process's standard input and output ([](bash_tools_stdio_2) b).
 
 ```{figure} ../../figures/bash-tools/standard-io.png
 :name: bash_tools_stdio_2
 
-Fig: Bash Tools stdio
+Bash Tools stdio
 ```
 
 If we provide one or more files for the command to read,

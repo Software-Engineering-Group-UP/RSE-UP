@@ -39,7 +39,7 @@ or how they do what they do.
 ```{figure} ../../figures/bash-basics/the-shell.png
 :name: the_shell
 
-Fig: The Shell
+The Shell
 ```
 
 > **What's in a Name?**
@@ -127,7 +127,7 @@ On Amira's computer the [](bash_basic_filesystem) looks as follows:
 ```{figure} ../../figures/bash-basics/sample-filesystem.png
 :name: bash_basic_filesystem
 
-Fig: Bash basic filesystem
+Bash basic filesystem
 ```
 
 At the top is the **root directory** that holds everything else, which we can refer to using a slash character `/` on its own.
@@ -600,7 +600,7 @@ $ nano draft.txt
 ```{figure} ../../figures/bash-basics/nano-editor.png
 :name: nano_editor
 
-Fig: Nano Editor
+Nano Editor
 ```
 
 When we say "Nano is a text editor" we really do mean "text":
@@ -1053,7 +1053,7 @@ and highlights a few of features useful for beginners.
 ```{figure} ../../figures/bash-basics/man-callouts.png
 :name: man_callouts
 
-Fig: Bash basics manual
+Bash basics manual
 ```
 Some commands have a `--help` option that provides a succinct summary of possibilities,
 but the best place to go for help these days is probably the [TLDR][tldr] website.
@@ -1160,7 +1160,7 @@ what will `ls -F ../backup` display?
 ```{figure} ../.../figures/bash-basics/exercise-filesystem.png
 :name: exercise_filesystem
 
-Fig: exercise filesystem
+exercise filesystem
 ```
 
 ### `ls` reading comprehension 

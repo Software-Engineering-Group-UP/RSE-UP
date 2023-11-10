@@ -233,9 +233,8 @@ we are ready to start our analysis.
 ### Getting ready 
 
 Make sure you've downloaded the required data files
-(following Section **TODO** [download the data](#Downloading-the-data)
-and installed the required software (following Section \@ref(getting-started-install-software))
-before progressing to the next chapter.
+(following Section [download the data](#Downloading-the-data)
+and installed the required software (following Section [](#installing-the-software)) before progressing to the next chapter.
 
 ## Key Points
 
