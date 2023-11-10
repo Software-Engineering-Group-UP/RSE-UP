@@ -42,11 +42,6 @@ or how they do what they do.
 fig: The Shell
 ```
 
-test case two
-![The Shell](figures/02/the_shell.png)
-
-
-
 > **What's in a Name?**
 >
 > Programmers have written many different shells over the last forty years,
@@ -1057,7 +1052,7 @@ Manual pages contain a lot of information---often more than we really want.
 [Figure](man_callouts) includes excerpts from the manual on your screen,
 and highlights a few of features useful for beginners.
 
-```{figure} ../../figures/bash-basics/man_callouts.png
+```{figure} ../../figures/bash-basics/man-callouts.png
 :name: man_callouts
 
 fig: Bash basics manual
@@ -1172,7 +1167,7 @@ fig: exercise filesystem
 
 ### `ls` reading comprehension 
 
-Using the filesystem shown in [Figure](excercise_filesystem),
+Using the filesystem shown in [Figure](exercise_filesystem),
 if `pwd` displays `/Users/backup`,
 and `-r` tells `ls` to display things in reverse order,
 what command(s) will result in the following output:
