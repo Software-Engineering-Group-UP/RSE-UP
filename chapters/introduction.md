@@ -13,7 +13,7 @@ how to write short programs that clean and analyze data in a reproducible way
 and how to use version control to keep track of what they have done.
 But just as some astronomers spend their careers designing telescopes,
 some researchers focus on building the software that makes research possible.
-People who do this are called \gref{research software engineers}{rse};
+People who do this are called **research software engineers**;
 the aim of this book is to get you ready for this role by helping you go from
 writing code for yourself to creating tools that help your entire field advance.
 
