@@ -1,3 +1,4 @@
+(welcome)=
 # Welcome 
 
 Software is now as essential to research as telescopes, test tubes, and reference libraries.
@@ -16,7 +17,7 @@ some researchers focus on building the software that makes research possible.
 People who do this are called **research software engineers**;
 the aim of this book is to get you ready for this role by helping you go from
 writing code for yourself to creating tools that help your entire field advance.
-
+(welcome:big-picture)
 ## The Big Picture
 
 Our approach to research software engineering is based on three related concepts:
@@ -61,7 +62,7 @@ less mistakes, and work more openly and reproducibly.
 We hope that by having more researchers with these skills and knowledge,
 research culture can improve to address the issues raised above.
 
-
+(welcome:intended-audience)=
 ## Intended Audience 
 
 This book is written for researchers who are already using Python for their data analysis, but who want to take their coding and software development to the next level. You don't have to be highly proficient with Python,
@@ -94,7 +95,8 @@ Sami Virtanen
     have shifted from fluid dynamics to data analysis;
     this guide will teach them how to build and run data pipelines
     so that they can pass those skills on to their users.
-
+    
+(welcome:what-you-learn)=
 ## What You Will Learn
 
 Rather than simply providing reference material about good coding practices,
@@ -125,6 +127,7 @@ we will show you how to do the following:
 -   Publish your code and research in open and reproducible ways.
 -   Create Python packages that can be installed in standard ways.
 
+(welcome:using-the-book)=
 ## Using this Book
 
 This book was written to be used as the material for a (potentially) semester-long
@@ -150,6 +153,7 @@ Possible exercise solutions are provided (Appendix ref(solutions)),
 in addition to learning objectives (Appendix ref(objectives)) 
 and key points (Appendix ref(keypoints)) for each chapter. 
 
+(welcome:contributing)=
 ## Contributing and Re-Use
 
 The source for the book can be found at the ['RSE-UP' GitHub repository](https://software-engineering-group-up.github.io/RSE-UP) and
@@ -171,14 +175,13 @@ and a
 so the material can be used, re-used, and modified, 
 as long as there is attribution to this source.
 
-## Acknowledgments
+(welcome:ackknowledgements)
+## Acknowledgements
 
 This book was created on basis of the book 'Research Software Engineering with Python: Building Software that Makes Research Possible', that was created by: 
 Damien Irving and Kate Hertweck and Luke Johnston and Joel Ostblom and Charlotte Wickham and Greg Wilson. 
 
 The online version can be found [here!](https://merely-useful.tech/py-rse/)
-
-## References
 
 ```{include} ../../links.md
 ```

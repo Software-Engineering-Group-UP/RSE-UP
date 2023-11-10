@@ -55,7 +55,7 @@ fig: The Shell
 > In particular, the most recent versions of MacOS use a shell called the Z Shell or `zsh`;
 > we will point out a few differences as we go along.
 
-Please see Section [#1 getting started](01_getting_started#installing-the-software) for instructions
+Please see Section [1. getting started](01_getting_started#installing-the-software) for instructions
 on how to install and launch the shell on your computer.
 
 ## Exploring Files and Directories 
@@ -91,7 +91,7 @@ amira
 
 > **Learn by Doing**
 >
-> Amira is one of the learners described in Section [TEST](../introduction.md).
+> Amira is one of the learners described in Section [here](welcome:intended-actions).
 > For the rest of the book,
 > we'll present code and examples from her perspective.
 > You should follow along on your own computer,
@@ -1440,3 +1440,8 @@ explain in plain language what (hypothetical) files the expression `novel-????-[
 -   `?` matches any single character in a filename.
 -   `wc` counts lines, words, and characters in its inputs.
 -   `man` displays the manual page for a given command; some commands also have a `--help` option.
+
+
+
+```{include} ../../links.md
+```
