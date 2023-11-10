@@ -6,6 +6,9 @@ parts:
   - caption: Getting Started
     chapters:
       - file: chapters/01/1_getting_started.md
+  - caption: Bash 
+    chapters:
+      - file: chapters/02/2_bash_basics.md
   - caption: Reference and test pages
     chapters:
       - file: chapters/appendix/0_references.md
