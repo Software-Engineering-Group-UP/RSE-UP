@@ -163,19 +163,19 @@ as the input to the command on the right.
 
 Running a command with a file as input has a clear flow of information:
 the command performs a task on that file and prints the output to the screen
-(Figure \@ref(fig:bash-tools-pipe)a).
+([](bash_tools_pipe)a).
 When using pipes, however,
 the information flows differently after the first (upstream) command.
 The downstream command doesn't read from a file.
 Instead,
 it reads the output of the upstream command
-(Figure [](bash_tools_pipe).
+([](bash_tools_pipe).
 
 
 ```{figure} ../../figures/bash-tools/pipe.png
 :name: bash_toots_pipe
 
-fig: Pipe
+Fig: Bash tool pipe
 ```
 
 We can use `|` to build pipes of any length.
@@ -242,16 +242,16 @@ it runs inside a process.
 Under normal circumstances its standard input is connected to our keyboard
 and its standard output to our screen,
 so it reads what we type
-and displays its output for us to see (Figure [](standard_io)a).
+and displays its output for us to see ([](standard_io)a).
 When we tell the shell to run a program,
 it creates a new process
 and temporarily reconnects the keyboard and stream
-to that process's standard input and output (Figure [](standard_io)).
+to that process's standard input and output ([](standard_io)).
 
 ```{figure} ../../figures/standard-io.png
 :name: standard_io
 
-fig: Bash tools stdio
+Fig: Bash tools stdio
 ```
 
 If we provide one or more files for the command to read,
@@ -282,12 +282,12 @@ two
 ```
 
 Redirection with `>` tells the shell to connect the program's standard output to a file
-instead of the screen (Figure \@ref(fig:bash-tools-stdio)c).
+instead of the screen ([](bash_tools_stdio)c).
 
 When we create a pipe like `wc *.txt | sort`,
 the shell creates one process for each command so that `wc` and `sort` will run simultaneously,
 and then connects the standard output of `wc` directly to the standard input of `sort`
-(Figure \@ref(fig:bash-tools-stdio)d).
+([](bash_tools_stdio)d).
 
 `wc` doesn't know whether its output is going to the screen,
 another program,
@@ -1226,7 +1226,7 @@ as the input to the command on the right.
 
 Running a command with a file as input has a clear flow of information:
 the command performs a task on that file and prints the output to the screen
-(Figure [](bash_tool_pip) a).
+([](bash_tool_pip) a).
 When using pipes, however,
 the information flows differently after the first (upstream) command.
 The downstream command doesn't read from a file.
@@ -1238,7 +1238,7 @@ it reads the output of the upstream command
 ```{figure} ../../figures/bash-tools/pipe.png
 :name: bash_tools_pipe
 
-fig: Bash tools pip
+Fig: Bash tools pip
 ```
 
 We can use `|` to build pipes of any length.
@@ -1303,16 +1303,16 @@ and like any other, it runs inside a process.
 Under normal circumstances its standard input is connected to our keyboard
 and its standard output to our screen,
 so it reads what we type
-and displays its output for us to see figure [](bash_tools_stdio_2)a).
+and displays its output for us to see ()[](bash_tools_stdio_2)a).
 When we tell the shell to run a program,
 it creates a new process
 and temporarily reconnects the keyboard and stream
-to that process's standard input and output (Figure [](bash_tools_stdio_2)b).
+to that process's standard input and output ([](bash_tools_stdio_2)b).
 
 ```{figure} ../../figures/bash-tools/standard-io.png
 :name: bash_tools_stdio_2
 
-fig: Bash Tools stdio
+Fig: Bash Tools stdio
 ```
 
 If we provide one or more files for the command to read,
@@ -1341,12 +1341,12 @@ two
 ```
 
 Redirection with `>` tells the shell to connect the program's standard output to a file
-instead of the screen (Figure [](bash_tools_stdio_2)c).
+instead of the screen ([](bash_tools_stdio_2)c).
 
 When we create a pipe like `wc *.txt | sort`,
 the shell creates one process for each command so that `wc` and `sort` will run simultaneously,
 and then connects the standard output of `wc` directly to the standard input of `sort`
-(Figure [](bash_tools_stdio)d).
+([](bash_tools_stdio)d).
 
 `wc` doesn't know whether its output is going to the screen,
 another program, or to a file via `>`.
