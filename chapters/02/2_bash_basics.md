@@ -90,8 +90,8 @@ amira
 ```
 
 > **Learn by Doing**
->
-> Amira is one of the learners described in Section [here](welcome:intended-actions).
+> 
+> Amira is one of the learners described in Section [here](welcome:intended-actions). {ref}`intended-actions`. 
 > For the rest of the book,
 > we'll present code and examples from her perspective.
 > You should follow along on your own computer,
