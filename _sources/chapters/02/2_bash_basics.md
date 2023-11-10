@@ -29,7 +29,7 @@ you have already used a simple CLI.
 
 This lesson introduces another CLI that lets us interact with our computer's operating system.
 It is called a "command shell",
-or just **shell** for short, and in essence is a program that runs other programs on our behalf [the Shell](the_shell).
+or just **shell** for short, and in essence is a program that runs other programs on our behalf [](the_shell).
 Those "other programs" can do things as simple as telling us the time
 or as complex as modeling global climate change;
 as long as they obey a few simple rules,
@@ -39,7 +39,7 @@ or how they do what they do.
 ```{figure} ../../figures/bash-basics/the-shell.png
 :name: the_shell
 
-fig: The Shell
+Fig: The Shell
 ```
 
 > **What's in a Name?**
@@ -121,13 +121,13 @@ which tells us that we are in a directory called `amira`
 that is contained in a top-level directory called `Users`.
 This directory is Amira's **home directory** to understand what that means,
 we must first understand how the filesystem is organized.
-On Amira's computer the [filesyetem](bash_basic_filesystem) looks as follows:
+On Amira's computer the [](bash_basic_filesystem) looks as follows:
 
 
 ```{figure} ../../figures/bash-basics/sample-filesystem.png
 :name: bash_basic_filesystem
 
-fig: Bash basic filesystem
+Fig: Bash basic filesystem
 ```
 
 At the top is the **root directory** that holds everything else, which we can refer to using a slash character `/` on its own.
@@ -590,7 +590,7 @@ $ ls -F docs
 ```
 
 Let's change our working directory to `docs` using `cd`,
-then use a very simple text editor called **nano** to create a file called `draft.txt`[fig: Nano Editor](nano_editor):
+then use a very simple text editor called **nano** to create a file called `draft.txt`[](nano_editor):
 
 ```bash
 $ cd docs
@@ -600,7 +600,7 @@ $ nano draft.txt
 ```{figure} ../../figures/bash-basics/nano-editor.png
 :name: nano_editor
 
-fig: Nano Editor
+Fig: Nano Editor
 ```
 
 When we say "Nano is a text editor" we really do mean "text":
@@ -1047,13 +1047,13 @@ $ man wc
 > To quit, press <kbd>Q</kbd>.
 
 Manual pages contain a lot of information---often more than we really want.
-[Figure](man_callouts) includes excerpts from the manual on your screen,
+[](man_callouts) includes excerpts from the manual on your screen,
 and highlights a few of features useful for beginners.
 
 ```{figure} ../../figures/bash-basics/man-callouts.png
 :name: man_callouts
 
-fig: Bash basics manual
+Fig: Bash basics manual
 ```
 Some commands have a `--help` option that provides a succinct summary of possibilities,
 but the best place to go for help these days is probably the [TLDR][tldr] website.
@@ -1148,7 +1148,7 @@ which is `/Users/amira`?
 
 ### Relative path resolution
 
-Using the filesystem shown in [filesytem](exercise_filesystem),
+Using the filesystem shown in [](exercise_filesystem),
 if `pwd` displays `/Users/sami`,
 what will `ls -F ../backup` display?
 
@@ -1160,12 +1160,12 @@ what will `ls -F ../backup` display?
 ```{figure} ../.../figures/bash-basics/exercise-filesystem.png
 :name: exercise_filesystem
 
-fig: exercise filesystem
+Fig: exercise filesystem
 ```
 
 ### `ls` reading comprehension 
 
-Using the filesystem shown in [Figure](exercise_filesystem),
+Using the filesystem shown in [](exercise_filesystem),
 if `pwd` displays `/Users/backup`,
 and `-r` tells `ls` to display things in reverse order,
 what command(s) will result in the following output:

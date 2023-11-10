@@ -437,7 +437,7 @@ If you have used an interactive console for Python,
 you have already used a simple CLI.</p>
 <p>This lesson introduces another CLI that lets us interact with our computer’s operating system.
 It is called a “command shell”,
-or just <strong>shell</strong> for short, and in essence is a program that runs other programs on our behalf <a class="reference internal" href="#the-shell"><span class="std std-ref">the Shell</span></a>.
+or just <strong>shell</strong> for short, and in essence is a program that runs other programs on our behalf <a class="reference internal" href="#the-shell"><span class="std std-ref">Fig: The Shell</span></a>.
 Those “other programs” can do things as simple as telling us the time
 or as complex as modeling global climate change;
 as long as they obey a few simple rules,
@@ -446,7 +446,7 @@ or how they do what they do.</p>
 <figure class="align-default" id="the-shell">
 <img alt="../../_images/the-shell.png" src="../../_images/the-shell.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">fig: The Shell</span><a class="headerlink" href="#the-shell" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Fig: The Shell</span><a class="headerlink" href="#the-shell" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <blockquote>
@@ -518,11 +518,11 @@ which tells us that we are in a directory called <code class="docutils literal n
 that is contained in a top-level directory called <code class="docutils literal notranslate"><span class="pre">Users</span></code>.
 This directory is Amira’s <strong>home directory</strong> to understand what that means,
 we must first understand how the filesystem is organized.
-On Amira’s computer the <a class="reference internal" href="#bash-basic-filesystem"><span class="std std-ref">filesyetem</span></a> looks as follows:</p>
+On Amira’s computer the <a class="reference internal" href="#bash-basic-filesystem"><span class="std std-ref">Fig: Bash basic filesystem</span></a> looks as follows:</p>
 <figure class="align-default" id="bash-basic-filesystem">
 <img alt="../../_images/sample-filesystem.png" src="../../_images/sample-filesystem.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">fig: Bash basic filesystem</span><a class="headerlink" href="#bash-basic-filesystem" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Fig: Bash basic filesystem</span><a class="headerlink" href="#bash-basic-filesystem" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>At the top is the <strong>root directory</strong> that holds everything else, which we can refer to using a slash character <code class="docutils literal notranslate"><span class="pre">/</span></code> on its own.
@@ -907,7 +907,7 @@ For example, <code class="docutils literal notranslate"><span class="pre">ls</sp
 </pre></div>
 </div>
 <p>Let’s change our working directory to <code class="docutils literal notranslate"><span class="pre">docs</span></code> using <code class="docutils literal notranslate"><span class="pre">cd</span></code>,
-then use a very simple text editor called <strong>nano</strong> to create a file called <code class="docutils literal notranslate"><span class="pre">draft.txt</span></code><a class="reference internal" href="#nano-editor"><span class="std std-ref">fig: Nano Editor</span></a>:</p>
+then use a very simple text editor called <strong>nano</strong> to create a file called <code class="docutils literal notranslate"><span class="pre">draft.txt</span></code><a class="reference internal" href="#nano-editor"><span class="std std-ref">Fig: Nano Editor</span></a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>docs
 $<span class="w"> </span>nano<span class="w"> </span>draft.txt
 </pre></div>
@@ -915,7 +915,7 @@ $<span class="w"> </span>nano<span class="w"> </span>draft.txt
 <figure class="align-default" id="nano-editor">
 <img alt="../../_images/nano-editor.png" src="../../_images/nano-editor.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">fig: Nano Editor</span><a class="headerlink" href="#nano-editor" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Fig: Nano Editor</span><a class="headerlink" href="#nano-editor" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>When we say “Nano is a text editor” we really do mean “text”:
@@ -1285,12 +1285,12 @@ we can move between them using <kbd>N</kbd> (for “next”).
 To quit, press <kbd>Q</kbd>.</p>
 </div></blockquote>
 <p>Manual pages contain a lot of information—often more than we really want.
-<a class="reference internal" href="#man-callouts"><span class="std std-ref">Figure</span></a> includes excerpts from the manual on your screen,
+<a class="reference internal" href="#man-callouts"><span class="std std-ref">Fig: Bash basics manual</span></a> includes excerpts from the manual on your screen,
 and highlights a few of features useful for beginners.</p>
 <figure class="align-default" id="man-callouts">
 <img alt="../../_images/man-callouts.png" src="../../_images/man-callouts.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">fig: Bash basics manual</span><a class="headerlink" href="#man-callouts" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Fig: Bash basics manual</span><a class="headerlink" href="#man-callouts" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Some commands have a <code class="docutils literal notranslate"><span class="pre">--help</span></code> option that provides a succinct summary of possibilities,
@@ -1382,7 +1382,7 @@ which is <code class="docutils literal notranslate"><span class="pre">/Users/ami
 </section>
 <section id="relative-path-resolution">
 <h3>Relative path resolution<a class="headerlink" href="#relative-path-resolution" title="Permalink to this heading">#</a></h3>
-<p>Using the filesystem shown in <a class="reference internal" href="#exercise-filesystem"><span class="std std-ref">filesytem</span></a>,
+<p>Using the filesystem shown in <a class="reference internal" href="#exercise-filesystem"><span class="std std-ref">Fig: exercise filesystem</span></a>,
 if <code class="docutils literal notranslate"><span class="pre">pwd</span></code> displays <code class="docutils literal notranslate"><span class="pre">/Users/sami</span></code>,
 what will <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">../backup</span></code> display?</p>
 <ol class="arabic simple">
@@ -1394,13 +1394,13 @@ what will <code class="docutils literal notranslate"><span class="pre">ls</span>
 <figure class="align-default" id="exercise-filesystem">
 <img alt="chapters/.../figures/bash-basics/exercise-filesystem.png" src="chapters/.../figures/bash-basics/exercise-filesystem.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">fig: exercise filesystem</span><a class="headerlink" href="#exercise-filesystem" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Fig: exercise filesystem</span><a class="headerlink" href="#exercise-filesystem" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="ls-reading-comprehension">
 <h3><code class="docutils literal notranslate"><span class="pre">ls</span></code> reading comprehension<a class="headerlink" href="#ls-reading-comprehension" title="Permalink to this heading">#</a></h3>
-<p>Using the filesystem shown in <a class="reference internal" href="#exercise-filesystem"><span class="std std-ref">Figure</span></a>,
+<p>Using the filesystem shown in <a class="reference internal" href="#exercise-filesystem"><span class="std std-ref">Fig: exercise filesystem</span></a>,
 if <code class="docutils literal notranslate"><span class="pre">pwd</span></code> displays <code class="docutils literal notranslate"><span class="pre">/Users/backup</span></code>,
 and <code class="docutils literal notranslate"><span class="pre">-r</span></code> tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> to display things in reverse order,
 what command(s) will result in the following output:</p>
