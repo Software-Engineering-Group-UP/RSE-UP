@@ -55,7 +55,7 @@ fig: The Shell
 > In particular, the most recent versions of MacOS use a shell called the Z Shell or `zsh`;
 > we will point out a few differences as we go along.
 
-Please see Section [<1 getting started>](https://software-engineering-group-up.github.io/RSE-UP/chapters/01/1_getting_started.html#downloading-the-data) for instructions
+Please see Section [1 getting started](https://software-engineering-group-up.github.io/RSE-UP/chapters/01/1_getting_started.html#downloading-the-data) for instructions
 on how to install and launch the shell on your computer.
 
 ## Exploring Files and Directories 
@@ -91,7 +91,7 @@ amira
 
 > **Learn by Doing**
 > 
-> Amira is one of the learners described in Section [here](welcome:intended-actions). {ref}`intended-actions`. 
+> Amira is one of the learners described in Section [intended audience](https://software-engineering-group-up.github.io/RSE-UP/chapters/introduction.html#intended-audience). 
 > For the rest of the book,
 > we'll present code and examples from her perspective.
 > You should follow along on your own computer,
@@ -121,7 +121,7 @@ which tells us that we are in a directory called `amira`
 that is contained in a top-level directory called `Users`.
 This directory is Amira's **home directory** to understand what that means,
 we must first understand how the filesystem is organized.
-On Amira's computer the [filesyetem](bash_basics_filesystem) looks as follows:
+On Amira's computer the [filesyetem](bash_basic_filesystem) looks as follows:
 
 
 ```{figure} ../../figures/bash-basics/sample-filesystem.png
@@ -1110,7 +1110,7 @@ Please note that if you create or move any files or directories in your Zipf's L
 you may want to reorganize your files following the outline at the beginning of the next chapter.
 If you accidentally delete necessary files,
 you can start with a fresh copy of the data files
-by following the instructions in Section [1 getting started](/chapters/01/1_getting_started.md#downloading-the-data).
+by following the instructions in Section [1 getting started](https://software-engineering-group-up.github.io/RSE-UP/chapters/01/1_getting_started.html#downloading-the-data).
 
 ### Exploring more `ls` flags 
 
