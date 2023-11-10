@@ -10,6 +10,7 @@ parts:
     chapters:
       - file: chapters/02/2_bash_basics.md
       - file: chapters/02/2-2_bash_tools.md
+      - file: chapters/02/2-3_bash_advanced.md
   - caption: Reference and test pages
     chapters:
       - file: chapters/appendix/0_references.md
