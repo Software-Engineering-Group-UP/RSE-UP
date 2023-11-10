@@ -1,3 +1,7 @@
+
+
+```{include} ../../links.md
+```
 # Getting Started
 
 > Everything starts somewhere, though many physicists disagree.
