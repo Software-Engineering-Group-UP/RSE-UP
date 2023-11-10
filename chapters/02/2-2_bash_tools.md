@@ -1,8 +1,7 @@
----
-myst:
-  substitutions:
-    url_key: "https://software-engineering-group-up.github.io/RSE-UP/"
---
+
+
+```{include} ../../links.md
+```
 # Building Tools with the Unix Shell 
 
 > Wisdom comes from experience. Experience is often a result of lack of wisdom.
@@ -547,7 +546,7 @@ so we will break it down into pieces:
 
 > **Continuation Prompts May Differ Too**
 >
-> As mentioned in Chapter []({{url_key}}/chapters/02/02_bash-basics.html)
+> As mentioned in Chapter [](https://software-engineering-group-up.github.io/RSE-UP/chapters/02/02_bash-basics.html)
 ),
 > there is variation in how different shells look and operate.
 > If you noticed the second, third, and fourth code lines
