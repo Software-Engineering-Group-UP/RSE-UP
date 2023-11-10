@@ -91,7 +91,7 @@ amira
 
 > **Learn by Doing**
 >
-> Amira is one of the learners described in Section [](introduction#intended-audience).
+> Amira is one of the learners described in Section [TEST](./chapters/introduction.md#intended-audience).
 > For the rest of the book,
 > we'll present code and examples from her perspective.
 > You should follow along on your own computer,
@@ -100,8 +100,8 @@ amira
 
 Now that we know who we are,
 we can explore where we are and what we have.
-The part of the operating system that manages files and directories (also called \gref{folders}{folder})
-is called the \gref{filesystem}{filesystem}.\index{filesystem}
+The part of the operating system that manages files and directories (also called **folders**
+is called the **filesystem**.
 Some of the most commonly used commands in the shell create, inspect, rename, and delete files and directories.
 Let's start exploring them by running the command `pwd`, which stands for **p**rint **w**orking **d**irectory.
 The "print" part of its name is straightforward;
@@ -119,11 +119,9 @@ $ pwd
 Here, the computer's response is `/Users/amira`,
 which tells us that we are in a directory called `amira`
 that is contained in a top-level directory called `Users`.
-This directory is Amira's \gref{home directory}{home_directory};\index{home directory}
-to understand what that means,
+This directory is Amira's **home directory** to understand what that means,
 we must first understand how the filesystem is organized.
-On Amira's computer
-it looks like Figure [bash basics filesyetem](bash_basics_filesystem).
+On Amira's computer the [filesyetem](bash_basics_filesystem) looks as follows:
 
 
 ```{figure} ../../figures/bash-basics/sample-filesystem.png
@@ -592,7 +590,7 @@ $ ls -F docs
 ```
 
 Let's change our working directory to `docs` using `cd`,
-then use a very simple text editor called **nano** to create a file called `draft.txt`[fig: Nano Editor]{nano_editor}:
+then use a very simple text editor called **nano** to create a file called `draft.txt`[fig: Nano Editor](nano_editor):
 
 ```bash
 $ cd docs
@@ -671,7 +669,7 @@ draft.txt
 > However,
 > both people and programs use two-part names to help them tell different kinds of files apart.
 > The part of the filename after the dot
-> is called the \gref{filename extension}{filename_extension}\index{filename extension}
+> is called the **filename extension**
 > and indicates what type of data the file holds:
 > `.txt` for plain text,
 > `.pdf` for a PDF document,
@@ -1150,7 +1148,7 @@ which is `/Users/amira`?
 
 ### Relative path resolution
 
-Using the filesystem shown in [Figure](exercise_filesystem),
+Using the filesystem shown in [filesytem](exercise_filesystem),
 if `pwd` displays `/Users/sami`,
 what will `ls -F ../backup` display?
 
@@ -1159,7 +1157,7 @@ what will `ls -F ../backup` display?
 3.  `final/ original/ revised/`
 4.  `data/ analysis/ doc/`
 
-```{figure} ../.../figues/bash-basics/exercise-filesystem.png
+```{figure} ../.../figures/bash-basics/exercise-filesystem.png
 :name: exercise_filesystem
 
 fig: exercise filesystem
@@ -1422,17 +1420,17 @@ explain in plain language what (hypothetical) files the expression `novel-????-[
 
 ## Key Points 
 
--   A \gref{shell}{shell} is a program that reads commands and runs other programs.
--   The \gref{filesystem}{filesystem} manages information stored on disk.
+-   A **shell** is a program that reads commands and runs other programs.
+-   The **filesystem** manages information stored on disk.
 -   Information is stored in files, which are located in directories (folders).
 -   Directories can also store other directories, which forms a directory tree.
--   `pwd` prints the user's \gref{current working directory}{current_working_directory}.
--   `/` on its own is the \gref{root directory}{root_directory} of the whole filesystem.
+-   `pwd` prints the user's **current working directory**.
+-   `/` on its own is the \**root directory** of the whole filesystem.
 -   `ls` prints a list of files and directories.
--   An \gref{absolute path}{absolute_path} specifies a location from the root of the filesystem.
--   A \gref{relative path}{relative_path} specifies a location in the filesystem starting from the current directory.
+-   An **absolute path specifies a location from the root of the filesystem.
+-   A **relative path**specifies a location in the filesystem starting from the current directory.
 -   `cd` changes the current working directory.
--   `..` means the \gref{parent directory}{parent_directory}.
+-   `..` means the **parent directory**.
 -   `.` on its own means the current directory.
 -   `mkdir` creates a new directory.
 -   `cp` copies a file.
