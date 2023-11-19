@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/02/2-3_bash_advanced.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Bibliography" href="../appendix/0_references.html" />
+    <link rel="next" title="Bash Basic Exercises" href="../../exercises/1_bash.html" />
     <link rel="prev" title="Building Tools with the Unix Shell" href="2-2_bash_tools.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -173,6 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2-2_bash_tools.html">Building Tools with the Unix Shell</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Going Further with the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/1_bash.html">Bash Basic Exercises</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference and test pages</span></p>
 <ul class="nav bd-sidenav">
@@ -377,19 +378,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-files">Finding Files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-the-shell">Configuring the Shell</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-up">Cleaning up</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-shell-scripts">Variables in shell scripts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-longest-file-with-a-given-extension">Find the longest file with a given extension</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#script-reading-comprehension">Script reading comprehension</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grep">Using <code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-publication-years">Tracking publication years</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-names">Counting names</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-and-subtracting">Matching and subtracting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-pipeline-reading-comprehension"><code class="docutils literal notranslate"><span class="pre">find</span></code> pipeline reading comprehension</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-files-with-different-properties">Finding files with different properties</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points">Key Points</a></li>
 </ul>
             </nav>
@@ -1236,157 +1224,6 @@ If you would like to go further,
 <span id="id2">[<a class="reference internal" href="../appendix/0_references.html#id61" title="Eric J. Ray and Deborah S. Ray. Unix and Linux: Visual QuickStart Guide. Peachpit Press, 2014. ISBN 978-0321997548. An excellent general introduction to all things Unix.">Ray and Ray, 2014</a>]</span> is an excellent general introduction,
 while <span id="id3">[<a class="reference internal" href="../appendix/0_references.html#id38" title="Jeroen Janssens. Data Science at the Command Line. O'Reilly Media, 2014. ISBN 978-1491947852. How to process data using the Unix shell.">Janssens, 2014</a>]</span> looks specifically at how to process data on the command line.</p>
 </section>
-<section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
-<p>As with the previous chapter,
-extra files and directories created during these exercises
-may need to be removed when you are done.</p>
-<section id="cleaning-up">
-<h3>Cleaning up<a class="headerlink" href="#cleaning-up" title="Permalink to this heading">#</a></h3>
-<p>As we have gone through this chapter,
-we have created several files that we won’t need again.
-We can clean them up with the following commands;
-briefly explain what each line does.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/zipf
-$<span class="w"> </span><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.bak&quot;</span><span class="k">)</span>
-&gt;<span class="w"> </span><span class="k">do</span>
-&gt;<span class="w">   </span>rm<span class="w"> </span><span class="nv">$file</span>
-&gt;<span class="w"> </span><span class="k">done</span>
-$<span class="w"> </span>rm<span class="w"> </span>bin/summarize_all_books.sh
-$<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>results
-</pre></div>
-</div>
-</section>
-<section id="variables-in-shell-scripts">
-<h3>Variables in shell scripts<a class="headerlink" href="#variables-in-shell-scripts" title="Permalink to this heading">#</a></h3>
-<p>Imagine you have a shell script called <code class="docutils literal notranslate"><span class="pre">script.sh</span></code> that contains:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>head<span class="w"> </span>-n<span class="w"> </span><span class="nv">$2</span><span class="w"> </span><span class="nv">$1</span>
-tail<span class="w"> </span>-n<span class="w"> </span><span class="nv">$3</span><span class="w"> </span><span class="nv">$1</span>
-</pre></div>
-</div>
-<p>With this script in your <code class="docutils literal notranslate"><span class="pre">data</span></code> directory, you type the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>bash<span class="w"> </span>script.sh<span class="w"> </span><span class="s1">&#39;*.txt&#39;</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span>
-</pre></div>
-</div>
-<p>Which of the following outputs would you expect to see?</p>
-<ol class="arabic simple">
-<li><p>All of the lines between the first and the last lines of each file ending in <code class="docutils literal notranslate"><span class="pre">.txt</span></code>
-in the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory</p></li>
-<li><p>The first and the last line of each file ending in <code class="docutils literal notranslate"><span class="pre">.txt</span></code> in the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory</p></li>
-<li><p>The first and the last line of each file in the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory</p></li>
-<li><p>An error because of the quotes around <code class="docutils literal notranslate"><span class="pre">*.txt</span></code></p></li>
-</ol>
-</section>
-<section id="find-the-longest-file-with-a-given-extension">
-<h3>Find the longest file with a given extension<a class="headerlink" href="#find-the-longest-file-with-a-given-extension" title="Permalink to this heading">#</a></h3>
-<p>Write a shell script called <code class="docutils literal notranslate"><span class="pre">longest.sh</span></code> that takes the name of a
-directory and a filename extension as its arguments, and prints
-out the name of the file with the most lines in that directory
-with that extension. For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>bash<span class="w"> </span>longest.sh<span class="w"> </span>data/<span class="w"> </span>txt
-</pre></div>
-</div>
-<p>would print the name of the <code class="docutils literal notranslate"><span class="pre">.txt</span></code> file in <code class="docutils literal notranslate"><span class="pre">data</span></code> that has
-the most lines.</p>
-</section>
-<section id="script-reading-comprehension">
-<h3>Script reading comprehension<a class="headerlink" href="#script-reading-comprehension" title="Permalink to this heading">#</a></h3>
-<p>For this question, consider your <code class="docutils literal notranslate"><span class="pre">data</span></code> directory once again.
-Explain what each of the following three scripts would do when run as
-<code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">script1.sh</span> <span class="pre">*.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">script2.sh</span> <span class="pre">*.txt</span></code>, and <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">script3.sh</span> <span class="pre">*.txt</span></code> respectively.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># script1.sh</span>
-<span class="nb">echo</span><span class="w"> </span>*.*
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># script2.sh</span>
-<span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="nv">$2</span><span class="w"> </span><span class="nv">$3</span>
-<span class="w">  </span><span class="k">do</span>
-<span class="w">    </span>cat<span class="w"> </span><span class="nv">$filename</span>
-<span class="w">  </span><span class="k">done</span>
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># script3.sh</span>
-<span class="nb">echo</span><span class="w"> </span><span class="nv">$@</span>.txt
-</pre></div>
-</div>
-<p>(You may need to search online to find the meaning of <code class="docutils literal notranslate"><span class="pre">$&#64;</span></code>.)</p>
-</section>
-<section id="using-grep">
-<h3>Using <code class="docutils literal notranslate"><span class="pre">grep</span></code><a class="headerlink" href="#using-grep" title="Permalink to this heading">#</a></h3>
-<p>Assume the following text from <em>The Adventures of Sherlock Holmes</em>
-is contained in a file called <code class="docutils literal notranslate"><span class="pre">excerpt.txt</span></code>:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>To Sherlock Holmes she is always THE woman. I have seldom heard
-him mention her under any other name. In his eyes she eclipses
-and predominates the whole of her sex. It was not that he felt
-any emotion akin to love for Irene Adler.
-</pre></div>
-</div>
-<p>Which of the following commands would provide the following output:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>and predominates the whole of her sex. It was not that he felt
-</pre></div>
-</div>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">&quot;he&quot;</span> <span class="pre">excerpt.txt</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-E</span> <span class="pre">&quot;he&quot;</span> <span class="pre">excerpt.txt</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-w</span> <span class="pre">&quot;he&quot;</span> <span class="pre">excerpt.txt</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">&quot;he&quot;</span> <span class="pre">excerpt.txt</span></code></p></li>
-</ol>
-</section>
-<section id="tracking-publication-years">
-<h3>Tracking publication years<a class="headerlink" href="#tracking-publication-years" title="Permalink to this heading">#</a></h3>
-<p>In Exercise <strong>TODO</strong> ref(bash-tools-ex-pipe-construction)
-you examined code that extracted the publication year from a list of book titles.
-Write a shell script called <code class="docutils literal notranslate"><span class="pre">year.sh</span></code> that takes any number of
-filenames as command-line arguments,
-and uses a variation of the code you used earlier to print a list
-of the unique publication years appearing in each of those files separately.</p>
-</section>
-<section id="counting-names">
-<h3>Counting names<a class="headerlink" href="#counting-names" title="Permalink to this heading">#</a></h3>
-<p>You and your friend have just finished reading <em>Sense and Sensibility</em>
-and are now having an argument.
-Your friend thinks that the elder of the two Dashwood sisters,
-Elinor,
-was mentioned more frequently in the book,
-but you are certain it was the younger sister, Marianne.
-Luckily, <code class="docutils literal notranslate"><span class="pre">sense_and_sensibility.txt</span></code> contains the full text of the novel.
-Using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop,
-how would you tabulate the number of times each of the sisters is mentioned?</p>
-<p>Hint: one solution might employ
-the commands <code class="docutils literal notranslate"><span class="pre">grep</span></code> and <code class="docutils literal notranslate"><span class="pre">wc</span></code> and a <code class="docutils literal notranslate"><span class="pre">|</span></code>,
-while another might utilize <code class="docutils literal notranslate"><span class="pre">grep</span></code> options.
-There is often more than one way to solve a problem with the shell;
-people choose solutions based on readability,
-speed,
-and what commands they are most familiar with.</p>
-</section>
-<section id="matching-and-subtracting">
-<h3>Matching and subtracting<a class="headerlink" href="#matching-and-subtracting" title="Permalink to this heading">#</a></h3>
-<p>Assume you are in the root directory of the <code class="docutils literal notranslate"><span class="pre">zipf</span></code> project.
-Which of the following commands will find all files in <code class="docutils literal notranslate"><span class="pre">data</span></code> whose names end in <code class="docutils literal notranslate"><span class="pre">e.txt</span></code>,
-but do <em>not</em> contain the word <code class="docutils literal notranslate"><span class="pre">machine</span></code>?</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">data</span> <span class="pre">-name</span> <span class="pre">'*e.txt'</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">machine</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">data</span> <span class="pre">-name</span> <span class="pre">*e.txt</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">machine</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">&quot;machine&quot;</span> <span class="pre">$(find</span> <span class="pre">data</span> <span class="pre">-name</span> <span class="pre">'*e.txt')</span></code></p></li>
-<li><p>None of the above.</p></li>
-</ol>
-</section>
-<section id="find-pipeline-reading-comprehension">
-<h3><code class="docutils literal notranslate"><span class="pre">find</span></code> pipeline reading comprehension<a class="headerlink" href="#find-pipeline-reading-comprehension" title="Permalink to this heading">#</a></h3>
-<p>Write a short explanatory comment for the following shell script:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wc<span class="w"> </span>-l<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.dat&#39;</span><span class="k">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n
-</pre></div>
-</div>
-</section>
-<section id="finding-files-with-different-properties">
-<h3>Finding files with different properties<a class="headerlink" href="#finding-files-with-different-properties" title="Permalink to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">find</span></code> command can be given criteria called “tests” to locate files with specific attributes, such as creation time, size, or ownership.
-Use <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">find</span></code> to explore these, then write a single command using <code class="docutils literal notranslate"><span class="pre">-type</span></code>, <code class="docutils literal notranslate"><span class="pre">-mtime</span></code>, and <code class="docutils literal notranslate"><span class="pre">-user</span></code> to find all files in or below your Desktop directory
-that are owned by you and were modified in the last 24 hours.
-Explain why the value for <code class="docutils literal notranslate"><span class="pre">-mtime</span></code> needs to be negative.</p>
-</section>
-</section>
 <section id="key-points">
 <h2>Key Points<a class="headerlink" href="#key-points" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -1444,11 +1281,11 @@ Explain why the value for <code class="docutils literal notranslate"><span class
       </div>
     </a>
     <a class="right-next"
-       href="../appendix/0_references.html"
+       href="../../exercises/1_bash.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bibliography</p>
+        <p class="prev-next-title">Bash Basic Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1474,19 +1311,6 @@ Explain why the value for <code class="docutils literal notranslate"><span class
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-files">Finding Files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-the-shell">Configuring the Shell</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-up">Cleaning up</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-shell-scripts">Variables in shell scripts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-longest-file-with-a-given-extension">Find the longest file with a given extension</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#script-reading-comprehension">Script reading comprehension</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grep">Using <code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-publication-years">Tracking publication years</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-names">Counting names</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-and-subtracting">Matching and subtracting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-pipeline-reading-comprehension"><code class="docutils literal notranslate"><span class="pre">find</span></code> pipeline reading comprehension</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-files-with-different-properties">Finding files with different properties</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points">Key Points</a></li>
 </ul>
   </nav></div>
