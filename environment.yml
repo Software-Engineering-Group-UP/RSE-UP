@@ -1,8 +1,16 @@
-name: textbook
-
+name: RSE-UP-TEXTBOOK
 channels:
   - conda-forge
-
 dependencies:
+  - python
+  - numpy
+  - pip
   - pip:
-    -r requirements.txt
+    - nbgitpuller
+    - sphinx-gallery
+    - pandas
+    - matplotlib
+  #  - jupyter-book
+    - numpy
+  #  - datascience
+    - sphinx-multitoc-numbering
