@@ -1,6 +1,0 @@
-numpy
-pandas
-matplotlib
-scipy
-pytest
-pyyaml
