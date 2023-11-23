@@ -1,3 +1,5 @@
+```{include} ../../links.md
+```
 (welcome)=
 # Welcome 
 
@@ -182,8 +184,4 @@ This book was created on basis of the book 'Research Software Engineering with P
 Damien Irving and Kate Hertweck and Luke Johnston and Joel Ostblom and Charlotte Wickham and Greg Wilson. 
 
 The online version can be found [here!](https://merely-useful.tech/py-rse/)
-
-```{include} ../../links.md
-```
-
 

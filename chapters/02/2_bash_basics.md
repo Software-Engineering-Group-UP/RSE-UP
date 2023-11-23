@@ -1,3 +1,6 @@
+```{include} ../../links.md
+```
+
 # The Basics of the Unix Shell 
 
 > Ninety percent of most magic merely consists of knowing one extra fact.
@@ -1127,5 +1130,3 @@ in order to create powerful, efficient workflows.
 
 
 
-```{include} ../../links.md
-```
