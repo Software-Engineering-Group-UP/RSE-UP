@@ -1,0 +1,1434 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Building Command-Line Tools with Python &#8212; RSE-ING</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/book.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/03/3_building_commandline_python';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/03/3_building_commandline_python.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Bibliography" href="../appendix/0_references.html" />
+    <link rel="prev" title="Bash Basic Exercises" href="../../exercises/1_bash.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../introduction.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RSE-ING</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../introduction.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/1_getting_started.html">Getting Started</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02/2_bash_basics.html">The Basics of the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/2-2_bash_tools.html">Building Tools with the Unix Shell</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../02/2-3_bash_advanced.html">Going Further with the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/1_bash.html">Bash Basic Exercises</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Building Command-Line Tools with Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference and test pages</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/0_references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/03/3_building_commandline_python.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/03/3_building_commandline_python.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Building Command-Line Tools with Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programs-and-modules-scripting-main">Programs and Modules {#scripting-main}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-command-line-options-scripting-options">Handling Command-Line Options {#scripting-options}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-scripting-docstrings">Documentation {#scripting-docstrings}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-words-scripting-wordcount">Counting Words {#scripting-wordcount}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipelining-scripting-pipeline">Pipelining {#scripting-pipeline}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-and-optional-arguments-scripting-positional-optional">Positional and Optional Arguments {#scripting-positional-optional}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collating-results-scripting-collate">Collating Results {#scripting-collate}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-our-own-modules-scripting-modules">Writing Our Own Modules {#scripting-modules}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-scripting-plotting">Plotting {#scripting-plotting}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-scripting-summary">Summary {#scripting-summary}</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="building-command-line-tools-with-python">
+<h1>Building Command-Line Tools with Python<a class="headerlink" href="#building-command-line-tools-with-python" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>Multiple exclamation marks are a sure sign of a diseased mind.</p>
+<p>— Terry Pratchett</p>
+</div></blockquote>
+<p>The [Jupyter Notebook][jupyter], PyCharm, and other graphical interfaces
+are great for prototyping code and exploring data,
+but eventually we may need to apply our code to thousands of data files,
+run it with many different parameters,
+or combine it with other programs as part of a data analysis pipeline.
+The easiest way to do this is often
+to turn our code into a standalone program that can be run in the Unix shell
+just like other command-line tools [&#64;Tasc2017].</p>
+<p>In this chapter we will develop some command-line Python programs\index{Python!command line}
+that handle input and output in the same way as other shell commands,
+can be controlled by several option flags,
+and provide useful information when things go wrong.
+The result will have more scaffolding than useful application code,
+but that scaffolding stays more or less the same as programs get larger.</p>
+<p>After the previous chapters,
+our Zipf’s Law project should have the following files and directories:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zipf/
+├── bin
+│   └── book_summary.sh
+└── data
+    ├── README.md
+    ├── dracula.txt
+    ├── frankenstein.txt
+    ├── jane_eyre.txt
+    ├── moby_dick.txt
+    ├── sense_and_sensibility.txt
+    ├── sherlock_holmes.txt
+    └── time_machine.txt
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Python Style</strong></p>
+<p>When writing Python code there are many style choices to make.
+How many spaces should I put between functions?
+Should I use capital letters in variable names?
+How should I order all the different elements of a Python script?
+Fortunately,
+there are well established conventions and guidelines
+for good Python style.
+We follow those guidelines throughout this book
+and discuss them in detail in Appendix &#64;ref(style).</p>
+</div></blockquote>
+<section id="programs-and-modules-scripting-main">
+<h2>Programs and Modules {#scripting-main}<a class="headerlink" href="#programs-and-modules-scripting-main" title="Permalink to this heading">#</a></h2>
+<p>To create a Python program that can run from the command line,\index{Python!program vs.\ module}
+the first thing we do is to add the following to the bottom of the file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>This strange-looking check tells us
+whether the file is running as a standalone program
+or whether it is being imported as a module by some other program.
+When we import a Python file as a module in another program,
+the <code class="docutils literal notranslate"><span class="pre">__name__</span></code> variable is automatically set to the name of the file.\index{__name__ variable (in Python)}\index{Python!__name__ variable}
+When we run a Python file as a standalone program,
+on the other hand,
+<code class="docutils literal notranslate"><span class="pre">__name__</span></code> is always set to the special string <code class="docutils literal notranslate"><span class="pre">&quot;__main__&quot;</span></code>.
+To illustrate this,
+let’s consider a script named <code class="docutils literal notranslate"><span class="pre">print_name.py</span></code>
+that prints the value of the <code class="docutils literal notranslate"><span class="pre">__name__</span></code> variable:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When we run this file directly,
+it will print <code class="docutils literal notranslate"><span class="pre">__main__</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>print_name.py
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>__main__
+</pre></div>
+</div>
+<p>But if we import <code class="docutils literal notranslate"><span class="pre">print_name.py</span></code> from another file
+or from the Python interpreter,
+it will print the name of the file,
+i.e., <code class="docutils literal notranslate"><span class="pre">print_name</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Python 3.7.6 (default, Jan  8 2020, 13:42:34) 
+[Clang 4.0.1 (tags/RELEASE_401/final)] :: 
+Anaconda, Inc. on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot;
+for more information.
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">print_name</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>print_name
+</pre></div>
+</div>
+<p>Checking the value of the variable <code class="docutils literal notranslate"><span class="pre">__name__</span></code>
+therefore tells us whether our file is the top-level program or not.
+If it is,
+we can handle command-line options, print help, or whatever else is appropriate;
+if it isn’t,
+we should assume that some other code is doing this.</p>
+<p>We could put the main program code directly under the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># code goes here</span>
+</pre></div>
+</div>
+<p>but that is considered poor practice,
+since it makes testing harder (Chapter &#64;ref(testing)).
+Instead,
+we put the high-level logic in a function,
+then call that function if our file is being run directly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># code goes here</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This top-level function is usually called <code class="docutils literal notranslate"><span class="pre">main</span></code>,
+but we can use whatever name we want.</p>
+</section>
+<section id="handling-command-line-options-scripting-options">
+<h2>Handling Command-Line Options {#scripting-options}<a class="headerlink" href="#handling-command-line-options-scripting-options" title="Permalink to this heading">#</a></h2>
+<p>The main function in a program usually starts by
+parsing any options the user gave on the command line.\index{option (of Python program)}\index{Python!option}
+The most commonly used library for doing this in Python is [<code class="docutils literal notranslate"><span class="pre">argparse</span></code>][argparse],
+which can handle options with or without arguments,
+convert arguments from strings to numbers or other types,
+display help,
+and many other things.</p>
+<p>The simplest way to explain how <code class="docutils literal notranslate"><span class="pre">argparse</span></code> works is by example.
+Let’s create a short Python program called <code class="docutils literal notranslate"><span class="pre">script_template.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Input file:&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">infile</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Output file:&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">outfile</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">USAGE</span> <span class="o">=</span> <span class="s1">&#39;Brief description of what the script does.&#39;</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="n">USAGE</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;infile&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Input file name&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;outfile&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Output file name&#39;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Empty Lines, Again</strong></p>
+<p>As we discussed in the last chapter for shell scripts,
+remember to end your Python scripts in a newline character
+(which we view as an empty line).\index{whitespace}</p>
+</div></blockquote>
+<p>If <code class="docutils literal notranslate"><span class="pre">script_template.py</span></code> is run as a standalone program at the command line,
+then <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code> is true,
+so the program uses <code class="docutils literal notranslate"><span class="pre">argparse</span></code> to create an argument parser.
+It then specifies that it expects two command-line arguments:
+an input filename (<code class="docutils literal notranslate"><span class="pre">infile</span></code>) and an output filename (<code class="docutils literal notranslate"><span class="pre">outfile</span></code>).
+The program uses <code class="docutils literal notranslate"><span class="pre">parser.parse_args()</span></code> to parse the actual command-line arguments given by the user
+and stores the result in a variable called <code class="docutils literal notranslate"><span class="pre">args</span></code>,
+which it passes to <code class="docutils literal notranslate"><span class="pre">main</span></code>.
+That function can then get the values using the names specified
+in the <code class="docutils literal notranslate"><span class="pre">parser.add_argument</span></code> calls.</p>
+<blockquote>
+<div><p><strong>Specifying Types</strong></p>
+<p>We have passed <code class="docutils literal notranslate"><span class="pre">type=str</span></code> to <code class="docutils literal notranslate"><span class="pre">add_argument</span></code> to tell <code class="docutils literal notranslate"><span class="pre">argparse</span></code> that
+we want <code class="docutils literal notranslate"><span class="pre">infile</span></code> and <code class="docutils literal notranslate"><span class="pre">outfile</span></code> to be treated as strings.
+<code class="docutils literal notranslate"><span class="pre">str</span></code> is not quoted because it is not a string itself:
+instead,
+it is the built-in Python function that converts things to strings.
+As we will see below,
+we can pass in other functions like <code class="docutils literal notranslate"><span class="pre">int</span></code>
+if we want arguments converted to numbers.</p>
+</div></blockquote>
+<p>If we run <code class="docutils literal notranslate"><span class="pre">script_template.py</span></code> at the command line,
+the output shows us that <code class="docutils literal notranslate"><span class="pre">argparse</span></code> has successfully handled the arguments:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/zipf
+$<span class="w"> </span>python<span class="w"> </span>script_template.py<span class="w"> </span><span class="k">in</span>.csv<span class="w"> </span>out.png
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Input file: in.csv
+Output file: out.png
+</pre></div>
+</div>
+<p>It also displays an error message if we give the program invalid arguments:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>script_template.py<span class="w"> </span><span class="k">in</span>.csv
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>usage: script_template.py [-h] infile outfile
+script_template.py: error: the following arguments are
+  required: outfile
+</pre></div>
+</div>
+<p>Finally,
+it automatically generates help information
+(which we can get using the <code class="docutils literal notranslate"><span class="pre">-h</span></code> option):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>script_template.py<span class="w"> </span>-h
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>usage: script_template.py [-h] infile outfile
+
+Brief description of what the script does.
+
+positional arguments:
+  infile      Input file name
+  outfile     Output file name
+
+optional arguments:
+  -h, --help  show this help message and exit
+</pre></div>
+</div>
+</section>
+<section id="documentation-scripting-docstrings">
+<h2>Documentation {#scripting-docstrings}<a class="headerlink" href="#documentation-scripting-docstrings" title="Permalink to this heading">#</a></h2>
+<p>Our program template is a good starting point,
+but we improve it right away
+by adding a bit of documentation.\index{Python!documenting}
+To demonstrate,
+let’s write a function that doubles a number:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="s1">&#39;Double the input.&#39;</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">num</span>
+</pre></div>
+</div>
+<p>The first line of this function is a string
+that isn’t assigned to a variable.
+Such a string is called a documentation string,
+or \gref{docstring}{docstring} for short.\index{docstring (in Python)}\index{Python!docstring}
+If we call our function it does what we expect:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">double</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+<p>However,
+we can also ask for the function’s documentation,
+which is stored in <code class="docutils literal notranslate"><span class="pre">double.__doc__</span></code>:\index{__doc__ variable (in Python)}</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">double</span><span class="o">.</span><span class="vm">__doc__</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&#39;Double the input.&#39;
+</pre></div>
+</div>
+<p>Python creates the variable <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> automatically for every function,
+just as it creates the variable <code class="docutils literal notranslate"><span class="pre">__name__</span></code> for every file.
+If we don’t write a docstring for a function,
+<code class="docutils literal notranslate"><span class="pre">__doc__</span></code>’s value is an empty string.
+We can put whatever text we want into a function’s docstring,
+but it is usually used to provide online documentation.</p>
+<p>We can also put a docstring at the start of a file,
+in which case it is assigned to a variable called <code class="docutils literal notranslate"><span class="pre">__doc__</span></code>
+that is visible inside the file.
+If we add documentation to our template,
+it becomes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Brief description of what the script does.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run the program.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Input file:&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">infile</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Output file:&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">outfile</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;infile&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Input file name&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;outfile&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Output file name&#39;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that docstrings are usually written using triple-quoted strings,\index{Python!triple-quoted strings}
+since these can span multiple lines.
+Note also how we pass <code class="docutils literal notranslate"><span class="pre">description=__doc__</span></code> to <code class="docutils literal notranslate"><span class="pre">argparse.ArgumentParser</span></code>.
+This saves us from typing the same information twice,
+but more importantly ensures that
+the help message provided in response to the <code class="docutils literal notranslate"><span class="pre">-h</span></code> option
+will be the same as the interactive help.</p>
+<p>Let’s try this out in an interactive Python session.
+(Remember, do not type the <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> prompt:
+Python provides this for us.)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Python 3.7.6 (default, Jan  8 2020, 13:42:34) 
+[Clang 4.0.1 (tags/RELEASE_401/final)] :: 
+Anaconda, Inc. on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot;
+for more information.
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">script_template</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">script_template</span><span class="o">.</span><span class="vm">__doc__</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&#39;Brief description of what the script does.&#39;
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">script_template</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Help on module script_template:
+
+NAME
+    script_template - Brief description of what the script does.
+
+FUNCTIONS
+    main(args)
+        Run the program.
+
+FILE
+    /Users/amira/script_template.py
+</pre></div>
+</div>
+<p>As this example shows,
+if we ask for help on the module,
+Python formats and displays all of the docstrings for everything in the file.
+We talk more about what to put in a docstring in Appendix &#64;ref(documentation).</p>
+</section>
+<section id="counting-words-scripting-wordcount">
+<h2>Counting Words {#scripting-wordcount}<a class="headerlink" href="#counting-words-scripting-wordcount" title="Permalink to this heading">#</a></h2>
+<p>Now that we have a template for command-line Python programs,
+we can use it to check Zipf’s Law for our collection of classic novels.
+We start by moving the template into the directory
+where we store our runnable programs (Section &#64;ref(getting-started-organize)):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mv<span class="w"> </span>script_template.py<span class="w"> </span>bin
+</pre></div>
+</div>
+<p>Next,
+let’s write a function that counts how often words appear in a file.
+Our function splits the text on \gref{whitespace}{whitespace} characters
+(which is the default behavior of the string object’s <code class="docutils literal notranslate"><span class="pre">split</span></code> method),
+then strips leading and trailing punctuation.
+This isn’t completely correct—if two words are joined by a long dash
+like “correct” and “if” in this sentence, for example,
+they will be treated as one word—but given that long dashes are used relatively infrequently,
+it’s close enough to correct for our purposes.
+(We will submit a bug report about the long dash issue in Section &#64;ref(teams-bugs)).
+We also use the <code class="docutils literal notranslate"><span class="pre">Counter</span></code> class from the <code class="docutils literal notranslate"><span class="pre">collections</span></code> library
+to count how many times each word occurs.
+If we give <code class="docutils literal notranslate"><span class="pre">Counter</span></code> a list of words,
+the result is an object that contains
+the number of times each one appears in the list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+
+<span class="k">def</span> <span class="nf">count_words</span><span class="p">(</span><span class="n">reader</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Count the occurrence of each word in a string.&quot;&quot;&quot;</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">chunks</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">npunc</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">chunks</span><span class="p">]</span> 
+    <span class="n">word_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">npunc</span> <span class="k">if</span> <span class="n">word</span><span class="p">]</span>
+    <span class="n">word_counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">word_list</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">word_counts</span>
+</pre></div>
+</div>
+<p>Let’s try our function on <em>Dracula</em>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/dracula.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="n">word_counts</span> <span class="o">=</span> <span class="n">count_words</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word_counts</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Counter({&#39;the&#39;: 8036, &#39;and&#39;: 5896, &#39;i&#39;: 4712, &#39;to&#39;: 4540,
+         &#39;of&#39;: 3738, &#39;a&#39;: 2961, &#39;in&#39;: 2558, &#39;he&#39;: 2543,
+         &#39;that&#39;: 2455, &#39;it&#39;: 2141, &#39;was&#39;: 1877, &#39;as&#39;: 1581,
+         &#39;we&#39;: 1535, &#39;for&#39;: 1534, ...})
+</pre></div>
+</div>
+<p>If we want the word counts in a format like CSV for easier processing,
+we can write another small function that takes our <code class="docutils literal notranslate"><span class="pre">Counter</span></code> object,
+orders its contents from most to least frequent,
+and then writes it to \gref{standard output}{stdout} as CSV:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+
+<span class="k">def</span> <span class="nf">collection_to_csv</span><span class="p">(</span><span class="n">collection</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write collection of items and counts in csv format.&quot;&quot;&quot;</span>
+    <span class="n">collection</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">most_common</span><span class="p">()</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">collection</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Running this would print all the distinct words in the book
+along with their counts.
+This list could well be several thousand lines long,
+so to make the output a little easier to view on our screen,
+we can add an option to limit the output to the most frequent words.
+We set its default value to <code class="docutils literal notranslate"><span class="pre">None</span></code>
+so that we can easily tell if the caller <em>hasn’t</em> specified a cutoff,
+in which case we display the whole collection:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collection_to_csv</span><span class="p">(</span><span class="n">collection</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write collection of items and counts in csv format.&quot;&quot;&quot;</span>
+    <span class="n">collection</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">most_common</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">collection</span><span class="p">)</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">collection</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">num</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">collection_to_csv</span><span class="p">(</span><span class="n">word_counts</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>the,8036
+and,5896
+i,4712
+to,4540
+of,3738
+a,2961
+in,2558
+he,2543
+that,2455
+it,2141
+</pre></div>
+</div>
+<p>\newpage</p>
+<p>To make our <code class="docutils literal notranslate"><span class="pre">count_words</span></code> and <code class="docutils literal notranslate"><span class="pre">collection_to_csv</span></code> functions available at the command line,
+we need to insert them into our script template
+and call them from within the <code class="docutils literal notranslate"><span class="pre">main</span></code> function.
+Let’s call our program <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code>
+and put it in the <code class="docutils literal notranslate"><span class="pre">bin</span></code> subdirectory of the <code class="docutils literal notranslate"><span class="pre">zipf</span></code> project:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Count the occurrences of all words in a text</span>
+<span class="sd">and output them in CSV format.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+
+<span class="k">def</span> <span class="nf">collection_to_csv</span><span class="p">(</span><span class="n">collection</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write collection of items and counts in csv format.&quot;&quot;&quot;</span>
+    <span class="n">collection</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">most_common</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">collection</span><span class="p">)</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">collection</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">num</span><span class="p">])</span>
+
+
+<span class="k">def</span> <span class="nf">count_words</span><span class="p">(</span><span class="n">reader</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Count the occurrence of each word in a string.&quot;&quot;&quot;</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">chunks</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">npunc</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">chunks</span><span class="p">]</span>
+    <span class="n">word_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">npunc</span> <span class="k">if</span> <span class="n">word</span><span class="p">]</span>
+    <span class="n">word_counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">word_list</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">word_counts</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run the command line program.&quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">infile</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="n">word_counts</span> <span class="o">=</span> <span class="n">count_words</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+    <span class="n">collection_to_csv</span><span class="p">(</span><span class="n">word_counts</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">num</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;infile&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Input file name&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--num&#39;</span><span class="p">,</span>
+                        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Output n most frequent words&#39;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that we have replaced the <code class="docutils literal notranslate"><span class="pre">'outfile'</span></code> argument from our template script
+with an optional <code class="docutils literal notranslate"><span class="pre">-n</span></code> (or <code class="docutils literal notranslate"><span class="pre">--num</span></code>) flag to control how much output is printed
+and modified <code class="docutils literal notranslate"><span class="pre">collection_to_csv</span></code> so that it always prints to standard output.
+If we want that output in a file,
+we can redirect with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>.</p>
+<p>Let’s take our program for a test drive:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>bin/countwords.py<span class="w"> </span>data/dracula.txt<span class="w"> </span>-n<span class="w"> </span><span class="m">10</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>the,8036
+and,5896
+i,4712
+to,4540
+of,3738
+a,2961
+in,2558
+he,2543
+that,2455
+it,2141
+</pre></div>
+</div>
+</section>
+<section id="pipelining-scripting-pipeline">
+<h2>Pipelining {#scripting-pipeline}<a class="headerlink" href="#pipelining-scripting-pipeline" title="Permalink to this heading">#</a></h2>
+<p>As discussed in Section &#64;ref(bash-tools-stdio),
+most Unix commands follow a useful convention:
+if the user doesn’t specify the names of any input files,
+they read from \gref{standard input}{stdin}.\index{standard input!in Python}
+Similarly,
+if no output file is specified,
+the command sends its results to \gref{standard output}{stdout}.
+This makes it easy to use the command in a pipeline.</p>
+<p>Our program always sends its output to standard output;\index{standard output!in Python}
+as noted above,
+we can always redirect it to a file with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>.
+If we want <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code> to read from standard input,
+we only need to change the handling of <code class="docutils literal notranslate"><span class="pre">infile</span></code> in the argument parser
+and simplify <code class="docutils literal notranslate"><span class="pre">main</span></code> to match:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run the command line program.&quot;&quot;&quot;</span>
+    <span class="n">word_counts</span> <span class="o">=</span> <span class="n">count_words</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">infile</span><span class="p">)</span>
+    <span class="n">collection_to_csv</span><span class="p">(</span><span class="n">word_counts</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">num</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;infile&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">FileType</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">),</span>
+                        <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Input file name&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--num&#39;</span><span class="p">,</span>
+                        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Output n most frequent words&#39;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There are two changes to how <code class="docutils literal notranslate"><span class="pre">add_argument</span></code> handles <code class="docutils literal notranslate"><span class="pre">infile</span></code>:</p>
+<ol class="arabic simple">
+<li><p>Setting <code class="docutils literal notranslate"><span class="pre">type=argparse.FileType('r')</span></code>
+tells <code class="docutils literal notranslate"><span class="pre">argparse</span></code> to treat the argument as a filename
+and open that file for reading.
+This is why we no longer need to call <code class="docutils literal notranslate"><span class="pre">open</span></code> ourselves,
+and why <code class="docutils literal notranslate"><span class="pre">main</span></code> can pass <code class="docutils literal notranslate"><span class="pre">args.infile</span></code> directly to <code class="docutils literal notranslate"><span class="pre">count_words</span></code>.</p></li>
+<li><p>The number of expected arguments (<code class="docutils literal notranslate"><span class="pre">nargs</span></code>) is set to <code class="docutils literal notranslate"><span class="pre">?</span></code>.
+This means that if an argument is given it will be used,
+but if none is provided,
+a default of <code class="docutils literal notranslate"><span class="pre">'-'</span></code> will be used instead.
+<code class="docutils literal notranslate"><span class="pre">argparse.FileType('r')</span></code> understands <code class="docutils literal notranslate"><span class="pre">'-'</span></code> to mean “read from standard input”;
+this is another Unix convention that many programs follow.</p></li>
+</ol>
+<p>After these changes,
+we can create a pipeline like this
+to count the words in the first 500 lines of a book:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">500</span><span class="w"> </span>data/dracula.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>python<span class="w"> </span>bin/countwords.py<span class="w"> </span>--n<span class="w"> </span><span class="m">10</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>the,227
+and,121
+of,116
+i,98
+to,80
+in,58
+a,49
+it,45
+was,42
+that,41
+</pre></div>
+</div>
+</section>
+<section id="positional-and-optional-arguments-scripting-positional-optional">
+<h2>Positional and Optional Arguments {#scripting-positional-optional}<a class="headerlink" href="#positional-and-optional-arguments-scripting-positional-optional" title="Permalink to this heading">#</a></h2>
+<p>We have met two kinds of command-line arguments while writing <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code>.
+\gref{Optional arguments}{optional_argument}\index{option (of shell command)!optional}
+are defined using a leading <code class="docutils literal notranslate"><span class="pre">-</span></code> or <code class="docutils literal notranslate"><span class="pre">--</span></code> (or both),
+which means that all three of the following definitions are valid:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Limit output&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--num&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Limit output&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--num&#39;</span><span class="p">,</span>
+                    <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Limit output&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The convention is for <code class="docutils literal notranslate"><span class="pre">-</span></code> to precede
+a \gref{short}{short_option} (single letter) option\index{option (of shell command)!short}
+and <code class="docutils literal notranslate"><span class="pre">--</span></code> a \gref{long}{long_option} (multi-letter) option.\index{option (of shell command)!long}
+The user can provide optional arguments at the command line in any order they like.</p>
+<p>\gref{Positional arguments}{positional_argument}\index{positional argument (of program)}
+have no leading dashes and are not optional:
+the user must provide them at the command line
+in the order in which they are specified to <code class="docutils literal notranslate"><span class="pre">add_argument</span></code>
+(unless <code class="docutils literal notranslate"><span class="pre">nargs='?'</span></code> is provided to say that the value is optional).</p>
+</section>
+<section id="collating-results-scripting-collate">
+<h2>Collating Results {#scripting-collate}<a class="headerlink" href="#collating-results-scripting-collate" title="Permalink to this heading">#</a></h2>
+<p>Ultimately,
+we want to save the word counts to a CSV file for further analysis and plotting.
+Let’s create a subdirectory to hold our results
+(following the structure described in Section &#64;ref(getting-started-structure)):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>results
+</pre></div>
+</div>
+<p>and then save the counts for various files:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>bin/countwords.py<span class="w"> </span>data/dracula.txt<span class="w"> </span>&gt;<span class="w"> </span>results/dracula.csv
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>bin/countwords.py<span class="w"> </span>data/moby_dick.txt<span class="w"> </span>&gt;
+<span class="w">  </span>results/moby_dick.csv
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>bin/countwords.py<span class="w"> </span>data/jane_eyre.txt<span class="w"> </span>&gt;
+<span class="w">  </span>results/jane_eyre.csv
+</pre></div>
+</div>
+<p>As in the previous chapter,
+we’ve split long lines of code onto separate lines for formatting purposes;
+each of the three code chunks above should be run as a single line of code.</p>
+<p>Now that we can get word counts for individual books
+we can collate the counts for several books.
+This can be done using a loop that adds up the counts of a word
+from each of the CSV files created by <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code>.
+Using the same template as before,
+we can write a program called <code class="docutils literal notranslate"><span class="pre">collate.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Combine multiple word count CSV-files</span>
+<span class="sd">into a single cumulative count.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+
+<span class="k">def</span> <span class="nf">collection_to_csv</span><span class="p">(</span><span class="n">collection</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write collection of items and counts in csv format.&quot;&quot;&quot;</span>
+    <span class="n">collection</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">most_common</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">collection</span><span class="p">)</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">collection</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">num</span><span class="p">])</span>
+
+
+<span class="k">def</span> <span class="nf">update_counts</span><span class="p">(</span><span class="n">reader</span><span class="p">,</span> <span class="n">word_counts</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Update word counts with data from another reader/file.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">reader</span><span class="p">):</span>
+        <span class="n">word_counts</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run the command line program.&quot;&quot;&quot;</span>
+    <span class="n">word_counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">infiles</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
+            <span class="n">update_counts</span><span class="p">(</span><span class="n">reader</span><span class="p">,</span> <span class="n">word_counts</span><span class="p">)</span>
+    <span class="n">collection_to_csv</span><span class="p">(</span><span class="n">word_counts</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">num</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;infiles&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Input file names&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--num&#39;</span><span class="p">,</span>
+                        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Output n most frequent words&#39;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The loop in the <code class="docutils literal notranslate"><span class="pre">main</span></code> function iterates over each filename in <code class="docutils literal notranslate"><span class="pre">infiles</span></code>,
+opens the CSV file,
+and calls <code class="docutils literal notranslate"><span class="pre">update_counts</span></code> with the input stream as one parameter
+and the counter as the other.
+<code class="docutils literal notranslate"><span class="pre">update_counts</span></code> then iterates through all the words in the CSV files
+and increments the counts using the <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator.</p>
+<p>Note that we have not used <code class="docutils literal notranslate"><span class="pre">type=argparse.FileType('r')</span></code> here.
+Instead,
+we have called the option <code class="docutils literal notranslate"><span class="pre">infiles</span></code> (plural)
+and specified <code class="docutils literal notranslate"><span class="pre">nargs='*'</span></code>
+to tell <code class="docutils literal notranslate"><span class="pre">argparse</span></code> that we will accept zero or more filenames.
+We must then open the files ourselves.</p>
+<p>Let’s give <code class="docutils literal notranslate"><span class="pre">collate.py</span></code> a try
+(using <code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">10</span></code> to limit the number of lines of output):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>bin/collate.py<span class="w"> </span>results/dracula.csv
+<span class="w">  </span>results/moby_dick.csv<span class="w"> </span>results/jane_eyre.csv<span class="w"> </span>-n<span class="w"> </span><span class="m">10</span>
+</pre></div>
+</div>
+<p>\newpage</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>the,30505
+and,18916
+of,14908
+to,14369
+i,13572
+a,12059
+in,9547
+that,6984
+it,6821
+he,6142
+</pre></div>
+</div>
+</section>
+<section id="writing-our-own-modules-scripting-modules">
+<h2>Writing Our Own Modules {#scripting-modules}<a class="headerlink" href="#writing-our-own-modules-scripting-modules" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">countwords.py</span></code> and <code class="docutils literal notranslate"><span class="pre">collate.py</span></code> both now contain the function <code class="docutils literal notranslate"><span class="pre">collection_to_csv</span></code>.
+Having the same function in two or more places is a bad idea:
+if we want to improve it or fix a bug,
+we have to find and change every single script that contains a copy.</p>
+<p>The solution is to put the shared functions in a separate file
+and load that file as a module.\index{Python!module}\index{module (in Python)}
+Let’s create a file called <code class="docutils literal notranslate"><span class="pre">utilities.py</span></code> in the <code class="docutils literal notranslate"><span class="pre">bin</span></code> directory
+that looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Collection of commonly used functions.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+
+<span class="k">def</span> <span class="nf">collection_to_csv</span><span class="p">(</span><span class="n">collection</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Write out collection of items and counts in csv format.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    collection : collections.Counter</span>
+<span class="sd">        Collection of items and counts</span>
+<span class="sd">    num : int</span>
+<span class="sd">        Limit output to N most frequent items</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">collection</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">most_common</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">collection</span><span class="p">)</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">collection</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">num</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Note that we have written a much more detailed docstring for <code class="docutils literal notranslate"><span class="pre">collection_to_csv</span></code>:
+as a rule,
+the more widely used code is,
+the more it’s worth explaining exactly what it does.</p>
+<p>We can now import our utilities into our programs
+just as we would import any other Python module
+using either <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">utilities</span></code> (to get the whole thing)
+or something like <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">utilities</span> <span class="pre">import</span> <span class="pre">collection_to_csv</span></code> (to get a single function).
+After making this change,
+<code class="docutils literal notranslate"><span class="pre">countwords.py</span></code> looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Count the occurrences of all words in a text</span>
+<span class="sd">and write them to a CSV-file.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="kn">import</span> <span class="nn">utilities</span> <span class="k">as</span> <span class="nn">util</span>
+
+
+<span class="k">def</span> <span class="nf">count_words</span><span class="p">(</span><span class="n">reader</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Count the occurrence of each word in a string.&quot;&quot;&quot;</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">chunks</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">npunc</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">chunks</span><span class="p">]</span>
+    <span class="n">word_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">npunc</span> <span class="k">if</span> <span class="n">word</span><span class="p">]</span>
+    <span class="n">word_counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">word_list</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">word_counts</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run the command line program.&quot;&quot;&quot;</span>
+    <span class="n">word_counts</span> <span class="o">=</span> <span class="n">count_words</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">infile</span><span class="p">)</span>
+    <span class="n">util</span><span class="o">.</span><span class="n">collection_to_csv</span><span class="p">(</span><span class="n">word_counts</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">num</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;infile&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">FileType</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">),</span>
+                        <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Input file name&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--num&#39;</span><span class="p">,</span>
+                        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Output n most frequent words&#39;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">collate.py</span></code> is now:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Combine multiple word count CSV-files</span>
+<span class="sd">into a single cumulative count.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="kn">import</span> <span class="nn">utilities</span> <span class="k">as</span> <span class="nn">util</span>
+
+
+<span class="k">def</span> <span class="nf">update_counts</span><span class="p">(</span><span class="n">reader</span><span class="p">,</span> <span class="n">word_counts</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Update word counts with data from another reader/file.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">reader</span><span class="p">):</span>
+        <span class="n">word_counts</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run the command line program.&quot;&quot;&quot;</span>
+    <span class="n">word_counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">infiles</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
+            <span class="n">update_counts</span><span class="p">(</span><span class="n">reader</span><span class="p">,</span> <span class="n">word_counts</span><span class="p">)</span>
+    <span class="n">util</span><span class="o">.</span><span class="n">collection_to_csv</span><span class="p">(</span><span class="n">word_counts</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">num</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;infiles&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Input file names&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--num&#39;</span><span class="p">,</span>
+                        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Output n most frequent words&#39;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Any Python source file can be imported by any other.
+This is why Python files should be named using \gref{snake case}{snake_case}\index{snake case}\index{naming conventions!snake case}
+(e.g., <code class="docutils literal notranslate"><span class="pre">some_thing</span></code>)
+instead of \gref{kebab case}{kebab_case}\index{kebab case}\index{naming conventions!kebab case}
+(e.g., <code class="docutils literal notranslate"><span class="pre">some-thing</span></code>):
+an expression like <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">some-thing</span></code> isn’t allowed
+because <code class="docutils literal notranslate"><span class="pre">some-thing</span></code> isn’t a legal variable name.
+When a file is imported,
+the statements in it are executed as it loads.
+Variables, functions, and items defined in the file are then available as <code class="docutils literal notranslate"><span class="pre">module.thing</span></code>,
+where <code class="docutils literal notranslate"><span class="pre">module</span></code> is the filename (without the <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension)
+and <code class="docutils literal notranslate"><span class="pre">thing</span></code> is the name of the item.</p>
+<blockquote>
+<div><p><strong>The <code class="docutils literal notranslate"><span class="pre">__pycache__</span></code> Directory</strong></p>
+<p>When we import a file,
+Python translates the source code into instructions called \gref{byte codes}{byte_code}\index{byte code}
+that it can execute efficiently.
+Since the byte codes only change when the source changes,
+Python saves the byte code in a separate file,
+and reloads that file instead of re-translating the source code
+the next time it’s asked to import the file
+(unless the file has changed,
+in which case Python starts from the beginning).</p>
+<p>Python creates a subdirectory called <code class="docutils literal notranslate"><span class="pre">__pycache__</span></code>\index{__pycache__ directory}
+that holds the byte code for the files imported from that directory.
+We typically don’t want to put the files in <code class="docutils literal notranslate"><span class="pre">__pycache__</span></code> in version control,
+so we normally tell Git to ignore it as discussed in Section &#64;ref(git-cmdline-ignore).</p>
+</div></blockquote>
+</section>
+<section id="plotting-scripting-plotting">
+<h2>Plotting {#scripting-plotting}<a class="headerlink" href="#plotting-scripting-plotting" title="Permalink to this heading">#</a></h2>
+<p>The last thing for us to do is to plot the word count distribution.
+Recall that [Zipf’s Law][zipfs-law] states the second most common word in a body of text
+appears half as often as the most common,
+the third most common appears a third as often, and so on.
+Mathematically, this might be written as
+“word frequency is proportional to 1/rank.”</p>
+<p>The following code plots the word frequency against the inverse rank
+using the [pandas][pandas] library:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<span class="n">input_csv</span> <span class="o">=</span> <span class="s1">&#39;results/jane_eyre.csv&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">input_csv</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">names</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;word&#39;</span><span class="p">,</span> <span class="s1">&#39;word_frequency&#39;</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;word_frequency&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                       <span class="n">method</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;inverse_rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rank&#39;</span><span class="p">]</span>
+<span class="n">scatplot</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;word_frequency&#39;</span><span class="p">,</span>
+                           <span class="n">y</span><span class="o">=</span><span class="s1">&#39;inverse_rank&#39;</span><span class="p">,</span>
+                           <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+                           <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">scatplot</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;results/jane_eyre.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-{r notranslate"><div class="highlight"><pre><span></span>knitr::include_graphics(&quot;figures/scripting/jane-eyre.png&quot;)
+</pre></div>
+</div>
+<p>You’ll build on this code to create a plotting script for your project
+in Exercise &#64;ref(scripting-ex-better-plotting).</p>
+</section>
+<section id="summary-scripting-summary">
+<h2>Summary {#scripting-summary}<a class="headerlink" href="#summary-scripting-summary" title="Permalink to this heading">#</a></h2>
+<p>Why is building a simple command-line tool so complex?
+One answer is that the conventions for command-line programs
+have evolved over several decades,
+so libraries like <code class="docutils literal notranslate"><span class="pre">argparse</span></code> must now support several different generations of option handling.
+Another is that the things we want to do genuinely <em>are</em> complex:
+read from either standard input or a list of files,
+display help when asked to,
+respect parameters that might not be there,
+and so on.
+As with many other things in programming (and life),
+everyone wishes it was simpler,
+but no one can agree on what to throw away.</p>
+<p>The good news is that this complexity is a fixed cost:
+our template for command-line tools can be re-used for programs
+that are much larger than the examples shown in this chapter.
+Making tools that behave in ways people expect
+greatly increases the chances that others will find them useful.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../exercises/1_bash.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Bash Basic Exercises</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendix/0_references.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bibliography</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programs-and-modules-scripting-main">Programs and Modules {#scripting-main}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-command-line-options-scripting-options">Handling Command-Line Options {#scripting-options}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-scripting-docstrings">Documentation {#scripting-docstrings}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-words-scripting-wordcount">Counting Words {#scripting-wordcount}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipelining-scripting-pipeline">Pipelining {#scripting-pipeline}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-and-optional-arguments-scripting-positional-optional">Positional and Optional Arguments {#scripting-positional-optional}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collating-results-scripting-collate">Collating Results {#scripting-collate}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-our-own-modules-scripting-modules">Writing Our Own Modules {#scripting-modules}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-scripting-plotting">Plotting {#scripting-plotting}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-scripting-summary">Summary {#scripting-summary}</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Niko Bertrand
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

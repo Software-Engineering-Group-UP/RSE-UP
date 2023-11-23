@@ -230,10 +230,6 @@ our data is downloaded,
 and our software is installed,
 we are ready to start our analysis.
 
-\newpage
-
-## Exercises
-
 ### Getting ready 
 
 Make sure you've downloaded the required data files
@@ -249,9 +245,4 @@ and installed the required software (following Section [](#installing-the-softwa
 - Put results in a `results/` directory. This includes cleaned-up data and figures (i.e., everything created using what's in `bin` and `data`).
 - Put documentation and manuscripts in a `docs/` directory.
 - Refer to The Carpentries [software installation guide][carpentries-install-instructions] if you're having trouble. 
-
-
-```{include} ../../links.md
-```
-
 
