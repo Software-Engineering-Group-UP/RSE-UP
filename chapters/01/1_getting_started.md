@@ -16,7 +16,7 @@ and install the required software.
 Before doing that,
 it's worth taking a moment to think about
 how we are going to organize everything.
-We will soon have a number of books from [Project Gutenberg][project-gutenberg]
+We will soon have a number of books from [Project Gutenberg](project-gutenberg)
 in the form of a series of text files,
 plots we've produced showing the word frequency distribution in each book,
 as well as the code we've written to produce those plots
