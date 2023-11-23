@@ -9,12 +9,12 @@ parts:
   - caption: Bash and the CLI 
     chapters:
       - file: chapters/02/2_bash_basics.md
-      - file: chapters/02/2-2_bash_tools.md
-      - file: chapters/02/2-3_bash_advanced.md
+      - file: chapters/02/2_bash_tools.md
+      - file: chapters/02/2_bash_advanced.md
       - file: exercises/1_bash.ipynb
   - caption: Building CLI with Python
     chapters:
-      - file: chapters/03/3_building_commandline_python.md
+      - file: chapters/03/3_building_commandline_python.ipynb
       #- file: chapters/03/3-2_git.md
       #- file: chapters/03/3-3_git_advanced.md
       #- file: exercises/2_git.ipynb  
@@ -29,3 +29,4 @@ parts:
 # - file: chapters/introduction.md
 # - file: chapters/01/1_getting_started.md
 # - file: chapters/appendix/bibliography.md
+''

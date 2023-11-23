@@ -1,6 +1,3 @@
-```{include} ../../links.md
-```
-
 # The Basics of the Unix Shell 
 
 > Ninety percent of most magic merely consists of knowing one extra fact.
@@ -593,7 +590,7 @@ $ ls -F docs
 ```
 
 Let's change our working directory to `docs` using `cd`,
-then use a very simple text editor called **nano** to create a file called `draft.txt`[](nano_editor):
+then use a very simple text editor called **nano** to create a file called `draft.txt` [](nano_editor):
 
 ```bash
 $ cd docs
@@ -862,13 +859,9 @@ ls: prior-work.txt: No such file or directory
 ```
 
 Deleting is forever:
-unlike most GUIs,
-the Unix shell doesn't have a trash bin that we can recover deleted files from.
-Tools for finding and recovering deleted files do exist,
-but there is no guarantee they will work,
-since the computer may recycle the file's disk space at any time.
-In most cases,
-when we delete a file it really is gone.
+unlike most GUIs, the Unix shell doesn't have a trash bin that we can recover deleted files from.
+Tools for finding and recovering deleted files do exist, but there is no guarantee they will work, since the computer may recycle the file's disk space at any time.
+In most cases, when we delete a file it really is gone.
 
 In a half-hearted attempt to stop us from erasing things accidentally,
 `rm` refuses to delete directories:
@@ -900,7 +893,7 @@ This option works the same way with `mv` and `cp`.
 ## Wildcards 
 
 `zipf/data` contains the text files for several ebooks
-from [Project Gutenberg][project-gutenberg]:
+from [Project Gutenberg](https://www.gutenberg.org):
 
 ```bash
 $ ls data
@@ -1059,7 +1052,7 @@ and highlights a few of features useful for beginners.
 Bash basics manual
 ```
 Some commands have a `--help` option that provides a succinct summary of possibilities,
-but the best place to go for help these days is probably the [TLDR][tldr] website.
+but the best place to go for help these days is probably the [TLDR](https://tldr.sh/) website.
 The acronym stands for "too long, didn't read,"
 and its help for `wc` displays this:
 
@@ -1087,9 +1080,9 @@ As the last line suggests,
 all of its examples are in a public GitHub repository
 so that users like you can add the examples you wish it had.
 For more information,
-we can search on [Stack Overflow][so-bash]
-or browse the [GNU manuals][gnu-man]
-(particularly those for the [core GNU utilities][gnu-man-coreutils],
+we can search on [Stack Overflow](https://stackoverflow.com/questions/tagged/bash)
+or browse the [GNU manuals](https://www.gnu.org/manual/manual.html)
+(particularly those for the [core GNU utilities](https://www.gnu.org/software/coreutils/manual/coreutils.html),
 which include many of the commands introduced in this lesson).
 In all cases,
 though,

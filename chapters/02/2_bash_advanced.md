@@ -1,5 +1,3 @@
-```{include} ../../links.md
-```
 # Going Further with the Unix Shell 
 
 > There isn't a way things should be. There's just what happens, and what we do.
