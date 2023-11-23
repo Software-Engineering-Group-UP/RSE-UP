@@ -14,6 +14,7 @@ parts:
       - file: exercises/1_bash.ipynb
   - caption: Building CLI with Python
     chapters:
+      - file: chaptert/03/3_python_basics.md
       - file: chapters/03/3_building_commandline_python.ipynb
       #- file: chapters/03/3-2_git.md
       #- file: chapters/03/3-3_git_advanced.md
