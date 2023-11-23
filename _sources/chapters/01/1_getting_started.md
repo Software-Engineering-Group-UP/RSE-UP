@@ -16,7 +16,7 @@ and install the required software.
 Before doing that,
 it's worth taking a moment to think about
 how we are going to organize everything.
-We will soon have a number of books from [Project Gutenberg](project-gutenberg)
+We will soon have a number of books from [Project Gutenberg](https://www.gutenberg.org/)
 in the form of a series of text files,
 plots we've produced showing the word frequency distribution in each book,
 as well as the code we've written to produce those plots
@@ -143,7 +143,7 @@ when we talk about testing (Chapter **TODO** ref(testing)),
 provenance (Chapter **TODO** ref(provenance)),
 and packaging (Chapter **TODO** ref(packaging)).
 
-(Downloading-the-data)=
+
 ## Downloading the Data
 
 The data files used in the book are archived
@@ -179,13 +179,13 @@ In order to conduct our analysis, we need to install the following software:
 1. A **Shell** ( Bash, ZSH, Fish,...)
 2. **Git** version control
 3. A text editor
-4. [Python 3][python] or using [Anaconda][anaconda]
-5. [GNU Make][gnu-make]
+4. [Python 3](https://www.python.org) or using [Anaconda](https://www.anaconda.com)
+5. [GNU Make](https://www.gnu.org/software/make/)
 
-*Note* While Anaconda seems easy to install, depending on the use case it might be more efficient and simpler to use Python [Pip][pip] to install some necessary packages. 
+*Note* While Anaconda seems easy to install, depending on the use case it might be more efficient and simpler to use Python [Pip](https://pypi.org/project/pip) to install some necessary packages. 
 
 Comprehensive software installation instructions for Windows, Mac, and Linux operating systems
-(with video tutorials) are maintained by [The Carpentries][carpentries]
+(with video tutorials) are maintained by [The Carpentries](https://carpentries.org/)
 as part of their workshop website template at:
 
 <https://carpentries.github.io/workshop-template/#setup>
@@ -198,8 +198,8 @@ You can check if Make is already on your computer by typing `make -v` into the B
 If it is not, you can install it as follows:
 
 - *Linux (Debian/Ubuntu)*: Install it from the Bash shell using `sudo apt-get install make`.
-- *Mac*: Install **TODO** [Xcode][xcode] (via the App Store).
-- *Windows*: Follow the **TODO** [installation instructions][ubc-mds-make-windows] maintained by the
+- *Mac*: Install **TODO** [Xcode](https://developer.apple.com/xcode/) (via the App Store).
+- *Windows*: Follow the **TODO** [installation instructions]( https://ubc-mds.github.io/resources_pages/install_ds_stack_windows/#make) maintained by the
   Master of Data Science program at the University of British Columbia.
 
 > **conda in the Shell on Windows**
@@ -233,8 +233,8 @@ we are ready to start our analysis.
 ### Getting ready 
 
 Make sure you've downloaded the required data files
-(following Section [download the data](#Downloading-the-data)
-and installed the required software (following Section [](#installing-the-software)) before progressing to the next chapter.
+(following Section [download the data](#downloading-the-data)
+and installed the required software ([from following Section](#installing-the-software)) before progressing to the next chapter.
 
 ## Key Points
 
@@ -244,5 +244,5 @@ and installed the required software (following Section [](#installing-the-softwa
 - Put raw/original data in a `data/` directory and never modify it.
 - Put results in a `results/` directory. This includes cleaned-up data and figures (i.e., everything created using what's in `bin` and `data`).
 - Put documentation and manuscripts in a `docs/` directory.
-- Refer to The Carpentries [software installation guide][carpentries-install-instructions] if you're having trouble. 
+- Refer to The Carpentries [software installation guide](https://carpentries.org/) if you're having trouble, or send us an email. 
 

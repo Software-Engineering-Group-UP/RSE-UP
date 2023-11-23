@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/02/2_bash_basics.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Building Tools with the Unix Shell" href="2-2_bash_tools.html" />
+    <link rel="next" title="Building Tools with the Unix Shell" href="2_bash_tools.html" />
     <link rel="prev" title="Getting Started" href="../01/1_getting_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -170,14 +170,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">The Basics of the Unix Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2-2_bash_tools.html">Building Tools with the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_bash_tools.html">Building Tools with the Unix Shell</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="2-3_bash_advanced.html">Going Further with the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_bash_advanced.html">Going Further with the Unix Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../exercises/1_bash.html">Bash Basic Exercises</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../03/3_building_commandline_python.html">Building Command-Line Tools with Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference and test pages</span></p>
 <ul class="nav bd-sidenav">
@@ -893,7 +889,7 @@ For example, <code class="docutils literal notranslate"><span class="pre">ls</sp
 </pre></div>
 </div>
 <p>Let’s change our working directory to <code class="docutils literal notranslate"><span class="pre">docs</span></code> using <code class="docutils literal notranslate"><span class="pre">cd</span></code>,
-then use a very simple text editor called <strong>nano</strong> to create a file called <code class="docutils literal notranslate"><span class="pre">draft.txt</span></code><a class="reference internal" href="#nano-editor"><span class="std std-ref">Nano Editor</span></a>:</p>
+then use a very simple text editor called <strong>nano</strong> to create a file called <code class="docutils literal notranslate"><span class="pre">draft.txt</span></code> <a class="reference internal" href="#nano-editor"><span class="std std-ref">Nano Editor</span></a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>docs
 $<span class="w"> </span>nano<span class="w"> </span>draft.txt
 </pre></div>
@@ -1118,13 +1114,9 @@ The command to do this is <code class="docutils literal notranslate"><span class
 </pre></div>
 </div>
 <p>Deleting is forever:
-unlike most GUIs,
-the Unix shell doesn’t have a trash bin that we can recover deleted files from.
-Tools for finding and recovering deleted files do exist,
-but there is no guarantee they will work,
-since the computer may recycle the file’s disk space at any time.
-In most cases,
-when we delete a file it really is gone.</p>
+unlike most GUIs, the Unix shell doesn’t have a trash bin that we can recover deleted files from.
+Tools for finding and recovering deleted files do exist, but there is no guarantee they will work, since the computer may recycle the file’s disk space at any time.
+In most cases, when we delete a file it really is gone.</p>
 <p>In a half-hearted attempt to stop us from erasing things accidentally,
 <code class="docutils literal notranslate"><span class="pre">rm</span></code> refuses to delete directories:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rm<span class="w"> </span>docs
@@ -1150,7 +1142,7 @@ This option works the same way with <code class="docutils literal notranslate"><
 <section id="wildcards">
 <h2>Wildcards<a class="headerlink" href="#wildcards" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">zipf/data</span></code> contains the text files for several ebooks
-from [Project Gutenberg][project-gutenberg]:</p>
+from <a class="reference external" href="https://www.gutenberg.org">Project Gutenberg</a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>data
 </pre></div>
 </div>
@@ -1280,7 +1272,7 @@ and highlights a few of features useful for beginners.</p>
 </figcaption>
 </figure>
 <p>Some commands have a <code class="docutils literal notranslate"><span class="pre">--help</span></code> option that provides a succinct summary of possibilities,
-but the best place to go for help these days is probably the [TLDR][tldr] website.
+but the best place to go for help these days is probably the <a class="reference external" href="https://tldr.sh/">TLDR</a> website.
 The acronym stands for “too long, didn’t read,”
 and its help for <code class="docutils literal notranslate"><span class="pre">wc</span></code> displays this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wc</span>
@@ -1306,9 +1298,9 @@ and its help for <code class="docutils literal notranslate"><span class="pre">wc
 all of its examples are in a public GitHub repository
 so that users like you can add the examples you wish it had.
 For more information,
-we can search on [Stack Overflow][so-bash]
-or browse the [GNU manuals][gnu-man]
-(particularly those for the [core GNU utilities][gnu-man-coreutils],
+we can search on <a class="reference external" href="https://stackoverflow.com/questions/tagged/bash">Stack Overflow</a>
+or browse the <a class="reference external" href="https://www.gnu.org/manual/manual.html">GNU manuals</a>
+(particularly those for the <a class="reference external" href="https://www.gnu.org/software/coreutils/manual/coreutils.html">core GNU utilities</a>,
 which include many of the commands introduced in this lesson).
 In all cases,
 though,
@@ -1391,7 +1383,7 @@ in order to create powerful, efficient workflows.</p>
       </div>
     </a>
     <a class="right-next"
-       href="2-2_bash_tools.html"
+       href="2_bash_tools.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>

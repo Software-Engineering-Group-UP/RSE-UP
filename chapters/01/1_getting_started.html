@@ -170,14 +170,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../02/2_bash_basics.html">The Basics of the Unix Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02/2-2_bash_tools.html">Building Tools with the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/2_bash_tools.html">Building Tools with the Unix Shell</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../02/2-3_bash_advanced.html">Going Further with the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/2_bash_advanced.html">Going Further with the Unix Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../exercises/1_bash.html">Bash Basic Exercises</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../03/3_building_commandline_python.html">Building Command-Line Tools with Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference and test pages</span></p>
 <ul class="nav bd-sidenav">
@@ -411,7 +407,7 @@ and install the required software.
 Before doing that,
 it’s worth taking a moment to think about
 how we are going to organize everything.
-We will soon have a number of books from <span class="xref myst">Project Gutenberg</span>
+We will soon have a number of books from <a class="reference external" href="https://www.gutenberg.org/">Project Gutenberg</a>
 in the form of a series of text files,
 plots we’ve produced showing the word frequency distribution in each book,
 as well as the code we’ve written to produce those plots
@@ -527,7 +523,7 @@ and packaging (Chapter <strong>TODO</strong> ref(packaging)).</p>
 </section>
 </section>
 <section id="downloading-the-data">
-<span id="id4"></span><h2>Downloading the Data<a class="headerlink" href="#downloading-the-data" title="Permalink to this heading">#</a></h2>
+<h2>Downloading the Data<a class="headerlink" href="#downloading-the-data" title="Permalink to this heading">#</a></h2>
 <p>The data files used in the book are archived
 at an online repository called Figshare (which we discuss in detail in Section <strong>TODO</strong> ref(provenance-data-where))
 and can be accessed at:</p>
@@ -558,12 +554,12 @@ Here’s how things look once we’re done:</p>
 <li><p>A <strong>Shell</strong> ( Bash, ZSH, Fish,…)</p></li>
 <li><p><strong>Git</strong> version control</p></li>
 <li><p>A text editor</p></li>
-<li><p>[Python 3][python] or using [Anaconda][anaconda]</p></li>
-<li><p>[GNU Make][gnu-make]</p></li>
+<li><p><a class="reference external" href="https://www.python.org">Python 3</a> or using <a class="reference external" href="https://www.anaconda.com">Anaconda</a></p></li>
+<li><p><a class="reference external" href="https://www.gnu.org/software/make/">GNU Make</a></p></li>
 </ol>
-<p><em>Note</em> While Anaconda seems easy to install, depending on the use case it might be more efficient and simpler to use Python [Pip][pip] to install some necessary packages.</p>
+<p><em>Note</em> While Anaconda seems easy to install, depending on the use case it might be more efficient and simpler to use Python <a class="reference external" href="https://pypi.org/project/pip">Pip</a> to install some necessary packages.</p>
 <p>Comprehensive software installation instructions for Windows, Mac, and Linux operating systems
-(with video tutorials) are maintained by [The Carpentries][carpentries]
+(with video tutorials) are maintained by <a class="reference external" href="https://carpentries.org/">The Carpentries</a>
 as part of their workshop website template at:</p>
 <p><a class="reference external" href="https://carpentries.github.io/workshop-template/#setup">https://carpentries.github.io/workshop-template/#setup</a></p>
 <p>We can follow those instructions to install the Bash shell, Git, a text editor and Anaconda.
@@ -573,8 +569,8 @@ as it includes Conda as well as many of the packages we’ll use in this book.</
 If it is not, you can install it as follows:</p>
 <ul class="simple">
 <li><p><em>Linux (Debian/Ubuntu)</em>: Install it from the Bash shell using <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">make</span></code>.</p></li>
-<li><p><em>Mac</em>: Install <strong>TODO</strong> [Xcode][xcode] (via the App Store).</p></li>
-<li><p><em>Windows</em>: Follow the <strong>TODO</strong> [installation instructions][ubc-mds-make-windows] maintained by the
+<li><p><em>Mac</em>: Install <strong>TODO</strong> <a class="reference external" href="https://developer.apple.com/xcode/">Xcode</a> (via the App Store).</p></li>
+<li><p><em>Windows</em>: Follow the <strong>TODO</strong> <a class="reference external" href="https://ubc-mds.github.io/resources_pages/install_ds_stack_windows/#make">installation instructions</a> maintained by the
 Master of Data Science program at the University of British Columbia.</p></li>
 </ul>
 <blockquote>
@@ -609,7 +605,7 @@ we are ready to start our analysis.</p>
 <h3>Getting ready<a class="headerlink" href="#getting-ready" title="Permalink to this heading">#</a></h3>
 <p>Make sure you’ve downloaded the required data files
 (following Section <span class="xref myst">download the data</span>
-and installed the required software (following Section <span class="xref myst"></span>) before progressing to the next chapter.</p>
+and installed the required software (<span class="xref myst">from following Section</span>) before progressing to the next chapter.</p>
 </section>
 </section>
 <section id="key-points">
@@ -621,7 +617,7 @@ and installed the required software (following Section <span class="xref myst"><
 <li><p>Put raw/original data in a <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory and never modify it.</p></li>
 <li><p>Put results in a <code class="docutils literal notranslate"><span class="pre">results/</span></code> directory. This includes cleaned-up data and figures (i.e., everything created using what’s in <code class="docutils literal notranslate"><span class="pre">bin</span></code> and <code class="docutils literal notranslate"><span class="pre">data</span></code>).</p></li>
 <li><p>Put documentation and manuscripts in a <code class="docutils literal notranslate"><span class="pre">docs/</span></code> directory.</p></li>
-<li><p>Refer to The Carpentries [software installation guide][carpentries-install-instructions] if you’re having trouble.</p></li>
+<li><p>Refer to The Carpentries <a class="reference external" href="https://carpentries.org/">software installation guide</a> if you’re having trouble, or send us an email.</p></li>
 </ul>
 </section>
 </section>

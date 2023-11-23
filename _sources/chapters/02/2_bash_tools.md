@@ -1,7 +1,3 @@
-
-
-```{include} ../../links.md
-```
 # Building Tools with the Unix Shell 
 
 > Wisdom comes from experience. Experience is often a result of lack of wisdom.
@@ -32,9 +28,7 @@ zipf/
 
 ## Combining Commands 
 
-To see how the shell lets us combine commands,
-let's go into the `zipf/data` directory
-and count the number of lines in each file once again:
+To see how the shell lets us combine commands, let's go into the `zipf/data` directory and count the number of lines in each file once again:
 
 ```bash
 $ cd ~/zipf/data
@@ -54,8 +48,7 @@ $ wc -l *.txt
 ```
 
 Which of these books is shortest?
-We can check by eye when there are only seven files,
-but what if there were eight thousand?
+We can check by eye when there are only seven files, but what if there were eight thousand?
 
 Our first step toward a solution is to run this command:
 
@@ -167,17 +160,17 @@ as the input to the command on the right.
 
 Running a command with a file as input has a clear flow of information:
 the command performs a task on that file and prints the output to the screen
-([](bash_tools_pipe) a).
+([](bash_tools_piper) a).
 When using pipes, however,
 the information flows differently after the first (upstream) command.
 The downstream command doesn't read from a file.
 Instead,
 it reads the output of the upstream command
-([](bash_tools_pipe) b).
+([](bash_tools_piper) b).
 
 
 ```{figure} ../../figures/bash-tools/pipe.png
-:name: bash_toots_pipe
+:name: bash_toots_piper
 
 Bash tool pipe
 ```
@@ -1867,7 +1860,3 @@ by saving commands in files that we can run over and over again.
     and a **body** containing commands to execute.
 -   Use `$name` or `${name}` to get the value of a variable.
 
-
-
-```{include} ../../links.md
-```
