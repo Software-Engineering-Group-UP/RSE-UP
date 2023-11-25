@@ -471,8 +471,6 @@ Latest Update:
 Language: English
 ```
 
-\newpage
-
 Let's try this instead:
 
 ```bash
