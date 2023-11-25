@@ -243,7 +243,7 @@ it creates a new process
 and temporarily reconnects the keyboard and stream
 to that process's standard input and output ([](standard_io) b).
 
-```{figure} ../../figures/standard-io.png
+```{figure} ../../figures/bash-tools/standard-io.png
 :name: standard_io
 
 Bash tools stdio

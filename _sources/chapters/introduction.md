@@ -1,5 +1,4 @@
-```{include} ../../links.md
-```
+
 (welcome)=
 # Welcome 
 
