@@ -6,6 +6,7 @@ parts:
   - caption: Getting Started
     chapters:
       - file: chapters/01/1_getting_started.md
+      - file: exercises/0_guide.ipynb
   - caption: Bash and the CLI 
     chapters:
       - file: chapters/02/2_bash_basics.md
@@ -14,12 +15,16 @@ parts:
       - file: exercises/1_bash.ipynb
   - caption: Building CLI with Python
     chapters:
-      #- file: chapters/03/3_python_basics.md
       - file: chapters/03/3_building_cli_python.ipynb
-      #- file: chapters/03/3-2_git.md
-      #- file: chapters/03/3-3_git_advanced.md
-      #- file: exercises/2_git.ipynb  
-  - caption: Reference and test pages
+      - file: exercises/2_python_cli.ipynb
+  - caption: Version Control
+    chapters:
+      - file: chapters/04/4_version_control.md
+     # - file: exercises/3_version_control.ipynb  
+  - caption: Extras
+    chapters:
+      - file: exercises/2_python_refresher.ipynb 
+  - caption: References
     chapters:
       - file: chapters/appendix/0_references.md
 
