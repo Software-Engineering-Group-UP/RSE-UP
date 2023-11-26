@@ -185,12 +185,13 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Using Git at the Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../exercises/3_version_control.html">Exercise Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_git_advanced.html">Going Further with Git</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Extras</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../exercises/2_python_refresher.html">Python refresher</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../appendix/0_references.html">Bibliography</a></li>
 </ul>
@@ -387,7 +388,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up">Setting Up</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-repository-git-cmdline-repos">Creating a New Repository {#git-cmdline-repos}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-repository">Creating a New Repository</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-existing-work">Adding Existing Work</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-commits">Describing Commits</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-and-tracking-changes">Saving and Tracking Changes</a></li>
@@ -540,10 +541,9 @@ we can list which ones are available using <code class="docutils literal notrans
 </div>
 </div></blockquote>
 </section>
-<section id="creating-a-new-repository-git-cmdline-repos">
-<h2>Creating a New Repository {#git-cmdline-repos}<a class="headerlink" href="#creating-a-new-repository-git-cmdline-repos" title="Permalink to this heading">#</a></h2>
-<p>Once Git is configured,
-we can use it to track work on our Zipf’s Law project.
+<section id="creating-a-new-repository">
+<h2>Creating a New Repository<a class="headerlink" href="#creating-a-new-repository" title="Permalink to this heading">#</a></h2>
+<p>Once Git is configured, we can use it to track work on our Zipf’s Law project.
 Let’s make sure we are in the top-level directory of our project:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/zipf
 $<span class="w"> </span>ls
@@ -568,8 +568,7 @@ We do this using the <code class="docutils literal notranslate"><span class="pre
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bin     data    results
 </pre></div>
 </div>
-<p>but if we add the <code class="docutils literal notranslate"><span class="pre">-a</span></code> flag to show everything,
-we can see that Git has created a hidden directory within <code class="docutils literal notranslate"><span class="pre">zipf</span></code> called <code class="docutils literal notranslate"><span class="pre">.git</span></code>:</p>
+<p>but if we add the <code class="docutils literal notranslate"><span class="pre">-a</span></code> flag to show everything, we can see that Git has created a hidden directory within <code class="docutils literal notranslate"><span class="pre">zipf</span></code> called <code class="docutils literal notranslate"><span class="pre">.git</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-a
 </pre></div>
 </div>
@@ -577,10 +576,8 @@ we can see that Git has created a hidden directory within <code class="docutils 
 </pre></div>
 </div>
 <p>Git stores information about the project in this special subdirectory.
-If we ever delete it,
-we will lose that history.</p>
-<p>We can check that everything is set up correctly
-by asking Git to tell us the status of our project:</p>
+If we ever delete it, we will lose that history.</p>
+<p>We can check that everything is set up correctly by asking Git to tell us the status of our project:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
 </pre></div>
 </div>
@@ -600,17 +597,13 @@ nothing added to commit but untracked files
 present (use &quot;git add&quot; to track)
 </pre></div>
 </div>
-<p>“No commits yet” means that Git hasn’t recorded any history yet,
-while “Untracked files” means Git has noticed that
-there are things in <code class="docutils literal notranslate"><span class="pre">bin/</span></code>, <code class="docutils literal notranslate"><span class="pre">data/</span></code> and <code class="docutils literal notranslate"><span class="pre">results/</span></code>
-that it is not yet keeping track of.</p>
+<p>“No commits yet” means that Git hasn’t recorded any history yet, while “Untracked files” means Git has noticed that
+there are things in <code class="docutils literal notranslate"><span class="pre">bin/</span></code>, <code class="docutils literal notranslate"><span class="pre">data/</span></code> and <code class="docutils literal notranslate"><span class="pre">results/</span></code> that it is not yet keeping track of.</p>
 </section>
 <section id="adding-existing-work">
 <h2>Adding Existing Work<a class="headerlink" href="#adding-existing-work" title="Permalink to this heading">#</a></h2>
-<p>Now that our project is a repository,
-we can tell Git to start recording its history.
-To do this,
-we add things to the list of things Git is tracking using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>.
+<p>Now that our project is a repository, we can tell Git to start recording its history.
+To do this, we add things to the list of things Git is tracking using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>.
 We can do this for single files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>bin/countwords.py
 </pre></div>
@@ -654,10 +647,9 @@ Changes to be committed:
 	  new file:   results/moby_dick.csv
 </pre></div>
 </div>
-<p>Adding all of our existing files this way is easy,
-but we can accidentally add things that should never be in version control,
+<p>Adding all of our existing files this way is easy, but we can accidentally add things that should never be in version control,
 such as files containing passwords or other sensitive information.
-The output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> tells us that we can remove such files from the list of things to be saved using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">--cached</span></code>; we will practice this in Exercise <strong>TODO</strong> ref(git-cmdline-ex-unsave).</p>
+The output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> tells us that we can remove such files from the list of things to be saved using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">--cached</span></code>; we will practice this in <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/3_version_control.html#removing-before-saving">Exercise</a></p>
 <blockquote>
 <div><p><strong>What to Save</strong></p>
 <p>We always want to save programs, manuscripts,
@@ -703,15 +695,11 @@ but the tracked files haven’t been <strong>committed</strong> (i.e., saved per
  create mode 100644 results/moby_dick.csv
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> takes everything we have told Git to save using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>
-and stores a copy permanently inside the repository’s <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory.
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> takes everything we have told Git to save using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and stores a copy permanently inside the repository’s <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory.
 This permanent copy is called a <strong>commit</strong> or a <strong>revision</strong>. Git gives is a unique identifier, and the first line of output from <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> displays
 its <strong>short identifier</strong> <code class="docutils literal notranslate"><span class="pre">2dc78f0</span></code>, which is the first few characters of that unique label.</p>
-<p>We use the <code class="docutils literal notranslate"><span class="pre">-m</span></code> option (short for <strong>m</strong>essage)
-to record a short comment with the commit
-to remind us later what we did and why.
-(Once again, we put it in double quotes because it contains spaces.)
-If we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> now:</p>
+<p>We use the <code class="docutils literal notranslate"><span class="pre">-m</span></code> option (short for <strong>m</strong>essage) to record a short comment with the commit to remind us later what we did and why.
+(Once again, we put it in double quotes because it contains spaces.) If we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> now:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
 </pre></div>
 </div>
@@ -722,32 +710,22 @@ nothing to commit, working tree clean
 </pre></div>
 </div>
 <p>This first commit becomes the starting point of our project’s history:
-we won’t be able to see changes made before this point.
-This implies that we should make our project a Git repository
-as soon as we create it
+we won’t be able to see changes made before this point. This implies that we should make our project a Git repository as soon as we create it
 rather than after we have done some work.</p>
 </section>
 <section id="describing-commits">
 <h2>Describing Commits<a class="headerlink" href="#describing-commits" title="Permalink to this heading">#</a></h2>
-<p>If we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> <em>without</em> the <code class="docutils literal notranslate"><span class="pre">-m</span></code> option,
-Git opens a text editor
-so that we can write a longer <strong>commit message</strong>. In this message,
-the first line is referred to as the “subject” and the rest as the “body”,
-just as in an email.</p>
-<p>When we use <code class="docutils literal notranslate"><span class="pre">-m</span></code>, we are only writing the subject line;
-this makes things easier in the short run, but if our project’s history fills up with one-liners like “Fixed problem” or “Updated”, our future self will wish that we had taken a few extra seconds to explain things in a little more detail.
+<p>If we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> <em>without</em> the <code class="docutils literal notranslate"><span class="pre">-m</span></code> option, Git opens a text editor so that we can write a longer <strong>commit message</strong>. In this message,
+the first line is referred to as the “subject” and the rest as the “body”, just as in an email.</p>
+<p>When we use <code class="docutils literal notranslate"><span class="pre">-m</span></code>, we are only writing the subject line; this makes things easier in the short run, but if our project’s history fills up with one-liners like “Fixed problem” or “Updated”, our future self will wish that we had taken a few extra seconds to explain things in a little more detail.
 Following <a class="reference external" href="https://chris.beams.io/posts/git-commit/">these guidelines</a> will help:</p>
 <ol class="arabic simple">
-<li><p>Separate the subject from the body with a blank line
-so that it is easy to spot.</p></li>
+<li><p>Separate the subject from the body with a blank line so that it is easy to spot.</p></li>
 <li><p>Limit subject lines to 50 characters so that they are easy to scan.</p></li>
 <li><p>Write the subject line in Title Case (like a section heading).</p></li>
 <li><p>Do not end the subject line with a period.</p></li>
-<li><p>Write as if giving a command
-(e.g., “Make each plot half the width of the page”).</p></li>
-<li><p>Wrap the body
-(i.e., insert line breaks to format text as paragraphs
-rather than relying on editors to wrap lines automatically).</p></li>
+<li><p>Write as if giving a command (e.g., “Make each plot half the width of the page”).</p></li>
+<li><p>Wrap the body (i.e., insert line breaks to format text as paragraphs rather than relying on editors to wrap lines automatically).</p></li>
 <li><p>Use the body to explain what and why rather than how.</p></li>
 </ol>
 <blockquote>
@@ -845,10 +823,6 @@ It could be better:
 most of the visual space is devoted to a few very common words,
 which makes it hard to see what is happening with the other ten thousand or so words.</p>
 </div></blockquote>
-<div class="highlight-../../figures/git-cmdline/plot-initial.png) notranslate"><div class="highlight"><pre><span></span>:name git-cmdline-initial-plot
-Git CMDline initial plot
-</pre></div>
-</div>
 <p>An alternative way to visually evaluate Zipf’s Law is
 to plot the word frequency against rank on log-log axes.
 Let’s change the section:</p>
@@ -997,21 +971,25 @@ To allow for this,
 Git has a special <strong>staging area</strong>
 where it keeps track of things
 that have been added to the current changeset but not yet committed
-(<span class="xref myst">Figure</span>).</p>
+(<a class="reference internal" href="#git-cmdline-staging-area"><span class="std std-ref">Figure</span></a>).</p>
 </div></blockquote>
-<div class="highlight-../../figures/git-cmdline/staging-area.png notranslate"><div class="highlight"><pre><span></span>:name: git-cmdline-staging-area
-Git CMDline staging area
-</pre></div>
-</div>
-<p>Let’s take a look at our new plot (<span class="xref myst">Figure</span>):</p>
+<figure class="align-default" id="git-cmdline-staging-area">
+<img alt="../../_images/staging-area.png" src="../../_images/staging-area.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Git CMDline staging area</span><a class="headerlink" href="#git-cmdline-staging-area" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Let’s take a look at our new plot (<a class="reference internal" href="#git-cmdline-loglog-plot"><span class="std std-ref">Figure</span></a>):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>bin/plotcounts.py<span class="w"> </span>results/dracula.csv<span class="w"> </span>--outfile
 <span class="w">  </span>results/dracula.png
 </pre></div>
 </div>
-<div class="highlight-../../figures/git-cmdline/plot-loglog.png notranslate"><div class="highlight"><pre><span></span>:name: git-cmdline-loglog-plot
-Git CMDline LOG Plot
-</pre></div>
-</div>
+<figure class="align-default" id="git-cmdline-loglog-plot">
+<img alt="../../_images/plot-loglog.png" src="../../_images/plot-loglog.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Git CMDline LOG Plot</span><a class="headerlink" href="#git-cmdline-loglog-plot" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <blockquote>
 <div><p><strong>Interpreting Our Plot</strong></p>
 <p>If Zipf’s Law holds,
@@ -1065,11 +1043,13 @@ by giving <code class="docutils literal notranslate"><span class="pre">git</span
 </div>
 <p>The Git commands we’ve covered so far (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>)
 represent the tasks you perform in a basic Git workflow in a local repository
-(<span class="xref myst">Figure</span> a).</p>
-<div class="highlight-../../figures/git-cmdline/git-remote.png notranslate"><div class="highlight"><pre><span></span>:name: git-remote
-Git Remote
-</pre></div>
-</div>
+(<a class="reference internal" href="#git-remote"><span class="std std-ref">Figure</span></a> a).</p>
+<figure class="align-default" id="git-remote">
+<img alt="../../_images/git-remote.png" src="../../_images/git-remote.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Git Remote</span><a class="headerlink" href="#git-remote" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="synchronizing-with-other-repositories">
 <h2>Synchronizing with Other Repositories<a class="headerlink" href="#synchronizing-with-other-repositories" title="Permalink to this heading">#</a></h2>
@@ -1102,11 +1082,13 @@ do not add a README, <code class="docutils literal notranslate"><span class="pre
 we’ll discuss these additions in other chapters.</p>
 <p>Next, we need to connect our desktop repository with the one on GitHub.
 We do this by making the GitHub repository a <strong>remote</strong> of the local repository.
-The home page of our new repository on GitHub includes the string we need to identify it (<span class="xref myst">Figure</span>).</p>
-<div class="highlight-../../figures/git-cmdline/repo-link.png notranslate"><div class="highlight"><pre><span></span>:name: git-cmdline-repo-link
-Git CMDline Repository link
-</pre></div>
-</div>
+The home page of our new repository on GitHub includes the string we need to identify it (<a class="reference internal" href="#git-cmdline-repo-link"><span class="std std-ref">Figure</span></a>).</p>
+<figure class="align-default" id="git-cmdline-repo-link">
+<img alt="../../_images/repo-link.png" src="../../_images/repo-link.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Git CMDline Repository link</span><a class="headerlink" href="#git-cmdline-repo-link" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>We can click on “HTTPS” to change the URL from SSH to HTTPS and then copy that URL.</p>
 <blockquote>
 <div><p><strong>HTTPS vs. SSH</strong></p>
@@ -1158,12 +1140,13 @@ To https://github.com/amira-khan/zipf.git
  * [new branch]      master -&gt; master
 </pre></div>
 </div>
-<p>If we view our GitHub repository in the browser, it now includes all of our project files, along with all of the commits we have made so far (<span class="xref myst">Figure</span>).</p>
-<div class="highlight-../../figures/git-cmdline/repo-history.png notranslate"><div class="highlight"><pre><span></span>:name: git-cmdline-history
-Git Commandline History
-
-</pre></div>
-</div>
+<p>If we view our GitHub repository in the browser, it now includes all of our project files, along with all of the commits we have made so far (<a class="reference internal" href="#git-cmdline-history"><span class="std std-ref">Figure</span></a>).</p>
+<figure class="align-default" id="git-cmdline-history">
+<img alt="../../_images/repo-history.png" src="../../_images/repo-history.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Git Commandline History</span><a class="headerlink" href="#git-cmdline-history" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>\newpage</p>
 <p>We can also <strong>pull</strong> from the remote repository to the local one:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>master
@@ -1617,7 +1600,7 @@ on a <strong>forge</strong> such as <a class="reference external" href="https://
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up">Setting Up</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-repository-git-cmdline-repos">Creating a New Repository {#git-cmdline-repos}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-repository">Creating a New Repository</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-existing-work">Adding Existing Work</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-commits">Describing Commits</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-and-tracking-changes">Saving and Tracking Changes</a></li>
