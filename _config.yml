@@ -39,6 +39,7 @@ bibtex_bibfiles:
 
 sphinx:
   config:
+    'key1': 'https://www.google.com'
     html_extra_path: ['assets']
     bibtex_reference_style: author_year
     #bibtex_bibfiles: 

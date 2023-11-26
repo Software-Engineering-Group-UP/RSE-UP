@@ -5,30 +5,30 @@ title: Research Software Engineering
 parts: 
   - caption: Getting Started
     chapters:
-      - file: chapters/01/1_getting_started.md
-      - file: exercises/0_guide.ipynb
+      - file: chapters/getting_start/getting_started.md
+      - file: exercises/guide.ipynb
   - caption: Bash and the CLI 
     chapters:
-      - file: chapters/02/2_bash_basics.md
-      - file: chapters/02/2_bash_tools.md
-      - file: chapters/02/2_bash_advanced.md
-      - file: exercises/1_bash.ipynb
+      - file: chapters/bash/bash_basics.md
+      - file: chapters/bash/bash_tools.md
+      - file: chapters/bash/bash_advanced.md
+      - file: exercises/bash.ipynb
   - caption: Building CLI with Python
     chapters:
-      - file: chapters/03/3_building_cli_python.ipynb
-      - file: exercises/2_python_cli.ipynb
+      - file: chapters/scripting/building_cli_python.ipynb
+      - file: exercises/python_cli.ipynb
   - caption: Version Control
     chapters:
-      - file: chapters/04/4_version_control.md
-      - file: exercises/3_version_control.ipynb
-      - file: chapters/04/4_git_advanced.md
-      - file: exercises/4_git_advanced.ipynb
+      - file: chapters/vcs/version_control.md
+      - file: exercises/version_control.ipynb
+      - file: chapters/vcs/git_advanced.md
+      - file: exercises/git_advanced.ipynb
   - caption: Extras
     chapters:
-      - file: exercises/2_python_refresher.ipynb 
+      - file: exercises/python_refresher.ipynb 
   - caption: Appendix
     chapters:
-      - file: chapters/appendix/0_references.md
+      - file: chapters/appendix/references.md
 
     # sections:
       # - file: test_pages/layout_elements
