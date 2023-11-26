@@ -44,7 +44,7 @@ In building the Zipf's Law project,
 we'll follow a widely used template
 for organizing small and medium-sized data analysis projects {cite:p}`Nobl2009`.
 The project will live in a directory called `zipf`,
-which will also be a Git repository stored on GitHub (Chapter [Git Command-line](./vcs/version_control.md) **TODO**.
+which will also be a Git repository stored on GitHub (Chapter [Git Command-line](./vcs/version_control.md) |key1| )**TODO**.
 The following is an abbreviated version of the project directory tree
 as it appears toward the end of the book:
 
