@@ -20,11 +20,13 @@ parts:
   - caption: Version Control
     chapters:
       - file: chapters/04/4_version_control.md
-      - file: exercises/3_version_control.ipynb  
+      - file: exercises/3_version_control.ipynb
+      - file: chapters/04/4_git_advanced.md
+      - file: exercises/4_git_advanced.ipynb
   - caption: Extras
     chapters:
       - file: exercises/2_python_refresher.ipynb 
-  - caption: References
+  - caption: Appendix
     chapters:
       - file: chapters/appendix/0_references.md
 

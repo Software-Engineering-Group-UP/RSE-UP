@@ -149,10 +149,9 @@ as long as your username and email are accurate.
 > $ git config --help
 > ```
 
-## Creating a New Repository {#git-cmdline-repos}
+## Creating a New Repository
 
-Once Git is configured,
-we can use it to track work on our Zipf's Law project.
+Once Git is configured, we can use it to track work on our Zipf's Law project.
 Let's make sure we are in the top-level directory of our project:
 
 ```bash
@@ -186,8 +185,7 @@ $ ls
 bin     data    results
 ```
 
-but if we add the `-a` flag to show everything,
-we can see that Git has created a hidden directory within `zipf` called `.git`:
+but if we add the `-a` flag to show everything, we can see that Git has created a hidden directory within `zipf` called `.git`:
 
 ```bash
 $ ls -a
@@ -198,11 +196,9 @@ $ ls -a
 ```
 
 Git stores information about the project in this special subdirectory.
-If we ever delete it,
-we will lose that history.
+If we ever delete it, we will lose that history.
 
-We can check that everything is set up correctly
-by asking Git to tell us the status of our project:
+We can check that everything is set up correctly by asking Git to tell us the status of our project:
 
 ```bash
 $ git status
@@ -225,17 +221,13 @@ nothing added to commit but untracked files
 present (use "git add" to track)
 ```
 
-"No commits yet" means that Git hasn't recorded any history yet,
-while "Untracked files" means Git has noticed that
-there are things in `bin/`, `data/` and `results/`
-that it is not yet keeping track of.
+"No commits yet" means that Git hasn't recorded any history yet, while "Untracked files" means Git has noticed that
+there are things in `bin/`, `data/` and `results/` that it is not yet keeping track of.
 
 ## Adding Existing Work
 
-Now that our project is a repository,
-we can tell Git to start recording its history.
-To do this,
-we add things to the list of things Git is tracking using `git add`.
+Now that our project is a repository, we can tell Git to start recording its history.
+To do this, we add things to the list of things Git is tracking using `git add`.
 We can do this for single files:
 
 ```bash
@@ -288,11 +280,9 @@ Changes to be committed:
 	  new file:   results/moby_dick.csv
 ```
 
-Adding all of our existing files this way is easy,
-but we can accidentally add things that should never be in version control,
-such as files containing passwords or other sensitive information.
-The output of `git status` tells us that we can remove such files from the list of things to be saved using `git rm --cached`; we will practice this in Exercise **TODO** ref(git-cmdline-ex-unsave).
-
+Adding all of our existing files this way is easy, but we can accidentally add things that should never be in version control,
+such as files containing passwords or other sensitive information. 
+The output of `git status` tells us that we can remove such files from the list of things to be saved using `git rm --cached`; we will practice this in [Exercise](https://software-engineering-group-up.github.io/RSE-UP/exercises/3_version_control.html#removing-before-saving)
 > **What to Save**
 >
 > We always want to save programs, manuscripts,
@@ -341,16 +331,12 @@ $ git commit -m "Add scripts, novels, word counts, and plots"
  create mode 100644 results/moby_dick.csv
 ```
 
-`git commit` takes everything we have told Git to save using `git add`
-and stores a copy permanently inside the repository's `.git` directory.
+`git commit` takes everything we have told Git to save using `git add` and stores a copy permanently inside the repository's `.git` directory.
 This permanent copy is called a **commit** or a **revision**. Git gives is a unique identifier, and the first line of output from `git commit` displays
 its **short identifier** `2dc78f0`, which is the first few characters of that unique label.
 
-We use the `-m` option (short for **m**essage)
-to record a short comment with the commit
-to remind us later what we did and why.
-(Once again, we put it in double quotes because it contains spaces.)
-If we run `git status` now:
+We use the `-m` option (short for **m**essage) to record a short comment with the commit to remind us later what we did and why.
+(Once again, we put it in double quotes because it contains spaces.) If we run `git status` now:
 
 ```bash
 $ git status
@@ -364,34 +350,24 @@ On branch master
 nothing to commit, working tree clean
 ```
 
-This first commit becomes the starting point of our project's history:
-we won't be able to see changes made before this point.
-This implies that we should make our project a Git repository
-as soon as we create it
+This first commit becomes the starting point of our project's history: 
+we won't be able to see changes made before this point. This implies that we should make our project a Git repository as soon as we create it
 rather than after we have done some work.
 
 ## Describing Commits
 
-If we run `git commit` *without* the `-m` option,
-Git opens a text editor
-so that we can write a longer **commit message**. In this message,
-the first line is referred to as the "subject" and the rest as the "body",
-just as in an email.
+If we run `git commit` *without* the `-m` option, Git opens a text editor so that we can write a longer **commit message**. In this message,
+the first line is referred to as the "subject" and the rest as the "body", just as in an email.
 
-When we use `-m`, we are only writing the subject line;
-this makes things easier in the short run, but if our project's history fills up with one-liners like "Fixed problem" or "Updated", our future self will wish that we had taken a few extra seconds to explain things in a little more detail.
+When we use `-m`, we are only writing the subject line; this makes things easier in the short run, but if our project's history fills up with one-liners like "Fixed problem" or "Updated", our future self will wish that we had taken a few extra seconds to explain things in a little more detail.
 Following [these guidelines]( https://chris.beams.io/posts/git-commit/) will help:
 
-1.  Separate the subject from the body with a blank line
-    so that it is easy to spot.
+1.  Separate the subject from the body with a blank line so that it is easy to spot.
 2.  Limit subject lines to 50 characters so that they are easy to scan.
 3.  Write the subject line in Title Case (like a section heading).
 4.  Do not end the subject line with a period.
-5.  Write as if giving a command
-    (e.g., "Make each plot half the width of the page").
-6.  Wrap the body
-    (i.e., insert line breaks to format text as paragraphs
-    rather than relying on editors to wrap lines automatically).
+5.  Write as if giving a command (e.g., "Make each plot half the width of the page").
+6.  Wrap the body (i.e., insert line breaks to format text as paragraphs rather than relying on editors to wrap lines automatically).
 7.  Use the body to explain what and why rather than how.
 
 > **Which Editor?**
@@ -505,7 +481,7 @@ It could be better:
 most of the visual space is devoted to a few very common words,
 which makes it hard to see what is happening with the other ten thousand or so words.
 
-```../../figures/git-cmdline/plot-initial.png)
+```{figure} ../../figures/git-cmdline/plot-initial.png)
 :name git-cmdline-initial-plot
 Git CMDline initial plot
 ```
@@ -680,7 +656,7 @@ $ git commit -m "Plot frequency against rank on log-log axes"
 > that have been added to the current changeset but not yet committed
 > ([Figure](git-cmdline-staging-area)).
 
-```../../figures/git-cmdline/staging-area.png
+```{figure} ../../figures/git-cmdline/staging-area.png
 :name: git-cmdline-staging-area
 Git CMDline staging area
 ```
@@ -692,7 +668,7 @@ $ python bin/plotcounts.py results/dracula.csv --outfile
   results/dracula.png
 ```
 
-```../../figures/git-cmdline/plot-loglog.png
+```{figure} ../../figures/git-cmdline/plot-loglog.png
 :name: git-cmdline-loglog-plot
 Git CMDline LOG Plot
 ```
@@ -760,7 +736,7 @@ The Git commands we've covered so far (`git add`, `git commit`, `git diff`)
 represent the tasks you perform in a basic Git workflow in a local repository 
 ([Figure](git-remote) a).
 
-```../../figures/git-cmdline/git-remote.png
+```{figure} ../../figures/git-cmdline/git-remote.png
 :name: git-remote
 Git Remote
 ```
@@ -801,7 +777,7 @@ Next, we need to connect our desktop repository with the one on GitHub.
 We do this by making the GitHub repository a **remote** of the local repository.
 The home page of our new repository on GitHub includes the string we need to identify it ([Figure](git-cmdline-repo-link)).
 
-```../../figures/git-cmdline/repo-link.png
+```{figure} ../../figures/git-cmdline/repo-link.png
 :name: git-cmdline-repo-link
 Git CMDline Repository link
 ```
@@ -873,7 +849,7 @@ To https://github.com/amira-khan/zipf.git
 
 If we view our GitHub repository in the browser, it now includes all of our project files, along with all of the commits we have made so far ([Figure](git-cmdline-history)).
 
-```../../figures/git-cmdline/repo-history.png
+```{figure} ../../figures/git-cmdline/repo-history.png
 :name: git-cmdline-history
 Git Commandline History
 
