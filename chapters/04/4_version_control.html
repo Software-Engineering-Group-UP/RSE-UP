@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/04/4_version_control.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="testing linking" href="4_test.html" />
+    <link rel="next" title="Exercise Version Control" href="../../exercises/3_version_control.html" />
     <link rel="prev" title="Exercises Scripting Python for CLI tools" href="../../exercises/2_python_cli.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -184,7 +184,6 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Using Git at the Command Line</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4_test.html">testing linking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../exercises/3_version_control.html">Exercise Version Control</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Extras</span></p>
@@ -235,37 +234,6 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://mybinder.org/v2/gh/Software-Engineering-Group-UP/RSE-UP/main?urlpath=tree/chapters/04/4_version_control.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../../_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -326,7 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/chapters/04/4_version_control.ipynb" target="_blank"
+      <li><a href="../../_sources/chapters/04/4_version_control.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,7 +304,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -395,7 +363,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -411,6 +381,24 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up">Setting Up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-repository-git-cmdline-repos">Creating a New Repository {#git-cmdline-repos}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-existing-work">Adding Existing Work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-commits">Describing Commits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-and-tracking-changes">Saving and Tracking Changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synchronizing-with-other-repositories">Synchronizing with Other Repositories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-history">Exploring History</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#restoring-old-versions-of-files">Restoring Old Versions of Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignoring-files">Ignoring Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keypoints">Keypoints</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -437,7 +425,7 @@ It’s also useful from a collaboration viewpoint, because the system keeps a re
 <p>There are many different version control systems, such as CVS, Subversion, and Mercurial, but the most widely used version control system today is <strong>Git</strong>.
 Many people first encounter it through a GUI like the <a class="reference external" href="https://desktop.github.com/">Github desktop client</a> or paid tools like <a class="reference external" href="https://www.gitkraken.com/">GitKraken</a> or terminal application like <a class="reference external" href="https://github.com/extrawurst/gitui">GitUI</a>.
 However, these tools are actually wrappers around Git’s original command-line interface,which gives us access to all of Git’s features.
-This lesson describes how to perform fundamental operations using that interface; Chapter <span class="xref myst">Git Advanced</span> then introduces more advanced operations that can be used to implement a smoother research workflow.</p>
+This lesson describes how to perform fundamental operations using that interface; Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/4_git_advanced.html">Git Advanced</a> then introduces more advanced operations that can be used to implement a smoother research workflow.</p>
 <p>To show how Git works, we will apply it to the Zipf’s Law project. Our project directory should currently include:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zipf/
 ├── bin
@@ -459,18 +447,1110 @@ This lesson describes how to perform fundamental operations using that interface
     └── moby_dick.csv
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">bin/plotcounts.py</span></code> is the solution to Exercise <span class="xref myst">Scripting - Exercise Better Plotting</span>; over the course of this chapter we will edit it to produce more informative plots.  Initially, it looks like this:</p>
-<p>For example, see this subsection_.
-.. _subsection: ../../exercises/2_python_cli.ipynb#a-better-plotting-program</p>
-<p>For example, see subsection_.
-now without ../../
-.. _subsection: exercises/2_python_cli.ipynb#a-better-plotting-program</p>
-<p>:ref:<code class="docutils literal notranslate"><span class="pre">../../exercises/2_python_cli.ipynb</span></code></p>
-<p>:ref:<code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">title</span> <span class="pre">&lt;../../exercises/2_python_cli.ipynb</span></code></p>
-<p>:ref:<code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">test</span> <span class="pre">&lt;../../exercises/2_python_cli.ipynb#a-better-plotting-program&gt;</span></code></p>
-<p>like this <code class="docutils literal notranslate"><span class="pre">link</span> <span class="pre">&lt;../../exercises/2_python_cli.ipynb#a-better-plotting-program&gt;</span></code>_.</p>
-<p>or like this
-like this <code class="docutils literal notranslate"><span class="pre">link</span> <span class="pre">&lt;../../exercises/2_python_cli.ipynb&gt;</span></code>_.</p>
+<p><code class="docutils literal notranslate"><span class="pre">bin/plotcounts.py</span></code> is the solution to Exercise <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/2_python_cli.html#a-better-plotting-program">Scripting - Exercise Better Plotting</a>; over the course of this chapter we will edit it to produce more informative plots.  Initially, it looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Plot word counts.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run the command line program.&quot;&quot;&quot;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">infile</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                     <span class="n">names</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;word&#39;</span><span class="p">,</span> <span class="s1">&#39;word_frequency&#39;</span><span class="p">))</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;word_frequency&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                           <span class="n">method</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;inverse_rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rank&#39;</span><span class="p">]</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;word_frequency&#39;</span><span class="p">,</span>
+                         <span class="n">y</span><span class="o">=</span><span class="s1">&#39;inverse_rank&#39;</span><span class="p">,</span>
+                         <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+                         <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                         <span class="n">xlim</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">xlim</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">outfile</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;infile&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">FileType</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">),</span>
+                        <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Word count csv file name&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--outfile&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;plotcounts.png&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Output image file name&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--xlim&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;XMIN&#39;</span><span class="p">,</span> <span class="s1">&#39;XMAX&#39;</span><span class="p">),</span>
+                        <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;X-axis limits&#39;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="setting-up">
+<h2>Setting Up<a class="headerlink" href="#setting-up" title="Permalink to this heading">#</a></h2>
+<p>We write Git commands as <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">verb</span> <span class="pre">options</span></code>,
+where the <strong>subcommand</strong> <code class="docutils literal notranslate"><span class="pre">verb</span></code> tells Git what we want to do
+and <code class="docutils literal notranslate"><span class="pre">options</span></code> provide whatever additional information that subcommand needs.
+Using this syntax, the first thing we need to do is configure Git.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Amira Khan&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;amira@zipf.org&quot;</span>
+</pre></div>
+</div>
+<p>(Please use your own name and email address instead of the one shown.)
+Here, <code class="docutils literal notranslate"><span class="pre">config</span></code> is the verb
+and the rest of the command are options.
+We put the name in quotation marks because it contains a space;
+we don’t actually need to quote the email address,
+but do so for consistency.
+Since we are going to be using GitHub,
+the email address should be the same as you have or intend to use
+when setting up your GitHub account.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">--global</span></code> option tells Git to use the settings for all of our projects on this computer,
+so these two commands only need to be run once.
+However,
+we can re-run them any time if we want to change our details.
+We can also check our settings using the <code class="docutils literal notranslate"><span class="pre">--list</span></code> option:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--list
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>user.name=Amira Khan
+user.email=amira@zipf.org
+core.autocrlf=input
+core.editor=nano
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.ignorecase=true
+...
+</pre></div>
+</div>
+<p>Depending on your operating system and version of Git,
+your configuration list may look a bit different.
+Most of these differences shouldn’t matter right now,
+as long as your username and email are accurate.</p>
+<blockquote>
+<div><p><strong>Git Help and Manual</strong></p>
+<p>If we forget a Git command,
+we can list which ones are available using <code class="docutils literal notranslate"><span class="pre">--help</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>--help
+</pre></div>
+</div>
+<p>This option also gives us more information about specific commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--help
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="creating-a-new-repository-git-cmdline-repos">
+<h2>Creating a New Repository {#git-cmdline-repos}<a class="headerlink" href="#creating-a-new-repository-git-cmdline-repos" title="Permalink to this heading">#</a></h2>
+<p>Once Git is configured,
+we can use it to track work on our Zipf’s Law project.
+Let’s make sure we are in the top-level directory of our project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/zipf
+$<span class="w"> </span>ls
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span> bin       data      results
+</pre></div>
+</div>
+<p>We want to make this directory a <strong>repository</strong> i.e.,
+a place where Git can store versions of our files.
+We do this using the <code class="docutils literal notranslate"><span class="pre">init</span></code> command with <code class="docutils literal notranslate"><span class="pre">.</span></code> to mean “the current directory”:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>init<span class="w"> </span>.
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /Users/amira/zipf/.git/
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> seems to show that nothing has changed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bin     data    results
+</pre></div>
+</div>
+<p>but if we add the <code class="docutils literal notranslate"><span class="pre">-a</span></code> flag to show everything,
+we can see that Git has created a hidden directory within <code class="docutils literal notranslate"><span class="pre">zipf</span></code> called <code class="docutils literal notranslate"><span class="pre">.git</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-a
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.       ..      .git    bin     data    results
+</pre></div>
+</div>
+<p>Git stores information about the project in this special subdirectory.
+If we ever delete it,
+we will lose that history.</p>
+<p>We can check that everything is set up correctly
+by asking Git to tell us the status of our project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+
+No commits yet
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be
+  committed)
+
+        bin/
+        data/
+        results/
+
+nothing added to commit but untracked files
+present (use &quot;git add&quot; to track)
+</pre></div>
+</div>
+<p>“No commits yet” means that Git hasn’t recorded any history yet,
+while “Untracked files” means Git has noticed that
+there are things in <code class="docutils literal notranslate"><span class="pre">bin/</span></code>, <code class="docutils literal notranslate"><span class="pre">data/</span></code> and <code class="docutils literal notranslate"><span class="pre">results/</span></code>
+that it is not yet keeping track of.</p>
+</section>
+<section id="adding-existing-work">
+<h2>Adding Existing Work<a class="headerlink" href="#adding-existing-work" title="Permalink to this heading">#</a></h2>
+<p>Now that our project is a repository,
+we can tell Git to start recording its history.
+To do this,
+we add things to the list of things Git is tracking using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>.
+We can do this for single files:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>bin/countwords.py
+</pre></div>
+</div>
+<p>or entire directories:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>bin
+</pre></div>
+</div>
+<p>The easiest thing to do with an existing project
+is to tell Git to add everything in the current directory using <code class="docutils literal notranslate"><span class="pre">.</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>.
+</pre></div>
+</div>
+<p>We can then check the repository’s status to see what files have been added:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+	  new file:   bin/book_summary.sh
+	  new file:   bin/collate.py
+	  new file:   bin/countwords.py
+	  new file:   bin/plotcounts.py
+	  new file:   bin/script_template.py
+	  new file:   bin/utilities.py
+	  new file:   data/README.md
+	  new file:   data/dracula.txt
+	  new file:   data/frankenstein.txt
+	  new file:   data/jane_eyre.txt
+	  new file:   data/moby_dick.txt
+	  new file:   data/sense_and_sensibility.txt
+	  new file:   data/sherlock_holmes.txt
+	  new file:   data/time_machine.txt
+	  new file:   results/dracula.csv
+	  new file:   results/jane_eyre.csv
+	  new file:   results/jane_eyre.png
+	  new file:   results/moby_dick.csv
+</pre></div>
+</div>
+<p>Adding all of our existing files this way is easy,
+but we can accidentally add things that should never be in version control,
+such as files containing passwords or other sensitive information.
+The output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> tells us that we can remove such files from the list of things to be saved using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">--cached</span></code>; we will practice this in Exercise <strong>TODO</strong> ref(git-cmdline-ex-unsave).</p>
+<blockquote>
+<div><p><strong>What to Save</strong></p>
+<p>We always want to save programs, manuscripts,
+and everything else we have created by hand
+in version control.
+In this project,
+we have also chosen to save our data files
+and the results we have generated
+(including our plots).
+This is a project-specific decision:
+if these files are very large,
+for example,
+we may decide to save them elsewhere,
+while if they are easy to re-create,
+we may not save them at all.
+We will explore this issue further in Chapter &#64;ref(provenance).</p>
+</div></blockquote>
+<p>We no longer have any untracked files,
+but the tracked files haven’t been <strong>committed</strong> (i.e., saved permanently in our project’s history). We can do this using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add scripts, novels, word counts, and plots&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[master (root-commit) 173222b] Add scripts, novels, word 
+    counts, and plots
+ 18 files changed, 145296 insertions(+)
+ create mode 100644 bin/book_summary.sh
+ create mode 100644 bin/collate.py
+ create mode 100644 bin/countwords.py
+ create mode 100644 bin/plotcounts.py
+ create mode 100644 bin/script_template.py
+ create mode 100644 bin/utilities.py
+ create mode 100644 data/README.md
+ create mode 100644 data/dracula.txt
+ create mode 100644 data/frankenstein.txt
+ create mode 100644 data/jane_eyre.txt
+ create mode 100644 data/moby_dick.txt
+ create mode 100644 data/sense_and_sensibility.txt
+ create mode 100644 data/sherlock_holmes.txt
+ create mode 100644 data/time_machine.txt
+ create mode 100644 results/dracula.csv
+ create mode 100644 results/jane_eyre.csv
+ create mode 100644 results/jane_eyre.png
+ create mode 100644 results/moby_dick.csv
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> takes everything we have told Git to save using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>
+and stores a copy permanently inside the repository’s <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory.
+This permanent copy is called a <strong>commit</strong> or a <strong>revision</strong>. Git gives is a unique identifier, and the first line of output from <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> displays
+its <strong>short identifier</strong> <code class="docutils literal notranslate"><span class="pre">2dc78f0</span></code>, which is the first few characters of that unique label.</p>
+<p>We use the <code class="docutils literal notranslate"><span class="pre">-m</span></code> option (short for <strong>m</strong>essage)
+to record a short comment with the commit
+to remind us later what we did and why.
+(Once again, we put it in double quotes because it contains spaces.)
+If we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> now:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<p>the output tells us that
+all of our existing work is tracked and up to date:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+nothing to commit, working tree clean
+</pre></div>
+</div>
+<p>This first commit becomes the starting point of our project’s history:
+we won’t be able to see changes made before this point.
+This implies that we should make our project a Git repository
+as soon as we create it
+rather than after we have done some work.</p>
+</section>
+<section id="describing-commits">
+<h2>Describing Commits<a class="headerlink" href="#describing-commits" title="Permalink to this heading">#</a></h2>
+<p>If we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> <em>without</em> the <code class="docutils literal notranslate"><span class="pre">-m</span></code> option,
+Git opens a text editor
+so that we can write a longer <strong>commit message</strong>. In this message,
+the first line is referred to as the “subject” and the rest as the “body”,
+just as in an email.</p>
+<p>When we use <code class="docutils literal notranslate"><span class="pre">-m</span></code>, we are only writing the subject line;
+this makes things easier in the short run, but if our project’s history fills up with one-liners like “Fixed problem” or “Updated”, our future self will wish that we had taken a few extra seconds to explain things in a little more detail.
+Following <a class="reference external" href="https://chris.beams.io/posts/git-commit/">these guidelines</a> will help:</p>
+<ol class="arabic simple">
+<li><p>Separate the subject from the body with a blank line
+so that it is easy to spot.</p></li>
+<li><p>Limit subject lines to 50 characters so that they are easy to scan.</p></li>
+<li><p>Write the subject line in Title Case (like a section heading).</p></li>
+<li><p>Do not end the subject line with a period.</p></li>
+<li><p>Write as if giving a command
+(e.g., “Make each plot half the width of the page”).</p></li>
+<li><p>Wrap the body
+(i.e., insert line breaks to format text as paragraphs
+rather than relying on editors to wrap lines automatically).</p></li>
+<li><p>Use the body to explain what and why rather than how.</p></li>
+</ol>
+<blockquote>
+<div><p><strong>Which Editor?</strong></p>
+<p>The default editor in the Unix shell is called Vim.
+It has many useful features,
+but no one has ever claimed that its interface is intuitive.
+(“How do I exit the Vim editor?”
+is one of the most frequently read questions on Stack Overflow.)</p>
+<p>To configure Git to use the <code class="docutils literal notranslate"><span class="pre">nano</span></code> editor
+introduced in Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/02/2_bash_basics.html">bash-basics</a> instead,
+execute the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span><span class="s2">&quot;nano -w&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="saving-and-tracking-changes">
+<h2>Saving and Tracking Changes<a class="headerlink" href="#saving-and-tracking-changes" title="Permalink to this heading">#</a></h2>
+<p>Our initial commit gave us a starting point.
+The process to build on top of it is similar:
+first add the file, then commit changes.
+Let’s check that we’re in the right directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/Users/amira/zipf
+</pre></div>
+</div>
+<p>Let’s use <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> to plot the word counts in <code class="docutils literal notranslate"><span class="pre">results/dracula.csv</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>bin/plotcounts.py<span class="w"> </span>results/dracula.csv<span class="w"> </span>--outfile
+<span class="w">  </span>results/dracula.png
+</pre></div>
+</div>
+<p>If we check the status of our repository again,
+Git tells us that we have a new file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be
+  committed)
+    results/dracula.png
+
+nothing added to commit but untracked files
+present (use &quot;git add&quot; to track)
+</pre></div>
+</div>
+<p>Git isn’t tracking this file yet because we haven’t told it to.
+Let’s do that with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and then commit our change:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>results/dracula.png
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add plot of word counts for &#39;Dracula&#39;&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[master 851d590] Add plot of word counts for &#39;Dracula&#39;
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 results/dracula.png
+</pre></div>
+</div>
+<p>If we want to know what we’ve done recently,
+we can display the project’s history using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>commit 851d590a214c7859eafa0998c6c951f8e0eb359b (HEAD -&gt; master)
+Author: Amira Khan &lt;amira@zipf.org&gt;
+Date:   Sat Dec 19 09:32:41 2020 -0800
+
+    Add plot of word counts for &#39;Dracula&#39;
+
+commit 173222bf90216b408c8997f4e143572b99637750
+Author: Amira Khan &lt;amira@zipf.org&gt;
+Date:   Sat Dec 19 09:30:23 2020 -0800
+
+    Add scripts, novels, word counts, and plots
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> lists all commits made to a repository in reverse chronological order.
+The listing for each commit includes
+the commit’s <strong>full identifier</strong> (which starts with the same characters as the short identifier printed by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>),
+the commit’s author, when it was created, and the commit message that we wrote.</p>
+<blockquote>
+<div><p><strong>Scrolling through Logs</strong></p>
+<p>Our log this time isn’t very long,
+so you were likely able to see it printed to your screen without needing to scroll.
+When you begin working with longer logs
+(like later in this chapter),
+you’ll notice that the commits are shown in a pager program,
+as you saw in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/02/2_bash_basics.html#reading-the-manual">bash-basics-help</a> with manual pages.
+You can apply the same keystrokes to scroll through the log
+and exit the paging program.
+The plot we have made is shown in <span class="xref myst">Figure</span>.
+It could be better:
+most of the visual space is devoted to a few very common words,
+which makes it hard to see what is happening with the other ten thousand or so words.</p>
+</div></blockquote>
+<div class="highlight-../../figures/git-cmdline/plot-initial.png) notranslate"><div class="highlight"><pre><span></span>:name git-cmdline-initial-plot
+Git CMDline initial plot
+</pre></div>
+</div>
+<p>An alternative way to visually evaluate Zipf’s Law is
+to plot the word frequency against rank on log-log axes.
+Let’s change the section:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;word_frequency&#39;</span><span class="p">,</span>
+                         <span class="n">y</span><span class="o">=</span><span class="s1">&#39;inverse_rank&#39;</span><span class="p">,</span>
+                         <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+                         <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                         <span class="n">xlim</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">xlim</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>to put <code class="docutils literal notranslate"><span class="pre">'rank'</span></code> on the y-axis and add <code class="docutils literal notranslate"><span class="pre">loglog=True</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;word_frequency&#39;</span><span class="p">,</span>
+                         <span class="n">y</span><span class="o">=</span><span class="s1">&#39;rank&#39;</span><span class="p">,</span> <span class="n">loglog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                         <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+                         <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                         <span class="n">xlim</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">xlim</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When we check our status again,
+it prints:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be 
+  committed)
+  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in
+  working directory)
+	  modified:   bin/plotcounts.py
+
+no changes added to commit (use &quot;git add&quot; or &quot;git commit -a&quot;)
+</pre></div>
+</div>
+<p>The last line tells us that
+a file Git already knows about has been modified.</p>
+<blockquote>
+<div><p><strong>Hints from Git</strong></p>
+<p>After executing Git commands,
+you may see output that differs slightly from what is shown here.
+For example,
+you may see a suggestion for <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>\index{Git commands!checkout}
+in place of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code> after executing the code above,
+which means you’re running a different version of Git.
+As with most tasks in coding,
+there are often multiple commands to accomplish the same action with Git.
+This chapter will show output from Git version 2.29.
+If you see something different in your Git output,
+you can try the commands we present here,
+or follow the suggestions included in the output you see.
+When in doubt,
+check the documentation (e.g., <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">--help</span></code>)
+if you get stuck.</p>
+</div></blockquote>
+<p>To save those changes in the repository’s history,
+we must <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.
+Before we do, though, let’s review the changes using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>. This command shows us the differences between the current state of our repository
+and the most recently saved version:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>diff
+</pre></div>
+</div>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/bin/plotcounts.py b/bin/plotcounts.py</span>
+<span class="gh">index f274473..c4c5b5a 100644</span>
+<span class="gd">--- a/bin/plotcounts.py</span>
+<span class="gi">+++ b/bin/plotcounts.py</span>
+<span class="gu">@@ -13,7 +13,7 @@ def main(args):</span>
+<span class="w"> </span>                                           method=&#39;max&#39;)
+<span class="w"> </span>    df[&#39;inverse_rank&#39;] = 1 / df[&#39;rank&#39;]
+<span class="w"> </span>    ax = df.plot.scatter(x=&#39;word_frequency&#39;,
+<span class="gd">-                         y=&#39;inverse_rank&#39;,</span>
+<span class="gi">+                         y=&#39;rank&#39;, loglog=True,</span>
+<span class="w"> </span>                         figsize=[12, 6],
+<span class="w"> </span>                         grid=True,
+<span class="w"> </span>                         xlim=args.xlim)
+</pre></div>
+</div>
+<p>The output is cryptic,
+even by the standards of the Unix command line,
+because it is actually a series of commands telling editors and other tools
+how to turn the file we <em>had</em> into the file we <em>have</em>.
+If we break it down into pieces:</p>
+<ol class="arabic simple">
+<li><p>The first line tells us that Git is producing output
+in the format of the Unix <code class="docutils literal notranslate"><span class="pre">diff</span></code> command.</p></li>
+<li><p>The second line tells exactly which versions of the file Git is comparing:
+<code class="docutils literal notranslate"><span class="pre">f274473</span></code> and <code class="docutils literal notranslate"><span class="pre">c4c5b5a</span></code> are the short identifiers for those versions.</p></li>
+<li><p>The third and fourth lines once again show the name of the file being changed;
+the name appears twice in case we are renaming a file as well as modifying it.</p></li>
+<li><p>The remaining lines show us the changes and the lines on which they occur.
+A minus sign <code class="docutils literal notranslate"><span class="pre">-</span></code> in the first column indicates a line that is being removed,
+while a plus sign <code class="docutils literal notranslate"><span class="pre">+</span></code> shows a line that is being added. Lines without either
+plus or minus signs have not been changed, but are provided around the lines
+that have been changed to add context.</p></li>
+</ol>
+<p>Git’s default is to compare line by line,
+but it can be instructive to instead compare word by word
+using the <code class="docutils literal notranslate"><span class="pre">--word-diff</span></code> or <code class="docutils literal notranslate"><span class="pre">--color-words</span></code> options.
+These are particularly useful when running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> on prose rather than code.</p>
+<p>After reviewing our change
+we can commit it just as we did before:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Plot frequency against rank on log-log axes&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be 
+  committed)
+  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in 
+  working directory)
+	  modified:   bin/plotcounts.py
+
+no changes added to commit (use &quot;git add&quot; or &quot;git commit -a&quot;)
+</pre></div>
+</div>
+<p>Whoops:
+we forgot to add the file to the set of things we want to commit.
+Let’s do that and then try the commit again:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>bin/plotcounts.py
+$<span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+Changes to be committed:
+  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
+	  modified:   bin/plotcounts.py
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Plot frequency against rank on log-log axes&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[master 582f7f6] Plot frequency against rank on log-log axes
+1 file changed, 1 insertion(+), 1 deletion(-)
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>The Staging Area</strong></p>
+<p>Git insists that we add files to the set we want to commit before actually committing anything.
+This allows us to commit our changes in stages and capture changes in logical portions
+rather than only large batches.
+For example,
+suppose we add a few citations to the introduction of our thesis,
+which is in the file <code class="docutils literal notranslate"><span class="pre">introduction.tex</span></code>.
+We might want to commit those additions
+but not commit the changes to <code class="docutils literal notranslate"><span class="pre">conclusion.tex</span></code> (which we haven’t finished writing yet).
+To allow for this,
+Git has a special <strong>staging area</strong>
+where it keeps track of things
+that have been added to the current changeset but not yet committed
+(<span class="xref myst">Figure</span>).</p>
+</div></blockquote>
+<div class="highlight-../../figures/git-cmdline/staging-area.png notranslate"><div class="highlight"><pre><span></span>:name: git-cmdline-staging-area
+Git CMDline staging area
+</pre></div>
+</div>
+<p>Let’s take a look at our new plot (<span class="xref myst">Figure</span>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>bin/plotcounts.py<span class="w"> </span>results/dracula.csv<span class="w"> </span>--outfile
+<span class="w">  </span>results/dracula.png
+</pre></div>
+</div>
+<div class="highlight-../../figures/git-cmdline/plot-loglog.png notranslate"><div class="highlight"><pre><span></span>:name: git-cmdline-loglog-plot
+Git CMDline LOG Plot
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Interpreting Our Plot</strong></p>
+<p>If Zipf’s Law holds,
+we should still see a linear relationship,
+although now it will be negative, rather than positive
+(since we’re plotting the rank instead of the reverse rank).
+The low-frequency words (below about 120 instances)
+seem to follow a straight line very closely,
+but we currently have to make this evaluation by eye.
+In the next chapter,
+we’ll write code to fit and add a line to our plot.</p>
+</div></blockquote>
+<p>Running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> again shows that our plot has been modified:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be
+  committed)
+  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in
+  working directory)
+	  modified:   results/dracula.png
+
+no changes added to commit (use &quot;git add&quot; or &quot;git commit -a&quot;)
+</pre></div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">results/dracula.png</span></code> is a binary file rather than text,
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> can’t show what has changed.
+It therefore simply tells us that the new file is different from the old one:</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/results/dracula.png b/results/dracula.png</span>
+<span class="gh">index c1f62fd..57a7b70 100644</span>
+Binary files a/results/dracula.png and 
+b/results/dracula.png differ
+</pre></div>
+</div>
+<p>This is one of the biggest weaknesses of Git
+(and other version control systems):
+they are built to handle text.
+They can track changes to images, PDFs, and other formats,
+but they cannot do as much to show or merge differences.
+In a better world than ours,
+programmers fixed this years ago.</p>
+<p>If we are sure we want to save all of our changes,
+we can add and commit in a single command
+by giving <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Update dracula plot&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[master ee8684c] Update dracula plot
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rewrite results/dracula.png (99%)
+</pre></div>
+</div>
+<p>The Git commands we’ve covered so far (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>)
+represent the tasks you perform in a basic Git workflow in a local repository
+(<span class="xref myst">Figure</span> a).</p>
+<div class="highlight-../../figures/git-cmdline/git-remote.png notranslate"><div class="highlight"><pre><span></span>:name: git-remote
+Git Remote
+</pre></div>
+</div>
+</section>
+<section id="synchronizing-with-other-repositories">
+<h2>Synchronizing with Other Repositories<a class="headerlink" href="#synchronizing-with-other-repositories" title="Permalink to this heading">#</a></h2>
+<p>Sooner or later our computer will experience a hardware failure,
+be stolen,
+or be thrown in the lake by someone who thinks that
+we shouldn’t spend the entire vacation working on our thesis.
+Even before that happens
+we will probably want to collaborate with others,
+which we can do by linking our local repository
+to one stored on a hosting service such as <a class="reference external" href="https://www.github.com">GitHub</a>, <a class="reference external" href="https://www.gitlab.com">Gitlab</a>, or the <a class="reference external" href="https://gitup.uni-potsdam.de/">University of Potsdam</a> (If your are a University of Potsdam student).</p>
+<blockquote>
+<div><p><strong>Where’s My Repository?</strong></p>
+<p>So far we’ve worked with repositories located on your own computer,
+which we’ll also refer to as local or desktop repositories.
+The alternative is hosting repositories on GitHub or another server,
+which we’ll refer to as a remote or GitHub repository.</p>
+</div></blockquote>
+<p>The first steps are to create an account on GitHub,
+and then select the option there to create a new remote repository
+to synchronize with our local repository.
+Select the option on GitHub to create a new repository,
+then add the requested information for your Zipf’s Law project.
+The remote repository doesn’t have to have the same name as the local one,
+but we will probably get confused if they are different,
+so the repository we create on GitHub will also be called <code class="docutils literal notranslate"><span class="pre">zipf</span></code>.
+The other default options are likely appropriate for your remote repository.
+Because we are synchronizing with an existing repository,
+do not add a README, <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>, or license;
+we’ll discuss these additions in other chapters.</p>
+<p>Next, we need to connect our desktop repository with the one on GitHub.
+We do this by making the GitHub repository a <strong>remote</strong> of the local repository.
+The home page of our new repository on GitHub includes the string we need to identify it (<span class="xref myst">Figure</span>).</p>
+<div class="highlight-../../figures/git-cmdline/repo-link.png notranslate"><div class="highlight"><pre><span></span>:name: git-cmdline-repo-link
+Git CMDline Repository link
+</pre></div>
+</div>
+<p>We can click on “HTTPS” to change the URL from SSH to HTTPS and then copy that URL.</p>
+<blockquote>
+<div><p><strong>HTTPS vs. SSH</strong></p>
+<p>We use HTTPS here because it does not require additional configuration.
+If we want to set up SSH access so that we do not have to type in our password as often,
+<a class="reference external" href="https://help.github.com/articles/generating-ssh-keys">https://help.github.com/articles/generating-ssh-keys</a>
+the tutorials from <a class="reference external" href="https://help.github.com/articles/generating-ssh-keys">GitHub SSh Guide</a>,
+<a class="reference external" href="https://www.bitbucket.org">BitBucket</a>,
+or <a class="reference external" href="https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/">GitLab</a>
+explain the steps required.</p>
+</div></blockquote>
+<p>Next, let’s go into the local <code class="docutils literal notranslate"><span class="pre">zipf</span></code> repository and run this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/zipf
+$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/amira-khan/zipf.git
+</pre></div>
+</div>
+<p>Make sure to use the URL for your repository instead of the one shown:
+the only difference should be that it includes your username instead of <code class="docutils literal notranslate"><span class="pre">amira-khan</span></code>.</p>
+<p>A Git remote is like a bookmark: it gives a short name to a URL.
+In this case the remote’s name is <code class="docutils literal notranslate"><span class="pre">origin</span></code>; we could use anything we want,
+but <code class="docutils literal notranslate"><span class="pre">origin</span></code> is Git’s default, so we will stick with it.
+We can check that the command has worked by running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code> (where the <code class="docutils literal notranslate"><span class="pre">-v</span></code> option is short for <strong>v</strong>erbose):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>-v
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>origin	https://github.com/amira-khan/zipf.git (fetch)
+origin	https://github.com/amira-khan/zipf.git (push)
+</pre></div>
+</div>
+<p>Git displays two lines because it’s actually possible to set up a remote
+to download from one URL but upload to another.
+Sensible people don’t do this,
+so we won’t explore this possibility any further.</p>
+<p>Now that we have configured a remote,
+we can <strong>push</strong> the work we have done so far to the repository on GitHub:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master
+</pre></div>
+</div>
+<p>This may prompt us to enter our username and password;
+once we do that, Git prints a few lines of administrative information:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Enumerating objects: 35, done.
+Counting objects: 100% (35/35), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (35/35), done.
+Writing objects: 100% (35/35), 2.17 MiB | 602.00 KiB/s, done.
+Total 35 (delta 7), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (7/7), done.
+To https://github.com/amira-khan/zipf.git
+ * [new branch]      master -&gt; master
+</pre></div>
+</div>
+<p>If we view our GitHub repository in the browser, it now includes all of our project files, along with all of the commits we have made so far (<span class="xref myst">Figure</span>).</p>
+<div class="highlight-../../figures/git-cmdline/repo-history.png notranslate"><div class="highlight"><pre><span></span>:name: git-cmdline-history
+Git Commandline History
+
+</pre></div>
+</div>
+<p>\newpage</p>
+<p>We can also <strong>pull</strong> from the remote repository to the local one:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>master
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>From https://github.com/amira-khan/zipf
+ * branch            master     -&gt; FETCH_HEAD
+Already up-to-date.
+</pre></div>
+</div>
+<p>Pulling has no effect in this case
+because the two repositories are already synchronized.</p>
+<blockquote>
+<div><p><strong>Fetching</strong></p>
+<p>The second line in the remote configuration we viewed earlier is labeled <code class="docutils literal notranslate"><span class="pre">push</span></code>,
+which makes sense given the command we used (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>)
+to upload changes from our local to remote repositories.
+Why is the other line labeled <code class="docutils literal notranslate"><span class="pre">fetch</span></code> instead of <code class="docutils literal notranslate"><span class="pre">pull</span></code>?
+Fetching and pulling both download new data from a remote repository,
+but only pulling integrates those changes into your local repository’s version history.
+Because <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> doesn’t alter your local files,
+it’s used to view changes between local and remote versions.</p>
+</div></blockquote>
+<p>The Git commands we’ve covered in this section (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>)
+are the main tasks associated with incorporating remote repositories into your workflow (<span class="xref myst">Figure</span> b).</p>
+<blockquote>
+<div><p><strong>Amira’s Repository</strong></p>
+<p>Amira’s repository referenced in this section
+exists on GitHub at <a class="reference external" href="https://github.com/amira-khan/zipf">amira-khan/zipf</a>;
+you may find it a useful reference point
+when proceeding through the rest of the book.</p>
+</div></blockquote>
+</section>
+<section id="exploring-history">
+<h2>Exploring History<a class="headerlink" href="#exploring-history" title="Permalink to this heading">#</a></h2>
+<p>Git lets us look at previous versions of files
+and restore specific files to earlier states if we want to.
+In order to do these things, we need to identify the versions we want.</p>
+<p>The two ways to do this are analogous to <strong>absolute</strong> and <strong>relative</strong> paths.
+The “absolute” version is the unique identifier that Git gives to each commit.
+These identifiers are 40 characters long, but in most situations Git will let us use just the first half dozen characters or so.
+For example, if we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> right now, it shows us something like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>commit ee8684ca123e1e829fc995d672e3d7e4b00f2610
+(HEAD -&gt; master, origin/master)
+Author: Amira Khan &lt;amira@zipf.org&gt;
+Date:   Sat Dec 19 09:52:04 2020 -0800
+
+    Update dracula plot
+
+commit 582f7f6f536d520b1328c04c9d41e24b54170656
+Author: Amira Khan &lt;amira@zipf.org&gt;
+Date:   Sat Dec 19 09:37:25 2020 -0800
+
+    Plot frequency against rank on log-log axes
+
+commit 851d590a214c7859eafa0998c6c951f8e0eb359b
+Author: Amira Khan &lt;amira@zipf.org&gt;
+Date:   Sat Dec 19 09:32:41 2020 -0800
+
+    Add plot of word counts for &#39;Dracula&#39;
+
+commit 173222bf90216b408c8997f4e143572b99637750
+Author: Amira Khan &lt;amira@zipf.org&gt;
+Date:   Sat Dec 19 09:30:23 2020 -0800
+
+    Add scripts, novels, word counts, and plots
+</pre></div>
+</div>
+<p>The commit in which we changed <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>
+has the absolute identifier <code class="docutils literal notranslate"><span class="pre">582f7f6f536d520b1328c04c9d41e24b54170656</span></code>,
+but we can use <code class="docutils literal notranslate"><span class="pre">582f7f6</span></code> to reference it in almost all situations.</p>
+<p>While <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> includes the commit message,
+it doesn’t tell us exactly what changes were made in each commit.
+If we add the <code class="docutils literal notranslate"><span class="pre">-p</span></code> option (short for <strong>p</strong>atch),
+we get the same kind of details <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> provides
+to describe the changes in each commit:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>-p
+</pre></div>
+</div>
+<p>The first part of the output is shown below;
+we have truncated the rest,
+since it is very long:</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>commit ee8684ca123e1e829fc995d672e3d7e4b00f2610
+(HEAD -&gt; master, origin/master)
+Author: Amira Khan &lt;amira@zipf.org&gt;
+Date:   Sat Dec 19 09:52:04 2020 -0800
+
+<span class="w"> </span>   Update dracula plot
+
+<span class="gh">diff --git a/results/dracula.png b/results/dracula.png</span>
+<span class="gh">index c1f62fd..57a7b70 100644</span>
+Binary files a/results/dracula.png and 
+b/results/dracula.png differ
+...
+</pre></div>
+</div>
+<p>Alternatively,
+we can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> directly to examine the differences between files at any stage in the repository’s history.
+Let’s explore this with the <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> file.
+We no longer need the line of code in <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>
+that calculates the inverse rank:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;inverse_rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rank&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>If we delete that line from <code class="docutils literal notranslate"><span class="pre">bin/plotcounts.py</span></code>,
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> on its own will show
+the difference between the file as it is now and the most recent version:</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/bin/plotcounts.py b/bin/plotcounts.py</span>
+<span class="gh">index c4c5b5a..c511da1 100644</span>
+<span class="gd">--- a/bin/plotcounts.py</span>
+<span class="gi">+++ b/bin/plotcounts.py</span>
+<span class="gu">@@ -11,7 +11,6 @@ def main(args):</span>
+<span class="w"> </span>                     names=(&#39;word&#39;, &#39;word_frequency&#39;))
+<span class="w"> </span>    df[&#39;rank&#39;] = df[&#39;word_frequency&#39;].rank(ascending=False,
+<span class="w"> </span>                                           method=&#39;max&#39;)
+<span class="gd">-    df[&#39;inverse_rank&#39;] = 1 / df[&#39;rank&#39;]</span>
+<span class="w"> </span>    ax = df.plot.scatter(x=&#39;word_frequency&#39;,
+<span class="w"> </span>                         y=&#39;rank&#39;, loglog=True,
+<span class="w"> </span>                         figsize=[12, 6],
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">582f7f6</span></code>,
+on the other hand,
+shows the difference between the current state
+and the commit referenced by the short identifier:</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/bin/plotcounts.py b/bin/plotcounts.py</span>
+<span class="gh">index c4c5b5a..c511da1 100644</span>
+<span class="gd">--- a/bin/plotcounts.py</span>
+<span class="gi">+++ b/bin/plotcounts.py</span>
+<span class="gu">@@ -11,7 +11,6 @@ def main(args):</span>
+<span class="w"> </span>                     names=(&#39;word&#39;, &#39;word_frequency&#39;))
+<span class="w"> </span>    df[&#39;rank&#39;] = df[&#39;word_frequency&#39;].rank(ascending=False,
+<span class="w"> </span>                                           method=&#39;max&#39;)
+<span class="gd">-    df[&#39;inverse_rank&#39;] = 1 / df[&#39;rank&#39;]</span>
+<span class="w"> </span>    ax = df.plot.scatter(x=&#39;word_frequency&#39;,
+<span class="w"> </span>                         y=&#39;rank&#39;, loglog=True,
+<span class="w"> </span>                         figsize=[12, 6],
+<span class="gh">diff --git a/results/dracula.png b/results/dracula.png</span>
+<span class="gh">index c1f62fd..57a7b70 100644</span>
+Binary files a/results/dracula.png and 
+b/results/dracula.png differ
+</pre></div>
+</div>
+<p>Note that you will need to reference your <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> to replace <code class="docutils literal notranslate"><span class="pre">582f7f6</span></code> in the code above,
+since Git assigned your commit a different unique identifier.
+Note also that we have <em>not</em> committed the last change to <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>;
+we will look at ways of undoing it in the next section.</p>
+<p>The “relative” version of history relies on a special identifier called <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>, which always refers to the most recent version in the repository.
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">HEAD</span></code> therefore shows the same thing as <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>,
+but instead of typing in a version identifier to back up one commit,
+we can use <code class="docutils literal notranslate"><span class="pre">HEAD~1</span></code> (where <code class="docutils literal notranslate"><span class="pre">~</span></code> is the tilde symbol). This shorthand is read “HEAD minus one,” and gives us the difference to the previous saved version.
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">HEAD~2</span></code> goes back two revisions and so on.
+We can also look at the differences between two saved versions
+by separating their identifiers with two dots <code class="docutils literal notranslate"><span class="pre">..</span></code> like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>diff<span class="w"> </span>HEAD~1..HEAD~2
+</pre></div>
+</div>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/bin/plotcounts.py b/bin/plotcounts.py</span>
+<span class="gh">index c4c5b5a..f274473 100644</span>
+<span class="gd">--- a/bin/plotcounts.py</span>
+<span class="gi">+++ b/bin/plotcounts.py</span>
+<span class="gu">@@ -13,7 +13,7 @@ def main(args):</span>
+<span class="w"> </span>                                           method=&#39;max&#39;)
+<span class="w"> </span>    df[&#39;inverse_rank&#39;] = 1 / df[&#39;rank&#39;]
+<span class="w"> </span>    ax = df.plot.scatter(x=&#39;word_frequency&#39;,
+<span class="gd">-                         y=&#39;rank&#39;, loglog=True,</span>
+<span class="gi">+                         y=&#39;inverse_rank&#39;,</span>
+<span class="w"> </span>                         figsize=[12, 6],
+<span class="w"> </span>                         grid=True,
+<span class="w"> </span>                         xlim=args.xlim)
+</pre></div>
+</div>
+<p>If we want to see the changes made in a particular commit, we can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span></code> with an identifier and a filename:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>show<span class="w"> </span>HEAD~1<span class="w"> </span>bin/plotcounts.py
+</pre></div>
+</div>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>commit 582f7f6f536d520b1328c04c9d41e24b54170656
+Author: Amira Khan &lt;amira@zipf.org&gt;
+Date:   Sat Dec 19 09:37:25 2020 -0800
+
+<span class="w"> </span>   Plot frequency against rank on log-log axes
+
+<span class="gh">diff --git a/bin/plotcounts.py b/bin/plotcounts.py</span>
+<span class="gh">index f274473..c4c5b5a 100644</span>
+<span class="gd">--- a/bin/plotcounts.py</span>
+<span class="gi">+++ b/bin/plotcounts.py</span>
+<span class="gu">@@ -13,7 +13,7 @@ def main(args):</span>
+<span class="w"> </span>                                           method=&#39;max&#39;)
+<span class="w"> </span>    df[&#39;inverse_rank&#39;] = 1 / df[&#39;rank&#39;]
+<span class="w"> </span>    ax = df.plot.scatter(x=&#39;word_frequency&#39;,
+<span class="gd">-                         y=&#39;inverse_rank&#39;,</span>
+<span class="gi">+                         y=&#39;rank&#39;, loglog=True,</span>
+<span class="w"> </span>                         figsize=[12, 6],
+<span class="w"> </span>                         grid=True,
+<span class="w"> </span>                         xlim=args.xlim)
+</pre></div>
+</div>
+<p>If we wanted to view the contents of a file at a given point in the version history, we could use the same command,
+but separating the identifier and file with a colon:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>show<span class="w"> </span>HEAD~1:bin/plotcounts.py
+</pre></div>
+</div>
+<p>This allows us to look through the file using a paging program.</p>
+</section>
+<section id="restoring-old-versions-of-files">
+<h2>Restoring Old Versions of Files<a class="headerlink" href="#restoring-old-versions-of-files" title="Permalink to this heading">#</a></h2>
+<p>We can see what we changed, but how can we restore it?
+Suppose we change our mind about the last update to <code class="docutils literal notranslate"><span class="pre">bin/plotcounts.py</span></code>
+(removing <code class="docutils literal notranslate"><span class="pre">df['inverse_rank']</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">/</span> <span class="pre">df['rank']</span></code>)
+before we add or commit it.
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> tells us that the file has been changed, but those changes haven’t been <strong>staged</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be 
+  committed)
+  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in 
+  working directory)
+	modified:   bin/plotcounts.py
+
+no changes added to commit (use &quot;git add&quot; or &quot;git commit -a&quot;)
+</pre></div>
+</div>
+<p>We can put things back the way they were in the last saved revision
+using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code>, as the screen output suggests:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>restore<span class="w"> </span>bin/plotcounts.py
+$<span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+nothing to commit, working tree clean
+</pre></div>
+</div>
+<p>As its name suggests,
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code> restores an earlier version of a file.
+In this case,
+we used it to recover the version of the file in the most recent commit.</p>
+<blockquote>
+<div><p><strong>Checking Out with Git</strong></p>
+<p>If you’re running a different version of Git,
+you may see a suggestion for <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> instead of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code>.
+As of Git version 2.29,
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code> is still an experimental command,
+and operates as a specialized form of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>.
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">HEAD</span> <span class="pre">bin/plotcounts.py</span></code> is equivalent to the last command run.\index{Git commands!checkout}</p>
+</div></blockquote>
+<p>We can confirm the file has been restored
+by printing the relevant lines of the file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">19</span><span class="w"> </span>bin/plotcounts.py<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">8</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>    df[&#39;rank&#39;] = df[&#39;word_frequency&#39;].rank(ascending=False,
+                                           method=&#39;max&#39;)
+    df[&#39;inverse_rank&#39;] = 1 / df[&#39;rank&#39;]
+    ax = df.plot.scatter(x=&#39;word_frequency&#39;,
+                         y=&#39;rank&#39;, loglog=True,
+                         figsize=[12, 6],
+                         grid=True,
+                         xlim=args.xlim)
+</pre></div>
+</div>
+<p>Because <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code> is designed to restore working files,
+we’ll need to use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> to revert to earlier versions of files.\index{Git commands!checkout}
+We can use a specific commit identifier rather than <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> to go back as far as we want:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>851d590<span class="w"> </span>bin/plotcounts.py
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Updated 1 path from c8d6a33
+</pre></div>
+</div>
+<p>Doing this does not change the history:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> still shows our four commits.
+Instead,
+it replaces the content of the file with the old content:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+Changes to be committed:
+  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
+	  modified:   bin/plotcounts.py
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">19</span><span class="w"> </span>bin/plotcounts.py<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">8</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>    df[&#39;rank&#39;] = df[&#39;word_frequency&#39;].rank(ascending=False,
+                                           method=&#39;max&#39;)
+    df[&#39;inverse_rank&#39;] = 1 / df[&#39;rank&#39;]
+    ax = df.plot.scatter(x=&#39;word_frequency&#39;,
+                         y=&#39;inverse_rank&#39;,
+                         figsize=[12, 6],
+                         grid=True,
+                         xlim=args.xlim)
+</pre></div>
+</div>
+<p>If we change our mind again,
+we can use the suggestion in the output to restore the earlier version.
+Because checking out the changes added them to the staging area,
+we need to first remove them from the staging area:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>restore<span class="w"> </span>--staged<span class="w"> </span>bin/plotcounts.py
+</pre></div>
+</div>
+<p>However,
+the changes have been unstaged but still exist in the file.
+We can return the file to the state of the most recent commit:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>restore<span class="w"> </span>bin/plotcounts.py
+$<span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+nothing to commit, working tree clean
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">19</span><span class="w"> </span>bin/plotcounts.py<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">8</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>    df[&#39;rank&#39;] = df[&#39;word_frequency&#39;].rank(ascending=False,
+                                           method=&#39;max&#39;)
+    df[&#39;inverse_rank&#39;] = 1 / df[&#39;rank&#39;]
+    ax = df.plot.scatter(x=&#39;word_frequency&#39;,
+                         y=&#39;rank&#39;, loglog=True,
+                         figsize=[12, 6],
+                         grid=True,
+                         xlim=args.xlim)
+</pre></div>
+</div>
+<p>We have restored the most recent commit. Since we didn’t commit the change that removed the line that calculates the inverse rank, that work is now lost:
+Git can only go back and forth between committed versions of files.</p>
+<p>This section has demonstrated a few different ways to view differences among versions, and to work with those changes (<span class="xref myst">Figure</span> c).
+These commands can operate on either individual files or entire commits,
+and the behavior of them can sometimes differ based on your version of Git.
+Remember to reference documentation, and use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> frequently to understand your workflow.</p>
+</section>
+<section id="ignoring-files">
+<h2>Ignoring Files<a class="headerlink" href="#ignoring-files" title="Permalink to this heading">#</a></h2>
+<p>We don’t always want Git to track every file’s history.
+For example,
+we might want to track text files with names ending in <code class="docutils literal notranslate"><span class="pre">.txt</span></code>
+but not data files with names ending in <code class="docutils literal notranslate"><span class="pre">.dat</span></code>.</p>
+<p>To stop Git from telling us about these files every time we call <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>,
+we can create a file in the root directory of our project called <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>.
+This file can contain filenames like <code class="docutils literal notranslate"><span class="pre">thesis.pdf</span></code> or <strong>wildcard</strong>  patterns like <code class="docutils literal notranslate"><span class="pre">*.dat</span></code>. Each must be on a line of its own, and Git will ignore anything that matches any of these lines. For now we only need one entry in our <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>__pycache__
+</pre></div>
+</div>
+<p>which tells Git to ignore any <code class="docutils literal notranslate"><span class="pre">__pycache__</span></code> directory created by Python section <a class="reference external" href="https://help.github.com/articles/generating-ssh-keys">Scripting Modules in Python</a>).</p>
+<blockquote>
+<div><p><strong>Remember to Ignore</strong></p>
+<p>Don’t forget to commit <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> to your repository
+so that Git knows to use it.</p>
+</div></blockquote>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<p>The biggest benefit of version control for individual research is that
+we can always go back to the precise set of files
+that we used to produce a particular result.
+While Git is complex <span id="id1">[<a class="reference internal" href="../appendix/0_references.html#id57" title="Santiago Perez De Rosso and Daniel Jackson. What's Wrong With Git? In Proc. 2013 ACM International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software (Onward!'13). 2013. The first in a series exploring what's wrong with Git. doi:10.1145/2509578.2509584.">Perez De Rosso and Jackson, 2013</a>]</span>,
+being able to back up our changes on sites like GitHub
+with just a few keystrokes can save us a lot of pain,
+and some of Git’s advanced features make it even more powerful.
+We will explore these in the next chapter.</p>
+</section>
+<section id="keypoints">
+<h2>Keypoints<a class="headerlink" href="#keypoints" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span></code> with the <code class="docutils literal notranslate"><span class="pre">--global</span></code> option to configure your username,
+email address, and other preferences once per machine.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> initializes a <strong>repository</strong>.</p></li>
+<li><p>Git stores all repository management data in the <code class="docutils literal notranslate"><span class="pre">.git</span></code> subdirectory of the repository’s root directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> shows the status of a repository.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> puts files in the repository’s staging area.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> saves the staged content as a new commit in the local repository.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> lists previous commits.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> shows the difference between two versions of the repository.</p></li>
+<li><p>Synchronize your local repository with a <strong>remote repository</strong><br />
+on a <strong>forge</strong> such as <a class="reference external" href="https://www.github.com">GitHub</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span></code> manages bookmarks pointing at remote repositories.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> copies changes from a local repository to a remote repository.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> copies changes from a remote repository to a local repository.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> recover old versions of files.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file tells Git what files to ignore.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -513,11 +1593,11 @@ like this <code class="docutils literal notranslate"><span class="pre">link</spa
       </div>
     </a>
     <a class="right-next"
-       href="4_test.html"
+       href="../../exercises/3_version_control.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">testing linking</p>
+        <p class="prev-next-title">Exercise Version Control</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -527,6 +1607,30 @@ like this <code class="docutils literal notranslate"><span class="pre">link</spa
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up">Setting Up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-repository-git-cmdline-repos">Creating a New Repository {#git-cmdline-repos}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-existing-work">Adding Existing Work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-commits">Describing Commits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-and-tracking-changes">Saving and Tracking Changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synchronizing-with-other-repositories">Synchronizing with Other Repositories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-history">Exploring History</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#restoring-old-versions-of-files">Restoring Old Versions of Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignoring-files">Ignoring Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keypoints">Keypoints</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

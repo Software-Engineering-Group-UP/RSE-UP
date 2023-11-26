@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Python refresher" href="2_python_refresher.html" />
-    <link rel="prev" title="testing linking" href="../chapters/04/4_test.html" />
+    <link rel="prev" title="Using Git at the Command Line" href="../chapters/04/4_version_control.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,7 +184,6 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapters/04/4_version_control.html">Using Git at the Command Line</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/04/4_test.html">testing linking</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise Version Control</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Extras</span></p>
@@ -395,7 +394,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -411,6 +412,28 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#places-to-create-git-repositories">1) Places to create Git repositories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-before-saving">2) Removing before saving</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-changes">3) Viewing changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#committing-changes">4) Committing changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-your-biography">5) Write your biography</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-and-history">6) Workflow and history</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignoring-nested-files">7) Ignoring nested files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#including-specific-files">8) Including specific files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-github-interface">9) Exploring the GitHub interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#push-versus-commit">10) Push versus commit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-readme-files">11) License and README files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-older-versions-of-a-file">12) Recovering older versions of a file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-git-diff">13) Understanding <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-rid-of-staged-changes">14) Getting rid of staged changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figuring-out-who-did-what">15) Figuring out who did what</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -422,6 +445,175 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="exercise-version-control">
 <h1>Exercise Version Control<a class="headerlink" href="#exercise-version-control" title="Permalink to this heading">#</a></h1>
+<section id="places-to-create-git-repositories">
+<h2>1) Places to create Git repositories<a class="headerlink" href="#places-to-create-git-repositories" title="Permalink to this heading">#</a></h2>
+<p>Along with information about the Zipf’s Law project, Amira would also like to keep some notes on <a class="reference external" href="https://en.wikipedia.org/wiki/Heaps%27_law">Heaps’ Law</a>.
+Despite her colleagues’ concerns, Amira creates a <code class="docutils literal notranslate"><span class="pre">heaps-law</span></code> project inside her <code class="docutils literal notranslate"><span class="pre">zipf</span></code> project as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/zipf
+$<span class="w"> </span>mkdir<span class="w"> </span>heaps-law
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>heaps-law
+$<span class="w"> </span>git<span class="w"> </span>init<span class="w"> </span>heaps-law
+</pre></div>
+</div>
+<p>Is the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> command that she runs inside the <code class="docutils literal notranslate"><span class="pre">heaps-law</span></code> subdirectory
+required for tracking files stored there?</p>
+</section>
+<section id="removing-before-saving">
+<h2>2) Removing before saving<a class="headerlink" href="#removing-before-saving" title="Permalink to this heading">#</a></h2>
+<p>If you’re working on an older version of Git,
+you may see an output from <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> suggesting
+you can take files out of the staging area
+using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">--cached</span></code>.
+Try this out:</p>
+<ol class="arabic simple">
+<li><p>Create a new file in an initialized Git repository called <code class="docutils literal notranslate"><span class="pre">example.txt</span></code>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">example.txt</span></code> to add this file.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to check that Git has noticed it.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">--cached</span> <span class="pre">example.txt</span></code> to remove it from the list of things to be saved.</p></li>
+</ol>
+<p>What does <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> now show?
+What (if anything) has happened to the file?</p>
+</section>
+<section id="viewing-changes">
+<h2>3) Viewing changes<a class="headerlink" href="#viewing-changes" title="Permalink to this heading">#</a></h2>
+<p>Make a few changes to a file in a Git repository, then view those differences using both <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">--word-diff</span></code>.
+Which output do you find easiest to understand?</p>
+<p>Note: If you performed this exercise in your Zipf’s Law project, we recommend discarding (not committing) your changes made to a file.</p>
+</section>
+<section id="committing-changes">
+<h2>4) Committing changes<a class="headerlink" href="#committing-changes" title="Permalink to this heading">#</a></h2>
+<p>Which command(s) below would save changes to <code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code> to a local Git repository?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 1</span>
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add recent changes&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 2</span>
+$<span class="w"> </span>git<span class="w"> </span>init<span class="w"> </span>myfile.txt
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add recent changes&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 3</span>
+$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>myfile.txt
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add recent changes&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 4</span>
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span>myfile.txt<span class="w"> </span><span class="s2">&quot;Add recent changes&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="write-your-biography">
+<h2>5) Write your biography<a class="headerlink" href="#write-your-biography" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Create a new Git repository on your computer called <code class="docutils literal notranslate"><span class="pre">bio</span></code>.
+Make sure the directory containing this repository is outside your <code class="docutils literal notranslate"><span class="pre">zipf</span></code> project directory!</p></li>
+<li><p>Write a three-line biography for yourself in a file called <code class="docutils literal notranslate"><span class="pre">me.txt</span></code> and commit your changes.</p></li>
+<li><p>Modify one line and add a fourth line.</p></li>
+<li><p>Display the differences between the file’s original state and its updated state.</p></li>
+</ol>
+</section>
+<section id="workflow-and-history">
+<h2>6) Workflow and history<a class="headerlink" href="#workflow-and-history" title="Permalink to this heading">#</a></h2>
+<p>Assume you made the following changes in your <code class="docutils literal notranslate"><span class="pre">bio</span></code> repository.
+What is the output of the last command in the sequence below?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Sharing information about myself.&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>motivation.txt
+$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>motivation.txt
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Documenting major milestones.&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>motivation.txt
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Motivate project&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>restore<span class="w"> </span>motivation.txt
+$<span class="w"> </span>cat<span class="w"> </span>motivation.txt
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sharing</span> <span class="pre">information</span> <span class="pre">about</span> <span class="pre">myself.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Documenting</span> <span class="pre">major</span> <span class="pre">milestones.</span></code></p></li>
+<li></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Sharing information about myself.
+Documenting major milestones.
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>An error message because we have changed <code class="docutils literal notranslate"><span class="pre">motivation.txt</span></code> without committing first.</p></li>
+</ol>
+</section>
+<section id="ignoring-nested-files">
+<h2>7) Ignoring nested files<a class="headerlink" href="#ignoring-nested-files" title="Permalink to this heading">#</a></h2>
+<p>Suppose our project has a directory <code class="docutils literal notranslate"><span class="pre">results</span></code> with two subdirectories called <code class="docutils literal notranslate"><span class="pre">data</span></code> and <code class="docutils literal notranslate"><span class="pre">plots</span></code>.
+How would we ignore all of the files in <code class="docutils literal notranslate"><span class="pre">results/plots</span></code>
+but not ignore files in <code class="docutils literal notranslate"><span class="pre">results/data</span></code>?</p>
+</section>
+<section id="including-specific-files">
+<h2>8) Including specific files<a class="headerlink" href="#including-specific-files" title="Permalink to this heading">#</a></h2>
+<p>How would you ignore all <code class="docutils literal notranslate"><span class="pre">.dat</span></code> files in your root directory except for <code class="docutils literal notranslate"><span class="pre">final.dat</span></code>?
+(Hint: find out what the exclamation mark <code class="docutils literal notranslate"><span class="pre">!</span></code> means in a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.)</p>
+</section>
+<section id="exploring-the-github-interface">
+<h2>9) Exploring the GitHub interface<a class="headerlink" href="#exploring-the-github-interface" title="Permalink to this heading">#</a></h2>
+<p>Browse to your <code class="docutils literal notranslate"><span class="pre">zipf</span></code> repository on GitHub.
+Under the <code class="docutils literal notranslate"><span class="pre">Code</span></code> tab, find and click on the text that says “NN commits” (where “NN” is some number).
+Hover over and click on the three buttons to the right of each commit.</p>
+<p>What information can you gather/explore from these buttons?</p>
+<p>How would you get that same information in the shell?</p>
+</section>
+<section id="push-versus-commit">
+<h2>10) Push versus commit<a class="headerlink" href="#push-versus-commit" title="Permalink to this heading">#</a></h2>
+<p>Explain in one or two sentences how <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> is different from <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.</p>
+</section>
+<section id="license-and-readme-files">
+<h2>11) License and README files<a class="headerlink" href="#license-and-readme-files" title="Permalink to this heading">#</a></h2>
+<p>When we initialized our remote <code class="docutils literal notranslate"><span class="pre">zipf</span></code> GitHub repo, we didn’t add a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> or license file.</p>
+<p>If we had, what would have happened when we tried to link our local and remote repositories?</p>
+</section>
+<section id="recovering-older-versions-of-a-file">
+<h2>12) Recovering older versions of a file<a class="headerlink" href="#recovering-older-versions-of-a-file" title="Permalink to this heading">#</a></h2>
+<p>Amira made changes this morning to a shell script called <code class="docutils literal notranslate"><span class="pre">data_cruncher.sh</span></code>
+that she has been working on for weeks.
+Her changes broke the script, and she has now spent an hour trying to get it back in working order.
+Luckily, she has been keeping track of her project’s versions using Git.</p>
+<p>Which of the commands below can she use to recover the last committed version of her script?</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">HEAD</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">HEAD</span> <span class="pre">data_cruncher.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">HEAD~1</span> <span class="pre">data_cruncher.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;unique</span> <span class="pre">ID</span> <span class="pre">of</span> <span class="pre">last</span> <span class="pre">commit&gt;</span> <span class="pre">data_cruncher.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">restore</span> <span class="pre">data_cruncher.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">restore</span> <span class="pre">HEAD</span></code></p></li>
+</ol>
+</section>
+<section id="understanding-git-diff">
+<h2>13) Understanding <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code><a class="headerlink" href="#understanding-git-diff" title="Permalink to this heading">#</a></h2>
+<p>Using your <code class="docutils literal notranslate"><span class="pre">zipf</span></code> project directory:</p>
+<ol class="arabic simple">
+<li><p>What would the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">HEAD~9</span> <span class="pre">bin/plotcounts.py</span></code> do if we run it?</p></li>
+<li><p>What does it actually do?</p></li>
+<li><p>What does <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">HEAD</span> <span class="pre">bin/plotcounts.py</span></code> do?</p></li>
+</ol>
+</section>
+<section id="getting-rid-of-staged-changes">
+<h2>14) Getting rid of staged changes<a class="headerlink" href="#getting-rid-of-staged-changes" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> can be used to restore a previous commit when unstaged changes have been made,
+but will it also work for changes that have been staged but not committed?
+To find out,
+use your <code class="docutils literal notranslate"><span class="pre">zipf</span></code> project directory to:</p>
+<ol class="arabic simple">
+<li><p>Change <code class="docutils literal notranslate"><span class="pre">bin/plotcounts.py</span></code>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> on those changes to <code class="docutils literal notranslate"><span class="pre">bin/plotcounts.py</span></code>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> to see if you can remove your change.</p></li>
+</ol>
+<p>Does it work?</p>
+</section>
+<section id="figuring-out-who-did-what">
+<h2>15) Figuring out who did what<a class="headerlink" href="#figuring-out-who-did-what" title="Permalink to this heading">#</a></h2>
+<p>We never committed the last edit that removes the calculation of inverse rank.
+Remove this line from <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>,
+then commit the change:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;inverse_rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rank&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Run the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">blame</span> <span class="pre">bin/plotcounts.py</span></code>.
+What does each line of the output show?</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -455,12 +647,12 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../chapters/04/4_test.html"
+       href="../chapters/04/4_version_control.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">testing linking</p>
+        <p class="prev-next-title">Using Git at the Command Line</p>
       </div>
     </a>
     <a class="right-next"
@@ -478,6 +670,34 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#places-to-create-git-repositories">1) Places to create Git repositories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-before-saving">2) Removing before saving</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-changes">3) Viewing changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#committing-changes">4) Committing changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-your-biography">5) Write your biography</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-and-history">6) Workflow and history</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignoring-nested-files">7) Ignoring nested files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#including-specific-files">8) Including specific files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-github-interface">9) Exploring the GitHub interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#push-versus-commit">10) Push versus commit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-readme-files">11) License and README files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-older-versions-of-a-file">12) Recovering older versions of a file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-git-diff">13) Understanding <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-rid-of-staged-changes">14) Getting rid of staged changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figuring-out-who-did-what">15) Figuring out who did what</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
