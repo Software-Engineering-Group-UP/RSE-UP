@@ -1,7 +1,3 @@
-{% capture test %} url {% endcapture %}
-
-{{ test }}
-
 # Getting Started
 
 > Everything starts somewhere, though many physicists disagree.
@@ -44,7 +40,7 @@ In building the Zipf's Law project,
 we'll follow a widely used template
 for organizing small and medium-sized data analysis projects {cite:p}`Nobl2009`.
 The project will live in a directory called `zipf`,
-which will also be a Git repository stored on GitHub chapter [Git Command-line]()**TODO**.
+which will also be a Git repository stored on GitHub chapter [Git Command-line](https://software-engineering-group-up.github.io/RSE-UP/chapters/vsc/version_control.html).
 The following is an abbreviated version of the project directory tree
 as it appears toward the end of the book:
 
@@ -86,8 +82,8 @@ that should be present in every research software project,
 open source or otherwise:
 
 -   `README` includes basic information on our project.
-     We'll create it in Chapter **TODO REF TO GIT_ADVANCED SECTION**,
-     and extend it in Chapter **TODO REF TO PACKAGING**.
+     We'll create it in Chapter [Git Advanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/vcs/git_advanced.html),
+     and extend it in Chapter [Packaging](TODO).
 
 -   `LICENSE` is the project's license. We'll add it in Section **TODO REF TO LICENSE**.
 
@@ -99,7 +95,7 @@ open source or otherwise:
 
 Some projects also include a `CONTRIBUTORS` or `AUTHORS` file that
 lists everyone who has contributed to the project,
-while others include that information in the `README` (we do this in Chapter **TODO REF git-advanced**
+while others include that information in the `README` (we do this in Chapter [Git Advanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/vcs/git_advanced.html)
 or make it a section in `CITATION`.
 These files are often called **boilerplate,
 meaning they are copied without change from one use to the next.
@@ -112,14 +108,14 @@ the directories in the repository's root are organized according to purpose:
 -   Runnable programs go in `bin/`
     (an old Unix abbreviation for "binary", meaning "not text").
     This will include both shell scripts,
-    e.g., `book_summary.sh` developed in Chapter **TODO** ref(bash-advanced),
+    e.g., `book_summary.sh` developed in Chapter [bash dvanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_advanced.html),,
     and Python programs,
-    e.g., `countwords.py`, developed in Chapter **TODO ref(scripting).
+    e.g., `countwords.py`, developed in Chapter [building a CLI with python](https://software-engineering-group-up.github.io/RSE-UP/chapters/scripting/building_cli_python.html),).
 
 -   Raw data goes in `data/`
     and is never modified after being stored.
     You'll set up this directory
-    and its contents in Section **TODO** ref(getting-started-download-data).
+    and its contents in Section [download the data](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started/getting_started.html#downloading-the-data).
 
 -   Results are put in `results/`.
     This includes cleaned-up data,
@@ -198,8 +194,8 @@ You can check if Make is already on your computer by typing `make -v` into the B
 If it is not, you can install it as follows:
 
 - *Linux (Debian/Ubuntu)*: Install it from the Bash shell using `sudo apt-get install make`.
-- *Mac*: Install **TODO** [Xcode](https://developer.apple.com/xcode/) (via the App Store).
-- *Windows*: Follow the **TODO** [installation instructions]( https://ubc-mds.github.io/resources_pages/install_ds_stack_windows/#make) maintained by the
+- *Mac*: Install [Xcode](https://developer.apple.com/xcode/) (via the App Store).
+- *Windows*: Follow the [installation instructions]( https://ubc-mds.github.io/resources_pages/install_ds_stack_windows/#make) maintained by the
   Master of Data Science program at the University of British Columbia.
 
 > **conda in the Shell on Windows**
@@ -233,16 +229,9 @@ we are ready to start our analysis.
 ### Getting ready 
 
 Make sure you've downloaded the required data files
-(following Section [download the data](#downloading-the-data)
-and installed the required software ([from following Section](#installing-the-software)) before progressing to the next chapter.
+(following Section [downloading the data ](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started/getting_started.html#downloading-the-data)
+and installed the required software ([as described here](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started/getting_started.html#installing-the-software)) before progressing to the next chapter.
 
 ## Key Points
 
-- Make tidiness a habit, rather than cleaning up your project files later.
-- Include a few standard files in all your projects, such as README, LICENSE, CONTRIBUTING, CONDUCT and CITATION.
-- Put runnable code in a `bin/` directory.
-- Put raw/original data in a `data/` directory and never modify it.
-- Put results in a `results/` directory. This includes cleaned-up data and figures (i.e., everything created using what's in `bin` and `data`).
-- Put documentation and manuscripts in a `docs/` directory.
-- Refer to The Carpentries [software installation guide](https://carpentries.org/) if you're having trouble, or send us an email. 
-
+```{include} ../keypoints/getting_started.md```

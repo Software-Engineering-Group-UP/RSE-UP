@@ -29,7 +29,7 @@ you have already used a simple CLI.
 
 This lesson introduces another CLI that lets us interact with our computer's operating system.
 It is called a "command shell",
-or just **shell** for short, and in essence is a program that runs other programs on our behalf [](the_shell).
+or just **shell** for short, and in essence is a program that runs other programs on our behalf.
 Those "other programs" can do things as simple as telling us the time
 or as complex as modeling global climate change;
 as long as they obey a few simple rules,
@@ -55,7 +55,7 @@ The Shell
 > In particular, the most recent versions of MacOS use a shell called the Z Shell or `zsh`;
 > we will point out a few differences as we go along.
 
-Please see Section [1 getting started](https://software-engineering-group-up.github.io/RSE-UP/chapters/01/1_getting_started.html#downloading-the-data) for instructions
+Please see Section [getting started](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started/etting_started.html#downloading-the-data) for instructions
 on how to install and launch the shell on your computer.
 
 ## Exploring Files and Directories 
@@ -121,7 +121,7 @@ which tells us that we are in a directory called `amira`
 that is contained in a top-level directory called `Users`.
 This directory is Amira's **home directory** to understand what that means,
 we must first understand how the filesystem is organized.
-On Amira's computer the [](bash_basic_filesystem) looks as follows:
+On Amira's computer the bash_basic_filesystem looks as follows:
 
 
 ```{figure} ../../figures/bash-basics/sample-filesystem.png
@@ -590,7 +590,7 @@ $ ls -F docs
 ```
 
 Let's change our working directory to `docs` using `cd`,
-then use a very simple text editor called **nano** to create a file called `draft.txt` [](nano_editor):
+then use a very simple text editor called **nano** to create a file called `draft.txt` nano_editor :
 
 ```bash
 $ cd docs
@@ -1043,7 +1043,7 @@ $ man wc
 > To quit, press <kbd>Q</kbd>.
 
 Manual pages contain a lot of information---often more than we really want.
-[](man_callouts) includes excerpts from the manual on your screen,
+Man callouts include excerpts from the manual on your screen,
 and highlights a few of features useful for beginners.
 
 ```{figure} ../../figures/bash-basics/man-callouts.png
@@ -1099,27 +1099,6 @@ The next chapter will explore how we can combine and repeat commands
 in order to create powerful, efficient workflows.
 
 ## Key Points 
+```{include}  ../keypoints/bash_basics.md
 
--   A **shell** is a program that reads commands and runs other programs.
--   The **filesystem** manages information stored on disk.
--   Information is stored in files, which are located in directories (folders).
--   Directories can also store other directories, which forms a directory tree.
--   `pwd` prints the user's **current working directory**.
--   `/` on its own is the \**root directory** of the whole filesystem.
--   `ls` prints a list of files and directories.
--   An **absolute path specifies a location from the root of the filesystem.
--   A **relative path**specifies a location in the filesystem starting from the current directory.
--   `cd` changes the current working directory.
--   `..` means the **parent directory**.
--   `.` on its own means the current directory.
--   `mkdir` creates a new directory.
--   `cp` copies a file.
--   `rm` removes (deletes) a file.
--   `mv` moves (renames) a file or directory.
--   `*` matches zero or more characters in a filename.
--   `?` matches any single character in a filename.
--   `wc` counts lines, words, and characters in its inputs.
--   `man` displays the manual page for a given command; some commands also have a `--help` option.
-
-
-
+```

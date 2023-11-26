@@ -154,7 +154,7 @@ Possible exercise solutions are provided (Appendix ref(solutions)),
 in addition to learning objectives (Appendix ref(objectives)) 
 and key points (Appendix ref(keypoints)) for each chapter. 
 
-(welcome:contributing)=
+
 ## Contributing and Re-Use
 
 The source for the book can be found at the ['RSE-UP' GitHub repository](https://software-engineering-group-up.github.io/RSE-UP) and
