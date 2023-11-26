@@ -174,7 +174,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../bash/bash_tools.html">Building Tools with the Unix Shell</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../bash/bash_advanced.html">Going Further with the Unix Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/bash.html">Bash Basic Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/bash.html">Bash Exercises</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
 <ul class="nav bd-sidenav">
@@ -427,7 +427,7 @@ It’s also useful from a collaboration viewpoint, because the system keeps a re
 <p>There are many different version control systems, such as CVS, Subversion, and Mercurial, but the most widely used version control system today is <strong>Git</strong>.
 Many people first encounter it through a GUI like the <a class="reference external" href="https://desktop.github.com/">Github desktop client</a> or paid tools like <a class="reference external" href="https://www.gitkraken.com/">GitKraken</a> or terminal application like <a class="reference external" href="https://github.com/extrawurst/gitui">GitUI</a>.
 However, these tools are actually wrappers around Git’s original command-line interface,which gives us access to all of Git’s features.
-This lesson describes how to perform fundamental operations using that interface; Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/4_git_advanced.html">Git Advanced</a> then introduces more advanced operations that can be used to implement a smoother research workflow.</p>
+This lesson describes how to perform fundamental operations using that interface; Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/git_advanced.html">Git Advanced</a> then introduces more advanced operations that can be used to implement a smoother research workflow.</p>
 <p>To show how Git works, we will apply it to the Zipf’s Law project. Our project directory should currently include:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zipf/
 ├── bin
@@ -449,7 +449,7 @@ This lesson describes how to perform fundamental operations using that interface
     └── moby_dick.csv
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">bin/plotcounts.py</span></code> is the solution to Exercise <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/2_python_cli.html#a-better-plotting-program">Scripting - Exercise Better Plotting</a>; over the course of this chapter we will edit it to produce more informative plots.  Initially, it looks like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">bin/plotcounts.py</span></code> is the solution to Exercise <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/python_cli.html#a-better-plotting-program">Scripting - Exercise Better Plotting</a>; over the course of this chapter we will edit it to produce more informative plots.  Initially, it looks like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Plot word counts.&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">argparse</span>
@@ -650,7 +650,7 @@ Changes to be committed:
 </div>
 <p>Adding all of our existing files this way is easy, but we can accidentally add things that should never be in version control,
 such as files containing passwords or other sensitive information.
-The output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> tells us that we can remove such files from the list of things to be saved using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">--cached</span></code>; we will practice this in <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/3_version_control.html#removing-before-saving">Exercise</a></p>
+The output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> tells us that we can remove such files from the list of things to be saved using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">--cached</span></code>; we will practice this in <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/version_control.html#removing-before-saving">Exercise</a></p>
 <blockquote>
 <div><p><strong>What to Save</strong></p>
 <p>We always want to save programs, manuscripts,
@@ -737,7 +737,7 @@ but no one has ever claimed that its interface is intuitive.
 (“How do I exit the Vim editor?”
 is one of the most frequently read questions on Stack Overflow.)</p>
 <p>To configure Git to use the <code class="docutils literal notranslate"><span class="pre">nano</span></code> editor
-introduced in Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/02/2_bash_basics.html">bash-basics</a> instead,
+introduced in Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_basics.html">bash-basics</a> instead,
 execute the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span><span class="s2">&quot;nano -w&quot;</span>
 </pre></div>
@@ -816,7 +816,7 @@ so you were likely able to see it printed to your screen without needing to scro
 When you begin working with longer logs
 (like later in this chapter),
 you’ll notice that the commits are shown in a pager program,
-as you saw in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/02/2_bash_basics.html#reading-the-manual">bash-basics-help</a> with manual pages.
+as you saw in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_basics.html#reading-the-manual">bash-basics-help</a> with manual pages.
 You can apply the same keystrokes to scroll through the log
 and exit the paging program.
 The plot we have made is shown in <span class="xref myst">Figure</span>.
@@ -1516,24 +1516,7 @@ We will explore these in the next chapter.</p>
 </section>
 <section id="keypoints">
 <h2>Keypoints<a class="headerlink" href="#keypoints" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span></code> with the <code class="docutils literal notranslate"><span class="pre">--global</span></code> option to configure your username,
-email address, and other preferences once per machine.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> initializes a <strong>repository</strong>.</p></li>
-<li><p>Git stores all repository management data in the <code class="docutils literal notranslate"><span class="pre">.git</span></code> subdirectory of the repository’s root directory.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> shows the status of a repository.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> puts files in the repository’s staging area.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> saves the staged content as a new commit in the local repository.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> lists previous commits.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> shows the difference between two versions of the repository.</p></li>
-<li><p>Synchronize your local repository with a <strong>remote repository</strong><br />
-on a <strong>forge</strong> such as <a class="reference external" href="https://www.github.com">GitHub</a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span></code> manages bookmarks pointing at remote repositories.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> copies changes from a local repository to a remote repository.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> copies changes from a remote repository to a local repository.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> recover old versions of files.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file tells Git what files to ignore.</p></li>
-</ul>
+<p><code class="docutils literal notranslate"><span class="pre">{include}</span> <span class="pre">../keypoints/version_control.md</span></code></p>
 </section>
 </section>
 

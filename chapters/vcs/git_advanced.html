@@ -176,7 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../bash/bash_tools.html">Building Tools with the Unix Shell</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../bash/bash_advanced.html">Going Further with the Unix Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/bash.html">Bash Basic Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/bash.html">Bash Exercises</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
 <ul class="nav bd-sidenav">
@@ -562,7 +562,7 @@ we run:</p>
 nothing to commit, working directory clean
 </pre></div>
 </div>
-<p>To switch to our new branch we can use the <code class="docutils literal notranslate"><span class="pre">checkout</span></code> command that we first saw in Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/04/4_version_control.html">git command line</a>:</p>
+<p>To switch to our new branch we can use the <code class="docutils literal notranslate"><span class="pre">checkout</span></code> command that we first saw in Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/vcs/version_control.html">git command line</a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>fit
 $<span class="w"> </span>git<span class="w"> </span>branch
 </pre></div>
@@ -1720,19 +1720,6 @@ it is also an effective way to spread understanding and skills.</p>
 </section>
 <section id="keypoints">
 <h2>Keypoints<a class="headerlink" href="#keypoints" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Use a <strong>branch-per-feature</strong> workflow to develop new features while leaving the master branch in working order.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> creates a new branch.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> switches between branches.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code> <strong>merges</strong> changes from another branch into the current branch.</p></li>
-<li><p><strong>Conflicts</strong> occur when files or parts of files are changed in different ways on different branches.</p></li>
-<li><p>Version control systems do not allow people to overwrite changes silently;
-instead, they highlight conflicts that need to be resolved.</p></li>
-<li><p><strong>Forking</strong> a repository makes a copy of it on a server.</p></li>
-<li><p><strong>Cloning</strong> a repository with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> creates a local copy of a remote repository.</p></li>
-<li><p>Create a remote called <code class="docutils literal notranslate"><span class="pre">upstream</span></code> to point to the repository a fork was derived from.</p></li>
-<li><p>Create <strong>pull requests</strong> to submit changes from your fork to the upstream repository.</p></li>
-</ul>
 <ul class="simple">
 <li><p>Use a \gref{branch-per-feature}{branch_per_feature} workflow to develop new features while leaving the master branch in working order.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> creates a new branch.</p></li>

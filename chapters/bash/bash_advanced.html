@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_advanced.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Bash Basic Exercises" href="../../exercises/bash.html" />
+    <link rel="next" title="Bash Exercises" href="../../exercises/bash.html" />
     <link rel="prev" title="Building Tools with the Unix Shell" href="bash_tools.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -174,7 +174,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="bash_tools.html">Building Tools with the Unix Shell</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Going Further with the Unix Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/bash.html">Bash Basic Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/bash.html">Bash Exercises</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
 <ul class="nav bd-sidenav">
@@ -439,7 +439,7 @@ which after the previous chapter should contain the following files:</p>
 if you worked through all of the exercises in the previous chapter.
 Feel free to delete them or move them to a separate directory.
 If you have accidentally deleted files you need,
-you can download them again by following the instructions in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/01/1_getting_started.html#downloading-the-data"></a>.</p>
+you can download them again by following the instructions in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started/getting_started.html#downloading-the-data"></a>.</p>
 </div></blockquote>
 <section id="creating-new-commands">
 <h2>Creating New Commands<a class="headerlink" href="#creating-new-commands" title="Permalink to this heading">#</a></h2>
@@ -449,7 +449,7 @@ so that we can repeat complex operations with a few keystrokes.
 For historical reasons,
 a file full of shell commands is usually called a <strong>shell script</strong> but it is really just another kind of program.</p>
 <p>Let’s start by creating a new directory for our runnable programs called <code class="docutils literal notranslate"><span class="pre">bin/</span></code>,
-consistent with the project structure described in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/01/1_getting_started.html#organizing-project-content"></a>.</p>
+consistent with the project structure described in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started/getting_started.html#organizing-project-content"></a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/zipf
 $<span class="w"> </span>mkdir<span class="w"> </span>bin
 $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>bin
@@ -516,7 +516,7 @@ we can pipe the output of our shell script to another command to count how many 
 </div>
 <p>What if we want our script to print the name of the book’s author?
 The command <code class="docutils literal notranslate"><span class="pre">grep</span></code> finds and prints lines that match a pattern.
-We’ll learn more about <code class="docutils literal notranslate"><span class="pre">grep</span></code> in Section <span class="xref myst"></span>,
+We’ll learn more about <code class="docutils literal notranslate"><span class="pre">grep</span></code> in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_advanced.html#finding-things-in-files">finding thins in files</a>,
 but for now we can edit the script:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nano<span class="w"> </span>book_summary.sh
 </pre></div>
@@ -657,7 +657,7 @@ $<span class="w"> </span>cat<span class="w"> </span>summarize_all_books.sh
 <p>We can use <code class="docutils literal notranslate"><span class="pre">head</span></code> and <code class="docutils literal notranslate"><span class="pre">tail</span></code> to select lines from a file by position,
 but we also often want to select lines that contain certain values.
 This is called \gref{filtering}{filter},\index{filter (in Unix shell)}
-and we usually do it in the shell with the command <code class="docutils literal notranslate"><span class="pre">grep</span></code> that we briefly met in Section <span class="xref myst"></span>.
+and we usually do it in the shell with the command <code class="docutils literal notranslate"><span class="pre">grep</span></code> that we briefly met in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_advanced.html#creating-new-commands">creating new commands</a>.
 Its name is an acronym of “global regular expression print,”
 which was a common sequence of operations in early Unix text editors.</p>
 <p>To show how <code class="docutils literal notranslate"><span class="pre">grep</span></code> works,
@@ -821,7 +821,7 @@ to print lines that <em>don’t</em> match the pattern:</p>
 8:
 </pre></div>
 </div>
-<p>As we learned in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/02/2_bash_basics.html#moving-around"></a>,
+<p>As we learned in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_basics.html#moving-around">moving around</a>,
 we can write this command as <code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-inv</span></code>,
 but probably shouldn’t for the sake of readability.</p>
 <p>If we want to search several files at once, all we have to do is give <code class="docutils literal notranslate"><span class="pre">grep</span></code> all of their names. The easiest way to do this is usually to use wildcards.
@@ -1050,7 +1050,7 @@ $<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-n
 </section>
 <section id="configuring-the-shell">
 <h2>Configuring the Shell<a class="headerlink" href="#configuring-the-shell" title="Permalink to this heading">#</a></h2>
-<p>As Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/02/2-2_bash_tools.html#repeating-commands-on-many-files"></a> explained,
+<p>As Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_tools.html#repeating-commands-on-many-files">repeating commands on many files</a> explained,
 the shell is a program, and it has variables like any other program.
 Some of those variables control the shell’s operations;
 by changing their values we can change how the shell and other programs behave.</p>
@@ -1125,7 +1125,7 @@ unless we type the path in explicitly
 (for example,
 as <code class="docutils literal notranslate"><span class="pre">./analyze</span></code> if we are in <code class="docutils literal notranslate"><span class="pre">/Users/amira</span></code>).</p>
 <p>If we want to see a variable’s value, we can print it using the <code class="docutils literal notranslate"><span class="pre">echo</span></code> command
-introduced at the end of Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/02/2-2_bash_tools.html#redoing-things"></a>.
+introduced at the end of Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_tools.html#redoing-things">redoing things</a>.
 Let’s look at the value of the variable <code class="docutils literal notranslate"><span class="pre">HOME</span></code>, which keeps track of our home directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>HOME
 </pre></div>
@@ -1142,7 +1142,7 @@ we need to run this:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/Users/amira
 </pre></div>
 </div>
-<p>As with loop variables (Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/02/2-2_bash_tools.html#redoing-things"></a>,
+<p>As with loop variables (Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_tools.html#redoing-things">redoing thins</a>,
 the dollar sign before the variable names tells the shell
 that we want the variable’s value.
 This works just like wildcard expansion—the shell replaces
@@ -1214,7 +1214,7 @@ so we can use them to change the behavior of a familiar command:</p>
 <p>We can find interesting suggestions for other aliases
 by searching online for “sample bashrc”.</p>
 <p>While searching for additional aliases, you’re likely to encounter references to other common shell features to customize, such as the color of your shell’s background and text.</p>
-<p>As mentioned in Chapter <span class="xref myst"></span>, another important feature to consider customizing is your shell prompt.
+<p>As mentioned in Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_basics.html">bash basics</a>, another important feature to consider customizing is your shell prompt.
 In addition to a standard symbol (like <code class="docutils literal notranslate"><span class="pre">$</span></code>), your computer may include other information as well, such as the working directory, username, and/or date/time.
 If your shell does not include that information and you would like to see it,
 or if your current prompt is too long and you’d like to shorten it,
@@ -1243,18 +1243,9 @@ while <span id="id3">[<a class="reference internal" href="../appendix/references
 </section>
 <section id="key-points">
 <h2>Key Points<a class="headerlink" href="#key-points" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Save commands in files (usually called <strong>shell scripts</strong> for re-use.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">filename</span></code> runs the commands saved in a file.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">$&#64;</span></code> refers to all of a shell script’s command-line arguments.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">$1</span></code>, <code class="docutils literal notranslate"><span class="pre">$2</span></code>, etc., refer to the first command-line argument, the second command-line argument, etc.</p></li>
-<li><p>Place variables in quotes if the values might have spaces or other special characters in them.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">find</span></code> prints a list of files with specific properties or whose names match patterns.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">$(command)</span></code> inserts a command’s output in place.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">grep</span></code> selects lines in files that match patterns.</p></li>
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file in your home directory to set shell variables each time the shell runs.</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">alias</span></code> to create shortcuts for things you type frequently.</p></li>
-</ul>
+<div class="highlight-{include notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -1302,7 +1293,7 @@ while <span id="id3">[<a class="reference internal" href="../appendix/references
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bash Basic Exercises</p>
+        <p class="prev-next-title">Bash Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

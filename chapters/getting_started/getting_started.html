@@ -174,7 +174,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../bash/bash_tools.html">Building Tools with the Unix Shell</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../bash/bash_advanced.html">Going Further with the Unix Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/bash.html">Bash Basic Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/bash.html">Bash Exercises</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
 <ul class="nav bd-sidenav">
@@ -411,8 +411,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>{% capture test %} url {% endcapture %}</p>
-<section class="tex2jax_ignore mathjax_ignore" id="getting-started">
+  <section class="tex2jax_ignore mathjax_ignore" id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h1>
 <blockquote>
 <div><p>Everything starts somewhere, though many physicists disagree.</p>
@@ -450,7 +449,7 @@ but experience teaches that we will be more productive if we make tidiness a hab
 we’ll follow a widely used template
 for organizing small and medium-sized data analysis projects <span id="id1">[<a class="reference internal" href="../appendix/references.html#id55" title="William Stafford Noble. A Quick Guide to Organizing Computational Biology Projects. PLoS Computational Biology, 5(7):e1000424, Jul 2009. How to organize a small to medium-sized bioinformatics project. doi:10.1371/journal.pcbi.1000424.">Noble, 2009</a>]</span>.
 The project will live in a directory called <code class="docutils literal notranslate"><span class="pre">zipf</span></code>,
-which will also be a Git repository stored on GitHub chapter <span class="xref myst">Git Command-line</span><strong>TODO</strong>.
+which will also be a Git repository stored on GitHub chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/vsc/version_control.html">Git Command-line</a>.
 The following is an abbreviated version of the project directory tree
 as it appears toward the end of the book:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zipf/
@@ -489,8 +488,8 @@ that should be present in every research software project,
 open source or otherwise:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">README</span></code> includes basic information on our project.
-We’ll create it in Chapter <strong>TODO REF TO GIT_ADVANCED SECTION</strong>,
-and extend it in Chapter <strong>TODO REF TO PACKAGING</strong>.</p></li>
+We’ll create it in Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/vcs/git_advanced.html">Git Advanced</a>,
+and extend it in Chapter <span class="xref myst">Packaging</span>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> is the project’s license. We’ll add it in Section <strong>TODO REF TO LICENSE</strong>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">CONTRIBUTING</span></code> explains how to contribute to the project. We’ll add it in Section <strong>TODO REF teams-documentation</strong>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">CONDUCT</span></code> is the project’s Code of Conduct. We’ll add it in Section <strong>TODO REF Teams-coc</strong></p></li>
@@ -498,7 +497,7 @@ and extend it in Chapter <strong>TODO REF TO PACKAGING</strong>.</p></li>
 </ul>
 <p>Some projects also include a <code class="docutils literal notranslate"><span class="pre">CONTRIBUTORS</span></code> or <code class="docutils literal notranslate"><span class="pre">AUTHORS</span></code> file that
 lists everyone who has contributed to the project,
-while others include that information in the <code class="docutils literal notranslate"><span class="pre">README</span></code> (we do this in Chapter <strong>TODO REF git-advanced</strong>
+while others include that information in the <code class="docutils literal notranslate"><span class="pre">README</span></code> (we do this in Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/vcs/git_advanced.html">Git Advanced</a>
 or make it a section in <code class="docutils literal notranslate"><span class="pre">CITATION</span></code>.
 These files are often called **boilerplate,
 meaning they are copied without change from one use to the next.</p>
@@ -511,13 +510,13 @@ the directories in the repository’s root are organized according to purpose:</
 <li><p>Runnable programs go in <code class="docutils literal notranslate"><span class="pre">bin/</span></code>
 (an old Unix abbreviation for “binary”, meaning “not text”).
 This will include both shell scripts,
-e.g., <code class="docutils literal notranslate"><span class="pre">book_summary.sh</span></code> developed in Chapter <strong>TODO</strong> ref(bash-advanced),
+e.g., <code class="docutils literal notranslate"><span class="pre">book_summary.sh</span></code> developed in Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_advanced.html">bash dvanced</a>,,
 and Python programs,
-e.g., <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code>, developed in Chapter **TODO ref(scripting).</p></li>
+e.g., <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code>, developed in Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/scripting/building_cli_python.html">building a CLI with python</a>,).</p></li>
 <li><p>Raw data goes in <code class="docutils literal notranslate"><span class="pre">data/</span></code>
 and is never modified after being stored.
 You’ll set up this directory
-and its contents in Section <strong>TODO</strong> ref(getting-started-download-data).</p></li>
+and its contents in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started/getting_started.html#downloading-the-data">download the data</a>.</p></li>
 <li><p>Results are put in <code class="docutils literal notranslate"><span class="pre">results/</span></code>.
 This includes cleaned-up data,
 figures,
@@ -587,8 +586,8 @@ as it includes Conda as well as many of the packages we’ll use in this book.</
 If it is not, you can install it as follows:</p>
 <ul class="simple">
 <li><p><em>Linux (Debian/Ubuntu)</em>: Install it from the Bash shell using <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">make</span></code>.</p></li>
-<li><p><em>Mac</em>: Install <strong>TODO</strong> <a class="reference external" href="https://developer.apple.com/xcode/">Xcode</a> (via the App Store).</p></li>
-<li><p><em>Windows</em>: Follow the <strong>TODO</strong> <a class="reference external" href="https://ubc-mds.github.io/resources_pages/install_ds_stack_windows/#make">installation instructions</a> maintained by the
+<li><p><em>Mac</em>: Install <a class="reference external" href="https://developer.apple.com/xcode/">Xcode</a> (via the App Store).</p></li>
+<li><p><em>Windows</em>: Follow the <a class="reference external" href="https://ubc-mds.github.io/resources_pages/install_ds_stack_windows/#make">installation instructions</a> maintained by the
 Master of Data Science program at the University of British Columbia.</p></li>
 </ul>
 <blockquote>
@@ -622,21 +621,13 @@ we are ready to start our analysis.</p>
 <section id="getting-ready">
 <h3>Getting ready<a class="headerlink" href="#getting-ready" title="Permalink to this heading">#</a></h3>
 <p>Make sure you’ve downloaded the required data files
-(following Section <span class="xref myst">download the data</span>
-and installed the required software (<span class="xref myst">from following Section</span>) before progressing to the next chapter.</p>
+(following Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started/getting_started.html#downloading-the-data">downloading the data </a>
+and installed the required software (<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started/getting_started.html#installing-the-software">as described here</a>) before progressing to the next chapter.</p>
 </section>
 </section>
 <section id="key-points">
 <h2>Key Points<a class="headerlink" href="#key-points" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Make tidiness a habit, rather than cleaning up your project files later.</p></li>
-<li><p>Include a few standard files in all your projects, such as README, LICENSE, CONTRIBUTING, CONDUCT and CITATION.</p></li>
-<li><p>Put runnable code in a <code class="docutils literal notranslate"><span class="pre">bin/</span></code> directory.</p></li>
-<li><p>Put raw/original data in a <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory and never modify it.</p></li>
-<li><p>Put results in a <code class="docutils literal notranslate"><span class="pre">results/</span></code> directory. This includes cleaned-up data and figures (i.e., everything created using what’s in <code class="docutils literal notranslate"><span class="pre">bin</span></code> and <code class="docutils literal notranslate"><span class="pre">data</span></code>).</p></li>
-<li><p>Put documentation and manuscripts in a <code class="docutils literal notranslate"><span class="pre">docs/</span></code> directory.</p></li>
-<li><p>Refer to The Carpentries <a class="reference external" href="https://carpentries.org/">software installation guide</a> if you’re having trouble, or send us an email.</p></li>
-</ul>
+<p><code class="docutils literal notranslate"><span class="pre">{include}</span> <span class="pre">../keypoints/getting_started.md</span></code></p>
 </section>
 </section>
 

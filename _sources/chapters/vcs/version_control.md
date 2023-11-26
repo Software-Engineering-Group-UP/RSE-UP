@@ -20,7 +20,7 @@ It's also useful from a collaboration viewpoint, because the system keeps a reco
 There are many different version control systems, such as CVS, Subversion, and Mercurial, but the most widely used version control system today is **Git**.
 Many people first encounter it through a GUI like the [Github desktop client](https://desktop.github.com/) or paid tools like [GitKraken](https://www.gitkraken.com/) or terminal application like [GitUI](https://github.com/extrawurst/gitui).
 However, these tools are actually wrappers around Git's original command-line interface,which gives us access to all of Git's features.
-This lesson describes how to perform fundamental operations using that interface; Chapter [Git Advanced](https://software-engineering-group-up.github.io/RSE-UP/exercises/4_git_advanced.html) then introduces more advanced operations that can be used to implement a smoother research workflow.
+This lesson describes how to perform fundamental operations using that interface; Chapter [Git Advanced](https://software-engineering-group-up.github.io/RSE-UP/exercises/git_advanced.html) then introduces more advanced operations that can be used to implement a smoother research workflow.
 
 To show how Git works, we will apply it to the Zipf's Law project. Our project directory should currently include:
 
@@ -45,7 +45,7 @@ zipf/
     └── moby_dick.csv
 ```
 
-`bin/plotcounts.py` is the solution to Exercise [Scripting - Exercise Better Plotting](https://software-engineering-group-up.github.io/RSE-UP/exercises/2_python_cli.html#a-better-plotting-program); over the course of this chapter we will edit it to produce more informative plots.  Initially, it looks like this:
+`bin/plotcounts.py` is the solution to Exercise [Scripting - Exercise Better Plotting](https://software-engineering-group-up.github.io/RSE-UP/exercises/python_cli.html#a-better-plotting-program); over the course of this chapter we will edit it to produce more informative plots.  Initially, it looks like this:
 
 ```python
 """Plot word counts."""
@@ -282,7 +282,7 @@ Changes to be committed:
 
 Adding all of our existing files this way is easy, but we can accidentally add things that should never be in version control,
 such as files containing passwords or other sensitive information. 
-The output of `git status` tells us that we can remove such files from the list of things to be saved using `git rm --cached`; we will practice this in [Exercise](https://software-engineering-group-up.github.io/RSE-UP/exercises/3_version_control.html#removing-before-saving)
+The output of `git status` tells us that we can remove such files from the list of things to be saved using `git rm --cached`; we will practice this in [Exercise](https://software-engineering-group-up.github.io/RSE-UP/exercises/version_control.html#removing-before-saving)
 > **What to Save**
 >
 > We always want to save programs, manuscripts,
@@ -379,7 +379,7 @@ Following [these guidelines]( https://chris.beams.io/posts/git-commit/) will hel
 > is one of the most frequently read questions on Stack Overflow.)
 >
 > To configure Git to use the `nano` editor
-> introduced in Chapter [bash-basics](https://software-engineering-group-up.github.io/RSE-UP/chapters/02/2_bash_basics.html) instead,
+> introduced in Chapter [bash-basics](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_basics.html) instead,
 > execute the following command:
 >
 > ```bash
@@ -473,7 +473,7 @@ the commit's author, when it was created, and the commit message that we wrote.
 > When you begin working with longer logs
 > (like later in this chapter),
 > you'll notice that the commits are shown in a pager program, 
-> as you saw in Section [bash-basics-help](https://software-engineering-group-up.github.io/RSE-UP/chapters/02/2_bash_basics.html#reading-the-manual) with manual pages.
+> as you saw in Section [bash-basics-help](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_basics.html#reading-the-manual) with manual pages.
 > You can apply the same keystrokes to scroll through the log
 > and exit the paging program.
 The plot we have made is shown in [Figure](git-cmdline-initial-plot).
@@ -1280,19 +1280,4 @@ We will explore these in the next chapter.
 
 ## Keypoints
 
--   Use `git config` with the `--global` option to configure your username,
-    email address, and other preferences once per machine.
--   `git init` initializes a **repository**.
--   Git stores all repository management data in the `.git` subdirectory of the repository's root directory.
--   `git status` shows the status of a repository.
--   `git add` puts files in the repository's staging area.
--   `git commit` saves the staged content as a new commit in the local repository.
--   `git log` lists previous commits.
--   `git diff` shows the difference between two versions of the repository.
--   Synchronize your local repository with a **remote repository**  
-    on a **forge** such as [GitHub](https://www.github.com).
--   `git remote` manages bookmarks pointing at remote repositories.
--   `git push` copies changes from a local repository to a remote repository.
--   `git pull` copies changes from a remote repository to a local repository.
--   `git restore` and `git checkout` recover old versions of files.
--   The `.gitignore` file tells Git what files to ignore.
+```{include} ../keypoints/version_control.md```

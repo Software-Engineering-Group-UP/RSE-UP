@@ -168,7 +168,7 @@ On branch master
 nothing to commit, working directory clean
 ```
 
-To switch to our new branch we can use the `checkout` command that we first saw in Chapter [git command line](https://software-engineering-group-up.github.io/RSE-UP/chapters/04/4_version_control.html):
+To switch to our new branch we can use the `checkout` command that we first saw in Chapter [git command line](https://software-engineering-group-up.github.io/RSE-UP/chapters/vcs/version_control.html):
 
 ```bash
 $ git checkout fit
@@ -1491,24 +1491,12 @@ in practice, it reveals a communication problem that Amira (or someone) needs to
 or rearrange the project's contents so that they aren't stepping on each other's toes.
 
 ## Summary 
+
 Branches and pull requests seem complicated at first, but they quickly become second nature. Everyone involved in the project can work at their own pace on what they want to, picking up others' changes and submitting their own whenever they want. More importantly, this workflow gives everyone has a chance to review each other's work. As we discuss in Section **TODO** ref(style-review),
 doing reviews doesn't just prevent errors from creeping in:
 it is also an effective way to spread understanding and skills.
 
 ## Keypoints
-
--   Use a **branch-per-feature** workflow to develop new features while leaving the master branch in working order.
--   `git branch` creates a new branch. 
--   `git checkout` switches between branches.
--   `git merge` **merges** changes from another branch into the current branch.
--   **Conflicts** occur when files or parts of files are changed in different ways on different branches.
--   Version control systems do not allow people to overwrite changes silently;
-    instead, they highlight conflicts that need to be resolved.
--   **Forking** a repository makes a copy of it on a server.
--   **Cloning** a repository with `git clone` creates a local copy of a remote repository.
--   Create a remote called `upstream` to point to the repository a fork was derived from.
--   Create **pull requests** to submit changes from your fork to the upstream repository.
-
 
 ```{include} ../keypoints/git-advanced.md
 
