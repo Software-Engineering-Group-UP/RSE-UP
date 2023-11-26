@@ -19,8 +19,7 @@ parts:
       - file: exercises/2_python_cli.ipynb
   - caption: Version Control
     chapters:
-      - file: chapters/04/4_version_control.ipynb
-      - file: chapters/04/4_test.md
+      - file: chapters/04/4_version_control.md
       - file: exercises/3_version_control.ipynb  
   - caption: Extras
     chapters:
