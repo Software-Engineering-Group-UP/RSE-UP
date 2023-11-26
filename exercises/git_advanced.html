@@ -1,0 +1,638 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Exercises Git Advanced &#8212; RSE-ING</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/git_advanced';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/git_advanced.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python refresher" href="python_refresher.html" />
+    <link rel="prev" title="Going Further with Git" href="../chapters/vcs/git_advanced.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../chapters/introduction.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RSE-ING</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../chapters/introduction.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="guide.html">Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapters/bash/bash_basics.html">The Basics of the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/bash/bash_tools.html">Building Tools with the Unix Shell</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../chapters/bash/bash_advanced.html">Going Further with the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bash.html">Bash Basic Exercises</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapters/scripting/building_cli_python.html">Building Command-Line Tools with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_cli.html">Exercises Scripting Python for CLI tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapters/vcs/version_control.html">Using Git at the Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version_control.html">Exercise Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/vcs/git_advanced.html">Going Further with Git</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercises Git Advanced</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extras</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_refresher.html">Python refresher</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapters/appendix/references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/Software-Engineering-Group-UP/RSE-UP/main?urlpath=tree/exercises/git_advanced.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fexercises/git_advanced.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/exercises/git_advanced.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercises Git Advanced</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-options">1 Explaining options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-prompt">2) Modifying prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignoring-files">3) Ignoring files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-same-file-twice">4) Creating the same file twice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-a-branch-without-merging">5) Deleting a branch without merging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracing-changes">6) Tracing changes</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exercises-git-advanced">
+<h1>Exercises Git Advanced<a class="headerlink" href="#exercises-git-advanced" title="Permalink to this heading">#</a></h1>
+<section id="explaining-options">
+<h2>1 Explaining options<a class="headerlink" href="#explaining-options" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>What do the <code class="docutils literal notranslate"><span class="pre">--oneline</span></code> and <code class="docutils literal notranslate"><span class="pre">-n</span></code> options for <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> do?</p></li>
+<li><p>What other options does <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> have that you would find useful?</p></li>
+</ol>
+</section>
+<section id="modifying-prompt">
+<h2>2) Modifying prompt<a class="headerlink" href="#modifying-prompt" title="Permalink to this heading">#</a></h2>
+<p>Modify your shell prompt so that it shows the branch you are on
+when you are in a repository.</p>
+</section>
+<section id="ignoring-files">
+<h2>3) Ignoring files<a class="headerlink" href="#ignoring-files" title="Permalink to this heading">#</a></h2>
+<p>GitHub maintains [a collection of <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> files][github-gitignore]
+for projects of various kinds.
+Look at the sample <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file for Python:
+how many of the ignored files do you recognize?
+Where could you look for more information about them?</p>
+</section>
+<section id="creating-the-same-file-twice">
+<h2>4) Creating the same file twice<a class="headerlink" href="#creating-the-same-file-twice" title="Permalink to this heading">#</a></h2>
+<p>Create a branch called <code class="docutils literal notranslate"><span class="pre">same</span></code>.
+In it, create a file called <code class="docutils literal notranslate"><span class="pre">same.txt</span></code> that contains your name and the date.</p>
+<p>Switch back to <code class="docutils literal notranslate"><span class="pre">master</span></code>.
+Check that <code class="docutils literal notranslate"><span class="pre">same.txt</span></code> does not exist,
+then create the same file with exactly the same contents.</p>
+<ol class="arabic simple">
+<li><p>What will <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">master..same</span></code> show?
+(Try to answer the question <em>before</em> running the command.)</p></li>
+<li><p>What will <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">same</span> <span class="pre">master</span></code> do?
+(Try to answer the question <em>before</em> running the command.)</p></li>
+</ol>
+</section>
+<section id="deleting-a-branch-without-merging">
+<h2>5) Deleting a branch without merging<a class="headerlink" href="#deleting-a-branch-without-merging" title="Permalink to this heading">#</a></h2>
+<p>Create a branch called <code class="docutils literal notranslate"><span class="pre">experiment</span></code>.
+In it, create a file called <code class="docutils literal notranslate"><span class="pre">experiment.txt</span></code> that contains your name and the date,
+then switch back to <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p>
+<ol class="arabic simple">
+<li><p>What happens when you try to delete the <code class="docutils literal notranslate"><span class="pre">experiment</span></code> branch using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-d</span> <span class="pre">experiment</span></code>?
+Why?</p></li>
+<li><p>What option can you give Git to delete the <code class="docutils literal notranslate"><span class="pre">experiment</span></code> branch?
+Why should you be very careful using it?</p></li>
+<li><p>What do you think will happen if you try to delete the branch you are currently on using this flag?</p></li>
+</ol>
+</section>
+<section id="tracing-changes">
+<h2>6) Tracing changes<a class="headerlink" href="#tracing-changes" title="Permalink to this heading">#</a></h2>
+<p>Chartreuse and Fuchsia are collaborating on a project.
+Describe what is in each of the four repositories involved after each of the steps below.</p>
+<ol class="arabic simple">
+<li><p>Chartreuse creates a repository containing a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file on GitHub
+and clones it to their desktop.</p></li>
+<li><p>Fuchsia forks that repository on GitHub
+and clones their copy to their desktop.</p></li>
+<li><p>Fuchsia adds a file <code class="docutils literal notranslate"><span class="pre">fuchsia.txt</span></code> to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of their desktop repository
+and pushes that change to their repository on GitHub.</p></li>
+<li><p>Fuchsia creates a pull request from the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of their repository on GitHub
+to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of Chartreuse’s repository on GitHub.</p></li>
+<li><p>Chartreuse does <em>not</em> merge Fuchsia’s PR.
+Instead,
+they add a file <code class="docutils literal notranslate"><span class="pre">chartreuse.txt</span></code> to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of their desktop repository
+and push that change to their repository on GitHub.</p></li>
+<li><p>Fuchsia adds a remote to their desktop repository called <code class="docutils literal notranslate"><span class="pre">upstream</span></code>
+that points at Chartreuse’s repository on GitHub
+and runs <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">upstream</span> <span class="pre">master</span></code>,
+then merges any changes or conflicts.</p></li>
+<li><p>Fuchsia pushes from the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of their desktop repository
+to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of their GitHub repository.</p></li>
+<li><p>Chartreuse merges Fuchsia’s pull request.</p></li>
+<li><p>Chartreuse runs <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">master</span></code> on the desktop.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./exercises"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../chapters/vcs/git_advanced.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Going Further with Git</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="python_refresher.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python refresher</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-options">1 Explaining options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-prompt">2) Modifying prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignoring-files">3) Ignoring files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-same-file-twice">4) Creating the same file twice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-a-branch-without-merging">5) Deleting a branch without merging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracing-changes">6) Tracing changes</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Niko Bertrand
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
