@@ -5,7 +5,7 @@ title: Research Software Engineering
 parts: 
   - caption: Getting Started
     chapters:
-      - file: chapters/getting_start/getting_started.md
+      - file: chapters/getting_started/getting_started.md
       - file: exercises/guide.ipynb
   - caption: Bash and the CLI 
     chapters:
