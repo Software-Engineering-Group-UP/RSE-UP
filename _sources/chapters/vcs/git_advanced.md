@@ -132,7 +132,7 @@ we will do our work in a separate branch.
 Once we have successfully added curve fitting to `plotcounts.py`,
 we can decide if we want to merge our changes back into the `master` branch.
 
-```{figure} ../figures/git-cmdline/plot-loglog.png
+```{figure} ../../figures/git-cmdline/plot-loglog.png
 :name: git-cmdline-loglog-plot
 Git Command line LogLog plot
 ```
@@ -208,11 +208,9 @@ Before we make any changes to our new branch, we need to figure out how to fit a
 > the third most common appears a third as often, and so on.
 
 In other words
-the frequency of a word \(f\) is proportional to its inverse rank \(r\):
+the frequency of a word $f$ is proportional to its inverse rank $r$:
 
-\[
-f \propto \frac{1}{r^\alpha}
-\]
+$ f \propto \frac{1}{r^\alpha} $
 
 with a value of \(\alpha\) close to one.
 The reason \(\alpha\) must be close to one for Zipf's Law to hold
