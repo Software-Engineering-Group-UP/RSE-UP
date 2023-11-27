@@ -23,6 +23,10 @@ parts:
       - file: exercises/version_control.ipynb
       - file: chapters/vcs/git_advanced.md
       - file: exercises/git_advanced.ipynb
+  - caption: Working in teams
+    chapters:
+      - file: chapters/work_teams/working_teams.md
+      - file: exercises/work_teams.ipynb
   - caption: Extras
     chapters:
       - file: exercises/python_refresher.ipynb 
