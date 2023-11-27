@@ -1,0 +1,10 @@
+-   Welcome and nurture community members proactively.
+-   Create an explicit Code of Conduct for your project modeled on the [Contributor Covenant](https://www.contributor-covenant.org).
+-   Include a license in your project so that it's clear who can do what with the material.
+-   Create **issues** for bugs, enhancement requests, and discussions.
+-   **Label issues** to identify their purpose.
+-   **Triage**issues regularly and group them into **milestones** to track progress.
+-   Include contribution guidelines in your project that specify its workflow and its expectations of participants.
+-   Make rules about **governance** explicit.
+-   Use common-sense rules to make project meetings fair and productive.
+-   Manage conflict between participants rather than hoping it will take care of itself.
