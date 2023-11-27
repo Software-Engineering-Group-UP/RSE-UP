@@ -212,43 +212,35 @@ the frequency of a word $f$ is proportional to its inverse rank $r$:
 
 $ f \propto \frac{1}{r^\alpha} $
 
-with a value of \(\alpha\) close to one.
-The reason \(\alpha\) must be close to one for Zipf's Law to hold
+with a value of $\alpha$ close to one.
+The reason $\alpha$ must be close to one for Zipf's Law to hold
 becomes clear if we include it in a modified version of the earlier definition:
 
-> The most frequent word will occur approximately \(2^\alpha\) times
+> The most frequent word will occur approximately $2^\alpha$ times
 > as often as the second most frequent word,
-> \(3^\alpha\) times as often as the third most frequent word, and so on.
+> $3^\alpha$ times as often as the third most frequent word, and so on.
 
 This mathematical expression for Zipf's Law is an example of a **power law**.
-In general, when two variables \(x\) and \(y\) are related through a power law, so that 
-\[ 
-y = ax^b 
-\] 
+In general, when two variables $x$ and $y$ are related through a power law, so that 
+$ y = ax^b $ 
 taking logarithms of both sides yields a linear relationship:
 
-\[
-\log(y) = \log(a) + b\log(x)
-\]
+$ \log(y) = \log(a) + b\log(x) $
 
 Hence, plotting the variables on a log-log scale reveals this linear relationship. If Zipf's Law holds, we should have
 
-\[
-r = cf^{\frac{-1}{\alpha}}
-\]
+$ r = cf^{\frac{-1}{\alpha}} $
 
-where \(c\) is a constant of proportionality.
+where $c$ is a constant of proportionality.
 The linear relationship between the log word frequency and log rank is then
 
-\[
-\log(r) = \log(c) - \frac{1}{\alpha}\log(f)
-\]
+$ \log(r) = \log(c) - \frac{1}{\alpha}\log(f) $
 
-This suggests that the points on our log-log plot should fall on a straight  line with a slope of \(- \tfrac{1}{\alpha}\) and intercept \(\log(c)\).
-To fit a line to our word count data we therefore need to estimate the value of \(\alpha\); we'll see later that \(c\) is completely defined.
+This suggests that the points on our log-log plot should fall on a straight  line with a slope of $- \tfrac{1}{\alpha}$ and intercept $\log(c)$.
+To fit a line to our word count data we therefore need to estimate the value of $\alpha$; we'll see later that $c$ is completely defined.
 
-In order to determine the best method for estimating \(\alpha\), we turn to {cite:p}`More2016`, which suggests using a method called **maximum likelihood estimation**. The likelihood function is the probability of our observed data
-as a function of the parameters in the statistical model that we assume generated it. We estimate the parameters in the model by choosing them to maximize this likelihood; computationally, it is often easier to minimize the negative log likelihood function. {cite:p}`More2016` define the likelihood using a parameter \(\beta\), which is related to the \(\alpha\) parameter in our definition of Zipf's Law through \(\alpha = \tfrac{1}{\beta-1}\).
+In order to determine the best method for estimating $\alpha$, we turn to {cite:p}`More2016`, which suggests using a method called **maximum likelihood estimation**. The likelihood function is the probability of our observed data
+as a function of the parameters in the statistical model that we assume generated it. We estimate the parameters in the model by choosing them to maximize this likelihood; computationally, it is often easier to minimize the negative log likelihood function. {cite:p}`More2016` define the likelihood using a parameter $\beta$, which is related to the $\alpha$ parameter in our definition of Zipf's Law through $\alpha = \tfrac{1}{\beta-1}$.
 Under their model, the value of $c$ is the total number of unique words,
 or equivalently the largest value of the rank.
 
@@ -309,7 +301,7 @@ def plot_fit(curve_xmin, curve_xmax, max_rank, alpha, ax):
     ax.loglog(xvals, yvals, color='grey')
 ```
 
-where the maximum word frequency rank corresponds to \(c\), and \(-1 / \alpha\) the exponent in the power law. We have followed the [`numpydoc`](https://numpydoc.readthedocs.io/en/latest/) format for the detailed docstring
+where the maximum word frequency rank corresponds to $c$, and $-1 / \alpha$ the exponent in the power law. We have followed the [`numpydoc`](https://numpydoc.readthedocs.io/en/latest/) format for the detailed docstring
 in `plot_fit`---see Appendix {{ref}} **TODO** ref(documentation) for more information about docstring formats.
 
 ## Verifying Zipf's Law 
@@ -410,7 +402,7 @@ if __name__ == '__main__':
     main(args)
 ```
 
-We can then run the script to obtain the \(\alpha\) value for *Dracula*
+We can then run the script to obtain the $\alpha$ value for *Dracula*
 and a new plot with a line fitted.
 
 ```bash
@@ -422,7 +414,7 @@ $ python bin/plotcounts.py results/dracula.csv --outfile
 alpha: 1.0866646252515038
 ```
 
-So according to our fit, the most frequent word will occur approximately \(2^{1.1}=2.1\) times as often as the second most frequent word, \(3^{1.1}=3.3\) times as often as the third most frequent word, and so on. [Figure](git-advanced-dracula-fit) shows the plot.
+So according to our fit, the most frequent word will occur approximately $2^{1.1}=2.1$ times as often as the second most frequent word, $3^{1.1}=3.3$ times as often as the third most frequent word, and so on. [Figure](git-advanced-dracula-fit) shows the plot.
 
 ```{figure} ../../figures/git-advanced/dracula-fit.png
 :name: git-advanced-dracula-fit.png

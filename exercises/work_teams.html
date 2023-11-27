@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Guide &#8212; RSE-ING</title>
+    <title>Exercise - Work Teams &#8212; RSE-ING</title>
   
   
   
@@ -63,12 +63,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/guide';</script>
-    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/guide.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/work_teams';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/work_teams.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Basics of the Unix Shell" href="../chapters/bash/bash_basics.html" />
-    <link rel="prev" title="Getting Started" href="../chapters/getting_started/getting_started.html" />
+    <link rel="next" title="Python refresher" href="python_refresher.html" />
+    <link rel="prev" title="Exercises Git Advanced" href="git_advanced.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,9 +165,9 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapters/getting_started/getting_started.html">Getting Started</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide.html">Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
 <ul class="nav bd-sidenav">
@@ -190,8 +190,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="git_advanced.html">Exercises Git Advanced</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Working in teams</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="work_teams.html">Exercise - Work Teams</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise - Work Teams</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Extras</span></p>
 <ul class="nav bd-sidenav">
@@ -254,7 +254,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/Software-Engineering-Group-UP/RSE-UP/main?urlpath=tree/exercises/guide.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/Software-Engineering-Group-UP/RSE-UP/main?urlpath=tree/exercises/work_teams.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +302,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fexercises/guide.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fexercises/work_teams.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -332,7 +332,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/exercises/guide.ipynb" target="_blank"
+      <li><a href="../_sources/exercises/work_teams.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -403,7 +403,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -414,11 +416,27 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Guide</h1>
+    <h1>Exercise - Work Teams</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-information">1) Finding information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-code-of-conduct-to-your-project">2) Add a Code of Conduct to your project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-license-to-your-project">3) Add a license to your project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-contribution-guidelines">4) Adding contribution guidelines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-an-issue">5) File an issue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label-issues">6) Label issues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balancing-individual-and-team-needs">7) Balancing individual and team needs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crediting-invisible-contributions">8) Crediting invisible contributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-are-you">9) Who are you?</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -428,8 +446,128 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="guide">
-<h1>Guide<a class="headerlink" href="#guide" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-work-teams">
+<h1>Exercise - Work Teams<a class="headerlink" href="#exercise-work-teams" title="Permalink to this heading">#</a></h1>
+<section id="finding-information">
+<h2>1) Finding information<a class="headerlink" href="#finding-information" title="Permalink to this heading">#</a></h2>
+<p>Take a look at <a class="reference external" href="https://github.com/Software-Engineering-Group-UP/RSE-UP">the GitHub repository for this book</a>.
+Where is the information for licensing and contributing?</p>
+</section>
+<section id="add-a-code-of-conduct-to-your-project">
+<h2>2) Add a Code of Conduct to your project<a class="headerlink" href="#add-a-code-of-conduct-to-your-project" title="Permalink to this heading">#</a></h2>
+<p>Add a <code class="docutils literal notranslate"><span class="pre">CONDUCT.md</span></code> file to your Zipf’s Law project repository.
+Use the [Contributor Covenant][(<a class="reference external" href="https://www.contributor-covenant.org">https://www.contributor-covenant.org</a>) Code of Conduct template and modify the
+places that need updating (e.g., who to contact).
+Be sure to edit the contact information in both before committing the files.</p>
+</section>
+<section id="add-a-license-to-your-project">
+<h2>3) Add a license to your project<a class="headerlink" href="#add-a-license-to-your-project" title="Permalink to this heading">#</a></h2>
+<p>Add either an MIT or a GPL <code class="docutils literal notranslate"><span class="pre">LICENSE.md</span></code> file to your Zipf’s Law project
+repository.
+Modify the contents to include your full name and year.</p>
+</section>
+<section id="adding-contribution-guidelines">
+<h2>4) Adding contribution guidelines<a class="headerlink" href="#adding-contribution-guidelines" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Add a section to the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file in the Zipf’s Law project
+to tell people where to find out more about contributing.</p></li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">CONTRIBUTING.md</span></code> file in the Zipf’s Law project
+to describe how other people can contribute to it.</p></li>
+</ol>
+<p>Be sure to add it to the root directory of your Git repository,
+so that when someone opens a pull request or creates an issue on GitHub,
+they will be presented with a link to the CONTRIBUTING file
+(see the <a class="reference external" href="https://docs.github.com/en/github/building-a-strong-community/setting-guidelines-for-repository-contributors">GitHub contributors guide</a> for details).</p>
+</section>
+<section id="file-an-issue">
+<h2>5) File an issue<a class="headerlink" href="#file-an-issue" title="Permalink to this heading">#</a></h2>
+<p>Create a feature request issue in your Zipf’s Law project repository
+to ask that unit tests be written for <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code>
+(we will do this in Chapter <a class="reference external" href="https://github.com/Software-Engineering-Group-UP/RSE-UP/chapters/testing/testing.html">Testing</a>.</p>
+</section>
+<section id="label-issues">
+<h2>6) Label issues<a class="headerlink" href="#label-issues" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Create the labels <em>current</em> and <em>discussion</em>
+to help organize and prioritize your issues.</p></li>
+<li><p>Delete at least one of the labels that GitHub automatically created for you.</p></li>
+<li><p>Apply at least one label to each issue in your repository.</p></li>
+</ol>
+</section>
+<section id="balancing-individual-and-team-needs">
+<h2>7) Balancing individual and team needs<a class="headerlink" href="#balancing-individual-and-team-needs" title="Permalink to this heading">#</a></h2>
+<p>A new member of your team has a medically diagnosed attention disorder.
+In order to help themselves focus,
+they need to talk to themselves while coding.
+Several other members of your team have come to you privately
+to say that they find this distracting.
+What steps would you take?</p>
+</section>
+<section id="crediting-invisible-contributions">
+<h2>8) Crediting invisible contributions<a class="headerlink" href="#crediting-invisible-contributions" title="Permalink to this heading">#</a></h2>
+<p>Your team has a rule:
+if someone’s name appears in the Git history for a project,
+they are listed as a co-author on papers for that project.
+A new member of your team has complained that this is unfair:
+people who haven’t contributed for over two years are still being included as authors,
+while they aren’t included because the many hours they have spent doing code
+reviews don’t show up in the Git history.
+How would you address this issue?</p>
+</section>
+<section id="who-are-you">
+<h2>9) Who are you?<a class="headerlink" href="#who-are-you" title="Permalink to this heading">#</a></h2>
+<p>Which (if any) of the following profiles describes you best?
+How would you help each of these people if they were on your team?</p>
+<ul class="simple">
+<li><p><em>Anna</em> thinks she knows more about every subject
+than everyone else on the team put together.
+No matter what you say, she’ll correct you;
+no matter what you know, she knows better.
+If you keep track in team meetings of how often people interrupt one another,
+her score is usually higher than everyone else’s put together.</p></li>
+<li><p><em>Bao</em> is a contrarian:
+no matter what anyone says, he’ll take the opposite side.
+This is healthy in small doses,
+but when Bao does it,
+there’s always another objection lurking behind the first half dozen.</p></li>
+<li><p><em>Frank</em> believes that knowledge is power.
+He enjoys knowing things that other people don’t—or to be more accurate,
+he enjoys it when people know he knows things they don’t.
+Frank can actually make things work,
+but when asked how he did it,
+he’ll grin and say,
+“Oh, I’m sure you can figure it out.”</p></li>
+<li><p><em>Hediyeh</em> is quiet.
+Very quiet.
+She never speaks up in meetings,
+even when she knows that what other people are saying is wrong.
+She might contribute to the mailing list,
+but she’s very sensitive to criticism,
+and will always back down rather than defending her point of view.</p></li>
+<li><p><em>Kenny</em> is a hitchhiker.
+He has discovered that most people would rather shoulder some extra work than snitch,
+and he takes advantage of it at every turn.
+The frustrating thing is that he’s so damn <em>plausible</em>
+when someone finally does confront him.
+“There have been mistakes on all sides,” he says,
+or,
+“Well, I think you’re nit-picking.”</p></li>
+<li><p><em>Melissa</em> would easily have made the varsity procrastination team
+if she’d bothered to show up to tryouts.
+She means well—she really does feel bad about letting people down—but
+somehow her tasks are never finished until the last possible moment.
+Of course, that means that everyone who is depending on her can’t do their work until
+<em>after</em> the last possible moment.</p></li>
+<li><p><em>Petra</em>’s favorite phrase is “why don’t we.”
+Why don’t we write a GUI to help people edit the program’s configuration files?
+Hey, why don’t we invent our own little language for designing GUIs?</p></li>
+<li><p><em>Raj</em> is rude.
+“It’s just the way I talk,” he says.
+“If you can’t hack it, maybe you should find another team.”
+His favorite phrase is, “That’s stupid,”
+and he uses obscenity in every second sentence.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -463,20 +601,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../chapters/getting_started/getting_started.html"
+       href="git_advanced.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Getting Started</p>
+        <p class="prev-next-title">Exercises Git Advanced</p>
       </div>
     </a>
     <a class="right-next"
-       href="../chapters/bash/bash_basics.html"
+       href="python_refresher.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">The Basics of the Unix Shell</p>
+        <p class="prev-next-title">Python refresher</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -486,6 +624,28 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-information">1) Finding information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-code-of-conduct-to-your-project">2) Add a Code of Conduct to your project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-license-to-your-project">3) Add a license to your project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-contribution-guidelines">4) Adding contribution guidelines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-an-issue">5) File an issue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label-issues">6) Label issues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balancing-individual-and-team-needs">7) Balancing individual and team needs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crediting-invisible-contributions">8) Crediting invisible contributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-are-you">9) Who are you?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

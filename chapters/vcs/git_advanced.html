@@ -191,6 +191,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Going Further with Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../exercises/git_advanced.html">Exercises Git Advanced</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Working in teams</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/work_teams.html">Exercise - Work Teams</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Extras</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../exercises/python_refresher.html">Python refresher</a></li>
@@ -603,36 +607,28 @@ the third most common appears a third as often, and so on.</p>
 <p>In other words
 the frequency of a word <span class="math notranslate nohighlight">\(f\)</span> is proportional to its inverse rank <span class="math notranslate nohighlight">\(r\)</span>:</p>
 <p><span class="math notranslate nohighlight">\( f \propto \frac{1}{r^\alpha} \)</span></p>
-<p>with a value of (\alpha) close to one.
-The reason (\alpha) must be close to one for Zipf’s Law to hold
+<p>with a value of <span class="math notranslate nohighlight">\(\alpha\)</span> close to one.
+The reason <span class="math notranslate nohighlight">\(\alpha\)</span> must be close to one for Zipf’s Law to hold
 becomes clear if we include it in a modified version of the earlier definition:</p>
 <blockquote>
-<div><p>The most frequent word will occur approximately (2^\alpha) times
+<div><p>The most frequent word will occur approximately <span class="math notranslate nohighlight">\(2^\alpha\)</span> times
 as often as the second most frequent word,
-(3^\alpha) times as often as the third most frequent word, and so on.</p>
+<span class="math notranslate nohighlight">\(3^\alpha\)</span> times as often as the third most frequent word, and so on.</p>
 </div></blockquote>
 <p>This mathematical expression for Zipf’s Law is an example of a <strong>power law</strong>.
-In general, when two variables (x) and (y) are related through a power law, so that
-[
-y = ax^b
-]
+In general, when two variables <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are related through a power law, so that
+<span class="math notranslate nohighlight">\( y = ax^b \)</span>
 taking logarithms of both sides yields a linear relationship:</p>
-<p>[
-\log(y) = \log(a) + b\log(x)
-]</p>
+<p><span class="math notranslate nohighlight">\( \log(y) = \log(a) + b\log(x) \)</span></p>
 <p>Hence, plotting the variables on a log-log scale reveals this linear relationship. If Zipf’s Law holds, we should have</p>
-<p>[
-r = cf^{\frac{-1}{\alpha}}
-]</p>
-<p>where (c) is a constant of proportionality.
+<p><span class="math notranslate nohighlight">\( r = cf^{\frac{-1}{\alpha}} \)</span></p>
+<p>where <span class="math notranslate nohighlight">\(c\)</span> is a constant of proportionality.
 The linear relationship between the log word frequency and log rank is then</p>
-<p>[
-\log(r) = \log(c) - \frac{1}{\alpha}\log(f)
-]</p>
-<p>This suggests that the points on our log-log plot should fall on a straight  line with a slope of (- \tfrac{1}{\alpha}) and intercept (\log(c)).
-To fit a line to our word count data we therefore need to estimate the value of (\alpha); we’ll see later that (c) is completely defined.</p>
-<p>In order to determine the best method for estimating (\alpha), we turn to <span id="id1">[<a class="reference internal" href="../appendix/references.html#id53" title="Isabel Moreno-Sánchez, Francesc Font-Clos, and Álvaro Corral. Large-scale Analysis of Zipf's Law in English Texts. PLoS ONE, 11(1):e0147073, Jan 2016. doi:10.1371/journal.pone.0147073.">Moreno-Sánchez <em>et al.</em>, 2016</a>]</span>, which suggests using a method called <strong>maximum likelihood estimation</strong>. The likelihood function is the probability of our observed data
-as a function of the parameters in the statistical model that we assume generated it. We estimate the parameters in the model by choosing them to maximize this likelihood; computationally, it is often easier to minimize the negative log likelihood function. <span id="id2">[<a class="reference internal" href="../appendix/references.html#id53" title="Isabel Moreno-Sánchez, Francesc Font-Clos, and Álvaro Corral. Large-scale Analysis of Zipf's Law in English Texts. PLoS ONE, 11(1):e0147073, Jan 2016. doi:10.1371/journal.pone.0147073.">Moreno-Sánchez <em>et al.</em>, 2016</a>]</span> define the likelihood using a parameter (\beta), which is related to the (\alpha) parameter in our definition of Zipf’s Law through (\alpha = \tfrac{1}{\beta-1}).
+<p><span class="math notranslate nohighlight">\( \log(r) = \log(c) - \frac{1}{\alpha}\log(f) \)</span></p>
+<p>This suggests that the points on our log-log plot should fall on a straight  line with a slope of <span class="math notranslate nohighlight">\(- \tfrac{1}{\alpha}\)</span> and intercept <span class="math notranslate nohighlight">\(\log(c)\)</span>.
+To fit a line to our word count data we therefore need to estimate the value of <span class="math notranslate nohighlight">\(\alpha\)</span>; we’ll see later that <span class="math notranslate nohighlight">\(c\)</span> is completely defined.</p>
+<p>In order to determine the best method for estimating <span class="math notranslate nohighlight">\(\alpha\)</span>, we turn to <span id="id1">[<a class="reference internal" href="../appendix/references.html#id53" title="Isabel Moreno-Sánchez, Francesc Font-Clos, and Álvaro Corral. Large-scale Analysis of Zipf's Law in English Texts. PLoS ONE, 11(1):e0147073, Jan 2016. doi:10.1371/journal.pone.0147073.">Moreno-Sánchez <em>et al.</em>, 2016</a>]</span>, which suggests using a method called <strong>maximum likelihood estimation</strong>. The likelihood function is the probability of our observed data
+as a function of the parameters in the statistical model that we assume generated it. We estimate the parameters in the model by choosing them to maximize this likelihood; computationally, it is often easier to minimize the negative log likelihood function. <span id="id2">[<a class="reference internal" href="../appendix/references.html#id53" title="Isabel Moreno-Sánchez, Francesc Font-Clos, and Álvaro Corral. Large-scale Analysis of Zipf's Law in English Texts. PLoS ONE, 11(1):e0147073, Jan 2016. doi:10.1371/journal.pone.0147073.">Moreno-Sánchez <em>et al.</em>, 2016</a>]</span> define the likelihood using a parameter <span class="math notranslate nohighlight">\(\beta\)</span>, which is related to the <span class="math notranslate nohighlight">\(\alpha\)</span> parameter in our definition of Zipf’s Law through <span class="math notranslate nohighlight">\(\alpha = \tfrac{1}{\beta-1}\)</span>.
 Under their model, the value of <span class="math notranslate nohighlight">\(c\)</span> is the total number of unique words,
 or equivalently the largest value of the rank.</p>
 <p>Expressed as a Python function, the negative log likelihood function is:</p>
@@ -685,7 +681,7 @@ Again following &#64;More2016, we use Brent’s Method with (1 &lt; \beta \leq 4
     <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">xvals</span><span class="p">,</span> <span class="n">yvals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>where the maximum word frequency rank corresponds to (c), and (-1 / \alpha) the exponent in the power law. We have followed the <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">numpydoc</span></code></a> format for the detailed docstring
+<p>where the maximum word frequency rank corresponds to <span class="math notranslate nohighlight">\(c\)</span>, and <span class="math notranslate nohighlight">\(-1 / \alpha\)</span> the exponent in the power law. We have followed the <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">numpydoc</span></code></a> format for the detailed docstring
 in <code class="docutils literal notranslate"><span class="pre">plot_fit</span></code>—see Appendix  <strong>TODO</strong> ref(documentation) for more information about docstring formats.</p>
 </section>
 <section id="verifying-zipf-s-law">
@@ -784,7 +780,7 @@ in <code class="docutils literal notranslate"><span class="pre">plot_fit</span><
     <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We can then run the script to obtain the (\alpha) value for <em>Dracula</em>
+<p>We can then run the script to obtain the <span class="math notranslate nohighlight">\(\alpha\)</span> value for <em>Dracula</em>
 and a new plot with a line fitted.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>bin/plotcounts.py<span class="w"> </span>results/dracula.csv<span class="w"> </span>--outfile
 <span class="w">  </span>results/dracula.png
@@ -793,7 +789,7 @@ and a new plot with a line fitted.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>alpha: 1.0866646252515038
 </pre></div>
 </div>
-<p>So according to our fit, the most frequent word will occur approximately (2^{1.1}=2.1) times as often as the second most frequent word, (3^{1.1}=3.3) times as often as the third most frequent word, and so on. <span class="xref myst">Figure</span> shows the plot.</p>
+<p>So according to our fit, the most frequent word will occur approximately <span class="math notranslate nohighlight">\(2^{1.1}=2.1\)</span> times as often as the second most frequent word, <span class="math notranslate nohighlight">\(3^{1.1}=3.3\)</span> times as often as the third most frequent word, and so on. <span class="xref myst">Figure</span> shows the plot.</p>
 <figure class="align-default" id="git-advanced-dracula-fit-png">
 <img alt="../../_images/dracula-fit.png" src="../../_images/dracula-fit.png" />
 <figcaption>
