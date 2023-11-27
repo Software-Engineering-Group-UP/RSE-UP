@@ -39,8 +39,7 @@ bibtex_bibfiles:
 
 sphinx:
   config:
-    'key1': 'https://www.google.com'
-    #html_extra_path: ['assets']
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     bibtex_reference_style: author_year
     #bibtex_bibfiles: 
     #    bibliography.bib
