@@ -39,11 +39,16 @@ parts:
     chapters:
       - file: chapters/testing/testing_software.md
       - file: exercises/testing.ipynb
+  - caption: Error Handling
+    chapters:
+      - file: chapters/error_handling/error_handling.md
+      - file: exercises/error_handling.ipynb
   - caption: Extras
     chapters:
       - file: exercises/python_refresher.ipynb 
   - caption: Appendix
     chapters:
+      - file: chapters/appendix/yaml.md
       - file: chapters/appendix/references.md
 
     # sections:

@@ -1,0 +1,9 @@
+-   Signal errors by **raising exceptions**.
+-   Use `try`/`except` blocks to **catch** and handle exceptions.
+-   Python organizes its standard exceptions in a hierarchy so that programs can catch and handle them selectively.
+-   "Throw low, catch high," i.e., raise exceptions immediately but handle them at a higher level.
+-   Write error messages that help users figure out what to do to fix the problem.
+-   Store error messages in a lookup table to ensure consistency.
+-   Use a **logging framework** instead of `print` statements to report program activity.
+-   Separate logging messages into `DEBUG`, `INFO`, `WARNING`, `ERROR`, and `CRITICAL` levels.
+-   Use `logging.basicConfig` to define basic logging parameters.
