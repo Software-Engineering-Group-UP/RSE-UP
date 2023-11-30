@@ -28,7 +28,7 @@ parts:
       - file: chapters/work_teams/working_in_teams.md
       - file: exercises/work_teams.ipynb
   - caption: Introduction to automation
-    chapter:
+    chapters:
       - file: chapters/automate/intro_make.md 
       - file: exercises/intro_make.md
   - caption: Extras
