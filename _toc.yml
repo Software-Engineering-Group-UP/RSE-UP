@@ -52,6 +52,7 @@ parts:
       - file: exercises/python_refresher.ipynb 
   - caption: Appendix
     chapters:
+      - file: chapters/appendix/anaconda.md
       - file: chapters/appendix/yaml.md
       - file: chapters/appendix/references.md
 
