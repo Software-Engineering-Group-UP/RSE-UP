@@ -1,0 +1,11 @@
+-   **Make** is a widely used build manager.
+-   A **build manager** re-runs commands to update files that are out of date.
+-   A **build rule** has **targets**, **prerequisites**, and a **recipe.
+-   A target can be a file or a **phony target** that simply triggers an action.
+-   When a target is out of date with respect to its prerequisites, Make executes the recipe associated with its rule.
+-   Make executes as many rules as it needs to when updating files, but always respects prerequisite order.
+-   Make defines **automatic variables** such as `$@` (target), `$^` (all prerequisites), and `$<` (first prerequisite).
+-   **Pattern rules** can use `%` as a placeholder for parts of filenames.
+-   Makefiles can define variables using `NAME=value`.
+-   Make also has functions such as `$(wildcard...)` and `$(patsubst...)`.
+-   Use specially formatted comments to create self-documenting Makefiles.

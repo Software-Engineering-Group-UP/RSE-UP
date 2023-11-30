@@ -1,0 +1,1422 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Automating Analyses with Make &#8212; RSE-ING</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/book.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/automate/intro_make';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/automate/intro_make.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Exercises - Make" href="../../exercises/intro_make.html" />
+    <link rel="prev" title="Exercise - Work Teams" href="../../exercises/work_teams.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../introduction.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RSE-ING</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../introduction.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/guide.html">Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../bash/bash_basics.html">The Basics of the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/bash_tools.html">Building Tools with the Unix Shell</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../bash/bash_advanced.html">Going Further with the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/bash.html">Bash Exercises</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../scripting/building_cli_python.html">Building Command-Line Tools with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/python_cli.html">Exercises Scripting Python for CLI tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../vcs/version_control.html">Using Git at the Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/version_control.html">Exercise Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vcs/git_advanced.html">Going Further with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/git_advanced.html">Exercises Git Advanced</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Working in teams</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../work_teams/working_in_teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/work_teams.html">Exercise - Work Teams</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to automation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Automating Analyses with Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/intro_make.html">Exercises - Make</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extras</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/python_refresher.html">Python refresher</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/automate/intro_make.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/automate/intro_make.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Automating Analyses with Make</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-a-single-file">Updating a Single File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-multiple-files-in-this-case">Managing Multiple Files In this case,</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-files-when-programs-change">Updating Files When Programs Change</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reducing-repetition-in-a-makefile">Reducing Repetition in a Makefile</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-variables">Automatic Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generic-rules">Generic Rules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-sets-of-files">Defining Sets of Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documenting-a-makefile">Documenting a Makefile</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automating-entire-analyses">Automating Entire Analyses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points">Key Points</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="automating-analyses-with-make">
+<h1>Automating Analyses with Make<a class="headerlink" href="#automating-analyses-with-make" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>The three rules of the Librarians of Time and Space are:</p>
+<ol class="arabic simple">
+<li><p>Silence;</p></li>
+<li><p>Books must be returned no later than the last date shown; and</p></li>
+<li><p>Do not interfere with the nature of causality.</p></li>
+</ol>
+<p>— Terry Pratchett</p>
+</div></blockquote>
+<p>It’s easy to run one program to process a single data file,
+but what happens when our analysis depends on many files,
+or when we need to re-do the analysis every time new data arrives?
+What should we do if the analysis has several steps
+that we have to do in a particular order?</p>
+<p>If we try to keep track of this ourselves,
+we will inevitably forget some crucial steps
+and it will be hard for other people to pick up our work.
+Instead,
+we should use a <strong>build manager</strong>
+to keep track of what depends on what
+and run our analysis programs automatically.
+These tools were invented to help programmers compile complex software,
+but can be used to automate any workflow.</p>
+<p>Our Zipf’s Law project currently includes these files:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zipf/
+├── .gitignore
+├── CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE.md
+├── README.md
+├── bin
+│   ├── book_summary.sh
+│   ├── collate.py
+│   ├── countwords.py
+│   ├── plotcounts.py
+│   ├── script_template.py
+│   └── utilities.py
+├── data
+│   ├── README.md
+│   ├── dracula.txt
+│   ├── frankenstein.txt
+│   └── ...
+└── results
+    ├── dracula.csv
+    ├── dracula.png
+    └── ...
+</pre></div>
+</div>
+<p>Now that the project’s main building blocks are in place,
+we’re ready to automate our analysis using a build manager.
+We will use a program called <a class="reference external" href="https://www.gnu.org/software/make/">Make</a> to do this
+so that every time we add a new book to our data,
+we can create a new plot of the word count distribution with a single command.
+Make works as follows:</p>
+<ol class="arabic simple">
+<li><p>Every time the <strong>operating system</strong> creates, reads, or changes a file,
+it updates a <strong>timestamp</strong> on the file to show when the operation took place.
+Make can compare these timestamps
+to figure out whether files are newer or older than one another.</p></li>
+<li><p>A user can describe which files depend on each other
+by writing <strong>rules</strong> in a <strong>Makefile</strong>.
+For example, one rule could say that <code class="docutils literal notranslate"><span class="pre">results/moby_dick.csv</span></code> depends on <code class="docutils literal notranslate"><span class="pre">data/moby_dick.txt</span></code>,
+while another could say that the plot <code class="docutils literal notranslate"><span class="pre">results/comparison.png</span></code>
+depends on all of the CSV files in the <code class="docutils literal notranslate"><span class="pre">results</span></code> directory.</p></li>
+<li><p>Each rule also tells Make how to update an out-of-date file.
+For example,
+the rule for <em>Moby Dick</em> could tell Make to run <code class="docutils literal notranslate"><span class="pre">bin/countwords.py</span></code>
+if the result file is older than either the raw data file or the program.</p></li>
+<li><p>When the user runs Make,
+the program checks all of the rules in the Makefile
+and runs the commands needed to update any that are out of date.
+If there are <strong>transitive dependencies</strong>—i.e.,
+if A depends on B and B depends on C—then Make will trace them through
+and run all of the commands it needs to in the right order.</p></li>
+</ol>
+<p>This chapter uses a version of Make called <a class="reference external" href="https://www.gnu.org/software/make/">GNU Make</a>.
+It comes with MacOS and Linux;
+please see Section <strong>getting-started-install-software</strong> for Windows installation instructions.</p>
+<blockquote>
+<div><p><strong>Keep Tracking with Version Control</strong></p>
+<p>We encourage you to use the Git workflow
+from Chapters <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/vcs/version_control.html">git command line</a> and <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/vcs/git_advanced.html">git advanced</a>
+throughout the rest of this book,
+though we won’t continue to remind you.</p>
+</div></blockquote>
+<section id="updating-a-single-file">
+<h2>Updating a Single File<a class="headerlink" href="#updating-a-single-file" title="Permalink to this heading">#</a></h2>
+<p>To start automating our analysis,
+let’s create a file called <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> in the root of our project
+and add the following:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># Regenerate results for &quot;Moby Dick&quot;</span>
+<span class="nf">results/moby_dick.csv </span><span class="o">:</span><span class="w"> </span><span class="n">data</span>/<span class="n">moby_dick</span>.<span class="n">txt</span>
+<span class="w">	</span>python<span class="w"> </span>bin/countwords.py<span class="w"> </span><span class="se">\</span>
+<span class="w">		</span>data/moby_dick.txt<span class="w"> </span>&gt;<span class="w"> </span>results/moby_dick.csv
+</pre></div>
+</div>
+<p>As in the shell and many other programming languages,
+<code class="docutils literal notranslate"><span class="pre">#</span></code> indicates that the first line is a comment.
+The second and third lines form a <strong>build rule</strong>: the <strong>target</strong>et} of the rule is <code class="docutils literal notranslate"><span class="pre">results/moby_dick.csv</span></code>,
+its single <strong>prerequisite</strong> is the file <code class="docutils literal notranslate"><span class="pre">data/moby_dick.txt</span></code>,
+and the two are separated by a single colon <code class="docutils literal notranslate"><span class="pre">:</span></code>.
+There is no limit on the length of statement lines in Makefiles,
+but to aid readability we have used a backslash (<code class="docutils literal notranslate"><span class="pre">\</span></code>) character to split
+the lengthy third line in this example.</p>
+<p>The target and prerequisite tell Make what depends on what.
+The line below them describes the <strong>recipe</strong>
+that will update the target if it is out of date.
+The recipe consists of one or more shell commands,
+each of which <em>must</em> be prefixed by a single tab character.
+Spaces cannot be used instead of tabs here,
+which can be confusing as they are interchangeable in most other programming languages.
+In the rule above,
+the recipe is “run <code class="docutils literal notranslate"><span class="pre">bin/countwords.py</span></code> on the raw data file
+and put the output in a CSV file in the <code class="docutils literal notranslate"><span class="pre">results</span></code> directory.”</p>
+<p>To test our rule, run this command in the shell:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make
+</pre></div>
+</div>
+<p>Make automatically looks for a file called <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>,
+follows the rules it contains,
+and prints the commands that were executed.
+In this case it displays:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>python bin/countwords.py \
+  data/moby_dick.txt &gt; results/moby_dick.csv
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Indentation Errors</strong></p>
+<p>If a <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> indents a rule with spaces rather than tabs,
+Make produces an error message like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Makefile:3: *** missing separator.  Stop.
+</pre></div>
+</div>
+</div></blockquote>
+<p>When Make follows the rules in our Makefile,
+one of three things will happen:</p>
+<ol class="arabic simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">results/moby_dick.csv</span></code> doesn’t exist,
+Make runs the recipe to create it.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">data/moby_dick.txt</span></code> is newer than <code class="docutils literal notranslate"><span class="pre">results/moby_dick.csv</span></code>,
+Make runs the recipe to update the results.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">results/moby_dick.csv</span></code> is newer than its prerequisite,
+Make does nothing.</p></li>
+</ol>
+<p>In the first two cases,
+Make prints the commands it runs,
+along with anything those commands print to the screen
+via <strong>standard output</strong> or <strong>standard error</strong>.
+There is no screen output in this case,
+so we only see the command.</p>
+<p>No matter what happened the first time we ran <code class="docutils literal notranslate"><span class="pre">make</span></code>,
+if we run it again right away it does nothing
+because our rule’s target is now up to date.
+It tells us this by displaying the message:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>make: `results/moby_dick.csv&#39; is up to date.
+</pre></div>
+</div>
+<p>We can check that it is telling the truth by listing the files with their timestamps,
+ordered by how recently they have been updated:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>-t<span class="w"> </span>data/moby_dick.txt<span class="w"> </span>results/moby_dick.csv
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>-rw-r--r-- 1 amira staff  274967 Nov 29 12:58
+  results/moby_dick.csv
+-rw-r--r-- 1 amira staff 1253891 Nov 27 20:56
+  data/moby_dick.txt
+</pre></div>
+</div>
+<p>\newpage</p>
+<p>As a further test:</p>
+<ol class="arabic simple">
+<li><p>Delete <code class="docutils literal notranslate"><span class="pre">results/moby_dick.csv</span></code> and run <code class="docutils literal notranslate"><span class="pre">make</span></code> again.
+This is case #1, so Make runs the recipe.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">data/moby_dick.txt</span></code> to update the timestamp on the data file,
+then run <code class="docutils literal notranslate"><span class="pre">make</span></code>.
+This is case #2,
+so again,
+Make runs the recipe.</p></li>
+</ol>
+<blockquote>
+<div><p><strong>Managing Makefiles</strong></p>
+<p>We don’t have to call our file <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>:
+if we prefer something like <code class="docutils literal notranslate"><span class="pre">workflows.mk</span></code>,
+we can tell Make to read recipes from that file using
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-f</span> <span class="pre">workflows.mk</span></code>.</p>
+</div></blockquote>
+</section>
+<section id="managing-multiple-files-in-this-case">
+<h2>Managing Multiple Files In this case,<a class="headerlink" href="#managing-multiple-files-in-this-case" title="Permalink to this heading">#</a></h2>
+<p>the first target is <code class="docutils literal notranslate"><span class="pre">results/moby_dick.csv</span></code>,
+which is already up to date.
+To update something else,
+we need to tell Make specifically what we want:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span>results/jane_eyre.csv
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>python bin/countwords.py \
+  data/jane_eyre.txt &gt; results/jane_eyre.csv
+</pre></div>
+</div>
+<p>If we have to run <code class="docutils literal notranslate"><span class="pre">make</span></code> once for each result,
+we’re right back where we started.
+However,
+we can add a rule to our Makefile to update all of our results at once.
+We do this by creating a <strong>phony target</strong>
+that doesn’t correspond to an actual file.
+Let’s add this line to the top of our Makefile:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># Regenerate all results.</span>
+<span class="nf">all </span><span class="o">:</span><span class="w"> </span><span class="n">results</span>/<span class="n">moby_dick</span>.<span class="n">csv</span> <span class="n">results</span>/<span class="n">jane_eyre</span>.<span class="n">csv</span>
+</pre></div>
+</div>
+<p>There is no file called <code class="docutils literal notranslate"><span class="pre">all</span></code>,
+and this rule doesn’t have any recipes of its own,
+but when we run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">all</span></code>,
+Make finds everything that <code class="docutils literal notranslate"><span class="pre">all</span></code> depends on,
+then brings each of those prerequisites up to date (<a class="reference internal" href="#automate-all"><span class="std std-ref">Figure automate all</span></a>).</p>
+<figure class="align-default" id="automate-all">
+<img alt="../../_images/make-dependency-graph.png" src="../../_images/make-dependency-graph.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Automate All</span><a class="headerlink" href="#automate-all" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The order in which rules appear in the Makefile
+does not necessarily determine the order in which recipes are run.
+Make is free to run commands in any order
+so long as nothing is updated before its prerequisites are up to date.</p>
+<p>We can use phony targets to automate and document other steps in our workflow.
+For example,
+let’s add another target to our Makefile to delete all of the result files we have generated
+so that we can start afresh.
+By convention this target is called <code class="docutils literal notranslate"><span class="pre">clean</span></code>,
+and we’ll place it below the two existing targets:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># Remove all generated files.</span>
+<span class="nf">clean </span><span class="o">:</span>
+<span class="w">	</span>rm<span class="w"> </span>-f<span class="w"> </span>results/*.csv
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">-f</span></code> flag to <code class="docutils literal notranslate"><span class="pre">rm</span></code> means “force removal”:
+if it is present,
+<code class="docutils literal notranslate"><span class="pre">rm</span></code> won’t complain if the files we have told it to remove are already gone.
+If we now run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span>clean
+</pre></div>
+</div>
+<p>Make will delete any results files we have.
+This is a lot safer than typing <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-f</span> <span class="pre">results/*.csv</span></code> at the command line each time,
+because if we mistakenly put a space before the <code class="docutils literal notranslate"><span class="pre">*</span></code>
+we would delete all of the CSV files in the project’s root directory.</p>
+<p>Phony targets are very useful,
+but there is a catch.
+Try doing this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>clean
+$<span class="w"> </span>make<span class="w"> </span>clean
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>make: `clean&#39; is up to date.
+</pre></div>
+</div>
+<p>Since there is a directory called <code class="docutils literal notranslate"><span class="pre">clean</span></code>,
+Make thinks the target <code class="docutils literal notranslate"><span class="pre">clean</span></code> in the Makefile refers to this directory.
+Since the rule has no prerequisites,
+it can’t be out of date,
+so no recipes are executed.</p>
+<p>We can unconfuse Make by putting this line at the top of Makefile
+to explicitly state which targets are phony:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nf">.PHONY </span><span class="o">:</span><span class="w"> </span><span class="n">all</span> <span class="n">clean</span>
+</pre></div>
+</div>
+</section>
+<section id="updating-files-when-programs-change">
+<h2>Updating Files When Programs Change<a class="headerlink" href="#updating-files-when-programs-change" title="Permalink to this heading">#</a></h2>
+<p>Our current Makefile says that each result file depends on the corresponding data file.
+That’s not entirely true:
+each result also depends on the program used to generate it.
+If we change our program,
+we should regenerate our results.
+To get Make to do that,
+we can change our prerequisites to include the program:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># Regenerate results for &quot;Moby Dick&quot;</span>
+<span class="nf">results/moby_dick.csv </span><span class="o">:</span><span class="w"> </span><span class="n">data</span>/<span class="n">moby_dick</span>.<span class="n">txt</span> <span class="n">bin</span>/<span class="n">countwords</span>.<span class="n">py</span>
+<span class="w">	</span>python<span class="w"> </span>bin/countwords.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    	</span>data/moby_dick.txt<span class="w"> </span>&gt;<span class="w"> </span>results/moby_dick.csv
+
+<span class="c"># Regenerate results for &quot;Jane Eyre&quot;</span>
+<span class="nf">results/jane_eyre.csv </span><span class="o">:</span><span class="w"> </span><span class="n">data</span>/<span class="n">jane_eyre</span>.<span class="n">txt</span> <span class="n">bin</span>/<span class="n">countwords</span>.<span class="n">py</span>
+<span class="w">	</span>python<span class="w"> </span>bin/countwords.py<span class="w"> </span><span class="se">\</span>
+<span class="w">		</span>data/jane_eyre.txt<span class="w"> </span>&gt;<span class="w"> </span>results/jane_eyre.csv
+</pre></div>
+</div>
+<p>To run both of these rules,
+we can type <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">all</span></code>.
+Alternatively,
+since <code class="docutils literal notranslate"><span class="pre">all</span></code> is the first target in our Makefile,
+Make will use it if we just type <code class="docutils literal notranslate"><span class="pre">make</span></code> on its own:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>touch<span class="w"> </span>bin/countwords.py
+$<span class="w"> </span>make
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>python bin/countwords.py \
+  data/moby_dick.txt &gt; results/moby_dick.csv
+python bin/countwords.py \
+  data/jane_eyre.txt &gt; results/jane_eyre.csv
+</pre></div>
+</div>
+<p>The exercises will explore how we can write a rule
+to tell us whether our results will be different
+after a change to a program
+without actually updating them.
+Rules like this can help us test our programs:
+if we don’t think an addition or modification ought to affect the results,
+but it would,
+we may have some debugging to do.</p>
+</section>
+<section id="reducing-repetition-in-a-makefile">
+<h2>Reducing Repetition in a Makefile<a class="headerlink" href="#reducing-repetition-in-a-makefile" title="Permalink to this heading">#</a></h2>
+<p>Our Makefile now mentions <code class="docutils literal notranslate"><span class="pre">bin/countwords.py</span></code> four times.
+If we ever change the name of the program or move it to a different location,
+we will have to find and replace each of those occurrences.
+More importantly,
+this redundancy makes our Makefile harder to understand,
+just as scattering <strong>magic numbers</strong> through programs
+makes them harder to understand.</p>
+<p>The solution is the same one we use in programs:
+define and use variables.
+Let’s modify the results regeneration code by
+creating targets for the word-counting script and the command used to run it.
+The entire file should now read:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nf">.PHONY </span><span class="o">:</span><span class="w"> </span><span class="n">all</span> <span class="n">clean</span>
+
+<span class="nv">COUNT</span><span class="o">=</span>bin/countwords.py
+<span class="nv">RUN_COUNT</span><span class="o">=</span>python<span class="w"> </span><span class="k">$(</span>COUNT<span class="k">)</span>
+
+<span class="c"># Regenerate all results.</span>
+<span class="nf">all </span><span class="o">:</span><span class="w"> </span><span class="n">results</span>/<span class="n">moby_dick</span>.<span class="n">csv</span> <span class="n">results</span>/<span class="n">jane_eyre</span>.<span class="n">csv</span>
+
+<span class="c"># Regenerate results for &quot;Moby Dick&quot;</span>
+<span class="nf">results/moby_dick.csv </span><span class="o">:</span><span class="w"> </span><span class="n">data</span>/<span class="n">moby_dick</span>.<span class="n">txt</span> <span class="k">$(</span><span class="nv">COUNT</span><span class="k">)</span>
+<span class="w">	</span><span class="k">$(</span>RUN_COUNT<span class="k">)</span><span class="w"> </span>data/moby_dick.txt<span class="w"> </span>&gt;<span class="w"> </span>results/moby_dick.csv
+
+<span class="c"># Regenerate results for &quot;Jane Eyre&quot;</span>
+<span class="nf">results/jane_eyre.csv </span><span class="o">:</span><span class="w"> </span><span class="n">data</span>/<span class="n">jane_eyre</span>.<span class="n">txt</span> <span class="k">$(</span><span class="nv">COUNT</span><span class="k">)</span>
+<span class="w">	</span><span class="k">$(</span>RUN_COUNT<span class="k">)</span><span class="w"> </span>data/jane_eyre.txt<span class="w"> </span>&gt;<span class="w"> </span>results/jane_eyre.csv
+
+<span class="c"># Remove all generated files.</span>
+<span class="nf">clean </span><span class="o">:</span>
+<span class="w">	</span>rm<span class="w"> </span>-f<span class="w"> </span>results/*.csv
+</pre></div>
+</div>
+<p>Each definition takes the form <code class="docutils literal notranslate"><span class="pre">NAME=value</span></code>.
+Variables are written in upper case by convention
+so that they’ll stand out from filenames
+(which are usually in lower case),
+but Make doesn’t require this.
+What <em>is</em> required is using parentheses to refer to the variable,
+i.e.,
+to use <code class="docutils literal notranslate"><span class="pre">$(NAME)</span></code> and not <code class="docutils literal notranslate"><span class="pre">$NAME</span></code>.</p>
+<blockquote>
+<div><p><strong>Why the Parentheses?</strong></p>
+<p>For historical reasons,
+Make interprets <code class="docutils literal notranslate"><span class="pre">$NAME</span></code> to be a variable called <code class="docutils literal notranslate"><span class="pre">N</span></code> followed by the three characters “AME”.
+If no variable called <code class="docutils literal notranslate"><span class="pre">N</span></code> exists,
+<code class="docutils literal notranslate"><span class="pre">$NAME</span></code> becomes <code class="docutils literal notranslate"><span class="pre">AME</span></code>,
+which is almost certainly not what we want.</p>
+</div></blockquote>
+<p>As in programs,
+variables don’t just cut down on typing.
+They also tell readers that several things are always and exactly the same,
+which reduces <strong>cognitive load</strong>.</p>
+</section>
+<section id="automatic-variables">
+<h2>Automatic Variables<a class="headerlink" href="#automatic-variables" title="Permalink to this heading">#</a></h2>
+<p>We could add a third rule to analyze a third novel and a fourth to analyze a fourth,
+but that won’t scale to hundreds or thousands of novels.
+Instead,
+we can write a generic rule that does what we want for every one of our data files.</p>
+<p>To do this,
+we need to understand Make’s
+<strong>automatic variables</strong>.
+The first step is to use the very cryptic expression <code class="docutils literal notranslate"><span class="pre">$&#64;</span></code> in the rule’s recipe
+to mean “the target of the rule.”
+It lets us turn this:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># Regenerate results for &quot;Moby Dick&quot;</span>
+<span class="nf">results/moby_dick.csv </span><span class="o">:</span><span class="w"> </span><span class="n">data</span>/<span class="n">moby_dick</span>.<span class="n">txt</span> <span class="k">$(</span><span class="nv">COUNT</span><span class="k">)</span>
+<span class="w">	</span><span class="k">$(</span>RUN_COUNT<span class="k">)</span><span class="w"> </span>data/moby_dick.txt<span class="w"> </span>&gt;<span class="w"> </span>results/moby_dick.csv
+</pre></div>
+</div>
+<p>into this:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># Regenerate results for &quot;Moby Dick&quot;</span>
+<span class="nf">results/moby_dick.csv </span><span class="o">:</span><span class="w"> </span><span class="n">data</span>/<span class="n">moby_dick</span>.<span class="n">txt</span> <span class="k">$(</span><span class="nv">COUNT</span><span class="k">)</span>
+<span class="w">	</span><span class="k">$(</span>RUN_COUNT<span class="k">)</span><span class="w"> </span>data/moby_dick.txt<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$@</span>
+</pre></div>
+</div>
+<p>Make defines a value of <code class="docutils literal notranslate"><span class="pre">$&#64;</span></code> separately for each rule,
+so it always refers to that rule’s target.
+And yes,
+<code class="docutils literal notranslate"><span class="pre">$&#64;</span></code> is an unfortunate name:
+something like <code class="docutils literal notranslate"><span class="pre">$TARGET</span></code> would have been easier to understand,
+but we’re stuck with it now.</p>
+<p>The next step is to replace the explicit list of prerequisites in the recipe
+with the automatic variable <code class="docutils literal notranslate"><span class="pre">$^</span></code>,
+which means “all the prerequisites in the rule”:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># Regenerate results for &quot;Moby Dick&quot;</span>
+<span class="nf">results/moby_dick.csv </span><span class="o">:</span><span class="w"> </span><span class="n">data</span>/<span class="n">moby_dick</span>.<span class="n">txt</span> <span class="k">$(</span><span class="nv">COUNT</span><span class="k">)</span>
+<span class="w">	</span><span class="k">$(</span>RUN_COUNT<span class="k">)</span><span class="w"> </span>$^<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$@</span>
+</pre></div>
+</div>
+<p>However,
+this doesn’t work.
+The rule’s prerequisites are the novel and the word-counting program.
+When Make expands the recipe,
+the resulting command tries to process the program <code class="docutils literal notranslate"><span class="pre">bin/countwords.py</span></code>
+as if it was a data file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>bin/countwords.py<span class="w"> </span>data/moby_dick.txt<span class="w"> </span>bin/countwords.py<span class="w"> </span>&gt;
+<span class="w">  </span>results/moby_dick.csv
+</pre></div>
+</div>
+<p>Make solves this problem with another automatic variable <code class="docutils literal notranslate"><span class="pre">$&lt;</span></code>,
+which means “only the first prerequisite”.
+Using it lets us rewrite our rule as:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># Regenerate results for &quot;Moby Dick&quot;</span>
+<span class="nf">results/moby_dick.csv </span><span class="o">:</span><span class="w"> </span><span class="n">data</span>/<span class="n">moby_dick</span>.<span class="n">txt</span> <span class="k">$(</span><span class="nv">COUNT</span><span class="k">)</span>
+<span class="w">	</span><span class="k">$(</span>RUN_COUNT<span class="k">)</span><span class="w"> </span>$&lt;<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$@</span>
+</pre></div>
+</div>
+<p>If you use this approach,
+the rule for <em>Jane Eyre</em> should be updated as well.
+The next section,
+however,
+includes instructions for generalizing rules.</p>
+</section>
+<section id="generic-rules">
+<h2>Generic Rules<a class="headerlink" href="#generic-rules" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">$&lt;</span> <span class="pre">&gt;</span> <span class="pre">$&#64;</span></code> is even harder to read than <code class="docutils literal notranslate"><span class="pre">$&#64;</span></code> on its own,
+but we can now replace all the rules for generating results files
+with one <strong>pattern rule</strong> using the <strong>wildcard</strong> <code class="docutils literal notranslate"><span class="pre">%</span></code>,
+which matches zero or more characters in a filename.
+Whatever matches <code class="docutils literal notranslate"><span class="pre">%</span></code> in the target also matches in the prerequisites,
+so the rule:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nf">results/%.csv </span><span class="o">:</span><span class="w"> </span><span class="n">data</span>/%.<span class="n">txt</span> <span class="k">$(</span><span class="nv">COUNT</span><span class="k">)</span>
+<span class="w">	</span><span class="k">$(</span>RUN_COUNT<span class="k">)</span><span class="w"> </span>$&lt;<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$@</span>
+</pre></div>
+</div>
+<p>will handle <em>Jane Eyre</em>, <em>Moby Dick</em>, <em>The Time Machine</em>, and every other novel in the <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory.
+<code class="docutils literal notranslate"><span class="pre">%</span></code> cannot be used in recipes,
+which is why <code class="docutils literal notranslate"><span class="pre">$&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">$&#64;</span></code> are needed.</p>
+<p>With this rule in place, our entire Makefile is reduced to:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">all</span> <span class="n">clean</span>
+
+<span class="nv">COUNT</span><span class="o">=</span>bin/countwords.py
+<span class="nv">RUN_COUNT</span><span class="o">=</span>python<span class="w"> </span><span class="k">$(</span>COUNT<span class="k">)</span>
+
+<span class="c"># Regenerate all results.</span>
+<span class="nf">all </span><span class="o">:</span><span class="w"> </span><span class="n">results</span>/<span class="n">moby_dick</span>.<span class="n">csv</span> <span class="n">results</span>/<span class="n">jane_eyre</span>.<span class="n">csv</span> \
+  <span class="n">results</span>/<span class="n">time_machine</span>.<span class="n">csv</span>
+
+<span class="c"># Regenerate result for any book.</span>
+<span class="nf">results/%.csv </span><span class="o">:</span><span class="w"> </span><span class="n">data</span>/%.<span class="n">txt</span> <span class="k">$(</span><span class="nv">COUNT</span><span class="k">)</span>
+<span class="w">	</span><span class="k">$(</span>RUN_COUNT<span class="k">)</span><span class="w"> </span>$&lt;<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$@</span>
+
+<span class="c"># Remove all generated files.</span>
+<span class="nf">clean </span><span class="o">:</span>
+<span class="w">	</span>rm<span class="w"> </span>-f<span class="w"> </span>results/*.csv
+</pre></div>
+</div>
+<p>We now have fewer lines of text,
+but we’ve also included a third book.
+To test our shortened Makefile,
+let’s delete all of the results files:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span>clean
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>rm -f results/*.csv
+</pre></div>
+</div>
+<p>and then re-create them:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w">  </span><span class="c1"># Same as `make all` as &quot;all&quot; is the first target</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>python bin/countwords.py data/moby_dick.txt &gt;
+  results/moby_dick.csv
+python bin/countwords.py data/jane_eyre.txt &gt;
+  results/jane_eyre.csv
+python bin/countwords.py data/time_machine.txt &gt;
+  results/time_machine.csv
+</pre></div>
+</div>
+<p>We can still rebuild individual files if we want,
+since Make will take the target filename we give on the command line
+and see if a pattern rule matches it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>touch<span class="w"> </span>data/jane_eyre.txt
+$<span class="w"> </span>make<span class="w"> </span>results/jane_eyre.csv
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>python bin/countwords.py data/jane_eyre.txt &gt;
+  results/jane_eyre.csv
+</pre></div>
+</div>
+</section>
+<section id="defining-sets-of-files">
+<h2>Defining Sets of Files<a class="headerlink" href="#defining-sets-of-files" title="Permalink to this heading">#</a></h2>
+<p>Our analysis is still not fully automated:
+if we add another book to <code class="docutils literal notranslate"><span class="pre">data</span></code>,
+we have to remember to add its name to the <code class="docutils literal notranslate"><span class="pre">all</span></code> target in the Makefile as well.
+Once again we will fix this in steps.</p>
+<p>To start,
+imagine that all the results files already exist
+and we just want to update them.
+We can define a variable called <code class="docutils literal notranslate"><span class="pre">RESULTS</span></code>
+to be a list of all the results files
+using the same wildcards we would use in the shell:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">RESULTS</span><span class="o">=</span>results/*.csv
+</pre></div>
+</div>
+<p>We can then rewrite <code class="docutils literal notranslate"><span class="pre">all</span></code> to depend on that list:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># Regenerate all results.</span>
+<span class="nf">all </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">RESULTS</span><span class="k">)</span>
+</pre></div>
+</div>
+<p>However,
+this only works if the results files already exist.
+If one doesn’t,
+its name won’t be included in <code class="docutils literal notranslate"><span class="pre">RESULTS</span></code>
+and Make won’t realize that we want to generate it.</p>
+<p>What we really want is to generate the list of results files
+based on the list of books in the <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory.
+We can create that list using Make’s <code class="docutils literal notranslate"><span class="pre">wildcard</span></code> function:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">DATA</span><span class="o">=</span><span class="k">$(</span>wildcard<span class="w"> </span>data/*.txt<span class="k">)</span>
+</pre></div>
+</div>
+<p>This calls the function <code class="docutils literal notranslate"><span class="pre">wildcard</span></code> with the argument <code class="docutils literal notranslate"><span class="pre">data/*.txt</span></code>.
+The result is a list of all the text files in the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory,
+just as we would get with <code class="docutils literal notranslate"><span class="pre">data/*.txt</span></code> in the shell.
+The syntax is odd because functions were added to Make long after it was first written,
+but at least they have readable names.</p>
+<p>To check that this line does the right thing,
+we can add another phony target called <code class="docutils literal notranslate"><span class="pre">settings</span></code>
+that uses the shell command <code class="docutils literal notranslate"><span class="pre">echo</span></code> to print the names and values of our variables:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">all</span> <span class="n">clean</span> <span class="n">settings</span>
+
+<span class="c"># ...everything else...</span>
+
+<span class="c"># Show variables&#39; values.</span>
+<span class="nf">settings </span><span class="o">:</span>
+<span class="w">	</span><span class="nb">echo</span><span class="w"> </span>COUNT:<span class="w"> </span><span class="k">$(</span>COUNT<span class="k">)</span>
+<span class="w">	</span><span class="nb">echo</span><span class="w"> </span>DATA:<span class="w"> </span><span class="k">$(</span>DATA<span class="k">)</span>
+</pre></div>
+</div>
+<p>Let’s run this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span>settings
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>echo COUNT: bin/countwords.py
+COUNT: bin/countwords.py
+echo DATA: data/dracula.txt data/frankenstein.txt
+  data/jane_eyre.txt data/moby_dick.txt
+  data/sense_and_sensibility.txt
+  data/sherlock_holmes.txt data/time_machine.txt
+DATA: data/dracula.txt data/frankenstein.txt
+  data/jane_eyre.txt data/moby_dick.txt
+  data/sense_and_sensibility.txt data/sherlock_holmes.txt
+  data/time_machine.txt
+</pre></div>
+</div>
+<p>The output appears twice
+because Make shows us the command it’s going to run before running it.
+Putting <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> before the command in the recipe prevents this,
+which makes the output easier to read:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nf">settings </span><span class="o">:</span>
+<span class="w">	</span>@echo<span class="w"> </span>COUNT:<span class="w"> </span><span class="k">$(</span>COUNT<span class="k">)</span>
+<span class="w">	</span>@echo<span class="w"> </span>DATA:<span class="w"> </span><span class="k">$(</span>DATA<span class="k">)</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span>settings
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>COUNT: bin/countwords.py
+DATA: data/dracula.txt data/frankenstein.txt
+  data/jane_eyre.txt data/moby_dick.txt
+  data/sense_and_sensibility.txt data/sherlock_holmes.txt
+  data/time_machine.txt
+</pre></div>
+</div>
+<p>We now have the names of our input files.
+To create a list of corresponding output files,
+we use Make’s <code class="docutils literal notranslate"><span class="pre">patsubst</span></code> function
+(short for <strong>pat</strong>tern <strong>subst</strong>itution):</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">RESULTS</span><span class="o">=</span><span class="k">$(</span>patsubst<span class="w"> </span>data/%.txt,results/%.csv,<span class="k">$(</span>DATA<span class="k">))</span>
+</pre></div>
+</div>
+<p>The first argument to <code class="docutils literal notranslate"><span class="pre">patsubst</span></code> is the pattern to look for,
+which in this case is a text file in the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory.
+We use <code class="docutils literal notranslate"><span class="pre">%</span></code> to match the <strong>stem</strong> of the file’s name,
+which is the part we want to keep.</p>
+<p>The second argument is the repla** we **ttern rule,
+Make replaces <code class="docutils literal notranslate"><span class="pre">%</span></code> in this argument with whatever matched <code class="docutils literal notranslate"><span class="pre">%</span></code> in the pattern,
+which creates the name of the result file we want.
+Finally, the third argument is what to do the substitution in,
+which is our list of books’ names.</p>
+<p>Let’s check the <code class="docutils literal notranslate"><span class="pre">RESULTS</span></code> variable by adding another command to the <code class="docutils literal notranslate"><span class="pre">settings</span></code> target:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nf">settings </span><span class="o">:</span>
+<span class="w">	</span>@echo<span class="w"> </span>COUNT:<span class="w"> </span><span class="k">$(</span>COUNT<span class="k">)</span>
+<span class="w">	</span>@echo<span class="w"> </span>DATA:<span class="w"> </span><span class="k">$(</span>DATA<span class="k">)</span>
+<span class="w">	</span>@echo<span class="w"> </span>RESULTS:<span class="w"> </span><span class="k">$(</span>RESULTS<span class="k">)</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span>settings
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>COUNT: bin/countwords.py
+DATA: data/dracula.txt data/frankenstein.txt data/jane_eyre.txt
+  data/moby_dick.txt data/sense_and_sensibility.txt
+  data/sherlock_holmes.txt data/time_machine.txt
+RESULTS: results/dracula.csv results/frankenstein.csv
+  results/jane_eyre.csv results/moby_dick.csv
+  results/sense_and_sensibility.csv
+  results/sherlock_holmes.csv results/time_machine.csv
+</pre></div>
+</div>
+<p>Excellent:
+<code class="docutils literal notranslate"><span class="pre">DATA</span></code> has the names of the files we want to process
+and <code class="docutils literal notranslate"><span class="pre">RESULTS</span></code> automatically has the names of the corresponding result files.</p>
+<p>Why haven’t we included <code class="docutils literal notranslate"><span class="pre">RUN_COUNT</span></code> when assessing our variables’ values?
+This is another place we can streamline our script,
+by removing <code class="docutils literal notranslate"><span class="pre">RUN_COUNT</span></code> from the list of variables
+and changing our regeneration rule:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># Regenerate result for any book.</span>
+<span class="nf">results/%.csv </span><span class="o">:</span><span class="w"> </span><span class="n">data</span>/%.<span class="n">txt</span> <span class="k">$(</span><span class="nv">COUNT</span><span class="k">)</span>
+<span class="w">	</span>python<span class="w"> </span><span class="k">$(</span>COUNT<span class="k">)</span><span class="w"> </span>$&lt;<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$@</span>
+</pre></div>
+</div>
+<p>Since the phony target <code class="docutils literal notranslate"><span class="pre">all</span></code> depends on <code class="docutils literal notranslate"><span class="pre">$(RESULTS)</span></code>
+(i.e., all the files whose names appear in the variable <code class="docutils literal notranslate"><span class="pre">RESULTS</span></code>)
+we can regenerate all the results in one step:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span>clean
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>rm -f results/*.csv
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w">  </span><span class="c1"># Same as `make all` since &quot;all&quot; is the first target</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>python bin/countwords.py data/dracula.txt &gt; results/dracula.csv
+python bin/countwords.py data/frankenstein.txt &gt;
+  results/frankenstein.csv
+python bin/countwords.py data/jane_eyre.txt &gt;
+  results/jane_eyre.csv
+python bin/countwords.py data/moby_dick.txt &gt;
+  results/moby_dick.csv
+python bin/countwords.py data/sense_and_sensibility.txt &gt;
+  results/sense_and_sensibility.csv
+python bin/countwords.py data/sherlock_holmes.txt &gt;
+  results/sherlock_holmes.csv
+python bin/countwords.py data/time_machine.txt &gt;
+  results/time_machine.csv
+</pre></div>
+</div>
+<p>Our workflow is now just two steps:
+add a data file and run Make.
+This is a big improvement over running things manually,
+particularly as we start to add more steps like merging data files and generating plots.</p>
+</section>
+<section id="documenting-a-makefile">
+<h2>Documenting a Makefile<a class="headerlink" href="#documenting-a-makefile" title="Permalink to this heading">#</a></h2>
+<p>Every well-behaved program should tell people how to use it <span id="id1">[<a class="reference internal" href="../appendix/references.html#id70" title="Morgan Taschuk and Greg Wilson. Ten Simple Rules for Making Research Software More Robust. PLoS Computational Biology, 13(4):e1005412, Apr 2017. A short guide to making research software usable by other people. doi:10.1371/journal.pcbi.1005412.">Taschuk and Wilson, 2017</a>]</span>.
+If we run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">--help</span></code>,
+we get a (very) long list of options that Make understands,
+but nothing about our specific workflow.
+We could create another phony target called <code class="docutils literal notranslate"><span class="pre">help</span></code> that prints a list of available commands:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">all</span> <span class="n">clean</span> <span class="n">help</span> <span class="n">settings</span>
+
+<span class="c"># ...other definitions...</span>
+
+<span class="c"># Show help.</span>
+<span class="nf">help </span><span class="o">:</span>
+<span class="w">	</span>@echo<span class="w"> </span><span class="s2">&quot;all : regenerate all results.&quot;</span>
+<span class="w">	</span>@echo<span class="w"> </span><span class="s2">&quot;results/*.csv : regenerate result for any book.&quot;</span>
+<span class="w">	</span>@echo<span class="w"> </span><span class="s2">&quot;clean : remove all generated files.&quot;</span>
+<span class="w">	</span>@echo<span class="w"> </span><span class="s2">&quot;settings : show variables&#39; values.&quot;</span>
+<span class="w">	</span>@echo<span class="w"> </span><span class="s2">&quot;help : show this message.&quot;</span>
+</pre></div>
+</div>
+<p>but sooner or later
+we will add a target or rule and forget to update this list.</p>
+<p>A better approach is to format some comments in a special way
+and then extract and display those comments when asked to.
+We’ll use <code class="docutils literal notranslate"><span class="pre">##</span></code> (a double comment marker) to indicate the lines we want displayed
+and <code class="docutils literal notranslate"><span class="pre">grep</span></code> (Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_advanced.html#finding-things-in-files">bash advanced find</a> to pull these lines out of the file:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">all</span> <span class="n">clean</span> <span class="n">help</span> <span class="n">settings</span>
+
+<span class="nv">COUNT</span><span class="o">=</span>bin/countwords.py
+<span class="nv">DATA</span><span class="o">=</span><span class="k">$(</span>wildcard<span class="w"> </span>data/*.txt<span class="k">)</span>
+<span class="nv">RESULTS</span><span class="o">=</span><span class="k">$(</span>patsubst<span class="w"> </span>data/%.txt,results/%.csv,<span class="k">$(</span>DATA<span class="k">))</span>
+
+<span class="c">## all : regenerate all results.</span>
+<span class="nf">all </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">RESULTS</span><span class="k">)</span>
+
+<span class="c">## results/%.csv : regenerate result for any book.</span>
+<span class="nf">results/%.csv </span><span class="o">:</span><span class="w"> </span><span class="n">data</span>/%.<span class="n">txt</span> <span class="k">$(</span><span class="nv">COUNT</span><span class="k">)</span>
+<span class="w">	</span>python<span class="w"> </span><span class="k">$(</span>COUNT<span class="k">)</span><span class="w"> </span>$&lt;<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$@</span>
+
+<span class="c">## clean : remove all generated files.</span>
+<span class="nf">clean </span><span class="o">:</span>
+<span class="w">	</span>rm<span class="w"> </span>-f<span class="w"> </span>results/*.csv
+
+<span class="c">## settings : show variables&#39; values.</span>
+<span class="nf">settings </span><span class="o">:</span>
+<span class="w">	</span>@echo<span class="w"> </span>COUNT:<span class="w"> </span><span class="k">$(</span>COUNT<span class="k">)</span>
+<span class="w">	</span>@echo<span class="w"> </span>DATA:<span class="w"> </span><span class="k">$(</span>DATA<span class="k">)</span>
+<span class="w">	</span>@echo<span class="w"> </span>RESULTS:<span class="w"> </span><span class="k">$(</span>RESULTS<span class="k">)</span>
+
+<span class="c">## help : show this message.</span>
+<span class="nf">help </span><span class="o">:</span>
+<span class="w">	</span>@grep<span class="w"> </span><span class="s1">&#39;^##&#39;</span><span class="w"> </span>./Makefile
+</pre></div>
+</div>
+<p>Let’s test:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span><span class="nb">help</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>## all : regenerate all results.
+## results/%.csv : regenerate result for any book.
+## clean : remove all generated files.
+## settings : show variables&#39; values.
+## help : show this message.
+</pre></div>
+</div>
+<p>The exercises will explore how to format this more readably.</p>
+</section>
+<section id="automating-entire-analyses">
+<h2>Automating Entire Analyses<a class="headerlink" href="#automating-entire-analyses" title="Permalink to this heading">#</a></h2>
+<p>To finish our discussion of Make,
+let’s automatically generate a collated list of word frequencies.
+The target is a file called <code class="docutils literal notranslate"><span class="pre">results/collated.csv</span></code>
+that depends on the results generated by <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code>.
+To create it,
+we add or change these lines in our Makefile:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># ...phony targets and previous variable definitions...</span>
+
+<span class="nv">COLLATE</span><span class="o">=</span>bin/collate.py
+
+<span class="c">## all : regenerate all results.</span>
+<span class="nf">all </span><span class="o">:</span><span class="w"> </span><span class="n">results</span>/<span class="n">collated</span>.<span class="n">csv</span>
+
+<span class="c">## results/collated.csv : collate all results.</span>
+<span class="nf">results/collated.csv </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">RESULTS</span><span class="k">)</span> <span class="k">$(</span><span class="nv">COLLATE</span><span class="k">)</span>
+<span class="w">	</span>mkdir<span class="w"> </span>-p<span class="w"> </span>results
+<span class="w">	</span>python<span class="w"> </span><span class="k">$(</span>COLLATE<span class="k">)</span><span class="w"> </span><span class="k">$(</span>RESULTS<span class="k">)</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$@</span>
+
+<span class="c"># ...other rules...</span>
+
+<span class="c">## settings : show variables&#39; values.</span>
+<span class="nf">settings </span><span class="o">:</span>
+<span class="w">	</span>@echo<span class="w"> </span>COUNT:<span class="w"> </span><span class="k">$(</span>COUNT<span class="k">)</span>
+<span class="w">	</span>@echo<span class="w"> </span>DATA:<span class="w"> </span><span class="k">$(</span>DATA<span class="k">)</span>
+<span class="w">	</span>@echo<span class="w"> </span>RESULTS:<span class="w"> </span><span class="k">$(</span>RESULTS<span class="k">)</span>
+<span class="w">	</span>@echo<span class="w"> </span>COLLATE:<span class="w"> </span><span class="k">$(</span>COLLATE<span class="k">)</span>
+
+<span class="c"># ...help rule...</span>
+</pre></div>
+</div>
+<p>The first two lines tell Make about the collation program,
+while the change to <code class="docutils literal notranslate"><span class="pre">all</span></code> tells it what the final target of our pipeline is.
+Since this target depends on the results files for single novels,
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">all</span></code> will regenerate all of those automatically.</p>
+<p>The rule to regenerate <code class="docutils literal notranslate"><span class="pre">results/collated.csv</span></code> should look familiar by now:
+it tells Make that all of the individual results have to be up-to-date
+and that the final result should be regenerated if the program used to create it has changed.
+One difference between the recipe in this rule and the recipes we’ve seen before
+is that this recipe uses <code class="docutils literal notranslate"><span class="pre">$(RESULTS)</span></code> directly instead of an automatic variable.
+We have written the rule this way because
+there isn’t an automatic variable that means “all but the last prerequisite,”
+so there’s no way to use automatic variables that wouldn’t result in us trying to process our program.</p>
+<p>Likewise,
+we can also add the <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> script to this workflow
+and update the <code class="docutils literal notranslate"><span class="pre">all</span></code> and <code class="docutils literal notranslate"><span class="pre">settings</span></code> rules accordingly.
+Note that there is no <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> needed before the <code class="docutils literal notranslate"><span class="pre">$&#64;</span></code>
+because the default action of <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> is to write to a file
+rather than to standard output.</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># ...phony targets and previous variable definitions...</span>
+
+<span class="nv">PLOT</span><span class="o">=</span>bin/plotcounts.py
+
+<span class="c">## all : regenerate all results.</span>
+<span class="nf">all </span><span class="o">:</span><span class="w"> </span><span class="n">results</span>/<span class="n">collated</span>.<span class="n">png</span>
+
+<span class="c">## results/collated.png: plot the collated results.</span>
+<span class="nf">results/collated.png </span><span class="o">:</span><span class="w"> </span><span class="n">results</span>/<span class="n">collated</span>.<span class="n">csv</span>
+<span class="w">	</span>python<span class="w"> </span><span class="k">$(</span>PLOT<span class="k">)</span><span class="w"> </span>$&lt;<span class="w"> </span>--outfile<span class="w"> </span><span class="nv">$@</span>
+
+<span class="c"># ...other rules...</span>
+
+<span class="c">## settings : show variables&#39; values.</span>
+<span class="nf">settings </span><span class="o">:</span>
+<span class="w">	</span>@echo<span class="w"> </span>COUNT:<span class="w"> </span><span class="k">$(</span>COUNT<span class="k">)</span>
+<span class="w">	</span>@echo<span class="w"> </span>DATA:<span class="w"> </span><span class="k">$(</span>DATA<span class="k">)</span>
+<span class="w">	</span>@echo<span class="w"> </span>RESULTS:<span class="w"> </span><span class="k">$(</span>RESULTS<span class="k">)</span>
+<span class="w">	</span>@echo<span class="w"> </span>COLLATE:<span class="w"> </span><span class="k">$(</span>COLLATE<span class="k">)</span>
+<span class="w">	</span>@echo<span class="w"> </span>PLOT:<span class="w"> </span><span class="k">$(</span>PLOT<span class="k">)</span>
+
+<span class="c"># ...help...</span>
+</pre></div>
+</div>
+<p>Running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">all</span></code> should now generate the new <code class="docutils literal notranslate"><span class="pre">collated.png</span></code> plot (<a class="reference internal" href="#automate-collated"><span class="std std-ref">Figure automate collated</span></a>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span>all
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>python bin/collate.py results/time_machine.csv
+  results/moby_dick.csv results/jane_eyre.csv
+  results/dracula.csv results/sense_and_sensibility.csv
+  results/sherlock_holmes.csv results/frankenstein.csv &gt;
+  results/collated.csv
+python bin/plotcounts.py results/collated.csv --outfile
+  results/collated.png
+alpha: 1.1712445413685917
+</pre></div>
+</div>
+<figure class="align-default" id="automate-collated">
+<img alt="../../_images/collated.png" src="../../_images/collated.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Automate Collated</span><a class="headerlink" href="#automate-collated" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Finally,
+we can update the <code class="docutils literal notranslate"><span class="pre">clean</span></code> target
+to only remove files created by the Makefile.
+It is a good habit to do this rather than using the asterisk wildcard to remove all files,
+since you might manually place files in the results directory
+and forget that these will be cleaned up when you run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code>.</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># ...phony targets and previous variable definitions...</span>
+
+<span class="c">## clean : remove all generated files.</span>
+<span class="nf">clean </span><span class="o">:</span>
+<span class="w">	</span>rm<span class="w"> </span><span class="k">$(</span>RESULTS<span class="k">)</span><span class="w"> </span>results/collated.csv<span class="w"> </span>results/collated.png
+</pre></div>
+</div>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<p>Make’s reliance on shell commands instead of direct calls to functions in Python sometimes makes it clumsy to use.
+However,
+that also makes it very flexible:
+a single Makefile can run shell commands and programs written in a variety of languages,
+which makes it a great way to assemble pipelines out of whatever is lying around.</p>
+<p>Programmers have created many replacements for Make in the 45 years since it was first created—so many, in fact, that none have attracted enough users to displace it.</p>
+<p>If you would like to explore them, check out <a class="reference external" href="https://snakemake.readthedocs.io/">Snakemake</a> (for Python) or the <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/workflows/snakemake.html">section</a> on workflows using snake make.</p>
+<p>If you want to go deeper, <span id="id2">[<a class="reference internal" href="../appendix/references.html#id68" title="Peter Smith. Software Build Systems: Principles and Experience. Addison-Wesley Professional, 2011. ISBN 978-0321717283. A thorough, readable exploration of how software build systems and tools work.">Smith, 2011</a>]</span> describes the design and implementation of several build managers.</p>
+</section>
+<section id="key-points">
+<h2>Key Points<a class="headerlink" href="#key-points" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Make</strong> is a widely used build manager.</p></li>
+<li><p>A <strong>build manager</strong> re-runs commands to update files that are out of date.</p></li>
+<li><p>A <strong>build rule</strong> has <strong>targets</strong>, <strong>prerequisites</strong>, and a **recipe.</p></li>
+<li><p>A target can be a file or a <strong>phony target</strong> that simply triggers an action.</p></li>
+<li><p>When a target is out of date with respect to its prerequisites, Make executes the recipe associated with its rule.</p></li>
+<li><p>Make executes as many rules as it needs to when updating files, but always respects prerequisite order.</p></li>
+<li><p>Make defines <strong>automatic variables</strong> such as <code class="docutils literal notranslate"><span class="pre">$&#64;</span></code> (target), <code class="docutils literal notranslate"><span class="pre">$^</span></code> (all prerequisites), and <code class="docutils literal notranslate"><span class="pre">$&lt;</span></code> (first prerequisite).</p></li>
+<li><p><strong>Pattern rules</strong> can use <code class="docutils literal notranslate"><span class="pre">%</span></code> as a placeholder for parts of filenames.</p></li>
+<li><p>Makefiles can define variables using <code class="docutils literal notranslate"><span class="pre">NAME=value</span></code>.</p></li>
+<li><p>Make also has functions such as <code class="docutils literal notranslate"><span class="pre">$(wildcard...)</span></code> and <code class="docutils literal notranslate"><span class="pre">$(patsubst...)</span></code>.</p></li>
+<li><p>Use specially formatted comments to create self-documenting Makefiles.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/automate"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../exercises/work_teams.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise - Work Teams</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../exercises/intro_make.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercises - Make</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-a-single-file">Updating a Single File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-multiple-files-in-this-case">Managing Multiple Files In this case,</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-files-when-programs-change">Updating Files When Programs Change</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reducing-repetition-in-a-makefile">Reducing Repetition in a Makefile</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-variables">Automatic Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generic-rules">Generic Rules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-sets-of-files">Defining Sets of Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documenting-a-makefile">Documenting a Makefile</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automating-entire-analyses">Automating Entire Analyses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points">Key Points</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Software Engineering Group - University of Potsdam
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
