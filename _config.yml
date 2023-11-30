@@ -1,9 +1,9 @@
 #######################################################################################
 # Book settings
 title: RSE-ING
-author: Niko Bertrand
+author: Software Engineering Group - University of Potsdam
 email: ''
-logo                        : "favicon.png"  # A path to the book logo
+#logo                        : "favicon.png"  # A path to the book logo
 exclude_patterns            : ["README.md"]  # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
 
 #######################################################################################

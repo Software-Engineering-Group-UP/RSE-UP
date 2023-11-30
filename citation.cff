@@ -1,6 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
+- Family-names: "Software Engineering Group - University of Potsdam"
 - family-names: "Bertrand"
   given-names: "Nikolas"
   orcid: "0000-0001-7259-2111"
