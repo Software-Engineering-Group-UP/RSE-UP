@@ -63,8 +63,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/keypoints/git-advanced';</script>
-    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/keypoints/git-advanced.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/keypoints/configuration';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/keypoints/configuration.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -279,7 +279,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/keypoints/git-advanced.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/keypoints/configuration.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -309,7 +309,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/chapters/keypoints/git-advanced.md" target="_blank"
+      <li><a href="../../_sources/chapters/keypoints/configuration.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -416,17 +416,14 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <ul class="simple">
-<li><p>Use a \gref{branch-per-feature}{branch_per_feature} workflow to develop new features while leaving the master branch in working order.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> creates a new branch.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> switches between branches.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code> \gref{merges}{git_merge} changes from another branch into the current branch.</p></li>
-<li><p>\gref{Conflicts}{git_conflict} occur when files or parts of files are changed in different ways on different branches.</p></li>
-<li><p>Version control systems do not allow people to overwrite changes silently;
-instead, they highlight conflicts that need to be resolved.</p></li>
-<li><p>\gref{Forking}{git_fork} a repository makes a copy of it on a server.</p></li>
-<li><p>\gref{Cloning}{git_clone} a repository with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> creates a local copy of a remote repository.</p></li>
-<li><p>Create a remote called <code class="docutils literal notranslate"><span class="pre">upstream</span></code> to point to the repository a fork was derived from.</p></li>
-<li><p>Create \gref{pull requests}{pull_request} to submit changes from your fork to the upstream repository.</p></li>
+<li><p><strong>Overlay configuration</strong> specifies settings for a program in layers,
+each of which overrides previous layers.</p></li>
+<li><p>Use a system-wide configuration file for general settings.</p></li>
+<li><p>Use a user-specific configuration file for personal preferences.</p></li>
+<li><p>Use a job-specific configuration file with settings for a particular run.</p></li>
+<li><p>Use command-line options to change things that commonly change.</p></li>
+<li><p>Use <strong>YAML</strong> or some other standard syntax to write configuration files.</p></li>
+<li><p>Save configuration information to make your research <strong>reproducible</strong>.</p></li>
 </ul>
 
     <script type="text/x-thebe-config">
