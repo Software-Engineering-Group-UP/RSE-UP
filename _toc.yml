@@ -43,6 +43,10 @@ parts:
     chapters:
       - file: chapters/error_handling/error_handling.md
       - file: exercises/error_handling.ipynb
+  - caption: Tracking Provenance
+    chapters:
+      - file: chapters/provenance/tracking_provenance.md
+      - file: exercises/provenance.ipynb
   - caption: Extras
     chapters:
       - file: exercises/python_refresher.ipynb 
