@@ -35,6 +35,10 @@ parts:
     chapters:
       - file: chapters/config/configuration.md
       - file: exercises/configuration.ipynb
+  - caption: Testing Software
+    chapters:
+      - file: chapters/testing/testing_software.md
+      - file: exercises/testing.ipynb
   - caption: Extras
     chapters:
       - file: exercises/python_refresher.ipynb 
