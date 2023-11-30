@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; RSE-ING</title>
+    <title>Anaconda &#8212; RSE-ING</title>
   
   
   
@@ -63,10 +63,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/keypoints/bash_basics';</script>
-    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/keypoints/bash_basics.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/appendix/anaconda';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/appendix/anaconda.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="YAML" href="yaml.html" />
+    <link rel="prev" title="Python refresher" href="../../exercises/python_refresher.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -221,10 +223,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../exercises/python_refresher.html">Python refresher</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../appendix/anaconda.html">Anaconda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../appendix/yaml.html">YAML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../appendix/references.html">Bibliography</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="yaml.html">YAML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Bibliography</a></li>
 </ul>
 
     </div>
@@ -296,7 +298,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/keypoints/bash_basics.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/appendix/anaconda.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -326,7 +328,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/chapters/keypoints/bash_basics.md" target="_blank"
+      <li><a href="../../_sources/chapters/appendix/anaconda.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -410,7 +412,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Anaconda</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -419,9 +421,14 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-management-with-conda">Package Management with conda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Anaconda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-forge">conda-forge</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-management-with-conda">Environment Management with conda</a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -432,28 +439,100 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <ul class="simple">
-<li><p>A <strong>shell</strong> is a program that reads commands and runs other programs.</p></li>
-<li><p>The <strong>filesystem</strong> manages information stored on disk.</p></li>
-<li><p>Information is stored in files, which are located in directories (folders).</p></li>
-<li><p>Directories can also store other directories, which forms a directory tree.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code> prints the user’s <strong>current working directory</strong>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> on its own is the *<em>root directory</em>* of the whole filesystem.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ls</span></code> prints a list of files and directories.</p></li>
-<li><p>An **absolute path specifies a location from the root of the filesystem.</p></li>
-<li><p>A <strong>relative path</strong>specifies a location in the filesystem starting from the current directory.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code> changes the current working directory.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">..</span></code> means the <strong>parent directory</strong>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.</span></code> on its own means the current directory.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span></code> creates a new directory.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cp</span></code> copies a file.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rm</span></code> removes (deletes) a file.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mv</span></code> moves (renames) a file or directory.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> matches zero or more characters in a filename.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">?</span></code> matches any single character in a filename.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">wc</span></code> counts lines, words, and characters in its inputs.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">man</span></code> displays the manual page for a given command; some commands also have a <code class="docutils literal notranslate"><span class="pre">--help</span></code> option.</p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="anaconda">
+<h1>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this heading">#</a></h1>
+<p>When people first started using Python for data science,
+installing the relevant libraries could be difficult. The main problem was that the Python package installer (<a class="reference external" href="https://pypi.org/project/pip/"><code class="docutils literal notranslate"><span class="pre">pip</span></code></a>)
+only worked for libraries written in pure Python.
+Many scientific Python libraries have C and/or Fortran dependencies,
+so it was left up to data scientists
+(who often do not have a background in system administration)
+to figure out how to install those dependencies themselves.
+To overcome this problem,
+a number of scientific Python <strong>distributions</strong> have been released over the years.
+These come with the most popular data science libraries and their dependencies pre-installed,
+and some also come with a package manager to assist
+with installing additional libraries that weren’t pre-installed.
+Today the most popular distribution for data science is <a class="reference external" href="https://anaconda.com">Anaconda</a>, which comes with a package (and environment) manager called <a class="reference external" href="https://conda.io"><code class="docutils literal notranslate"><span class="pre">conda</span></code></a>.
+In this appendix we look at some of the most important features of <code class="docutils literal notranslate"><span class="pre">conda</span></code>
+for research software engineers.</p>
+<section id="package-management-with-conda">
+<h2>Package Management with conda<a class="headerlink" href="#package-management-with-conda" title="Permalink to this heading">#</a></h2>
+<p>According to the <a class="reference external" href="https://docs.anaconda.com/anaconda/">latest documentation</a>,
+Anaconda comes with over 250 of the most widely used data science libraries (and their dependencies) pre-installed.
+In addition, there are several thousand libraries available via the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code> command,
+which can be executed at the command line or by using the Anaconda Navigator graphical user interface.
+A package manager like conda greatly simplifies the software installation process
+by identifying and installing compatible versions of software and all required dependencies.
+It also handles the process of updating software as more recent versions become available.
+If you don’t want to install the entire Anaconda distribution,
+you can install <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>instead. It essentially comes with <code class="docutils literal notranslate"><span class="pre">conda</span></code> and nothing else.</p>
+<section id="id1">
+<h3>Anaconda<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>What happens if we want to install a Python package
+that isn’t on the list of the few thousand or so most popular data science packages (i.e., the ones that are automatically available via the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code> command)?
+The answer is the <a class="reference external" href="https://anaconda.org/">Anaconda Cloud</a> website,
+where the community can post <code class="docutils literal notranslate"><span class="pre">conda</span></code> installation packages.</p>
+<p>The utility of the Anaconda Cloud for research software engineers
+is best illustrated by an example.
+A few years ago, an atmospheric scientist by the name of Andrew Dawson
+wrote a Python package called <a class="reference external" href="https://ajdawson.github.io/windspharm/latest/"><code class="docutils literal notranslate"><span class="pre">windspharm</span></code></a>
+for performing computations on global wind fields in spherical geometry.
+While many of Andrew’s colleagues routinely process global wind fields,
+atmospheric science is a relatively small field and thus the <code class="docutils literal notranslate"><span class="pre">windspharm</span></code> package
+will never have a big enough user base to make the list of
+popular data science packages supported by Anaconda.
+Andrew has therefore posted a <code class="docutils literal notranslate"><span class="pre">conda</span></code> installation package to Anaconda Cloud
+(<span class="xref myst">Figure Windspharm</span>)
+so that users can install <code class="docutils literal notranslate"><span class="pre">windspharm</span></code> using <code class="docutils literal notranslate"><span class="pre">conda</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>ajdawson<span class="w"> </span>windspharm
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">conda</span></code> documentation has <a class="reference external" href="https://docs.conda.io/projects/conda-build/en/latest/user-guide/tutorials/build-pkgs-skeleton.html">instructions</a> for quickly building
+a <code class="docutils literal notranslate"><span class="pre">conda</span></code> package for a Python module that is already available on <a class="reference external" href="https://pypi.org/">PyPI</a> (<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/packaging/packaging.html#distributing-packages">Section Distribute packaging</a>).</p>
+</section>
+<section id="conda-forge">
+<h3>conda-forge<a class="headerlink" href="#conda-forge" title="Permalink to this heading">#</a></h3>
+<p>It turns out there are often multiple installation packages for the same library
+up on Anaconda Cloud (e.g., <span class="xref myst">Figure Windspharm search</span>).
+To try and address this duplication problem, <a class="reference external" href="https://conda-forge.org/">conda-forge</a> was launched.
+It aims to be a central repository that contains just a single, up-to-date (and working)
+version of each installation package on Anaconda Cloud.
+You can therefore expand the selection of packages available via <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code>
+beyond the chosen few thousand by adding the conda-forge channel to your <code class="docutils literal notranslate"><span class="pre">conda</span></code> configuration:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>conda-forge
+</pre></div>
+</div>
+<figure class="align-default" id="cloud-windspharm-search">
+<img alt="../../_images/cloud-windspharm-search.png" src="../../_images/cloud-windspharm-search.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">Windspharm search</span><a class="headerlink" href="#cloud-windspharm-search" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The conda-forge website has <a class="reference external" href="https://conda-forge.org/#add_recipe">instructions</a>
+for adding a <code class="docutils literal notranslate"><span class="pre">conda</span></code> installation package to the conda-forge repository.</p>
+</section>
+</section>
+<section id="environment-management-with-conda">
+<h2>Environment Management with conda<a class="headerlink" href="#environment-management-with-conda" title="Permalink to this heading">#</a></h2>
+<p>If you are working on several data science projects at once,
+installing all the libraries you need in the same place
+(i.e., the system default location) can become problematic.
+This is especially true if the projects rely on different versions of the same package,
+or if you are developing a new package and need to try new things.
+The way to avoid these issues is to create different <strong>virtual environments</strong> for different projects/tasks.
+The original environment manager for Python development was <a class="reference external" href="https://virtualenv.pypa.io/"><code class="docutils literal notranslate"><span class="pre">virtualenv</span></code></a>,
+which has been more recently superseded by <a class="reference external" href="https://docs.pipenv.org/"><code class="docutils literal notranslate"><span class="pre">pipenv</span></code></a>.
+The advantage that <code class="docutils literal notranslate"><span class="pre">conda</span></code> has over these options is that it is language agnostic
+(i.e., you can isolate non-Python packages in your environments too) and
+supports binary packages (i.e., you don’t need to compile the source code after installing),
+so it has become the environment manager of choice in data science.
+In this book <code class="docutils literal notranslate"><span class="pre">conda</span></code> is used to export the details of an environment
+when documenting the computational methodology for a report (<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/provenance/tracking_provenance.html#code-provenance">Section Provenance - Code</a>)
+and to test how a new package installs without disturbing anything
+in our main Python installation (<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/packaging/packaging.html#virtual-environments">Section Packaging a virtual environment</a>).</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -468,7 +547,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapters/keypoints"
+            path: "./chapters/appendix"
         },
         predefinedOutput: true
     }
@@ -485,6 +564,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../../exercises/python_refresher.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python refresher</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="yaml.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">YAML</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -499,9 +596,14 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-management-with-conda">Package Management with conda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Anaconda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-forge">conda-forge</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-management-with-conda">Environment Management with conda</a></li>
+</ul>
   </nav></div>
 
 </div></div>
