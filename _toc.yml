@@ -34,7 +34,7 @@ parts:
   - caption: Configuration
     chapters:
       - file: chapters/config/configuration.md
-      - file: exercises/configuration.ipynb
+      - file: exercises/config.ipynb
   - caption: Testing Software
     chapters:
       - file: chapters/testing/testing_software.md
