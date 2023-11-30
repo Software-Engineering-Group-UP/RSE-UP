@@ -30,7 +30,11 @@ parts:
   - caption: Introduction to automation
     chapters:
       - file: chapters/automate/intro_make.md 
-      - file: exercises/intro_make.md
+      - file: exercises/intro_make.ipynb
+  - caption: Configuration
+    chapters:
+      - file: chapters/config/configuration.md
+      - file: exercises/configuration.ipynb
   - caption: Extras
     chapters:
       - file: exercises/python_refresher.ipynb 
