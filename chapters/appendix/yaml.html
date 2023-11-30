@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; RSE-ING</title>
+    <title>YAML &#8212; RSE-ING</title>
   
   
   
@@ -213,12 +213,18 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../exercises/error_handling.html">Exercises - Error Handling</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../provenance/tracking_provenance.html">Tracking Provenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/provenance.html">Exercises - Provenance</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Extras</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../exercises/python_refresher.html">Python refresher</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">YAML</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">Bibliography</a></li>
 </ul>
 
@@ -392,9 +398,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -405,19 +409,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>YAML</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -427,7 +423,92 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  
+  <section class="tex2jax_ignore mathjax_ignore" id="yaml">
+<h1>YAML<a class="headerlink" href="#yaml" title="Permalink to this heading">#</a></h1>
+<p>YAML is a way to write nested data structures in plain text
+that is often used to specify configuration options for software.
+The acronym stands for “YAML Ain’t Markup Language,”
+but that’s misleading:
+YAML doesn’t use tags like HTML, but can still be quite fussy about what is allowed to appear where.</p>
+<p>Throughout this book we use YAML to configure our plotting script (<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/config/configuration.html">Chapter on Configuration</a>), <strong>TODO</strong> continuous integration with Travis CI (Section ref(testing-ci)),
+software environment with <code class="docutils literal notranslate"><span class="pre">conda</span></code> (Section <strong>TODO</strong>ref(provenance-code-environment)), and a documentation website with Read the Docs (Section <strong>TODO</strong> ref(packaging-rtd)).
+While you don’t need to be an expert in YAML to complete tasks like these,
+this appendix outlines some basics that can help make things easier.</p>
+<p>A simple YAML file has one key-value pair on each line
+with a colon separating the key from the value:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">project-name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">planet earth</span>
+<span class="nt">purpose</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">science fair</span>
+<span class="nt">moons</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</pre></div>
+</div>
+<p>Here,
+the keys are <code class="docutils literal notranslate"><span class="pre">&quot;project-name&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;purpose&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;moons&quot;</span></code>,
+and the values are <code class="docutils literal notranslate"><span class="pre">&quot;planet</span> <span class="pre">earth&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;science</span> <span class="pre">fair&quot;</span></code>,
+and (hopefully) the number 1,
+since most YAML implementations try to guess the type of data.</p>
+<p>If we want to create a list of values without keys,
+we can write it either using square brackets (like a Python array)
+or dashed items (like a Markdown,
+so:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">rotation-time</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;1</span><span class="nv"> </span><span class="s">year&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;12</span><span class="nv"> </span><span class="s">months&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;365.25</span><span class="nv"> </span><span class="s">days&quot;</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+<p>and:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">rotation-time</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1 year</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12 months</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">365.25 days</span>
+</pre></div>
+</div>
+<p>are equivalent.
+(The indentation isn’t absolutely required in this case,
+but helps make the intention clear.)
+If we want to write entire paragraphs,
+we can use a marker to show that a value spans multiple lines:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">feedback</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">Neat molten core concept.</span>
+<span class="w">    </span><span class="no">Too much water.</span>
+<span class="w">    </span><span class="no">Could have used more imaginative ending.</span>
+</pre></div>
+</div>
+<p>We can also add comments using <code class="docutils literal notranslate"><span class="pre">#</span></code> just as we do in many programming languages.</p>
+<p>YAML is easy to understand when used this way,
+but it starts to get tricky as soon as sub-lists and sub-keys appear.
+For example,
+this is part of the YAML configuration file for formatting this book:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">bookdown::gitbook</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">highlight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tango</span>
+<span class="w">  </span><span class="nt">config</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">download</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;pdf&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;epub&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">toc</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">collapse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">section</span>
+<span class="w">      </span><span class="nt">before</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">&lt;li&gt;&lt;a href=&quot;./&quot;&gt;Merely Useful&lt;/a&gt;&lt;/li&gt;</span>
+<span class="w">    </span><span class="nt">sharing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no</span>
+</pre></div>
+</div>
+<p>It corresponds to the following Python data structure:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s1">&#39;bookdown::gitbook&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">&#39;highlight&#39;</span><span class="p">:</span> <span class="s1">&#39;tango&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;config&#39;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s1">&#39;download&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">&#39;pdf&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;epub&#39;</span>
+      <span class="p">],</span>
+      <span class="s1">&#39;toc&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;collapse&#39;</span><span class="p">:</span> <span class="s1">&#39;section&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;before&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;li&gt;&lt;a href=&quot;./&quot;&gt;Merely Useful&lt;/a&gt;&lt;/li&gt;</span><span class="se">\n</span><span class="s1">&#39;</span>
+      <span class="p">}</span>
+      <span class="s1">&#39;sharing&#39;</span><span class="p">:</span> <span class="kc">False</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -482,20 +563,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>

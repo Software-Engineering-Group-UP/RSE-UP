@@ -1,0 +1,7 @@
+-   Publish data and code as well as papers.
+-   Use **DOIs** to identify reports, datasets, and software releases.
+-   Use an **ORCID** to identify yourself as an author of a report, dataset, or software release.
+-   Data should be **FAIR**: findable, accessible, interoperable, and reusable.
+-   Put small datasets in version control repositories; store large ones on data sharing sites.
+-   Describe your software environment, analysis scripts, and data processing steps in **reproducible** ways.
+-   Make your analyses **inspectable** as well as reproducible.
