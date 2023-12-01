@@ -47,6 +47,10 @@ parts:
     chapters:
       - file: chapters/provenance/tracking_provenance.md
       - file: exercises/provenance.ipynb
+  - caption: Packaging
+    chapters:
+      - file: chapters/packaging/packaging.md
+      - file: exercises/packaging.ipynb
   - caption: Extras
     chapters:
       - file: exercises/python_refresher.ipynb 
@@ -55,7 +59,9 @@ parts:
       - file: chapters/appendix/anaconda.md
       - file: chapters/appendix/yaml.md
       - file: chapters/appendix/references.md
-
+  #- caption: Workflows
+  #  chapters:
+  #    - file: chapters/workflow/cicd.html
     # sections:
       # - file: test_pages/layout_elements
       # - file: test_pages/equations
