@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercises - Configuration &#8212; RSE-ING</title>
+    <title>Exercises - Packaging &#8212; RSE-ING</title>
   
   
   
@@ -63,12 +63,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/config';</script>
-    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/config.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/packaging';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/packaging.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Testing Software" href="../chapters/testing/testing_software.html" />
-    <link rel="prev" title="Configuring Programs" href="../chapters/config/configuration.html" />
+    <link rel="next" title="Python refresher" href="python_refresher.html" />
+    <link rel="prev" title="Creating Packages with Python" href="../chapters/packaging/packaging.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -200,9 +200,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="intro_make.html">Exercises - Make</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuration</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapters/config/configuration.html">Configuring Programs</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercises - Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Exercises - Configuration</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing Software</span></p>
 <ul class="nav bd-sidenav">
@@ -219,9 +219,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="provenance.html">Exercises - Provenance</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Packaging</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapters/packaging/packaging.html">Creating Packages with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packaging.html">Exercises - Packaging</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercises - Packaging</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Extras</span></p>
 <ul class="nav bd-sidenav">
@@ -286,7 +286,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/Software-Engineering-Group-UP/RSE-UP/main?urlpath=tree/exercises/config.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/Software-Engineering-Group-UP/RSE-UP/main?urlpath=tree/exercises/packaging.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -334,7 +334,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fexercises/config.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fexercises/packaging.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -364,7 +364,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/exercises/config.ipynb" target="_blank"
+      <li><a href="../_sources/exercises/packaging.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -448,7 +448,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercises - Configuration</h1>
+    <h1>Exercises - Packaging</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -458,11 +458,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-with-plotting-parameters">1) Building with plotting parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-different-plot-styles">2) Using different plot styles</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-configurations">3) Saving configurations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ini-syntax">4) Using INI syntax</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-consistency">5) Configuration consistency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-metadata">1) Package metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separating-requirements">2) Separating requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-review">3) Software review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packaging-quotations">4) Packaging quotations</a></li>
 </ul>
             </nav>
         </div>
@@ -474,90 +473,66 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exercises-configuration">
-<h1>Exercises - Configuration<a class="headerlink" href="#exercises-configuration" title="Permalink to this heading">#</a></h1>
-<section id="building-with-plotting-parameters">
-<h2>1) Building with plotting parameters<a class="headerlink" href="#building-with-plotting-parameters" title="Permalink to this heading">#</a></h2>
-<p>In the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> created in Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/automate/intro_make.html#">Automation using Make</a>,
-the build rule involving <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> was defined as:</p>
-<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="c">## results/collated.png: plot the collated results.</span>
-<span class="nf">results/collated.png </span><span class="o">:</span><span class="w"> </span><span class="n">results</span>/<span class="n">collated</span>.<span class="n">csv</span>
-<span class="w">	</span>python<span class="w"> </span><span class="k">$(</span>PLOT<span class="k">)</span><span class="w"> </span>$&lt;<span class="w"> </span>--outfile<span class="w"> </span><span class="nv">$@</span>
-</pre></div>
-</div>
-<p>Update that build rule to include the new <code class="docutils literal notranslate"><span class="pre">--plotparams</span></code> option.
-Make sure <code class="docutils literal notranslate"><span class="pre">plotparams.yml</span></code> is added as a second prerequisite in the updated build rule
-so that the appropriate commands will be re-run if the plotting parameters change.</p>
-<p>Hint: We use the automatic variable <code class="docutils literal notranslate"><span class="pre">$&lt;</span></code> to access the first prerequisite,
-but you’ll need <code class="docutils literal notranslate"><span class="pre">$(word</span> <span class="pre">2,$^)</span></code> to access the second.
-Read about automatic variables (<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/automate/intro_make.html#automatic-variables">Section Automatic variables</a>) and
-<a class="reference external" href="https://www.gnu.org/software/make/manual/html_node/Text-Functions.html#Text-Functions">functions for string substitution and analysis</a>
-to understand what that command is doing.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercises-packaging">
+<h1>Exercises - Packaging<a class="headerlink" href="#exercises-packaging" title="Permalink to this heading">#</a></h1>
+<section id="package-metadata">
+<h2>1) Package metadata<a class="headerlink" href="#package-metadata" title="Permalink to this heading">#</a></h2>
+<p>In a number of places on our TestPyPI webpage, it says that no project description was provided <strong>TODO</strong> (Figure &#64;ref(fig:packaging-testpypi)).</p>
+<p>How could we edit our <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file to include a description?</p>
+<p>What other metadata would you add?</p>
+<p>Hint: The <a class="reference external" href="https://packaging.python.org/guides/distributing-packages-using-setuptools/#setup-args"><code class="docutils literal notranslate"><span class="pre">setup()</span> <span class="pre">args</span></code> documentation</a> might be useful.</p>
 </section>
-<section id="using-different-plot-styles">
-<h2>2) Using different plot styles<a class="headerlink" href="#using-different-plot-styles" title="Permalink to this heading">#</a></h2>
-<p>There are many pre-defined matplotlib styles (Section &#64;ref(config-user)),
-as illustrated at the <a class="reference external" href="https://python-graph-gallery.com/199-matplotlib-style-sheets/">Python Graph Gallery</a>.</p>
-<ol class="arabic simple">
-<li><p>Add a new option <code class="docutils literal notranslate"><span class="pre">--style</span></code> to <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> that allows the user
-to pick a style from the list of pre-defined matplotlib styles.</p></li>
-</ol>
-<p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">choices</span></code> parameter discussed in Section &#64;ref(config-command-line)
-to define the valid choices for the new <code class="docutils literal notranslate"><span class="pre">--style</span></code> option.</p>
-<ol class="arabic simple" start="2">
-<li><p>Re-generate the plot of the <em>Jane Eyre</em> word count distribution
-using a bunch of different styles to decide which you like best.</p></li>
-<li><p>Matplotlib style sheets are designed to be composed together.
-(See the <a class="reference external" href="https://matplotlib.org/tutorials/introductory/customizing.html">style sheets tutorial</a> for details.)
-Use the <code class="docutils literal notranslate"><span class="pre">nargs</span></code> parameter to allow the user to pass any number of styles
-when using the <code class="docutils literal notranslate"><span class="pre">--style</span></code> option.</p></li>
-</ol>
+<section id="separating-requirements">
+<h2>2) Separating requirements<a class="headerlink" href="#separating-requirements" title="Permalink to this heading">#</a></h2>
+<p>As well as <code class="docutils literal notranslate"><span class="pre">requirements_docs.txt</span></code>, developers often create a <code class="docutils literal notranslate"><span class="pre">requirements_dev.txt</span></code> file to list packages that are not needed by the package’s users,
+but are required for its development and testing.
+Pull <code class="docutils literal notranslate"><span class="pre">pytest</span></code> out of <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> and put it in a new <code class="docutils literal notranslate"><span class="pre">requirements_dev.txt</span></code> file.</p>
 </section>
-<section id="saving-configurations">
-<h2>3) Saving configurations<a class="headerlink" href="#saving-configurations" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Add an option <code class="docutils literal notranslate"><span class="pre">--saveconfig</span> <span class="pre">filename</span></code> to <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>
-that writes all of its configuration to a file.
-Make sure this option saves <em>all</em> of the configuration,
-including any defaults that the user hasn’t changed.</p></li>
-<li><p>Add a new target <code class="docutils literal notranslate"><span class="pre">test-saveconfig</span></code> to the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>
-created in Chapter &#64;ref(automate) to test that the new option
-is working.</p></li>
-<li><p>How would this new <code class="docutils literal notranslate"><span class="pre">--saveconfig</span></code> option make your work more reproducible?</p></li>
-</ol>
+<section id="software-review">
+<h2>3) Software review<a class="headerlink" href="#software-review" title="Permalink to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://joss.theoj.org/"><em>Journal of Open Source Software</em></a> has a <a class="reference external" href="https://joss.readthedocs.io/en/latest/review_checklist.html">checklist</a> that reviewers must follow when assessing a submitted software paper.
+Run through the checklist (skipping the criteria related to the software paper) and see how the Zipf’s Law package would rate on each criteria.</p>
 </section>
-<section id="using-ini-syntax">
-<h2>4) Using INI syntax<a class="headerlink" href="#using-ini-syntax" title="Permalink to this heading">#</a></h2>
-<p>If we used <a class="reference external" href="https://en.wikipedia.org/wiki/INI_file">Windows INI format</a> instead of YAML
-for our plot parameters configuration file
-(i.e., <code class="docutils literal notranslate"><span class="pre">plotparams.ini</span></code> instead of <code class="docutils literal notranslate"><span class="pre">plotparams.yml</span></code>)
-that file would read as follows:</p>
-<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[AXES]</span>
-<span class="na">axes.labelsize</span><span class="o">=</span><span class="s">x-large</span>
+<section id="packaging-quotations">
+<h2>4) Packaging quotations<a class="headerlink" href="#packaging-quotations" title="Permalink to this heading">#</a></h2>
+<p>Each chapter in this book opens with a quote from the British author Terry Pratchett.
+This script <code class="docutils literal notranslate"><span class="pre">quotes.py</span></code> contains a function <code class="docutils literal notranslate"><span class="pre">random_quote</span></code> which prints a random Pratchett quote:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
-<span class="k">[TICKS]</span>
-<span class="na">xtick.labelsize</span><span class="o">=</span><span class="s">large</span>
-<span class="na">ytick.labelsize</span><span class="o">=</span><span class="s">large</span>
+
+<span class="n">quote_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;It&#39;s still magic even if you know how it&#39;s done.&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Everything starts somewhere, &quot;</span>\
+              <span class="s2">&quot;though many physicists disagree.&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Ninety percent of most magic merely consists &quot;</span>\
+              <span class="s2">&quot;of knowing one extra fact.&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Wisdom comes from experience. &quot;</span>\
+              <span class="s2">&quot;Experience is often a result of lack of wisdom.&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;There isn&#39;t a way things should be. &quot;</span>\
+              <span class="s2">&quot;There&#39;s just what happens, and what we do.&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Multiple exclamation marks are a sure sign &quot;</span>\
+              <span class="s2">&quot;of a diseased mind.&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;+++ Divide By Cucumber Error. &quot;</span>\
+              <span class="s2">&quot;Please Reinstall Universe And Reboot +++&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;It&#39;s got three keyboards and a hundred extra &quot;</span>\
+              <span class="s2">&quot;knobs, including twelve with ‘?&#39; on them.&quot;</span><span class="p">,</span>
+             <span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">random_quote</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Print a random Pratchett quote.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">quote_list</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>The <a class="reference external" href="https://docs.python.org/3/library/configparser.html"><code class="docutils literal notranslate"><span class="pre">configparser</span></code></a> library can be used to read and write INI files.
-Install that library by running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">configparser</span></code> at the command line.</p>
-<p>Using <code class="docutils literal notranslate"><span class="pre">configparser</span></code>, rewrite the <code class="docutils literal notranslate"><span class="pre">set_plot_params</span></code> function in <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> to
-handle a configuration file in INI rather than YAML format.</p>
-<ol class="arabic simple">
-<li><p>Which file format do you find easier to work with?</p></li>
-<li><p>What other factors should influence your choice of a configuration file syntax?</p></li>
-</ol>
-<p>Note: the code modified in this exercise is not required for the rest of the book.</p>
-</section>
-<section id="configuration-consistency">
-<h2>5) Configuration consistency<a class="headerlink" href="#configuration-consistency" title="Permalink to this heading">#</a></h2>
-<p>In order for a data processing pipeline to work correctly,
-some of the configuration parameters for Program A and Program B must be the same.
-However,
-the programs were written by different teams,
-and each has its own configuration file.
-What steps could you take to ensure the required consistency?</p>
+<p>Create a new <code class="docutils literal notranslate"><span class="pre">conda</span></code> development environment called <code class="docutils literal notranslate"><span class="pre">pratchett</span></code>
+and use <code class="docutils literal notranslate"><span class="pre">pip</span></code> to install a new package called <code class="docutils literal notranslate"><span class="pre">pratchett</span></code> into that environment.
+The package should contain <code class="docutils literal notranslate"><span class="pre">quotes.py</span></code>,
+and once the package has been installed the user should be able to run:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pratchett</span> <span class="kn">import</span> <span class="n">quotes</span>
+
+
+<span class="n">quotes</span><span class="o">.</span><span class="n">random_quote</span><span class="p">()</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -592,20 +567,20 @@ What steps could you take to ensure the required consistency?</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../chapters/config/configuration.html"
+       href="../chapters/packaging/packaging.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Configuring Programs</p>
+        <p class="prev-next-title">Creating Packages with Python</p>
       </div>
     </a>
     <a class="right-next"
-       href="../chapters/testing/testing_software.html"
+       href="python_refresher.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Testing Software</p>
+        <p class="prev-next-title">Python refresher</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -624,11 +599,10 @@ What steps could you take to ensure the required consistency?</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-with-plotting-parameters">1) Building with plotting parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-different-plot-styles">2) Using different plot styles</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-configurations">3) Saving configurations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ini-syntax">4) Using INI syntax</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-consistency">5) Configuration consistency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-metadata">1) Package metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separating-requirements">2) Separating requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-review">3) Software review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packaging-quotations">4) Packaging quotations</a></li>
 </ul>
   </nav></div>
 

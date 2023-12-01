@@ -1,0 +1,12 @@
+-   Use [`setuptools`]( https://setuptools.readthedocs.io/) to build and distribute Python packages.
+-   Create a directory named `mypackage` containing a `setup.py` script with a subdirectory also called `mypackage` containing the package's source files.
+-   Use **semantic versioning** for software releases.
+-   Use a **virtual environment** to test how your package installs without disrupting your main Python installation.
+-   Use [`pip`](https://pypi.org/project/pip) install Python packages.
+-   The default repository for Python packages is [PyPI](https://pypi.org).
+-   Use [TestPyPI](https://test.pypi.org) to test the distribution of your package.
+-   Use a README file for package-level documentation.
+-   Use [Sphinx](https://sphinx-doc.org) to generate documentation for a package.
+-   Use [Read the Docs](https://docs.readthedocs.io) to host package documentation online.
+-   Create a **DOI** for your package using [GitHub's Zenodo integration](https://guides.github.com/activities/citable-code/)
+-   Publish details of your package in a software journal so others can cite it.
