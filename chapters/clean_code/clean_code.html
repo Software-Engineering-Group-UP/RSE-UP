@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Writing Clean Code &#8212; RSE-ING</title>
+    <title>Writing Readable Code &#8212; RSE-ING</title>
   
   
   
@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/clean_code/clean_code.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Documentation" href="../documentation/documentation.html" />
+    <link rel="next" title="Documenting Programs" href="../documentation/documentation.html" />
     <link rel="prev" title="Exercises - Packaging" href="../../exercises/packaging.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -227,11 +227,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Writing Clean Code</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Writing Readable Code</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../documentation/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/documentation.html">Documenting Programs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
 <ul class="nav bd-sidenav">
@@ -243,6 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../appendix/anaconda.html">Anaconda</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix/yaml.html">YAML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../working_remotely.html">Working Remotely</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix/references.html">Bibliography</a></li>
 </ul>
 
@@ -416,7 +417,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -427,11 +430,45 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Writing Clean Code</h1>
+    <h1>Writing Readable Code</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-style">Python Style</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spacing">Spacing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naming">Naming</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#order">Order</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-style">Checking Style</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refactoring">Refactoring</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-not-repeat-values">Do not repeat values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-not-repeat-calculations-in-loops">Do not repeat calculations in loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-tests-with-flags-to-clarify-repeated-tests">Replace tests with flags to clarify repeated tests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-in-place-operators-to-avoid-duplicating-expression">Use in-place operators to avoid duplicating expression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handle-special-cases-first">Handle special cases first</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-functions-to-make-code-more-comprehensible">Use functions to make code more comprehensible</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-operations-in-functions">Combine operations in functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-code-with-data">Replace code with data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-reviews">Code Reviews</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-features">Python Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#provide-default-values-for-parameters">Provide default values for parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handle-a-variable-number-of-arguments">Handle a variable number of arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unpacking-variable-arguments">Unpacking variable arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-destructuring-to-assign-multiple-values-at-once">Use destructuring to assign multiple values at once</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -441,8 +478,1109 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="writing-clean-code">
-<h1>Writing Clean Code<a class="headerlink" href="#writing-clean-code" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="writing-readable-code">
+<h1>Writing Readable Code<a class="headerlink" href="#writing-readable-code" title="Permalink to this heading">#</a></h1>
+<p>Nothing in biology makes sense except in light of evolution <span id="id1">[<a class="reference internal" href="../appendix/references.html#id23" title="Theodosius Dobzhansky. Nothing in Biology Makes Sense Except in the Light of Evolution. The American Biology Teacher, 35(3):125–129, Mar 1973. A forceful statement of the central unifying theme of modern biology. doi:10.2307/4444260.">Dobzhansky, 1973</a>]</span>.
+Similarly, nothing in software development makes sense except in light of human psychology.
+This is particularly true when we look at programming style.
+Computers don’t need to understand programs in order to execute them,
+but people do if they are to create, debug, and extend them.</p>
+<p>Throughout this book we have written code to analyze word counts in classic novels
+using good Python style.
+This appendix discusses the style choices we made,
+presents guidelines for good Python programming style,
+and introduces some language features that can make programs more flexible and more readable.</p>
+<section id="python-style">
+<h2>Python Style<a class="headerlink" href="#python-style" title="Permalink to this heading">#</a></h2>
+<p>The single most important rule of style is to be consistent,
+both internally and with other programs <span id="id2">[<a class="reference internal" href="../appendix/references.html#id39" title="Brian W. Kernighan and Rob Pike. The Practice of Programming. Addison-Wesley, 1999. ISBN 9788177582482. A programming style manual written by two of the creators of modern computing.">Kernighan and Pike, 1999</a>]</span>.
+Python’s standard style is called <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP-8</a>;
+the acronym “PEP” is short for “Python Enhancement Proposal,”
+and PEP-8 lays out the rules that Python’s own libraries use.
+Some of its rules are listed below,
+along with others borrowed from “<a class="reference external" href="https://github.com/jennybc/code-smells-and-feels">Code Smells and Feels</a>.”</p>
+<section id="spacing">
+<h3>Spacing<a class="headerlink" href="#spacing" title="Permalink to this heading">#</a></h3>
+<p><strong>Always indent code blocks using 4 spaces, and use spaces instead of tabs.</strong></p>
+<p>Python doesn’t actually require consistent indentation
+so long as each block is indented the same amount,
+which means that this is legal:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="n">original</span><span class="p">):</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">original</span><span class="o">.</span><span class="n">numRow</span><span class="p">,</span> <span class="n">original</span><span class="o">.</span><span class="n">numCol</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">original</span><span class="o">.</span><span class="n">numRow</span><span class="p">):</span>
+              <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">original</span><span class="o">.</span><span class="n">numCol</span><span class="p">):</span>
+               <span class="n">result</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">original</span><span class="p">[</span><span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">]</span>
+  <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>The same block of code is much more readable when written as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="n">original</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">original</span><span class="o">.</span><span class="n">numRow</span><span class="p">,</span> <span class="n">original</span><span class="o">.</span><span class="n">numCol</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">original</span><span class="o">.</span><span class="n">numRow</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">original</span><span class="o">.</span><span class="n">numCol</span><span class="p">):</span>
+            <span class="n">result</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">original</span><span class="p">[</span><span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>The use of 4 spaces is a compromise between 2
+(which we find perfectly readable, but some people find too crowded)
+and 8
+(which most people agree uses up too much horizontal space).
+As for the use of spaces rather than tabs,
+the original reason was that the most common interpretation of tabs
+by the editors of the 1980s was 8 spaces,
+which again was more than most people felt necessary.
+Today,
+almost all editors will auto-indent or auto-complete when the tab key is pressed
+(or insert spaces, if configured to do so),
+but the legacy of those ancient times lives on.</p>
+<p><strong>Do not put spaces inside parentheses.</strong></p>
+<p>Write <code class="docutils literal notranslate"><span class="pre">(1+2)</span></code> instead of <code class="docutils literal notranslate"><span class="pre">( 1+2 )</span></code>.
+This applies to function calls as well:
+write <code class="docutils literal notranslate"><span class="pre">max(a,</span> <span class="pre">b)</span></code> rather than <code class="docutils literal notranslate"><span class="pre">max( a, b )</span></code>.
+(We will see a related rule when we discuss default parameter values
+in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/clean_code/clean_code.html#python-features">Python Features</a>.)</p>
+<p><strong>Always use spaces around comparisons like <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>.</strong></p>
+<p>Python automatically interprets <code class="docutils literal notranslate"><span class="pre">a+b&lt;c+d</span></code> as <code class="docutils literal notranslate"><span class="pre">(a+b)&lt;(c+d)</span></code>,
+but that’s a lot of punctuation crowded together.
+Using spaces around comparison operators makes it easier to see
+what’s being compared to what.
+However,
+we should use our own judgment for spacing around arithmetic operators like <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">/</span></code>.
+For example,
+<code class="docutils literal notranslate"><span class="pre">a+b+c</span></code> is perfectly readable,
+but</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">substrate</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">overlay</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>is easier for the eye to follow than the spaceless:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">substrate</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">overlay</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Most programmers would also write:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">*</span><span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="o">*</span><span class="n">d</span>
+</pre></div>
+</div>
+<p>instead of:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="o">*</span><span class="n">d</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Adding spaces makes simple expressions more readable,
+but does not change the way Python interprets them—when it encounters <code class="docutils literal notranslate"><span class="pre">a * b+c</span></code>,
+for example,
+Python still does the multiplication before the addition.</p>
+<p><strong>Put two blank lines between each function definition.</strong></p>
+<p>This helps the eye see where one ends and the next begins,
+though the fact that functions always start in the first column helps as well.</p>
+<p><strong>Add an empty line at the end of the script.</strong></p>
+<p>Ending a file in a newline character is required for some other programming languages.
+Although it’s not required for Python code to function,
+it does make it easier to view and edit code.</p>
+</section>
+<section id="naming">
+<h3>Naming<a class="headerlink" href="#naming" title="Permalink to this heading">#</a></h3>
+<p><strong>Use <code class="docutils literal notranslate"><span class="pre">ALL_CAPS_WITH_UNDERSCORES</span></code> for global variables.</strong></p>
+<p>This convention is inherited from C, which was used to write the first version of Python.
+In that language, upper case was used to indicate a constant whose value couldn’t be modified; Python doesn’t enforce that rule,
+but <code class="docutils literal notranslate"><span class="pre">SHOUTING_AT_PROGRAMMERS</span></code> helps remind them that
+some things shouldn’t be messed with.</p>
+<p><strong>Use <code class="docutils literal notranslate"><span class="pre">lower_case_with_underscores</span></code> for the names of functions and variables.</strong></p>
+<p>Research on naming conventions has produced mixed results <span id="id3">[<a class="reference internal" href="../appendix/references.html#id9" title="Dave Binkley, Marcia Davis, Dawn Lawrie, Jonathan I. Maletic, Christopher Morrell, and Bonita Sharif. The Impact of Identifier Style on Effort and Comprehension. Empirical Software Engineering, 18(2):219–276, May 2012. Reports that reading and understanding code is fundamentally different from reading prose, and that experienced developers are relatively unaffected by identifier style, but beginners benefit from the use of camel case (versus pothole case). doi:10.1007/s10664-012-9201-4.">Binkley <em>et al.</em>, 2012</a>]</span>; <span id="id4">[<a class="reference internal" href="../appendix/references.html#id64" title="Andrea Schankin, Annika Berger, Daniel V. Holt, Johannes C. Hofmeister, Till Riedel, and Michael Beigl. Descriptive Compound Identifier Names Improve Source Code Comprehension. In Proc. 26th Conference on Program Comprehension (ICPC'18). ACM Press, 2018. URL: https://doi.org/10.1145/3196321.3196332, doi:10.1145/3196321.3196332.">Schankin <em>et al.</em>, 2018</a>]</span> but Python has (mostly) settled on underscored names for most things.
+This style is called <strong>snake case</strong> or <strong>pothole case</strong>;
+we should only use <strong>CamelCase</strong> for classes,
+which are outside the scope of this lesson.</p>
+<p><strong>Avoid abbreviations in function and variable names.</strong></p>
+<p>Abbreviations and acronyms can be ambiguous
+(does <code class="docutils literal notranslate"><span class="pre">xcl</span></code> mean “Excel”, “exclude”, or “excellent”?),
+and can be hard for non-native speakers to understand.
+Following this rule doesn’t necessarily require more typing:
+a good programming editor will <strong>auto-complete</strong> names for us.</p>
+<p><strong>Use short names for short-lived local variables and longer names for things with wider scope.</strong></p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> for loop indices is perfectly readable
+provided the loop is only a few lines long <span id="id5">[<a class="reference internal" href="../appendix/references.html#id6" title="Gal Beniamini, Sarah Gingichashvili, Alon Klein Orbach, and Dror G. Feitelson. Meaningful Identifier Names: The Case of Single-Letter Variables. In Proc. 2017 International Conference on Program Comprehension (ICPC'17). Institute of Electrical and Electronics Engineers (IEEE), May 2017. Reports that use of single-letter variable names doesn't affect ability to modify code, and that some single-letter variable names have implicit types and meanings. doi:10.1109/icpc.2017.18.">Beniamini <em>et al.</em>, 2017</a>]</span>.
+Anything that is used at a greater distance
+or whose purpose isn’t immediately clear
+(such as a function) should have a longer name.</p>
+<p><strong>Do not comment and uncomment sections of code to change behavior.</strong></p>
+<p>If we need to do something in some runs of the program and not in others,
+use an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to enable or disable that block of code:
+it eliminates the risk of accidentally commenting out one too many lines.
+If the lines we were removing or commenting out print debugging information,
+we should replace them with logging calls (Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/error_handling/error_handling.html#reporting-errors">Reporting Errors</a>).
+If they are operations that we want to execute,
+we can add a configuration option (Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/config/configuration.html">Configuration</a>),
+and if we are sure we don’t need the code,
+we should take it out completely:
+we can always get it back from version control
+(<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/version_control.html#recovering-older-versions-of-a-file">Exercise on recovering older file version</a>).</p>
+</section>
+</section>
+<section id="order">
+<h2>Order<a class="headerlink" href="#order" title="Permalink to this heading">#</a></h2>
+<p>The order of items in each file should be:</p>
+<ul class="simple">
+<li><p>The <strong>shebang</strong> line (because it has to be first to work).</p></li>
+<li><p>The file’s documentation string (Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/scripting/building_cli_python.html#documentation">Python Documentation</a>).</p></li>
+<li><p>All of the <code class="docutils literal notranslate"><span class="pre">import</span></code> statements, one per line.</p></li>
+<li><p>Global variable definitions
+(especially things that would be constants in languages that support them).</p></li>
+<li><p>Function definitions.</p></li>
+<li><p>If the file can be run as a program,
+the <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code> statement discussed in
+Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/scripting/building_cli_python.html#writing-our-own-modules">Writing your own modules</a>.</p></li>
+</ul>
+<p>That much is clear,
+but programmers disagree (strongly) on whether high-level functions should come first or last,
+i.e.,
+whether <code class="docutils literal notranslate"><span class="pre">main</span></code> should be the first function in the file or the last one.
+Our scripts put it last,
+so that it is immediately before the check on <code class="docutils literal notranslate"><span class="pre">__name__</span></code>.
+Wherever it goes,
+<code class="docutils literal notranslate"><span class="pre">main</span></code> tends to follow one of three patterns:</p>
+<ol class="arabic simple">
+<li><p>Figure out what the user has asked it to do (Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/config/configuration.html">Configuration</a>.</p></li>
+<li><p>Read all input data.</p></li>
+<li><p>Process it.</p></li>
+<li><p>Write output.</p></li>
+</ol>
+<p>or:</p>
+<ol class="arabic simple">
+<li><p>Figure out what the user has asked for.</p></li>
+<li><p>For each input file:</p>
+<ol class="arabic simple">
+<li><p>Read.</p></li>
+<li><p>Process.</p></li>
+<li><p>Write file-specific output (if any).</p></li>
+</ol>
+</li>
+<li><p>Write summary output (if any).</p></li>
+</ol>
+<p>or:</p>
+<ol class="arabic simple">
+<li><p>Figure out what the user has asked for.</p></li>
+<li><p>Repeatedly:</p>
+<ol class="arabic simple">
+<li><p>Wait for user input.</p></li>
+<li><p>Do what the user has asked.</p></li>
+</ol>
+</li>
+<li><p>Exit when a “stop” command of some sort is received.</p></li>
+</ol>
+<p>Each step in each of the outlines above usually becomes a function.
+Those functions depend on others,
+some of which are written to break code into comprehensible chunks and are then called just once,
+others of which are utilities that may be called many times from many different places.</p>
+<p>We put all of the single-use functions in the first half of the file
+in the order in which they are likely to be called,
+and then put all of the multi-use utility functions in the bottom of the file in alphabetical order.
+If any of those utility functions are used by other scripts or programs,
+they should go in a file of their own (Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/scripting/building_cli_python.html#collating-results">Collating Results</a>.</p>
+<p>In fact,
+this is a good practice even if those functions are only used by one program,
+since it signals even more clearly which are specific to this program
+and which are likely to be reused elsewhere.
+This is why we create <code class="docutils literal notranslate"><span class="pre">collate.py</span></code> in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/scripting/building_cli_python.html#collating-results">Collating</a>:
+we could have kept all of our code in <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code>,
+but collating felt like something we might want to do separately.</p>
+</section>
+<section id="checking-style">
+<h2>Checking Style<a class="headerlink" href="#checking-style" title="Permalink to this heading">#</a></h2>
+<p>Checking that code conforms to guidelines like PEP-8 would be time consuming
+if we had to do it manually,
+but most languages have tools that will check style rules for us.
+These tools are often called <strong>linters</strong>, after an early tool called <a class="reference external" href="https://en.wikipedia.org/wiki/Lint_(software)"><code class="docutils literal notranslate"><span class="pre">lint</span></code></a> that found lint (or fluff) in C code.</p>
+<p>Python’s linter used to be called <code class="docutils literal notranslate"><span class="pre">pep8</span></code> and is now called <code class="docutils literal notranslate"><span class="pre">pycodestyle</span></code>.
+To see how it works,
+let’s look at this program,
+which is supposed to count the number of <strong>stop words</strong> in a document:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stops</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;The&#39;</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">ln</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ln</span><span class="p">)):</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">ln</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">stuff</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">stuff</span><span class="p">:</span>
+            <span class="c1"># print(word)</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">stops</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">lines</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="c1"># print(&#39;number of lines&#39;, len(lines))</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">count</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When we run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pycodestyle<span class="w"> </span>count_stops.py
+</pre></div>
+</div>
+<p>it prints:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>src/style/count_stops_before.py:3:1:
+E302 expected 2 blank lines, found 1
+src/style/count_stops_before.py:11:24:
+E712 comparison to True should be
+&#39;if cond is True:&#39; or &#39;if cond:&#39;
+src/style/count_stops_before.py:12:13:
+E101 indentation contains mixed spaces and tabs
+src/style/count_stops_before.py:12:13:
+W191 indentation contains tabs
+src/style/count_stops_before.py:15:1:
+E305 expected 2 blank lines after class or function definition,
+  found 1
+src/style/count_stops_before.py:15:1:
+E402 module level import not at top of file
+</pre></div>
+</div>
+<p>which tells us that:</p>
+<ul class="simple">
+<li><p>We should use two blank lines before the function definition on line 3
+and after it on line 15.</p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">False</span></code> is redundant
+(because <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">True</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">x</span></code>
+and <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">False</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">x</span></code>).</p></li>
+<li><p>Line 12 uses tabs instead of just spaces.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">import</span></code> on line 15 should be at the top of the file.</p></li>
+</ul>
+<p>Fixing these issues gives us:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+
+<span class="n">stops</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;The&#39;</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">ln</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ln</span><span class="p">)):</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">ln</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">stuff</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">stuff</span><span class="p">:</span>
+            <span class="c1"># print(word)</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">stops</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span>
+
+
+<span class="n">lines</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="c1"># print(&#39;number of lines&#39;, len(lines))</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">count</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="refactoring">
+<h2>Refactoring<a class="headerlink" href="#refactoring" title="Permalink to this heading">#</a></h2>
+<p>Once a program gets a clean bill of health from <code class="docutils literal notranslate"><span class="pre">pycodestyle</span></code>,
+it’s worth having a human being look it over and suggest improvements.
+To <strong>refactor</strong> code
+means to change its structure without changing what it does,
+like simplifying an equation.
+It is just as much a part of programming as writing code in the first place:
+nobody gets things right the first time <span id="id6">[<a class="reference internal" href="../appendix/references.html#id13" title="Stewart Brand. How Buildings Learn: What Happens after They're Built. Penguin USA, 1995. ISBN 0140139966. How buildings evolve and adapt to meet the needs of those who live in them.">Brand, 1995</a>]</span>,
+and needs or insights can change over time.</p>
+<p>Most discussions of refactoring focus on <strong>object-oriented programming</strong>
+but many patterns can and should be used to clean up <strong>procedural</strong> code.
+Knowing a few of these patterns helps us create better software
+and makes it easier to communicate with our peers.</p>
+<section id="do-not-repeat-values">
+<h3>Do not repeat values<a class="headerlink" href="#do-not-repeat-values" title="Permalink to this heading">#</a></h3>
+<p>The first and simplest refactoring is “replace value with name.”
+It tells us to replace magic numbers with names,
+i.e., to define constants.
+This can seem ridiculous in simple cases
+(why define and use <code class="docutils literal notranslate"><span class="pre">inches_per_foot</span></code> instead of just writing 12?).
+However,
+what may be obvious to us when we’re writing code won’t be obvious to the next person,
+particularly if they are working in a different context
+(most of the world uses the metric system and doesn’t know how many inches are in a foot).
+It is also a matter of habit:
+if we write numbers without explanation in our code for simple cases,
+we are more likely to do so in complex cases,
+and more likely to regret it afterward.</p>
+<p>\newpage</p>
+<p>Using names instead of raw values also makes it easier to understand code when we read it aloud,
+which is always a good test of its style.
+Finally,
+a single value defined in one place is much easier to change
+than a bunch of numbers scattered throughout our program.
+We may not think we will have to change it,
+but then people want to use our software on Mars and we discover that constants aren’t <span id="id7">[<a class="reference internal" href="../appendix/references.html#id46" title="Ronald Mak. The Martian Principles. Wiley, 2006. ISBN 0471789658. A short, enjoyable guide to software architecture from someone whose code had to deal with Mars.">Mak, 2006</a>]</span>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...before...</span>
+<span class="n">seconds_elapsed</span> <span class="o">=</span> <span class="n">num_days</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...after...</span>
+<span class="n">SECONDS_PER_DAY</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="c1"># ...other code...</span>
+<span class="n">seconds_elapsed</span> <span class="o">=</span> <span class="n">num_days</span> <span class="o">*</span> <span class="n">SECONDS_PER_DAY</span>
+</pre></div>
+</div>
+</section>
+<section id="do-not-repeat-calculations-in-loops">
+<h3>Do not repeat calculations in loops<a class="headerlink" href="#do-not-repeat-calculations-in-loops" title="Permalink to this heading">#</a></h3>
+<p>It’s inefficient to calculate the same value over and over again.
+It also makes code less readable:
+if a calculation is inside a loop or a function,
+readers will assume that it might change each time the code is executed.</p>
+<p>Our second refactoring,
+“hoist repeated calculation out of loop,”
+tells us to move the repeated calculation out of the loop or function.
+Doing this signals that its value is always the same.
+And naming that common value helps readers understand what its purpose is.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...before...</span>
+<span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">signals</span><span class="p">:</span>
+    <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">sample</span> <span class="o">/</span> <span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...after...</span>
+<span class="n">scaling</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="n">weight</span>
+<span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">signals</span><span class="p">:</span>
+    <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sample</span> <span class="o">*</span> <span class="n">scaling</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="replace-tests-with-flags-to-clarify-repeated-tests">
+<h3>Replace tests with flags to clarify repeated tests<a class="headerlink" href="#replace-tests-with-flags-to-clarify-repeated-tests" title="Permalink to this heading">#</a></h3>
+<p>Novice programmers frequently write conditional tests like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># ...do something...</span>
+</pre></div>
+</div>
+<p>The comparison to <code class="docutils literal notranslate"><span class="pre">True</span></code> is unnecessary because <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;</span> <span class="pre">b</span></code> is a Boolean value
+that is itself either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+Like any other value,
+Booleans can be assigned to variables,
+and those variables can then be used directly in tests:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">was_greater</span> <span class="o">=</span> <span class="n">estimate</span> <span class="o">&gt;</span> <span class="mf">0.0</span>
+<span class="c1"># ...other code that might change estimate...</span>
+<span class="k">if</span> <span class="n">was_greater</span><span class="p">:</span>
+    <span class="c1"># ...do something...</span>
+</pre></div>
+</div>
+<p>This refactoring is “replace repeated test with flag.”
+Again,
+there is no need to write <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">was_greater</span> <span class="pre">==</span> <span class="pre">True</span></code>:
+that always produces the same result as <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">was_greater</span></code>.
+Similarly,
+the equality tests in <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">was_greater</span> <span class="pre">==</span> <span class="pre">False</span></code> is redundant:
+the expression can simply be written <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">not</span> <span class="pre">was_greater</span></code>.
+Creating and using a <strong>flag</strong> instead of repeating the test
+is therefore like moving a calculation out of a loop:
+even if that value is only used once,
+it makes our intention clearer.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...before...</span>
+<span class="k">def</span> <span class="nf">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">scaling</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">THRESHOLD</span><span class="p">:</span>
+        <span class="n">scaling</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">scaling</span><span class="p">)</span>
+    <span class="c1"># ...process data to create score...</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">THRESHOLD</span><span class="p">:</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...after...</span>
+<span class="k">def</span> <span class="nf">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">scaling</span><span class="p">):</span>
+    <span class="n">is_large_data</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">THRESHOLD</span>
+    <span class="k">if</span> <span class="n">is_large_data</span><span class="p">:</span>
+        <span class="n">scaling</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">scaling</span><span class="p">)</span>
+    <span class="c1"># ...process data to create score...</span>
+    <span class="k">if</span> <span class="n">is_large_data</span><span class="p">:</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>If it takes many lines of code to process data and create a score,
+and the test then needs to change from <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> to <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>,
+we are more likely to get the refactored version right the first time,
+since the test only appears in one place and its result is given a name.</p>
+</section>
+<section id="use-in-place-operators-to-avoid-duplicating-expression">
+<h3>Use in-place operators to avoid duplicating expression<a class="headerlink" href="#use-in-place-operators-to-avoid-duplicating-expression" title="Permalink to this heading">#</a></h3>
+<p>An <strong>in-place operator</strong>,
+sometimes called an <strong>update operator</strong>,
+does a calculation with two values
+and overwrites one of the values.
+For example,
+instead of writing:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">step</span> <span class="o">=</span> <span class="n">step</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>we can write:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>In-place operators save us some typing.
+They also make the intention clearer,
+and most importantly,
+they make it harder to get complex assignments wrong.
+For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">samples</span><span class="p">[</span><span class="n">least_factor</span><span class="p">,</span>
+        <span class="nb">max</span><span class="p">(</span><span class="n">current_offset</span><span class="p">,</span> <span class="n">offset_limit</span><span class="p">)]</span> <span class="o">*=</span> <span class="n">scaling_factor</span>
+</pre></div>
+</div>
+<p>is less difficult to read than the equivalent expression:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">samples</span><span class="p">[</span><span class="n">least_factor</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">current_offset</span><span class="p">,</span> <span class="n">offset_limit</span><span class="p">)]</span> <span class="o">=</span> \
+    <span class="n">scaling_factor</span> <span class="o">*</span> <span class="n">samples</span><span class="p">[</span><span class="n">least_factor</span><span class="p">,</span>
+                             <span class="nb">max</span><span class="p">(</span><span class="n">current_limit</span><span class="p">,</span>
+                                 <span class="n">offset_limit</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>(The proof of this claim is that you probably didn’t notice
+that the long form uses different expressions to index <code class="docutils literal notranslate"><span class="pre">samples</span></code>
+on the left and right of the assignment.)
+The refactoring “use in-place operator” does what its name suggests:
+converts normal assignments into their briefer equivalents.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...before...</span>
+<span class="k">for</span> <span class="n">least_factor</span> <span class="ow">in</span> <span class="n">all_factors</span><span class="p">:</span>
+    <span class="n">samples</span><span class="p">[</span><span class="n">least_factor</span><span class="p">]</span> <span class="o">=</span> \
+        <span class="n">samples</span><span class="p">[</span><span class="n">least_factor</span><span class="p">]</span> <span class="o">*</span> <span class="n">bayesian_scaling</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...after...</span>
+<span class="k">for</span> <span class="n">least_factor</span> <span class="ow">in</span> <span class="n">all_factors</span><span class="p">:</span>
+    <span class="n">samples</span><span class="p">[</span><span class="n">least_factor</span><span class="p">]</span> <span class="o">*=</span> <span class="n">bayesian_scaling</span>
+</pre></div>
+</div>
+</section>
+<section id="handle-special-cases-first">
+<h3>Handle special cases first<a class="headerlink" href="#handle-special-cases-first" title="Permalink to this heading">#</a></h3>
+<p>A <strong>short circuit test</strong> is a quick check to handle a special case,
+such as checking the length of a list of values
+and returning <code class="docutils literal notranslate"><span class="pre">math.nan</span></code> for the average if the list is empty.
+“Place short circuits early” tells us to put short-circuit tests near the start of functions
+so that readers can mentally remove special cases from their thinking
+while reading the code that handles the usual case.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...before...</span>
+<span class="k">def</span> <span class="nf">rescale_by_average</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">factors</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">factors</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
+        <span class="n">a</span> <span class="o">+=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">w</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">a</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">values</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+            <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span> <span class="o">/</span> <span class="n">a</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...after...</span>
+<span class="k">def</span> <span class="nf">rescale_by_average</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">factors</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">values</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="n">factors</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="n">weights</span><span class="p">):</span>
+        <span class="k">return</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">factors</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
+        <span class="n">a</span> <span class="o">+=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">w</span>
+    <span class="n">a</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+        <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span> <span class="o">/</span> <span class="n">a</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Return Consistently</strong></p>
+<p>PEP-8 says, “Be consistent in <code class="docutils literal notranslate"><span class="pre">return</span></code> statements,”
+and goes on to say that either all <code class="docutils literal notranslate"><span class="pre">return</span></code> statements in a function should return a value,
+or none of them should.
+If a function contains any explicit <code class="docutils literal notranslate"><span class="pre">return</span></code> statements at all,
+it should end with one as well.</p>
+</div></blockquote>
+<p>A related refactoring pattern is “default and override.”
+To use it,
+assign a default or most common value to a variable unconditionally,
+and then override it in a special case.
+The result is fewer lines of code and clearer control flow;
+however,
+it does mean executing two assignments instead of one,
+so it shouldn’t be used if the common case is expensive
+(e.g., involves a database lookup or a web request).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...before..</span>
+<span class="k">if</span> <span class="n">configuration</span><span class="p">[</span><span class="s1">&#39;threshold&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">UPPER_BOUND</span><span class="p">:</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...after...</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="k">if</span> <span class="n">configuration</span><span class="p">[</span><span class="s1">&#39;threshold&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">UPPER_BOUND</span><span class="p">:</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="mf">0.8</span>
+</pre></div>
+</div>
+<p>In simple cases,
+people will sometimes put the test and assignment on a single line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scale</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="k">if</span> <span class="n">configuration</span><span class="p">[</span><span class="s1">&#39;threshold&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">UPPER_BOUND</span><span class="p">:</span> <span class="n">scale</span> <span class="o">=</span> <span class="mf">0.8</span>
+</pre></div>
+</div>
+<p>\newpage</p>
+<p>Some programmers take this even further
+and use a <strong>conditional expression</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scale</span> <span class="o">=</span> <span class="mf">0.8</span> <span class="k">if</span> <span class="n">configuration</span><span class="p">[</span><span class="s1">&#39;threshold&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">UPPER_BOUND</span> <span class="k">else</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+<p>However,
+this puts the default last instead of first,
+which is less clear.</p>
+<blockquote>
+<div><p><strong>A Little Jargon</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">if</span> <span class="pre">test</span> <span class="pre">else</span> <span class="pre">Y</span></code> is called a <strong>ternary expression</strong>.
+Just as a binary expression like <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">+</span> <span class="pre">B</span></code> has two parts,
+a ternary expression has three.
+Conditional expressions are the only ternary expressions in most programming languages.</p>
+</div></blockquote>
+</section>
+<section id="use-functions-to-make-code-more-comprehensible">
+<h3>Use functions to make code more comprehensible<a class="headerlink" href="#use-functions-to-make-code-more-comprehensible" title="Permalink to this heading">#</a></h3>
+<p>Functions were created so that programmers could re-use common operations,
+but moving code into functions also reduces <strong>cognitive load</strong>
+by reducing the number of things that have to be understood simultaneously.</p>
+<p>A common rule of thumb is that
+no function should be longer than a printed page (about 80 lines)
+or have more than four levels of indentation because of nested loops and conditionals.
+Anything longer or more deeply nested is hard for readers to understand,
+so we should move pieces of long functions into small ones.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...before...</span>
+<span class="k">def</span> <span class="nf">check_neighbors</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="n">point</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">grid</span><span class="o">.</span><span class="n">width</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> \
+       <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="n">point</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">grid</span><span class="o">.</span><span class="n">height</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># ...look at all four neighbors</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...after..</span>
+<span class="k">def</span> <span class="nf">check_neighbors</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">in_interior</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
+        <span class="c1"># ...look at all four neighbors...</span>
+
+<span class="k">def</span> <span class="nf">in_interior</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
+    <span class="k">return</span> \
+    <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="n">point</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">grid</span><span class="o">.</span><span class="n">width</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> \
+    <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="n">point</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">grid</span><span class="o">.</span><span class="n">height</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We should <em>always</em> extract functions when code can be re-used.
+Even if they are only used once,
+multi-part conditionals,
+long equations,
+and the bodies of loops are good candidates for extraction.
+If we can’t think of a plausible name,
+or if a lot of data has to be passed into the function after it’s extracted,
+the code should probably be left where it is.
+Finally,
+it’s often helpful to keep using the original variable names as parameter names during refactoring
+to reduce typing.</p>
+</section>
+<section id="combine-operations-in-functions">
+<h3>Combine operations in functions<a class="headerlink" href="#combine-operations-in-functions" title="Permalink to this heading">#</a></h3>
+<p>“Combine functions” is the opposite of “extract function.”
+If operations are always done together,
+it can sometimes be be more efficient to do them together,
+and might be easier to understand.
+However,
+combining functions often reduces their reusability and readability.
+(One sign that functions shouldn’t have been combined is
+people using the combination and throwing some of the result away.)</p>
+<p>The fragment below shows how two functions can be combined:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...before...</span>
+<span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">VOWELS</span><span class="p">:</span>
+            <span class="n">num</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">num</span>
+
+<span class="k">def</span> <span class="nf">count_consonants</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">CONSONANTS</span><span class="p">:</span>
+            <span class="n">num</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">num</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...after...</span>
+<span class="k">def</span> <span class="nf">count_vowels_and_consonants</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">num_vowels</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">num_consonants</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">VOWELS</span><span class="p">:</span>
+            <span class="n">num_vowels</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">CONSONANTS</span><span class="p">:</span>
+            <span class="n">num_consonants</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">num_vowels</span><span class="p">,</span> <span class="n">num_consonants</span>
+</pre></div>
+</div>
+</section>
+<section id="replace-code-with-data">
+<h3>Replace code with data<a class="headerlink" href="#replace-code-with-data" title="Permalink to this heading">#</a></h3>
+<p>It is easier to understand and maintain lookup tables than complicated conditionals,
+so the “create lookup table” refactoring tells us to turn the latter into the former:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...before..</span>
+<span class="k">def</span> <span class="nf">count_vowels_and_consonants</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">num_vowels</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">num_consonants</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">VOWELS</span><span class="p">:</span>
+            <span class="n">num_vowels</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">CONSONANTS</span><span class="p">:</span>
+            <span class="n">num_consonants</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">num_vowels</span><span class="p">,</span> <span class="n">num_consonants</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...after...</span>
+<span class="n">IS_VOWEL</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="o">...</span> <span class="p">}</span>
+<span class="n">IS_CONSONANT</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="o">...</span> <span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">count_vowels_and_consonants</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">num_vowels</span> <span class="o">=</span> <span class="n">num_consonants</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="n">num_vowels</span> <span class="o">+=</span> <span class="n">IS_VOWEL</span><span class="p">[</span><span class="n">char</span><span class="p">]</span>
+        <span class="n">num_consonants</span> <span class="o">+=</span> <span class="n">IS_CONSONANT</span><span class="p">[</span><span class="n">char</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">num_vowels</span><span class="p">,</span> <span class="n">num_consonants</span>
+</pre></div>
+</div>
+<p>The more cases there are,
+the greater the advantage lookup tables have over multi-part conditionals.
+Those advantages multiply when items can belong to more than one category,
+in which case the table is often best written as a dictionary with items as keys
+and sets of categories as values:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LETTERS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;A&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;vowel&#39;</span><span class="p">,</span> <span class="s1">&#39;upper_case&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;B&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;consonant&#39;</span><span class="p">,</span> <span class="s1">&#39;upper_case&#39;</span><span class="p">},</span>
+    <span class="c1"># ...other upper-case letters...</span>
+    <span class="s1">&#39;a&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;vowel&#39;</span><span class="p">,</span> <span class="s1">&#39;lower_case&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;b&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;consonant&#39;</span><span class="p">,</span> <span class="s1">&#39;lower_case&#39;</span><span class="p">},</span>
+    <span class="c1"># ...other lower-case letters...</span>
+    <span class="s1">&#39;+&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;punctuation&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;@&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;punctuation&#39;</span><span class="p">},</span>
+    <span class="c1"># ...other punctuation...</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">count_vowels_and_consonants</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">num_vowels</span> <span class="o">=</span> <span class="n">num_consonants</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="n">num_vowels</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;vowel&#39;</span> <span class="ow">in</span> <span class="n">LETTERS</span><span class="p">[</span><span class="n">char</span><span class="p">])</span>
+        <span class="n">num_consonants</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;consonant&#39;</span> <span class="ow">in</span> <span class="n">LETTERS</span><span class="p">[</span><span class="n">char</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">num_vowels</span><span class="p">,</span> <span class="n">num_consonants</span>
+</pre></div>
+</div>
+<p>The expressions used to update <code class="docutils literal notranslate"><span class="pre">num_vowels</span></code> and <code class="docutils literal notranslate"><span class="pre">num_consonants</span></code> make use of the fact that
+<code class="docutils literal notranslate"><span class="pre">in</span></code> produces either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>,
+which the function <code class="docutils literal notranslate"><span class="pre">int</span></code> converts to either 1 or 0.
+We will explore ways of making this code more readable in the exercises.</p>
+</section>
+</section>
+<section id="code-reviews">
+<h2>Code Reviews<a class="headerlink" href="#code-reviews" title="Permalink to this heading">#</a></h2>
+<p>At the end of Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/clean_code/clean_code.html#checking-style">Checking Style</a>,
+our stop-word program looked like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+
+<span class="n">stops</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;The&#39;</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">ln</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ln</span><span class="p">)):</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">ln</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">stuff</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">stuff</span><span class="p">:</span>
+            <span class="c1"># print(word)</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">stops</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span>
+
+
+<span class="n">lines</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="c1"># print(&#39;number of lines&#39;, len(lines))</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">count</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This passes a PEP-8 style check,
+but based on our coding guidelines and our discussion of refactoring,
+these things should be changed:</p>
+<ul class="simple">
+<li><p>The commented-out <code class="docutils literal notranslate"><span class="pre">print</span></code> statements should either be removed
+or turned into logging statements (Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/error_handling/error_handling.html#reporting-errors">Error Logging</a>).</p></li>
+<li><p>The variables <code class="docutils literal notranslate"><span class="pre">ln</span></code>, <code class="docutils literal notranslate"><span class="pre">i</span></code>, and <code class="docutils literal notranslate"><span class="pre">j</span></code> should be given clearer names.</p></li>
+<li><p>The outer loop in <code class="docutils literal notranslate"><span class="pre">count</span></code> loops over the indices of the line list
+rather than over the lines.
+It should do the latter
+(which will allow us to get rid of the variable <code class="docutils literal notranslate"><span class="pre">i</span></code>).</p></li>
+<li><p>Rather than counting how often a word occurs in the list of stop words with <code class="docutils literal notranslate"><span class="pre">stops.count</span></code>,
+we can turn the stop words into a set and use <code class="docutils literal notranslate"><span class="pre">in</span></code> to check words.
+This will be more readable <em>and</em> more efficient.</p></li>
+<li><p>There’s no reason to store the result of <code class="docutils literal notranslate"><span class="pre">line.split</span></code> in a temporary variable:
+the inner loop of <code class="docutils literal notranslate"><span class="pre">count</span></code> can use it directly.</p></li>
+<li><p>Since the set of stop words is a global variable,
+it should be written in upper case.</p></li>
+<li><p>We should use <code class="docutils literal notranslate"><span class="pre">+=</span></code> to increment the counter <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p></li>
+<li><p>Rather than reading the input into a list of lines and then looping over that,
+we can give <code class="docutils literal notranslate"><span class="pre">count</span></code> a stream and have it process the lines one by one.</p></li>
+<li><p>Since we might want to use <code class="docutils literal notranslate"><span class="pre">count</span></code> in other programs someday,
+we should put the two lines at the bottom that handle input into a conditional
+so that they aren’t executed when this script is imported.</p></li>
+</ul>
+<p>After making all these changes,
+our program looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+
+<span class="n">STOPS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;The&#39;</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">reader</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">STOPS</span><span class="p">:</span>
+                <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">count</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Reading code in order to find bugs and suggest improvements like these
+is called <strong>code review</strong>.
+Multiple studies over more than 40 years have shown that
+code review is the most effective way to find bugs in software
+<span id="id8">[<a class="reference internal" href="../appendix/references.html#id24" title="Michael E. Fagan. Design and Code Inspections to Reduce Errors in Program Development. IBM Systems Journal, 15(3):182-211, 1976. An early and influential study of code review. doi:10.1147/sj.153.0182.">Fagan, 1976</a>]</span>; <span id="id9">[<a class="reference internal" href="../appendix/references.html#id25" title="Michael E. Fagan. Advances in Software Inspections. IEEE Transactions on Software Engineering, 12(7):744-751, Jul 1986. Summarizes the author's early work on the benefits of code review. doi:10.1109/TSE.1986.6312976.">Fagan, 1986</a>]</span>; <span id="id10">[<a class="reference internal" href="../appendix/references.html#id21" title="Jason Cohen. Modern Code Review. In Andy Oram and Greg Wilson, editors, Making Software. O'Reilly, 2010.">Cohen, 2010</a>]</span>; <span id="id11">[<a class="reference internal" href="../appendix/references.html#id4" title="Alberto Bacchelli and Christian Bird. Expectations, Outcomes, and Challenges of Modern Code Review. In Proc. International Conference on Software Engineering. May 2013. Summarizes more than thirty years of research on the benefits of code review. URL: http://research.microsoft.com/apps/pubs/default.aspx?id=180283.">Bacchelli and Bird, 2013</a>]</span>.
+It is also a great way to transfer knowledge between programmers:
+reading someone else’s code critically will give us lots of ideas about what we could do better,
+and highlight things that we should probably stop doing as well.</p>
+<p>Despite this,
+code review still isn’t common in research software development.
+This is partly a chicken-and-egg problem:
+people don’t do it because other people don’t do it <span id="id12">[<a class="reference internal" href="../appendix/references.html#id66" title="Judith Segal. When Software Engineers Met Research Scientists: A Case Study. Empirical Software Engineering, 10(4):517-536, 2005. Looks at the chicken-and-egg problem of software review in science. doi:10.1007/s10664-005-3865-y.">Segal, 2005</a>]</span>.
+Code review is also more difficult to do in specialized scientific fields:
+in order for review to be useful,
+reviewers need to understand the problem domain well enough to comment on algorithms and design choices
+rather than indentation and variable naming,
+and the number of people who can do that for a research project is often very small <span id="id13">[<a class="reference internal" href="../appendix/references.html#id58" title="Marian Petre and Greg Wilson. Code Review For and By Scientists. In Proc. Second Workshop on Sustainable Software for Science: Practice and Experience. 2014. Found that effective code review depends on understanding the scientific problem that software is studying. doi:arXiv:1407.5648.">Petre and Wilson, 2014</a>]</span>.</p>
+<p>Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/vcs/git_advanced.html#pull-requests">Advanced Pull requests</a> explained how to create and merge pull requests.
+How we review these is just as important as what we look for:
+being dismissive or combative are good ways to ensure that people don’t pay attention to our reviews,
+or avoid having us review their work <span id="id14">[<a class="reference internal" href="../appendix/references.html#id7" title="Gary Bernhardt. A Case Study in Not Being a Jerk in Open Source. 2018. Rewrites a typically abusive message by Linus Torvalds to be less repellant. URL: https://www.destroyallsoftware.com/blog/2018/a-case-study-in-not-being-a-jerk-in-open-source.">Bernhardt, 2018</a>]</span>.
+Equally,
+being defensive when someone offers suggestions politely and sincerely is very human,
+but can stunt our development as a programmer.</p>
+<p>Lots of people have written guidelines for doing reviews that avoid these traps <span id="id15">[<a class="reference internal" href="../appendix/references.html#id60" title="Joël Quenneville. Code Review. 2018. Guidelines for code review. URL: https://github.com/thoughtbot/guides/tree/master/code-review.">Quenneville, 2018</a>]</span>; <span id="id16">[<a class="reference internal" href="../appendix/references.html#id62" title="Sandya Sankarram. Unlearning Toxic Behaviors in a Code Review Culture. 2018. What \emph not to do in code review. URL: https://medium.freecodecamp.org/unlearning-toxic-behaviors-in-a-code-review-culture-b7c295452a3c.">Sankarram, 2018</a>]</span>.
+A few common points are:</p>
+<p>Work in small increments.
+:   As <span id="id17">[<a class="reference internal" href="../appendix/references.html#id21" title="Jason Cohen. Modern Code Review. In Andy Oram and Greg Wilson, editors, Making Software. O'Reilly, 2010.">Cohen, 2010</a>]</span> and others have found,
+code review is most effective when done in short bursts.
+That means that change requests should also be short:
+anything that’s more than a couple of screens long
+should be broken into smaller pieces.</p>
+<p>Look for algorithmic problems first.
+:   Code review isn’t just (or even primarily) about style:
+its real purpose is to find bugs before they can affect anyone.
+The first pass over any change should therefore look for algorithmic problems.
+Are the calculations right?
+Are any rare cases going to be missed?
+Are errors being caught and handled (Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/error_handling.html">Error Handling</a>)?
+Using a consistent style helps reviewers focus on these issues.</p>
+<p>Use a checklist.
+:   Linters are great,
+but can’t decide when someone should have used a lookup table instead of conditionals.
+A list of things to check for can make review faster and more comprehensible,
+especially when we can copy-and-paste or drag-and-drop specific comments
+onto specific lines
+(something that GitHub unfortunately doesn’t yet support).</p>
+<p>Ask for clarification.
+:   If we don’t understand something,
+or don’t understand why the author did it,
+we should ask.
+(When the author explains it,
+we might suggest that the explanation should be documented somewhere.)</p>
+<p>Offer alternatives.
+:   Telling authors that something is wrong is helpful;
+telling them what they might do instead is more so.</p>
+<p>Don’t be sarcastic or disparaging.
+:   “Did you maybe think about <em>testing</em> this garbage?”
+is a Code of Conduct violation in any well-run project.</p>
+<p>Don’t present opinions as facts.
+:   “Nobody uses X anymore” might be true.
+If it is,
+the person making the claim ought to be able to point at download statistics
+or a Google Trends search;
+if they can’t,
+they should say,
+“I don’t think we use X anymore” and explain why they think that.</p>
+<p>Don’t feign surprise or pass judgment.
+:   “Gosh, didn’t you know [some obscure fact]?” isn’t helpful;
+neither is, “Geez, why don’t you [some clever trick] here?”</p>
+<p>Don’t overwhelm people with details.
+:   If someone has used the letter <code class="docutils literal notranslate"><span class="pre">x</span></code> as a variable name in several places,
+and they shouldn’t have,
+comment on the first two or three and simply put a check beside the others—the reader
+won’t need the comment repeated.</p>
+<p>Don’t try to sneak in feature requests.
+:   Nobody enjoys fixing bugs and style violations.
+Asking them to add entirely new functionality while they’re at it is rude.</p>
+<p>How we respond to reviews is just as important:</p>
+<p>Be specific in replies to reviewers.
+:   If someone has suggested a better variable name,
+we can probably simply fix it.
+If someone has suggested a major overhaul to an algorithm,
+we should reply to their comment to point at the commit that includes the fix.</p>
+<p>Thank our reviewers.
+:   If someone has taken the time to read our code carefully,
+thank them for doing it.</p>
+<p>And finally:</p>
+<p><strong>Don’t let anyone break these rules just because they’re frequent contributors or in positions of power.</strong>
+As <span id="id18">[<a class="reference internal" href="../appendix/references.html#id34" title="Steve Gruenert and Todd Whitaker. School Culture Rewired: How to Define, Assess, and Transform It. ASCD, 2015. ISBN 978-1416619901. The source of a much-quoted observation on culture.">Gruenert and Whitaker, 2015</a>]</span> says,
+the culture of any organization is shaped by the worst behavior it is willing to tolerate.
+The main figures in a project should be <em>more</em> respectful than everyone else
+in order to show what standards everyone else is expected to meet.</p>
+</section>
+<section id="python-features">
+<h2>Python Features<a class="headerlink" href="#python-features" title="Permalink to this heading">#</a></h2>
+<p><strong>Working memory</strong> can only hold a few items at once:
+initial estimates in the 1950s put the number at 7±2 <span id="id19">[<a class="reference internal" href="../appendix/references.html#id50" title="George A. Miller. The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for Processing Information. Psychological Review, 63(2):81–97, 1956. The first definitive presentation of limits to human short-term memory. doi:10.1037/h0043158.">Miller, 1956</a>]</span>,
+and more recent estimates put it as low as 4 or 5.
+High-level languages from Fortran to Python
+are essentially a way to reduce the number of things programmers have to think about at once
+so that they can fit what the computer is doing into this limited space.
+The sections below describe some of these features;
+as we become more comfortable with Python we will find and use others.</p>
+<p>But beware:
+the things that make programs more compact and comprehensible for experienced programmers
+can make them less comprehensible for novices.
+For example,
+suppose we want to create this matrix as a list of lists:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+ <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+ <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+ <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+ <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>One way is to use loops:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">)</span>
+    <span class="n">matrix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Another is to use a nested <strong>list comprehension</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>An experienced programmer might recognize what the latter is doing;
+the rest of us are probably better off reading and writing the more verbose solution.</p>
+<section id="provide-default-values-for-parameters">
+<h3>Provide default values for parameters<a class="headerlink" href="#provide-default-values-for-parameters" title="Permalink to this heading">#</a></h3>
+<p>If our function requires two dozen parameters,
+the odds are very good that users will frequently forget them
+or put them in the wrong order.
+One solution is to bundle parameters together so that (for example)
+people pass three <code class="docutils literal notranslate"><span class="pre">point</span></code> objects instead of nine separate <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, and <code class="docutils literal notranslate"><span class="pre">z</span></code> values.</p>
+<p>A second approach (which can be combined with the previous one)
+is to specify <strong>default values</strong> for some of the parameters.
+Doing this gives users control over everything
+while also allowing them to ignore details;
+it also indicates what we consider “normal” for the function.</p>
+<p>For example,
+suppose we are comparing images to see if they are the same or different.
+We can specify two kinds of tolerance:
+how large a difference in color value to notice,
+and how many differences above that threshold to tolerate
+as a percentage of the total number of pixels.
+By default,
+any color difference is considered significant,
+and only 1% of pixels are allowed to differ:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">image_diff</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">per_pixel</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
+    <span class="c1"># ...implementation...</span>
+</pre></div>
+</div>
+<p>When this function is called using <code class="docutils literal notranslate"><span class="pre">image_diff(old,</span> <span class="pre">new)</span></code>,
+those default values apply.
+However,
+it can also be called like this:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">image_diff(old,</span> <span class="pre">new,</span> <span class="pre">per_pixel=2)</span></code>
+allows pixels to differ slightly without those differences being significant.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">image_diff(old,</span> <span class="pre">new,</span> <span class="pre">fraction=0.05)</span></code> allows more pixels to differ.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">image_diff(old,</span> <span class="pre">new,</span> <span class="pre">per_pixel=1,</span> <span class="pre">fraction=0.005)</span></code>
+raises the per-pixel threshold but decreases number of allowed differences.</p></li>
+</ul>
+<p>Note that we do not put spaces around the <code class="docutils literal notranslate"><span class="pre">=</span></code> when defining a default parameter value.
+This is consistent with PEP-8’s rules about spacing in function definitions and calls
+(Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/clean_code/clean_code.html#python-style">Python Style</a>).</p>
+<p>Default parameter values make code easier to understand and use,
+but there is a subtle trap.
+When Python executes a function definition like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collect</span><span class="p">(</span><span class="n">new_value</span><span class="p">,</span> <span class="n">accumulator</span><span class="o">=</span><span class="nb">set</span><span class="p">()):</span>
+    <span class="n">accumulator</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">new_value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">accumulator</span>
+</pre></div>
+</div>
+<p>it calls <code class="docutils literal notranslate"><span class="pre">set()</span></code> to create a new empty set
+<em>when it is reading the function definition</em>,
+and then uses that set as the default value for <code class="docutils literal notranslate"><span class="pre">accumulator</span></code>
+every time the function is called.
+It does <em>not</em> call <code class="docutils literal notranslate"><span class="pre">set()</span></code> once for each call,
+so all calls using the default will share the same set:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">collect</span><span class="p">(</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>
+<span class="go">{&#39;first&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">collect</span><span class="p">(</span><span class="s1">&#39;second&#39;</span><span class="p">)</span>
+<span class="go">{&#39;first&#39;, &#39;second&#39;}</span>
+</pre></div>
+</div>
+<p>A common way to avoid this is to pass <code class="docutils literal notranslate"><span class="pre">None</span></code> to the function
+to signal that the user didn’t provide a value:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collect</span><span class="p">(</span><span class="n">new_value</span><span class="p">,</span> <span class="n">accumulator</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">accumulator</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">accumulator</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">accumulator</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">new_value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">accumulator</span>
+</pre></div>
+</div>
+</section>
+<section id="handle-a-variable-number-of-arguments">
+<h3>Handle a variable number of arguments<a class="headerlink" href="#handle-a-variable-number-of-arguments" title="Permalink to this heading">#</a></h3>
+<p>We can often make programs simpler by writing functions that take
+<strong>a variable number of arguments</strong>,
+just like <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code>.
+One way is to require users to stuff those arguments into a list,
+e.g.,
+to write <code class="docutils literal notranslate"><span class="pre">find_limits([a,</span> <span class="pre">b,</span> <span class="pre">c,</span> <span class="pre">d])</span></code>.
+However,
+Python can do this for us.
+If we declare a single argument whose name starts with a single <code class="docutils literal notranslate"><span class="pre">*</span></code>,
+Python will put all “extra” arguments into a <strong>tuple</strong>
+and pass that as the argument.
+By convention,
+this argument is called <code class="docutils literal notranslate"><span class="pre">args</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_limits</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+<span class="n">find_limits</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(1, 3, 5, 2, 4)
+</pre></div>
+</div>
+<p>This catch-all parameter can be used with regular parameters,
+but must come last in the parameter list to avoid ambiguity:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">select_outside</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="o">*</span><span class="n">values</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">&lt;</span> <span class="n">low</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">v</span> <span class="o">&gt;</span> <span class="n">high</span><span class="p">):</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">select_outside</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[-0.2, -0.5, 1.7]
+</pre></div>
+</div>
+<p>An equivalent special form exists for <strong>keyword arguments</strong>:
+the catch-all variable’s name is prefixed with <code class="docutils literal notranslate"><span class="pre">**</span></code> (i.e., two asterisks instead of one),
+and it is conventionally called <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> (for “keyword arguments”).
+When this is used,
+the function is given a <strong>dictionary</strong> of names and values
+rather than a list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_options</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&lt;</span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">=&quot;</span><span class="si">{</span><span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+    <span class="n">result</span> <span class="o">+=</span> <span class="s1">&#39;/&gt;&#39;</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">set_options</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">set_options</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;150%&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;h1 color=&quot;blue&quot;/&gt;
+&lt;p align=&quot;center&quot; size=&quot;150%&quot;/&gt;
+</pre></div>
+</div>
+<p>Notice that the names of parameters are not quoted:
+we pass <code class="docutils literal notranslate"><span class="pre">color='blue'</span></code> to the function,
+not <code class="docutils literal notranslate"><span class="pre">'color'='blue'</span></code>.</p>
+</section>
+<section id="unpacking-variable-arguments">
+<h3>Unpacking variable arguments<a class="headerlink" href="#unpacking-variable-arguments" title="Permalink to this heading">#</a></h3>
+<p>We can use the inverse of <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> to match a list of values to arguments.
+In this case,
+we put the <code class="docutils literal notranslate"><span class="pre">*</span></code> in front of a list and <code class="docutils literal notranslate"><span class="pre">**</span></code> in front of a dictionary when <em>calling</em> the function,
+rather than in front of the parameter when <em>defining</em> it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trim_value</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;with&quot;</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="s2">&quot;and&quot;</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
+
+<span class="n">parameters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;some matrix&#39;</span><span class="p">,</span> <span class="s1">&#39;lower bound&#39;</span><span class="p">]</span>
+<span class="n">named_parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;high&#39;</span><span class="p">:</span> <span class="s1">&#39;upper bound&#39;</span><span class="p">}</span>
+<span class="n">trim_value</span><span class="p">(</span><span class="o">*</span><span class="n">parameters</span><span class="p">,</span> <span class="o">**</span><span class="n">named_parameters</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>some matrix with lower bound and upper bound
+</pre></div>
+</div>
+</section>
+<section id="use-destructuring-to-assign-multiple-values-at-once">
+<h3>Use destructuring to assign multiple values at once<a class="headerlink" href="#use-destructuring-to-assign-multiple-values-at-once" title="Permalink to this heading">#</a></h3>
+<p>One last feature of Python is
+<strong>destructuring assignment</strong>.
+Suppose we have a nested list such as <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">[2,</span> <span class="pre">3]]</span></code>,
+and we want to assign its numbers to three variables
+called <code class="docutils literal notranslate"><span class="pre">first</span></code>, <code class="docutils literal notranslate"><span class="pre">second</span></code>, and <code class="docutils literal notranslate"><span class="pre">third</span></code>.
+Instead of writing this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">second</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">third</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>we can write this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">first</span><span class="p">,</span> <span class="p">[</span><span class="n">second</span><span class="p">,</span> <span class="n">third</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>In general,
+if the variables on the left are arranged in the same way as the values on the right,
+Python will automatically unpack the values and assign them correctly.
+This is particularly useful when looping over lists of structured values:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">people</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[[</span><span class="s1">&#39;Kay&#39;</span><span class="p">,</span> <span class="s1">&#39;McNulty&#39;</span><span class="p">],</span> <span class="s1">&#39;mcnulty@eniac.org&#39;</span><span class="p">],</span>
+    <span class="p">[[</span><span class="s1">&#39;Betty&#39;</span><span class="p">,</span> <span class="s1">&#39;Jennings&#39;</span><span class="p">],</span> <span class="s1">&#39;jennings@eniac.org&#39;</span><span class="p">],</span>
+    <span class="p">[[</span><span class="s1">&#39;Marlyn&#39;</span><span class="p">,</span> <span class="s1">&#39;Wescoff&#39;</span><span class="p">],</span> <span class="s1">&#39;mwescoff@eniac.org&#39;</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="k">for</span> <span class="p">[[</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">],</span> <span class="n">email</span><span class="p">]</span> <span class="ow">in</span> <span class="n">people</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{first}</span><span class="s1"> </span><span class="si">{last}</span><span class="s1"> &lt;</span><span class="si">{email}</span><span class="s1">&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Kay McNulty &lt;mcnulty@eniac.org&gt;
+Betty Jennings &lt;jennings@eniac.org&gt;
+Marlyn Wescoff &lt;mwescoff@eniac.org&gt;
+</pre></div>
+</div>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<p>George Orwell laid out <a class="reference external" href="https://en.wikipedia.org/wiki/Politics_and_the_English_Language#Remedy_of_Six_Rules">six rules for good writing</a>,
+the last and most important of which is,
+“Break any of these rules sooner than say anything outright barbarous.”
+PEP-8 conveys <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds">the same message</a>:
+there will always be cases where your code will be easier to understand
+if you <em>don’t</em> do the things described in this lesson,
+but there are probably fewer of them than you think.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -489,7 +1627,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Documentation</p>
+        <p class="prev-next-title">Documenting Programs</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -499,6 +1637,46 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-style">Python Style</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spacing">Spacing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naming">Naming</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#order">Order</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-style">Checking Style</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refactoring">Refactoring</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-not-repeat-values">Do not repeat values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-not-repeat-calculations-in-loops">Do not repeat calculations in loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-tests-with-flags-to-clarify-repeated-tests">Replace tests with flags to clarify repeated tests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-in-place-operators-to-avoid-duplicating-expression">Use in-place operators to avoid duplicating expression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handle-special-cases-first">Handle special cases first</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-functions-to-make-code-more-comprehensible">Use functions to make code more comprehensible</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-operations-in-functions">Combine operations in functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-code-with-data">Replace code with data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-reviews">Code Reviews</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-features">Python Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#provide-default-values-for-parameters">Provide default values for parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handle-a-variable-number-of-arguments">Handle a variable number of arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unpacking-variable-arguments">Unpacking variable arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-destructuring-to-assign-multiple-values-at-once">Use destructuring to assign multiple values at once</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

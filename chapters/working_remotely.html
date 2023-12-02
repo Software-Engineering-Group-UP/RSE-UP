@@ -1,0 +1,939 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Working Remotely &#8212; RSE-ING</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/working_remotely';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/working_remotely.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bibliography" href="appendix/references.html" />
+    <link rel="prev" title="YAML" href="appendix/yaml.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="introduction.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RSE-ING</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="introduction.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresher.html">Python refresher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/guide.html">Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bash/bash_basics.html">The Basics of the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bash/bash_tools.html">Building Tools with the Unix Shell</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="bash/bash_advanced.html">Going Further with the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/bash.html">Bash Exercises</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="scripting/building_cli_python.html">Building Command-Line Tools with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/python_cli.html">Exercises Scripting Python for CLI tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vcs/version_control.html">Using Git at the Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/version_control.html">Exercise Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vcs/git_advanced.html">Going Further with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/git_advanced.html">Exercises Git Advanced</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Working in teams</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="work_teams/working_in_teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/work_teams.html">Exercise - Work Teams</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to automation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="automate/intro_make.html">Automating Analyses with Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="config/configuration.html">Configuring Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing Software</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="testing/testing_software.html">Testing Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/testing.html">Exercises - Testing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Error Handling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="error_handling/error_handling.html">Handling Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/error_handling.html">Exercises - Error Handling</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="provenance/tracking_provenance.html">Tracking Provenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/provenance.html">Exercises - Provenance</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Packaging</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="packaging/packaging.html">Creating Packages with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="clean_code/clean_code.html">Writing Readable Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="documentation/documentation.html">Documenting Programs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="workflow/workflow.html">Introduction to Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow/snakemake.html">Snake Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow/cicd.html">CI/CD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="appendix/anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix/yaml.html">YAML</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Working Remotely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix/references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/working_remotely.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/working_remotely.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Working Remotely</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-in">Logging In</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying-files">Copying Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-commands">Running Commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-keys">Creating Keys</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies">Dependencies</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="working-remotely">
+<h1>Working Remotely<a class="headerlink" href="#working-remotely" title="Permalink to this heading">#</a></h1>
+<p>When the Internet was young, people didn’t encrypt anything except the most sensitive information when sending it over a network.
+However, this meant that villains could steal usernames and passwords.
+The <strong>SSH protocol</strong> was invented to prevent this (or at least slow it down).
+It uses several sophisticated (and heavily tested) encryption protocols
+to ensure that outsiders can’t see what’s in the messages
+going back and forth between different computers.</p>
+<p>To understand how it works,
+let’s take a closer look at what happens when we use the shell
+on a desktop or laptop computer.
+The first step is to log in
+so that the operating system knows who we are and what we’re allowed to do.
+We do this by typing our username and password;
+the operating system checks those values against its records,
+and if they match,
+runs a shell for us.</p>
+<p>As we type commands,
+characters are sent from our keyboard to the shell.
+It displays those characters on the screen to represent what we type,
+and then executes the command and displays its output (if any).
+If we want to run commands on another machine, such as the server in the basement that manages our database of experimental results, we have to log in to that machine so that our commands will go to it instead of to our laptop.
+We call this a <strong>remote login</strong>.</p>
+<section id="logging-in">
+<h2>Logging In<a class="headerlink" href="#logging-in" title="Permalink to this heading">#</a></h2>
+<p>In order for us to be able to log in,
+the remote computer must run a <strong>remote login server</strong> and we must run a program that can talk to that server.
+The client program passes our login credentials to the remote login server;
+if we are allowed to log in, that server then runs a shell for us on the remote computer (Figure <a class="reference internal" href="#ssh-ssh"><span class="std std-ref">SSH</span></a>).</p>
+<figure class="align-default" id="ssh-ssh">
+<img alt="../figures/ssh/ssh.pdf" src="../figures/ssh/ssh.pdf" />
+<figcaption>
+<p><span class="caption-number">Fig. 52 </span><span class="caption-text">The local client connects to the remote login server, which starts a remote shell (solid lines). Commands from the local client are passed to the remote shell and output is passed back (dashed lines).```</span><a class="headerlink" href="#ssh-ssh" title="Permalink to this image">#</a></p>
+<div class="legend">
+<p>Once our local client is connected to the remote server,
+everything we type into the client is passed on, by the server, to the shell
+running on the remote computer.
+That remote shell runs those commands on our behalf,
+just as a local shell would,
+then sends back output, via the server, to our client, for our computer to display.</p>
+<p>The remote login server which accepts connections from client programs
+is known as the <strong>SSH daemon</strong>, or <code class="docutils literal notranslate"><span class="pre">sshd</span></code>.
+The client program we use to log in remotely is the <strong>secure shell</strong>,
+or <code class="docutils literal notranslate"><span class="pre">ssh</span></code>.
+It has a companion program called <code class="docutils literal notranslate"><span class="pre">scp</span></code>
+that allows us to copy files to or from a remote computer using the same kind of encrypted connection.</p>
+<p>We issue the command <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">username&#64;computer</span></code> to log in remotely.
+This command tries to make a connection to the SSH daemon running on the remote computer we have specified.
+After we log in,
+we can use the remote shell to use the remote computer’s files and directories.
+Typing <code class="docutils literal notranslate"><span class="pre">exit</span></code> or Control-D
+terminates the remote shell, and the local client program, and returns us to our previous shell.</p>
+<p>In the example below,
+the remote machine’s command prompt is <code class="docutils literal notranslate"><span class="pre">moon&gt;</span></code>
+instead of <code class="docutils literal notranslate"><span class="pre">$</span></code> to make it clearer which machine is doing what.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">pwd</span>
+</pre></div>
+</div>
+</div>
+</figcaption>
+</figure>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/Users/amira
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>amira@moon.euphoric.edu
+Password:<span class="w"> </span>********
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>moon&gt;<span class="w"> </span>hostname
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>moon
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>moon&gt;<span class="w"> </span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/Users/amira
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>moon&gt;<span class="w"> </span>ls<span class="w"> </span>-F
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bin/     cheese.txt   dark_side/   rocks.cfg
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>moon&gt;<span class="w"> </span><span class="nb">exit</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/Users/amira
+</pre></div>
+</div>
+</section>
+<section id="copying-files">
+<h2>Copying Files<a class="headerlink" href="#copying-files" title="Permalink to this heading">#</a></h2>
+<p>To copy a file,
+we specify the source and destination paths,
+either of which may include computer names.
+If we leave out a computer name,
+<code class="docutils literal notranslate"><span class="pre">scp</span></code> assumes we mean the machine we’re running on.
+For example,
+this command copies our latest results to the backup server in the basement,
+printing out its progress as it does so:</p>
+<p>\newpage</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>scp<span class="w"> </span>results.dat<span class="w"> </span>amira@backup:backups/results-2019-11-11.dat
+Password:<span class="w"> </span>********
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>results.dat              100%  9  1.0 MB/s 00:00
+</pre></div>
+</div>
+<p>Note the colon <code class="docutils literal notranslate"><span class="pre">:</span></code>, separating the hostname of the server and the pathname of
+the file we are copying to.
+It is this character that informs <code class="docutils literal notranslate"><span class="pre">scp</span></code> that the source or target of the copy is
+on the remote machine and the reason it is needed can be explained as follows:</p>
+<p>In the same way that the default directory into which we are placed when running
+a shell on a remote machine is our home directory on that machine, the default
+target, for a remote copy, is also the  home directory.</p>
+<p>This means that:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>scp<span class="w"> </span>results.dat<span class="w"> </span>amira@backup:
+</pre></div>
+</div>
+<p>would copy <code class="docutils literal notranslate"><span class="pre">results.dat</span></code> into our home directory on <code class="docutils literal notranslate"><span class="pre">backup</span></code>, however, if we did not
+have the colon to inform <code class="docutils literal notranslate"><span class="pre">scp</span></code> of the remote machine, we would still have a valid command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>scp<span class="w"> </span>results.dat<span class="w"> </span>amira@backup
+</pre></div>
+</div>
+<p>but now we have merely created a file called <code class="docutils literal notranslate"><span class="pre">amira&#64;backup</span></code> on our local machine,
+as we would have done with <code class="docutils literal notranslate"><span class="pre">cp</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cp<span class="w"> </span>results.dat<span class="w"> </span>amira@backup
+</pre></div>
+</div>
+<p>Copying a whole directory between remote machines uses the same syntax as the <code class="docutils literal notranslate"><span class="pre">cp</span></code> command:
+we just use the <code class="docutils literal notranslate"><span class="pre">-r</span></code> option to signal that we want copying to be recursive.
+For example,
+this command copies all of our results from the backup server to our laptop:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>scp<span class="w"> </span>-r<span class="w"> </span>amira@backup:backups<span class="w"> </span>./backups
+Password:<span class="w"> </span>********
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>results-2019-09-18.dat              100%  7  1.0 MB/s 00:00
+results-2019-10-04.dat              100%  9  1.0 MB/s 00:00
+results-2019-10-28.dat              100%  8  1.0 MB/s 00:00
+results-2019-11-11.dat              100%  9  1.0 MB/s 00:00
+</pre></div>
+</div>
+</section>
+<section id="running-commands">
+<h2>Running Commands<a class="headerlink" href="#running-commands" title="Permalink to this heading">#</a></h2>
+<p>Here’s one more thing the <code class="docutils literal notranslate"><span class="pre">ssh</span></code> client program can do for us.
+Suppose we want to check whether we have already created the file
+<code class="docutils literal notranslate"><span class="pre">backups/results-2019-11-12.dat</span></code> on the backup server.
+Instead of logging in and then typing <code class="docutils literal notranslate"><span class="pre">ls</span></code>,
+we could do this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>amira@backup<span class="w"> </span><span class="s2">&quot;ls results*&quot;</span>
+Password:<span class="w"> </span>********
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>results-2019-09-18.dat  results-2019-10-28.dat
+results-2019-10-04.dat  results-2019-11-11.dat
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">ssh</span></code> takes the argument after our remote username
+and passes it to the shell on the remote computer.
+(<code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">results</span></code> has multiple words, so we have to put quotes around it to make it look like one value.)
+Since those arguments are a legal command,
+the remote shell runs <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">results</span></code> for us
+and sends the output back to our local shell for display.</p>
+</section>
+<section id="creating-keys">
+<h2>Creating Keys<a class="headerlink" href="#creating-keys" title="Permalink to this heading">#</a></h2>
+<p>Typing our password over and over again is annoying,
+especially if the commands we want to run remotely are in a loop.
+To remove the need to do this, we can create an <strong>SSH key</strong> to tell the remote machine that it should always trust us.</p>
+<p>SSH keys come in pairs, a public key that gets shared with services like GitHub,
+and a private key that is stored only on our computer. If the keys match,
+we are granted access.
+The cryptography behind SSH keys ensures that no one can reverse-engineer our
+private key from the public one.</p>
+<p>We might already have an SSH key pair on our machine.
+We can check by moving to our <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> directory and listing the contents.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/.ssh
+$<span class="w"> </span>ls
+</pre></div>
+</div>
+<p>If we see <code class="docutils literal notranslate"><span class="pre">id_rsa.pub</span></code>,
+we already have a key pair and don’t need to create a new one.</p>
+<p>If we don’t see <code class="docutils literal notranslate"><span class="pre">id_rsa.pub</span></code>,
+this command will generate a new key pair.
+(Make sure to replace <code class="docutils literal notranslate"><span class="pre">your&#64;email.com</span></code> with your own email address.)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;your@email.com&quot;</span>
+</pre></div>
+</div>
+<p>When asked where to save the new key,
+press enter to accept the default location.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Generating public/private rsa key pair.
+Enter file in which to save the key
+(/Users/username/.ssh/id_rsa):
+</pre></div>
+</div>
+<p>We will then be asked to provide an optional passphrase.
+This can be used to make your key even more secure,
+but if we want to avoid typing our password every time,
+we can skip it by pressing enter twice:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+</pre></div>
+</div>
+<p>When key generation is complete,
+we should see the following confirmation:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Your identification has been saved in
+/Users/username/.ssh/id_rsa.
+Your public key has been saved in 
+/Users/username/.ssh/id_rsa.pub.
+The key fingerprint is:
+01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your@email.com
+The key&#39;s randomart image is:
++--[ RSA 2048]----+
+|                 |
+|                 |
+|        . E +    |
+|       . o = .   |
+|      . S =   o  |
+|       o.O . o   |
+|       o .+ .    |
+|      . o+..     |
+|       .+=o      |
++-----------------+
+</pre></div>
+</div>
+<p>(The random art image is an alternate way to match keys.)
+We now need to place a copy of our public key on
+any servers we would like to connect to.
+Display the contents of our public key file with <code class="docutils literal notranslate"><span class="pre">cat</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>~/.ssh/id_rsa.pub
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA879BJGYlPTLIuc9/R5MYiN4yc/
+YiCLcdBpSdzgK9Dt0Bkfe3rSz5cPm4wmehdE7GkVFXrBJ2YHqPLuM1yx1AUxIe
+bpwlIl9f/aUHOts9eVnVh4NztPy0iSU/Sv0b2ODQQvcy2vYcujlorscl8JjAgf
+WsO3W4iGEe6QwBpVomcME8IU35v5VbylM9ORQa6wvZMVrPECBvwItTY8cPWH3M
+GZiK/74eHbSLKA4PY3gM4GHI450Nie16yggEg2aTQfWA1rry9JYWEoHS9pJ1dn
+LqZU3k/8OWgqJrilwSoC5rGjgp93iu0H8T6+mEHGRQe84Nk1y5lESSWIbn6P63
+6Bl3uQ== your@email.com
+</pre></div>
+</div>
+<p>Copy the contents of the output,
+then log in to the remote server as usual:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>amira@moon.euphoric.edu
+Password:<span class="w"> </span>********
+</pre></div>
+</div>
+<p>Paste the copied content at the end of <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>moon&gt;<span class="w"> </span>nano<span class="w"> </span>~/.ssh/authorized_keys
+</pre></div>
+</div>
+<p>After appending the content,
+log out of the remote machine and try to log in again.
+If we set up the SSH key correctly, we won’t need to type our password:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>moon&gt;<span class="w"> </span><span class="nb">exit</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>amira@moon.euphoric.edu
+</pre></div>
+</div>
+</section>
+<section id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading">#</a></h2>
+<p>The example of copying our public key to a remote machine, so that it
+can then be used when we next SSH into that remote machine, assumed
+that we already had a directory <code class="docutils literal notranslate"><span class="pre">~/.ssh/</span></code>.</p>
+<p>While a remote server may support the use of SSH to log in, your home
+directory there may not contain a <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> directory by default.</p>
+<p>We have already seen that we can use SSH to run commands on remote
+machines, so we can ensure that everything is set up as required before
+we place the copy of our public key on a remote machine.</p>
+<p>Walking through this process allows us to highlight some of the typical
+requirements of the SSH protocol itself, as documented in the man page
+for the <code class="docutils literal notranslate"><span class="pre">ssh</span></code> command.</p>
+<p>Firstly, we check that we have a <code class="docutils literal notranslate"><span class="pre">.ssh/</span></code> directory on another remote
+machine, <code class="docutils literal notranslate"><span class="pre">comet</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>amira@comet<span class="w"> </span><span class="s2">&quot;ls -ld ~/.ssh&quot;</span>
+Password:<span class="w"> </span>********
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ls: cannot access /Users/amira/.ssh: No such file or directory
+</pre></div>
+</div>
+<p>Oops:
+we should create the directory and check that it’s there:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>amira@comet<span class="w"> </span><span class="s2">&quot;mkdir ~/.ssh&quot;</span>
+Password:<span class="w"> </span>********
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>amira@comet<span class="w"> </span><span class="s2">&quot;ls -ld ~/.ssh&quot;</span>
+Password:<span class="w"> </span>********
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>drwxr-xr-x 2 amira amira 512 Jan 01 09:09 /Users/amira/.ssh
+</pre></div>
+</div>
+<p>Now we have a <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> directory, into which to place SSH-related
+files, but we can see that the default permissions allow anyone to
+inspect the files within that directory.
+This is not considered a good thing for a protocol that is supposed to be secure,
+so the recommended permissions are read/write/execute
+for the user, and not accessible by others.</p>
+<p>Let’s alter the permissions on the directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>amira@comet<span class="w"> </span><span class="s2">&quot;chmod 700 ~/.ssh; ls -ld ~/.ssh&quot;</span>
+Password:<span class="w"> </span>********
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>drwx------ 2 amira amira 512 Jan 01 09:09 /Users/amira/.ssh
+</pre></div>
+</div>
+<p>That looks much better.</p>
+<p>In the above example, it was suggested that we paste the content of
+our public key at the end of <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code>, however as
+we didn’t have a <code class="docutils literal notranslate"><span class="pre">~/.ssh/</span></code> on this remote machine, we can simply
+copy our public key over as the initial <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code>,
+and of course, we will use <code class="docutils literal notranslate"><span class="pre">scp</span></code> to do this, even though we don’t
+yet have passwordless SSH access set up.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>scp<span class="w"> </span>~/.ssh/id_rsa.pub<span class="w"> </span>amira@comet:.ssh/authorized_keys
+Password:<span class="w"> </span>********
+</pre></div>
+</div>
+<p>Note that the default target for the <code class="docutils literal notranslate"><span class="pre">scp</span></code> command on a remote
+machine is the home directory, so we have not needed to use the
+shorthand <code class="docutils literal notranslate"><span class="pre">~/.ssh/</span></code> or even the full path <code class="docutils literal notranslate"><span class="pre">/Users/amira/.ssh/</span></code> to
+our home directory there.</p>
+<p>Checking the permissions of the file we have just created on
+the remote machine, also serves to indicate that we no longer
+need to use our password, because we now have what’s needed
+to use SSH without it.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>amira@comet<span class="w"> </span><span class="s2">&quot;ls -l ~/.ssh&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>-rw-r--r-- 2 amira amira 512 Jan 01 09:11
+/Users/amira/.ssh/authorized_keys
+</pre></div>
+</div>
+<p>While the authorized keys file is not considered to be highly sensitive
+(after all, it contains public keys), we alter the permissions to match
+the man page’s recommendations.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>amira@comet<span class="w"> </span><span class="s2">&quot;chmod go-r ~/.ssh/authorized_keys; ls -l</span>
+<span class="s2">~/.ssh&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>-rw------- 2 amira amira 512 Jan 01 09:11
+/Users/amira/.ssh/authorized_keys
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="appendix/yaml.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">YAML</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="appendix/references.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bibliography</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-in">Logging In</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying-files">Copying Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-commands">Running Commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-keys">Creating Keys</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies">Dependencies</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Software Engineering Group - University of Potsdam
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
