@@ -71,6 +71,7 @@ parts:
     chapters:
       - file: chapters/appendix/anaconda.md
       - file: chapters/appendix/yaml.md
+      - file: chapters/working_remotely.md
       - file: chapters/appendix/references.md
       # sections:
       # - file: test_pages/layout_elements
