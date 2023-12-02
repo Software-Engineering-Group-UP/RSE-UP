@@ -6,6 +6,7 @@ parts:
   - caption: Getting Started
     chapters:
       - file: chapters/getting_started/getting_started.md
+      - file: exercises/python_refresher.ipynb
       - file: exercises/guide.ipynb
   - caption: Bash and the CLI 
     chapters:
@@ -51,18 +52,27 @@ parts:
     chapters:
       - file: chapters/packaging/packaging.md
       - file: exercises/packaging.ipynb
-  - caption: Extras
+  - caption: Writing Clean Code
     chapters:
-      - file: exercises/python_refresher.ipynb 
+      - file: chapters/clean_code/clean_code.md
+  - caption: Documentation
+    chapters: 
+      - file: chapters/documentation/documentation.md
+  - caption: Workflows
+    chapters:
+      - file: chapters/workflow/workflow.md
+      - file: chapters/workflow/snakemake.md
+      - file: chapters/workflow/cicd.md
+  # - caption: Projects
+  #   chapters:
+  #     - file: projects/1_individual_project.ipynb
+  #     - file: projects/2_group_project.ipynb
   - caption: Appendix
     chapters:
       - file: chapters/appendix/anaconda.md
       - file: chapters/appendix/yaml.md
       - file: chapters/appendix/references.md
-  #- caption: Workflows
-  #  chapters:
-  #    - file: chapters/workflow/cicd.html
-    # sections:
+      # sections:
       # - file: test_pages/layout_elements
       # - file: test_pages/equations
  
