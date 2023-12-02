@@ -167,6 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/python_refresher.html">Python refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../exercises/guide.html">Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
@@ -211,6 +212,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Error Handling</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../error_handling/error_handling.html">Handling Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../exercises/error_handling.html">Exercises - Error Handling</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
@@ -223,9 +225,19 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Creating Packages with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../exercises/packaging.html">Exercises - Packaging</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extras</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/python_refresher.html">Python refresher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clean_code/clean_code.html">Writing Clean Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../documentation/documentation.html">Documentation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workflow/workflow.html">Introduction to Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow/snakemake.html">Snake Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow/cicd.html">CI/CD</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -1180,7 +1192,7 @@ https://test.pypi.org/project/pyzipf/0.1/
 <figure class="align-default" id="packaging-testpypi">
 <img alt="../../_images/testpypi.png" src="../../_images/testpypi.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 45 </span><span class="caption-text">Test PyPi</span><a class="headerlink" href="#packaging-testpypi" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 47 </span><span class="caption-text">Test PyPi</span><a class="headerlink" href="#packaging-testpypi" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>and view the results at the new test project webpage
@@ -1496,13 +1508,13 @@ If we click on the <code class="docutils literal notranslate"><span class="pre">
 <figure class="align-default" id="packaging-sphinx-landing-page-original">
 <img alt="../../_images/landing-page-original.png" src="../../_images/landing-page-original.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 46 </span><span class="caption-text">Packaging Sphinx Landing Page</span><a class="headerlink" href="#packaging-sphinx-landing-page-original" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 48 </span><span class="caption-text">Packaging Sphinx Landing Page</span><a class="headerlink" href="#packaging-sphinx-landing-page-original" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="packaging-sphinx-module-list">
 <img alt="../../_images/module-index.png" src="../../_images/module-index.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 47 </span><span class="caption-text">Sphinx Module List</span><a class="headerlink" href="#packaging-sphinx-module-list" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 49 </span><span class="caption-text">Sphinx Module List</span><a class="headerlink" href="#packaging-sphinx-module-list" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The landing page for the website is the perfect place for the content of our README file,
@@ -1530,7 +1542,7 @@ re-uses our README as the introduction to the documentation (Figure <a class="r
 <figure class="align-default" id="packaging-sphinx-landing-page">
 <img alt="../../_images/landing-page.png" src="../../_images/landing-page.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 48 </span><span class="caption-text">Sphinx Landing page</span><a class="headerlink" href="#packaging-sphinx-landing-page" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 50 </span><span class="caption-text">Sphinx Landing page</span><a class="headerlink" href="#packaging-sphinx-landing-page" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Before going on,
