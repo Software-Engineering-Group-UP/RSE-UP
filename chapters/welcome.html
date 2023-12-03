@@ -1,0 +1,771 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Welcome &#8212; RSE-ING</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/welcome';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/welcome.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting Started" href="getting_started.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RSE-ING</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresher.html">Python refresher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/guide.html">Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bash_basics.html">The Basics of the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bash_tools.html">Building Tools with the Unix Shell</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="bash_advanced.html">Going Further with the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/bash.html">Bash Exercises</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../exercises/python_cli.html">Exercises Scripting Python for CLI tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro_version_control.html">Using Git at the Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/version_control.html">Exercise Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git_advanced.html">Going Further with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/git_advanced.html">Exercises Git Advanced</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Working in teams</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="working_in_teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/work_teams.html">Exercise - Work Teams</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to automation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing Software</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="testing_programs.html">Testing Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/testing.html">Exercises - Testing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Error Handling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="error_handling.html">Handling Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/error_handling.html">Exercises - Error Handling</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tracking_provenance.html">Tracking Provenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/provenance.html">Exercises - Provenance</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Packaging</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="clean_readable_code.html">Writing Readable Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="writing_documentation.html">Documenting Programs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snakemake.html">Snake Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="yaml.html">YAML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="working_remotely.html">Working Remotely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/welcome.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/welcome.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Welcome</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-big-picture">The Big Picture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-audience">Intended Audience</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-will-learn">What You Will Learn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-this-book">Using this Book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-and-re-use">Contributing and Re-Use</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="welcome">
+<span id="id1"></span><h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this heading">#</a></h1>
+<p>Software is now as essential to research as telescopes, test tubes, and reference libraries.
+This means that researchers <strong>need</strong> to know how to build, check, use, and share programs.
+However,
+most introductions to programming focus on developing commercial applications,
+not on exploring problems whose answers aren’t yet known.
+Our goal is to show you how to do that,
+both on your own and as part of a team.</p>
+<p>We believe every researcher should know
+how to write short programs that clean and analyze data in a reproducible way
+and how to use version control to keep track of what they have done.
+But just as some astronomers spend their careers designing telescopes,
+some researchers focus on building the software that makes research possible.
+People who do this are called <strong>research software engineers</strong>;
+the aim of this book is to get you ready for this role by helping you go from
+writing code for yourself to creating tools that help your entire field advance.
+(welcome:big-picture)</p>
+<section id="the-big-picture">
+<h2>The Big Picture<a class="headerlink" href="#the-big-picture" title="Permalink to this heading">#</a></h2>
+<p>Our approach to research software engineering is based on three related concepts:</p>
+<ul class="simple">
+<li><p><strong>Open Science</strong>: Making data, methods, and results
+freely available to all by publishing them under <strong>open license</strong>.</p></li>
+<li><p><strong>Reproducible research</strong>: Ensuring that anyone
+with access to the data and software can feasibly reproduce results, both to
+check them and to build on them.</p></li>
+<li><p><strong>Sustainable software</strong>: The ease with which to
+maintain and extend it rather than to replace it. Sustainability isn’t
+just a property of the software: it also depends on the skills and culture
+of its users.</p></li>
+</ul>
+<p>People often conflate these three ideas, but they are distinct.
+For example, if you share your data and the programs that analyze it,
+but don’t document what steps to take in what order, your work is open but not reproducible.
+Conversely, if you completely automate your analysis, but your data is only available to people in your lab, your work is reproducible but not open.
+Finally, if a software package is being maintained by a couple of post-docs
+who are being paid a fraction of what they could earn in industry
+and have no realistic hope of promotion because their field doesn’t value tool building, then sooner or later it will become \gref{abandonware}{abandonware},
+at which point openness and reproducibility become less relevant.</p>
+<p>Nobody argues that research should be irreproducible or unsustainable,
+but “not against it” and actively supporting it are very different things.
+Academia doesn’t yet know how to reward people for writing useful software,
+so while you may be thanked, the effort you put in may not translate into academic job security or decent pay.</p>
+<p>Some people worry that if they make their data and code publicly available,
+someone else will use it and publish a result they could have come up with themselves.
+This is almost unheard of in practice, but that doesn’t stop it being used as a scare tactic.
+Other people are afraid of looking foolish or incompetent by sharing code that might contain bugs.
+This isn’t just <strong>impostor syndrome</strong>:
+members of marginalized groups are frequently judged more harshly than others,
+so being wrong in public is much riskier for them.</p>
+<p>With this course, we hope to give researchers the tools and knowledge to be
+better research software developers, to be more efficient in their work, make
+less mistakes, and work more openly and reproducibly.
+We hope that by having more researchers with these skills and knowledge,
+research culture can improve to address the issues raised above.</p>
+</section>
+<section id="intended-audience">
+<span id="welcome-intended-audience"></span><h2>Intended Audience<a class="headerlink" href="#intended-audience" title="Permalink to this heading">#</a></h2>
+<p>This book is written for researchers who are already using Python for their data analysis, but who want to take their coding and software development to the next level. You don’t have to be highly proficient with Python,
+but you should already be comfortable doing things like reading data from files
+and writing loops, conditionals, and functions.
+The following personas are examples of the types of people that are our target audience.</p>
+<p>Amira Khan
+:   completed a master’s in library science five years ago
+and has since worked for a small aid organization.
+She did some statistics during her degree,
+and has learned some R and Python by doing data science courses online,
+but has no formal training in programming.
+Amira would like to tidy up the scripts, datasets, and reports she has created
+in order to share them with her colleagues.
+These lessons will show her how to do this.</p>
+<p>Jun Hsu
+:   completed an Insight Data Science fellowship last year after doing a PhD in geology
+and now works for a company that does forensic audits.
+He uses a variety of machine learning and visualization packages,
+and would now like to turn some of his own work into an open source project.
+This book will show him how such a project should be organized
+and how to encourage people to contribute to it.</p>
+<p>Sami Virtanen
+:   became a competent programmer during a bachelor’s degree in applied math
+and was then hired by the university’s research computing center.
+The kinds of applications they are being asked to support
+have shifted from fluid dynamics to data analysis;
+this guide will teach them how to build and run data pipelines
+so that they can pass those skills on to their users.</p>
+</section>
+<section id="what-you-will-learn">
+<span id="welcome-what-you-learn"></span><h2>What You Will Learn<a class="headerlink" href="#what-you-will-learn" title="Permalink to this heading">#</a></h2>
+<p>Rather than simply providing reference material about good coding practices,
+the book follows Amira and Sami as they work together to write an actual software package
+to address a real research question.
+The data analysis task that we focus on
+relates to a fascinating result in the field of quantitative linguistics.
+<strong>Zipf’s Law</strong> states that the second most common word in a body of text
+appears half as often as the most common,
+the third most common appears a third as often, and so on.
+To test whether Zipf’s Law holds for a collection of classic novels
+that are freely available from <strong>Project Gutenberg</strong>,
+we write a software package that counts and analyzes the word frequency distribution
+in any arbitrary body of text.</p>
+<p>In the process of writing and publishing a Python package to verify Zipf’s Law,
+we will show you how to do the following:</p>
+<ul class="simple">
+<li><p>Organize small and medium-sized data science projects.</p></li>
+<li><p>Use the Unix shell to efficiently manage your data and code.</p></li>
+<li><p>Write Python programs that can be used on the command line.</p></li>
+<li><p>Use Git and GitHub to track and share your work.</p></li>
+<li><p>Work productively in a small team where everyone is welcome.</p></li>
+<li><p>Use Make to automate complex workflows.</p></li>
+<li><p>Enable users to configure your software without modifying it directly.</p></li>
+<li><p>Test your software and know which parts have not yet been tested.</p></li>
+<li><p>Find, handle, and fix errors in your code.</p></li>
+<li><p>Publish your code and research in open and reproducible ways.</p></li>
+<li><p>Create Python packages that can be installed in standard ways.</p></li>
+</ul>
+</section>
+<section id="using-this-book">
+<span id="welcome-using-the-book"></span><h2>Using this Book<a class="headerlink" href="#using-this-book" title="Permalink to this heading">#</a></h2>
+<p>This book was written to be used as the material for a (potentially) semester-long
+course at the university level,
+although it can also be used for independent self-study.
+Participatory live-coding is the anticipated style for teaching the material,
+rather than lectures simply talking about the code presented <span id="id2">[]</span>
+The chapters and their content are generally designed to be used in the order
+given.</p>
+<p>Chapters are structured with the introduction at the start, content in the middle,
+and exercises at the end. Callout boxes are interspersed throughout the content
+to be used as a supplement to the main text,
+but not a requirement for the course overall.
+Early chapters have many small exercises;
+later chapters have fewer but larger exercises.
+In order to break up long periods of live-coding while teaching,
+it may be preferable to stop and complete some of the exercises
+at key points throughout the chapter,
+rather than waiting until the end.
+<strong>TODO ADD REF WHEN DONE</strong>
+Possible exercise solutions are provided (Appendix ref(solutions)),
+in addition to learning objectives (Appendix ref(objectives))
+and key points (Appendix ref(keypoints)) for each chapter.</p>
+</section>
+<section id="contributing-and-re-use">
+<h2>Contributing and Re-Use<a class="headerlink" href="#contributing-and-re-use" title="Permalink to this heading">#</a></h2>
+<p>The source for the book can be found at the <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP">‘RSE-UP’ GitHub repository</a> and
+any corrections, additions, or contributions are very welcome.
+Everyone whose work is included will be credited in the acknowledgments.
+Check out our
+<a class="reference external" href="https://github.com/Software-Engineering-Group-UP/RSE-UP/blob/main/CONTRIBUTION.md">contributing guidelines</a>
+as well as our
+<a class="reference external" href="https://github.com/Software-Engineering-Group-UP/RSE-UP/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>
+for more information on how to contribute.</p>
+<p>The content and code of this book can be freely re-used as it is
+<a class="reference external" href="https://github.com/Software-Engineering-Group-UP/RSE-UP/blob/main/LICENSE.md">licensed</a>
+under a
+<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+(CC-BY 4.0)
+and a
+<a class="reference external" href="https://github.com/Software-Engineering-Group-UP/RSE-UP/blob/main/LICENSE-MIT.md">MIT License</a>,
+so the material can be used, re-used, and modified,
+as long as there is attribution to this source.</p>
+<p>(welcome:ackknowledgements)</p>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading">#</a></h2>
+<p>This book was created on basis of the book ‘Research Software Engineering with Python: Building Software that Makes Research Possible’, that was created by:
+Damien Irving and Kate Hertweck and Luke Johnston and Joel Ostblom and Charlotte Wickham and Greg Wilson.</p>
+<p>The online version can be found <a class="reference external" href="https://merely-useful.tech/py-rse/">here!</a></p>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="getting_started.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Getting Started</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-big-picture">The Big Picture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-audience">Intended Audience</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-will-learn">What You Will Learn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-this-book">Using this Book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-and-re-use">Contributing and Re-Use</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Software Engineering Group - University of Potsdam
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

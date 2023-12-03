@@ -1,0 +1,1599 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Testing Software &#8212; RSE-ING</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/testing_programs';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/testing_programs.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exercises - Testing" href="../exercises/testing.html" />
+    <link rel="prev" title="Exercises - Configuration" href="../exercises/config.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="welcome.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RSE-ING</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresher.html">Python refresher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/guide.html">Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bash_basics.html">The Basics of the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bash_tools.html">Building Tools with the Unix Shell</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="bash_advanced.html">Going Further with the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/bash.html">Bash Exercises</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../exercises/python_cli.html">Exercises Scripting Python for CLI tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro_version_control.html">Using Git at the Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/version_control.html">Exercise Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git_advanced.html">Going Further with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/git_advanced.html">Exercises Git Advanced</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Working in teams</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="working_in_teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/work_teams.html">Exercise - Work Teams</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to automation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing Software</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Testing Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/testing.html">Exercises - Testing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Error Handling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="error_handling.html">Handling Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/error_handling.html">Exercises - Error Handling</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tracking_provenance.html">Tracking Provenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/provenance.html">Exercises - Provenance</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Packaging</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="clean_readable_code.html">Writing Readable Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="writing_documentation.html">Documenting Programs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snakemake.html">Snake Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="yaml.html">YAML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="working_remotely.html">Working Remotely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/testing_programs.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/testing_programs.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Testing Software</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assertions">Assertions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-testing">Unit Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-frameworks">Testing Frameworks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-floating-point-values">Testing Floating-Point Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-testing">Integration Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-testing">Regression Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coverage">Test Coverage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration-todo-move-section-to-workflow">Continuous Integration <strong>TODO</strong> MOVE SECTION TO WORKFLOW</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-write-tests">When to Write Tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="testing-software">
+<h1>Testing Software<a class="headerlink" href="#testing-software" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>Opera happens because a large number of things amazingly fail to go wrong.</p>
+<p>— Terry Pratchett</p>
+</div></blockquote>
+<p>We have written software to count and analyze the words in classic texts,
+but how can we be sure it’s producing reliable results?
+The short is answer is that we can’t—not completely—but
+we can test its behavior against our expectations to decide if we are sure enough.
+This chapter explores ways to do this,
+including assertions, unit tests, integration tests, and regression tests.</p>
+<blockquote>
+<div><p><strong>A Scientist’s Nightmare</strong></p>
+<p>Why is testing research software important?
+A successful early career researcher in protein crystallography,
+Geoffrey Chang,
+had to retract five published papers—three from
+the journal <em>Science</em>—because his code had
+inadvertently flipped two columns of data [<span id="id1">[]</span>].
+More recently, a simple calculation mistake in a paper by Reinhart and Rogoff
+contributed to making the financial crash of 2008 even worse
+for millions of people [<span id="id2">[]</span>].
+Testing helps to catch errors like these.</p>
+</div></blockquote>
+<p>Here’s the current structure of our Zipf’s Law project files:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zipf/
+├── .gitignore
+├── CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE.md
+├── Makefile
+├── README.md
+├── bin
+│   ├── book_summary.sh
+│   ├── collate.py
+│   ├── countwords.py
+│   ├── plotcounts.py
+│   ├── plotparams.yml
+│   ├── script_template.py
+│   └── utilities.py
+├── data
+│   ├── README.md
+│   ├── dracula.txt
+│   └── ...
+└── results
+    ├── collated.csv
+    ├── collated.png
+    ├── dracula.csv
+    ├── dracula.png
+    └── ...
+</pre></div>
+</div>
+<section id="assertions">
+<h2>Assertions<a class="headerlink" href="#assertions" title="Permalink to this heading">#</a></h2>
+<p>The first step in building confidence in our programs
+is to assume that mistakes will happen and guard against them.
+This is called <strong>defensive programming</strong>,
+and the most common way to do it is to add <strong>assertions</strong> to our code so that it checks itself as it runs.
+An assertion is a statement that something must be true at a certain point in a program.
+When Python sees an assertion, it checks the assertion’s condition.
+If it’s true, Python does nothing;
+if it’s false,
+Python halts the program immediately and prints a user-defined error message.
+For example,
+this code halts as soon as the loop encounters an impossible word frequency:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frequencies</span> <span class="o">=</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">frequencies</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span>
+    <span class="k">assert</span> <span class="n">freq</span> <span class="o">&gt;=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s1">&#39;Word frequencies must be non-negative&#39;</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">freq</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;total frequency of first 5 words:&#39;</span><span class="p">,</span> <span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------
+AssertionError                Traceback (most recent call last)
+&lt;ipython-input-19-33d87ea29ae4&gt; in &lt;module&gt;()
+      2 total = 0.0
+      3 for freq in frequencies[:5]:
+----&gt; 4     assert freq &gt;= 0.0, &#39;Word frequencies must be
+            non-negative&#39;
+      5     total += freq
+      6 print(&#39;total frequency of first 5 words:&#39;, total)
+
+AssertionError: Word frequencies must be non-negative
+</pre></div>
+</div>
+<p>Programs intended for widespread use are full of assertions:
+10%–20% of the code they contain are there to check that the other 80%–90% are working correctly.
+Broadly speaking, assertions fall into three categories:</p>
+<ul class="simple">
+<li><p>A <strong>precondition</strong> is something that must be true at the start of a function
+in order for it to work correctly.
+For example,
+a function might check that the list it has been given has at least two elements
+and that all of its elements are integers.</p></li>
+<li><p>A <strong>postcondition</strong>
+is something that the function guarantees is true
+when it finishes.
+For example,
+a function could check that the value being returned is an integer
+that is greater than zero,
+but less than the length of the input list.</p></li>
+<li><p>An <strong>invariant</strong> (in
+is something that is true for every iteration in a loop.
+The invariant might be a property of the data (as in the example above),
+or it might be something like,
+“the value of <code class="docutils literal notranslate"><span class="pre">highest</span></code> is less than or equal to the current loop index.”</p></li>
+</ul>
+<p>The function <code class="docutils literal notranslate"><span class="pre">get_power_law_params</span></code> in our <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> script
+is a good example of the need for a precondition.
+Its docstring does not say that its <code class="docutils literal notranslate"><span class="pre">word_counts</span></code> parameter must be a list of numeric word counts;
+even if we add that,
+a user might easily pass in a list of the words themselves instead.
+Adding an assertion makes the requirement clearer,
+and also guarantees that the function will fail as soon as it is called
+rather than returning an error from <code class="docutils literal notranslate"><span class="pre">scipy.optimize.minimize_scalar</span></code>
+that would be more difficult to interpret/debug.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_power_law_params</span><span class="p">(</span><span class="n">word_counts</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the power law parameters.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Moreno-Sanchez et al (2016) define alpha (Eq. 1),</span>
+<span class="sd">      beta (Eq. 2) and the maximum likelihood estimation (mle)</span>
+<span class="sd">      of beta (Eq. 6).</span>
+
+<span class="sd">    Moreno-Sanchez I, Font-Clos F, Corral A (2016)</span>
+<span class="sd">      Large-Scale Analysis of Zipf&#39;s Law in English Texts.</span>
+<span class="sd">      PLoS ONE 11(1): e0147073.</span>
+<span class="sd">      https://doi.org/10.1371/journal.pone.0147073</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">word_counts</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> \
+        <span class="s1">&#39;Input must be a numerical (numpy) array of word counts&#39;</span>
+    <span class="n">mle</span> <span class="o">=</span> <span class="n">minimize_scalar</span><span class="p">(</span><span class="n">nlog_likelihood</span><span class="p">,</span>
+                          <span class="n">bracket</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">1e-10</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+                          <span class="n">args</span><span class="o">=</span><span class="n">word_counts</span><span class="p">,</span>
+                          <span class="n">method</span><span class="o">=</span><span class="s1">&#39;brent&#39;</span><span class="p">)</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">mle</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">beta</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">alpha</span>
+</pre></div>
+</div>
+<p>Update <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> with the assertion described above.
+You’ll see additional examples of assertions throughout this chapter.</p>
+</section>
+<section id="unit-testing">
+<h2>Unit Testing<a class="headerlink" href="#unit-testing" title="Permalink to this heading">#</a></h2>
+<p>Catching errors is good, but preventing them is better,
+so responsible programmers test their code.
+As the name suggests,
+a <strong>unit test</strong> checks the correctness of a single unit of software.
+Exactly what constitutes a “unit” is subjective,
+but it typically means the behavior of a single function in one situation.
+In our Zipf’s Law software,
+the <code class="docutils literal notranslate"><span class="pre">count_words</span></code> function in <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code> is
+a good candidate for unit testing:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_words</span><span class="p">(</span><span class="n">reader</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Count the occurrence of each word in a string.&quot;&quot;&quot;</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">chunks</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">npunc</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">chunks</span><span class="p">]</span>
+    <span class="n">word_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">npunc</span> <span class="k">if</span> <span class="n">word</span><span class="p">]</span>
+    <span class="n">word_counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">word_list</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">word_counts</span>
+</pre></div>
+</div>
+<p>\newpage</p>
+<p>A single unit test will typically have:</p>
+<ul class="simple">
+<li><p>a <strong>fixture</strong>,
+which is the thing being tested (e.g., an array of numbers);</p></li>
+<li><p>an <strong>actual result</strong>,
+which is what the code produces when given the fixture;
+and</p></li>
+<li><p>an <strong>expected result</strong>
+that the actual result is compared to.</p></li>
+</ul>
+<p>The fixture is typically a subset or smaller version of the data
+the function will typically process.
+For instance,
+in order to write a unit test for the <code class="docutils literal notranslate"><span class="pre">count_words</span></code> function,
+we could use a piece of text small enough for us to count word frequencies by hand.
+Let’s add the poem <em>Risk</em> by Anaïs Nin to our data:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/zipf
+$<span class="w"> </span>mkdir<span class="w"> </span>test_data
+$<span class="w"> </span>cat<span class="w"> </span>test_data/risk.txt
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>And then the day came,
+when the risk
+to remain tight
+in a bud
+was more painful
+than the risk
+it took
+to blossom.
+</pre></div>
+</div>
+<p>We can then count the words by hand to construct the expected result:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+
+<span class="n">risk_poem_counts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;the&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;risk&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s1">&#39;then&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;day&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;came&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;when&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;remain&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s1">&#39;tight&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;in&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;bud&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;was&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s1">&#39;more&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;painful&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;than&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;it&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;took&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s1">&#39;blossom&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">expected_result</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">risk_poem_counts</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We then generate the actual result by calling <code class="docutils literal notranslate"><span class="pre">count_words</span></code>,
+and use an assertion to check if it is what we expected:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;/Users/amira/zipf/bin&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">countwords</span>
+
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test_data/risk.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="n">actual_result</span> <span class="o">=</span> <span class="n">countwords</span><span class="o">.</span><span class="n">count_words</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">actual_result</span> <span class="o">==</span> <span class="n">expected_result</span>
+</pre></div>
+</div>
+<p>There’s no output,
+which means the assertion (and test) passed.
+(Remember, assertions only do something if the condition is false.)</p>
+<blockquote>
+<div><p><strong>Appending the Import Path</strong></p>
+<p>The last code chunk included <code class="docutils literal notranslate"><span class="pre">sys.path.append</span></code>,
+which allowed us to import scripts from elsewhere than
+our current working directory.
+This isn’t a perfect solution,
+but works well enough for quick tests while developing code,
+especially since the tool we’ll use for the
+rest of the chapter handles this issue for us.
+[Import statements][python-import] are notoriously tricky,
+but we’ll learn better methods for organizing our code for
+function imports in Chapter on <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/packaging.html">Packaging</a>.</p>
+</div></blockquote>
+</section>
+<section id="testing-frameworks">
+<h2>Testing Frameworks<a class="headerlink" href="#testing-frameworks" title="Permalink to this heading">#</a></h2>
+<p>Writing one unit test is easy enough, but we should check other cases as well.
+To manage them, we can use a <strong>test framework</strong>
+(also called a <strong>test runner</strong>).
+The most widely used test framework for Python is called <a class="reference external" href="https://pytest.org/"><code class="docutils literal notranslate"><span class="pre">pytest</span></code></a>, which structures tests as follows:</p>
+<ol class="arabic simple">
+<li><p>Tests are put in files whose names begin with <code class="docutils literal notranslate"><span class="pre">test_</span></code>.</p></li>
+<li><p>Each test is a function whose name also begins with <code class="docutils literal notranslate"><span class="pre">test_</span></code>.</p></li>
+<li><p>These functions use <code class="docutils literal notranslate"><span class="pre">assert</span></code> to check results.</p></li>
+</ol>
+<p>Following these rules,
+we can create a <code class="docutils literal notranslate"><span class="pre">test_zipfs.py</span></code> script in your <code class="docutils literal notranslate"><span class="pre">bin</span></code> directory
+that contains the test we just developed:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="kn">import</span> <span class="nn">countwords</span>
+
+
+<span class="k">def</span> <span class="nf">test_word_count</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test the counting of words.</span>
+
+<span class="sd">    The example poem is Risk, by Anaïs Nin.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">risk_poem_counts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;the&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;risk&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s1">&#39;then&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;day&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;came&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;when&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;remain&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s1">&#39;tight&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;in&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;bud&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;was&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s1">&#39;more&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;painful&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;than&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;it&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;took&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s1">&#39;blossom&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+    <span class="n">expected_result</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">risk_poem_counts</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test_data/risk.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="n">actual_result</span> <span class="o">=</span> <span class="n">countwords</span><span class="o">.</span><span class="n">count_words</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">actual_result</span> <span class="o">==</span> <span class="n">expected_result</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">pytest</span></code> library comes with a command-line tool that is also called <code class="docutils literal notranslate"><span class="pre">pytest</span></code>.
+When we run it with no options,
+it searches for all files in or below the working directory
+whose names match the pattern <code class="docutils literal notranslate"><span class="pre">test_*.py</span></code>.
+It then runs the tests in these files and summarizes their results.
+(If we only want to run the tests in a particular file,
+we can use the command <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">path/to/test_file.py</span></code>.)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pytest
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>==================== test session starts ======================
+platform darwin -- Python 3.7.6, pytest-6.2.0, py-1.10.0,
+pluggy-0.13.1
+rootdir: /Users/amira
+collected 1 item
+
+bin/test_zipfs.py .                                     [100%]
+
+===================== 1 passed in 0.02s =======================
+</pre></div>
+</div>
+<p>To add more tests,
+we simply write more <code class="docutils literal notranslate"><span class="pre">test_</span></code> functions in <code class="docutils literal notranslate"><span class="pre">test_zipfs.py</span></code>.
+For instance,
+besides counting words,
+the other critical part of our code is the calculation of the <span class="math notranslate nohighlight">\(\alpha\)</span> parameter.
+Earlier we defined a power law relating <span class="math notranslate nohighlight">\(\alpha\)</span>
+to the word frequency <span class="math notranslate nohighlight">\(f\)</span>,
+the word rank <span class="math notranslate nohighlight">\(r\)</span>,
+and a constant of proportionality <span class="math notranslate nohighlight">\(c\)</span> (<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/configuration.html#configuration-file-formats">Section Git advanced</a>):</p>
+<p><span class="math notranslate nohighlight">\(
+r = cf^{\frac{-1}{\alpha}}
+\)</span></p>
+<p>We also noted that Zipf’s Law holds exactly when <span class="math notranslate nohighlight">\(\alpha\)</span> is equal to one.
+Setting <span class="math notranslate nohighlight">\(\alpha\)</span> to one and re-arranging the power law gives us:</p>
+<p><span class="math notranslate nohighlight">\(
+c = f/r
+\)</span></p>
+<p>We can use this formula to generate synthetic word count data
+(i.e., our test fixture)
+with a constant of proportionality set to a hypothetical maximum word frequency of 600
+(and thus <span class="math notranslate nohighlight">\(r\)</span> ranges from 1 to 600):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="n">max_freq</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">max_freq</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_freq</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[600. 300. 200. 150. 120. 100.  85.  75.  66.  60.  54.  50.
+  46.  42.  40.  37.  35.  33.  31.  30.  28.  27.  26.  25.
+ ...
+   1.   1.   1.   1.   1.   1.   1.   1.   1.   1.   1.   1.]
+</pre></div>
+</div>
+<p>(We use <code class="docutils literal notranslate"><span class="pre">np.floor</span></code> to round down to the nearest whole number,
+because we can’t have fractional word counts.)
+Passing this test fixture to <code class="docutils literal notranslate"><span class="pre">get_power_law_params</span></code> in <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>
+should give us a value of 1.0.
+To test this, we can add a second test to <code class="docutils literal notranslate"><span class="pre">test_zipfs.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">plotcounts</span>
+<span class="kn">import</span> <span class="nn">countwords</span>
+
+
+<span class="k">def</span> <span class="nf">test_alpha</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test the calculation of the alpha parameter.</span>
+
+<span class="sd">    The test word counts satisfy the relationship,</span>
+<span class="sd">      r = cf**(-1/alpha), where</span>
+<span class="sd">      r is the rank,</span>
+<span class="sd">      f the word count, and</span>
+<span class="sd">      c is a constant of proportionality.</span>
+
+<span class="sd">    To generate test word counts for an expected alpha of</span>
+<span class="sd">      1.0, a maximum word frequency of 600 is used</span>
+<span class="sd">      (i.e. c = 600 and r ranges from 1 to 600)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">max_freq</span> <span class="o">=</span> <span class="mi">600</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">max_freq</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_freq</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">actual_alpha</span> <span class="o">=</span> <span class="n">plotcounts</span><span class="o">.</span><span class="n">get_power_law_params</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+    <span class="n">expected_alpha</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="k">assert</span> <span class="n">actual_alpha</span> <span class="o">==</span> <span class="n">expected_alpha</span>
+
+
+<span class="k">def</span> <span class="nf">test_word_count</span><span class="p">():</span>
+    <span class="c1">#...as before...</span>
+</pre></div>
+</div>
+<p>Let’s re-run both of our tests:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pytest
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>==================== test session starts ======================
+platform darwin -- Python 3.7.6, pytest-6.2.1, py-1.10.0,
+pluggy-0.13.1
+rootdir: /Users/amira
+collected 2 items
+
+bin/test_zipfs.py F.                                    [100%]
+
+========================== FAILURES ===========================
+_________________________ test_alpha __________________________
+
+  def test_alpha():
+      &quot;&quot;&quot;Test the calculation of the alpha parameter.
+    
+      The test word counts satisfy the relationship,
+        r = cf**(-1/alpha), where
+        r is the rank,
+        f the word count, and
+        c is a constant of proportionality.
+    
+      To generate test word counts for an expected alpha of
+        1.0, a maximum word frequency of 600 is used
+        (i.e. c = 600 and r ranges from 1 to 600)
+      &quot;&quot;&quot;
+      max_freq = 600
+      counts = np.floor(max_freq / np.arange(1, max_freq + 1))
+      actual_alpha = plotcounts.get_power_law_params(counts)
+      expected_alpha = 1.0
+&gt;     assert actual_alpha == expected_alpha
+E     assert 0.9951524579316625 == 1.0
+
+bin/test_zipfs.py:26: AssertionError
+=================== short test summary info ===================
+FAILED bin/test_zipfs.py::test_alpha - assert 0.99515246 == 1.0
+================= 1 failed, 1 passed in 3.98s =================
+</pre></div>
+</div>
+<p>The output tells us that one test failed but the other test passed.
+This is a very useful feature of test runners like <code class="docutils literal notranslate"><span class="pre">pytest</span></code>:
+they continue on and complete all the tests
+rather than stopping at the first assertion failure as a regular Python script would.</p>
+</section>
+<section id="testing-floating-point-values">
+<h2>Testing Floating-Point Values<a class="headerlink" href="#testing-floating-point-values" title="Permalink to this heading">#</a></h2>
+<p>The output above shows that while <code class="docutils literal notranslate"><span class="pre">test_alpha</span></code> failed,
+the <code class="docutils literal notranslate"><span class="pre">actual_alpha</span></code> value of 0.9951524579316625 was very close to the expected value of 1.0.
+After a bit of thought,
+we decide that this isn’t actually a failure:
+the value produced by <code class="docutils literal notranslate"><span class="pre">get_power_law_params</span></code> is an estimate,
+and being off by half a percent is good enough.</p>
+<p>This example shows that testing scientific software
+almost always requires us to make the same kind of judgment calls
+that scientists have to make when doing any other sort of experimental work.
+If we are measuring the mass of a proton,
+we might expect ten decimal places of accuracy.
+If we are measuring the weight of a baby penguin,
+on the other hand,
+we’ll probably be satisfied if we’re within five grams.
+What matters most is that we are explicit about the bounds we used
+so that other people can tell what we actually did.</p>
+<blockquote>
+<div><p><strong>Degrees of Difficulty</strong></p>
+<p>There’s an old joke that physicists worry about decimal places,
+astronomers worry about powers of ten,
+and economists are happy if they’ve got the sign right.</p>
+</div></blockquote>
+<p>So how should we write tests when we don’t know precisely what the right answer is?
+The best approach is to write tests that check
+if the actual value is within some <strong>tolerance</strong> of the expected value.
+The tolerance can be expressed as the <strong>absolute error</strong>,
+which is the absolute value of the difference between two,
+or the <strong>relative error</strong>,
+which the ratio of the absolute error to the value we’re approximating <span id="id3">[]</span>.
+For example,
+if we add 9+1 and get 11,
+the absolute error is 1 (i.e., <span class="math notranslate nohighlight">\(11-10\)</span>,
+and the relative error is 10%.
+If we add <span class="math notranslate nohighlight">\(99+1\)</span> and get 101,
+on the other hand,
+the absolute error is still 1,
+but the relative error is only 1%.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">test_alpha</span></code>,
+we might decide that an absolute error of 0.01 in the estimation of <span class="math notranslate nohighlight">\(\alpha\)</span> is acceptable.
+If we are using <code class="docutils literal notranslate"><span class="pre">pytest</span></code>,
+we can check that values lie within this tolerance using <code class="docutils literal notranslate"><span class="pre">pytest.approx</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">plotcounts</span>
+<span class="kn">import</span> <span class="nn">countwords</span>
+
+
+<span class="k">def</span> <span class="nf">test_alpha</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test the calculation of the alpha parameter.</span>
+
+<span class="sd">    The test word counts satisfy the relationship,</span>
+<span class="sd">      r = cf**(-1/alpha), where</span>
+<span class="sd">      r is the rank,</span>
+<span class="sd">      f the word count, and</span>
+<span class="sd">      c is a constant of proportionality.</span>
+
+<span class="sd">    To generate test word counts for an expected alpha of</span>
+<span class="sd">      1.0, a maximum word frequency of 600 is used</span>
+<span class="sd">      (i.e. c = 600 and r ranges from 1 to 600)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">max_freq</span> <span class="o">=</span> <span class="mi">600</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">max_freq</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_freq</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">actual_alpha</span> <span class="o">=</span> <span class="n">plotcounts</span><span class="o">.</span><span class="n">get_power_law_params</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+    <span class="n">expected_alpha</span> <span class="o">=</span> <span class="n">pytest</span><span class="o">.</span><span class="n">approx</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">abs</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">actual_alpha</span> <span class="o">==</span> <span class="n">expected_alpha</span>
+
+
+<span class="k">def</span> <span class="nf">test_word_count</span><span class="p">():</span>
+    <span class="c1">#...as before...</span>
+</pre></div>
+</div>
+<p>When we re-run <code class="docutils literal notranslate"><span class="pre">pytest</span></code>,
+both tests now pass:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pytest
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>==================== test session starts ======================
+platform darwin -- Python 3.7.6, pytest-6.2.0, py-1.10.0,
+pluggy-0.13.1
+rootdir: /Users/amira
+collected 2 items
+
+bin/test_zipfs.py ..                                    [100%]
+
+===================== 2 passed in 0.69s =======================
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Testing Visualizations</strong></p>
+<p>Testing visualizations is hard:
+any change to the dimension of the plot,
+however small,
+can change many pixels in a <strong>raster image</strong>,
+and cosmetic changes such as moving the legend up a couple of pixels
+will cause all of our tests to fail.</p>
+<p>The simplest solution is therefore to test the data used to produce the image
+rather than the image itself.
+Unless we suspect that the plotting library contains bugs,
+the correct data should always produce the correct plot.</p>
+</div></blockquote>
+</section>
+<section id="integration-testing">
+<h2>Integration Testing<a class="headerlink" href="#integration-testing" title="Permalink to this heading">#</a></h2>
+<p>Our Zipf’s Law analysis has two steps:
+counting the words in a text
+and estimating the <span class="math notranslate nohighlight">\(\alpha\)</span> parameter from the word count.
+Our unit tests give us some confidence that these components work in isolation,
+but do they work correctly together?
+Checking that is called <strong>integration testing</strong>.</p>
+<p>Integration tests are structured the same way as unit tests:
+a fixture is used to produce an actual result
+that is compared against the expected result.
+However,
+creating the fixture and running the code
+can be considerably more complicated.
+For example,
+in the case of our Zipf’s Law software, an appropriate integration test fixture
+might be a text file with a word frequency distribution that has a known <span class="math notranslate nohighlight">\(\alpha\)</span> value.
+In order to create this text fixture,
+we need a way to generate random words.</p>
+<p>Fortunately, a Python library called
+<a class="reference external" href="https://github.com/AbhishekSalian/Random-Word-Generator"><code class="docutils literal notranslate"><span class="pre">RandomWordGenerator</span></code></a>
+exists to do just that.
+We can install it using [<code class="docutils literal notranslate"><span class="pre">pip</span></code>][pip], the Python Package Installer:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>Random-Word-Generator
+</pre></div>
+</div>
+<p>Borrowing from the word count distribution we created for <code class="docutils literal notranslate"><span class="pre">test_alpha</span></code>,
+we can use the following code to create a text file full of random words
+with a frequency distribution that corresponds to an <span class="math notranslate nohighlight">\(alpha\)</span> of approximately 1.0:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">RandomWordGenerator</span> <span class="kn">import</span> <span class="n">RandomWord</span>
+
+
+<span class="n">max_freq</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="n">word_counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">max_freq</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_freq</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">rw</span> <span class="o">=</span> <span class="n">RandomWord</span><span class="p">()</span>
+<span class="n">random_words</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">getList</span><span class="p">(</span><span class="n">num_of_words</span><span class="o">=</span><span class="n">max_freq</span><span class="p">)</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test_data/random_words.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_freq</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">word_counts</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+    <span class="n">word_sequence</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">random_words</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="si">}</span><span class="s1"> &#39;</span> <span class="o">*</span> <span class="n">count</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">word_sequence</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We can confirm this code worked by checking the resulting file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span>test_data/random_words.txt
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>lZnkzoBHRb 
+djiroplqrJ 
+HmAUGOncHg 
+DGLpfTIitu 
+KALSfPkrga
+</pre></div>
+</div>
+<p>We can then add this integration test to <code class="docutils literal notranslate"><span class="pre">test_zipfs.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_integration</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test the full word count to alpha parameter workflow.&quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test_data/random_words.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="n">word_counts_dict</span> <span class="o">=</span> <span class="n">countwords</span><span class="o">.</span><span class="n">count_words</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+    <span class="n">counts_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">word_counts_dict</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+    <span class="n">actual_alpha</span> <span class="o">=</span> <span class="n">plotcounts</span><span class="o">.</span><span class="n">get_power_law_params</span><span class="p">(</span><span class="n">counts_array</span><span class="p">)</span>
+    <span class="n">expected_alpha</span> <span class="o">=</span> <span class="n">pytest</span><span class="o">.</span><span class="n">approx</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">abs</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">actual_alpha</span> <span class="o">==</span> <span class="n">expected_alpha</span>
+</pre></div>
+</div>
+<p>Finally,
+we re-run <code class="docutils literal notranslate"><span class="pre">pytest</span></code> to check that the integration test passes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pytest
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>===================== test session starts =====================
+platform darwin -- Python 3.7.6, pytest-6.2.0, py-1.10.0,
+pluggy-0.13.1
+rootdir: /Users/amira
+collected 3 items
+
+bin/test_zipfs.py ...                                   [100%]
+
+======================= 3 passed in 0.48s =====================
+</pre></div>
+</div>
+</section>
+<section id="regression-testing">
+<h2>Regression Testing<a class="headerlink" href="#regression-testing" title="Permalink to this heading">#</a></h2>
+<p>So far we have tested two simplified texts:
+a short poem and a collection of random words with a known frequency distribution.
+The next step is to test with real data,
+i.e., an actual book.
+The problem is,
+we don’t know the expected result:
+it’s not practical to count the words in <em>Dracula</em> by hand,
+and even if we tried,
+the odds are good that we’d make a mistake.</p>
+<p>For this kind of situation we can use
+<strong>regression testing</strong>.
+Rather than assuming that the test’s author knows what the expected result should be,
+regression tests compare today’s answer with a previous one.
+This doesn’t guarantee that the answer is right—if the original answer is wrong,
+we could carry that mistake forward indefinitely—but
+it does draw attention to any changes (or “regressions”).</p>
+<p>In <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/configuration.html#verifying-zipf-s-law">Section Git advanced zipf-verify</a>)
+we calculated an <span class="math notranslate nohighlight">\(\alpha\)</span> of 1.0866646252515038 for <em>Dracula</em>.
+Let’s use that value to add a regression test to <code class="docutils literal notranslate"><span class="pre">test_zipfs.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_regression</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Regression test for Dracula.&quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/dracula.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="n">word_counts_dict</span> <span class="o">=</span> <span class="n">countwords</span><span class="o">.</span><span class="n">count_words</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+    <span class="n">counts_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">word_counts_dict</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+    <span class="n">actual_alpha</span> <span class="o">=</span> <span class="n">plotcounts</span><span class="o">.</span><span class="n">get_power_law_params</span><span class="p">(</span><span class="n">counts_array</span><span class="p">)</span>
+    <span class="n">expected_alpha</span> <span class="o">=</span> <span class="n">pytest</span><span class="o">.</span><span class="n">approx</span><span class="p">(</span><span class="mf">1.087</span><span class="p">,</span> <span class="nb">abs</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">actual_alpha</span> <span class="o">==</span> <span class="n">expected_alpha</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pytest
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>===================== test session starts =====================
+platform darwin -- Python 3.7.6, pytest-6.2.0, py-1.10.0,
+pluggy-0.13.1
+rootdir: /Users/amira
+collected 4 items
+
+bin/test_zipfs.py ....                                  [100%]
+
+====================== 4 passed in 0.56s ======================
+</pre></div>
+</div>
+</section>
+<section id="test-coverage">
+<h2>Test Coverage<a class="headerlink" href="#test-coverage" title="Permalink to this heading">#</a></h2>
+<p>How much of our code do the tests we have written check?
+More importantly,
+what parts of our code \emph{aren’t} being tested (yet)?
+To find out,
+we can use a tool to check their <strong>code coverage</strong>.
+Most Python programmers use the <code class="docutils literal notranslate"><span class="pre">coverage</span></code> library,
+which we can once again install using <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>coverage
+</pre></div>
+</div>
+<p>Once we have it,
+we can use it to run <code class="docutils literal notranslate"><span class="pre">pytest</span></code> on our behalf:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>coverage<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>pytest
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>===================== test session starts =====================
+platform darwin -- Python 3.7.6, pytest-6.2.0, py-1.10.0,
+pluggy-0.13.1
+rootdir: /Users/amira
+collected 4 items
+
+bin/test_zipfs.py ....                                  [100%]
+
+====================== 4 passed in 0.72s ======================
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">coverage</span></code> command doesn’t display any information of its own,
+since mixing that in with our program’s output would be confusing.
+Instead,
+it puts coverage data in a file called <code class="docutils literal notranslate"><span class="pre">.coverage</span></code> (with a leading <code class="docutils literal notranslate"><span class="pre">.</span></code>) in the current directory.
+To display that data,
+we run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>coverage<span class="w"> </span>report<span class="w"> </span>-m
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bin/countwords.py      20      7    65%   25-26, 30-38
+bin/plotcounts.py      58     37    36%   48-55, 75-77, 82-83, 
+                                          88-118, 122-140
+bin/test_zipfs.py      31      0   100%
+bin/utilities.py        8      5    38%   18-22
+-------------------------------------------------
+TOTAL                 117     49    58%
+</pre></div>
+</div>
+<p>This summary shows us that
+some lines of <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code> or <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>
+were not executed when we ran the tests:
+in fact,
+only 65% and 36% of the lines were run respectively.
+This makes sense,
+since much of the code in those scripts
+is devoted to handling command-line arguments or file I/O
+rather than the word counting and parameter estimation functionality
+that our unit, integration, and regression tests focus on.</p>
+<p>To make sure that’s the case,
+we can get a more complete report by running <code class="docutils literal notranslate"><span class="pre">coverage</span> <span class="pre">html</span></code> at the command line
+and opening <code class="docutils literal notranslate"><span class="pre">htmlcov/index.html</span></code>.
+Clicking on the name of our <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code> script, for instance,
+produces the colorized line-by-line display shown in <a class="reference internal" href="#python-coverage"><span class="std std-ref">Figure python coverage</span></a>.</p>
+<figure class="align-default" id="python-coverage">
+<img alt="../_images/python-coverage.png" src="../_images/python-coverage.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Python Coverage</span><a class="headerlink" href="#python-coverage" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This output confirms that all lines relating to word counting were tested,
+but not any of the lines related to argument handling or I/O.</p>
+<blockquote>
+<div><p><strong>Commit our Coverage?</strong></p>
+<p>At this point,
+you’re probably wondering if you should use version control
+to track the files reporting your code’s coverage.
+While it won’t necessarily harm your code,
+the reports will become inaccurate
+unless you continue updating your coverage reports
+as your code changes.
+Therefore, we recommend adding <code class="docutils literal notranslate"><span class="pre">.coverage</span></code> and <code class="docutils literal notranslate"><span class="pre">htmlcov/</span></code>
+to your <a class="reference external" href="https://github.com/github/gitignore"><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file</a>.
+In the next section,
+we’ll explore an approach that can help you automate tasks
+like assessing coverage.</p>
+</div></blockquote>
+<p>Is this good enough?
+The answer depends on what the software is being used for and by whom.
+If it is for a safety-critical application such as a medical device,
+we should aim for 100% code coverage,
+i.e.,
+every single line in the application should be tested.
+In fact,
+we should probably go further and aim for 100% <strong>path coverage</strong>
+to ensure that every possible path through the code has been checked.
+Similarly,
+if the software has become popular and is being used by thousands of researchers all over the world,
+we should probably check that it’s not going to embarrass us.</p>
+<p>But most of us don’t write software that people’s lives depend on,
+or that is in a “top 100” list,
+so requiring 100% code coverage is like asking for ten decimal places of accuracy
+when checking the voltage of a household electrical outlet.
+We always need to balance the effort required to create tests
+against the likelihood that those tests will uncover useful information.
+We also have to accept that no amount of testing
+can prove a piece of software is completely correct.
+A function with only two numeric arguments has 2^128^ possible inputs.
+Even if we could write the tests,
+how could we be sure we were checking the result of each one correctly?</p>
+<p>\newpage</p>
+<p>Luckily,
+we can usually put test cases into groups.
+For example,
+when testing a function that summarizes a table full of data,
+it’s probably enough to check that it handles tables with:</p>
+<ul class="simple">
+<li><p>no rows</p></li>
+<li><p>only one row</p></li>
+<li><p>many identical rows</p></li>
+<li><p>rows having keys that are supposed to be unique, but aren’t</p></li>
+<li><p>rows that contain nothing but missing values</p></li>
+</ul>
+<p>Some projects develop <strong>checklists</strong>} like this one to remind programmers what they ought to test.
+These checklists can be a bit daunting for newcomers,
+but they are a great way to pass on hard-earned experience.</p>
+</section>
+<section id="continuous-integration-todo-move-section-to-workflow">
+<h2>Continuous Integration <strong>TODO</strong> MOVE SECTION TO WORKFLOW<a class="headerlink" href="#continuous-integration-todo-move-section-to-workflow" title="Permalink to this heading">#</a></h2>
+<p>Now that we have a set of tests,
+we could run <code class="docutils literal notranslate"><span class="pre">pytest</span></code> every now and again to check our code.
+This is probably sufficient for short-lived projects,
+but if several people are involved,
+or if we are making changes over weeks or months,
+we might forget to run the tests
+or it might be difficult to identify which change is responsible for a test failure.</p>
+<p>The solution is <strong>continuous integration</strong> (CI),\index which runs tests automatically whenever a change is made.
+CI tells developers immediately if changes have caused problems,
+which makes them much easier to fix.
+CI can also be set up to run tests with several different configurations of the software
+or on several different operating systems,
+so that a programmer using Windows
+can be warned that a change breaks things for Mac users and vice versa.</p>
+<p>One popular CI tool is <strong>Travis CI</strong>, which integrates well with
+<strong>GitHub</strong>. If Travis CI has been set up,
+then every time a change is committed to a GitHub repository,
+Travis CI creates a fresh environment,
+makes a fresh clone of the repository (<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/git_advanced.html#using-other-people-s-work">Section on working with others work</a>),
+and runs whatever commands the project’s managers have set up.</p>
+<p>Before setting up our account with Travis CI, however,
+we need to prepare our repository to be recognized by the tool.
+We’ll first add a file called <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code> to our repository,
+which includes instructions for Travis CI.
+(The leading <code class="docutils literal notranslate"><span class="pre">.</span></code> in the name hides the file from casual listings on Mac or Linux,
+but not on Windows.)
+This file must be in the root directory of the repository,
+and is written in <strong>YAML</strong>
+(<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/configuration.html#configuration-file-formats">Section config formats</a> and Appendix <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/yaml.html">YAML</a>.
+For our project,
+we add the following lines:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span>
+
+<span class="nt">python</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;3.6&quot;</span>
+
+<span class="nt">install</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
+
+<span class="nt">script</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pytest</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Python 3.6?</strong></p>
+<p>An early draft of the book used Python 3.6,
+and we later updated to 3.7.
+Over the life of a real project,
+software versions change,
+and it’s not always feasible or possible to re-do all parts of the project.
+In this case,
+our first build in Travis CI used Python 3.6,
+so that’s what we’ve shown here,
+and later checked that updating to 3.7 didn’t break anything.
+We can’t expect our software will be perfect the first time around,
+but we can do our best to document what’s changed and confirm
+our results are still accurate.</p>
+</div></blockquote>
+<p>The <code class="docutils literal notranslate"><span class="pre">language</span></code> key tells Travis CI which programming language to use,
+so that it knows which of its standard <strong>virtual machines</strong> to use as a starting point for the project.
+The <code class="docutils literal notranslate"><span class="pre">python</span></code> key specifies the version or versions of Python to use,
+while the <code class="docutils literal notranslate"><span class="pre">install</span></code> key indicates the name of the file (<code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>)
+listing the libraries that need to be installed.
+The <code class="docutils literal notranslate"><span class="pre">script</span></code> key lists the commands to run—in this case, <code class="docutils literal notranslate"><span class="pre">pytest</span></code>—which
+in turn executes our project scripts
+(i.e., <code class="docutils literal notranslate"><span class="pre">test_zipfs.py</span></code>, <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>, <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code> and <code class="docutils literal notranslate"><span class="pre">utilities.py</span></code>).
+These scripts import a number of packages that don’t come with the
+<a class="reference external" href="https://docs.python.org/3/library/">Python Standard Library</a>,
+so these are what comprise <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>numpy
+pandas
+matplotlib
+scipy
+pytest
+pyyaml
+</pre></div>
+</div>
+<p>Be sure to save both <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code>
+to your project’s root directory,
+commit to your repository,
+and push to GitHub,
+or Travis CI will not be able to recognize your project.</p>
+<p>We’re now ready to set up CI for our project.
+The basic steps are as follows:</p>
+<ol class="arabic simple">
+<li><p>Create an account on <strong>Travis CLI</strong> (if we don’t already have one).</p></li>
+<li><p>Link our Travis CI account to our GitHub account (if we haven’t done so already).</p></li>
+<li><p>Tell Travis CI to watch the repository that contains our project.</p></li>
+</ol>
+<p>Creating an account with an online service is probably a familiar process,
+but linking our Travis CI account to our GitHub account may be something new.
+We only have to do this once
+to allow Travis CI to access all our GitHub repositories,
+but we should always be careful when giving sites access to other sites,
+and only trust well-established and widely used services.</p>
+<p>We can tell Travis CI which repository we want it to watch
+by clicking the “+” next to the “My Repositories” link
+on the left-hand side of the Travis CI homepage (<a class="reference internal" href="#testing-add-repo"><span class="std std-ref">Figure Travis adding a repo</span></a>).</p>
+<figure class="align-default" id="testing-add-repo">
+<img alt="../_images/travis-add-repo.png" src="../_images/travis-add-repo.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 41 </span><span class="caption-text">Travis Adding a repo</span><a class="headerlink" href="#testing-add-repo" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To add the GitHub repository we have been using throughout this book,
+find it in the repository list
+(<span class="xref myst">Figure listing repos</span>).
+If the repository doesn’t show up,
+re-synchronize the list using the green “Sync account” button on the left sidebar.
+If it still doesn’t appear,
+the repository may belong to someone else or be private,
+or your required files may be incorrect.
+Click the “Trigger a build” button to initiate your first test using Travis CI.</p>
+<figure class="align-default" id="testing-list-repo">
+<img alt="../_images/travis-list-repos.png" src="../_images/travis-list-repos.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 42 </span><span class="caption-text">List repos</span><a class="headerlink" href="#testing-list-repo" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Once your repository has been activated,
+Travis CI follows the instructions in <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code>
+and reports whether the build passed (shown in green)
+or produced warnings or errors (shown in red).
+To create this report, Travis CI has done the following:</p>
+<ol class="arabic simple">
+<li><p>Created a new Linux virtual machine.</p></li>
+<li><p>Installed the desired version of Python.</p></li>
+<li><p>Run the commands below the <code class="docutils literal notranslate"><span class="pre">script</span></code> key.</p></li>
+<li><p>Reported the results at <code class="docutils literal notranslate"><span class="pre">https://travis-ci.com/USER/REPO</span></code>,
+where <code class="docutils literal notranslate"><span class="pre">USER/REPO</span></code>
+identifies the repository for a given user.</p></li>
+</ol>
+<p>Our tests pass and the build completes successfully.
+We can view additional details about the test by clicking on the
+repository name
+(<a class="reference internal" href="#testing-build-pass"><span class="std std-ref">Figure Build pass</span></a>).</p>
+<figure class="align-default" id="testing-build-pass">
+<img alt="../_images/travis-build-pass.png" src="../_images/travis-build-pass.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Build pass</span><a class="headerlink" href="#testing-build-pass" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This example shows one of the other benefits of CI:
+it forces us to be explicit about what we are doing and how we do it,
+just as writing a Makefile forces us to be explicit about exactly how we produce results <span id="id4">[]</span>.</p>
+</section>
+<section id="when-to-write-tests">
+<h2>When to Write Tests<a class="headerlink" href="#when-to-write-tests" title="Permalink to this heading">#</a></h2>
+<p>We have now met the three major types of test: unit, integration, and regression.
+At what point in the code development process should we write these?
+The answer depends on who you ask.</p>
+<p>Many programmers are passionate advocates of a practice called
+<strong>test-driven development</strong>
+(TDD).
+Rather than writing code and then writing tests,
+they write the tests first and then write just enough code to make those tests pass.
+Once the code is working,
+they clean it up (<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/clean_readable_code.html">Chapter readable code</a>) and then move on to the next task.
+TDD’s advocates claim that this leads to better code because:</p>
+<ol class="arabic simple">
+<li><p>Writing tests clarifies what the code is actually supposed to do.</p></li>
+<li><p>It eliminates <strong>confirmation bias</strong>.
+If someone has just written a function,
+they are predisposed to want it to be right,
+so they will bias their tests towards proving that it is correct
+instead of trying to uncover errors.</p></li>
+<li><p>Writing tests first ensures that they actually get written.</p></li>
+</ol>
+<p>These arguments are plausible.
+However,
+studies such as <span id="id5">[]</span> and <span id="id6">[]</span> don’t support them:
+in practice,
+writing tests first or last doesn’t appear to affect productivity.
+What <em>does</em> have an impact is working in small, interleaved increments,
+i.e.,
+writing just a few lines of code and testing it before moving on
+rather than writing several pages of code and then spending hours on testing.</p>
+<p>So how do most data scientists figure out if their software is doing the right thing?
+The answer is spot checks:
+each time they produce an intermediate or final result,
+they scan a table, create a chart, or inspect some summary statistics
+to see if everything looks OK.
+Their heuristics are usually easy to state,
+like “there shouldn’t be NAs at this point” or “the age range should be reasonable,”
+but applying those heuristics to a particular analysis always depends on
+their evolving insight into the data in question.</p>
+<p>By analogy with test-driven development,
+we could call this process “checking-driven development.”
+Each time we add a step to our pipeline and look at its output,
+we can also add a check of some kind to the pipeline to ensure that
+what we are checking for remains true as the pipeline evolves or is run on other data.
+Doing this helps reusability—it’s amazing how often a one-off analysis
+winds up being used many times—but the real goal is comprehensibility.
+If someone can get our code and data,
+then runs the code on the data,
+and gets the same result that we did,
+then our computation is reproducible,
+but that doesn’t mean they can understand it.
+Comments help
+(either in the code or as blocks of prose in a <strong>computational notebook</strong>),
+but they won’t check that assumptions and invariants hold.
+And unlike comments,
+runnable assertions can’t fall out of step with what the code is actually doing.</p>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<p>Testing data analysis pipelines is often harder than testing mainstream software applications,
+since data analysts often don’t know what the right answer is [<span id="id7">[]</span>].
+(If we did,
+we would have submitted our report and moved on to the next problem already.)
+The key distinction is the difference between <strong>validation</strong>,
+which asks whether the specification is correct,
+and \gref{verification}{verification},
+which asks whether we have met that specification.
+The difference between them is the difference between
+building the right thing and building something right;
+the practices introduced in this chapter will help with both.</p>
+<ul class="simple">
+<li><p>Test software to convince people (including yourself) that software is correct enough
+and to make tolerances on “enough” explicit.</p></li>
+<li><p>Add <strong>assertions</strong> to code so that it checks itself as it runs.</p></li>
+<li><p>Write <strong>unit tests</strong> to check individual pieces of code.</p></li>
+<li><p>Write <strong>integration tests</strong> to check that those pieces work together correctly.</p></li>
+<li><p>Write <strong>regression tests</strong> to check if things that used to work no longer do.</p></li>
+<li><p>A <strong>test framework</strong> finds and runs tests written in a prescribed fashion and reports their results.</p></li>
+<li><p>Test <strong>coverage</strong> is the fraction of lines of code that are executed by a set of tests.</p></li>
+<li><p><strong>Continuous integration</strong> re-builds and/or re-tests software every time something changes.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../exercises/config.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercises - Configuration</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../exercises/testing.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercises - Testing</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assertions">Assertions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-testing">Unit Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-frameworks">Testing Frameworks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-floating-point-values">Testing Floating-Point Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-testing">Integration Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-testing">Regression Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coverage">Test Coverage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration-todo-move-section-to-workflow">Continuous Integration <strong>TODO</strong> MOVE SECTION TO WORKFLOW</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-write-tests">When to Write Tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Software Engineering Group - University of Potsdam
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
