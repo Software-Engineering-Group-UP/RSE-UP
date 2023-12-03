@@ -103,7 +103,7 @@ the keys `logfile`, `quiet`, and `overwrite`
 have the values `/tmp/log.txt`, `false`, and `false` respectively,
 while the value associated with the key `fonts`
 is a list containing `Verdana` and `Serif`.
-For more discussion of YAML, see [Appendix](https://software-engineering-group-up.github.io/RSE-UP/chapters/appendix/yaml.html).
+For more discussion of YAML, see [Appendix](https://software-engineering-group-up.github.io/RSE-UP/chapters/yaml.html).
 
 ## Matplotlib Configuration 
 
@@ -114,7 +114,7 @@ The labels on our *Jane Eyre* word frequency plot are fine for viewing on screen
 ([Figure Config Jane Eyre Default](configuartion-jane-eyre-default)),
 but they will need to be bigger if we want to include the figure in a slideshow or report.
 
-```{figure} ../../figures/config/jane-eyre-default.png
+```{figure} ../figures/config/jane-eyre-default.png
 :name: configuration-jane-eyre-default
 Configuration example Jane Eyre
 ```
@@ -176,7 +176,7 @@ $ python bin/plotcounts.py results/jane_eyre.csv --outfile
   results/jane_eyre.png
 ```
 
-```{figure} ../../figures/config/jane-eyre-big-labels.png
+```{figure} ../figures/config/jane-eyre-big-labels.png
 :name: configuration-jane-eyre-big-labels
 Jane Eyre Config labels
 ```
@@ -187,7 +187,7 @@ Since the `matplotlibrc` file sets system-wide defaults,
 we will now have big labels by default for all plotting we do in the future,
 which we may not want.
 Secondly,
-we want to package our Zipf's Law code and make it available to other people (Chapter [packaging](https://software-engineering-group-up.github.io/RSE-UP/chapters/packaging/packaging.html)).
+we want to package our Zipf's Law code and make it available to other people (Chapter [packaging](https://software-engineering-group-up.github.io/RSE-UP/chapters/packaging.html)).
 That package won't include our `matplotlibrc` file,
 and we don't have access to the one on their computer,
 so this solution isn't as reproducible as others.
@@ -305,7 +305,7 @@ mpl.rcParams['ytick.labelsize'] = args.yticksize
 Adding extra command-line arguments is a good solution
 if we only want to change a small number of plot characteristics.
 It also makes our work more reproducible:
-if we use a Makefile to regenerate our plots ([Chapter](https://software-engineering-group-up.github.io/RSE-UP/chapters/automate/intro_make.md)),
+if we use a Makefile to regenerate our plots ([Chapter](https://software-engineering-group-up.github.io/RSE-UP/chapters/intro_make.md)),
 the settings will all be saved in one place.
 However,
 `matplotlibrc` has hundreds of parameters we could change,
@@ -462,13 +462,13 @@ More generally,
 the problem of configuring a program illustrates the difference
 between "works for me on my machine"
 and "works for everyone, everywhere."
-From reproducible workflows ([Chapter make](https://software-engineering-group-up.github.io/RSE-UP/chapters/automate/intro_make.html) or [chapter workflows with snakemake](https://software-engineering-group-up.github.io/RSE-UP/chapters/workflows/snakemake.html) to logging ([Section Reporting Errors](https://software-engineering-group-up.github.io/RSE-UP/chapters/errors/error_handling.md#reporting-errors.html)),
+From reproducible workflows ([Chapter make](https://software-engineering-group-up.github.io/RSE-UP/chapters/intro_make.html) or [chapter workflows with snakemake](https://software-engineering-group-up.github.io/RSE-UP/chapters/snakemake.html) to logging ([Section Reporting Errors](https://software-engineering-group-up.github.io/RSE-UP/chapters/error_handling.md#reporting-errors.html)),
 this difference influences every aspect of a research software engineer's work.
 We don't always have to design for large-scale re-use,
 but knowing what it entails allows us to make a conscious, thoughtful choice.
 
 ## Keypoints
 
-```{include} ../keypoints/configuration.md
+```{include} keypoints/configuration.md
 
 ```

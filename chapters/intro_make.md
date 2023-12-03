@@ -89,7 +89,7 @@ please see Section **getting-started-install-software** for Windows installatio
 > **Keep Tracking with Version Control**
 >
 > We encourage you to use the Git workflow
-> from Chapters [git command line](https://software-engineering-group-up.github.io/RSE-UP/chapters/vcs/version_control.html) and [git advanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/vcs/git_advanced.html)
+> from Chapters [git command line](https://software-engineering-group-up.github.io/RSE-UP/chapters/intro_version_control.html) and [git advanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/git_advanced.html)
 > throughout the rest of this book,
 > though we won't continue to remind you.
 
@@ -244,7 +244,7 @@ but when we run `make all`,
 Make finds everything that `all` depends on,
 then brings each of those prerequisites up to date ([Figure automate all](automate-all)).
 
-```{figure} ../../figures/automate/make-dependency-graph.png
+```{figure} ../figures/automate/make-dependency-graph.png
 :name: automate-all
 Automate All
 ```
@@ -799,7 +799,7 @@ we will add a target or rule and forget to update this list.
 A better approach is to format some comments in a special way
 and then extract and display those comments when asked to.
 We'll use `##` (a double comment marker) to indicate the lines we want displayed
-and `grep` (Section [bash advanced find](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_advanced.html#finding-things-in-files) to pull these lines out of the file:
+and `grep` (Section [bash advanced find](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_advanced.html#finding-things-in-files) to pull these lines out of the file:
 
 ```makefile
 .PHONY: all clean help settings
@@ -943,7 +943,7 @@ python bin/plotcounts.py results/collated.csv --outfile
 alpha: 1.1712445413685917
 ```
 
-```{figure} ../../figures/automate/collated.png
+```{figure} ../figures/automate/collated.png
 :name: automate-collated
 Automate Collated
 ```
@@ -975,12 +975,12 @@ which makes it a great way to assemble pipelines out of whatever is lying around
 
 Programmers have created many replacements for Make in the 45 years since it was first created---so many, in fact, that none have attracted enough users to displace it.
 
-If you would like to explore them, check out [Snakemake](https://snakemake.readthedocs.io/) (for Python) or the [section](https://software-engineering-group-up.github.io/RSE-UP/chapters/workflows/snakemake.html) on workflows using snake make.
+If you would like to explore them, check out [Snakemake](https://snakemake.readthedocs.io/) (for Python) or the [section](https://software-engineering-group-up.github.io/RSE-UP/chapters/snakemake.html) on workflows using snake make.
 
 
 If you want to go deeper, {cite:p}`Smit2011` describes the design and implementation of several build managers.
 
 ## Key Points 
 
-```{include} ../keypoints/automate.md
+```{include} keypoints/automate.md
 ```

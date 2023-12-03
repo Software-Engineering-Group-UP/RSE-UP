@@ -36,7 +36,7 @@ as long as they obey a few simple rules,
 the shell can run them without having to know what language they are written in
 or how they do what they do.
 
-```{figure} ../../figures/bash-basics/the-shell.png
+```{figure} ../figures/bash-basics/the-shell.png
 :name: the_shell
 
 The Shell
@@ -55,7 +55,7 @@ The Shell
 > In particular, the most recent versions of MacOS use a shell called the Z Shell or `zsh`;
 > we will point out a few differences as we go along.
 
-Please see Section [getting started](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started/etting_started.html#downloading-the-data) for instructions
+Please see Section [getting started](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started.html#downloading-the-data) for instructions
 on how to install and launch the shell on your computer.
 
 ## Exploring Files and Directories 
@@ -91,7 +91,7 @@ amira
 
 > **Learn by Doing**
 > 
-> Amira is one of the learners described in Section [intended audience](https://software-engineering-group-up.github.io/RSE-UP/chapters/introduction.html#intended-audience). 
+> Amira is one of the learners described in Section [intended audience](https://software-engineering-group-up.github.io/RSE-UP/chapters/welcome.html#intended-audience). 
 > For the rest of the book,
 > we'll present code and examples from her perspective.
 > You should follow along on your own computer,
@@ -124,7 +124,7 @@ we must first understand how the filesystem is organized.
 On Amira's computer the bash_basic_filesystem looks as follows:
 
 
-```{figure} ../../figures/bash-basics/sample-filesystem.png
+```{figure} ../figures/bash-basics/sample-filesystem.png
 :name: bash_basic_filesystem
 
 Bash basic filesystem
@@ -597,7 +597,7 @@ $ cd docs
 $ nano draft.txt
 ```
 
-```{figure} ../../figures/bash-basics/nano-editor.png
+```{figure} ../figures/bash-basics/nano-editor.png
 :name: nano_editor
 
 Nano Editor
@@ -1046,7 +1046,7 @@ Manual pages contain a lot of information---often more than we really want.
 Man callouts include excerpts from the manual on your screen,
 and highlights a few of features useful for beginners.
 
-```{figure} ../../figures/bash-basics/man-callouts.png
+```{figure} ../figures/bash-basics/man-callouts.png
 :name: man_callouts
 
 Bash basics manual
@@ -1099,6 +1099,6 @@ The next chapter will explore how we can combine and repeat commands
 in order to create powerful, efficient workflows.
 
 ## Key Points 
-```{include}  ../keypoints/bash_basics.md
+```{include}  keypoints/bash_basics.md
 
 ```

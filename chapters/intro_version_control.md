@@ -15,7 +15,7 @@ In this way, version control records a complete revision history (i.e., of every
 This is useful from an individual viewpoint, because you don't need to store multiple (but slightly different) copies of the same script as seen in the comix below. 
 It's also useful from a collaboration viewpoint, because the system keeps a record of who made what changes and when.
 
-![Git CMDLINE](../../figures/git-cmdline/phd-comics.png)
+![Git CMDLINE](../figures/git-cmdline/phd-comics.png)
 
 There are many different version control systems, such as CVS, Subversion, and Mercurial, but the most widely used version control system today is **Git**.
 Many people first encounter it through a GUI like the [Github desktop client](https://desktop.github.com/) or paid tools like [GitKraken](https://www.gitkraken.com/) or terminal application like [GitUI](https://github.com/extrawurst/gitui).
@@ -379,7 +379,7 @@ Following [these guidelines]( https://chris.beams.io/posts/git-commit/) will hel
 > is one of the most frequently read questions on Stack Overflow.)
 >
 > To configure Git to use the `nano` editor
-> introduced in Chapter [bash-basics](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_basics.html) instead,
+> introduced in Chapter [bash-basics](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_basics.html) instead,
 > execute the following command:
 >
 > ```bash
@@ -473,7 +473,7 @@ the commit's author, when it was created, and the commit message that we wrote.
 > When you begin working with longer logs
 > (like later in this chapter),
 > you'll notice that the commits are shown in a pager program, 
-> as you saw in Section [bash-basics-help](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_basics.html#reading-the-manual) with manual pages.
+> as you saw in Section [bash-basics-help](https://software-engineering-group-up.github.io/RSE-UP/bash_basics.html#reading-the-manual) with manual pages.
 > You can apply the same keystrokes to scroll through the log
 > and exit the paging program.
 The plot we have made is shown in [Figure](git-cmdline-initial-plot).
@@ -481,7 +481,7 @@ It could be better:
 most of the visual space is devoted to a few very common words,
 which makes it hard to see what is happening with the other ten thousand or so words.
 
-```{figure} ../../figures/git-cmdline/plot-initial.png)
+```{figure} ../figures/git-cmdline/plot-initial.png)
 :name git-cmdline-initial-plot
 Git CMDline initial plot
 ```
@@ -656,7 +656,7 @@ $ git commit -m "Plot frequency against rank on log-log axes"
 > that have been added to the current changeset but not yet committed
 > ([Figure](git-cmdline-staging-area)).
 
-```{figure} ../../figures/git-cmdline/staging-area.png
+```{figure} ../figures/git-cmdline/staging-area.png
 :name: git-cmdline-staging-area
 Git CMDline staging area
 ```
@@ -668,7 +668,7 @@ $ python bin/plotcounts.py results/dracula.csv --outfile
   results/dracula.png
 ```
 
-```{figure} ../../figures/git-cmdline/plot-loglog.png
+```{figure} ../figures/git-cmdline/plot-loglog.png
 :name: git-cmdline-loglog-plot
 Git CMDline LOG Plot
 ```
@@ -736,7 +736,7 @@ The Git commands we've covered so far (`git add`, `git commit`, `git diff`)
 represent the tasks you perform in a basic Git workflow in a local repository 
 ([Figure](git-remote) a).
 
-```{figure} ../../figures/git-cmdline/git-remote.png
+```{figure} ../figures/git-cmdline/git-remote.png
 :name: git-remote
 Git Remote
 ```
@@ -777,7 +777,7 @@ Next, we need to connect our desktop repository with the one on GitHub.
 We do this by making the GitHub repository a **remote** of the local repository.
 The home page of our new repository on GitHub includes the string we need to identify it ([Figure](git-cmdline-repo-link)).
 
-```{figure} ../../figures/git-cmdline/repo-link.png
+```{figure} ../figures/git-cmdline/repo-link.png
 :name: git-cmdline-repo-link
 Git CMDline Repository link
 ```
@@ -849,7 +849,7 @@ To https://github.com/amira-khan/zipf.git
 
 If we view our GitHub repository in the browser, it now includes all of our project files, along with all of the commits we have made so far ([Figure](git-cmdline-history)).
 
-```{figure} ../../figures/git-cmdline/repo-history.png
+```{figure} ../figures/git-cmdline/repo-history.png
 :name: git-cmdline-history
 Git Commandline History
 
@@ -1280,4 +1280,4 @@ We will explore these in the next chapter.
 
 ## Keypoints
 
-```{include} ../keypoints/version_control.md```
+```{include} keypoints/version_control.md```

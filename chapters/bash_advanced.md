@@ -33,7 +33,7 @@ zipf/
 > if you worked through all of the exercises in the previous chapter.
 > Feel free to delete them or move them to a separate directory.
 > If you have accidentally deleted files you need,
-> you can download them again by following the instructions in Section [](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started/getting_started.html#downloading-the-data).
+> you can download them again by following the instructions in Section [Downloading the Data](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started.html#downloading-the-data).
 
 ## Creating New Commands 
 
@@ -44,7 +44,7 @@ For historical reasons,
 a file full of shell commands is usually called a **shell script** but it is really just another kind of program.
 
 Let's start by creating a new directory for our runnable programs called `bin/`,
-consistent with the project structure described in Section [](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started/getting_started.html#organizing-project-content). 
+consistent with the project structure described in Section [Organizing the Project Content](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started.html#organizing-project-content). 
 
 ```bash
 $ cd ~/zipf
@@ -127,7 +127,7 @@ $ bash book_summary.sh | wc -l
 
 What if we want our script to print the name of the book's author?
 The command `grep` finds and prints lines that match a pattern.
-We'll learn more about `grep` in Section [finding thins in files](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_advanced.html#finding-things-in-files),
+We'll learn more about `grep` in Section [finding thins in files](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_advanced.html#finding-things-in-files),
 but for now we can edit the script:
 
 ```bash
@@ -299,7 +299,7 @@ We can now open the file in an editor, remove the serial numbers at the start of
 We can use `head` and `tail` to select lines from a file by position,
 but we also often want to select lines that contain certain values.
 This is called \gref{filtering}{filter},\index{filter (in Unix shell)}
-and we usually do it in the shell with the command `grep` that we briefly met in Section [creating new commands](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_advanced.html#creating-new-commands).
+and we usually do it in the shell with the command `grep` that we briefly met in Section [creating new commands](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_advanced.html#creating-new-commands).
 Its name is an acronym of "global regular expression print,"
 which was a common sequence of operations in early Unix text editors.
 
@@ -493,7 +493,7 @@ $ grep -i -n -v the data/sherlock_holmes.txt | head -n 5
 8:
 ```
 
-As we learned in Section [moving around](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_basics.html#moving-around),
+As we learned in Section [moving around](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_basics.html#moving-around),
 we can write this command as `grep -inv`,
 but probably shouldn't for the sake of readability.
 
@@ -764,7 +764,7 @@ $ find . -name "*.bak"
 
 ## Configuring the Shell
 
-As Section [repeating commands on many files](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_tools.html#repeating-commands-on-many-files) explained,
+As Section [repeating commands on many files](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_tools.html#repeating-commands-on-many-files) explained,
 the shell is a program, and it has variables like any other program.
 Some of those variables control the shell's operations;
 by changing their values we can change how the shell and other programs behave.
@@ -850,7 +850,7 @@ unless we type the path in explicitly
 as `./analyze` if we are in `/Users/amira`).
 
 If we want to see a variable's value, we can print it using the `echo` command
-introduced at the end of Section [redoing things](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_tools.html#redoing-things).
+introduced at the end of Section [redoing things](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_tools.html#redoing-things).
 Let's look at the value of the variable `HOME`, which keeps track of our home directory:
 
 ```bash
@@ -874,7 +874,7 @@ $ echo $HOME
 ```
 
 
-As with loop variables (Section [redoing thins](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_tools.html#redoing-things),
+As with loop variables (Section [redoing thins](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_tools.html#redoing-things),
 the dollar sign before the variable names tells the shell
 that we want the variable's value.
 This works just like wildcard expansion---the shell replaces
@@ -963,7 +963,7 @@ by searching online for "sample bashrc".
 
 While searching for additional aliases, you're likely to encounter references to other common shell features to customize, such as the color of your shell's background and text.
 
-As mentioned in Chapter [bash basics](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_basics.html), another important feature to consider customizing is your shell prompt.
+As mentioned in Chapter [bash basics](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_basics.html), another important feature to consider customizing is your shell prompt.
 In addition to a standard symbol (like `$`), your computer may include other information as well, such as the working directory, username, and/or date/time.
 If your shell does not include that information and you would like to see it,
 or if your current prompt is too long and you'd like to shorten it,
@@ -996,6 +996,6 @@ while {cite:p}`Jans2014` looks specifically at how to process data on the comman
 
 ## Key Points 
 
-```{include } ../keypoints/bash_advanced.md
+```{include } keypoints/bash_advanced.md
 
 ```

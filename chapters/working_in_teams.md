@@ -568,12 +568,12 @@ To write a good bug report:
 
 6.  Describe each problem separately so that each one can be tackled on its own.
     This parallels the rule about creating a branch in version control for each bug fix or feature
-    discussed in Section [git advanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/vcs/git_advanced.html).
+    discussed in Section [git advanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/git_advanced.html).
 
 An example of a well-written bug report with all of the components mentioned above
 is shown in [Figure](teams-bug-report).
 
-```{figure} ../../figures/teams/bug-report.png
+```{figure} ../figures/teams/bug-report.png
 :name: teams-bug-report
 Teams bug report
 ```
@@ -590,7 +590,7 @@ but you can use an issue template to make it easier for contributors to
 remember and complete documentation about bug reports.
 
 Sometimes the person creating the issue may not know or have the right answer for some of these things, and will be doing their best with limited information about the error.
-Responding with kindness and encouragement is important to maintain a healthy community, and should be enforced by the project's Code of Conduct (Section [teams coc](https://software-engineering-group-up.github.io/RSE-UP/chapters/work_teams/working_in_teams.html#establish-a-code-of-conduct)).
+Responding with kindness and encouragement is important to maintain a healthy community, and should be enforced by the project's Code of Conduct (Section [teams coc](https://software-engineering-group-up.github.io/RSE-UP/chapters/working_in_teams.html#establish-a-code-of-conduct)).
 
 ## Labeling Issues 
 
@@ -655,7 +655,7 @@ Some of the labels that GitHub creates for repositories by default
 are shown in [Figure team labels](teams-labels).
 These labels can be modified or otherwise customized for each repository.
 
-```{figures} ../../figures/teams/issue-labels.png
+```{figures} ../figures/teams/issue-labels.png
 :name: teams-labels
 Team labels
 ```
@@ -672,7 +672,7 @@ Adding labels to issues also helps us standardize a workflow for the project.
 Conventions about who can do what to issues with various labels,
 and who can change those labels, let us define a workflow like the one shown in [Figure teams lifecycle](teams-lifecycle).
 
-```{figure} ../../figures/teams/lifecycle.pdf
+```{figure} ../figures/teams/lifecycle.pdf
 :name: teams-lifecycle
 Teams lifecycle
 ```
@@ -730,7 +730,7 @@ Since this can't always be estimated accurately,
 it's common to classify things as "an hour," "a day," or "multiple days."
 Again, anything that's likely to take longer than multiple days should be broken down so that planning and progress tracking can be more accurate.
 
-```{figure} ../../figures/teams/effort-impact-matrix.pdf
+```{figure} ../figures/teams/effort-impact-matrix.pdf
 :name: teams-impact-effort
 Teams impact effort matrix
 ```
@@ -995,7 +995,7 @@ This information may be included as sections in the existing `README` file or pu
     explains how to contribute,
     i.e.,
     what naming conventions to use for functions,
-    what tags to put on issues (Section [teams planning]( https://software-engineering-group-up.github.io/RSE-UP/chapters/work_teams/working_in_teams.html#planning)),
+    what tags to put on issues (Section [teams planning]( https://software-engineering-group-up.github.io/RSE-UP/chapters/working_in_teams.html#planning)),
     or how to install and configure the software needed to start work on the project.
     These instructions can also be included as a section in `README`;
     wherever they go,
@@ -1003,7 +1003,7 @@ This information may be included as sections in the existing `README` file or pu
     the more likely they are to do so {cite:p}`Stei2014`.
 
 -   `GOVERNANCE`
-    explains how the project is run (Section [teams martha](https://software-engineering-group-up.github.io/RSE-UP/chapters/work_teams/working_in_teams.html#making-decisions)).
+    explains how the project is run (Section [teams martha](https://software-engineering-group-up.github.io/RSE-UP/chapters/working_in_teams.html#making-decisions)).
     It is still uncommon for this to be in a file of its own---it is more often included
     in `README` or `CONTRIBUTING`---but open communities have learned the hard way
     that *not* being explicit about who has a voice in decisions
@@ -1115,8 +1115,8 @@ and ask the supervisor to arrange a meeting to resolve the issue.
 > They will nod as we present our case,
 > then say, "Well, yes, but..." and list a bunch of minor exceptions
 > or cases where others on the team have also fallen short of expectations.
-> Having collaborator guidelines (Section [teams coc](https://software-engineering-group-up.github.io/RSE-UP/chapters/work_teams/working_in_teams.html#teams-coc))
-> and tracking progress (Section [teams workflow](https://software-engineering-group-up.github.io/RSE-UP/chapters/work_teams/working_in_teams.html#teams-workflow))
+> Having collaborator guidelines (Section [teams coc](https://software-engineering-group-up.github.io/RSE-UP/chapters/working_in_teams.html#teams-coc))
+> and tracking progress (Section [teams workflow](https://software-engineering-group-up.github.io/RSE-UP/chapters/working_in_teams.html#teams-workflow))
 > are essential for handling them.
 > If we can't back up our complaint,
 > our supervisor will likely be left with the impression that the whole team is dysfunctional.
@@ -1166,6 +1166,6 @@ This chapter was the hardest in this book to write, but is probably also the mos
 
 ## Keypoints
 
-```{include} ../keypoints/teams.md
+```{include} keypoints/teams.md
 
 ```

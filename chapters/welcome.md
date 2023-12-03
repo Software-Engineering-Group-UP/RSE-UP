@@ -105,11 +105,11 @@ the book follows Amira and Sami as they work together to write an actual softwar
 to address a real research question.
 The data analysis task that we focus on
 relates to a fascinating result in the field of quantitative linguistics.
-[Zipf's Law][zipfs-law] states that the second most common word in a body of text
+**Zipf's Law** states that the second most common word in a body of text
 appears half as often as the most common,
 the third most common appears a third as often, and so on.
 To test whether Zipf's Law holds for a collection of classic novels
-that are freely available from [Project Gutenberg][project-gutenberg],
+that are freely available from **Project Gutenberg**,
 we write a software package that counts and analyzes the word frequency distribution
 in any arbitrary body of text.
 

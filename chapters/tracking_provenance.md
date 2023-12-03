@@ -27,7 +27,7 @@ and the code used to do the analysis:
 While some reports, datasets, software packages, and analysis scripts
 can't be published without violating personal or commercial confidentiality,
 every researcher's default should be to make all these as widely available as possible.
-Publishing it under an open license ([Section Team License](https://software-engineering-group-up.github.io/RSE-UP/chapters/work_teams/working_in_teams.html#include-a-license)) is the first step;
+Publishing it under an open license ([Section Team License](https://software-engineering-group-up.github.io/RSE-UP/chapters/working_in_teams.html#include-a-license)) is the first step;
 the sections below describe what else we can do to capture
 the **provenance** of our data analysis.
 
@@ -136,7 +136,7 @@ We can tell we've done this if:
 2.  Data is described with rich metadata.
 3.  Metadata clearly and explicitly includes the identifier of the data it describes.
 4.  (Meta)data is registered or indexed in a searchable resource,
-    such as the data sharing platforms described in [Section](https://software-engineering-group-up.github.io/RSE-UP/chapters/provenance/tracking_provenance.html#where-to-archive-data).
+    such as the data sharing platforms described in [Section](https://software-engineering-group-up.github.io/RSE-UP/chapters/tracking_provenance.html#where-to-archive-data).
 
 #### Data should be *accessible*
 
@@ -226,7 +226,7 @@ It involves adding information about the software environment
 and data processing steps to a GitHub repository that contains
 the analysis scripts/notebooks,
 before creating a new release of that repository and archiving it (with a DOI)
-with [Zenodo][zenodo].
+with [Zenodo](https://zenodo.org/).
 
 ### Software environment 
 
@@ -261,7 +261,7 @@ but in more complex cases we probably want to make life easier for the reader
 (and for our future selves looking to re-run the analysis).
 One way to make things easier is to export a description of
 a complete conda environment
-([Section packaging virtual environments](https://software-engineering-group-up.github.io/RSE-UP/chapters/packaging/packaging.html#virtual-environments); [Appendix Anaconda](https://software-engineering-group-up.github.io/RSE-UP/chapters/appendix/anaconda.html)), or **TODO** [Appendix setting up virtual environment in mac and linux](https://software-engineering-group-up.github.io/RSE-UP/chapters/appendix/pyenv.html)
+([Section packaging virtual environments](https://software-engineering-group-up.github.io/RSE-UP/chapters/packaging.html#virtual-environments); [Appendix Anaconda](https://software-engineering-group-up.github.io/RSE-UP/chapters/anaconda.html)), or **TODO** [Appendix setting up virtual environment in mac and linux](https://software-engineering-group-up.github.io/RSE-UP/chapters/pyenv.html)
 which can be saved as YAML using:
 
 ```bash
@@ -310,7 +310,7 @@ remember to add it to your GitHub repository.
 
 The second item that needs to be added to our GitHub repository is a description
 of the data processing steps involved in each key result.
-Assuming the author list on our report is Amira Khan and Sami Virtanen ([Section](https://software-engineering-group-up.github.io/RSE-UP/chapters/introduction.html#intended-audience),
+Assuming the author list on our report is Amira Khan and Sami Virtanen ([Section](https://software-engineering-group-up.github.io/RSE-UP/chapters/welcome.html#intended-audience),
 we could add a new Markdown file called `KhanVirtanen2020.md` to the repository
 to describe the steps:
 
@@ -337,7 +337,7 @@ We should also add this information as an appendix to the report itself.
 
 Later in this book we will package and release our Zipf's Law code
 so that it can be downloaded and installed by the wider research community,
-just like any other Python package ([Chapter Packaging](https://software-engineering-group-up.github.io/RSE-UP/chapters/packaging/packaging.html)).
+just like any other Python package ([Chapter Packaging](https://software-engineering-group-up.github.io/RSE-UP/chapters/packaging.html)).
 Doing this is especially helpful if other people might be interested in using and/or extending it,
 but often the scripts and notebooks we write to produce a particular figure or table
 are too case-specific to be of broad interest.
@@ -350,11 +350,11 @@ which specialize in storing the long tail of research projects
 Uploading a zip file of analysis scripts to the repository is a valid option,
 but more recently the process has been streamlined via direct integration
 between GitHub and Zenodo.
-As described in [this tutorial][github-zenodo-tutorial],
+As described in [this tutorial]( https://guides.github.com/activities/citable-code/),
 the process involves creating a new release of our repository in GitHub
 that Zenodo copies and then issues a DOI for ([Figure](provenance-release)).
 
-```{figure} ../../figures/provenance/release.png
+```{figure} ../figures/provenance/release.png
 :name: provenance-release
 Release
 ```
@@ -417,6 +417,6 @@ we help ensure that everyone can pursue their ideas as we did.
 
 ## Key Points
 
-```{include} ../keypoints/provenance.md
+```{include} keypoints/provenance.md
 
 ```

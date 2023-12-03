@@ -132,7 +132,7 @@ we will do our work in a separate branch.
 Once we have successfully added curve fitting to `plotcounts.py`,
 we can decide if we want to merge our changes back into the `master` branch.
 
-```{figure} ../../figures/git-cmdline/plot-loglog.png
+```{figure} ../figures/git-cmdline/plot-loglog.png
 :name: git-cmdline-loglog-plot
 Git Command line LogLog plot
 ```
@@ -168,7 +168,7 @@ On branch master
 nothing to commit, working directory clean
 ```
 
-To switch to our new branch we can use the `checkout` command that we first saw in Chapter [git command line](https://software-engineering-group-up.github.io/RSE-UP/chapters/vcs/version_control.html):
+To switch to our new branch we can use the `checkout` command that we first saw in Chapter [git command line](https://software-engineering-group-up.github.io/RSE-UP/chapters/intro_version_control.html):
 
 ```bash
 $ git checkout fit
@@ -416,7 +416,7 @@ alpha: 1.0866646252515038
 
 So according to our fit, the most frequent word will occur approximately $2^{1.1}=2.1$ times as often as the second most frequent word, $3^{1.1}=3.3$ times as often as the third most frequent word, and so on. [Figure](git-advanced-dracula-fit) shows the plot.
 
-```{figure} ../../figures/git-advanced/dracula-fit.png
+```{figure} ../figures/git-advanced/dracula-fit.png
 :name: git-advanced-dracula-fit.png
 
 Dracula Fit
@@ -1036,7 +1036,7 @@ Sami can go to that URL and click on the "Fork" button in the upper right corner
 ([Figure](git-advanced-fork-button)).
 GitHub immediately creates a copy of Amira's repository within Sami's account on GitHub's own servers.
 
-```{figure} ../../figures/git-advanced/fork-button.png
+```{figure} ../figures/git-advanced/fork-button.png
 :name: git-advanced-fork-button
 
 Git Fork button
@@ -1046,7 +1046,7 @@ When the command completes, the setup on GitHub now looks like [Figure](git-adva
 the new repository exists only on GitHub.
 When Sami explores its history, they see that it contains all of the changes Amira made.
 
-```{figure} ../../figures/git-advanced/after-fork.png
+```{figure} ../figures/git-advanced/after-fork.png
 :name: git-advanced-after-fork
 
 Git: After Fork
@@ -1276,7 +1276,7 @@ To https://github.com/sami-virtanen/zipf.git
 
 When Sami goes to their GitHub repository in the browser, GitHub notices that they have just pushed a new branch and asks them if they want to create a pull request ([Figure](git-advanced-after-sami-pushes)).
 
-```{figure} ../../figures/git-advanced/after-sami-pushes.png
+```{figure} ../figures/git-advanced/after-sami-pushes.png
 :name: git-advanced-after-sami-pushes
 
 Git after Push
@@ -1284,14 +1284,14 @@ Git after Push
 
 When Sami clicks on the button, GitHub displays a page showing the default source and destination of the pull request and a pair of editable boxes for the pull request's title and a longer comment ([Figure](git-advanced-pull-request-start)).
 
-```{figure} ../../figures/git-advanced/open-pull-request.png
+```{figure} ../figures/git-advanced/open-pull-request.png
 :name: git-advanced-pull-request-start
 Start a pull request
 ```
 
 If they scroll down, Sami can see a summary of the changes that will be in the pull request ([Figure](git-advanced-pull-request-summary)).
 
-```{figure} ../../figures/git-advanced/open-pull-request-detail.png
+```{figure} ../figures/git-advanced/open-pull-request-detail.png
 :name: git-advanced-pull-request-summary
 Git pull request summary
 ```
@@ -1304,12 +1304,12 @@ When they do, GitHub displays a page showing the new pull request,
 which has a unique serial number ([Figure](git-advanced-pull-request-new)).
 Note that this pull request is displayed in Amira's repository rather than Sami's, since it is Amira's repository that will be affected if the pull request is merged.
 
-```{figure} ../../figures/git-advanced/fill-in-pull-request.png
+```{figure} ../figures/git-advanced/fill-in-pull-request.png
 :name: git-advanced-pull-request-fill-in
 Git Fill in pull request
 ```
 
-```{figure} ../../figures/git-advanced/new-pull-request.png
+```{figure} ../figures/git-advanced/new-pull-request.png
 :name: git-advanced-pull-request-new
 Git new pull request
 ```
@@ -1323,17 +1323,17 @@ and clicking on the pull request link itself displays its details
 Sami and Amira can both see and interact with these pages,
 though only Amira has permission to merge.
 
-```{figure} ../../figures/git-advanced/viewing-new-pull-request.png
+```{figure} ../figures/git-advanced/viewing-new-pull-request.png
 :name: git-advanced-pull-request-viewing
 View pull request
 ```
 
-```{figure} ../../figures/git-advanced/pr-list.png
+```{figure} ../figures/git-advanced/pr-list.png
 :name: git-advanced-pull-request-list
 Git pull request list
 ```
 
-```{figure} ../../figures/git-advanced/pr-details.png
+```{figure} ../figures/git-advanced/pr-details.png
 :name: git-advanced-pull-request-details
 
 Git pull request details
@@ -1343,7 +1343,7 @@ Since there are no conflicts,GitHub will let Amira merge the PR immediately usin
 she clicks on the "Files changed" tab to see what Sami has changed
 ([Figure](git-advanced-pull-request-changes)).
 
-```{figure} ../../figures/git-advanced/pr-changes.png
+```{figure} ../figures/git-advanced/pr-changes.png
 :name: git-advanced-pull-request-changes
 Pull request changes
 ```
@@ -1355,17 +1355,17 @@ She only wants to make one comment rather than write a lengthier multi-comment r
 GitHub redisplays the page with her remarks inserted ([Figure](git-advanced-pull-request-pr-with-comment)).
 
 
-```{figure} ../../figures/git-advanced/pr-comment-marker.png
+```{figure} ../figures/git-advanced/pr-comment-marker.png
 :name: git-advanced-pull-request-comment-marker
 Pull request comment marker
 ```
 
-```{figure} ../../figures/git-advanced/pr-writing-comment.png
+```{figure} ../figures/git-advanced/pr-writing-comment.png
 :name: git-advanced-pull-request-write-comment
 Pull request write a comment
 ```
 
-```{figure} ../../figures/git-advanced/pr-with-comment.png
+```{figure} ../figures/git-advanced/pr-with-comment.png
 :name: git-advanced-pull-request-pr-with-comment
 Pull request with comment
 ```
@@ -1379,12 +1379,12 @@ Satisfied, she goes back to the "Conversation" tab and clicks on "Merge".
 The icon at the top of the PR's page changes text and color to show that the merge was successful
 ([Figure](git-advanced-pull-request-successful-merge)).
 
-```{figure} ../../figures/git-advanced/pr-with-fix.png
+```{figure} ../figures/git-advanced/pr-with-fix.png
 :name: git-advanced-pull-request-pr-with-fix
 Pull request with fix
 ```
 
-```{figure} ../../figures/git-advanced/pr-successful-merge.png
+```{figure} ../figures/git-advanced/pr-successful-merge.png
 :name: git-advanced-pull-request-successful-merge
 PR successful merge
 ```
@@ -1454,7 +1454,7 @@ rather than via a pull request from a forked repository.
 Sami makes a change to `README.md` in the `master` branch on GitHub.
 Meanwhile, Amira is making a conflicting change to the same file in a different branch. When Amira creates her pull request, GitHub will detect the conflict and report that the PR cannot be merged automatically ([Figure](git-advanced-pr-conflict)).
 
-```{figure} ../../figures/git-advanced/pr-conflict.png
+```{figure} ../figures/git-advanced/pr-conflict.png
 :name: git-advanced-pr-conflict
 Pull request conflict
 ```
@@ -1488,6 +1488,6 @@ it is also an effective way to spread understanding and skills.
 
 ## Keypoints
 
-```{include} ../keypoints/git-advanced.md
+```{include} keypoints/git-advanced.md
 
 ```

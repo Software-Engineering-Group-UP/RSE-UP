@@ -69,7 +69,7 @@ Write `(1+2)` instead of `( 1+2 )`.
 This applies to function calls as well:
 write `max(a, b)` rather than `max( a, b )`.
 (We will see a related rule when we discuss default parameter values
-in Section [Python Features](https://software-engineering-group-up.github.io/RSE-UP/chapters/clean_code/clean_code.html#python-features).)
+in Section [Python Features](https://software-engineering-group-up.github.io/RSE-UP/chapters/clean_readable_code.html#python-features).)
 
 **Always use spaces around comparisons like `>` and `<=`.**
 
@@ -165,9 +165,9 @@ If we need to do something in some runs of the program and not in others,
 use an `if` statement to enable or disable that block of code:
 it eliminates the risk of accidentally commenting out one too many lines.
 If the lines we were removing or commenting out print debugging information,
-we should replace them with logging calls (Section [Reporting Errors](https://software-engineering-group-up.github.io/RSE-UP/chapters/error_handling/error_handling.html#reporting-errors)).
+we should replace them with logging calls (Section [Reporting Errors](https://software-engineering-group-up.github.io/RSE-UP/chapters/error_handling.html#reporting-errors)).
 If they are operations that we want to execute,
-we can add a configuration option (Chapter [Configuration](https://software-engineering-group-up.github.io/RSE-UP/chapters/config/configuration.html)),
+we can add a configuration option (Chapter [Configuration](https://software-engineering-group-up.github.io/RSE-UP/chapters/configuration.html)),
 and if we are sure we don't need the code,
 we should take it out completely:
 we can always get it back from version control
@@ -178,14 +178,14 @@ we can always get it back from version control
 The order of items in each file should be:
 
 -   The **shebang** line (because it has to be first to work).
--   The file's documentation string (Section [Python Documentation](https://software-engineering-group-up.github.io/RSE-UP/chapters/scripting/building_cli_python.html#documentation)).
+-   The file's documentation string (Section [Python Documentation](https://software-engineering-group-up.github.io/RSE-UP/chapters/python_building_cli.html#documentation)).
 -   All of the `import` statements, one per line.
 -   Global variable definitions
     (especially things that would be constants in languages that support them).
 -   Function definitions.
 -   If the file can be run as a program,
     the `if __name__ == '__main__'` statement discussed in
-    Section [Writing your own modules](https://software-engineering-group-up.github.io/RSE-UP/chapters/scripting/building_cli_python.html#writing-our-own-modules).
+    Section [Writing your own modules](https://software-engineering-group-up.github.io/RSE-UP/chapters/python_building_cli.html#writing-our-own-modules).
 
 That much is clear,
 but programmers disagree (strongly) on whether high-level functions should come first or last,
@@ -196,7 +196,7 @@ so that it is immediately before the check on `__name__`.
 Wherever it goes,
 `main` tends to follow one of three patterns:
 
-1.  Figure out what the user has asked it to do (Chapter [Configuration](https://software-engineering-group-up.github.io/RSE-UP/chapters/config/configuration.html).
+1.  Figure out what the user has asked it to do (Chapter [Configuration](https://software-engineering-group-up.github.io/RSE-UP/chapters/configuration.html).
 2.  Read all input data.
 3.  Process it.
 4.  Write output.
@@ -227,13 +227,13 @@ We put all of the single-use functions in the first half of the file
 in the order in which they are likely to be called,
 and then put all of the multi-use utility functions in the bottom of the file in alphabetical order.
 If any of those utility functions are used by other scripts or programs,
-they should go in a file of their own (Section [Collating Results](https://software-engineering-group-up.github.io/RSE-UP/chapters/scripting/building_cli_python.html#collating-results).
+they should go in a file of their own (Section [Collating Results](https://software-engineering-group-up.github.io/RSE-UP/chapters/python_building_cli.html#collating-results).
 
 In fact,
 this is a good practice even if those functions are only used by one program,
 since it signals even more clearly which are specific to this program
 and which are likely to be reused elsewhere.
-This is why we create `collate.py` in Section [Collating](https://software-engineering-group-up.github.io/RSE-UP/chapters/scripting/building_cli_python.html#collating-results):
+This is why we create `collate.py` in Section [Collating](https://software-engineering-group-up.github.io/RSE-UP/chapters/python_building_cli.html#collating-results):
 we could have kept all of our code in `countwords.py`,
 but collating felt like something we might want to do separately.
 
@@ -785,7 +785,7 @@ We will explore ways of making this code more readable in the exercises.
 
 ## Code Reviews 
 
-At the end of Section [Checking Style](https://software-engineering-group-up.github.io/RSE-UP/chapters/clean_code/clean_code.html#checking-style),
+At the end of Section [Checking Style](https://software-engineering-group-up.github.io/RSE-UP/chapters/clean_readable_code.html#checking-style),
 our stop-word program looked like this:
 
 ```python
@@ -819,7 +819,7 @@ but based on our coding guidelines and our discussion of refactoring,
 these things should be changed:
 
 -   The commented-out `print` statements should either be removed
-    or turned into logging statements (Section [Error Logging](https://software-engineering-group-up.github.io/RSE-UP/chapters/error_handling/error_handling.html#reporting-errors)).
+    or turned into logging statements (Section [Error Logging](https://software-engineering-group-up.github.io/RSE-UP/chapters/error_handling.html#reporting-errors)).
 
 -   The variables `ln`, `i`, and `j` should be given clearer names.
 
@@ -890,7 +890,7 @@ reviewers need to understand the problem domain well enough to comment on algori
 rather than indentation and variable naming,
 and the number of people who can do that for a research project is often very small {cite:p}`Petr2014`.
 
-Section [Advanced Pull requests](https://software-engineering-group-up.github.io/RSE-UP/chapters/vcs/git_advanced.html#pull-requests) explained how to create and merge pull requests.
+Section [Advanced Pull requests](https://software-engineering-group-up.github.io/RSE-UP/chapters/git_advanced.html#pull-requests) explained how to create and merge pull requests.
 How we review these is just as important as what we look for:
 being dismissive or combative are good ways to ensure that people don't pay attention to our reviews,
 or avoid having us review their work {cite:p}`Bern2018`.
@@ -1070,7 +1070,7 @@ it can also be called like this:
 
 Note that we do not put spaces around the `=` when defining a default parameter value.
 This is consistent with PEP-8's rules about spacing in function definitions and calls
-(Section [Python Style](https://software-engineering-group-up.github.io/RSE-UP/chapters/clean_code/clean_code.html#python-style)).
+(Section [Python Style](https://software-engineering-group-up.github.io/RSE-UP/chapters/clean_readable_code.html#python-style)).
 
 Default parameter values make code easier to understand and use,
 but there is a subtle trap.
@@ -1251,3 +1251,5 @@ PEP-8 conveys [the same message](https://www.python.org/dev/peps/pep-0008/#a-foo
 there will always be cases where your code will be easier to understand
 if you *don't* do the things described in this lesson,
 but there are probably fewer of them than you think.
+
+

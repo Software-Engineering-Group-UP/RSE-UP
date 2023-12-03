@@ -108,7 +108,7 @@ This is why the `print` statement inside the `try` doesn't run when `denom` is 0
 as soon as Python tries to calculate `1/denom`,
 it skips directly to the code under `except`.
 
-```{figure} ../../figures/errors/exceptions.png
+```{figure} ../figures/errors/exceptions.png
 :name: errors-control-flow
 Control Flow
 ```
@@ -361,7 +361,7 @@ and that the second is numerical.
 
 ## Writing Useful Error Messages 
 
-```{figure} ../../figures/scripting/error-message.png
+```{figure} ../figures/scripting/error-message.png
 :name: errors-error-message
 Error message
 ```
@@ -723,7 +723,7 @@ because it allows them to set things up the way they want with very little work.
 
 > **Logging Configuration**
 >
-> Chapter on [Configuration](https://software-engineering-group-up.github.io/RSE-UP/chapters/config/configuration.html) explained why and how
+> Chapter on [Configuration](https://software-engineering-group-up.github.io/RSE-UP/chapters/configuration.html) explained why and how
 > to save the configuration that produced a particular result.
 > We clearly also want this information in the log,
 > so we have three options:
@@ -754,6 +754,6 @@ can save us and our users a lot of needless work.
 
 ## Keypoints
 
-```{include} ../keypoints/error_handling.md
+```{include} keypoints/error_handling.md
 
 ```

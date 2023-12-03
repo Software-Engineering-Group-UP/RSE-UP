@@ -40,7 +40,7 @@ In building the Zipf's Law project,
 we'll follow a widely used template
 for organizing small and medium-sized data analysis projects {cite:p}`Nobl2009`.
 The project will live in a directory called `zipf`,
-which will also be a Git repository stored on GitHub chapter [Git Command-line](https://software-engineering-group-up.github.io/RSE-UP/chapters/vsc/version_control.html).
+which will also be a Git repository stored on GitHub chapter [Git Command-line](https://software-engineering-group-up.github.io/RSE-UP/chapters/intro_version_control.html).
 The following is an abbreviated version of the project directory tree
 as it appears toward the end of the book:
 
@@ -82,7 +82,7 @@ that should be present in every research software project,
 open source or otherwise:
 
 -   `README` includes basic information on our project.
-     We'll create it in Chapter [Git Advanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/vcs/git_advanced.html),
+     We'll create it in Chapter [Git Advanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/git_advanced.html),
      and extend it in Chapter [Packaging](TODO).
 
 -   `LICENSE` is the project's license. We'll add it in Section **TODO REF TO LICENSE**.
@@ -95,7 +95,7 @@ open source or otherwise:
 
 Some projects also include a `CONTRIBUTORS` or `AUTHORS` file that
 lists everyone who has contributed to the project,
-while others include that information in the `README` (we do this in Chapter [Git Advanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/vcs/git_advanced.html)
+while others include that information in the `README` (we do this in Chapter [Git Advanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/git_advanced.html)
 or make it a section in `CITATION`.
 These files are often called **boilerplate,
 meaning they are copied without change from one use to the next.
@@ -108,14 +108,14 @@ the directories in the repository's root are organized according to purpose:
 -   Runnable programs go in `bin/`
     (an old Unix abbreviation for "binary", meaning "not text").
     This will include both shell scripts,
-    e.g., `book_summary.sh` developed in Chapter [bash dvanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash_advanced.html),,
+    e.g., `book_summary.sh` developed in Chapter [bash dvanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_advanced.html),,
     and Python programs,
-    e.g., `countwords.py`, developed in Chapter [building a CLI with python](https://software-engineering-group-up.github.io/RSE-UP/chapters/scripting/building_cli_python.html),).
+    e.g., `countwords.py`, developed in Chapter [building a CLI with python](https://software-engineering-group-up.github.io/RSE-UP/chapters/python_building_cli.html),).
 
 -   Raw data goes in `data/`
     and is never modified after being stored.
     You'll set up this directory
-    and its contents in Section [download the data](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started/getting_started.html#downloading-the-data).
+    and its contents in Section [download the data](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started.html#downloading-the-data).
 
 -   Results are put in `results/`.
     This includes cleaned-up data,
@@ -229,9 +229,9 @@ we are ready to start our analysis.
 ### Getting ready 
 
 Make sure you've downloaded the required data files
-(following Section [downloading the data ](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started/getting_started.html#downloading-the-data)
-and installed the required software ([as described here](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started/getting_started.html#installing-the-software)) before progressing to the next chapter.
+(following Section [downloading the data ](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started.html#downloading-the-data)
+and installed the required software ([as described here](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started.html#installing-the-software)) before progressing to the next chapter.
 
 ## Key Points
 
-```{include} ../keypoints/getting_started.md```
+```{include} keypoints/getting_started.md```

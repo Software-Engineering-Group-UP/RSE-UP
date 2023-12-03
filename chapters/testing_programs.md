@@ -257,7 +257,7 @@ which means the assertion (and test) passed.
 > rest of the chapter handles this issue for us.
 > [Import statements][python-import] are notoriously tricky,
 > but we'll learn better methods for organizing our code for 
-> function imports in Chapter on [Packaging](https://software-engineering-group-up.github.io/RSE-UP/chapters/packaging/packaging.html).
+> function imports in Chapter on [Packaging](https://software-engineering-group-up.github.io/RSE-UP/chapters/packaging.html).
 
 ## Testing Frameworks 
 
@@ -327,7 +327,7 @@ the other critical part of our code is the calculation of the $\alpha$ parameter
 Earlier we defined a power law relating $\alpha$
 to the word frequency $f$,
 the word rank $r$,
-and a constant of proportionality $c$ ([Section Git advanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/config/configuration.html#configuration-file-formats)):
+and a constant of proportionality $c$ ([Section Git advanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/configuration.html#configuration-file-formats)):
 
 $
 r = cf^{\frac{-1}{\alpha}}
@@ -681,7 +681,7 @@ This doesn't guarantee that the answer is right---if the original answer is wron
 we could carry that mistake forward indefinitely---but
 it does draw attention to any changes (or "regressions").
 
-In [Section Git advanced zipf-verify](https://software-engineering-group-up.github.io/RSE-UP/chapters/config/configuration.html#verifying-zipf-s-law))
+In [Section Git advanced zipf-verify](https://software-engineering-group-up.github.io/RSE-UP/chapters/configuration.html#verifying-zipf-s-law))
 we calculated an $\alpha$ of 1.0866646252515038 for *Dracula*.
 Let's use that value to add a regression test to `test_zipfs.py`:
 
@@ -783,7 +783,7 @@ and opening `htmlcov/index.html`.
 Clicking on the name of our `countwords.py` script, for instance,
 produces the colorized line-by-line display shown in [Figure python coverage](python-coverage).
 
-```{figure} ../../figures/testing/python-coverage.png
+```{figure} ../figures/testing/python-coverage.png
 :name: python-coverage
 Python Coverage
 ```
@@ -871,7 +871,7 @@ One popular CI tool is **Travis CI**, which integrates well with
 **GitHub**. If Travis CI has been set up,
 then every time a change is committed to a GitHub repository,
 Travis CI creates a fresh environment,
-makes a fresh clone of the repository ([Section on working with others work](https://software-engineering-group-up.github.io/RSE-UP/chapters/vcs/git_advanced.html#using-other-people-s-work)),
+makes a fresh clone of the repository ([Section on working with others work](https://software-engineering-group-up.github.io/RSE-UP/chapters/git_advanced.html#using-other-people-s-work)),
 and runs whatever commands the project's managers have set up.
 
 Before setting up our account with Travis CI, however,
@@ -882,7 +882,7 @@ which includes instructions for Travis CI.
 but not on Windows.)
 This file must be in the root directory of the repository,
 and is written in **YAML**
-([Section config formats](https://software-engineering-group-up.github.io/RSE-UP/chapters/config/configuration.html#configuration-file-formats) and Appendix [YAML](https://software-engineering-group-up.github.io/RSE-UP/chapters/appendix/yaml.html).
+([Section config formats](https://software-engineering-group-up.github.io/RSE-UP/chapters/configuration.html#configuration-file-formats) and Appendix [YAML](https://software-engineering-group-up.github.io/RSE-UP/chapters/yaml.html).
 For our project,
 we add the following lines:
 
@@ -959,7 +959,7 @@ We can tell Travis CI which repository we want it to watch
 by clicking the "+" next to the "My Repositories" link
 on the left-hand side of the Travis CI homepage ([Figure Travis adding a repo](testing-add-repo)).
 
-```{figure} ../../figures/testing/travis-add-repo.png
+```{figure} ../figures/testing/travis-add-repo.png
 :name: testing-add-repo
 Travis Adding a repo
 ```
@@ -974,7 +974,7 @@ the repository may belong to someone else or be private,
 or your required files may be incorrect.
 Click the "Trigger a build" button to initiate your first test using Travis CI.
 
-```{figure} ../../figures/testing/travis-list-repos.png
+```{figure} ../figures/testing/travis-list-repos.png
 :name: testing-list-repo
 List repos
 ```
@@ -997,7 +997,7 @@ We can view additional details about the test by clicking on the
 repository name
 ([Figure Build pass](testing-build-pass)).
 
-```{figure} ../../figures/testing/travis-build-pass.png
+```{figure} ../figures/testing/travis-build-pass.png
 :name: testing-build-pass
 Build pass
 
@@ -1019,7 +1019,7 @@ Many programmers are passionate advocates of a practice called
 Rather than writing code and then writing tests,
 they write the tests first and then write just enough code to make those tests pass.
 Once the code is working,
-they clean it up ([Chapter readable code](https://software-engineering-group-up.github.io/RSE-UP/chapters/codestyle/readable_code.html)) and then move on to the next task.
+they clean it up ([Chapter readable code](https://software-engineering-group-up.github.io/RSE-UP/chapters/clean_readable_code.html)) and then move on to the next task.
 TDD's advocates claim that this leads to better code because:
 
 1.  Writing tests clarifies what the code is actually supposed to do.
@@ -1085,6 +1085,6 @@ building the right thing and building something right;
 the practices introduced in this chapter will help with both.
 
 
-```{include} ../keypoints/testing.md
+```{include} keypoints/testing.md
 
 ```

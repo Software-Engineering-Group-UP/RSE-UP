@@ -169,7 +169,7 @@ it reads the output of the upstream command
 ([](bash_tools_piper) b).
 
 
-```{figure} ../../figures/bash-tools/pipe.png
+```{figure} ../figures/bash-tools/pipe.png
 :name: bash_toots_piper
 
 Bash tool pipe
@@ -243,7 +243,7 @@ it creates a new process
 and temporarily reconnects the keyboard and stream
 to that process's standard input and output ([](standard_io) b).
 
-```{figure} ../../figures/bash-tools/standard-io.png
+```{figure} ../figures/bash-tools/standard-io.png
 :name: standard_io
 
 Bash tools stdio
@@ -537,7 +537,7 @@ so we will break it down into pieces:
 
 > **Continuation Prompts May Differ Too**
 >
-> As mentioned in Chapter [](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash-basics.html)
+> As mentioned in Chapter [Bash Basics](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_basics.html)
 ),
 > there is variation in how different shells look and operate.
 > If you noticed the second, third, and fourth code lines
@@ -801,7 +801,7 @@ Please note that if you create or move any files or directories in your Zipf's L
 you may want to reorganize your files following the outline at the beginning of the next chapter.
 If you accidentally delete necessary files,
 you can start with a fresh copy of the data files
-by following the instructions in Section [](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started/getting_started#downloading-the-data).
+by following the instructions in Section [Downloading the Data](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started#downloading-the-data).
 
 ### What does `>>` mean? 
 
@@ -1228,7 +1228,7 @@ it reads the output of the upstream command
 ([](bash_tools_pipe) b).
 
 
-```{figure} ../../figures/bash-tools/pipe.png
+```{figure} ../figures/bash-tools/pipe.png
 :name: bash_tools_pipe
 
 Bash tools pip
@@ -1302,7 +1302,7 @@ it creates a new process
 and temporarily reconnects the keyboard and stream
 to that process's standard input and output ([](bash_tools_stdio_2) b).
 
-```{figure} ../../figures/bash-tools/standard-io.png
+```{figure} ../figures/bash-tools/standard-io.png
 :name: bash_tools_stdio_2
 
 Bash Tools stdio
@@ -1588,7 +1588,7 @@ so we will break it down into pieces:
 
 > **Continuation Prompts May Differ Too**
 >
-> As mentioned in Chapter [](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash/bash-basics.html),
+> As mentioned in Chapter [ Bash Basics](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_basics.html),
 > there is variation in how different shells look and operate.
 > If you noticed the second, third, and fourth code lines
 > in your for loop were prefaced with `for`,
@@ -1841,6 +1841,6 @@ by saving commands in files that we can run over and over again.
 
 ## Key Points
 
-```{include} ../keypoints/bash_tools.md
+```{include} keypoints/bash_tools.md
 
 ```
