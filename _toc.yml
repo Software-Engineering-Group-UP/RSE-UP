@@ -6,13 +6,14 @@ parts:
   - caption: Getting Started
     chapters:
       - file: chapters/getting_started.md
-      - file: exercises/python_refresher.ipynb
+      - file: worksheets/worksheet1_python_refresher.ipynb
       - file: exercises/guide.ipynb
   - caption: Bash and the CLI 
     chapters:
       - file: chapters/bash_basics.md
       - file: chapters/bash_tools.md
       - file: chapters/bash_advanced.md
+      - file: worksheets/worksheet2_install_more_tool_shell.ipynb
       - file: exercises/bash.ipynb
   - caption: Building CLI with Python
     chapters:
@@ -64,9 +65,9 @@ parts:
       - file: chapters/snakemake.md
       - file: chapters/advanced_cicd.md
    #   - file: chapters/pyenv.md
-  # - caption: Projects
-  #   chapters:
-  #     - file: projects/1_individual_project.ipynb
+   caption: Projects
+   chapters:
+      - file: projects/individual/project_instructions.md
   #     - file: projects/2_group_project.ipynb
   - caption: Appendix
     chapters:
