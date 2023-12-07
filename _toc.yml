@@ -73,6 +73,7 @@ parts:
       - file: projects/individual/1_project_instructions.md
       - file: projects/individual/2_project_instructions.md
       - file: projects/individual/3_project_instructions.md
+      - file: projects/individual/4_project_instructions.md
   - caption: Appendix
     chapters:
       - file: chapters/anaconda.md
