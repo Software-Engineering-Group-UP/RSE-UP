@@ -66,11 +66,13 @@ parts:
     chapters:
       - file: worksheets/worksheet1_python_refresher.ipynb
       - file: worksheets/worksheet2_install_more_tool_shell.ipynb
-      - file: worksheets/worksheet3_cli_python_git.ipynb    
+      - file: worksheets/worksheet3_cli_python_git.ipynb
+      - file: worksheets/worksheet4_readable_code.ipynb    
   - caption: Projects
     chapters:
       - file: projects/individual/1_project_instructions.md
       - file: projects/individual/2_project_instructions.md
+      - file: projects/individual/3_project_instructions.md
   - caption: Appendix
     chapters:
       - file: chapters/anaconda.md
