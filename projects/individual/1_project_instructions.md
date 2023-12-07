@@ -33,8 +33,8 @@ project structure and where to put such things next week. Also, don’t worry ab
 `How did vegetable produc:on in Germany change aUer 1989?`
 
 ```{figure} ../figures/course_project/destatis.png
-
-
+:name: destatis_example
+Destatis Example
 ```
 
 Remember that for this first project, everyone is expected to work on a topic individually. Do not hesitate to discuss about your chosen dataset with your fellow course mates, though. It is not a secret, and a bit of exchange often helps to get fresh ideas.
