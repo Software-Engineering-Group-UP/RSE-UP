@@ -302,7 +302,7 @@ def plot_fit(curve_xmin, curve_xmax, max_rank, alpha, ax):
 ```
 
 where the maximum word frequency rank corresponds to $c$, and $-1 / \alpha$ the exponent in the power law. We have followed the [`numpydoc`](https://numpydoc.readthedocs.io/en/latest/) format for the detailed docstring
-in `plot_fit`---see Appendix {{ref}} **TODO** ref(documentation) for more information about docstring formats.
+in `plot_fit`---see Appendix **TODO** ref(documentation) for more information about docstring formats.
 
 ## Verifying Zipf's Law 
 

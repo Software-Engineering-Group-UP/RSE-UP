@@ -6,18 +6,16 @@ parts:
   - caption: Getting Started
     chapters:
       - file: chapters/getting_started.md
-      - file: worksheets/worksheet1_python_refresher.ipynb
       - file: exercises/guide.ipynb
   - caption: Bash and the CLI 
     chapters:
       - file: chapters/bash_basics.md
       - file: chapters/bash_tools.md
       - file: chapters/bash_advanced.md
-      - file: worksheets/worksheet2_install_more_tool_shell.ipynb
       - file: exercises/bash.ipynb
   - caption: Building CLI with Python
     chapters:
-      - file: chapters/building_cli_python.ipynb
+      - file: chapters/python_building_cli.ipynb
       - file: exercises/python_cli.ipynb
   - caption: Version Control
     chapters:
@@ -51,7 +49,7 @@ parts:
       - file: exercises/provenance.ipynb
   - caption: Packaging
     chapters:
-      - file: chapters/packaging.md
+      - file: chapters/python_packaging.md
       - file: exercises/packaging.ipynb
   - caption: Writing Clean Code
     chapters:
@@ -64,10 +62,16 @@ parts:
       - file: chapters/workflow.md
       - file: chapters/snakemake.md
       - file: chapters/advanced_cicd.md
+  - caption: Worksheets - Course Work
+    chapters:
+      - file: worksheets/worksheet1_python_refresher.ipynb
+      - file: worksheets/worksheet2_install_more_tool_shell.ipynb
+      - file: worksheets/worksheet3_cli_python_git.ipynb
+      
   - caption: Projects
     chapters:
-      - file: projects/individual/project_instructions.md
-  #     - file: projects/2_group_project.ipynb
+      - file: projects/individual/1_project_instructions.md
+      - file: projects/individual/2_project_instructions.md
   - caption: Appendix
     chapters:
       - file: chapters/anaconda.md

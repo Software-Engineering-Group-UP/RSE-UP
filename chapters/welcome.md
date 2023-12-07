@@ -41,7 +41,7 @@ but don't document what steps to take in what order, your work is open but not r
 Conversely, if you completely automate your analysis, but your data is only available to people in your lab, your work is reproducible but not open.
 Finally, if a software package is being maintained by a couple of post-docs
 who are being paid a fraction of what they could earn in industry
-and have no realistic hope of promotion because their field doesn't value tool building, then sooner or later it will become \gref{abandonware}{abandonware},
+and have no realistic hope of promotion because their field doesn't value tool building, then sooner or later it will become **abandonware**,
 at which point openness and reproducibility become less relevant.
 
 Nobody argues that research should be irreproducible or unsustainable,

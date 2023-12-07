@@ -53,7 +53,7 @@ $ conda install -c ajdawson windspharm
 ```
 
 ```{figure} ../figures/anaconda/cloud-windspharm-ajdawson.png
-:name" anaconda-windspharm-ajdawson
+:name: anaconda-windspharm-ajdawson
 Windspharm - AJ Dawson
 ```
 

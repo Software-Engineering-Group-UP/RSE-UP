@@ -31,7 +31,7 @@ the remote computer must run a **remote login server** and we must run a program
 The client program passes our login credentials to the remote login server;
 if we are allowed to log in, that server then runs a shell for us on the remote computer (Figure [SSH](ssh-ssh)).
 
-```{figure} ../../figures/ssh/ssh.pdf
+```{figure} ../../figures/ssh/ssh.png
 :name: ssh-ssh
 The local client connects to the remote login server, which starts a remote shell (solid lines). Commands from the local client are passed to the remote shell and output is passed back (dashed lines).```
 
