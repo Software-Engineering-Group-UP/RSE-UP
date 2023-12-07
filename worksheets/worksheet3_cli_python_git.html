@@ -240,7 +240,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Worksheets - Course Work</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="worksheet1_python_refresher.html">Python refresher - Worksheet 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worksheet1_python_refresher.html">Worksheet 1 - Python refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="worksheet2_install_more_tool_shell.html">Worksheet 2 - Installing more Tools, working with the Unix SHell, Getting Started with the Project</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Worksheet 3 - Command Line Tools with Python , Git and the Command Line, Git UP</a></li>
 </ul>
@@ -482,6 +482,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-a-better-ploting-program">Exercise 1: A Better Ploting Program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-git-up">Exercise 2: Git.UP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-using-git-at-the-command-line">Exercise 3: Using Git at the Command Line</a></li>
 </ul>
             </nav>
         </div>
@@ -498,10 +500,43 @@ document.write(`
 <p>The exercises on this worksheet let you practice creating command-line tools with Python, and using Git from the command-line and via Git.UP. The project assignment asks you to set up the directory structure for your project, and then do an initial commit to Git.UP.</p>
 <section id="exercise-1-a-better-ploting-program">
 <h2>Exercise 1: A Better Ploting Program<a class="headerlink" href="#exercise-1-a-better-ploting-program" title="Permalink to this heading">#</a></h2>
-<p>Do exercise 5.11.4 - A beKer ploLng program from Irving et al. It is based on the script
-template and code for ploLng the word count distribu9on discussed in the lecture. Note
-that the solu9on to this exercise will be used in following lectures, and doing the exercise is
-the best way of familiarizing yourself with it wel</p>
+<p>Do exercise 5.4 - <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/python_cli.html#a-better-plotting-program">A better ploLng program</a> from our online book. It is based on the script template and code for plottng the word count distribution discussed in the lecture. Note that the solution to this exercise will be used in following lectures, and doing the exercise is the best way of familiarizing yourself with it wel</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code Here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-git-up">
+<h2>Exercise 2: Git.UP<a class="headerlink" href="#exercise-2-git-up" title="Permalink to this heading">#</a></h2>
+<p>The University of Potsdam hosts an own GitLab service at <a class="reference external" href="https://gitup.uni-potsdam.de/">https://gitup.uni-potsdam.de/</a>.
+You can access and use it with your university account. If you have not tried it out yet, go to the URL, try to log in and browse around a bit. Go to your profile page and personalize it as
+you like, for example by adding a profile picture or avatar. You will need access to Git.UP for the course projects, so please seek help in the lab in case of any problem</p>
+</section>
+<section id="exercise-3-using-git-at-the-command-line">
+<h2>Exercise 3: Using Git at the Command Line<a class="headerlink" href="#exercise-3-using-git-at-the-command-line" title="Permalink to this heading">#</a></h2>
+<p>In the lecture we discussed the basics of working with Git at the command line. It is important for the course to be familiar with at least the basics (cf. <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/intro_version_control.html">git basic</a>). Similar to working with the Unix Shell, for some of you this might be old hat, for others
+the first time you actually work with Git. If you feel you should practice the basics, go through the exercises at the end of <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/intro_version_control.html">Chapter on git Basic</a> and see if you can solve them (whenever they mention to work with GitHub, you can replace that with Git.UP). If needed, revisit the
+chapter text or look up the solutions. In any case, make sure that you can mark as understood the key points of the chapter, including:</p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span></code> with the <code class="docutils literal notranslate"><span class="pre">--global</span></code> option to configure your username, email address, and other preferences once per machine.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> initializes a repository.</p></li>
+<li><p>Git stores all repository management data in the <code class="docutils literal notranslate"><span class="pre">.git</span></code> subdirectory of the repository’s root directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> shows the status of a repository.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> puts files in the repository’s staging area.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> saves the staged content as a new commit in the local repository.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> lists previous commits.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> shows the difference between two versions of the repository</p></li>
+<li><p>Synchronize your local repository with a remote repository on a forge such as GitHub.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span></code> manages bookmarks pointing at remote repositories.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> copies changes from a local repository to a remote repository.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> copies changes from a remote repository to a local repository.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> shows changes between local and remote versions without copying them.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code> and git checkout recover old versions of files.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file tells Git what files to ignore.</p></li>
+</ul>
 </section>
 </section>
 
@@ -569,6 +604,8 @@ the best way of familiarizing yourself with it wel</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-a-better-ploting-program">Exercise 1: A Better Ploting Program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-git-up">Exercise 2: Git.UP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-using-git-at-the-command-line">Exercise 3: Using Git at the Command Line</a></li>
 </ul>
   </nav></div>
 
