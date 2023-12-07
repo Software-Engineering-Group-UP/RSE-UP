@@ -64,9 +64,8 @@ parts:
       - file: chapters/workflow.md
       - file: chapters/snakemake.md
       - file: chapters/advanced_cicd.md
-   #   - file: chapters/pyenv.md
-   caption: Projects
-   chapters:
+  - caption: Projects
+    chapters:
       - file: projects/individual/project_instructions.md
   #     - file: projects/2_group_project.ipynb
   - caption: Appendix
