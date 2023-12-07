@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/provenance.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exercises - Packaging" href="packaging.html" />
+    <link rel="next" title="Creating Packages with Python" href="../chapters/python_packaging.html" />
     <link rel="prev" title="Tracking Provenance" href="../chapters/tracking_provenance.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -167,7 +167,6 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapters/getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_refresher.html">Python refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guide.html">Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
@@ -180,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapters/python_building_cli.html">Building Command-Line Tools with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_cli.html">Exercises Scripting Python for CLI tools</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
@@ -221,6 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Packaging</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapters/python_packaging.html">Creating Packages with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packaging.html">Exercises - Packaging</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
@@ -236,6 +237,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../chapters/workflow.html">Introduction to Workflows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/snakemake.html">Snake Make</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/advanced_cicd.html">CI/CD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Worksheets - Course Work</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet1_python_refresher.html">Python refresher - Worksheet 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet2_install_more_tool_shell.html">Worksheet 2 - Installing more Tools, working with the Unix SHell, Getting Started with the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet3_cli_python_git.html">Worksheet 3 - Command Line Tools with Python , Git and the Command Line, Git UP</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -501,7 +508,7 @@ Fill in the questionnaire for a dataset you have published or that you use often
 </section>
 <section id="evaluate-a-project-s-data-provenance">
 <h2>3) Evaluate a project’s data provenance<a class="headerlink" href="#evaluate-a-project-s-data-provenance" title="Permalink to this heading">#</a></h2>
-<p><em>This exercise is modified from <span id="id1">[]</span> and explores the dataset from <span id="id2">[]</span>. Go to the dataset’s page <a class="reference external" href="http://doi.org/10.3886/E17507V2">http://doi.org/10.3886/E17507V2</a> and download the files.
+<p><em>This exercise is modified from <span id="id1">[<a class="reference internal" href="../chapters/references.html#id74" title="Elizabeth Wickes and Ayla Stein. Data Documentation Material. 2016. Source material for our lesson on data sharing. URL: http://hdl.handle.net/2142/91611.">Wickes and Stein, 2016</a>]</span> and explores the dataset from <span id="id2">[<a class="reference internal" href="../chapters/references.html#id48" title="Stephen Meili. Do Human Rights Treaties Help Asylum-Seekers: Findings from the U.K. 2016. URL: http://www.openicpsr.org/openicpsr/project/100049/version/V2/view, doi:10.3886/E17507V2.">Meili, 2016</a>]</span>. Go to the dataset’s page <a class="reference external" href="http://doi.org/10.3886/E17507V2">http://doi.org/10.3886/E17507V2</a> and download the files.
 You will need to make an ICPSER account and agree to their data agreement before you can download.</em></p>
 <p>Review the dataset’s main page to get a sense of the study,
 then review the spreadsheet file and the coded response file.</p>
@@ -525,8 +532,8 @@ That is, where can you download the version of the code and data as it was when 
 </ol>
 <p>To get a feel for the different approaches to code provenance, repeat steps 1-3 with the following:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://doi.org/10.6084/m9.figshare.7575830">The figshare page</a> that accompanies the paper <span id="id3">[]</span>.</p></li>
-<li><p>The GitHub repo <a class="reference external" href="https://github.com/blab/h3n2-reassortment"><code class="docutils literal notranslate"><span class="pre">blab/h3n2-reassortment</span></code></a> that accompanies the paper <span id="id4">[]</span>.</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.6084/m9.figshare.7575830">The figshare page</a> that accompanies the paper <span id="id3">[<a class="reference internal" href="../chapters/references.html#id37" title="D. B. Irving, S. Wijffels, and J. A. Church. Anthropogenic Aerosols, Greenhouse Gases, and the Uptake, Transport, and Storage of Excess Heat in the Climate System. Geophysical Research Letters, 46(9):4894-4903, 2019. URL: https://doi.org/10.1029/2019GL082015.">Irving <em>et al.</em>, 2019</a>]</span>.</p></li>
+<li><p>The GitHub repo <a class="reference external" href="https://github.com/blab/h3n2-reassortment"><code class="docutils literal notranslate"><span class="pre">blab/h3n2-reassortment</span></code></a> that accompanies the paper <span id="id4">[<a class="reference internal" href="../chapters/references.html#id59" title="Barney I. Potter, Rebecca Garten, James Hadfield, John Huddleston, John Barnes, Thomas Rowe, Lizheng Guo, Xiyan Xu, Richard A. Neher, Trevor Bedford, and David Wentworth. Evolution and Rapid Spread of a Reassortant A(H3N2) Virus that Predominated the 2017–2018 Influenza Season. Virus Evolution, 5(2):vez046, 2019. URL: https://doi.org/10.1093/ve/vez046.">Potter <em>et al.</em>, 2019</a>]</span>.</p></li>
 </ul>
 </section>
 <section id="making-permanent-links">
@@ -602,11 +609,11 @@ we’d have many DOIs pointing to the same code!</p>
       </div>
     </a>
     <a class="right-next"
-       href="packaging.html"
+       href="../chapters/python_packaging.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exercises - Packaging</p>
+        <p class="prev-next-title">Creating Packages with Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

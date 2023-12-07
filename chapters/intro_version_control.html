@@ -167,7 +167,6 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresher.html">Python refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/guide.html">Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
@@ -180,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_building_cli.html">Building Command-Line Tools with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/python_cli.html">Exercises Scripting Python for CLI tools</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
@@ -221,6 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Packaging</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
@@ -236,6 +237,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="snakemake.html">Snake Make</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Worksheets - Course Work</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet1_python_refresher.html">Python refresher - Worksheet 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet2_install_more_tool_shell.html">Worksheet 2 - Installing more Tools, working with the Unix SHell, Getting Started with the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet3_cli_python_git.html">Worksheet 3 - Command Line Tools with Python , Git and the Command Line, Git UP</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -869,11 +876,17 @@ you’ll notice that the commits are shown in a pager program,
 as you saw in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/bash_basics.html#reading-the-manual">bash-basics-help</a> with manual pages.
 You can apply the same keystrokes to scroll through the log
 and exit the paging program.
-The plot we have made is shown in <span class="xref myst">Figure</span>.
+The plot we have made is shown in <a class="reference internal" href="#git-cmdline-initial-plot"><span class="std std-ref">Figure</span></a>.
 It could be better:
 most of the visual space is devoted to a few very common words,
 which makes it hard to see what is happening with the other ten thousand or so words.</p>
 </div></blockquote>
+<figure class="align-default" id="git-cmdline-initial-plot">
+<img alt="../_images/plot-initial.png" src="../_images/plot-initial.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Git CMDline initial plot</span><a class="headerlink" href="#git-cmdline-initial-plot" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>An alternative way to visually evaluate Zipf’s Law is
 to plot the word frequency against rank on log-log axes.
 Let’s change the section:</p>
@@ -1027,18 +1040,18 @@ that have been added to the current changeset but not yet committed
 <figure class="align-default" id="git-cmdline-staging-area">
 <img alt="../_images/staging-area.png" src="../_images/staging-area.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Git CMDline staging area</span><a class="headerlink" href="#git-cmdline-staging-area" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Git CMDline staging area</span><a class="headerlink" href="#git-cmdline-staging-area" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Let’s take a look at our new plot (<a class="reference internal" href="#git-cmdline-loglog-plot"><span class="std std-ref">Figure</span></a>):</p>
+<p>Let’s take a look at our new plot (<a class="reference internal" href="#git-cmdline-loglog-plot2"><span class="std std-ref">Figure</span></a>):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>bin/plotcounts.py<span class="w"> </span>results/dracula.csv<span class="w"> </span>--outfile
 <span class="w">  </span>results/dracula.png
 </pre></div>
 </div>
-<figure class="align-default" id="git-cmdline-loglog-plot">
+<figure class="align-default" id="git-cmdline-loglog-plot2">
 <img alt="../_images/plot-loglog.png" src="../_images/plot-loglog.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Git CMDline LOG Plot</span><a class="headerlink" href="#git-cmdline-loglog-plot" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Git CMDline LOG Plot</span><a class="headerlink" href="#git-cmdline-loglog-plot2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <blockquote>
@@ -1098,7 +1111,7 @@ represent the tasks you perform in a basic Git workflow in a local repository
 <figure class="align-default" id="git-remote">
 <img alt="../_images/git-remote.png" src="../_images/git-remote.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Git Remote</span><a class="headerlink" href="#git-remote" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Git Remote</span><a class="headerlink" href="#git-remote" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1137,7 +1150,7 @@ The home page of our new repository on GitHub includes the string we need to ide
 <figure class="align-default" id="git-cmdline-repo-link">
 <img alt="../_images/repo-link.png" src="../_images/repo-link.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Git CMDline Repository link</span><a class="headerlink" href="#git-cmdline-repo-link" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Git CMDline Repository link</span><a class="headerlink" href="#git-cmdline-repo-link" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We can click on “HTTPS” to change the URL from SSH to HTTPS and then copy that URL.</p>
@@ -1195,7 +1208,7 @@ To https://github.com/amira-khan/zipf.git
 <figure class="align-default" id="git-cmdline-history">
 <img alt="../_images/repo-history.png" src="../_images/repo-history.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Git Commandline History</span><a class="headerlink" href="#git-cmdline-history" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Git Commandline History</span><a class="headerlink" href="#git-cmdline-history" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>\newpage</p>
@@ -1558,7 +1571,7 @@ so that Git knows to use it.</p>
 <p>The biggest benefit of version control for individual research is that
 we can always go back to the precise set of files
 that we used to produce a particular result.
-While Git is complex <span id="id1">[]</span>,
+While Git is complex <span id="id1">[<a class="reference internal" href="references.html#id57" title="Santiago Perez De Rosso and Daniel Jackson. What's Wrong With Git? In Proc. 2013 ACM International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software (Onward!'13). 2013. The first in a series exploring what's wrong with Git. doi:10.1145/2509578.2509584.">Perez De Rosso and Jackson, 2013</a>]</span>,
 being able to back up our changes on sites like GitHub
 with just a few keystrokes can save us a lot of pain,
 and some of Git’s advanced features make it even more powerful.

@@ -167,7 +167,6 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresher.html">Python refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/guide.html">Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
@@ -180,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_building_cli.html">Building Command-Line Tools with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/python_cli.html">Exercises Scripting Python for CLI tools</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
@@ -221,6 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Packaging</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
@@ -236,6 +237,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="snakemake.html">Snake Make</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Worksheets - Course Work</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet1_python_refresher.html">Python refresher - Worksheet 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet2_install_more_tool_shell.html">Worksheet 2 - Installing more Tools, working with the Unix SHell, Getting Started with the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet3_cli_python_git.html">Worksheet 3 - Command Line Tools with Python , Git and the Command Line, Git UP</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -681,7 +688,7 @@ then brings each of those prerequisites up to date (<a class="reference internal
 <figure class="align-default" id="automate-all">
 <img alt="../_images/make-dependency-graph.png" src="../_images/make-dependency-graph.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Automate All</span><a class="headerlink" href="#automate-all" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Automate All</span><a class="headerlink" href="#automate-all" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The order in which rules appear in the Makefile
@@ -1126,7 +1133,7 @@ particularly as we start to add more steps like merging data files and generatin
 </section>
 <section id="documenting-a-makefile">
 <h2>Documenting a Makefile<a class="headerlink" href="#documenting-a-makefile" title="Permalink to this heading">#</a></h2>
-<p>Every well-behaved program should tell people how to use it <span id="id1">[]</span>.
+<p>Every well-behaved program should tell people how to use it <span id="id1">[<a class="reference internal" href="references.html#id70" title="Morgan Taschuk and Greg Wilson. Ten Simple Rules for Making Research Software More Robust. PLoS Computational Biology, 13(4):e1005412, Apr 2017. A short guide to making research software usable by other people. doi:10.1371/journal.pcbi.1005412.">Taschuk and Wilson, 2017</a>]</span>.
 If we run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">--help</span></code>,
 we get a (very) long list of options that Make understands,
 but nothing about our specific workflow.
@@ -1282,7 +1289,7 @@ alpha: 1.1712445413685917
 <figure class="align-default" id="automate-collated">
 <img alt="../_images/collated.png" src="../_images/collated.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Automate Collated</span><a class="headerlink" href="#automate-collated" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text">Automate Collated</span><a class="headerlink" href="#automate-collated" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Finally,
@@ -1308,7 +1315,7 @@ a single Makefile can run shell commands and programs written in a variety of la
 which makes it a great way to assemble pipelines out of whatever is lying around.</p>
 <p>Programmers have created many replacements for Make in the 45 years since it was first created—so many, in fact, that none have attracted enough users to displace it.</p>
 <p>If you would like to explore them, check out <a class="reference external" href="https://snakemake.readthedocs.io/">Snakemake</a> (for Python) or the <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/snakemake.html">section</a> on workflows using snake make.</p>
-<p>If you want to go deeper, <span id="id2">[]</span> describes the design and implementation of several build managers.</p>
+<p>If you want to go deeper, <span id="id2">[<a class="reference internal" href="references.html#id68" title="Peter Smith. Software Build Systems: Principles and Experience. Addison-Wesley Professional, 2011. ISBN 978-0321717283. A thorough, readable exploration of how software build systems and tools work.">Smith, 2011</a>]</span> describes the design and implementation of several build managers.</p>
 </section>
 <section id="key-points">
 <h2>Key Points<a class="headerlink" href="#key-points" title="Permalink to this heading">#</a></h2>

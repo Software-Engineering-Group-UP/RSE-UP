@@ -169,7 +169,6 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresher.html">Python refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/guide.html">Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
@@ -182,6 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_building_cli.html">Building Command-Line Tools with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/python_cli.html">Exercises Scripting Python for CLI tools</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
@@ -223,6 +223,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Packaging</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
@@ -238,6 +239,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="snakemake.html">Snake Make</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Worksheets - Course Work</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet1_python_refresher.html">Python refresher - Worksheet 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet2_install_more_tool_shell.html">Worksheet 2 - Installing more Tools, working with the Unix SHell, Getting Started with the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet3_cli_python_git.html">Worksheet 3 - Command Line Tools with Python , Git and the Command Line, Git UP</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -480,10 +487,10 @@ A successful early career researcher in protein crystallography,
 Geoffrey Chang,
 had to retract five published papers—three from
 the journal <em>Science</em>—because his code had
-inadvertently flipped two columns of data [<span id="id1">[]</span>].
+inadvertently flipped two columns of data [<span id="id1">[<a class="reference internal" href="references.html#id51" title="Greg Miller. A Scientist's Nightmare: Software Problem Leads to Five Retractions. Science, 314(5807):1856–1857, 2006. doi:10.1126/science.314.5807.1856.">Miller, 2006</a>]</span>].
 More recently, a simple calculation mistake in a paper by Reinhart and Rogoff
 contributed to making the financial crash of 2008 even worse
-for millions of people [<span id="id2">[]</span>].
+for millions of people [<span id="id2">[<a class="reference internal" href="references.html#id11" title="Jonathan Borwein and David H. Bailey. The Reinhart-Rogoff Error—Or, How not to Excel at Economics. 2013. Summarizes the now-infamous Reinhart–Rogoff spreadsheet. URL: https://theconversation.com/the-reinhart-rogoff-error-or-how-not-to-excel-at-economics-13646.">Borwein and Bailey, 2013</a>]</span>].
 Testing helps to catch errors like these.</p>
 </div></blockquote>
 <p>Here’s the current structure of our Zipf’s Law project files:</p>
@@ -906,7 +913,7 @@ if the actual value is within some <strong>tolerance</strong> of the expected va
 The tolerance can be expressed as the <strong>absolute error</strong>,
 which is the absolute value of the difference between two,
 or the <strong>relative error</strong>,
-which the ratio of the absolute error to the value we’re approximating <span id="id3">[]</span>.
+which the ratio of the absolute error to the value we’re approximating <span id="id3">[<a class="reference internal" href="references.html#id31" title="David Goldberg. What Every Computer Scientist Should Know about Floating-Point Arithmetic. ACM Computing Surveys, 23(1):5-48, Mar 1991. A detailed but accessible explanation of how computer arithmetic actually works. doi:10.1145/103162.103163.">Goldberg, 1991</a>]</span>.
 For example,
 if we add 9+1 and get 11,
 the absolute error is 1 (i.e., <span class="math notranslate nohighlight">\(11-10\)</span>,
@@ -1176,7 +1183,7 @@ produces the colorized line-by-line display shown in <a class="reference interna
 <figure class="align-default" id="python-coverage">
 <img alt="../_images/python-coverage.png" src="../_images/python-coverage.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Python Coverage</span><a class="headerlink" href="#python-coverage" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 42 </span><span class="caption-text">Python Coverage</span><a class="headerlink" href="#python-coverage" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This output confirms that all lines relating to word counting were tested,
@@ -1339,7 +1346,7 @@ on the left-hand side of the Travis CI homepage (<a class="reference internal" 
 <figure class="align-default" id="testing-add-repo">
 <img alt="../_images/travis-add-repo.png" src="../_images/travis-add-repo.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 41 </span><span class="caption-text">Travis Adding a repo</span><a class="headerlink" href="#testing-add-repo" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Travis Adding a repo</span><a class="headerlink" href="#testing-add-repo" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>To add the GitHub repository we have been using throughout this book,
@@ -1354,7 +1361,7 @@ Click the “Trigger a build” button to initiate your first test using Travis 
 <figure class="align-default" id="testing-list-repo">
 <img alt="../_images/travis-list-repos.png" src="../_images/travis-list-repos.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 42 </span><span class="caption-text">List repos</span><a class="headerlink" href="#testing-list-repo" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">List repos</span><a class="headerlink" href="#testing-list-repo" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Once your repository has been activated,
@@ -1377,12 +1384,12 @@ repository name
 <figure class="align-default" id="testing-build-pass">
 <img alt="../_images/travis-build-pass.png" src="../_images/travis-build-pass.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Build pass</span><a class="headerlink" href="#testing-build-pass" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">Build pass</span><a class="headerlink" href="#testing-build-pass" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This example shows one of the other benefits of CI:
 it forces us to be explicit about what we are doing and how we do it,
-just as writing a Makefile forces us to be explicit about exactly how we produce results <span id="id4">[]</span>.</p>
+just as writing a Makefile forces us to be explicit about exactly how we produce results <span id="id4">[<a class="reference internal" href="references.html#id80" title="Fiorella Zampetti, Carmine Vassallo, Sebastiano Panichella, Gerardo Canfora, Harald Gall, and Massimiliano Di Penta. An Empirical Characterization of Bad Practices in Continuous Integration. Empirical Software Engineering, 25(2):1095–1135, Jan 2020. Presents and categorizes common errors in continuous integration. URL: https://doi.org/10.1007/s10664-019-09785-8, doi:10.1007/s10664-019-09785-8.">Zampetti <em>et al.</em>, 2020</a>]</span>.</p>
 </section>
 <section id="when-to-write-tests">
 <h2>When to Write Tests<a class="headerlink" href="#when-to-write-tests" title="Permalink to this heading">#</a></h2>
@@ -1408,7 +1415,7 @@ instead of trying to uncover errors.</p></li>
 </ol>
 <p>These arguments are plausible.
 However,
-studies such as <span id="id5">[]</span> and <span id="id6">[]</span> don’t support them:
+studies such as <span id="id5">[<a class="reference internal" href="references.html#id28" title="Davide Fucci, Giuseppe Scanniello, Simone Romano, Martin Shepperd, Boyce Sigweni, Fernando Uyaguari, Burak Turhan, Natalia Juristo, and Markku Oivo. An External Replication on the Effects of Test-driven Development Using a Multi-site Blind Analysis Approach. In Proc. 10th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM'16). ACM Press, 2016. The latest in a long line of studies to find that test-driven development (TDD) has little or no impact on development time or code quality. doi:10.1145/2961111.2962592.">Fucci <em>et al.</em>, 2016</a>]</span> and <span id="id6">[<a class="reference internal" href="references.html#id29" title="Davide Fucci, Hakan Erdogmus, Burak Turhan, Markku Oivo, and Natalia Juristo. A Dissection of the Test-Driven Development Process: Does It Really Matter to Test-First or to Test-Last? IEEE Transactions on Software Engineering, 43(7):597-614, Jul 2017. An evidence-based look at whether writing tests first produces better code faster. doi:10.1109/tse.2016.2616877.">Fucci <em>et al.</em>, 2017</a>]</span> don’t support them:
 in practice,
 writing tests first or last doesn’t appear to affect productivity.
 What <em>does</em> have an impact is working in small, interleaved increments,
@@ -1445,7 +1452,7 @@ runnable assertions can’t fall out of step with what the code is actually doin
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
 <p>Testing data analysis pipelines is often harder than testing mainstream software applications,
-since data analysts often don’t know what the right answer is [<span id="id7">[]</span>].
+since data analysts often don’t know what the right answer is [<span id="id7">[<a class="reference internal" href="references.html#id12" title="Houssem Ben Braiek and Foutse Khomh. On Testing Machine Learning Programs. 2018. Looks at how developers (don't) test machine learning programs. URL: https://arxiv.org/abs/1812.02257.">Braiek and Khomh, 2018</a>]</span>].
 (If we did,
 we would have submitted our report and moved on to the next problem already.)
 The key distinction is the difference between <strong>validation</strong>,

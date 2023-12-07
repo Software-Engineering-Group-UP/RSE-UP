@@ -67,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/python_packaging.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exercises - Packaging" href="../exercises/packaging.html" />
+    <link rel="prev" title="Exercises - Provenance" href="../exercises/provenance.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,7 +167,6 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresher.html">Python refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/guide.html">Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
@@ -178,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_building_cli.html">Building Command-Line Tools with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/python_cli.html">Exercises Scripting Python for CLI tools</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
@@ -218,7 +220,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../exercises/provenance.html">Exercises - Provenance</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Packaging</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Creating Packages with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
@@ -234,6 +237,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="snakemake.html">Snake Make</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Worksheets - Course Work</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet1_python_refresher.html">Python refresher - Worksheet 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet2_install_more_tool_shell.html">Worksheet 2 - Installing more Tools, working with the Unix SHell, Getting Started with the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet3_cli_python_git.html">Worksheet 3 - Command Line Tools with Python , Git and the Command Line, Git UP</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -1189,7 +1198,7 @@ https://test.pypi.org/project/pyzipf/0.1/
 <figure class="align-default" id="packaging-testpypi">
 <img alt="../_images/testpypi.png" src="../_images/testpypi.png" />
 <figcaption>
-<p><span class="caption-text">Test PyPi</span><a class="headerlink" href="#packaging-testpypi" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 49 </span><span class="caption-text">Test PyPi</span><a class="headerlink" href="#packaging-testpypi" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>and view the results at the new test project webpage
@@ -1501,17 +1510,23 @@ The <code class="docutils literal notranslate"><span class="pre">docs</span></co
 If we run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> and open <code class="docutils literal notranslate"><span class="pre">docs/_build/index.html</span></code> in a web browser,
 we’ll have a landing page with minimal documentation (<a class="reference internal" href="#packaging-sphinx-landing-page-original"><span class="std std-ref">Figure Packaging Sphinx Landing page</span></a>).
 If we click on the <code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">Index</span></code> link we can access the documentation for the individual modules
-(Figures <a class="reference internal" href="#packaging-sphinx-module-list"><span class="std std-ref">Module List</span></a> and <span class="xref myst">Sphinx Module Countwords</span>).</p>
+(Figures <a class="reference internal" href="#packaging-sphinx-module-list"><span class="std std-ref">Module List</span></a> and <a class="reference internal" href="#packaging-sphinx-module-countwords"><span class="std std-ref">Sphinx Module Countwords</span></a>).</p>
 <figure class="align-default" id="packaging-sphinx-landing-page-original">
 <img alt="../_images/landing-page-original.png" src="../_images/landing-page-original.png" />
 <figcaption>
-<p><span class="caption-text">Packaging Sphinx Landing Page</span><a class="headerlink" href="#packaging-sphinx-landing-page-original" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 50 </span><span class="caption-text">Packaging Sphinx Landing Page</span><a class="headerlink" href="#packaging-sphinx-landing-page-original" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="packaging-sphinx-module-list">
 <img alt="../_images/module-index.png" src="../_images/module-index.png" />
 <figcaption>
-<p><span class="caption-text">Sphinx Module List</span><a class="headerlink" href="#packaging-sphinx-module-list" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 51 </span><span class="caption-text">Sphinx Module List</span><a class="headerlink" href="#packaging-sphinx-module-list" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="packaging-sphinx-module-countwords">
+<img alt="../_images/module-countwords.png" src="../_images/module-countwords.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 52 </span><span class="caption-text">Sphinx Module Countwords</span><a class="headerlink" href="#packaging-sphinx-module-countwords" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The landing page for the website is the perfect place for the content of our README file,
@@ -1539,7 +1554,7 @@ re-uses our README as the introduction to the documentation (Figure <a class="r
 <figure class="align-default" id="packaging-sphinx-landing-page">
 <img alt="../_images/landing-page.png" src="../_images/landing-page.png" />
 <figcaption>
-<p><span class="caption-text">Sphinx Landing page</span><a class="headerlink" href="#packaging-sphinx-landing-page" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 53 </span><span class="caption-text">Sphinx Landing page</span><a class="headerlink" href="#packaging-sphinx-landing-page" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Before going on,
@@ -1721,6 +1736,24 @@ if only in small ways.</p>
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../exercises/provenance.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercises - Provenance</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../exercises/packaging.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercises - Packaging</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

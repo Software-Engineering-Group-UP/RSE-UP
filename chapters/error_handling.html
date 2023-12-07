@@ -167,7 +167,6 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresher.html">Python refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/guide.html">Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
@@ -180,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_building_cli.html">Building Command-Line Tools with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/python_cli.html">Exercises Scripting Python for CLI tools</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
@@ -221,6 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Packaging</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
@@ -236,6 +237,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="snakemake.html">Snake Make</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Worksheets - Course Work</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet1_python_refresher.html">Python refresher - Worksheet 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet2_install_more_tool_shell.html">Worksheet 2 - Installing more Tools, working with the Unix SHell, Getting Started with the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet3_cli_python_git.html">Worksheet 3 - Command Line Tools with Python , Git and the Command Line, Git UP</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -558,7 +565,7 @@ it skips directly to the code under <code class="docutils literal notranslate"><
 <figure class="align-default" id="errors-control-flow">
 <img alt="../_images/exceptions.png" src="../_images/exceptions.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Control Flow</span><a class="headerlink" href="#errors-control-flow" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 46 </span><span class="caption-text">Control Flow</span><a class="headerlink" href="#errors-control-flow" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We often want to know exactly what went wrong,
@@ -780,7 +787,7 @@ the more useful those checks will be.</p>
 <figure class="align-default" id="errors-error-message">
 <img alt="../_images/error-message.png" src="../_images/error-message.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 45 </span><span class="caption-text">Error message</span><a class="headerlink" href="#errors-error-message" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 47 </span><span class="caption-text">Error message</span><a class="headerlink" href="#errors-error-message" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The error message shown in <a class="reference internal" href="#errors-error-message"><span class="std std-ref">Figure Error Message</span></a> is not helpful.
@@ -812,7 +819,7 @@ so they should therefore be the most carefully written documentation for that so
 A web search for “writing good error messages” turns up hundreds of hits,
 but recommendations are often more like gripes than guidelines
 and are usually not backed up by evidence.
-What research there is gives us the following rules <span id="id1">[]</span>:</p>
+What research there is gives us the following rules <span id="id1">[<a class="reference internal" href="references.html#id5" title="Brett A. Becker, Graham Glanville, Ricardo Iwashima, Claire McDonnell, Kyle Goslin, and Catherine Mooney. Effective Compiler Error Message Enhancement for Novice Programming Students. Computer Science Education, 26(2-3):148–175, Jul 2016. Reports that improved error messages helped novices learn faster. doi:10.1080/08993408.2016.1225464.">Becker <em>et al.</em>, 2016</a>]</span>:</p>
 <ol class="arabic simple">
 <li><p>Tell the user what they did, not what the program did.
 Putting it another way,

@@ -481,8 +481,8 @@ It could be better:
 most of the visual space is devoted to a few very common words,
 which makes it hard to see what is happening with the other ten thousand or so words.
 
-```{figure} ../figures/git-cmdline/plot-initial.png)
-:name git-cmdline-initial-plot
+```{figure} ../figures/git-cmdline/plot-initial.png
+:name: git-cmdline-initial-plot
 Git CMDline initial plot
 ```
 
@@ -661,7 +661,7 @@ $ git commit -m "Plot frequency against rank on log-log axes"
 Git CMDline staging area
 ```
 
-Let's take a look at our new plot ([Figure](git-cmdline-loglog-plot)):
+Let's take a look at our new plot ([Figure](git-cmdline-loglog-plot2)):
 
 ```bash
 $ python bin/plotcounts.py results/dracula.csv --outfile
@@ -669,7 +669,7 @@ $ python bin/plotcounts.py results/dracula.csv --outfile
 ```
 
 ```{figure} ../figures/git-cmdline/plot-loglog.png
-:name: git-cmdline-loglog-plot
+:name: git-cmdline-loglog-plot2
 Git CMDline LOG Plot
 ```
 

@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="YAML" href="yaml.html" />
-    <link rel="prev" title="CI/CD" href="advanced_cicd.html" />
+    <link rel="prev" title="Worksheet 3 - Command Line Tools with Python , Git and the Command Line, Git UP" href="../worksheets/worksheet3_cli_python_git.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -167,7 +167,6 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresher.html">Python refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/guide.html">Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
@@ -180,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_building_cli.html">Building Command-Line Tools with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/python_cli.html">Exercises Scripting Python for CLI tools</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
@@ -221,6 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Packaging</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
@@ -236,6 +237,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="snakemake.html">Snake Make</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Worksheets - Course Work</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet1_python_refresher.html">Python refresher - Worksheet 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet2_install_more_tool_shell.html">Worksheet 2 - Installing more Tools, working with the Unix SHell, Getting Started with the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet3_cli_python_git.html">Worksheet 3 - Command Line Tools with Python , Git and the Command Line, Git UP</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="current nav bd-sidenav">
@@ -499,11 +506,17 @@ atmospheric science is a relatively small field and thus the <code class="docuti
 will never have a big enough user base to make the list of
 popular data science packages supported by Anaconda.
 Andrew has therefore posted a <code class="docutils literal notranslate"><span class="pre">conda</span></code> installation package to Anaconda Cloud
-(<span class="xref myst">Figure Windspharm</span>)
+(<a class="reference internal" href="#anaconda-windspharm-ajdawson"><span class="std std-ref">Figure Windspharm</span></a>)
 so that users can install <code class="docutils literal notranslate"><span class="pre">windspharm</span></code> using <code class="docutils literal notranslate"><span class="pre">conda</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>ajdawson<span class="w"> </span>windspharm
 </pre></div>
 </div>
+<figure class="align-default" id="anaconda-windspharm-ajdawson">
+<img alt="../_images/cloud-windspharm-ajdawson.png" src="../_images/cloud-windspharm-ajdawson.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 54 </span><span class="caption-text">Windspharm - AJ Dawson</span><a class="headerlink" href="#anaconda-windspharm-ajdawson" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">conda</span></code> documentation has <a class="reference external" href="https://docs.conda.io/projects/conda-build/en/latest/user-guide/tutorials/build-pkgs-skeleton.html">instructions</a> for quickly building
 a <code class="docutils literal notranslate"><span class="pre">conda</span></code> package for a Python module that is already available on <a class="reference external" href="https://pypi.org/">PyPI</a> (<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/packaging.html#distributing-packages">Section Distribute packaging</a>).</p>
 </section>
@@ -522,7 +535,7 @@ beyond the chosen few thousand by adding the conda-forge channel to your <code c
 <figure class="align-default" id="cloud-windspharm-search">
 <img alt="../_images/cloud-windspharm-search.png" src="../_images/cloud-windspharm-search.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 47 </span><span class="caption-text">Windspharm search</span><a class="headerlink" href="#cloud-windspharm-search" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 55 </span><span class="caption-text">Windspharm search</span><a class="headerlink" href="#cloud-windspharm-search" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The conda-forge website has <a class="reference external" href="https://conda-forge.org/#add_recipe">instructions</a>
@@ -581,12 +594,12 @@ in our main Python installation (<a class="reference external" href="https://sof
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="advanced_cicd.html"
+       href="../worksheets/worksheet3_cli_python_git.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">CI/CD</p>
+        <p class="prev-next-title">Worksheet 3 - Command Line Tools with Python , Git and the Command Line, Git UP</p>
       </div>
     </a>
     <a class="right-next"

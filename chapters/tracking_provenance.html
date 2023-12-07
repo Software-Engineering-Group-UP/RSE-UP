@@ -169,7 +169,6 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresher.html">Python refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/guide.html">Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
@@ -182,6 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_building_cli.html">Building Command-Line Tools with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/python_cli.html">Exercises Scripting Python for CLI tools</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
@@ -223,6 +223,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Packaging</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
@@ -238,6 +239,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="snakemake.html">Snake Make</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Worksheets - Course Work</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet1_python_refresher.html">Python refresher - Worksheet 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet2_install_more_tool_shell.html">Worksheet 2 - Installing more Tools, working with the Unix SHell, Getting Started with the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet3_cli_python_git.html">Worksheet 3 - Command Line Tools with Python , Git and the Command Line, Git UP</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -493,7 +500,7 @@ is <em>not</em> the scholarship itself,
 it is merely <em>advertising</em> of the scholarship.
 The actual scholarship is the complete software development environment
 and the complete set of instructions which generated the figures.</p>
-<p>— Jonathan Buckheit and David Donoho, paraphrasing Jon Claerbout, in <span id="id1">[]</span></p>
+<p>— Jonathan Buckheit and David Donoho, paraphrasing Jon Claerbout, in <span id="id1">[<a class="reference internal" href="references.html#id18" title="Jonathan B. Buckheit and David L. Donoho. WaveLab and Reproducible Research. In Wavelets and Statistics, pages 55–81. Springer New York, 1995. doi:10.1007/978-1-4612-2544-7_5.">Buckheit and Donoho, 1995</a>]</span></p>
 </div></blockquote>
 <p>While some reports, datasets, software packages, and analysis scripts
 can’t be published without violating personal or commercial confidentiality,
@@ -587,7 +594,7 @@ should follow the FAIR Principles.</p>
 <h3>The FAIR Principles<a class="headerlink" href="#the-fair-principles" title="Permalink to this heading">#</a></h3>
 <p>The <a class="reference external" href="https://data.giss.nasa.gov/gistemp/">FAIR Principles</a> describe what research data should look like.
 They are still aspirational for most researchers,
-but tell us what to aim for [<span id="id2">[]</span>;<span id="id3">[]</span>;<span id="id4">[]</span>; <span id="id5">[]</span>; <span id="id6">[]</span>.
+but tell us what to aim for [<span id="id2">[<a class="reference internal" href="references.html#id32" title="Alyssa Goodman, Alberto Pepe, Alexander W. Blocker, Christine L. Borgman, Kyle Cranmer, Merce Crosas, Rosanne Di Stefano, Yolanda Gil, Paul Groth, Margaret Hedstrom, David W. Hogg, Vinay Kashyap, Ashish Mahabal, Aneta Siemiginowska, and Aleksandra Slavkovic. Ten Simple Rules for the Care and Feeding of Scientific Data. PLoS Computational Biology, 10(4):e1003542, Apr 2014. URL: https://doi.org/10.1371/journal.pcbi.1003542, doi:10.1371/journal.pcbi.1003542.">Goodman <em>et al.</em>, 2014</a>]</span>;<span id="id3">[<a class="reference internal" href="references.html#id49" title="William K. Michener. Ten Simple Rules for Creating a Good Data Management Plan. PLOS Computational Biology, 11(10):e1004525, Oct 2015. URL: https://doi.org/10.1371/journal.pcbi.1004525, doi:10.1371/journal.pcbi.1004525.">Michener, 2015</a>]</span>;<span id="id4">[<a class="reference internal" href="references.html#id36" title="Edmund M. Hart, Pauline Barmby, David LeBauer, François Michonneau, Sarah Mount, Patrick Mulrooney, Timothée Poisot, Kara H. Woo, Naupaka B. Zimmerman, and Jeffrey W. Hollister. Ten Simple Rules for Digital Data Storage. PLOS Computational Biology, 12(10):e1005097, Oct 2016. URL: https://doi.org/10.1371/journal.pcbi.1005097, doi:10.1371/journal.pcbi.1005097.">Hart <em>et al.</em>, 2016</a>]</span>; <span id="id5">[<a class="reference internal" href="references.html#id14" title="Jon Brock. `A Love Letter to Your Future Self': What Scientists Need to Know about FAIR Data. 2019. Accessed November 2019. URL: https://www.natureindex.com/news-blog/what-scientists-need-to-know-about-fair-data.">Brock, 2019</a>]</span>; <span id="id6">[<a class="reference internal" href="references.html#id71" title="Nicholas J Tierney and Karthik Ram. A Realistic Guide to Making Data Available alongside Code to Improve Reproducibility. 2020. A guide to what the working scientist can feasibly do to share data. URL: https://arxiv.org/abs/2002.11626.">Tierney and Ram, 2020</a>]</span>.
 The most immediately important elements of the FAIR Principles are outlined below.</p>
 <section id="data-should-be-findable">
 <h4>Data should be <em>findable</em><a class="headerlink" href="#data-should-be-findable" title="Permalink to this heading">#</a></h4>
@@ -687,7 +694,7 @@ for each key result.</p></li>
 librarians, publishers, and regulatory bodies are still trying to determine
 the best way to document and archive material like this,
 so a widely accepted set of FAIR Principles for research software
-is still under development <span id="id7">[]</span>.
+is still under development <span id="id7">[<a class="reference internal" href="references.html#id40" title="Anna-Lena Lamprecht, Leyla Garcia, Mateusz Kuzak, Carlos Martinez, Ricardo Arcila, Eva Martin Del Pico, Victoria Dominguez Del Angel, Stephanie van de Sandt, Jon Ison, Paula Andrea Martinez, Peter McQuilton, Alfonso Valencia, Jennifer Harrow, Fotis Psomopoulos, Josep Ll. Gelpi, Neil Chue Hong, Carole Goble, and Salvador Capella-Gutierrez. Towards FAIR Principles for Research Software. Data Science, 3(1):37–59, 2020. URL: https://doi.org/10.3233/DS-190026.">Lamprecht <em>et al.</em>, 2020</a>]</span>.
 In the meantime, the best advice we can give is presented below.
 It involves adding information about the software environment
 and data processing steps to a GitHub repository that contains
@@ -757,7 +764,7 @@ remember to add it to your GitHub repository.</p>
 <p>More complex tools like [Docker][docker]
 can install our entire environment
 (down to the precise version of the operating system)
-on a different computer <span id="id8">[]</span>.
+on a different computer <span id="id8">[<a class="reference internal" href="references.html#id56" title="Daniel Nüst, Vanessa Sochat, Ben Marwick, Stephen Eglen, Tim Head, Tony Hirst, and Benjamin Evans. Ten Simple Rules for Writing Dockerfiles for Reproducible Data Science. 2020. doi:10.31219/osf.io/fsd7t.">Nüst <em>et al.</em>, 2020</a>]</span>.
 However,
 their complexity can be daunting,
 and there is a lot of debate
@@ -812,7 +819,7 @@ that Zenodo copies and then issues a DOI for (<a class="reference internal" href
 <figure class="align-default" id="provenance-release">
 <img alt="../_images/release.png" src="../_images/release.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 46 </span><span class="caption-text">Release</span><a class="headerlink" href="#provenance-release" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 48 </span><span class="caption-text">Release</span><a class="headerlink" href="#provenance-release" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -834,7 +841,7 @@ meaning our workflow will be documented but not reproducible.</p>
 most readers are not looking to exactly re-run a decade-old analysis:
 they just want to be able to figure out what was run
 and what the important decisions were,
-which is sometimes referred to as <strong>inspectability</strong> <span id="id9">[]</span>; <span id="id10">[]</span>.
+which is sometimes referred to as <strong>inspectability</strong> <span id="id9">[<a class="reference internal" href="references.html#id30" title="Yolanda Gil, Cédric H. David, Ibrahim Demir, Bakinam T. Essawy, Robinson W. Fulweiler, Jonathan L. Goodall, Leif Karlstrom, Huikyo Lee, Heath J. Mills, Ji-Hyun Oh, Suzanne A. Pierce, Allen Pope, Mimi W. Tzeng, Sandra R. Villamizar, and Xuan Yu. Toward the Geoscience Paper of the Future: Best Practices for Documenting and Sharing Research from Data to Software to Provenance. Earth and Space Science, 3(10):388-415, 2016. doi:10.1002/2015EA000136.">Gil <em>et al.</em>, 2016</a>]</span>; <span id="id10">[<a class="reference internal" href="references.html#id17" title="Titus Brown. How I Learned to Stop Worrying and Love the Coming Archivability Crisis in Scientific Software. 2017. URL: http://ivory.idyll.org/blog/tag/futurepaper.html.">Brown, 2017</a>]</span>.
 While exact repeatability has a short shelf-life,
 inspectability is the enduring legacy of a well-documented computational analysis.</p>
 <blockquote>

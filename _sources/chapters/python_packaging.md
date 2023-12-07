@@ -1163,7 +1163,7 @@ Packaging Sphinx Landing Page
 Sphinx Module List
 ```
 
-```{figures} ../figures/packaging/module-countwords.png
+```{figure} ../figures/packaging/module-countwords.png
 :name: packaging-sphinx-module-countwords
 Sphinx Module Countwords
 ```

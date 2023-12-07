@@ -166,7 +166,6 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresher.html">Python refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/guide.html">Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
@@ -179,6 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_building_cli.html">Building Command-Line Tools with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/python_cli.html">Exercises Scripting Python for CLI tools</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
@@ -220,6 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Packaging</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
@@ -235,6 +236,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="snakemake.html">Snake Make</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Worksheets - Course Work</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet1_python_refresher.html">Python refresher - Worksheet 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet2_install_more_tool_shell.html">Worksheet 2 - Installing more Tools, working with the Unix SHell, Getting Started with the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet3_cli_python_git.html">Worksheet 3 - Command Line Tools with Python , Git and the Command Line, Git UP</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -492,7 +499,7 @@ but don’t document what steps to take in what order, your work is open but not
 Conversely, if you completely automate your analysis, but your data is only available to people in your lab, your work is reproducible but not open.
 Finally, if a software package is being maintained by a couple of post-docs
 who are being paid a fraction of what they could earn in industry
-and have no realistic hope of promotion because their field doesn’t value tool building, then sooner or later it will become \gref{abandonware}{abandonware},
+and have no realistic hope of promotion because their field doesn’t value tool building, then sooner or later it will become <strong>abandonware</strong>,
 at which point openness and reproducibility become less relevant.</p>
 <p>Nobody argues that research should be irreproducible or unsustainable,
 but “not against it” and actively supporting it are very different things.
@@ -577,7 +584,7 @@ we will show you how to do the following:</p>
 course at the university level,
 although it can also be used for independent self-study.
 Participatory live-coding is the anticipated style for teaching the material,
-rather than lectures simply talking about the code presented <span id="id2">[]</span>
+rather than lectures simply talking about the code presented <span id="id2">[<a class="reference internal" href="references.html#id16" title="Neil C.C. Brown and Greg Wilson. Ten Quick Tips for Teaching Programming. PLOS Computational Biology, 14(4):e1006023, Apr 2018. URL: https://doi.org/10.1371/journal.pcbi.1006023, doi:10.1371/journal.pcbi.1006023.">Brown and Wilson, 2018</a>, <a class="reference internal" href="references.html#id77" title="Greg Wilson. Teaching Tech Together. Taylor &amp; Francis, 2019. ISBN 978-0-367-35328-5. How to create and deliver lessons that work and build a teaching community around them.">Wilson, 2019</a>]</span>
 The chapters and their content are generally designed to be used in the order
 given.</p>
 <p>Chapters are structured with the introduction at the start, content in the middle,
@@ -622,6 +629,8 @@ as long as there is attribution to this source.</p>
 Damien Irving and Kate Hertweck and Luke Johnston and Joel Ostblom and Charlotte Wickham and Greg Wilson.</p>
 <p>The online version can be found <a class="reference external" href="https://merely-useful.tech/py-rse/">here!</a></p>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">

@@ -67,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/python_building_cli.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exercises Scripting Python for CLI tools" href="../exercises/python_cli.html" />
+    <link rel="prev" title="Bash Exercises" href="../exercises/bash.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,7 +167,6 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresher.html">Python refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/guide.html">Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
@@ -177,7 +178,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../exercises/bash.html">Bash Exercises</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Building Command-Line Tools with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/python_cli.html">Exercises Scripting Python for CLI tools</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
@@ -219,6 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Packaging</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
@@ -234,6 +237,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="snakemake.html">Snake Make</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Worksheets - Course Work</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet1_python_refresher.html">Python refresher - Worksheet 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet2_install_more_tool_shell.html">Worksheet 2 - Installing more Tools, working with the Unix SHell, Getting Started with the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet3_cli_python_git.html">Worksheet 3 - Command Line Tools with Python , Git and the Command Line, Git UP</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -499,7 +508,7 @@ document.write(`
 are great for prototyping code and exploring data, but eventually we may need to apply our code to thousands of data files,
 run it with many different parameters, or combine it with other programs as part of a data analysis pipeline.
 The easiest way to do this is often to turn our code into a standalone program that can be run in the Unix shell
-just like other command-line tools <span id="id1">[]</span>.</p>
+just like other command-line tools <span id="id1">[<a class="reference internal" href="references.html#id70" title="Morgan Taschuk and Greg Wilson. Ten Simple Rules for Making Research Software More Robust. PLoS Computational Biology, 13(4):e1005412, Apr 2017. A short guide to making research software usable by other people. doi:10.1371/journal.pcbi.1005412.">Taschuk and Wilson, 2017</a>]</span>.</p>
 <p>In this chapter we will develop some <strong>command-line Python program</strong> that handle input and output in the same way as other shell commands,
 can be controlled by several option flags, and provide useful information when things go wrong.
 The result will have more scaffolding than useful application code, but that scaffolding stays more or less the same as programs get larger.</p>
@@ -1405,7 +1414,7 @@ Mathematically, this might be written as “word frequency is proportional to 1/
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;results/jane_eyre.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><img alt="Word frequency distribution for Jane Eyre" src="../figures/scripting/jane-eyre.png" /></p>
+<p><img alt="Word frequency distribution for Jane Eyre" src="../_images/jane-eyre.png" /></p>
 <p>You’ll build on this code to create a plotting script for your project in Exercise <strong>TODO</strong> ref(scripting-ex-better-plotting).</p>
 </section>
 <section id="summary">
@@ -1465,6 +1474,24 @@ Making tools that behave in ways people expect greatly increases the chances tha
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../exercises/bash.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Bash Exercises</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../exercises/python_cli.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercises Scripting Python for CLI tools</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

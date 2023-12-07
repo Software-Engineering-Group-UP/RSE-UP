@@ -655,7 +655,7 @@ Some of the labels that GitHub creates for repositories by default
 are shown in [Figure team labels](teams-labels).
 These labels can be modified or otherwise customized for each repository.
 
-```{figures} ../figures/teams/issue-labels.png
+```{figure} ../figures/teams/issue-labels.png
 :name: teams-labels
 Team labels
 ```
