@@ -1,0 +1,3 @@
+# Project Assignment: Form Groups for Second Project
+
+For the second course project, you will work in teams of 3-4 people. We leave it to you to get together in groups. Please use the group self-selection activity in Moodle **TODO** (https://moodle2.uni-potsdam.de/mod/groupselect/view.php?id=1957279) to register your groups and find further team members if needed. Next week you will receive instructions on how to start the work on the project.
