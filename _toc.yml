@@ -69,13 +69,20 @@ parts:
       - file: worksheets/worksheet3_cli_python_git.ipynb
       - file: worksheets/worksheet4_readable_code.ipynb    
       - file: worksheets/worksheet6_software_license.ipynb
-  - caption: Projects
-    chapters:
+      - file: worksheets/worksheet7_git_advanced.ipynb
+  - caption: First Project - Invdividual
+    chapters: 
       - file: projects/individual/1_project_instructions.md
       - file: projects/individual/2_project_instructions.md
       - file: projects/individual/3_project_instructions.md
       - file: projects/individual/4_project_instructions.md
       - file: projects/individual/5_project_instructions.md
+      - file: projects/individual/6_project_instructions.md
+  - caption: Second Project - Group
+    chapters: 
+      - file: projects/group/1_project_assignment.md
+      - file: projects/group/2_project_assignment.md
+      - file: projects/group/3_project_assignment.md
   - caption: Appendix
     chapters:
       - file: chapters/anaconda.md
