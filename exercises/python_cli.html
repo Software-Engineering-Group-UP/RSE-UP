@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercises Scripting Python for CLI tools &#8212; RSE-ING</title>
+    <title>Exercises - Scripting Python for CLI tools &#8212; RSE-ING</title>
   
   
   
@@ -180,7 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapters/python_building_cli.html">Building Command-Line Tools with Python</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercises Scripting Python for CLI tools</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercises - Scripting Python for CLI tools</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
 <ul class="nav bd-sidenav">
@@ -261,9 +261,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../projects/group/1_project_assignment.html">Project Assignment: Form Groups for Second Project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projects/group/2_project_assignment.html">Project Assignment 2: Name, Idea and Basic Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projects/group/3_project_assignment.html">Project Assignment 3: Requirements, Architecture, Design and Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/group/4_project_assignment.html">Project Assignment 4: Testing and Error Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/group/5_project_assignment.html">Project Assignment 5: Program Configuration, Packaging and Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/group/6_project_assignment.html">Project Assignment 6: Finish and Submit the Project</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapters/solutions.html">Solutions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/anaconda.html">Anaconda</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/yaml.html">YAML</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/working_remotely.html">Working Remotely</a></li>
@@ -484,7 +488,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercises Scripting Python for CLI tools</h1>
+    <h1>Exercises - Scripting Python for CLI tools</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -494,10 +498,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-python-statements-from-the-command-line">Running Python statements from the command line</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listing-files">Listing files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentence-ending-punctuation">Sentence ending punctuation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-better-plotting-program">A better plotting program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-python-statements-from-the-command-line">1 Running Python statements from the command line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listing-files">2 Listing files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentence-ending-punctuation">3 Sentence ending punctuation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-better-plotting-program">4 A better plotting program</a></li>
 </ul>
             </nav>
         </div>
@@ -510,12 +514,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="exercises-scripting-python-for-cli-tools">
-<h1>Exercises Scripting Python for CLI tools<a class="headerlink" href="#exercises-scripting-python-for-cli-tools" title="Permalink to this heading">#</a></h1>
+<h1>Exercises - Scripting Python for CLI tools<a class="headerlink" href="#exercises-scripting-python-for-cli-tools" title="Permalink to this heading">#</a></h1>
 <p>These exercise should help you either reviewing or learning new shell commands. The exercises can be done localy on Linux, Mac or Windows 11 bash console.
 You can also open this JupyterNotebook directly in Binder or google collab and do the exercises. In this case be aware that the system runs on linux, which is important when using paths.<br />
 Linux and mac use <code class="docutils literal notranslate"><span class="pre">/</span></code> instead of <code class="docutils literal notranslate"><span class="pre">\</span></code> as an example.</p>
 <section id="running-python-statements-from-the-command-line">
-<h2>Running Python statements from the command line<a class="headerlink" href="#running-python-statements-from-the-command-line" title="Permalink to this heading">#</a></h2>
+<h2>1 Running Python statements from the command line<a class="headerlink" href="#running-python-statements-from-the-command-line" title="Permalink to this heading">#</a></h2>
 <p>We don’t need to open the interactive interpreter to run Python code.
 Instead, we can invoke Python with the command flag <code class="docutils literal notranslate"><span class="pre">-c</span></code> and the statement we want to run:</p>
 <div class="cell docutils container">
@@ -534,7 +538,7 @@ python -c &quot;print(2+3)&quot;
 <p>When and why is this useful?</p>
 </section>
 <section id="listing-files">
-<h2>Listing files<a class="headerlink" href="#listing-files" title="Permalink to this heading">#</a></h2>
+<h2>2 Listing files<a class="headerlink" href="#listing-files" title="Permalink to this heading">#</a></h2>
 <p>A Python library called <a class="reference external" href="https://docs.python.org/3/library/glob.html">glob</a> can be used to create a list of files matching a pattern, much like the <code class="docutils literal notranslate"><span class="pre">ls</span></code> shell command.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python
 </pre></div>
@@ -599,7 +603,7 @@ data/time_machine.txt
 <p><em><strong>NOTE: we will not be including this script in subsequent chapters.</strong></em></p>
 </section>
 <section id="sentence-ending-punctuation">
-<h2>Sentence ending punctuation<a class="headerlink" href="#sentence-ending-punctuation" title="Permalink to this heading">#</a></h2>
+<h2>3 Sentence ending punctuation<a class="headerlink" href="#sentence-ending-punctuation" title="Permalink to this heading">#</a></h2>
 <p>Our <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code> script strips the punctuation from a text, which means it provides no information on sentence endings.
 Using <code class="docutils literal notranslate"><span class="pre">script_template.py</span></code> and <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code> as a guide, write a new script called <code class="docutils literal notranslate"><span class="pre">sentence_endings.py</span></code> that counts the occurrence of full stops, question marks and exclamation points and prints that information to the screen.</p>
 <p>Hint: String objects have a <code class="docutils literal notranslate"><span class="pre">count</span></code> method:</p>
@@ -636,7 +640,7 @@ Number of ! is 8
 <p><em><strong>NOTE: we will not be including this script in subsequent chapters.</strong></em></p>
 </section>
 <section id="a-better-plotting-program">
-<h2>A better plotting program<a class="headerlink" href="#a-better-plotting-program" title="Permalink to this heading">#</a></h2>
+<h2>4 A better plotting program<a class="headerlink" href="#a-better-plotting-program" title="Permalink to this heading">#</a></h2>
 <p>Using <code class="docutils literal notranslate"><span class="pre">script_template.py</span></code> as a guide, take the plotting code from Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/scripting/building_cli_python.html#plotting">Scripting - building a CLI with python</a> ref(scripting-plotting) and write a new Python program called <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>.
 The script should do the following:</p>
 <ol class="arabic simple">
@@ -725,10 +729,10 @@ via a CSV file:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-python-statements-from-the-command-line">Running Python statements from the command line</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listing-files">Listing files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentence-ending-punctuation">Sentence ending punctuation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-better-plotting-program">A better plotting program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-python-statements-from-the-command-line">1 Running Python statements from the command line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listing-files">2 Listing files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentence-ending-punctuation">3 Sentence ending punctuation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-better-plotting-program">4 A better plotting program</a></li>
 </ul>
   </nav></div>
 

@@ -1,0 +1,866 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Chapter Introduction to Version Control &#8212; RSE-ING</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/book.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/solutions/version_control';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/solutions/version_control.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../chapters/welcome.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RSE-ING</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../chapters/welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/bash_basics.html">The Basics of the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/bash_tools.html">Building Tools with the Unix Shell</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/bash_advanced.html">Going Further with the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash.html">Bash Exercises</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/python_building_cli.html">Building Command-Line Tools with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_cli.html">Exercises - Scripting Python for CLI tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/intro_version_control.html">Using Git at the Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../version_control.html">Exercise Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/git_advanced.html">Going Further with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git_advanced.html">Exercises Git Advanced</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Working in teams</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/working_in_teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../work_teams.html">Exercise - Work Teams</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to automation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/intro_make.html">Automating Analyses with Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro_make.html">Exercises - Make</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/configuration.html">Configuring Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../config.html">Exercises - Configuration</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing Software</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/testing_programs.html">Testing Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">Exercises - Testing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Error Handling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/error_handling.html">Handling Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../error_handling.html">Exercises - Error Handling</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/tracking_provenance.html">Tracking Provenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provenance.html">Exercises - Provenance</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Packaging</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/python_packaging.html">Creating Packages with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging.html">Exercises - Packaging</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/clean_readable_code.html">Writing Readable Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/writing_documentation.html">Documenting Programs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/workflow.html">Introduction to Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/snakemake.html">Snake Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/advanced_cicd.html">CI/CD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Worksheets - Course Work</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../worksheets/worksheet1_python_refresher.html">Worksheet 1 - Python refresher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../worksheets/worksheet2_install_more_tool_shell.html">Worksheet 2 - Installing more Tools, working with the Unix SHell, Getting Started with the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../worksheets/worksheet3_cli_python_git.html">Worksheet 3 - Command Line Tools with Python , Git and the Command Line, Git UP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../worksheets/worksheet4_readable_code.html">Worksheet 4 - Readable Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../worksheets/worksheet6_software_license.html">Worksheet 6 - Software Licensing, Citation and FAIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../worksheets/worksheet7_git_advanced.html">Worksheet 8 - Going further with Git</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">First Project - Invdividual</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../projects/individual/1_project_instructions.html">Project Assignment 1: Select a Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/individual/2_project_instructions.html">Project Assignment 2: Setting Up the Repository on Git.UP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/individual/3_project_instructions.html">Project Assignment 4: Start Coding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/individual/4_project_instructions.html">Project Assignment 4: More Code, a Notebook, and a README.md</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/individual/5_project_instructions.html">Project Assignment 5: Add License and Citation Informatoon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/individual/6_project_instructions.html">Project Assignment 6:</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Second Project - Group</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../projects/group/1_project_assignment.html">Project Assignment: Form Groups for Second Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/group/2_project_assignment.html">Project Assignment 2: Name, Idea and Basic Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/group/3_project_assignment.html">Project Assignment 3: Requirements, Architecture, Design and Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/group/4_project_assignment.html">Project Assignment 4: Testing and Error Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/group/5_project_assignment.html">Project Assignment 5: Program Configuration, Packaging and Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/group/6_project_assignment.html">Project Assignment 6: Finish and Submit the Project</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/solutions.html">Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/yaml.html">YAML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/working_remotely.html">Working Remotely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fexercises/solutions/version_control.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/exercises/solutions/version_control.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter Introduction to Version Control</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6">Exercise 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7">Exercise 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8">Exercise 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10">Exercise 10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11">Exercise 11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12">Exercise 12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-13">Exercise 13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-14">Exercise 14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-15">Exercise 15</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-16">Exercise 16</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-17">Exercise 17</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-18">Exercise 18</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="chapter-introduction-to-version-control">
+<h1>Chapter Introduction to Version Control<a class="headerlink" href="#chapter-introduction-to-version-control" title="Permalink to this heading">#</a></h1>
+<section id="exercise-1">
+<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h2>
+<p>Amira does not need to make the <code class="docutils literal notranslate"><span class="pre">heaps-law</span></code> subdirectory a Git repository
+because the <code class="docutils literal notranslate"><span class="pre">zipf</span></code> repository will track everything inside it regardless of how deeply nested.</p>
+<p>Amira <em>shouldn’t</em> run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> in <code class="docutils literal notranslate"><span class="pre">heaps-law</span></code> because nested Git repositories can interfere with each other.
+If someone commits something in the inner repository,
+Git will not know whether to record the changes in that repository,
+the outer one,
+or both.</p>
+</section>
+<section id="exercise-2">
+<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> now shows:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+	example.txt
+
+nothing added to commit but untracked files present
+(use &quot;git add&quot; to track)
+</pre></div>
+</div>
+<p>Nothing has happened to the file;
+it still exists but Git no longer has it in the staging area.
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">--cached</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span> <span class="pre">--staged</span></code>.
+With newer versions of Git,
+older commands will still work,
+and you may encounter references to them when reading help documentation.
+If you created this file in your <code class="docutils literal notranslate"><span class="pre">zipf</span></code> project,
+we recommend removing it before proceeding.</p>
+</section>
+<section id="exercise-3">
+<h2>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">#</a></h2>
+<p>If we make a few changes to <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> such that it now reads:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>__pycache__ this is a change
+
+this is another change
+</pre></div>
+</div>
+<p>then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> would show:</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/.gitignore b/.gitignore</span>
+<span class="gh">index bee8a64..5c83419 100644</span>
+<span class="gd">--- a/.gitignore</span>
+<span class="gi">+++ b/.gitignore</span>
+<span class="gu">@@ -1 +1,3 @@</span>
+<span class="gd">-__pycache__</span>
+<span class="gi">+__pycache__ this is a change</span>
+<span class="gi">+</span>
+<span class="gi">+this is another change</span>
+</pre></div>
+</div>
+<p>Whereas <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">--word-diff</span></code> shows:</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/.gitignore b/.gitignore</span>
+<span class="gh">index bee8a64..5c83419 100644</span>
+<span class="gd">--- a/.gitignore</span>
+<span class="gi">+++ b/.gitignore</span>
+<span class="gu">@@ -1 +1,3 @@</span>
+__pycache__ {+this is a change+}
+
+{+this is another change+}
+</pre></div>
+</div>
+<p>Depending on the nature of the changes you are viewing,
+the latter may be easier to interpret
+since it shows exactly what has been
+changed.</p>
+</section>
+<section id="exercise-4">
+<h2>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Maybe: would only create a commit if the file has already been staged.</p></li>
+<li><p>No: would try to create a new repository,
+which results in an error if a repository already exists.</p></li>
+<li><p>Yes: first adds the file to the staging area, then commits.</p></li>
+<li><p>No: would result in an error,
+as it would try to commit a file “my recent changes” with the message “myfile.txt.”</p></li>
+</ol>
+</section>
+<section id="exercise-5">
+<h2>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Go into your home directory with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code>.</p></li>
+<li><p>Create a new folder called <code class="docutils literal notranslate"><span class="pre">bio</span></code> with <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">bio</span></code>.</p></li>
+<li><p>Make the repository your working directory with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">bio</span></code>.</p></li>
+<li><p>Turn it into a repository with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>.</p></li>
+<li><p>Create your biography using <code class="docutils literal notranslate"><span class="pre">nano</span></code> or another text editor.</p></li>
+<li><p>Add it and commit it in a single step with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span> <span class="pre">-m</span> <span class="pre">&quot;Some</span> <span class="pre">message&quot;</span></code>.</p></li>
+<li><p>Modify the file.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> to see the differences.</p></li>
+</ol>
+</section>
+<section id="exercise-6">
+<h2>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">employment.txt</span></code> using an editor like Nano.</p></li>
+<li><p>Add both <code class="docutils literal notranslate"><span class="pre">me.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">employment.txt</span></code> to the staging area with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">*.txt</span></code>.</p></li>
+<li><p>Check that both files are there with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.</p></li>
+<li><p>Commit both files at once with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.</p></li>
+</ol>
+</section>
+<section id="exercise-7">
+<h2>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this heading">#</a></h2>
+<p>GitHub displays timestamps in a human-readable relative format
+(i.e., “22 hours ago” or “three weeks ago”),
+since this makes it easy for anyone in any time zone
+to know what changes have been made recently.
+However, if we hover over the timestamp
+we can see the exact time at which the last change to the file occurred.</p>
+</section>
+<section id="exercise-8">
+<h2>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this heading">#</a></h2>
+<p>The answer is 1.</p>
+<p>The command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">motivation.txt</span></code> adds the current version of <code class="docutils literal notranslate"><span class="pre">motivation.txt</span></code> to the staging area.
+The changes to the file from the second <code class="docutils literal notranslate"><span class="pre">echo</span></code> command are only applied to the working copy,
+not the version in the staging area.</p>
+<p>As a result,
+when <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Motivate</span> <span class="pre">project&quot;</span></code> is executed,
+the version of <code class="docutils literal notranslate"><span class="pre">motivation.txt</span></code> committed to the repository is the content from the first <code class="docutils literal notranslate"><span class="pre">echo</span></code>.</p>
+<p>However,
+the working copy still has the output from the second <code class="docutils literal notranslate"><span class="pre">echo</span></code>;
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> would show that the file is modified.
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span> <span class="pre">HEAD</span> <span class="pre">motivation.txt</span></code> therefore replaces the working copy with
+the most recently committed version of <code class="docutils literal notranslate"><span class="pre">motivation.txt</span></code>
+(the content of the first <code class="docutils literal notranslate"><span class="pre">echo</span></code>),
+so <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">motivation.txt</span></code> prints:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Zipf&#39;s Law describes the relationship between the frequency and
+rarity of words.
+</pre></div>
+</div>
+</section>
+<section id="exercise-10">
+<h2>Exercise 10<a class="headerlink" href="#exercise-10" title="Permalink to this heading">#</a></h2>
+<p>Add this line to <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>results/plots/
+</pre></div>
+</div>
+</section>
+<section id="exercise-11">
+<h2>Exercise 11<a class="headerlink" href="#exercise-11" title="Permalink to this heading">#</a></h2>
+<p>Add the following two lines to <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>*.dat           # ignore all data files
+!final.dat      # except final.data
+</pre></div>
+</div>
+<p>The exclamation point <code class="docutils literal notranslate"><span class="pre">!</span></code> includes a previously excluded entry.</p>
+<p>Note also that if we have previously committed <code class="docutils literal notranslate"><span class="pre">.dat</span></code> files in this repository,
+they will not be ignored once these rules are added to <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>.
+Only future <code class="docutils literal notranslate"><span class="pre">.dat</span></code> files will be ignored.</p>
+</section>
+<section id="exercise-12">
+<h2>Exercise 12<a class="headerlink" href="#exercise-12" title="Permalink to this heading">#</a></h2>
+<p>The left button (with the picture of a clipboard)
+copies the full identifier of the commit to the clipboard.
+In the shell,
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> shows the full commit identifier for each commit.</p>
+<p>The middle button (with seven letters and numbers)
+shows all of the changes that were made in that particular commit;
+green shaded lines indicate additions and red lines indicate removals.
+We can show the same thing in the shell using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>
+or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">FROM..TO</span></code>
+(where <code class="docutils literal notranslate"><span class="pre">FROM</span></code> and <code class="docutils literal notranslate"><span class="pre">TO</span></code> are commit identifiers).</p>
+<p>The right button lets us view all of the files in the repository at the time of that commit.
+To do this in the shell,
+we would need to check out the repository as it was at that commit
+using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">ID</span></code>, where <code class="docutils literal notranslate"><span class="pre">ID</span></code> is the tag, branch name, or commit identifier.
+If we do this,
+we need to remember to put the repository back to the right state afterward.</p>
+</section>
+<section id="exercise-13">
+<h2>Exercise 13<a class="headerlink" href="#exercise-13" title="Permalink to this heading">#</a></h2>
+<p>Committing updates our local repository.
+Pushing sends any commits we have made locally
+that aren’t yet in the remote repository
+to the remote repository.</p>
+</section>
+<section id="exercise-14">
+<h2>Exercise 14<a class="headerlink" href="#exercise-14" title="Permalink to this heading">#</a></h2>
+<p>When GitHub creates a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file while setting up a new repository,
+it actually creates the repository and then commits the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file.
+When we try to pull from the remote repository to our local repository,
+Git detects that their histories do not share a common origin and refuses to merge them.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>master
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>warning: no common commits
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/frances/eniac
+ * branch            master     -&gt; FETCH_HEAD
+ * [new branch]      master     -&gt; origin/master
+fatal: refusing to merge unrelated histories
+</pre></div>
+</div>
+<p>We can force Git to merge the two repositories with the option <code class="docutils literal notranslate"><span class="pre">--allow-unrelated-histories</span></code>.
+Please check the contents of the local and remote repositories carefully before doing this.</p>
+</section>
+<section id="exercise-15">
+<h2>Exercise 15<a class="headerlink" href="#exercise-15" title="Permalink to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">checkout</span></code> command restores files from the repository,
+overwriting the files in our working directory.
+<code class="docutils literal notranslate"><span class="pre">HEAD</span></code> indicates the latest version.</p>
+<ol class="arabic simple">
+<li><p>No: this can be dangerous;
+without a filename,
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> will restore all files in the current directory (and all directories below it)
+to their state at the commit specified.
+This command will restore <code class="docutils literal notranslate"><span class="pre">data_cruncher.sh</span></code> to the latest commit version,
+but will also reset any other files we have changed to that version,
+which will erase any unsaved changes you may have made to those files.</p></li>
+<li><p>Yes: this restores the latest version of only the desired file.</p></li>
+<li><p>No: this gets the version of <code class="docutils literal notranslate"><span class="pre">data_cruncher.sh</span></code> from the commit before <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>,
+which is not what we want.</p></li>
+<li><p>Yes: the unique ID (identifier) of the last commit is what <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> means.</p></li>
+<li><p>Yes: this is equivalent to the answer to 2.</p></li>
+<li><p>No: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code> assumes <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>,
+so Git will assume you’re trying to restore a file called <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>,
+resulting in an error.</p></li>
+</ol>
+</section>
+<section id="exercise-16">
+<h2>Exercise 16<a class="headerlink" href="#exercise-16" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Compares what has changed between the
+current <code class="docutils literal notranslate"><span class="pre">bin/plotcounts.py</span></code> and the same file nine commits ago.</p></li>
+<li><p>It returns an error:
+<code class="docutils literal notranslate"><span class="pre">fatal:</span> <span class="pre">ambiguous</span> <span class="pre">argument</span> <span class="pre">'HEAD~9':</span> <span class="pre">unknown</span> <span class="pre">revision</span> <span class="pre">or</span> <span class="pre">path</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">working</span> <span class="pre">tree.</span></code>
+We don’t have enough commits in history for the command to properly execute.</p></li>
+<li><p>It compares changes (either staged or unstaged)
+to the most recent commit.</p></li>
+</ol>
+</section>
+<section id="exercise-17">
+<h2>Exercise 17<a class="headerlink" href="#exercise-17" title="Permalink to this heading">#</a></h2>
+<p>No, using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> on a staged file does not unstage it.
+The changes are in the staging area and checkout would affect
+the working directory.</p>
+</section>
+<section id="exercise-18">
+<h2>Exercise 18<a class="headerlink" href="#exercise-18" title="Permalink to this heading">#</a></h2>
+<p>Each line of output corresponds to a line in the file,
+and includes the commit identifier,
+who last modified the line,
+when that change was made,
+and what is included on that line.
+Note that the edit you just committed is not present here;
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">blame</span></code> only shows the current lines in the file,
+and doesn’t report on lines that have been removed.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./exercises/solutions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6">Exercise 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7">Exercise 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8">Exercise 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10">Exercise 10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11">Exercise 11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12">Exercise 12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-13">Exercise 13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-14">Exercise 14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-15">Exercise 15</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-16">Exercise 16</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-17">Exercise 17</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-18">Exercise 18</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Software Engineering Group - University of Potsdam
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
