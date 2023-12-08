@@ -203,7 +203,7 @@ Author: Mary Wollstonecraft (Godwin) Shelley
 ```
 
 Our small script is now doing something useful,
-but it may take the next person who reads it a moment to figure out exactly what. We can improve our script by adding a **comment**:
+but it may take the next person who reads it a moment to figureout exctly what. We can improve our script by adding a **comment**:
 
 ```text
 # Get author information from a Project Gutenberg eBook.

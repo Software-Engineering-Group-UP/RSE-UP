@@ -83,8 +83,12 @@ parts:
       - file: projects/group/1_project_assignment.md
       - file: projects/group/2_project_assignment.md
       - file: projects/group/3_project_assignment.md
+      - file: projects/group/4_project_assignment.md
+      - file: projects/group/5_project_assignment.md  
+      - file: projects/group/6_project_assignment.md
   - caption: Appendix
     chapters:
+      - file: chapters/solutions.md
       - file: chapters/anaconda.md
       - file: chapters/yaml.md
       - file: chapters/working_remotely.md
