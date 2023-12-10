@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Guide &#8212; RSE-ING</title>
+    <title>Python Refresher &#8212; RSE-ING</title>
   
   
   
@@ -63,12 +63,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/guide';</script>
-    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/guide.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/python_refresher';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/python_refresher.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Basics of the Unix Shell" href="../chapters/bash_basics.html" />
-    <link rel="prev" title="Getting Started" href="../chapters/getting_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,9 +163,8 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapters/getting_started.html">Getting Started</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
 <ul class="nav bd-sidenav">
@@ -240,7 +237,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Worksheets - Course Work</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet1_python_refresher.html">Worksheet 1 - Python refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet2_install_more_tool_shell.html">Worksheet 2 - Installing more Tools, working with the Unix SHell, Getting Started with the Project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet3_cli_python_git.html">Worksheet 3 - Command Line Tools with Python , Git and the Command Line, Git UP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worksheets/worksheet4_readable_code.html">Worksheet 4 - Readable Code</a></li>
@@ -326,7 +322,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/Software-Engineering-Group-UP/RSE-UP/main?urlpath=tree/exercises/guide.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/Software-Engineering-Group-UP/RSE-UP/main?urlpath=tree/exercises/python_refresher.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -374,7 +370,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fexercises/guide.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fexercises/python_refresher.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -404,7 +400,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/exercises/guide.ipynb" target="_blank"
+      <li><a href="../_sources/exercises/python_refresher.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -475,7 +471,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -486,11 +484,33 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Guide</h1>
+    <h1>Python Refresher</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-1-python-development-environment">Assignment 1: Python Development Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-install-instructions">Python Install Instructions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda-install-guide">Anaconda Install Guide</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-2-revitalize-your-python">Assignment 2: Revitalize your Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetics">2.1 Arithmetics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-branching">2.2 Conditional Branching</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">2.3 While-Loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops-text-processing">2.4 For-Loops, Text Processing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">2.5 Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes-pandas">2.6 Dataframes, Pandas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-inheritance">2.7 Classes, Inheritance</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -500,8 +520,168 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="guide">
-<h1>Guide<a class="headerlink" href="#guide" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="python-refresher">
+<h1>Python Refresher<a class="headerlink" href="#python-refresher" title="Permalink to this heading">#</a></h1>
+<p>This worksheet is not about the actual content of the Research Software Engineering (RSE) course, but meant to make sure that you are ready to use Python for the assignments and
+projects ahead. Therefore, it contains instructions on how to install the Anaconda framework for data science (including Python 3) and some programming exercises to revitalize your
+Python coding skills.</p>
+<p>This worksheet will be discussed in the labs in the next lab ( See moodle for the precise time table).</p>
+<section id="assignment-1-python-development-environment">
+<h2>Assignment 1: Python Development Environment<a class="headerlink" href="#assignment-1-python-development-environment" title="Permalink to this heading">#</a></h2>
+<p>To get started you need a working Python development environment. You can either install Anaconda, or Python directly.
+For most tasks of the book, you won’t need that many packages, A list will be provided below. This book won’t go into detail on how to install python manually, but for those new to Python but experience in other languages you may follow the the instructions on Anaconda.</p>
+<section id="python-install-instructions">
+<h3>Python Install Instructions<a class="headerlink" href="#python-install-instructions" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>On Mac and Windows go to <a class="reference external" href="https://python.org">Python.org</a> and download Python 3 the latest version manully or follow or use your terminal to install python. Most Linux system come with python pre installed.</p></li>
+<li><p>Install a Text editor VS Code, Jetbrains Pycharm, or Neovim, Helix, Emacs, there are no requirements, but having an install of VS Code might make it easier, since VS code can run Jupyter notebooks without you having to install the whole Anaconda ecosystem and starting jupyter notebook server. And run the Notebooks in your Browser, instead you can use VScode including all python linting etc.</p></li>
+</ol>
+</section>
+<section id="anaconda-install-guide">
+<h3>Anaconda Install Guide<a class="headerlink" href="#anaconda-install-guide" title="Permalink to this heading">#</a></h3>
+<p>We will use the Anaconda Data Science platform in the course. Anaconda is a free and open source distribution of Python and some other programming languages used in scientific
+applications. It runs on all major operaBng systems and provides a number of very useful tools for Python programming, some of which we will use in the course.
+Here is what you need to do to get started:</p>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="https://docs.anaconda.com/anaconda/install/">https://docs.anaconda.com/anaconda/install/</a> and follow the installation instructions for your operating system.</p></li>
+<li><p>Go to <a class="reference external" href="https://docs.anaconda.com/anaconda/user-guide/geWng-started/#open-nav-lin">https://docs.anaconda.com/anaconda/user-guide/geWng-started/#open-nav-lin</a> and follow the instructions how to start Spyder.</p></li>
+<li><p>Start coding!
+If you have trouble with the installation of Anaconda on your device, please don’t hesitate to
+get in touch with <strong>TODO</strong> Akshay (<a class="reference external" href="mailto:devkate&#37;&#52;&#48;uni-potsdam&#46;de">devkate<span>&#64;</span>uni-potsdam<span>&#46;</span>de</a>) also before the lab.</p></li>
+</ol>
+</section>
+</section>
+<section id="assignment-2-revitalize-your-python">
+<h2>Assignment 2: Revitalize your Python<a class="headerlink" href="#assignment-2-revitalize-your-python" title="Permalink to this heading">#</a></h2>
+<p>Here are a couple of exercises to revitalize your basic Python skills. Do these in Spyder, using
+plain .py files, not Jupyter Notebooks or other interfaces.</p>
+<section id="arithmetics">
+<h3>2.1 Arithmetics<a class="headerlink" href="#arithmetics" title="Permalink to this heading">#</a></h3>
+<p>Write a Python program that welcomes the user, asks for their name (string), weight in kg (integer) and height in m (float), computes the body mass index (BMI) from the information
+(weight/height2) and finally displays a message to the user, saying something like:</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>Hello<span class="w"> </span>Jim,<span class="w"> </span>your<span class="w"> </span>BMI<span class="w"> </span>is<span class="w"> </span><span class="m">23</span>.4.
+</pre></div>
+</div>
+<p>You can assume that the user enters correct values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="conditional-branching">
+<h3>2.2 Conditional Branching<a class="headerlink" href="#conditional-branching" title="Permalink to this heading">#</a></h3>
+<p>Extend the BMI calculation program from the previous exercise so that after informing the user about the calculated BMI, it also prints out if the BMI is within the range that is generally
+considered normal (between 18.5 and 25) or higher (above 25) or lower (below 18.5) than that. The output of the modified program should then be something like:</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>Welcome<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>BMI<span class="w"> </span>calculator.
+What<span class="w"> </span>is<span class="w"> </span>your<span class="w"> </span>name?<span class="w"> </span>John<span class="w"> </span>Doe
+What<span class="w"> </span>is<span class="w"> </span>your<span class="w"> </span>weight<span class="w"> </span><span class="o">(</span><span class="k">in</span><span class="w"> </span>kg<span class="o">)</span>?<span class="w"> </span><span class="m">78</span>
+What<span class="w"> </span>is<span class="w"> </span>your<span class="w"> </span>height<span class="w"> </span><span class="o">(</span><span class="k">in</span><span class="w"> </span>m<span class="o">)</span>?<span class="w"> </span><span class="m">1</span>.82
+Hello<span class="w"> </span>John<span class="w"> </span>Doe,<span class="w"> </span>your<span class="w"> </span>BMI<span class="w"> </span>is<span class="w"> </span><span class="m">23</span>.5.
+Your<span class="w"> </span>BMI<span class="w"> </span>is<span class="w"> </span>normal.
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="while-loops">
+<h3>2.3 While-Loops<a class="headerlink" href="#while-loops" title="Permalink to this heading">#</a></h3>
+<p>Write a simple number-guessing game in Python. It generates a random number between 1 and 100 and asks the user to guess it. If the number guessed is too small or too big, a hint is
+given and the user can try again, unBl they guess the correct number. The output of the program should be something like:</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>Can<span class="w"> </span>you<span class="w"> </span>guess<span class="w"> </span>the<span class="w"> </span>number?<span class="w"> </span><span class="m">12</span>
+You<span class="w"> </span>guessed<span class="w"> </span>too<span class="w"> </span>small!
+Try<span class="w"> </span>again:<span class="w"> </span><span class="m">23</span>
+You<span class="w"> </span>guessed<span class="w"> </span>too<span class="w"> </span>big!
+Try<span class="w"> </span>again:<span class="w"> </span><span class="m">16</span>
+Yes!
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="for-loops-text-processing">
+<h3>2.4 For-Loops, Text Processing<a class="headerlink" href="#for-loops-text-processing" title="Permalink to this heading">#</a></h3>
+<p>Write a simple text analysis program that finds the (first) longest word in a text. It should work on any text, but you can use the “lorem ipsum” as an example:</p>
+<blockquote>
+<div><p>text = “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <br />
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad <br />
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex <br />
+ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate <br />
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat <br />
+cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id <br />
+est laborum.”</p>
+</div></blockquote>
+<p>To check if a character c is an alphabetic character, you can call the isalpha() funcBon on it: <code class="docutils literal notranslate"><span class="pre">c.isalpha()</span></code>. It will return <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+The output of your program should report the longest word and its length, like this:
+<code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">longest</span> <span class="pre">word</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">text</span> <span class="pre">is</span> <span class="pre">&quot;reprehenderit&quot;</span> <span class="pre">(13</span> <span class="pre">characters)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code Here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="functions">
+<h3>2.5 Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h3>
+<p>In our lifeBmes (unless we happen to get veeery old) a leap year occurs every four years. But actually, the rule is a bit more involved: A year is a leap year if it is a multiple of 4, but not a
+multiple of 100, unless it is also a mulBple of 400. For example, 1984 and 2000 were leap years, but 1900 and 1985 were not.</p>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">is_leap_year(year)</span></code> that tests if the year is a leap year. If so, the function should return <code class="docutils literal notranslate"><span class="pre">True</span></code>, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise. Implement the function using only one Boolean expression. You can use the code below to test your function:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>tests = [1900, 1984, 1985, 2000, 2018]
+for test in tests:
+    if is_leap_year(test):
+        print(f”{test} is a leap year&quot;)
+    else:
+        print(f”{test} is not a leap year&quot;)
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your Code Here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="dataframes-pandas">
+<h3>2.6 Dataframes, Pandas<a class="headerlink" href="#dataframes-pandas" title="Permalink to this heading">#</a></h3>
+<p>Download the file mcdonalds_menu.csv from Moodle. Write a program that reads the content of the file into a dataframe, and displays simple descriptive statistics about the
+numerical values in the data frame. Then add some code to create a barplot that displays the number of items per category.
+The output should look something like:</p>
+<p><img alt="Worksheet 1 Graph" src="../_images/worksheet1-graph.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your Code Here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="classes-inheritance">
+<h3>2.7 Classes, Inheritance<a class="headerlink" href="#classes-inheritance" title="Permalink to this heading">#</a></h3>
+<p>Define two classes <code class="docutils literal notranslate"><span class="pre">Person</span></code> and <code class="docutils literal notranslate"><span class="pre">Student</span></code> with the following characteristics: The base class <code class="docutils literal notranslate"><span class="pre">Person</span></code> provides a field <code class="docutils literal notranslate"><span class="pre">name</span></code> and a function <code class="docutils literal notranslate"><span class="pre">printInfo</span></code> to print information about
+the person (i.e., the name). The class <code class="docutils literal notranslate"><span class="pre">Student</span></code> is derived from <code class="docutils literal notranslate"><span class="pre">Person</span></code>. A Student is a Person that in addition has a university, a study program and a number of <code class="docutils literal notranslate"><span class="pre">creditpoints</span></code>. The class <code class="docutils literal notranslate"><span class="pre">Student</span></code> also has a <code class="docutils literal notranslate"><span class="pre">printInfo</span></code> function, which displays information about the university and program in addition to the student’s name. With the functions <code class="docutils literal notranslate"><span class="pre">setCreditPoints</span></code> and <code class="docutils literal notranslate"><span class="pre">getCreditPoints</span></code> the credit points of the student can be set and retrieved</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your Code Here </span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -534,30 +714,40 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../chapters/getting_started.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Getting Started</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../chapters/bash_basics.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">The Basics of the Unix Shell</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-1-python-development-environment">Assignment 1: Python Development Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-install-instructions">Python Install Instructions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda-install-guide">Anaconda Install Guide</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-2-revitalize-your-python">Assignment 2: Revitalize your Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetics">2.1 Arithmetics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-branching">2.2 Conditional Branching</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">2.3 While-Loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops-text-processing">2.4 For-Loops, Text Processing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">2.5 Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes-pandas">2.6 Dataframes, Pandas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-inheritance">2.7 Classes, Inheritance</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
