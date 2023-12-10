@@ -6,7 +6,7 @@ parts:
   - caption: Getting Started
     chapters:
       - file: chapters/getting_started.md
-      - file: exercises/pyhon_refresh.ipynb
+      - file: exercises/python_refresh.ipynb
   - caption: Bash and the CLI 
     chapters:
       - file: chapters/bash_basics.md
