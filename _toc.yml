@@ -92,4 +92,5 @@ parts:
       - file: chapters/anaconda.md
       - file: chapters/yaml.md
       - file: chapters/working_remotely.md
+      - file: chapters/tree.md
       - file: chapters/references.md
