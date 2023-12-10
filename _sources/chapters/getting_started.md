@@ -5,42 +5,26 @@
 > --- Terry Pratchett
  
 
-As with many research projects,
-the first step in our Zipf's Law analysis
-is to download the research data
-and install the required software.
-Before doing that,
-it's worth taking a moment to think about
+As with many research projects, the first step in our Zipf's Law analysis
+is to download the research data and install the required software.
+Before doing that, it's worth taking a moment to think about
 how we are going to organize everything.
-We will soon have a number of books from [Project Gutenberg](https://www.gutenberg.org/)
-in the form of a series of text files,
-plots we've produced showing the word frequency distribution in each book,
-as well as the code we've written to produce those plots
-and to document and release our software package.
-If we aren't organized from the start,
-things could get messy later on.
+We will soon have a number of books from [Project Gutenberg](https://www.gutenberg.org/) in the form of a series of text files, plots we've produced showing the word frequency distribution in each book, as well as the code we've written to produce those plots and to document and release our software package.
+If we aren't organized from the start, things could get messy later on.
 
 ## Project Structure
 
 Project organization is like a diet:
-everyone has one,
-it's just a question of whether it's healthy or not.
-In the case of a project,
-"healthy" means that people can find what they need and do what they want without becoming frustrated.
-This depends on how well organized the project is
-and how familiar people are with that style of organization.
+everyone has one, it's just a question of whether it's healthy or not.
+In the case of a project, "healthy" means that people can find what they need and do what they want without becoming frustrated.
+This depends on how well organized the project is and how familiar people are with that style of organization.
 
-As with good coding style,
-small pieces in predictable places with readable names are easier to find and use
-than large chunks that vary from project to project and have names like "stuff".
-We can be messy while we are working and then tidy up later,
-but experience teaches that we will be more productive if we make tidiness a habit.
+As with good coding style, small pieces in predictable places with readable names are easier to find and use than large chunks that vary from project to project and have names like "stuff".
+We can be messy while we are working and then tidy up later, but experience teaches that we will be more productive if we make tidiness a habit.
 
-In building the Zipf's Law project,
-we'll follow a widely used template
-for organizing small and medium-sized data analysis projects {cite:p}`Nobl2009`.
-The project will live in a directory called `zipf`,
-which will also be a Git repository stored on GitHub chapter [Git Command-line](https://software-engineering-group-up.github.io/RSE-UP/chapters/intro_version_control.html).
+In building the Zipf's Law project, we'll follow a widely used template for organizing small and medium-sized data analysis projects {cite:p}`Nobl2009`.
+The project will live in a directory called `zipf`, which will also be a Git repository stored on GitHub chapter [Git Command-line](https://software-engineering-group-up.github.io/RSE-UP/chapters/intro_version_control.html).
+
 The following is an abbreviated version of the project directory tree
 as it appears toward the end of the book:
 
@@ -73,37 +57,31 @@ zipf/
 └── ...
 ```
 
-The full, final directory tree is documented in Appendix **TODO CORRECT REF TO**
+The full, final directory tree is documented in the [Appendix: Tree](https://software-engineering-group-up.github.io/RSE-UP/chapters/tree.html)
 
 ### Standard information
 
-Our project will contain a few standard files
-that should be present in every research software project,
-open source or otherwise:
+Our project will contain a few standard files that should be present in every research software project, open source or otherwise:
 
 -   `README` includes basic information on our project.
      We'll create it in Chapter [Git Advanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/git_advanced.html),
-     and extend it in Chapter [Packaging](TODO).
+     and extend it in Chapter [Packaging](https://software-engineering-group-up.github.io/RSE-UP/chapters/python_packaging.html).
 
--   `LICENSE` is the project's license. We'll add it in Section **TODO REF TO LICENSE**.
+-   `LICENSE` is the project's license. We'll add it in Section on including a [license](https://software-engineering-group-up.github.io/RSE-UP/chapters/working_in_teams.html#include-a-license).
 
--   `CONTRIBUTING` explains how to contribute to the project. We'll add it in Section **TODO REF teams-documentation**.
+-   `CONTRIBUTING` explains how to contribute to the project. We'll add it in [here](https://software-engineering-group-up.github.io/RSE-UP/chapters/working_in_teams.html#make-all-this-obvious-to-newcomers).
 
--   `CONDUCT` is the project's Code of Conduct. We'll add it in Section **TODO REF Teams-coc**
+-   `CONDUCT` is the project's Code of Conduct. We'll add it in [here](https://software-engineering-group-up.github.io/RSE-UP/chapters/working_in_teams.html#establish-a-code-of-conduct)
 
--   `CITATION` explains how to cite the software. We'll add it in Section **TODO REF packaging-software-journals**.
+-   `CITATION` explains how to cite the software. We'll add it [here](https://software-engineering-group-up.github.io/RSE-UP/chapters/python_packaging.html#software-journals).
 
-Some projects also include a `CONTRIBUTORS` or `AUTHORS` file that
-lists everyone who has contributed to the project,
-while others include that information in the `README` (we do this in Chapter [Git Advanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/git_advanced.html)
+Some projects also include a `CONTRIBUTORS` or `AUTHORS` file that lists everyone who has contributed to the project, while others include that information in the `README` (we do this in Chapter [Git Advanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/git_advanced.html)
 or make it a section in `CITATION`.
-These files are often called **boilerplate,
-meaning they are copied without change from one use to the next.
+These files are often called **boilerplate, meaning they are copied without change from one use to the next.
 
 ### Organizing project content
 
-Following {cite:p}`Nobl2009`,
-the directories in the repository's root are organized according to purpose:
+Following {cite:p}`Nobl2009`, the directories in the repository's root are organized according to purpose:
 
 -   Runnable programs go in `bin/`
     (an old Unix abbreviation for "binary", meaning "not text").
@@ -130,21 +108,19 @@ the directories in the repository's root are organized according to purpose:
     In this project,
     `docs` will contain automatically generated
     documentation for the Python package, created in
-    Section **TODO** ref(packaging-sphinx).
+    Section on [Documentation using Sphinx](https://software-engineering-group-up.github.io/RSE-UP/chapters/python_packaging.html#creating-a-web-page-for-documentation).
 
 This structure works well for many computational research projects and
 we encourage its use beyond just this book.
 We will add some more folders and files not directly addressed by {cite:p}`Nobl2009`
-when we talk about testing (Chapter **TODO** ref(testing)),
-provenance (Chapter **TODO** ref(provenance)),
-and packaging (Chapter **TODO** ref(packaging)).
+when we talk about testing (Chapter on [Testing](https://software-engineering-group-up.github.io/RSE-UP/chapters/testing_programs.html)),
+provenance (Chapter ,
+and packaging (Chapter [Packaging](https://software-engineering-group-up.github.io/RSE-UP/chapters/python_packaging.html)).
 
 
 ## Downloading the Data
 
-The data files used in the book are archived
-at an online repository called Figshare (which we discuss in detail in Section **TODO** ref(provenance-data-where))
-and can be accessed at:
+The data files used in the book are archived at an online repository called Figshare (which we discuss in detail in Section on [where to archive data](https://software-engineering-group-up.github.io/RSE-UP/chapters/tracking_provenance.html#where-to-archive-data) and can be accessed at:
 
 <https://doi.org/10.6084/m9.figshare.13040516>
 
@@ -221,10 +197,7 @@ If it is not, you can install it as follows:
 
 ## Summary 
 
-Now that our project structure is set up,
-our data is downloaded,
-and our software is installed,
-we are ready to start our analysis.
+Now that our project structure is set up, our data is downloaded, and our software is installed, we are ready to start our analysis.
 
 ### Getting ready 
 

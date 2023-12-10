@@ -17,7 +17,7 @@ This book is written for researchers who are already using Python for their data
 but you should already be comfortable doing things like reading data from files
 and writing loops, conditionals, and functions.
 
-You can either follow our provided [python refresher](https://software-engineering-group-up.github.io/RSE-UP/exercises/python_refresher.html) or if your already experienced with other programming languages you can also checkout out the python tutorials on [Exercism.org](https://exercism.org/) to get up to speed with the python syntax. 
+You can either follow our provided [python refresher](https://software-engineering-group-up.github.io/RSE-UP/exercises/python_refresh.html) or if your already experienced with other programming languages you can also checkout out the python tutorials on [Exercism.org](https://exercism.org/) to get up to speed with the python syntax. 
 
 
 ## The Big Picture
