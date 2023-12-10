@@ -32,7 +32,7 @@ project structure and where to put such things next week. Also, don’t worry ab
 
 `How did vegetable produc:on in Germany change aUer 1989?`
 
-```{figure} ../figures/course_project/destatis.png
+```{figure} ../../figures/course_project/destatis.png
 :name: destatis_example
 Destatis Example
 ```
