@@ -6,7 +6,7 @@ parts:
   - caption: Getting Started
     chapters:
       - file: chapters/getting_started.md
-      - file: exercises/guide.ipynb
+      - file: exercises/pyhon_refresher.ipynb
   - caption: Bash and the CLI 
     chapters:
       - file: chapters/bash_basics.md
@@ -64,7 +64,7 @@ parts:
       - file: chapters/advanced_cicd.md
   - caption: Worksheets - Course Work
     chapters:
-      - file: worksheets/worksheet1_python_refresher.ipynb
+      #- file: worksheets/worksheet1_python_refresher.ipynb
       - file: worksheets/worksheet2_install_more_tool_shell.ipynb
       - file: worksheets/worksheet3_cli_python_git.ipynb
       - file: worksheets/worksheet4_readable_code.ipynb    

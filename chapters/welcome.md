@@ -1,24 +1,25 @@
-
-(welcome)=
 # Welcome 
 
 Software is now as essential to research as telescopes, test tubes, and reference libraries.
 This means that researchers **need** to know how to build, check, use, and share programs.
-However,
-most introductions to programming focus on developing commercial applications,
-not on exploring problems whose answers aren't yet known.
-Our goal is to show you how to do that,
-both on your own and as part of a team.
+However, most introductions to programming focus on developing commercial applications, not on exploring problems whose answers aren't yet known.
+Our goal is to show you how to do that, both on your own and as part of a team.
 
-We believe every researcher should know
-how to write short programs that clean and analyze data in a reproducible way
-and how to use version control to keep track of what they have done.
+We believe every researcher should know how to write short programs that clean and analyze data in a reproducible way and how to use version control to keep track of what they have done. 
 But just as some astronomers spend their careers designing telescopes,
 some researchers focus on building the software that makes research possible.
 People who do this are called **research software engineers**;
-the aim of this book is to get you ready for this role by helping you go from
-writing code for yourself to creating tools that help your entire field advance.
-(welcome:big-picture)
+the aim of this online textbook is to get you ready for this role by helping you go from writing code for yourself to creating tools that help your entire field advance.
+
+## Intended Audience 
+
+This book is written for researchers who are already using Python for their data analysis, but who want to take their coding and software development to the next level. You don't have to be highly proficient with Python,
+but you should already be comfortable doing things like reading data from files
+and writing loops, conditionals, and functions.
+
+You can either follow our provided [python refresher](https://software-engineering-group-up.github.io/RSE-UP/exercises/python_refresher.html) or if your already experienced with other programming languages you can also checkout out the python tutorials on [Exercism.org](https://exercism.org/) to get up to speed with the python syntax. 
+
+
 ## The Big Picture
 
 Our approach to research software engineering is based on three related concepts:
@@ -63,55 +64,46 @@ less mistakes, and work more openly and reproducibly.
 We hope that by having more researchers with these skills and knowledge,
 research culture can improve to address the issues raised above.
 
-(welcome:intended-audience)=
-## Intended Audience 
 
-This book is written for researchers who are already using Python for their data analysis, but who want to take their coding and software development to the next level. You don't have to be highly proficient with Python,
-but you should already be comfortable doing things like reading data from files
-and writing loops, conditionals, and functions.
-The following personas are examples of the types of people that are our target audience.
+// ## Intended Audience 
 
-Amira Khan
-:   completed a master's in library science five years ago
-    and has since worked for a small aid organization.
-    She did some statistics during her degree,
-    and has learned some R and Python by doing data science courses online,
-    but has no formal training in programming.
-    Amira would like to tidy up the scripts, datasets, and reports she has created
-    in order to share them with her colleagues.
-    These lessons will show her how to do this.
+// This book is written for researchers who are already using Python for their data analysis, but who want to take their coding and software development to the next level. You don't have to be highly proficient with Python,
+// but you should already be comfortable doing things like reading data from files
+// and writing loops, conditionals, and functions.
+// The following personas are examples of the types of people that are our target audience.
 
-Jun Hsu
-:   completed an Insight Data Science fellowship last year after doing a PhD in geology
-    and now works for a company that does forensic audits.
-    He uses a variety of machine learning and visualization packages,
-    and would now like to turn some of his own work into an open source project.
-    This book will show him how such a project should be organized
-    and how to encourage people to contribute to it.
+// Amira Khan
+// :   completed a master's in library science five years ago
+//     and has since worked for a small aid organization.
+//     She did some statistics during her degree,
+//     and has learned some R and Python by doing data science courses online,
+//     but has no formal training in programming.
+//     Amira would like to tidy up the scripts, datasets, and reports she has created
+//     in order to share them with her colleagues.
+//     These lessons will show her how to do this.
 
-Sami Virtanen
-:   became a competent programmer during a bachelor's degree in applied math
-    and was then hired by the university's research computing center.
-    The kinds of applications they are being asked to support
-    have shifted from fluid dynamics to data analysis;
-    this guide will teach them how to build and run data pipelines
-    so that they can pass those skills on to their users.
+// Jun Hsu
+// :   completed an Insight Data Science fellowship last year after doing a PhD in geology
+//     and now works for a company that does forensic audits.
+//     He uses a variety of machine learning and visualization packages,
+//     and would now like to turn some of his own work into an open source project.
+//     This book will show him how such a project should be organized
+//     and how to encourage people to contribute to it.
+
+// Sami Virtanen
+// :   became a competent programmer during a bachelor's degree in applied math
+//     and was then hired by the university's research computing center.
+//     The kinds of applications they are being asked to support
+//     have shifted from fluid dynamics to data analysis;
+//     this guide will teach them how to build and run data pipelines
+//     so that they can pass those skills on to their users.c
     
-(welcome:what-you-learn)=
 ## What You Will Learn
 
 Rather than simply providing reference material about good coding practices,
-the book follows Amira and Sami as they work together to write an actual software package
-to address a real research question.
-The data analysis task that we focus on
+the book follows by example on how to write an actual software package to address a real research question. The data analysis task that we focus on
 relates to a fascinating result in the field of quantitative linguistics.
-**Zipf's Law** states that the second most common word in a body of text
-appears half as often as the most common,
-the third most common appears a third as often, and so on.
-To test whether Zipf's Law holds for a collection of classic novels
-that are freely available from **Project Gutenberg**,
-we write a software package that counts and analyzes the word frequency distribution
-in any arbitrary body of text.
+Namely, **Zipf's Law**, which states that the second most common word in a body of text appears half as often as the most common, the third most common appears a third as often, and so on. To test whether Zipf's Law holds for a collection of classic novels that are freely available from **Project Gutenberg**, we write a software package that counts and analyzes the word frequency distribution in any arbitrary body of text.
 
 In the process of writing and publishing a Python package to verify Zipf's Law,
 we will show you how to do the following:
@@ -128,55 +120,31 @@ we will show you how to do the following:
 -   Publish your code and research in open and reproducible ways.
 -   Create Python packages that can be installed in standard ways.
 
-(welcome:using-the-book)=
+
 ## Using this Book
 
-This book was written to be used as the material for a (potentially) semester-long
-course at the university level,
-although it can also be used for independent self-study.
+This textbook was written to be used as the material for a (potentially) semester-long course at the university level, although it can also be used for independent self-study.
 Participatory live-coding is the anticipated style for teaching the material,
-rather than lectures simply talking about the code presented {cite:p}`Brow2018, Wils2018`
-The chapters and their content are generally designed to be used in the order
-given.
+rather than lectures simply talking about the code presented {cite:p}`Brow2018, Wils2018`. The chapters and their content are generally designed to be used in the order given.
 
-Chapters are structured with the introduction at the start, content in the middle,
-and exercises at the end. Callout boxes are interspersed throughout the content
-to be used as a supplement to the main text,
-but not a requirement for the course overall.
-Early chapters have many small exercises;
-later chapters have fewer but larger exercises.
-In order to break up long periods of live-coding while teaching,
-it may be preferable to stop and complete some of the exercises
-at key points throughout the chapter,
-rather than waiting until the end. 
-**TODO ADD REF WHEN DONE**
-Possible exercise solutions are provided (Appendix ref(solutions)),
-in addition to learning objectives (Appendix ref(objectives)) 
-and key points (Appendix ref(keypoints)) for each chapter. 
+Chapters are structured with the introduction at the start, content in the middle, and exercises at the end. Callout boxes are interspersed throughout the content to be used as a supplement to the main text, but not a requirement for the course overall. 
+Early chapters have many small exercises; later chapters have fewer but larger exercises. In order to break up long periods of live-coding while teaching,
+it may be preferable to stop and complete some of the exercises at key points throughout the chapter, rather than waiting until the end. 
+
+Possible exercise solutions are provided (Appendix [solutions](https://software-engineering-group-up.github.io/RSE-UP/chapters/solutions.html), in addition to learning objectives (Appendix ref(objectives)) and key points (Appendix ref(keypoints)) for each chapter. **TODO_discuss**
 
 
 ## Contributing and Re-Use
 
-The source for the book can be found at the ['RSE-UP' GitHub repository](https://software-engineering-group-up.github.io/RSE-UP) and
-any corrections, additions, or contributions are very welcome.
+The source for the book can be found at the ['RSE-UP' GitHub repository](https://software-engineering-group-up.github.io/RSE-UP) and any corrections, additions, or contributions are very welcome. 
 Everyone whose work is included will be credited in the acknowledgments.
-Check out our
-[contributing guidelines](https://github.com/Software-Engineering-Group-UP/RSE-UP/blob/main/CONTRIBUTION.md)
-as well as our
-[Code of Conduct](https://github.com/Software-Engineering-Group-UP/RSE-UP/blob/main/CODE_OF_CONDUCT.md)
-for more information on how to contribute.
+Check out our [contributing guidelines](https://github.com/Software-Engineering-Group-UP/RSE-UP/blob/main/CONTRIBUTION.md)
+as well as our [Code of Conduct](https://github.com/Software-Engineering-Group-UP/RSE-UP/blob/main/CODE_OF_CONDUCT.md) for more information on how to contribute.
 
 The content and code of this book can be freely re-used as it is
-[licensed](https://github.com/Software-Engineering-Group-UP/RSE-UP/blob/main/LICENSE.md)
-under a 
-[Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/)
-(CC-BY 4.0)
-and a
-[MIT License](https://github.com/Software-Engineering-Group-UP/RSE-UP/blob/main/LICENSE-MIT.md),
-so the material can be used, re-used, and modified, 
-as long as there is attribution to this source.
+[licensed](https://github.com/Software-Engineering-Group-UP/RSE-UP/blob/main/LICENSE.md) under a  [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) (CC-BY 4.0) and a [MIT License](https://github.com/Software-Engineering-Group-UP/RSE-UP/blob/main/LICENSE-MIT.md), so the material can be used, re-used, and modified, as long as there is attribution to this source.
 
-(welcome:ackknowledgements)
+
 ## Acknowledgements
 
 This book was created on basis of the book 'Research Software Engineering with Python: Building Software that Makes Research Possible', that was created by: 
