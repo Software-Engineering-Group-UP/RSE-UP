@@ -62,8 +62,7 @@ on how to install and launch the shell on your computer.
 
 Our first shell commands will let us explore our folders and files,
 and will also introduce us to several conventions that most Unix tools follow.
-To start,
-when Bash runs it presents us with a **prompt** to indicate that it is waiting for us to type something. This prompt is a simple dollar sign by default:
+To start, when Bash runs it presents us with a **prompt** to indicate that it is waiting for us to type something. This prompt is a simple dollar sign by default:
 
 ```bash
 $
@@ -71,7 +70,7 @@ $
 
 However, different shells may use a different symbol: in particular,
 the `zsh` shell, which is the default on newer versions of MacOS, uses `%`.
-As we'll see in Section **TODO**ref(bash-advanced-vars), we can customize the prompt to give us more information.
+As we'll see in chapter [Going further with the Unix Shell](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_advanced.html#configuring-the-shell), we can customize the prompt to give us more information.
 
 > **Don't Type the Dollar Sign**
 >
@@ -91,17 +90,15 @@ amira
 
 > **Learn by Doing**
 > 
-> Amira is one of the learners described in Section [intended audience](https://software-engineering-group-up.github.io/RSE-UP/chapters/welcome.html#intended-audience). 
+> Amira is one of the posible learners described in Section [intended audience](https://software-engineering-group-up.github.io/RSE-UP/chapters/welcome.html#intended-audience). 
 > For the rest of the book,
 > we'll present code and examples from her perspective.
 > You should follow along on your own computer,
 > though what you see might deviate in small ways because of differences in operating system
 > (and because your name probably isn't Amira).
 
-Now that we know who we are,
-we can explore where we are and what we have.
-The part of the operating system that manages files and directories (also called **folders**
-is called the **filesystem**.
+Now that we know who we are, we can explore where we are and what we have.
+The part of the operating system that manages files and directories (also called **folders** is called the **filesystem**.
 Some of the most commonly used commands in the shell create, inspect, rename, and delete files and directories.
 Let's start exploring them by running the command `pwd`, which stands for **p**rint **w**orking **d**irectory.
 The "print" part of its name is straightforward;
@@ -115,30 +112,24 @@ $ pwd
 ```text
 /Users/amira
 ```
-
 Here, the computer's response is `/Users/amira`,
 which tells us that we are in a directory called `amira`
 that is contained in a top-level directory called `Users`.
 This directory is Amira's **home directory** to understand what that means,
 we must first understand how the filesystem is organized.
-On Amira's computer the bash_basic_filesystem looks as follows:
+On Amira's computer the basic filesystem looks as follows:
 
 
 ```{figure} ../figures/bash-basics/sample-filesystem.png
 :name: bash_basic_filesystem
-
 Bash basic filesystem
 ```
 
 At the top is the **root directory** that holds everything else, which we can refer to using a slash character `/` on its own.
-Inside that directory are several other directories,
-including `bin` (where some built-in programs are stored),
-`data` (for miscellaneous data files),
+Inside that directory are several other directories, including `bin` (where some built-in programs are stored), `data` (for miscellaneous data files),
 `tmp` (for temporary files that don't need to be stored long-term),
 and `Users` (where users' personal directories are located).
-We know that `/Users` is stored inside the root directory `/` because its name begins with `/`,
-and that our current working directory `/Users/amira` is stored inside `/Users`
-because `/Users` is the first part of its name.
+We know that `/Users` is stored inside the root directory `/` because its name begins with `/`, and that our current working directory `/Users/amira` is stored inside `/Users` because `/Users` is the first part of its name.
 A name like this is called a **path** because it tells us how to get from one place in the filesystem (e.g., the root directory)
 to another (e.g., Amira's home directory).
 
@@ -150,14 +141,11 @@ to another (e.g., Amira's home directory).
 > When it appears inside a name, it is a separator.
 > Windows uses backslashes (`\\`) instead of forward slashes as separators.
 
-Underneath `/Users`,
-we find one directory for each user with an account on this machine.
-Jun's files are stored in `/Users/jun`,
-Sami's in `/Users/sami`,
+Underneath `/Users`, we find one directory for each user with an account on this machine.
+Jun's files are stored in `/Users/jun`, Sami's in `/Users/sami`,
 and Amira's in `/Users/amira`.
 This is where the name "home directory" comes from:
-when we first log in,
-the shell puts us in the directory that holds our files.
+when we first log in, the shell puts us in the directory that holds our files.
 
 > **Home Directory Variations**
 >
@@ -167,9 +155,7 @@ the shell puts us in the directory that holds our files.
 > (depending on the version of Windows).
 > Our examples show what we would see on MacOS.
 
-Now that we know where we are,
-let's see what we have using the command `ls` short for "listing",
-which prints the names of the files and directories in the current directory:
+Now that we know where we are, let's see what we have using the command `ls` short for "listing", which prints the names of the files and directories in the current directory:
 
 ```bash
 $ ls
@@ -181,8 +167,7 @@ Desktop        Library       Pictures     zipf
 Documents      Movies        Public       
 ```
 
-Again,
-our results may be different depending on our operating system
+Again, our results may be different depending on our operating system
 and what files or directories we have.
 
 We can make the output of `ls` more informative using the `-F` **option**, also sometimes called a **switch** or a **flag**. 
@@ -190,8 +175,7 @@ Options are exactly like arguments to a function in Python; in this case,
 `-F` tells `ls` to decorate its output to show what things are.
 A trailing `/` indicates a directory,
 while a trailing `*` tells us something is a runnable program.
-Depending on our setup,
-the shell might also use colors to indicate whether each entry is a file or directory.
+Depending on our setup, the shell might also use colors to indicate whether each entry is a file or directory.
 
 ```bash
 $ ls -F
@@ -203,8 +187,7 @@ Desktop/        Library/       Pictures/     zipf/
 Documents/      Movies/        Public/       
 ```
 
-Here,
-we can see that almost everything in our home directory is a **subdirectory**the only thing that isn't is a file called `todo.txt`.
+Here, we can see that almost everything in our home directory is a **subdirectory**the only thing that isn't is a file called `todo.txt`.
 
 > **Spaces Matter**
 >
@@ -215,10 +198,8 @@ we can see that almost everything in our home directory is a **subdirectory**the
 > the shell will try to find a program called `ls-F` and (quite sensibly)
 > give an error message like `ls-F: command not found`.
 
-Some options tell a command how to behave,
-but others tell it what to act on.
-For example,
-if we want to see what's in the `/Users` directory,
+Some options tell a command how to behave, but others tell it what to act on. 
+For example, if we want to see what's in the `/Users` directory,
 we can type:
 
 ```bash
@@ -240,10 +221,7 @@ $ ls -F /Users
 amira/  jun/    sami/
 ```
 
-but we must put the options (like `-F`)
-before the names of any files or directories we want to work on,
-because once the command encounters something that *isn't* an option
-it assumes there aren't any more:
+but we must put the options (like `-F`) before the names of any files or directories we want to work on, because once the command encounters something that *isn't* an option it assumes there aren't any more:
 
 ```bash
 $ ls /Users -F
@@ -299,8 +277,7 @@ data/
 Notice that `zipf` doesn't have a leading slash before its name.
 This absence tells the shell that it is a **relative path** i.e.,
 that it identifies something starting from our current working directory.
-In contrast,
-a path like `/Users/amira` is an **absolute path** it is always interpreted from the root directory down, so it always refers to the same thing.
+In contrast, a path like `/Users/amira` is an **absolute path** it is always interpreted from the root directory down, so it always refers to the same thing.
 Using a relative path is like telling someone to go two kilometers north and then half a kilometer east;
 using an absolute path is like giving them the latitude and longitude of their destination.
 
@@ -608,9 +585,8 @@ it can only work with plain character data,
 not spreadsheets, images, Microsoft Word files, or anything else invented after 1970.
 We use it in this lesson because it runs everywhere,
 and because it is as simple as something can be and still be called an editor.
-However,
-that last trait means that we *shouldn't* use it for larger tasks
-like writing a program or a paper.
+// However, that last trait means that we *shouldn't* use it for larger tasks
+// like writing a program or a paper. E2R
 
 > **Recycling Pixels**
 >
@@ -619,14 +595,10 @@ like writing a program or a paper.
 > This is a holdover from an era when graphical terminals were a rarity
 > and different applications had to share a single screen.
 
-Once Nano is open we can type in a few lines of text,
-then press <kbd>Ctrl</kbd>+<kbd>O</kbd>
-(the Control key and the letter 'O' at the same time)
-to save our work.
-Nano will ask us what file we want to save it to;
+Once Nano is open we can type in a few lines of text, then press <kbd>Ctrl</kbd>+<kbd>O</kbd> (the Control key and the letter 'O' at the same time)
+to save our work. Nano will ask us what file we want to save it to;
 press <kbd>Return</kbd> to accept the suggested default of `draft.txt`.
-Once our file is saved,
-we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to exit the editor and return to the shell.
+Once our file is saved, we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to exit the editor and return to the shell.
 
 > **Control, Ctrl, or ^ Key**
 >
@@ -727,8 +699,6 @@ the directory we want is the special name `.` that we mentioned earlier:
 $ mv docs/prior-work.txt .
 ```
 
-\newpage
-
 `ls` now shows us that `docs` is empty:
 
 ```bash
@@ -779,9 +749,7 @@ docs/section-1.txt  prior-work.txt
 ```
 
 Notice that `ls` shows the output in alphabetical order.
-If we leave off the second filename and ask it to show us a file and a directory
-(or multiple directories)
-it lists them one by one:
+If we leave off the second filename and ask it to show us a file and a directory (or multiple directories) it lists them one by one:
 
 ```bash
 $ ls prior-work.txt docs
@@ -795,8 +763,7 @@ section-1.txt
 ```
 
 Copying a directory and everything it contains is a little more complicated.
-If we use `cp` on its own,
-we get an error message:
+If we use `cp` on its own, we get an error message:
 
 ```bash
 $ cp docs backup
@@ -882,11 +849,9 @@ $ rm -r docs
 ```
 
 `rm -r` should be used with great caution:
-in most cases,
-it's safest to add the `-i` option (for **i**nteractive)
+in most cases, it's safest to add the `-i` option (for **i**nteractive)
 to get `rm` to ask us to confirm each deletion.
-As a halfway measure,
-we can use `-v` (for **v**erbose)
+As a halfway measure, we can use `-v` (for **v**erbose)
 to get `rm` to print a message for each file it deletes.
 This option works the same way with `mv` and `cp`.
 
@@ -935,8 +900,7 @@ $ wc data
 wc: data: read: Is a directory
 ```
 
-Instead,
-we can use **wildcards** to specify a set of files at once.
+Instead, we can use **wildcards** to specify a set of files at once.
 The most commonly used wildcard is `*` (a single asterisk).
 It matches zero or more characters, so `data/*.txt` matches all of the text files in the `data` directory:
 
@@ -990,11 +954,9 @@ $ wc data/frank*.txt
 ```
 
 The exercises will introduce and explore other wildcards.
-For now,
-we only need to know that
+For now, we only need to know that
 it's possible for a wildcard expression to *not* match anything.
-In this case,
-the command will usually print an error message:
+In this case, the command will usually print an error message:
 
 ```bash
 $ wc data/*.csv
@@ -1051,8 +1013,7 @@ and highlights a few of features useful for beginners.
 
 Bash basics manual
 ```
-Some commands have a `--help` option that provides a succinct summary of possibilities,
-but the best place to go for help these days is probably the [TLDR](https://tldr.sh/) website.
+Some commands have a `--help` option that provides a succinct summary of possibilities, but the best place to go for help these days is probably the [TLDR](https://tldr.sh/) website.
 The acronym stands for "too long, didn't read,"
 and its help for `wc` displays this:
 
@@ -1073,30 +1034,25 @@ Count characters in file (taking multi-byte character sets into
 account):
 wc -m {{file}}
 
-edit this page on github
 ```
 
-As the last line suggests,
-all of its examples are in a public GitHub repository
-so that users like you can add the examples you wish it had.
-For more information,
-we can search on [Stack Overflow](https://stackoverflow.com/questions/tagged/bash)
+For more information, we can search on [Stack Overflow](https://stackoverflow.com/questions/tagged/bash)
 or browse the [GNU manuals](https://www.gnu.org/manual/manual.html)
-(particularly those for the [core GNU utilities](https://www.gnu.org/software/coreutils/manual/coreutils.html),
-which include many of the commands introduced in this lesson).
-In all cases,
-though,
-we need to have some idea of what we're looking for in the first place:
+(particularly those for the [core GNU utilities](https://www.gnu.org/software/coreutils/manual/coreutils.html), which include many of the commands introduced in this lesson).
+In all cases, though, we need to have some idea of what we're looking for in the first place:
 someone who wants to know how many lines there are in a data file
 is unlikely to think to look for `wc`.
 
 ## Summary 
 
 The original Unix shell is celebrating its fiftieth anniversary.
-Its commands may be cryptic,
-but few programs have remained in daily use for so long.
+Its commands may be cryptic, but few programs have remained in daily use for so long.
 The next chapter will explore how we can combine and repeat commands
 in order to create powerful, efficient workflows.
+
+You can continue as is or you may start doing the first part of the shell related exercises [here](https://software-engineering-group-up.github.io/RSE-UP/exercises/bash.html#bash-exercises). 
+
+These can be run online, just follow the instruction, right now you will not need a local version of the software, but later on this will be a necessity to follow along. 
 
 ## Key Points 
 ```{include}  keypoints/bash_basics.md

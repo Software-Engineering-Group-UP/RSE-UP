@@ -545,14 +545,13 @@ on how to install and launch the shell on your computer.</p>
 <h2>Exploring Files and Directories<a class="headerlink" href="#exploring-files-and-directories" title="Permalink to this heading">#</a></h2>
 <p>Our first shell commands will let us explore our folders and files,
 and will also introduce us to several conventions that most Unix tools follow.
-To start,
-when Bash runs it presents us with a <strong>prompt</strong> to indicate that it is waiting for us to type something. This prompt is a simple dollar sign by default:</p>
+To start, when Bash runs it presents us with a <strong>prompt</strong> to indicate that it is waiting for us to type something. This prompt is a simple dollar sign by default:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$
 </pre></div>
 </div>
 <p>However, different shells may use a different symbol: in particular,
 the <code class="docutils literal notranslate"><span class="pre">zsh</span></code> shell, which is the default on newer versions of MacOS, uses <code class="docutils literal notranslate"><span class="pre">%</span></code>.
-As we’ll see in Section <strong>TODO</strong>ref(bash-advanced-vars), we can customize the prompt to give us more information.</p>
+As we’ll see in chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_advanced.html#configuring-the-shell">Going further with the Unix Shell</a>, we can customize the prompt to give us more information.</p>
 <blockquote>
 <div><p><strong>Don’t Type the Dollar Sign</strong></p>
 <p>We show the <code class="docutils literal notranslate"><span class="pre">$</span></code> prompt so that it’s clear what you are supposed to type,
@@ -568,17 +567,15 @@ but you should <em>not</em> type it yourself.</p>
 </div>
 <blockquote>
 <div><p><strong>Learn by Doing</strong></p>
-<p>Amira is one of the learners described in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/welcome.html#intended-audience">intended audience</a>.
+<p>Amira is one of the posible learners described in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/welcome.html#intended-audience">intended audience</a>.
 For the rest of the book,
 we’ll present code and examples from her perspective.
 You should follow along on your own computer,
 though what you see might deviate in small ways because of differences in operating system
 (and because your name probably isn’t Amira).</p>
 </div></blockquote>
-<p>Now that we know who we are,
-we can explore where we are and what we have.
-The part of the operating system that manages files and directories (also called <strong>folders</strong>
-is called the <strong>filesystem</strong>.
+<p>Now that we know who we are, we can explore where we are and what we have.
+The part of the operating system that manages files and directories (also called <strong>folders</strong> is called the <strong>filesystem</strong>.
 Some of the most commonly used commands in the shell create, inspect, rename, and delete files and directories.
 Let’s start exploring them by running the command <code class="docutils literal notranslate"><span class="pre">pwd</span></code>, which stands for <strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory.
 The “print” part of its name is straightforward;
@@ -595,7 +592,7 @@ which tells us that we are in a directory called <code class="docutils literal n
 that is contained in a top-level directory called <code class="docutils literal notranslate"><span class="pre">Users</span></code>.
 This directory is Amira’s <strong>home directory</strong> to understand what that means,
 we must first understand how the filesystem is organized.
-On Amira’s computer the bash_basic_filesystem looks as follows:</p>
+On Amira’s computer the basic filesystem looks as follows:</p>
 <figure class="align-default" id="bash-basic-filesystem">
 <img alt="../_images/sample-filesystem.png" src="../_images/sample-filesystem.png" />
 <figcaption>
@@ -603,14 +600,10 @@ On Amira’s computer the bash_basic_filesystem looks as follows:</p>
 </figcaption>
 </figure>
 <p>At the top is the <strong>root directory</strong> that holds everything else, which we can refer to using a slash character <code class="docutils literal notranslate"><span class="pre">/</span></code> on its own.
-Inside that directory are several other directories,
-including <code class="docutils literal notranslate"><span class="pre">bin</span></code> (where some built-in programs are stored),
-<code class="docutils literal notranslate"><span class="pre">data</span></code> (for miscellaneous data files),
+Inside that directory are several other directories, including <code class="docutils literal notranslate"><span class="pre">bin</span></code> (where some built-in programs are stored), <code class="docutils literal notranslate"><span class="pre">data</span></code> (for miscellaneous data files),
 <code class="docutils literal notranslate"><span class="pre">tmp</span></code> (for temporary files that don’t need to be stored long-term),
 and <code class="docutils literal notranslate"><span class="pre">Users</span></code> (where users’ personal directories are located).
-We know that <code class="docutils literal notranslate"><span class="pre">/Users</span></code> is stored inside the root directory <code class="docutils literal notranslate"><span class="pre">/</span></code> because its name begins with <code class="docutils literal notranslate"><span class="pre">/</span></code>,
-and that our current working directory <code class="docutils literal notranslate"><span class="pre">/Users/amira</span></code> is stored inside <code class="docutils literal notranslate"><span class="pre">/Users</span></code>
-because <code class="docutils literal notranslate"><span class="pre">/Users</span></code> is the first part of its name.
+We know that <code class="docutils literal notranslate"><span class="pre">/Users</span></code> is stored inside the root directory <code class="docutils literal notranslate"><span class="pre">/</span></code> because its name begins with <code class="docutils literal notranslate"><span class="pre">/</span></code>, and that our current working directory <code class="docutils literal notranslate"><span class="pre">/Users/amira</span></code> is stored inside <code class="docutils literal notranslate"><span class="pre">/Users</span></code> because <code class="docutils literal notranslate"><span class="pre">/Users</span></code> is the first part of its name.
 A name like this is called a <strong>path</strong> because it tells us how to get from one place in the filesystem (e.g., the root directory)
 to another (e.g., Amira’s home directory).</p>
 <blockquote>
@@ -621,14 +614,11 @@ it refers to the root directory.
 When it appears inside a name, it is a separator.
 Windows uses backslashes (<code class="docutils literal notranslate"><span class="pre">\\</span></code>) instead of forward slashes as separators.</p>
 </div></blockquote>
-<p>Underneath <code class="docutils literal notranslate"><span class="pre">/Users</span></code>,
-we find one directory for each user with an account on this machine.
-Jun’s files are stored in <code class="docutils literal notranslate"><span class="pre">/Users/jun</span></code>,
-Sami’s in <code class="docutils literal notranslate"><span class="pre">/Users/sami</span></code>,
+<p>Underneath <code class="docutils literal notranslate"><span class="pre">/Users</span></code>, we find one directory for each user with an account on this machine.
+Jun’s files are stored in <code class="docutils literal notranslate"><span class="pre">/Users/jun</span></code>, Sami’s in <code class="docutils literal notranslate"><span class="pre">/Users/sami</span></code>,
 and Amira’s in <code class="docutils literal notranslate"><span class="pre">/Users/amira</span></code>.
 This is where the name “home directory” comes from:
-when we first log in,
-the shell puts us in the directory that holds our files.</p>
+when we first log in, the shell puts us in the directory that holds our files.</p>
 <blockquote>
 <div><p><strong>Home Directory Variations</strong></p>
 <p>Our home directory will be in different places on different operating systems.
@@ -637,9 +627,7 @@ and on Windows it may be <code class="docutils literal notranslate"><span class=
 (depending on the version of Windows).
 Our examples show what we would see on MacOS.</p>
 </div></blockquote>
-<p>Now that we know where we are,
-let’s see what we have using the command <code class="docutils literal notranslate"><span class="pre">ls</span></code> short for “listing”,
-which prints the names of the files and directories in the current directory:</p>
+<p>Now that we know where we are, let’s see what we have using the command <code class="docutils literal notranslate"><span class="pre">ls</span></code> short for “listing”, which prints the names of the files and directories in the current directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
 </pre></div>
 </div>
@@ -648,16 +636,14 @@ Desktop        Library       Pictures     zipf
 Documents      Movies        Public       
 </pre></div>
 </div>
-<p>Again,
-our results may be different depending on our operating system
+<p>Again, our results may be different depending on our operating system
 and what files or directories we have.</p>
 <p>We can make the output of <code class="docutils literal notranslate"><span class="pre">ls</span></code> more informative using the <code class="docutils literal notranslate"><span class="pre">-F</span></code> <strong>option</strong>, also sometimes called a <strong>switch</strong> or a <strong>flag</strong>.
 Options are exactly like arguments to a function in Python; in this case,
 <code class="docutils literal notranslate"><span class="pre">-F</span></code> tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> to decorate its output to show what things are.
 A trailing <code class="docutils literal notranslate"><span class="pre">/</span></code> indicates a directory,
 while a trailing <code class="docutils literal notranslate"><span class="pre">*</span></code> tells us something is a runnable program.
-Depending on our setup,
-the shell might also use colors to indicate whether each entry is a file or directory.</p>
+Depending on our setup, the shell might also use colors to indicate whether each entry is a file or directory.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-F
 </pre></div>
 </div>
@@ -666,8 +652,7 @@ Desktop/        Library/       Pictures/     zipf/
 Documents/      Movies/        Public/       
 </pre></div>
 </div>
-<p>Here,
-we can see that almost everything in our home directory is a <strong>subdirectory</strong>the only thing that isn’t is a file called <code class="docutils literal notranslate"><span class="pre">todo.txt</span></code>.</p>
+<p>Here, we can see that almost everything in our home directory is a <strong>subdirectory</strong>the only thing that isn’t is a file called <code class="docutils literal notranslate"><span class="pre">todo.txt</span></code>.</p>
 <blockquote>
 <div><p><strong>Spaces Matter</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">1+2</span></code> and <code class="docutils literal notranslate"><span class="pre">1 + 2</span></code> mean the same thing in mathematics,
@@ -677,10 +662,8 @@ so if we forget to separate <code class="docutils literal notranslate"><span cla
 the shell will try to find a program called <code class="docutils literal notranslate"><span class="pre">ls-F</span></code> and (quite sensibly)
 give an error message like <code class="docutils literal notranslate"><span class="pre">ls-F:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code>.</p>
 </div></blockquote>
-<p>Some options tell a command how to behave,
-but others tell it what to act on.
-For example,
-if we want to see what’s in the <code class="docutils literal notranslate"><span class="pre">/Users</span></code> directory,
+<p>Some options tell a command how to behave, but others tell it what to act on.
+For example, if we want to see what’s in the <code class="docutils literal notranslate"><span class="pre">/Users</span></code> directory,
 we can type:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>/Users
 </pre></div>
@@ -696,10 +679,7 @@ to distinguish them from the built-in options. We can combine options and argume
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>amira/  jun/    sami/
 </pre></div>
 </div>
-<p>but we must put the options (like <code class="docutils literal notranslate"><span class="pre">-F</span></code>)
-before the names of any files or directories we want to work on,
-because once the command encounters something that <em>isn’t</em> an option
-it assumes there aren’t any more:</p>
+<p>but we must put the options (like <code class="docutils literal notranslate"><span class="pre">-F</span></code>) before the names of any files or directories we want to work on, because once the command encounters something that <em>isn’t</em> an option it assumes there aren’t any more:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>/Users<span class="w"> </span>-F
 </pre></div>
 </div>
@@ -745,8 +725,7 @@ we can ask <code class="docutils literal notranslate"><span class="pre">ls</span
 <p>Notice that <code class="docutils literal notranslate"><span class="pre">zipf</span></code> doesn’t have a leading slash before its name.
 This absence tells the shell that it is a <strong>relative path</strong> i.e.,
 that it identifies something starting from our current working directory.
-In contrast,
-a path like <code class="docutils literal notranslate"><span class="pre">/Users/amira</span></code> is an <strong>absolute path</strong> it is always interpreted from the root directory down, so it always refers to the same thing.
+In contrast, a path like <code class="docutils literal notranslate"><span class="pre">/Users/amira</span></code> is an <strong>absolute path</strong> it is always interpreted from the root directory down, so it always refers to the same thing.
 Using a relative path is like telling someone to go two kilometers north and then half a kilometer east;
 using an absolute path is like giving them the latitude and longitude of their destination.</p>
 <p>We can use whichever kind of path is easiest to type,
@@ -1000,9 +979,8 @@ it can only work with plain character data,
 not spreadsheets, images, Microsoft Word files, or anything else invented after 1970.
 We use it in this lesson because it runs everywhere,
 and because it is as simple as something can be and still be called an editor.
-However,
-that last trait means that we <em>shouldn’t</em> use it for larger tasks
-like writing a program or a paper.</p>
+// However, that last trait means that we <em>shouldn’t</em> use it for larger tasks
+// like writing a program or a paper. E2R</p>
 <blockquote>
 <div><p><strong>Recycling Pixels</strong></p>
 <p>Unlike most modern editors,
@@ -1010,14 +988,10 @@ Nano runs <em>inside</em> the shell window instead of opening a new window of it
 This is a holdover from an era when graphical terminals were a rarity
 and different applications had to share a single screen.</p>
 </div></blockquote>
-<p>Once Nano is open we can type in a few lines of text,
-then press <kbd>Ctrl</kbd>+<kbd>O</kbd>
-(the Control key and the letter ‘O’ at the same time)
-to save our work.
-Nano will ask us what file we want to save it to;
+<p>Once Nano is open we can type in a few lines of text, then press <kbd>Ctrl</kbd>+<kbd>O</kbd> (the Control key and the letter ‘O’ at the same time)
+to save our work. Nano will ask us what file we want to save it to;
 press <kbd>Return</kbd> to accept the suggested default of <code class="docutils literal notranslate"><span class="pre">draft.txt</span></code>.
-Once our file is saved,
-we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to exit the editor and return to the shell.</p>
+Once our file is saved, we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to exit the editor and return to the shell.</p>
 <blockquote>
 <div><p><strong>Control, Ctrl, or ^ Key</strong></p>
 <p>The Control key,
@@ -1105,7 +1079,6 @@ the directory we want is the special name <code class="docutils literal notransl
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mv<span class="w"> </span>docs/prior-work.txt<span class="w"> </span>.
 </pre></div>
 </div>
-<p>\newpage</p>
 <p><code class="docutils literal notranslate"><span class="pre">ls</span></code> now shows us that <code class="docutils literal notranslate"><span class="pre">docs</span></code> is empty:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>docs
 </pre></div>
@@ -1144,9 +1117,7 @@ to ask it to list two things at once:</p>
 </pre></div>
 </div>
 <p>Notice that <code class="docutils literal notranslate"><span class="pre">ls</span></code> shows the output in alphabetical order.
-If we leave off the second filename and ask it to show us a file and a directory
-(or multiple directories)
-it lists them one by one:</p>
+If we leave off the second filename and ask it to show us a file and a directory (or multiple directories) it lists them one by one:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>prior-work.txt<span class="w"> </span>docs
 </pre></div>
 </div>
@@ -1157,8 +1128,7 @@ section-1.txt
 </pre></div>
 </div>
 <p>Copying a directory and everything it contains is a little more complicated.
-If we use <code class="docutils literal notranslate"><span class="pre">cp</span></code> on its own,
-we get an error message:</p>
+If we use <code class="docutils literal notranslate"><span class="pre">cp</span></code> on its own, we get an error message:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cp<span class="w"> </span>docs<span class="w"> </span>backup
 </pre></div>
 </div>
@@ -1226,11 +1196,9 @@ by giving it the recursive option <code class="docutils literal notranslate"><sp
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span></code> should be used with great caution:
-in most cases,
-it’s safest to add the <code class="docutils literal notranslate"><span class="pre">-i</span></code> option (for <strong>i</strong>nteractive)
+in most cases, it’s safest to add the <code class="docutils literal notranslate"><span class="pre">-i</span></code> option (for <strong>i</strong>nteractive)
 to get <code class="docutils literal notranslate"><span class="pre">rm</span></code> to ask us to confirm each deletion.
-As a halfway measure,
-we can use <code class="docutils literal notranslate"><span class="pre">-v</span></code> (for <strong>v</strong>erbose)
+As a halfway measure, we can use <code class="docutils literal notranslate"><span class="pre">-v</span></code> (for <strong>v</strong>erbose)
 to get <code class="docutils literal notranslate"><span class="pre">rm</span></code> to print a message for each file it deletes.
 This option works the same way with <code class="docutils literal notranslate"><span class="pre">mv</span></code> and <code class="docutils literal notranslate"><span class="pre">cp</span></code>.</p>
 </section>
@@ -1270,8 +1238,7 @@ We can’t just give <code class="docutils literal notranslate"><span class="pre
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>wc: data: read: Is a directory
 </pre></div>
 </div>
-<p>Instead,
-we can use <strong>wildcards</strong> to specify a set of files at once.
+<p>Instead, we can use <strong>wildcards</strong> to specify a set of files at once.
 The most commonly used wildcard is <code class="docutils literal notranslate"><span class="pre">*</span></code> (a single asterisk).
 It matches zero or more characters, so <code class="docutils literal notranslate"><span class="pre">data/*.txt</span></code> matches all of the text files in the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ ls data/*.txt
@@ -1313,11 +1280,9 @@ count the number of words in the books with names that contain an underscore:</p
 </pre></div>
 </div>
 <p>The exercises will introduce and explore other wildcards.
-For now,
-we only need to know that
+For now, we only need to know that
 it’s possible for a wildcard expression to <em>not</em> match anything.
-In this case,
-the command will usually print an error message:</p>
+In this case, the command will usually print an error message:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>wc<span class="w"> </span>data/*.csv
 </pre></div>
 </div>
@@ -1366,8 +1331,7 @@ and highlights a few of features useful for beginners.</p>
 <p><span class="caption-number">Fig. 4 </span><span class="caption-text">Bash basics manual</span><a class="headerlink" href="#man-callouts" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Some commands have a <code class="docutils literal notranslate"><span class="pre">--help</span></code> option that provides a succinct summary of possibilities,
-but the best place to go for help these days is probably the <a class="reference external" href="https://tldr.sh/">TLDR</a> website.
+<p>Some commands have a <code class="docutils literal notranslate"><span class="pre">--help</span></code> option that provides a succinct summary of possibilities, but the best place to go for help these days is probably the <a class="reference external" href="https://tldr.sh/">TLDR</a> website.
 The acronym stands for “too long, didn’t read,”
 and its help for <code class="docutils literal notranslate"><span class="pre">wc</span></code> displays this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wc</span>
@@ -1386,30 +1350,23 @@ and its help for <code class="docutils literal notranslate"><span class="pre">wc
 <span class="n">account</span><span class="p">):</span>
 <span class="n">wc</span> <span class="o">-</span><span class="n">m</span> <span class="p">{{</span><span class="n">file</span><span class="p">}}</span>
 
-<span class="n">edit</span> <span class="n">this</span> <span class="n">page</span> <span class="n">on</span> <span class="n">github</span>
 </pre></div>
 </div>
-<p>As the last line suggests,
-all of its examples are in a public GitHub repository
-so that users like you can add the examples you wish it had.
-For more information,
-we can search on <a class="reference external" href="https://stackoverflow.com/questions/tagged/bash">Stack Overflow</a>
+<p>For more information, we can search on <a class="reference external" href="https://stackoverflow.com/questions/tagged/bash">Stack Overflow</a>
 or browse the <a class="reference external" href="https://www.gnu.org/manual/manual.html">GNU manuals</a>
-(particularly those for the <a class="reference external" href="https://www.gnu.org/software/coreutils/manual/coreutils.html">core GNU utilities</a>,
-which include many of the commands introduced in this lesson).
-In all cases,
-though,
-we need to have some idea of what we’re looking for in the first place:
+(particularly those for the <a class="reference external" href="https://www.gnu.org/software/coreutils/manual/coreutils.html">core GNU utilities</a>, which include many of the commands introduced in this lesson).
+In all cases, though, we need to have some idea of what we’re looking for in the first place:
 someone who wants to know how many lines there are in a data file
 is unlikely to think to look for <code class="docutils literal notranslate"><span class="pre">wc</span></code>.</p>
 </section>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
 <p>The original Unix shell is celebrating its fiftieth anniversary.
-Its commands may be cryptic,
-but few programs have remained in daily use for so long.
+Its commands may be cryptic, but few programs have remained in daily use for so long.
 The next chapter will explore how we can combine and repeat commands
 in order to create powerful, efficient workflows.</p>
+<p>You can continue as is or you may start doing the first part of the shell related exercises <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/bash.html#bash-exercises">here</a>.</p>
+<p>These can be run online, just follow the instruction, right now you will not need a local version of the software, but later on this will be a necessity to follow along.</p>
 </section>
 <section id="key-points">
 <h2>Key Points<a class="headerlink" href="#key-points" title="Permalink to this heading">#</a></h2>
