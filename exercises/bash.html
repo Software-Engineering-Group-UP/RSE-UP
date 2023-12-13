@@ -499,7 +499,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-bash-in-jupyter-notebook">Using Bash in Jupyter Notebook</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-exercises">Basic Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-more-ls-flags">1 Exploring more <code class="docutils literal notranslate"><span class="pre">ls</span></code> flags</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listing-recursively-and-by-time">2 Listing recursively and by time</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-and-relative-paths">3 Absolute and relative paths</a></li>
@@ -561,8 +561,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="bash-exercises">
 <h1>Bash Exercises<a class="headerlink" href="#bash-exercises" title="Permalink to this heading">#</a></h1>
 <p>These exercise should help you either reviewing or learning new shell commands. The exercises can be done localy on Linux, Mac or Windows 11 bash console.
-You can also open this JupyterNotebook directly in Binder or google collab and do the exercises. In this case be aware that the system runs on linux, which is important when using paths.<br />
-Linux and mac use <code class="docutils literal notranslate"><span class="pre">/</span></code> instead of <code class="docutils literal notranslate"><span class="pre">\</span></code> as an example.</p>
+You can also open this Jupyter Notebook directly in Binder or google collab and do the exercises. In this case be aware that the system runs on linux, which is important when using paths.</p>
+<p>Linux and mac use <code class="docutils literal notranslate"><span class="pre">/</span></code> instead of <code class="docutils literal notranslate"><span class="pre">\</span></code> as an example.</p>
 <p>But First we go through a quick explanation on how to use <strong>BASH</strong> in a jupyter notebook on a linux or mac system.</p>
 <section id="using-bash-in-jupyter-notebook">
 <h2>Using Bash in Jupyter Notebook<a class="headerlink" href="#using-bash-in-jupyter-notebook" title="Permalink to this heading">#</a></h2>
@@ -639,9 +639,8 @@ echo $RAND
 </div>
 </div>
 </section>
-<section id="id1">
-<h2><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<p>Basic Exercises</p>
+<section id="basic-exercises">
+<h2>Basic Exercises<a class="headerlink" href="#basic-exercises" title="Permalink to this heading">#</a></h2>
 <p>The exercises below involve creating and moving new files, as well as considering hypothetical files.
 Please note that if you create or move any files or directories in your Zipf’s Law project, you may want to reorganize your files following the outline at the beginning of the next chapter.
 If you accidentally delete necessary files, you can start with a fresh copy of the data files by following the instructions in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/01/1_getting_started.html#downloading-the-data">1 getting started</a>.</p>
@@ -824,8 +823,8 @@ $<span class="w"> </span>cp<span class="w"> </span>dracula.txt<span class="w"> <
 <section id="reproduce-a-directory-structure">
 <h3>14 Reproduce a directory structure<a class="headerlink" href="#reproduce-a-directory-structure" title="Permalink to this heading">#</a></h3>
 <p>You’re starting a new analysis, and would like to duplicate the directory structure from your previous experiment so you can add new data.</p>
-<p>Assume that the previous experiment is in a folder called <code class="docutils literal notranslate"><span class="pre">2016-05-18</span></code>, which contains a <code class="docutils literal notranslate"><span class="pre">data</span></code> folder that in turn contains folders named <code class="docutils literal notranslate"><span class="pre">raw</span></code> and <code class="docutils literal notranslate"><span class="pre">processed</span></code> that contain data files.  The goal is to copy the folder structure of <code class="docutils literal notranslate"><span class="pre">2016-05-18/data</span></code> into a folder called <code class="docutils literal notranslate"><span class="pre">2016-05-20</span></code> so that your final directory structure looks like this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">	</span><span class="m">2016</span>-05-20/
+<p>Assume that the previous experiment is in a folder called <code class="docutils literal notranslate"><span class="pre">2023-05-18</span></code>, which contains a <code class="docutils literal notranslate"><span class="pre">data</span></code> folder that in turn contains folders named <code class="docutils literal notranslate"><span class="pre">raw</span></code> and <code class="docutils literal notranslate"><span class="pre">processed</span></code> that contain data files.  The goal is to copy the folder structure of <code class="docutils literal notranslate"><span class="pre">2023-05-18/data</span></code> into a folder called <code class="docutils literal notranslate"><span class="pre">2023-05-20</span></code> so that your final directory structure looks like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">	</span><span class="m">2024</span>-05-20/
 <span class="w">	</span>└──<span class="w"> </span>data
 <span class="w">	    </span>├──<span class="w"> </span>processed
 <span class="w">	    </span>└──<span class="w"> </span>raw
@@ -1282,7 +1281,7 @@ There is often more than one way to solve a problem with the shell; people choos
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-bash-in-jupyter-notebook">Using Bash in Jupyter Notebook</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-exercises">Basic Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-more-ls-flags">1 Exploring more <code class="docutils literal notranslate"><span class="pre">ls</span></code> flags</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listing-recursively-and-by-time">2 Listing recursively and by time</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-and-relative-paths">3 Absolute and relative paths</a></li>

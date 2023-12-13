@@ -712,9 +712,8 @@ $<span class="w"> </span>mv<span class="w"> </span>authors.txt<span class="w"> <
 </div>
 <p>Instead of typing those commands into a file in an editor
 (and potentially getting them wrong)
-we can use <code class="docutils literal notranslate"><span class="pre">history</span></code> and redirection to save recent commands to a file.\index{shell script!using history to create}
-For example,
-we can save the last six commands to <code class="docutils literal notranslate"><span class="pre">summarize_all_books.sh</span></code>:</p>
+we can use <code class="docutils literal notranslate"><span class="pre">history</span></code> and redirection to save recent commands to a file.
+For example,we can save the last six commands to <code class="docutils literal notranslate"><span class="pre">summarize_all_books.sh</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">history</span><span class="w"> </span><span class="m">6</span><span class="w"> </span>&gt;<span class="w"> </span>summarize_all_books.sh
 $<span class="w"> </span>cat<span class="w"> </span>summarize_all_books.sh
 </pre></div>
@@ -735,8 +734,7 @@ $<span class="w"> </span>cat<span class="w"> </span>summarize_all_books.sh
 <h2>Finding Things in Files<a class="headerlink" href="#finding-things-in-files" title="Permalink to this heading">#</a></h2>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">head</span></code> and <code class="docutils literal notranslate"><span class="pre">tail</span></code> to select lines from a file by position,
 but we also often want to select lines that contain certain values.
-This is called \gref{filtering}{filter},\index{filter (in Unix shell)}
-and we usually do it in the shell with the command <code class="docutils literal notranslate"><span class="pre">grep</span></code> that we briefly met in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_advanced.html#creating-new-commands">creating new commands</a>.
+This is called <strong>filtering</strong>, and we usually do it in the shell with the command <code class="docutils literal notranslate"><span class="pre">grep</span></code> that we briefly met in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_advanced.html#creating-new-commands">creating new commands</a>.
 Its name is an acronym of “global regular expression print,”
 which was a common sequence of operations in early Unix text editors.</p>
 <p>To show how <code class="docutils literal notranslate"><span class="pre">grep</span></code> works,
@@ -1133,8 +1131,7 @@ $<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-n
 the shell is a program, and it has variables like any other program.
 Some of those variables control the shell’s operations;
 by changing their values we can change how the shell and other programs behave.</p>
-<p>Let’s run the command <code class="docutils literal notranslate"><span class="pre">set</span></code>\index{set (in Unix shell)}\index{Unix commands!set}
-and look at some of the variables the shell defines:</p>
+<p>Let’s run the command <code class="docutils literal notranslate"><span class="pre">set</span></code>and look at some of the variables the shell defines:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">set</span>
 </pre></div>
 </div>

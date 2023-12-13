@@ -272,9 +272,8 @@ $ mv authors.txt releases.txt ../results
 
 Instead of typing those commands into a file in an editor
 (and potentially getting them wrong)
-we can use `history` and redirection to save recent commands to a file.\index{shell script!using history to create}
-For example,
-we can save the last six commands to `summarize_all_books.sh`:
+we can use `history` and redirection to save recent commands to a file.
+For example,we can save the last six commands to `summarize_all_books.sh`:
 
 ```bash
 $ history 6 > summarize_all_books.sh
@@ -298,8 +297,7 @@ We can now open the file in an editor, remove the serial numbers at the start of
 
 We can use `head` and `tail` to select lines from a file by position,
 but we also often want to select lines that contain certain values.
-This is called \gref{filtering}{filter},\index{filter (in Unix shell)}
-and we usually do it in the shell with the command `grep` that we briefly met in Section [creating new commands](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_advanced.html#creating-new-commands).
+This is called **filtering**, and we usually do it in the shell with the command `grep` that we briefly met in Section [creating new commands](https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_advanced.html#creating-new-commands).
 Its name is an acronym of "global regular expression print,"
 which was a common sequence of operations in early Unix text editors.
 
@@ -769,8 +767,7 @@ the shell is a program, and it has variables like any other program.
 Some of those variables control the shell's operations;
 by changing their values we can change how the shell and other programs behave.
 
-Let's run the command `set`\index{set (in Unix shell)}\index{Unix commands!set}
-and look at some of the variables the shell defines:
+Let's run the command `set`and look at some of the variables the shell defines:
 
 ```bash
 $ set

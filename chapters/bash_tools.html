@@ -583,7 +583,6 @@ it will print them all in order):</p>
 </pre></div>
 </div>
 <p>We can now use <code class="docutils literal notranslate"><span class="pre">sort</span></code> to sort the lines in this file:</p>
-<p>\newpage</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sort<span class="w"> </span>-n<span class="w"> </span>lengths.txt
 </pre></div>
 </div>
@@ -731,13 +730,9 @@ to that process’s standard input and output (<a class="reference internal" hre
 </figcaption>
 </figure>
 <p>If we provide one or more files for the command to read,
-as with <code class="docutils literal notranslate"><span class="pre">sort</span> <span class="pre">lengths.txt</span></code>,
-the program reads data from those files.
-If we don’t provide any filenames,
-though,
-the Unix convention is for the program to read from standard input.
-We can test this by running <code class="docutils literal notranslate"><span class="pre">sort</span></code> on its own,
-typing in a few lines of text,
+as with <code class="docutils literal notranslate"><span class="pre">sort</span> <span class="pre">lengths.txt</span></code>, the program reads data from those files.
+If we don’t provide any filenames, though, the Unix convention is for the program to read from standard input.
+We can test this by running <code class="docutils literal notranslate"><span class="pre">sort</span></code> on its own, typing in a few lines of text,
 and then pressing <kbd>Ctrl</kbd>+<kbd>D</kbd> to signal the end of input .
 <code class="docutils literal notranslate"><span class="pre">sort</span></code> will then sort and print whatever we typed:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sort
@@ -754,18 +749,11 @@ three
 two
 </pre></div>
 </div>
-<p>Redirection with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> tells the shell to connect the program’s standard output to a file
-instead of the screen (<span class="xref myst"></span>c).</p>
-<p>When we create a pipe like <code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">*.txt</span> <span class="pre">|</span> <span class="pre">sort</span></code>,
-the shell creates one process for each command so that <code class="docutils literal notranslate"><span class="pre">wc</span></code> and <code class="docutils literal notranslate"><span class="pre">sort</span></code> will run simultaneously,
-and then connects the standard output of <code class="docutils literal notranslate"><span class="pre">wc</span></code> directly to the standard input of <code class="docutils literal notranslate"><span class="pre">sort</span></code>
-(<span class="xref myst"></span>d).</p>
-<p><code class="docutils literal notranslate"><span class="pre">wc</span></code> doesn’t know whether its output is going to the screen,
-another program,
+<p>Redirection with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> tells the shell to connect the program’s standard output to a file instead of the screen (<span class="xref myst"></span> c).</p>
+<p>When we create a pipe like <code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">*.txt</span> <span class="pre">|</span> <span class="pre">sort</span></code>, the shell creates one process for each command so that <code class="docutils literal notranslate"><span class="pre">wc</span></code> and <code class="docutils literal notranslate"><span class="pre">sort</span></code> will run simultaneously, and then connects the standard output of <code class="docutils literal notranslate"><span class="pre">wc</span></code> directly to the standard input of <code class="docutils literal notranslate"><span class="pre">sort</span></code> (<span class="xref myst"></span> d).</p>
+<p><code class="docutils literal notranslate"><span class="pre">wc</span></code> doesn’t know whether its output is going to the screen, another program,
 or to a file via <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>.
-Equally,
-<code class="docutils literal notranslate"><span class="pre">sort</span></code> doesn’t know if its input is coming from the keyboard or another process;
-it just knows that it has to read, sort, and print.</p>
+Equally, <code class="docutils literal notranslate"><span class="pre">sort</span></code> doesn’t know if its input is coming from the keyboard or another process; it just knows that it has to read, sort, and print.</p>
 <blockquote>
 <div><p><strong>Why Isn’t It Doing Anything?</strong></p>
 <p>What happens if a command is supposed to process a file
@@ -793,9 +781,8 @@ we can end the program by typing <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 We can also use this to interrupt programs that are taking a long time to run
 or are trying to connect to a website that isn’t responding.</p>
 </div></blockquote>
-<p>\newpage</p>
 <p>Just as we can redirect standard output with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>,
-we can connect standard input to a file using <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>.\index{redirection (in Unix shell)}
+we can connect standard input to a file using <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>.
 In the case of a single file,
 this has the same effect as providing the file’s name to the <code class="docutils literal notranslate"><span class="pre">wc</span></code> command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>wc<span class="w"> </span>&lt;<span class="w"> </span>moby_dick.txt
@@ -1404,7 +1391,6 @@ what is the output of the following code?</p>
 &gt;<span class="w"> </span><span class="k">done</span>
 </pre></div>
 </div>
-<p>\newpage</p>
 </section>
 <section id="why-does-history-record-commands-before-running-them">
 <h3>Why does <code class="docutils literal notranslate"><span class="pre">history</span></code> record commands before running them?<a class="headerlink" href="#why-does-history-record-commands-before-running-them" title="Permalink to this heading">#</a></h3>
@@ -1426,7 +1412,7 @@ before running them. Why do you think it does this?</p>
 <h1>Building Tools with the Unix Shell<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <blockquote>
 <div><p>Wisdom comes from experience. Experience is often a result of lack of wisdom.</p>
-<p>— Terry Pratchett\index{Pratchett, Terry}</p>
+<p>— Terry Pratchett</p>
 </div></blockquote>
 <p>The shell’s greatest strength is that
 it lets us combine programs to create pipelines
@@ -1495,7 +1481,6 @@ it will print them all in order):</p>
 </pre></div>
 </div>
 <p>We can now use <code class="docutils literal notranslate"><span class="pre">sort</span></code> to sort the lines in this file:</p>
-<p>\newpage</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sort<span class="w"> </span>-n<span class="w"> </span>lengths.txt
 </pre></div>
 </div>
@@ -1700,7 +1685,6 @@ we can end the program by typing <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 We can also use this to interrupt programs that are taking a long time to run
 or are trying to connect to a website that isn’t responding.</p>
 </div></blockquote>
-<p>\newpage</p>
 <p>Just as we can redirect standard output with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>,
 we can connect standard input to a file using <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>.In the case of a single file,
 this has the same effect as providing the file’s name to the <code class="docutils literal notranslate"><span class="pre">wc</span></code> command:</p>
@@ -1822,7 +1806,6 @@ Latest Update:
 Language: English
 </pre></div>
 </div>
-<p>\newpage</p>
 <p>Let’s try this instead:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span>sense_and_sensibility.txt<span class="w"> </span>sherlock_holmes.txt
 &gt;<span class="w"> </span><span class="k">do</span>
