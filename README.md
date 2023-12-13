@@ -27,7 +27,7 @@ The source material for our iteration of the work can be cited as:
 5. Compuational Narative
 6. Licensing, Citation, FAIR
 8. Working in Teams
-9. Requirements and Architecturre, Design
+9. Requirements and Architecture, Design
 10. Testing Software
 11. Error Handling
 12. Configuration of Programs
@@ -54,17 +54,14 @@ Software has been licensed under the MIT License found [here](https://github.com
 
 ## TODOs
 
-[/] description
-[x] Reference
-[x] fix license
-[/] ToC
-[x] code of conduct
-[x] contribution
-[x] structure
-[ ] first ipynb content
-[ ] first ipynb exercise
-[ ] test jupyter book, 
-[ ] test binder
-[ ] guide to running own book 
+[ ] Concsistency Check ch 0 -> 15
+[ ] Intro / guide to jupyter notebook
+[ ] Contribution guide how to run and install if cont.
+[ ] Binder
+[ ] Collab
+
+[ ] Rewrite Worksheets / project work for course into 2 seperate MDs / more in flow with rest of book instead of seperate 
+
+[ ] Content from Presentations 
 
  [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)

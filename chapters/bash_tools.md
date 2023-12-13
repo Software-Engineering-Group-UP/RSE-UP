@@ -80,7 +80,6 @@ $ cat lengths.txt
 
 We can now use `sort` to sort the lines in this file:
 
-\newpage
 
 ```bash
 $ sort -n lengths.txt
@@ -250,13 +249,9 @@ Bash tools stdio
 ```
 
 If we provide one or more files for the command to read,
-as with `sort lengths.txt`,
-the program reads data from those files.
-If we don't provide any filenames,
-though,
-the Unix convention is for the program to read from standard input.
-We can test this by running `sort` on its own,
-typing in a few lines of text,
+as with `sort lengths.txt`, the program reads data from those files.
+If we don't provide any filenames, though, the Unix convention is for the program to read from standard input.
+We can test this by running `sort` on its own, typing in a few lines of text,
 and then pressing <kbd>Ctrl</kbd>+<kbd>D</kbd> to signal the end of input .
 `sort` will then sort and print whatever we typed:
 
@@ -276,20 +271,13 @@ three
 two
 ```
 
-Redirection with `>` tells the shell to connect the program's standard output to a file
-instead of the screen ([](bash_tools_stdio)c).
+Redirection with `>` tells the shell to connect the program's standard output to a file instead of the screen ([](bash_tools_stdio) c).
 
-When we create a pipe like `wc *.txt | sort`,
-the shell creates one process for each command so that `wc` and `sort` will run simultaneously,
-and then connects the standard output of `wc` directly to the standard input of `sort`
-([](bash_tools_stdio)d).
+When we create a pipe like `wc *.txt | sort`, the shell creates one process for each command so that `wc` and `sort` will run simultaneously, and then connects the standard output of `wc` directly to the standard input of `sort` ([](bash_tools_stdio) d).
 
-`wc` doesn't know whether its output is going to the screen,
-another program,
-or to a file via `>`.
-Equally,
-`sort` doesn't know if its input is coming from the keyboard or another process;
-it just knows that it has to read, sort, and print.
+`wc` doesn't know whether its output is going to the screen, another program,
+or to a file via `>`. 
+Equally, `sort` doesn't know if its input is coming from the keyboard or another process; it just knows that it has to read, sort, and print.
 
 > **Why Isn't It Doing Anything?**
 >
@@ -324,10 +312,10 @@ it just knows that it has to read, sort, and print.
 > We can also use this to interrupt programs that are taking a long time to run
 > or are trying to connect to a website that isn't responding.
 
-\newpage
+
 
 Just as we can redirect standard output with `>`,
-we can connect standard input to a file using `<`.\index{redirection (in Unix shell)}
+we can connect standard input to a file using `<`.
 In the case of a single file,
 this has the same effect as providing the file's name to the `wc` command:
 
@@ -1034,7 +1022,7 @@ for book in *.txt
 > done
 ```
 
-\newpage
+
 
 ### Why does `history` record commands before running them? 
 
@@ -1055,7 +1043,7 @@ before running them. Why do you think it does this?
 
 > Wisdom comes from experience. Experience is often a result of lack of wisdom.
 >
-> --- Terry Pratchett\index{Pratchett, Terry}
+> --- Terry Pratchett
 
 The shell's greatest strength is that
 it lets us combine programs to create pipelines
@@ -1139,7 +1127,7 @@ $ cat lengths.txt
 
 We can now use `sort` to sort the lines in this file:
 
-\newpage
+
 
 ```bash
 $ sort -n lengths.txt
@@ -1378,7 +1366,7 @@ Equally, `sort` doesn't know if its input is coming from the keyboard or another
 > We can also use this to interrupt programs that are taking a long time to run
 > or are trying to connect to a website that isn't responding.
 
-\newpage
+
 
 Just as we can redirect standard output with `>`,
 we can connect standard input to a file using `<`.In the case of a single file,
@@ -1522,7 +1510,7 @@ Latest Update:
 Language: English
 ```
 
-\newpage
+
 
 Let's try this instead:
 
