@@ -103,7 +103,7 @@ the keys `logfile`, `quiet`, and `overwrite`
 have the values `/tmp/log.txt`, `false`, and `false` respectively,
 while the value associated with the key `fonts`
 is a list containing `Verdana` and `Serif`.
-For more discussion of YAML, see [Appendix](https://software-engineering-group-up.github.io/RSE-UP/chapters/yaml.html).
+For more discussion of YAML, see [Appendix - YAML](https://software-engineering-group-up.github.io/RSE-UP/chapters/yaml.html).
 
 ## Matplotlib Configuration 
 
@@ -305,7 +305,7 @@ mpl.rcParams['ytick.labelsize'] = args.yticksize
 Adding extra command-line arguments is a good solution
 if we only want to change a small number of plot characteristics.
 It also makes our work more reproducible:
-if we use a Makefile to regenerate our plots ([Chapter](https://software-engineering-group-up.github.io/RSE-UP/chapters/intro_make.md)),
+if we use a Makefile to regenerate our plots ([Chapter Intro to make](https://software-engineering-group-up.github.io/RSE-UP/chapters/intro_make.md)),
 the settings will all be saved in one place.
 However,
 `matplotlibrc` has hundreds of parameters we could change,

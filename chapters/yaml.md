@@ -7,7 +7,7 @@ but that's misleading:
 YAML doesn't use tags like HTML, but can still be quite fussy about what is allowed to appear where.
 
 Throughout this book we use YAML to configure our plotting script ([Chapter on Configuration](https://software-engineering-group-up.github.io/RSE-UP/chapters/configuration.html)), **TODO** continuous integration with Travis CI (Section ref(testing-ci)),
-software environment with `conda` (Section **TODO**ref(provenance-code-environment)), and a documentation website with Read the Docs (Section **TODO** ref(packaging-rtd)).
+software environment with `conda` (Section [Software Environment](https://software-engineering-group-up.github.io/RSE-UP/chapters/tracking_provenance.html#software-environment)), and a documentation website with Read the Docs (Section [Packaging - adding documentation](https://software-engineering-group-up.github.io/RSE-UP/chapters/python_packaging.html#creating-a-web-page-for-documentation)).
 While you don't need to be an expert in YAML to complete tasks like these,
 this appendix outlines some basics that can help make things easier.
 
