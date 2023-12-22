@@ -282,7 +282,7 @@ Changes to be committed:
 
 Adding all of our existing files this way is easy, but we can accidentally add things that should never be in version control,
 such as files containing passwords or other sensitive information. 
-The output of `git status` tells us that we can remove such files from the list of things to be saved using `git rm --cached`; we will practice this in [Exercise](https://software-engineering-group-up.github.io/RSE-UP/exercises/version_control.html#removing-before-saving)
+The output of `git status` tells us that we can remove such files from the list of things to be saved using `git rm --cached`; we will practice this in [Exercise on removing files](https://software-engineering-group-up.github.io/RSE-UP/exercises/version_control.html#removing-before-saving)
 > **What to Save**
 >
 > We always want to save programs, manuscripts,
@@ -476,7 +476,7 @@ the commit's author, when it was created, and the commit message that we wrote.
 > as you saw in Section [bash-basics-help](https://software-engineering-group-up.github.io/RSE-UP/bash_basics.html#reading-the-manual) with manual pages.
 > You can apply the same keystrokes to scroll through the log
 > and exit the paging program.
-The plot we have made is shown in [Figure](git-cmdline-initial-plot).
+The plot we have made is shown in [Figure Git cmdline - initial plot](git-cmdline-initial-plot).
 It could be better:
 most of the visual space is devoted to a few very common words,
 which makes it hard to see what is happening with the other ten thousand or so words.
@@ -654,14 +654,14 @@ $ git commit -m "Plot frequency against rank on log-log axes"
 > Git has a special **staging area**
 > where it keeps track of things
 > that have been added to the current changeset but not yet committed
-> ([Figure](git-cmdline-staging-area)).
+> ([Figure Git cmdline - staging area](git-cmdline-staging-area)).
 
 ```{figure} ../figures/git-cmdline/staging-area.png
 :name: git-cmdline-staging-area
 Git CMDline staging area
 ```
 
-Let's take a look at our new plot ([Figure](git-cmdline-loglog-plot2)):
+Let's take a look at our new plot ([Figure git cmdline - loglog plot #2](git-cmdline-loglog-plot2)):
 
 ```bash
 $ python bin/plotcounts.py results/dracula.csv --outfile
@@ -734,7 +734,7 @@ $ git commit -a -m "Update dracula plot"
 
 The Git commands we've covered so far (`git add`, `git commit`, `git diff`)
 represent the tasks you perform in a basic Git workflow in a local repository 
-([Figure](git-remote) a).
+([Figure Git remote ](git-remote) a).
 
 ```{figure} ../figures/git-cmdline/git-remote.png
 :name: git-remote
@@ -775,7 +775,7 @@ we'll discuss these additions in other chapters.
 
 Next, we need to connect our desktop repository with the one on GitHub.
 We do this by making the GitHub repository a **remote** of the local repository.
-The home page of our new repository on GitHub includes the string we need to identify it ([Figure](git-cmdline-repo-link)).
+The home page of our new repository on GitHub includes the string we need to identify it ([Figure- Repo link](git-cmdline-repo-link)).
 
 ```{figure} ../figures/git-cmdline/repo-link.png
 :name: git-cmdline-repo-link
@@ -847,7 +847,7 @@ To https://github.com/amira-khan/zipf.git
  * [new branch]      master -> master
 ```
 
-If we view our GitHub repository in the browser, it now includes all of our project files, along with all of the commits we have made so far ([Figure](git-cmdline-history)).
+If we view our GitHub repository in the browser, it now includes all of our project files, along with all of the commits we have made so far ([Figure - Git cmdline history](git-cmdline-history)).
 
 ```{figure} ../figures/git-cmdline/repo-history.png
 :name: git-cmdline-history
@@ -884,7 +884,7 @@ because the two repositories are already synchronized.
 > it's used to view changes between local and remote versions.
 
 The Git commands we've covered in this section (`git pull`, `git push`)
-are the main tasks associated with incorporating remote repositories into your workflow ([Figure](git-cmdline-remote) b).
+are the main tasks associated with incorporating remote repositories into your workflow ([Figure Git cmdline remote](git-cmdline-remote) b).
 
 > **Amira's Repository**
 >
@@ -1240,7 +1240,7 @@ $ head -n 19 bin/plotcounts.py | tail -n 8
 We have restored the most recent commit. Since we didn't commit the change that removed the line that calculates the inverse rank, that work is now lost:
 Git can only go back and forth between committed versions of files.
 
-This section has demonstrated a few different ways to view differences among versions, and to work with those changes ([Figure](git-cmdline-remote) c). 
+This section has demonstrated a few different ways to view differences among versions, and to work with those changes ([Figure Git cmdline - Remote](git-cmdline-remote) c). 
 These commands can operate on either individual files or entire commits,
 and the behavior of them can sometimes differ based on your version of Git.
 Remember to reference documentation, and use `git status` and `git log` frequently to understand your workflow.

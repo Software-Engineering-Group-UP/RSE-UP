@@ -121,7 +121,7 @@ if __name__ == '__main__':
     main(args)
 ```
 
-We used this version of `plotcounts.py` to display the word counts for *Dracula* on a log-log plot ([Figure](git-cmdline-loglog-plot)).
+We used this version of `plotcounts.py` to display the word counts for *Dracula* on a log-log plot ([Figure: cmdline, loglog plot](git-cmdline-loglog-plot)).
 The relationship between word count and rank looked linear,
 but since the eye is easily fooled,
 we should fit a curve to the data.
@@ -210,7 +210,7 @@ Before we make any changes to our new branch, we need to figure out how to fit a
 In other words
 the frequency of a word $f$ is proportional to its inverse rank $r$:
 
-$ f \propto \frac{1}{r^\alpha} $
+$ \large f \propto \frac{1}{r^\alpha} $
 
 with a value of $\alpha$ close to one.
 The reason $\alpha$ must be close to one for Zipf's Law to hold
@@ -229,18 +229,18 @@ $ \log(y) = \log(a) + b\log(x) $
 
 Hence, plotting the variables on a log-log scale reveals this linear relationship. If Zipf's Law holds, we should have
 
-$ r = cf^{\frac{-1}{\alpha}} $
+$ \large r = cf^{\frac{-1}{\alpha}} $
 
 where $c$ is a constant of proportionality.
 The linear relationship between the log word frequency and log rank is then
 
-$ \log(r) = \log(c) - \frac{1}{\alpha}\log(f) $
+$ \large \log(r) = \log(c) - \frac{1}{\alpha}\log(f) $
 
 This suggests that the points on our log-log plot should fall on a straight  line with a slope of $- \tfrac{1}{\alpha}$ and intercept $\log(c)$.
 To fit a line to our word count data we therefore need to estimate the value of $\alpha$; we'll see later that $c$ is completely defined.
 
 In order to determine the best method for estimating $\alpha$, we turn to {cite:p}`More2016`, which suggests using a method called **maximum likelihood estimation**. The likelihood function is the probability of our observed data
-as a function of the parameters in the statistical model that we assume generated it. We estimate the parameters in the model by choosing them to maximize this likelihood; computationally, it is often easier to minimize the negative log likelihood function. {cite:p}`More2016` define the likelihood using a parameter $\beta$, which is related to the $\alpha$ parameter in our definition of Zipf's Law through $\alpha = \tfrac{1}{\beta-1}$.
+as a function of the parameters in the statistical model that we assume generated it. We estimate the parameters in the model by choosing them to maximize this likelihood; computationally, it is often easier to minimize the negative log likelihood function. {cite:p}`More2016` define the likelihood using a parameter $\beta$, which is related to the $\alpha$ parameter in our definition of Zipf's Law through $\large \alpha = \tfrac{1}{\beta-1}$.
 Under their model, the value of $c$ is the total number of unique words,
 or equivalently the largest value of the rank.
 
@@ -302,7 +302,7 @@ def plot_fit(curve_xmin, curve_xmax, max_rank, alpha, ax):
 ```
 
 where the maximum word frequency rank corresponds to $c$, and $-1 / \alpha$ the exponent in the power law. We have followed the [`numpydoc`](https://numpydoc.readthedocs.io/en/latest/) format for the detailed docstring
-in `plot_fit`---see Appendix **TODO** ref(documentation) for more information about docstring formats.
+in `plot_fit`---see Chapter [documentation][https://software-engineering-group-up.github.io/RSE-UP/chapters/writing_documentation.html] for more information about docstring formats.
 
 ## Verifying Zipf's Law 
 
@@ -414,7 +414,7 @@ $ python bin/plotcounts.py results/dracula.csv --outfile
 alpha: 1.0866646252515038
 ```
 
-So according to our fit, the most frequent word will occur approximately $2^{1.1}=2.1$ times as often as the second most frequent word, $3^{1.1}=3.3$ times as often as the third most frequent word, and so on. [Figure](git-advanced-dracula-fit) shows the plot.
+So according to our fit, the most frequent word will occur approximately $2^{1.1}=2.1$ times as often as the second most frequent word, $3^{1.1}=3.3$ times as often as the third most frequent word, and so on. [Figure: dracula fit](git-advanced-dracula-fit) shows the plot.
 
 ```{figure} ../figures/git-advanced/dracula-fit.png
 :name: git-advanced-dracula-fit.png
@@ -1033,7 +1033,7 @@ but \gref{forges}{forge} like Github, Gitlab, Bitbucket or selfhosted solutions 
 Suppose, for example, that Sami wants to contribute to the Zipf's Law code that
 Amira is hosting on GitHub at `https://github.com/amira-khan/zipf`.
 Sami can go to that URL and click on the "Fork" button in the upper right corner
-([Figure](git-advanced-fork-button)).
+([Figure: fork button](git-advanced-fork-button)).
 GitHub immediately creates a copy of Amira's repository within Sami's account on GitHub's own servers.
 
 ```{figure} ../figures/git-advanced/fork-button.png
@@ -1042,7 +1042,7 @@ GitHub immediately creates a copy of Amira's repository within Sami's account on
 Git Fork button
 ```
 
-When the command completes, the setup on GitHub now looks like [Figure](git-advanced-after-fork).Nothing has happened yet on Sami's own machine:
+When the command completes, the setup on GitHub now looks like [Figure: after fork](git-advanced-after-fork).Nothing has happened yet on Sami's own machine:
 the new repository exists only on GitHub.
 When Sami explores its history, they see that it contains all of the changes Amira made.
 
@@ -1274,7 +1274,7 @@ To https://github.com/sami-virtanen/zipf.git
  * [new branch]      adding-email -> adding-email
 ```
 
-When Sami goes to their GitHub repository in the browser, GitHub notices that they have just pushed a new branch and asks them if they want to create a pull request ([Figure](git-advanced-after-sami-pushes)).
+When Sami goes to their GitHub repository in the browser, GitHub notices that they have just pushed a new branch and asks them if they want to create a pull request ([Figure: after push](git-advanced-after-sami-pushes)).
 
 ```{figure} ../figures/git-advanced/after-sami-pushes.png
 :name: git-advanced-after-sami-pushes
@@ -1282,14 +1282,14 @@ When Sami goes to their GitHub repository in the browser, GitHub notices that th
 Git after Push
 ```
 
-When Sami clicks on the button, GitHub displays a page showing the default source and destination of the pull request and a pair of editable boxes for the pull request's title and a longer comment ([Figure](git-advanced-pull-request-start)).
+When Sami clicks on the button, GitHub displays a page showing the default source and destination of the pull request and a pair of editable boxes for the pull request's title and a longer comment ([Figure: pull request start](git-advanced-pull-request-start)).
 
 ```{figure} ../figures/git-advanced/open-pull-request.png
 :name: git-advanced-pull-request-start
 Start a pull request
 ```
 
-If they scroll down, Sami can see a summary of the changes that will be in the pull request ([Figure](git-advanced-pull-request-summary)).
+If they scroll down, Sami can see a summary of the changes that will be in the pull request ([Figure: pull request summary](git-advanced-pull-request-summary)).
 
 ```{figure} ../figures/git-advanced/open-pull-request-detail.png
 :name: git-advanced-pull-request-summary
@@ -1299,9 +1299,9 @@ Git pull request summary
 The top (title) box is autofilled with the previous commit message,
 so Sami adds an extended explanation to provide additional context
 before clicking on "Create Pull Request"
-([Figure](git-advanced-pull-request-fill-in)).
+([Figure: fill in pull request](git-advanced-pull-request-fill-in)).
 When they do, GitHub displays a page showing the new pull request,
-which has a unique serial number ([Figure](git-advanced-pull-request-new)).
+which has a unique serial number ([Figure :New pull request](git-advanced-pull-request-new)).
 Note that this pull request is displayed in Amira's repository rather than Sami's, since it is Amira's repository that will be affected if the pull request is merged.
 
 ```{figure} ../figures/git-advanced/fill-in-pull-request.png
@@ -1315,11 +1315,11 @@ Git new pull request
 ```
 
 Amira's repository now shows a new pull request
-([Figure](git-advanced-pull-request-viewing)).
+([Figure: view Pull requests](git-advanced-pull-request-viewing)).
 Clicking on the "Pull requests" tab brings up a list of PRs
-([Figure](git-advanced-pull-request-list))
+([Figure: list pull requests](git-advanced-pull-request-list))
 and clicking on the pull request link itself displays its details
-([Figure](git-advanced-pull-request-details)).
+([Figure: pull request details](git-advanced-pull-request-details)).
 Sami and Amira can both see and interact with these pages,
 though only Amira has permission to merge.
 
@@ -1341,7 +1341,7 @@ Git pull request details
 
 Since there are no conflicts,GitHub will let Amira merge the PR immediately using the "Merge pull request" button. She could also discard or reject it without merging using the "Close pull request" button. Instead,
 she clicks on the "Files changed" tab to see what Sami has changed
-([Figure](git-advanced-pull-request-changes)).
+([Figure: Pull request - request changes](git-advanced-pull-request-changes)).
 
 ```{figure} ../figures/git-advanced/pr-changes.png
 :name: git-advanced-pull-request-changes
@@ -1349,10 +1349,10 @@ Pull request changes
 ```
 
 If she moves her mouse over particular lines, a white-on-blue cross appears near the numbers to indicate that she can add comments
-([Figure](git-advanced-pull-request-comment-marker)).
+([Figure: Pull request - comment marker](git-advanced-pull-request-comment-marker)).
 She clicks on the marker beside her own name and writes a comment:
-She only wants to make one comment rather than write a lengthier multi-comment review, so she chooses "Add single comment" ([Figure](git-advanced-pull-request-write-comment)).
-GitHub redisplays the page with her remarks inserted ([Figure](git-advanced-pull-request-pr-with-comment)).
+She only wants to make one comment rather than write a lengthier multi-comment review, so she chooses "Add single comment" ([Figure: Pull request - write a comment](git-advanced-pull-request-write-comment)).
+GitHub redisplays the page with her remarks inserted ([Figure: Pull Request with comment](git-advanced-pull-request-pr-with-comment)).
 
 
 ```{figure} ../figures/git-advanced/pr-comment-marker.png
@@ -1374,10 +1374,10 @@ While Amira is working, GitHub has been emailing notifications to both Sami and 
 As explained above, a PR is a note asking that two branches be merged,
 so if either end of the merge changes, the PR updates automatically.
 
-Sure enough, when Amira looks at the PR again a few moments later she sees Sami's changes ([Figure](git-advanced-pull-request-pr-with-fix)).
+Sure enough, when Amira looks at the PR again a few moments later she sees Sami's changes ([Figure: Pull Request with fix](git-advanced-pull-request-pr-with-fix)).
 Satisfied, she goes back to the "Conversation" tab and clicks on "Merge".
 The icon at the top of the PR's page changes text and color to show that the merge was successful
-([Figure](git-advanced-pull-request-successful-merge)).
+([Figure: - Pull Request - succesfull merge](git-advanced-pull-request-successful-merge)).
 
 ```{figure} ../figures/git-advanced/pr-with-fix.png
 :name: git-advanced-pull-request-pr-with-fix
@@ -1444,7 +1444,7 @@ To https://github.com/sami-virtanen/zipf.git
 
 All four repositories are now synchronized.
 
-## Handling Conflicts in Pull Requests {#git-advanced-pr-conflict}
+## Handling Conflicts in Pull Requests
 
 Finally, suppose that Amira and Sami have decided to collaborate more extensively on this project. 
 Amira has added Sami as a collaborator to the GitHub repository.
@@ -1452,7 +1452,7 @@ Now Sami can make contributions directly to the repository,
 rather than via a pull request from a forked repository.
 
 Sami makes a change to `README.md` in the `master` branch on GitHub.
-Meanwhile, Amira is making a conflicting change to the same file in a different branch. When Amira creates her pull request, GitHub will detect the conflict and report that the PR cannot be merged automatically ([Figure](git-advanced-pr-conflict)).
+Meanwhile, Amira is making a conflicting change to the same file in a different branch. When Amira creates her pull request, GitHub will detect the conflict and report that the PR cannot be merged automatically ([Figure: - Pull Request Conflict](git-advanced-pr-conflict)).
 
 ```{figure} ../figures/git-advanced/pr-conflict.png
 :name: git-advanced-pr-conflict
@@ -1482,7 +1482,7 @@ or rearrange the project's contents so that they aren't stepping on each other's
 
 ## Summary 
 
-Branches and pull requests seem complicated at first, but they quickly become second nature. Everyone involved in the project can work at their own pace on what they want to, picking up others' changes and submitting their own whenever they want. More importantly, this workflow gives everyone has a chance to review each other's work. As we discuss in Section **TODO** ref(style-review),
+Branches and pull requests seem complicated at first, but they quickly become second nature. Everyone involved in the project can work at their own pace on what they want to, picking up others' changes and submitting their own whenever they want. More importantly, this workflow gives everyone has a chance to review each other's work. As we discuss in Section *[Checking style](https://software-engineering-group-up.github.io/RSE-UP/chapters/clean_readable_code.html#checking-style),
 doing reviews doesn't just prevent errors from creeping in:
 it is also an effective way to spread understanding and skills.
 
