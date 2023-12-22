@@ -136,7 +136,7 @@ We can tell we've done this if:
 2.  Data is described with rich metadata.
 3.  Metadata clearly and explicitly includes the identifier of the data it describes.
 4.  (Meta)data is registered or indexed in a searchable resource,
-    such as the data sharing platforms described in [Section](https://software-engineering-group-up.github.io/RSE-UP/chapters/tracking_provenance.html#where-to-archive-data).
+    such as the data sharing platforms described in [Section: where to archive data](https://software-engineering-group-up.github.io/RSE-UP/chapters/tracking_provenance.html#where-to-archive-data).
 
 #### Data should be *accessible*
 

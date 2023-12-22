@@ -571,7 +571,7 @@ To write a good bug report:
     discussed in Section [git advanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/git_advanced.html).
 
 An example of a well-written bug report with all of the components mentioned above
-is shown in [Figure](teams-bug-report).
+is shown in [Figure: bug report](teams-bug-report).
 
 ```{figure} ../figures/teams/bug-report.png
 :name: teams-bug-report
@@ -672,7 +672,7 @@ Adding labels to issues also helps us standardize a workflow for the project.
 Conventions about who can do what to issues with various labels,
 and who can change those labels, let us define a workflow like the one shown in [Figure teams lifecycle](teams-lifecycle).
 
-```{figure} ../figures/teams/lifecycle.pdf
+```{figure} ../figures/teams/lifecycle.png
 :name: teams-lifecycle
 Teams lifecycle
 ```

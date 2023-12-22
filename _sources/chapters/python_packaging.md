@@ -464,7 +464,7 @@ typing-extensions-3.7.4.3 zipp-3.4.0
 (The precise output of this command will change
 depending on which versions of our dependencies get installed.)
 
-We can now import our package in a script or a [Jupyter notebook(https://jupyter.org/) just as we would any other package.
+We can now import our package in a script or a [Jupyter notebook](https://jupyter.org/) just as we would any other package.
 For example, to use the function in `utilities`, we would write:
 
 ```python
