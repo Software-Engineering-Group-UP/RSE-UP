@@ -729,7 +729,7 @@ Changes to be committed:
 </div>
 <p>Adding all of our existing files this way is easy, but we can accidentally add things that should never be in version control,
 such as files containing passwords or other sensitive information.
-The output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> tells us that we can remove such files from the list of things to be saved using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">--cached</span></code>; we will practice this in <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/version_control.html#removing-before-saving">Exercise</a></p>
+The output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> tells us that we can remove such files from the list of things to be saved using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">--cached</span></code>; we will practice this in <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/version_control.html#removing-before-saving">Exercise on removing files</a></p>
 <blockquote>
 <div><p><strong>What to Save</strong></p>
 <p>We always want to save programs, manuscripts,
@@ -898,7 +898,7 @@ you’ll notice that the commits are shown in a pager program,
 as you saw in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/bash_basics.html#reading-the-manual">bash-basics-help</a> with manual pages.
 You can apply the same keystrokes to scroll through the log
 and exit the paging program.
-The plot we have made is shown in <a class="reference internal" href="#git-cmdline-initial-plot"><span class="std std-ref">Figure</span></a>.
+The plot we have made is shown in <a class="reference internal" href="#git-cmdline-initial-plot"><span class="std std-ref">Figure Git cmdline - initial plot</span></a>.
 It could be better:
 most of the visual space is devoted to a few very common words,
 which makes it hard to see what is happening with the other ten thousand or so words.</p>
@@ -1057,7 +1057,7 @@ To allow for this,
 Git has a special <strong>staging area</strong>
 where it keeps track of things
 that have been added to the current changeset but not yet committed
-(<a class="reference internal" href="#git-cmdline-staging-area"><span class="std std-ref">Figure</span></a>).</p>
+(<a class="reference internal" href="#git-cmdline-staging-area"><span class="std std-ref">Figure Git cmdline - staging area</span></a>).</p>
 </div></blockquote>
 <figure class="align-default" id="git-cmdline-staging-area">
 <img alt="../_images/staging-area.png" src="../_images/staging-area.png" />
@@ -1065,7 +1065,7 @@ that have been added to the current changeset but not yet committed
 <p><span class="caption-number">Fig. 10 </span><span class="caption-text">Git CMDline staging area</span><a class="headerlink" href="#git-cmdline-staging-area" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Let’s take a look at our new plot (<a class="reference internal" href="#git-cmdline-loglog-plot2"><span class="std std-ref">Figure</span></a>):</p>
+<p>Let’s take a look at our new plot (<a class="reference internal" href="#git-cmdline-loglog-plot2"><span class="std std-ref">Figure git cmdline - loglog plot #2</span></a>):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>bin/plotcounts.py<span class="w"> </span>results/dracula.csv<span class="w"> </span>--outfile
 <span class="w">  </span>results/dracula.png
 </pre></div>
@@ -1129,7 +1129,7 @@ by giving <code class="docutils literal notranslate"><span class="pre">git</span
 </div>
 <p>The Git commands we’ve covered so far (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>)
 represent the tasks you perform in a basic Git workflow in a local repository
-(<a class="reference internal" href="#git-remote"><span class="std std-ref">Figure</span></a> a).</p>
+(<a class="reference internal" href="#git-remote"><span class="std std-ref">Figure Git remote </span></a> a).</p>
 <figure class="align-default" id="git-remote">
 <img alt="../_images/git-remote.png" src="../_images/git-remote.png" />
 <figcaption>
@@ -1168,7 +1168,7 @@ do not add a README, <code class="docutils literal notranslate"><span class="pre
 we’ll discuss these additions in other chapters.</p>
 <p>Next, we need to connect our desktop repository with the one on GitHub.
 We do this by making the GitHub repository a <strong>remote</strong> of the local repository.
-The home page of our new repository on GitHub includes the string we need to identify it (<a class="reference internal" href="#git-cmdline-repo-link"><span class="std std-ref">Figure</span></a>).</p>
+The home page of our new repository on GitHub includes the string we need to identify it (<a class="reference internal" href="#git-cmdline-repo-link"><span class="std std-ref">Figure- Repo link</span></a>).</p>
 <figure class="align-default" id="git-cmdline-repo-link">
 <img alt="../_images/repo-link.png" src="../_images/repo-link.png" />
 <figcaption>
@@ -1226,7 +1226,7 @@ To https://github.com/amira-khan/zipf.git
  * [new branch]      master -&gt; master
 </pre></div>
 </div>
-<p>If we view our GitHub repository in the browser, it now includes all of our project files, along with all of the commits we have made so far (<a class="reference internal" href="#git-cmdline-history"><span class="std std-ref">Figure</span></a>).</p>
+<p>If we view our GitHub repository in the browser, it now includes all of our project files, along with all of the commits we have made so far (<a class="reference internal" href="#git-cmdline-history"><span class="std std-ref">Figure - Git cmdline history</span></a>).</p>
 <figure class="align-default" id="git-cmdline-history">
 <img alt="../_images/repo-history.png" src="../_images/repo-history.png" />
 <figcaption>
@@ -1257,7 +1257,7 @@ Because <code class="docutils literal notranslate"><span class="pre">git</span> 
 it’s used to view changes between local and remote versions.</p>
 </div></blockquote>
 <p>The Git commands we’ve covered in this section (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>)
-are the main tasks associated with incorporating remote repositories into your workflow (<span class="xref myst">Figure</span> b).</p>
+are the main tasks associated with incorporating remote repositories into your workflow (<span class="xref myst">Figure Git cmdline remote</span> b).</p>
 <blockquote>
 <div><p><strong>Amira’s Repository</strong></p>
 <p>Amira’s repository referenced in this section
@@ -1564,7 +1564,7 @@ nothing to commit, working tree clean
 </div>
 <p>We have restored the most recent commit. Since we didn’t commit the change that removed the line that calculates the inverse rank, that work is now lost:
 Git can only go back and forth between committed versions of files.</p>
-<p>This section has demonstrated a few different ways to view differences among versions, and to work with those changes (<span class="xref myst">Figure</span> c).
+<p>This section has demonstrated a few different ways to view differences among versions, and to work with those changes (<span class="xref myst">Figure Git cmdline - Remote</span> c).
 These commands can operate on either individual files or entire commits,
 and the behavior of them can sometimes differ based on your version of Git.
 Remember to reference documentation, and use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> frequently to understand your workflow.</p>

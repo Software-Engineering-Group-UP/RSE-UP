@@ -525,7 +525,7 @@ the build rule involving <code class="docutils literal notranslate"><span class=
 <span class="w">	</span>python<span class="w"> </span><span class="k">$(</span>PLOT<span class="k">)</span><span class="w"> </span>$&lt;<span class="w"> </span>--outfile<span class="w"> </span><span class="nv">$@</span>
 </pre></div>
 </div>
-<p>Update that build rule to include the new <code class="docutils literal notranslate"><span class="pre">--plotparams</span></code> option.
+<p>Update the build rule to include the new <code class="docutils literal notranslate"><span class="pre">--plotparams</span></code> option.
 Make sure <code class="docutils literal notranslate"><span class="pre">plotparams.yml</span></code> is added as a second prerequisite in the updated build rule
 so that the appropriate commands will be re-run if the plotting parameters change.</p>
 <p>Hint: We use the automatic variable <code class="docutils literal notranslate"><span class="pre">$&lt;</span></code> to access the first prerequisite,

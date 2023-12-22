@@ -478,7 +478,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-branch-based-workflow">A Branch-Based Workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-other-people-s-work">Using Other People’s Work</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests">Pull Requests</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-conflicts-in-pull-requests-git-advanced-pr-conflict">Handling Conflicts in Pull Requests {#git-advanced-pr-conflict}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-conflicts-in-pull-requests">Handling Conflicts in Pull Requests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keypoints">Keypoints</a></li>
 </ul>
@@ -601,7 +601,7 @@ $<span class="w"> </span>cat<span class="w"> </span>bin/plotcounts.py
     <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We used this version of <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> to display the word counts for <em>Dracula</em> on a log-log plot (<a class="reference internal" href="#git-cmdline-loglog-plot"><span class="std std-ref">Figure</span></a>).
+<p>We used this version of <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> to display the word counts for <em>Dracula</em> on a log-log plot (<a class="reference internal" href="#git-cmdline-loglog-plot"><span class="std std-ref">Figure: cmdline, loglog plot</span></a>).
 The relationship between word count and rank looked linear,
 but since the eye is easily fooled,
 we should fit a curve to the data.
@@ -678,7 +678,7 @@ the third most common appears a third as often, and so on.</p>
 </div></blockquote>
 <p>In other words
 the frequency of a word <span class="math notranslate nohighlight">\(f\)</span> is proportional to its inverse rank <span class="math notranslate nohighlight">\(r\)</span>:</p>
-<p><span class="math notranslate nohighlight">\( f \propto \frac{1}{r^\alpha} \)</span></p>
+<p><span class="math notranslate nohighlight">\( \large f \propto \frac{1}{r^\alpha} \)</span></p>
 <p>with a value of <span class="math notranslate nohighlight">\(\alpha\)</span> close to one.
 The reason <span class="math notranslate nohighlight">\(\alpha\)</span> must be close to one for Zipf’s Law to hold
 becomes clear if we include it in a modified version of the earlier definition:</p>
@@ -693,14 +693,14 @@ In general, when two variables <span class="math notranslate nohighlight">\(x\)<
 taking logarithms of both sides yields a linear relationship:</p>
 <p><span class="math notranslate nohighlight">\( \log(y) = \log(a) + b\log(x) \)</span></p>
 <p>Hence, plotting the variables on a log-log scale reveals this linear relationship. If Zipf’s Law holds, we should have</p>
-<p><span class="math notranslate nohighlight">\( r = cf^{\frac{-1}{\alpha}} \)</span></p>
+<p><span class="math notranslate nohighlight">\( \large r = cf^{\frac{-1}{\alpha}} \)</span></p>
 <p>where <span class="math notranslate nohighlight">\(c\)</span> is a constant of proportionality.
 The linear relationship between the log word frequency and log rank is then</p>
-<p><span class="math notranslate nohighlight">\( \log(r) = \log(c) - \frac{1}{\alpha}\log(f) \)</span></p>
+<p><span class="math notranslate nohighlight">\( \large \log(r) = \log(c) - \frac{1}{\alpha}\log(f) \)</span></p>
 <p>This suggests that the points on our log-log plot should fall on a straight  line with a slope of <span class="math notranslate nohighlight">\(- \tfrac{1}{\alpha}\)</span> and intercept <span class="math notranslate nohighlight">\(\log(c)\)</span>.
 To fit a line to our word count data we therefore need to estimate the value of <span class="math notranslate nohighlight">\(\alpha\)</span>; we’ll see later that <span class="math notranslate nohighlight">\(c\)</span> is completely defined.</p>
 <p>In order to determine the best method for estimating <span class="math notranslate nohighlight">\(\alpha\)</span>, we turn to <span id="id1">[<a class="reference internal" href="references.html#id53" title="Isabel Moreno-Sánchez, Francesc Font-Clos, and Álvaro Corral. Large-scale Analysis of Zipf's Law in English Texts. PLoS ONE, 11(1):e0147073, Jan 2016. doi:10.1371/journal.pone.0147073.">Moreno-Sánchez <em>et al.</em>, 2016</a>]</span>, which suggests using a method called <strong>maximum likelihood estimation</strong>. The likelihood function is the probability of our observed data
-as a function of the parameters in the statistical model that we assume generated it. We estimate the parameters in the model by choosing them to maximize this likelihood; computationally, it is often easier to minimize the negative log likelihood function. <span id="id2">[<a class="reference internal" href="references.html#id53" title="Isabel Moreno-Sánchez, Francesc Font-Clos, and Álvaro Corral. Large-scale Analysis of Zipf's Law in English Texts. PLoS ONE, 11(1):e0147073, Jan 2016. doi:10.1371/journal.pone.0147073.">Moreno-Sánchez <em>et al.</em>, 2016</a>]</span> define the likelihood using a parameter <span class="math notranslate nohighlight">\(\beta\)</span>, which is related to the <span class="math notranslate nohighlight">\(\alpha\)</span> parameter in our definition of Zipf’s Law through <span class="math notranslate nohighlight">\(\alpha = \tfrac{1}{\beta-1}\)</span>.
+as a function of the parameters in the statistical model that we assume generated it. We estimate the parameters in the model by choosing them to maximize this likelihood; computationally, it is often easier to minimize the negative log likelihood function. <span id="id2">[<a class="reference internal" href="references.html#id53" title="Isabel Moreno-Sánchez, Francesc Font-Clos, and Álvaro Corral. Large-scale Analysis of Zipf's Law in English Texts. PLoS ONE, 11(1):e0147073, Jan 2016. doi:10.1371/journal.pone.0147073.">Moreno-Sánchez <em>et al.</em>, 2016</a>]</span> define the likelihood using a parameter <span class="math notranslate nohighlight">\(\beta\)</span>, which is related to the <span class="math notranslate nohighlight">\(\alpha\)</span> parameter in our definition of Zipf’s Law through <span class="math notranslate nohighlight">\(\large \alpha = \tfrac{1}{\beta-1}\)</span>.
 Under their model, the value of <span class="math notranslate nohighlight">\(c\)</span> is the total number of unique words,
 or equivalently the largest value of the rank.</p>
 <p>Expressed as a Python function, the negative log likelihood function is:</p>
@@ -754,7 +754,7 @@ Again following &#64;More2016, we use Brent’s Method with (1 &lt; \beta \leq 4
 </pre></div>
 </div>
 <p>where the maximum word frequency rank corresponds to <span class="math notranslate nohighlight">\(c\)</span>, and <span class="math notranslate nohighlight">\(-1 / \alpha\)</span> the exponent in the power law. We have followed the <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">numpydoc</span></code></a> format for the detailed docstring
-in <code class="docutils literal notranslate"><span class="pre">plot_fit</span></code>—see Appendix <strong>TODO</strong> ref(documentation) for more information about docstring formats.</p>
+in <code class="docutils literal notranslate"><span class="pre">plot_fit</span></code>—see Chapter [documentation][<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/writing_documentation.html">https://software-engineering-group-up.github.io/RSE-UP/chapters/writing_documentation.html</a>] for more information about docstring formats.</p>
 </section>
 <section id="verifying-zipf-s-law">
 <h2>Verifying Zipf’s Law<a class="headerlink" href="#verifying-zipf-s-law" title="Permalink to this heading">#</a></h2>
@@ -861,7 +861,7 @@ and a new plot with a line fitted.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>alpha: 1.0866646252515038
 </pre></div>
 </div>
-<p>So according to our fit, the most frequent word will occur approximately <span class="math notranslate nohighlight">\(2^{1.1}=2.1\)</span> times as often as the second most frequent word, <span class="math notranslate nohighlight">\(3^{1.1}=3.3\)</span> times as often as the third most frequent word, and so on. <span class="xref myst">Figure</span> shows the plot.</p>
+<p>So according to our fit, the most frequent word will occur approximately <span class="math notranslate nohighlight">\(2^{1.1}=2.1\)</span> times as often as the second most frequent word, <span class="math notranslate nohighlight">\(3^{1.1}=3.3\)</span> times as often as the third most frequent word, and so on. <span class="xref myst">Figure: dracula fit</span> shows the plot.</p>
 <figure class="align-default" id="git-advanced-dracula-fit-png">
 <img alt="../_images/dracula-fit.png" src="../_images/dracula-fit.png" />
 <figcaption>
@@ -1390,7 +1390,7 @@ but \gref{forges}{forge} like Github, Gitlab, Bitbucket or selfhosted solutions 
 Suppose, for example, that Sami wants to contribute to the Zipf’s Law code that
 Amira is hosting on GitHub at <code class="docutils literal notranslate"><span class="pre">https://github.com/amira-khan/zipf</span></code>.
 Sami can go to that URL and click on the “Fork” button in the upper right corner
-(<a class="reference internal" href="#git-advanced-fork-button"><span class="std std-ref">Figure</span></a>).
+(<a class="reference internal" href="#git-advanced-fork-button"><span class="std std-ref">Figure: fork button</span></a>).
 GitHub immediately creates a copy of Amira’s repository within Sami’s account on GitHub’s own servers.</p>
 <figure class="align-default" id="git-advanced-fork-button">
 <img alt="../_images/fork-button.png" src="../_images/fork-button.png" />
@@ -1398,7 +1398,7 @@ GitHub immediately creates a copy of Amira’s repository within Sami’s accoun
 <p><span class="caption-number">Fig. 17 </span><span class="caption-text">Git Fork button</span><a class="headerlink" href="#git-advanced-fork-button" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>When the command completes, the setup on GitHub now looks like <a class="reference internal" href="#git-advanced-after-fork"><span class="std std-ref">Figure</span></a>.Nothing has happened yet on Sami’s own machine:
+<p>When the command completes, the setup on GitHub now looks like <a class="reference internal" href="#git-advanced-after-fork"><span class="std std-ref">Figure: after fork</span></a>.Nothing has happened yet on Sami’s own machine:
 the new repository exists only on GitHub.
 When Sami explores its history, they see that it contains all of the changes Amira made.</p>
 <figure class="align-default" id="git-advanced-after-fork">
@@ -1588,21 +1588,21 @@ To https://github.com/sami-virtanen/zipf.git
  * [new branch]      adding-email -&gt; adding-email
 </pre></div>
 </div>
-<p>When Sami goes to their GitHub repository in the browser, GitHub notices that they have just pushed a new branch and asks them if they want to create a pull request (<a class="reference internal" href="#git-advanced-after-sami-pushes"><span class="std std-ref">Figure</span></a>).</p>
+<p>When Sami goes to their GitHub repository in the browser, GitHub notices that they have just pushed a new branch and asks them if they want to create a pull request (<a class="reference internal" href="#git-advanced-after-sami-pushes"><span class="std std-ref">Figure: after push</span></a>).</p>
 <figure class="align-default" id="git-advanced-after-sami-pushes">
 <img alt="../_images/after-sami-pushes.png" src="../_images/after-sami-pushes.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 19 </span><span class="caption-text">Git after Push</span><a class="headerlink" href="#git-advanced-after-sami-pushes" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>When Sami clicks on the button, GitHub displays a page showing the default source and destination of the pull request and a pair of editable boxes for the pull request’s title and a longer comment (<a class="reference internal" href="#git-advanced-pull-request-start"><span class="std std-ref">Figure</span></a>).</p>
+<p>When Sami clicks on the button, GitHub displays a page showing the default source and destination of the pull request and a pair of editable boxes for the pull request’s title and a longer comment (<a class="reference internal" href="#git-advanced-pull-request-start"><span class="std std-ref">Figure: pull request start</span></a>).</p>
 <figure class="align-default" id="git-advanced-pull-request-start">
 <img alt="../_images/open-pull-request.png" src="../_images/open-pull-request.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 20 </span><span class="caption-text">Start a pull request</span><a class="headerlink" href="#git-advanced-pull-request-start" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>If they scroll down, Sami can see a summary of the changes that will be in the pull request (<a class="reference internal" href="#git-advanced-pull-request-summary"><span class="std std-ref">Figure</span></a>).</p>
+<p>If they scroll down, Sami can see a summary of the changes that will be in the pull request (<a class="reference internal" href="#git-advanced-pull-request-summary"><span class="std std-ref">Figure: pull request summary</span></a>).</p>
 <figure class="align-default" id="git-advanced-pull-request-summary">
 <img alt="../_images/open-pull-request-detail.png" src="../_images/open-pull-request-detail.png" />
 <figcaption>
@@ -1612,9 +1612,9 @@ To https://github.com/sami-virtanen/zipf.git
 <p>The top (title) box is autofilled with the previous commit message,
 so Sami adds an extended explanation to provide additional context
 before clicking on “Create Pull Request”
-(<a class="reference internal" href="#git-advanced-pull-request-fill-in"><span class="std std-ref">Figure</span></a>).
+(<a class="reference internal" href="#git-advanced-pull-request-fill-in"><span class="std std-ref">Figure: fill in pull request</span></a>).
 When they do, GitHub displays a page showing the new pull request,
-which has a unique serial number (<a class="reference internal" href="#git-advanced-pull-request-new"><span class="std std-ref">Figure</span></a>).
+which has a unique serial number (<a class="reference internal" href="#git-advanced-pull-request-new"><span class="std std-ref">Figure :New pull request</span></a>).
 Note that this pull request is displayed in Amira’s repository rather than Sami’s, since it is Amira’s repository that will be affected if the pull request is merged.</p>
 <figure class="align-default" id="git-advanced-pull-request-fill-in">
 <img alt="../_images/fill-in-pull-request.png" src="../_images/fill-in-pull-request.png" />
@@ -1629,11 +1629,11 @@ Note that this pull request is displayed in Amira’s repository rather than Sam
 </figcaption>
 </figure>
 <p>Amira’s repository now shows a new pull request
-(<a class="reference internal" href="#git-advanced-pull-request-viewing"><span class="std std-ref">Figure</span></a>).
+(<a class="reference internal" href="#git-advanced-pull-request-viewing"><span class="std std-ref">Figure: view Pull requests</span></a>).
 Clicking on the “Pull requests” tab brings up a list of PRs
-(<a class="reference internal" href="#git-advanced-pull-request-list"><span class="std std-ref">Figure</span></a>)
+(<a class="reference internal" href="#git-advanced-pull-request-list"><span class="std std-ref">Figure: list pull requests</span></a>)
 and clicking on the pull request link itself displays its details
-(<a class="reference internal" href="#git-advanced-pull-request-details"><span class="std std-ref">Figure</span></a>).
+(<a class="reference internal" href="#git-advanced-pull-request-details"><span class="std std-ref">Figure: pull request details</span></a>).
 Sami and Amira can both see and interact with these pages,
 though only Amira has permission to merge.</p>
 <figure class="align-default" id="git-advanced-pull-request-viewing">
@@ -1656,7 +1656,7 @@ though only Amira has permission to merge.</p>
 </figure>
 <p>Since there are no conflicts,GitHub will let Amira merge the PR immediately using the “Merge pull request” button. She could also discard or reject it without merging using the “Close pull request” button. Instead,
 she clicks on the “Files changed” tab to see what Sami has changed
-(<a class="reference internal" href="#git-advanced-pull-request-changes"><span class="std std-ref">Figure</span></a>).</p>
+(<a class="reference internal" href="#git-advanced-pull-request-changes"><span class="std std-ref">Figure: Pull request - request changes</span></a>).</p>
 <figure class="align-default" id="git-advanced-pull-request-changes">
 <img alt="../_images/pr-changes.png" src="../_images/pr-changes.png" />
 <figcaption>
@@ -1664,10 +1664,10 @@ she clicks on the “Files changed” tab to see what Sami has changed
 </figcaption>
 </figure>
 <p>If she moves her mouse over particular lines, a white-on-blue cross appears near the numbers to indicate that she can add comments
-(<a class="reference internal" href="#git-advanced-pull-request-comment-marker"><span class="std std-ref">Figure</span></a>).
+(<a class="reference internal" href="#git-advanced-pull-request-comment-marker"><span class="std std-ref">Figure: Pull request - comment marker</span></a>).
 She clicks on the marker beside her own name and writes a comment:
-She only wants to make one comment rather than write a lengthier multi-comment review, so she chooses “Add single comment” (<a class="reference internal" href="#git-advanced-pull-request-write-comment"><span class="std std-ref">Figure</span></a>).
-GitHub redisplays the page with her remarks inserted (<a class="reference internal" href="#git-advanced-pull-request-pr-with-comment"><span class="std std-ref">Figure</span></a>).</p>
+She only wants to make one comment rather than write a lengthier multi-comment review, so she chooses “Add single comment” (<a class="reference internal" href="#git-advanced-pull-request-write-comment"><span class="std std-ref">Figure: Pull request - write a comment</span></a>).
+GitHub redisplays the page with her remarks inserted (<a class="reference internal" href="#git-advanced-pull-request-pr-with-comment"><span class="std std-ref">Figure: Pull Request with comment</span></a>).</p>
 <figure class="align-default" id="git-advanced-pull-request-comment-marker">
 <img alt="../_images/pr-comment-marker.png" src="../_images/pr-comment-marker.png" />
 <figcaption>
@@ -1689,10 +1689,10 @@ GitHub redisplays the page with her remarks inserted (<a class="reference intern
 <p>While Amira is working, GitHub has been emailing notifications to both Sami and Amira. When Sami clicks on the link in their email notification, it takes them to the PR and shows Amira’s comment. Sami changes <code class="docutils literal notranslate"><span class="pre">README.md</span></code>, commits, and pushes, but does <em>not</em> create a new pull request or do anything to the existing one.
 As explained above, a PR is a note asking that two branches be merged,
 so if either end of the merge changes, the PR updates automatically.</p>
-<p>Sure enough, when Amira looks at the PR again a few moments later she sees Sami’s changes (<a class="reference internal" href="#git-advanced-pull-request-pr-with-fix"><span class="std std-ref">Figure</span></a>).
+<p>Sure enough, when Amira looks at the PR again a few moments later she sees Sami’s changes (<a class="reference internal" href="#git-advanced-pull-request-pr-with-fix"><span class="std std-ref">Figure: Pull Request with fix</span></a>).
 Satisfied, she goes back to the “Conversation” tab and clicks on “Merge”.
 The icon at the top of the PR’s page changes text and color to show that the merge was successful
-(<a class="reference internal" href="#git-advanced-pull-request-successful-merge"><span class="std std-ref">Figure</span></a>).</p>
+(<a class="reference internal" href="#git-advanced-pull-request-successful-merge"><span class="std std-ref">Figure: - Pull Request - succesfull merge</span></a>).</p>
 <figure class="align-default" id="git-advanced-pull-request-pr-with-fix">
 <img alt="../_images/pr-with-fix.png" src="../_images/pr-with-fix.png" />
 <figcaption>
@@ -1749,14 +1749,14 @@ To https://github.com/sami-virtanen/zipf.git
 </div>
 <p>All four repositories are now synchronized.</p>
 </section>
-<section id="handling-conflicts-in-pull-requests-git-advanced-pr-conflict">
-<h2>Handling Conflicts in Pull Requests {#git-advanced-pr-conflict}<a class="headerlink" href="#handling-conflicts-in-pull-requests-git-advanced-pr-conflict" title="Permalink to this heading">#</a></h2>
+<section id="handling-conflicts-in-pull-requests">
+<h2>Handling Conflicts in Pull Requests<a class="headerlink" href="#handling-conflicts-in-pull-requests" title="Permalink to this heading">#</a></h2>
 <p>Finally, suppose that Amira and Sami have decided to collaborate more extensively on this project.
 Amira has added Sami as a collaborator to the GitHub repository.
 Now Sami can make contributions directly to the repository,
 rather than via a pull request from a forked repository.</p>
 <p>Sami makes a change to <code class="docutils literal notranslate"><span class="pre">README.md</span></code> in the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch on GitHub.
-Meanwhile, Amira is making a conflicting change to the same file in a different branch. When Amira creates her pull request, GitHub will detect the conflict and report that the PR cannot be merged automatically (<a class="reference internal" href="#git-advanced-pr-conflict"><span class="std std-ref">Figure</span></a>).</p>
+Meanwhile, Amira is making a conflicting change to the same file in a different branch. When Amira creates her pull request, GitHub will detect the conflict and report that the PR cannot be merged automatically (<a class="reference internal" href="#git-advanced-pr-conflict"><span class="std std-ref">Figure: - Pull Request Conflict</span></a>).</p>
 <figure class="align-default" id="git-advanced-pr-conflict">
 <img alt="../_images/pr-conflict.png" src="../_images/pr-conflict.png" />
 <figcaption>
@@ -1783,7 +1783,7 @@ or rearrange the project’s contents so that they aren’t stepping on each oth
 </section>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
-<p>Branches and pull requests seem complicated at first, but they quickly become second nature. Everyone involved in the project can work at their own pace on what they want to, picking up others’ changes and submitting their own whenever they want. More importantly, this workflow gives everyone has a chance to review each other’s work. As we discuss in Section <strong>TODO</strong> ref(style-review),
+<p>Branches and pull requests seem complicated at first, but they quickly become second nature. Everyone involved in the project can work at their own pace on what they want to, picking up others’ changes and submitting their own whenever they want. More importantly, this workflow gives everyone has a chance to review each other’s work. As we discuss in Section *<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/clean_readable_code.html#checking-style">Checking style</a>,
 doing reviews doesn’t just prevent errors from creeping in:
 it is also an effective way to spread understanding and skills.</p>
 </section>
@@ -1877,7 +1877,7 @@ instead, they highlight conflicts that need to be resolved.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-branch-based-workflow">A Branch-Based Workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-other-people-s-work">Using Other People’s Work</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests">Pull Requests</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-conflicts-in-pull-requests-git-advanced-pr-conflict">Handling Conflicts in Pull Requests {#git-advanced-pr-conflict}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-conflicts-in-pull-requests">Handling Conflicts in Pull Requests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keypoints">Keypoints</a></li>
 </ul>
