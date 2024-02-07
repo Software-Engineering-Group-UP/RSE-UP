@@ -33,7 +33,7 @@ But Zipf's law isn't limited to words. It pops up in surprising places! Here are
 
 This can be seen in the following graph:
 
-```{figure} ../figures/Zipf_30wiki_en_labels.png
+```{figure} ../figures/zipf/Zipf_30wiki_en_labels.png
 :name Zipfs Law visusalized
 
 ```
