@@ -12,12 +12,44 @@ how we are going to organize everything.
 We will soon have a number of books from [Project Gutenberg](https://www.gutenberg.org/) in the form of a series of text files, plots we've produced showing the word frequency distribution in each book, as well as the code we've written to produce those plots and to document and release our software package.
 If we aren't organized from the start, things could get messy later on.
 
+## Zipf's Law:
+Imagine a giant bowl filled with words from all your favorite books. [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27s_law), named after linguist George Kingsley Zipf, predicts a curious pattern within this jumble. As you scoop out the most used words, one by one, you'll find something fascinating: a rank-frequency relationship.
+
+```{figure} ../figures/zipf/George_Kingsley_Zipf_1917.jpg 
+:name  George Kingsley Zipf {cite:p}`1184354673`
+```
+
+The most frequent word will appear roughly twice as often as the second most frequent word, three times as often as the third, and so on. This means a small number of words ("the," "of," "and") dominate the word soup, while countless others appear rarely.
+
+Mathematically, Zipf's law looks like this: frequency of a word $∝$ 1/rank. (Remember, "$∝$" means "proportional to.") So, ranking the words by frequency and plotting them on a graph creates a characteristic curved line (with axes on a log scale), showing the sharp drop-off in usage.
+
+But Zipf's law isn't limited to words. It pops up in surprising places! Here are some examples:
+
+- City sizes: The population of the second-largest city is roughly half that of the largest, the third is a third, and so on.
+
+- Website hits: The most popular page on a website gets far more visits than the second, and so on.
+
+- Income distribution: A small number of people hold a large chunk of wealth, while most have less. (This connects to the "Pareto principle", also known as the 80/20 rule.)
+
+This can be seen in the following graph:
+
+```{figure} ../figures/Zipf_30wiki_en_labels.png
+:name Zipfs Law visusalized
+
+```
+
+While not perfect, Zipf's law offers a powerful tool for understanding various systems. It tells us that few things are extremely common, while many things are rare. This pattern has implications for language evolution, information retrieval, economic analysis, and even urban planning.
+
+However, it's important to remember that Zipf's law is an empirical observation, not an ironclad rule. Deviations occur, and other factors can influence frequency distributions. Still, its ubiquity and simplicity make it a valuable lens for exploring the hidden order in seemingly random data.
+
+So, the next time you pick up a book, think of Zipf's law at work. The words you see most often are just the tip of the iceberg, reflecting a deeper pattern about how information is distributed in our world.
+
 ## Project Structure
 
 Project organization is like a diet:
 everyone has one, it's just a question of whether it's healthy or not.
 In the case of a project, "healthy" means that people can find what they need and do what they want without becoming frustrated.
-This depends on how well organized the project is and how familiar people are with that style of organization.
+This depends on how well organized the project is and how familiar people are  with that style of organization.
 
 As with good coding style, small pieces in predictable places with readable names are easier to find and use than large chunks that vary from project to project and have names like "stuff".
 We can be messy while we are working and then tidy up later, but experience teaches that we will be more productive if we make tidiness a habit.

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Bash Exercises &#8212; RSE-ING</title>
   
@@ -19,50 +18,46 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/book.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css?v=c89437f7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/bash';</script>
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/bash.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -78,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -122,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -154,7 +151,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">RSE-ING</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -556,16 +564,16 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="bash-exercises">
-<h1>Bash Exercises<a class="headerlink" href="#bash-exercises" title="Permalink to this heading">#</a></h1>
+<h1>Bash Exercises<a class="headerlink" href="#bash-exercises" title="Link to this heading">#</a></h1>
 <p>These exercise should help you either reviewing or learning new shell commands. The exercises can be done localy on Linux, Mac or Windows 11 bash console.
 You can also open this Jupyter Notebook directly in Binder or google collab and do the exercises. In this case be aware that the system runs on linux, which is important when using paths.</p>
 <p>Linux and mac use <code class="docutils literal notranslate"><span class="pre">/</span></code> instead of <code class="docutils literal notranslate"><span class="pre">\</span></code> as an example.</p>
 <p>But First we go through a quick explanation on how to use <strong>BASH</strong> in a jupyter notebook on a linux or mac system.</p>
 <section id="using-bash-in-jupyter-notebook">
-<h2>Using Bash in Jupyter Notebook<a class="headerlink" href="#using-bash-in-jupyter-notebook" title="Permalink to this heading">#</a></h2>
+<h2>Using Bash in Jupyter Notebook<a class="headerlink" href="#using-bash-in-jupyter-notebook" title="Link to this heading">#</a></h2>
 <p>Depending on what system you use it is important to first figure out the current path on the file system, for that run the next cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -640,23 +648,23 @@ echo $RAND
 </div>
 </section>
 <section id="basic-exercises">
-<h2>Basic Exercises<a class="headerlink" href="#basic-exercises" title="Permalink to this heading">#</a></h2>
+<h2>Basic Exercises<a class="headerlink" href="#basic-exercises" title="Link to this heading">#</a></h2>
 <p>The exercises below involve creating and moving new files, as well as considering hypothetical files.
 Please note that if you create or move any files or directories in your Zipf’s Law project, you may want to reorganize your files following the outline at the beginning of the next chapter.
 If you accidentally delete necessary files, you can start with a fresh copy of the data files by following the instructions in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/01/1_getting_started.html#downloading-the-data">1 getting started</a>.</p>
 <section id="exploring-more-ls-flags">
-<h3>1 Exploring more <code class="docutils literal notranslate"><span class="pre">ls</span></code> flags<a class="headerlink" href="#exploring-more-ls-flags" title="Permalink to this heading">#</a></h3>
+<h3>1 Exploring more <code class="docutils literal notranslate"><span class="pre">ls</span></code> flags<a class="headerlink" href="#exploring-more-ls-flags" title="Link to this heading">#</a></h3>
 <p>What does the command <code class="docutils literal notranslate"><span class="pre">ls</span></code> do when used with the <code class="docutils literal notranslate"><span class="pre">-l</span></code> option?</p>
 <p>What happens if you use two options at the same time, such as <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span> <span class="pre">-h</span></code>?</p>
 </section>
 <section id="listing-recursively-and-by-time">
-<h3>2 Listing recursively and by time<a class="headerlink" href="#listing-recursively-and-by-time" title="Permalink to this heading">#</a></h3>
+<h3>2 Listing recursively and by time<a class="headerlink" href="#listing-recursively-and-by-time" title="Link to this heading">#</a></h3>
 <p>The command <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-R</span></code> lists the contents of directories recursively, which means the subdirectories, sub-subdirectories, and so on at each level are listed.
 The command <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-t</span></code> lists things by time of last change, with most recently changed files or directories first.</p>
 <p>In what order does <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-R</span> <span class="pre">-t</span></code> display things? Hint: <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code> uses a long listing format to view timestamps.</p>
 </section>
 <section id="absolute-and-relative-paths">
-<h3>3 Absolute and relative paths<a class="headerlink" href="#absolute-and-relative-paths" title="Permalink to this heading">#</a></h3>
+<h3>3 Absolute and relative paths<a class="headerlink" href="#absolute-and-relative-paths" title="Link to this heading">#</a></h3>
 <p>Starting from your current directory, which of the following commands could you use to navigate to your home directory,
 which is <code class="docutils literal notranslate"><span class="pre">/Users/*YOUR-USERNAME</span></code> or on Linux and Mac <code class="docutils literal notranslate"><span class="pre">/home/*YOUR-USERNAME*</span></code> ?</p>
 <ol class="arabic simple">
@@ -673,7 +681,7 @@ which is <code class="docutils literal notranslate"><span class="pre">/Users/*YO
 </ol>
 </section>
 <section id="relative-path-resolution">
-<h3>4 Relative path resolution<a class="headerlink" href="#relative-path-resolution" title="Permalink to this heading">#</a></h3>
+<h3>4 Relative path resolution<a class="headerlink" href="#relative-path-resolution" title="Link to this heading">#</a></h3>
 <p>Using the filesystem shown below,
 if <code class="docutils literal notranslate"><span class="pre">pwd</span></code> displays <code class="docutils literal notranslate"><span class="pre">/Users/sami</span></code>, what will <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">../backup</span></code> display?</p>
 <ol class="arabic simple">
@@ -685,7 +693,7 @@ if <code class="docutils literal notranslate"><span class="pre">pwd</span></code
 <p><img alt="Filesystem/exercise" src="../_images/exercise-filesystem.png" /></p>
 </section>
 <section id="ls-reading-comprehension">
-<h3>5 <code class="docutils literal notranslate"><span class="pre">ls</span></code> reading comprehension<a class="headerlink" href="#ls-reading-comprehension" title="Permalink to this heading">#</a></h3>
+<h3>5 <code class="docutils literal notranslate"><span class="pre">ls</span></code> reading comprehension<a class="headerlink" href="#ls-reading-comprehension" title="Link to this heading">#</a></h3>
 <p>Using the filesystem shown above, if <code class="docutils literal notranslate"><span class="pre">pwd</span></code> displays <code class="docutils literal notranslate"><span class="pre">/Users/backup</span></code>, and <code class="docutils literal notranslate"><span class="pre">-r</span></code> tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> to display things in reverse order, what command(s) will result in the following output:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>doc/<span class="w"> </span>data/<span class="w"> </span>analysis/
 </pre></div>
@@ -697,17 +705,17 @@ if <code class="docutils literal notranslate"><span class="pre">pwd</span></code
 </ol>
 </section>
 <section id="creating-files-a-different-way">
-<h3>6 Creating files a different way<a class="headerlink" href="#creating-files-a-different-way" title="Permalink to this heading">#</a></h3>
+<h3>6 Creating files a different way<a class="headerlink" href="#creating-files-a-different-way" title="Link to this heading">#</a></h3>
 <p>What happens when you execute <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">my_file.txt</span></code>?  (Hint: use <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code> to find information about the file)</p>
 <p>When might you want to create a file this way?</p>
 </section>
 <section id="using-rm-safely">
-<h3>7 Using <code class="docutils literal notranslate"><span class="pre">rm</span></code> safely<a class="headerlink" href="#using-rm-safely" title="Permalink to this heading">#</a></h3>
+<h3>7 Using <code class="docutils literal notranslate"><span class="pre">rm</span></code> safely<a class="headerlink" href="#using-rm-safely" title="Link to this heading">#</a></h3>
 <p>What would happen if you executed <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-i</span> <span class="pre">my_file.txt</span></code> on the file created in the previous exercise?</p>
 <p>Why would we want this protection when using <code class="docutils literal notranslate"><span class="pre">rm</span></code>?</p>
 </section>
 <section id="moving-to-the-current-folder">
-<h3>8 Moving to the current folder<a class="headerlink" href="#moving-to-the-current-folder" title="Permalink to this heading">#</a></h3>
+<h3>8 Moving to the current folder<a class="headerlink" href="#moving-to-the-current-folder" title="Link to this heading">#</a></h3>
 <p>After running the following commands,
 Amira realizes that she put the (hypothetical) files <code class="docutils literal notranslate"><span class="pre">chapter1.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">chapter2.txt</span></code> into the wrong folder:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-F
@@ -734,7 +742,7 @@ dracula.txt			sense_and_sensibility.txt
 </div>
 </section>
 <section id="renaming-files">
-<h3>9 Renaming files<a class="headerlink" href="#renaming-files" title="Permalink to this heading">#</a></h3>
+<h3>9 Renaming files<a class="headerlink" href="#renaming-files" title="Link to this heading">#</a></h3>
 <p>Suppose that you created a plain-text file in your current directory to contain a list of the statistical tests you will need to do to analyze your data, and named it: <code class="docutils literal notranslate"><span class="pre">statstics.txt</span></code></p>
 <p>After creating and saving this file you realize you misspelled the filename! You want to correct the mistake, which of the following commands could you use to do so?</p>
 <ol class="arabic simple">
@@ -745,7 +753,7 @@ dracula.txt			sense_and_sensibility.txt
 </ol>
 </section>
 <section id="moving-and-copying">
-<h3>10 Moving and copying<a class="headerlink" href="#moving-and-copying" title="Permalink to this heading">#</a></h3>
+<h3>10 Moving and copying<a class="headerlink" href="#moving-and-copying" title="Link to this heading">#</a></h3>
 <p>Assuming the following hypothetical files, what is the output of the closing <code class="docutils literal notranslate"><span class="pre">ls</span></code> command in the sequence shown below?</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">pwd</span>
 </pre></div>
@@ -773,7 +781,7 @@ $<span class="w"> </span>ls
 </ol>
 </section>
 <section id="copy-with-multiple-filenames">
-<h3>11 Copy with multiple filenames<a class="headerlink" href="#copy-with-multiple-filenames" title="Permalink to this heading">#</a></h3>
+<h3>11 Copy with multiple filenames<a class="headerlink" href="#copy-with-multiple-filenames" title="Link to this heading">#</a></h3>
 <p>This exercise explores how <code class="docutils literal notranslate"><span class="pre">cp</span></code> responds when attempting to copy multiple things.</p>
 <p>What does <code class="docutils literal notranslate"><span class="pre">cp</span></code> do when given several filenames followed by a directory name?</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>backup
@@ -786,7 +794,7 @@ $<span class="w"> </span>cp<span class="w"> </span>dracula.txt<span class="w"> <
 </div>
 </section>
 <section id="list-filenames-matching-a-pattern">
-<h3>12 List filenames matching a pattern<a class="headerlink" href="#list-filenames-matching-a-pattern" title="Permalink to this heading">#</a></h3>
+<h3>12 List filenames matching a pattern<a class="headerlink" href="#list-filenames-matching-a-pattern" title="Link to this heading">#</a></h3>
 <p>When run in the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory of your project directory, which <code class="docutils literal notranslate"><span class="pre">ls</span></code> command(s) will produce this output?</p>
 <p><code class="docutils literal notranslate"><span class="pre">jane_eyre.txt</span>&#160;&#160; <span class="pre">sense_and_sensibility.txt</span></code></p>
 <ol class="arabic simple">
@@ -797,7 +805,7 @@ $<span class="w"> </span>cp<span class="w"> </span>dracula.txt<span class="w"> <
 </ol>
 </section>
 <section id="organizing-directories-and-files">
-<h3>13 Organizing directories and files<a class="headerlink" href="#organizing-directories-and-files" title="Permalink to this heading">#</a></h3>
+<h3>13 Organizing directories and files<a class="headerlink" href="#organizing-directories-and-files" title="Link to this heading">#</a></h3>
 <p>Amira is working on a project and she sees that her files aren’t very well organized:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-F
 </pre></div>
@@ -821,7 +829,7 @@ $<span class="w"> </span>cp<span class="w"> </span>dracula.txt<span class="w"> <
 </div>
 </section>
 <section id="reproduce-a-directory-structure">
-<h3>14 Reproduce a directory structure<a class="headerlink" href="#reproduce-a-directory-structure" title="Permalink to this heading">#</a></h3>
+<h3>14 Reproduce a directory structure<a class="headerlink" href="#reproduce-a-directory-structure" title="Link to this heading">#</a></h3>
 <p>You’re starting a new analysis, and would like to duplicate the directory structure from your previous experiment so you can add new data.</p>
 <p>Assume that the previous experiment is in a folder called <code class="docutils literal notranslate"><span class="pre">2023-05-18</span></code>, which contains a <code class="docutils literal notranslate"><span class="pre">data</span></code> folder that in turn contains folders named <code class="docutils literal notranslate"><span class="pre">raw</span></code> and <code class="docutils literal notranslate"><span class="pre">processed</span></code> that contain data files.  The goal is to copy the folder structure of <code class="docutils literal notranslate"><span class="pre">2023-05-18/data</span></code> into a folder called <code class="docutils literal notranslate"><span class="pre">2023-05-20</span></code> so that your final directory structure looks like this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">	</span><span class="m">2024</span>-05-20/
@@ -861,7 +869,7 @@ $<span class="w"> </span>mkdir<span class="w"> </span>raw<span class="w"> </span
 </div>
 </section>
 <section id="wildcard-expressions">
-<h3>15 Wildcard expressions<a class="headerlink" href="#wildcard-expressions" title="Permalink to this heading">#</a></h3>
+<h3>15 Wildcard expressions<a class="headerlink" href="#wildcard-expressions" title="Link to this heading">#</a></h3>
 <p>Wildcard expressions can be very complex, but you can sometimes write them in ways that only use simple syntax, at the expense of being a bit more verbose.
 In your <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory, the wildcard expression <code class="docutils literal notranslate"><span class="pre">[st]*.txt</span></code> matches all files beginning with <code class="docutils literal notranslate"><span class="pre">s</span></code> or <code class="docutils literal notranslate"><span class="pre">t</span></code> and ending with <code class="docutils literal notranslate"><span class="pre">.txt</span></code>.</p>
 <p>Imagine you forgot about this.</p>
@@ -874,7 +882,7 @@ where the original one would not?</p></li>
 </ol>
 </section>
 <section id="removing-unneeded-files">
-<h3>16 Removing unneeded files<a class="headerlink" href="#removing-unneeded-files" title="Permalink to this heading">#</a></h3>
+<h3>16 Removing unneeded files<a class="headerlink" href="#removing-unneeded-files" title="Link to this heading">#</a></h3>
 <p>Suppose you want to delete your processed data files, and only keep your raw files and processing script to save storage.
 The raw files end in <code class="docutils literal notranslate"><span class="pre">.txt</span></code> and the processed files end in <code class="docutils literal notranslate"><span class="pre">.csv</span></code>.</p>
 <p>Which of the following would remove all the processed data files, and <em>only</em> the processed data files?</p>
@@ -886,15 +894,15 @@ The raw files end in <code class="docutils literal notranslate"><span class="pre
 </ol>
 </section>
 <section id="other-wildcards">
-<h3>17 Other wildcards<a class="headerlink" href="#other-wildcards" title="Permalink to this heading">#</a></h3>
+<h3>17 Other wildcards<a class="headerlink" href="#other-wildcards" title="Link to this heading">#</a></h3>
 <p>The shell provides several wildcards beyond the widely used <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
 <p>To explore them, explain in plain language what (hypothetical) files the expression <code class="docutils literal notranslate"><span class="pre">novel-????-[ab]*.{txt,pdf}</span></code> matches and why.</p>
 </section>
 </section>
 <section id="bash-tool-exercises">
-<h2>BASH Tool Exercises<a class="headerlink" href="#bash-tool-exercises" title="Permalink to this heading">#</a></h2>
+<h2>BASH Tool Exercises<a class="headerlink" href="#bash-tool-exercises" title="Link to this heading">#</a></h2>
 <section id="what-does-mean">
-<h3>1 What does <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> mean?<a class="headerlink" href="#what-does-mean" title="Permalink to this heading">#</a></h3>
+<h3>1 What does <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> mean?<a class="headerlink" href="#what-does-mean" title="Link to this heading">#</a></h3>
 <p>We have seen the use of <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, but there is a similar operator <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> which works slightly differently.
 We’ll learn about the differences between these two operators by printing some strings.
 We can use the <code class="docutils literal notranslate"><span class="pre">echo</span></code> command to print strings as shown below:</p>
@@ -915,7 +923,7 @@ We can use the <code class="docutils literal notranslate"><span class="pre">echo
 <p>Hint: Try executing each command twice in a row and then examining the output files.</p>
 </section>
 <section id="appending-data">
-<h3>2 Appending data<a class="headerlink" href="#appending-data" title="Permalink to this heading">#</a></h3>
+<h3>2 Appending data<a class="headerlink" href="#appending-data" title="Link to this heading">#</a></h3>
 <p>Given the following commands, what will be included in the file <code class="docutils literal notranslate"><span class="pre">extracted.txt</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">3</span><span class="w"> </span>dracula.txt<span class="w"> </span>&gt;<span class="w"> </span>extracted.txt
 $<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>dracula.txt<span class="w"> </span>&gt;&gt;<span class="w"> </span>extracted.txt
@@ -929,7 +937,7 @@ $<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><
 </ol>
 </section>
 <section id="piping-commands">
-<h3>3 Piping commands<a class="headerlink" href="#piping-commands" title="Permalink to this heading">#</a></h3>
+<h3>3 Piping commands<a class="headerlink" href="#piping-commands" title="Link to this heading">#</a></h3>
 <p>In our current directory, we want to find the 3 files which have the least number of lines.</p>
 <p>Which command listed below would work?</p>
 <ol class="arabic simple">
@@ -940,7 +948,7 @@ $<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><
 </ol>
 </section>
 <section id="why-does-uniq-only-remove-adjacent-duplicates">
-<h3>4 Why does <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only remove adjacent duplicates?<a class="headerlink" href="#why-does-uniq-only-remove-adjacent-duplicates" title="Permalink to this heading">#</a></h3>
+<h3>4 Why does <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only remove adjacent duplicates?<a class="headerlink" href="#why-does-uniq-only-remove-adjacent-duplicates" title="Link to this heading">#</a></h3>
 <p>The command <code class="docutils literal notranslate"><span class="pre">uniq</span></code> removes adjacent duplicated lines from its input. Consider a hypothetical file <code class="docutils literal notranslate"><span class="pre">genres.txt</span></code> containing the following data:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>science fiction
 fantasy
@@ -962,7 +970,7 @@ science fiction
 <p>What other command could you combine with it in a pipe to remove all duplicated lines?</p>
 </section>
 <section id="pipe-reading-comprehension">
-<h3>5 Pipe reading comprehension<a class="headerlink" href="#pipe-reading-comprehension" title="Permalink to this heading">#</a></h3>
+<h3>5 Pipe reading comprehension<a class="headerlink" href="#pipe-reading-comprehension" title="Link to this heading">#</a></h3>
 <p>A file called <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> contains a list of book titles and publication years:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Dracula,1897
 Frankenstein,1818
@@ -982,7 +990,7 @@ Wuthering Heights,1847
 <p>Hint: build the pipeline up one command at a time to test your understanding</p>
 </section>
 <section id="pipe-construction">
-<h3>6 Pipe construction<a class="headerlink" href="#pipe-construction" title="Permalink to this heading">#</a></h3>
+<h3>6 Pipe construction<a class="headerlink" href="#pipe-construction" title="Link to this heading">#</a></h3>
 <p>For the file <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> from the previous exercise, consider the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span>,<span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span>titles.txt
 </pre></div>
@@ -990,7 +998,7 @@ Wuthering Heights,1847
 <p>What does the <code class="docutils literal notranslate"><span class="pre">cut</span></code> command (and its options) accomplish?</p>
 </section>
 <section id="which-pipe">
-<h3>7 Which pipe?<a class="headerlink" href="#which-pipe" title="Permalink to this heading">#</a></h3>
+<h3>7 Which pipe?<a class="headerlink" href="#which-pipe" title="Link to this heading">#</a></h3>
 <p>Consider the same <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> from the previous exercises.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">uniq</span></code> command has a <code class="docutils literal notranslate"><span class="pre">-c</span></code> option which gives a count of the number of times a line occurs in its input.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> was in your working directory, what command would you use to produce a table that shows the total count of each publication year in the file?</p>
@@ -1003,7 +1011,7 @@ Wuthering Heights,1847
 </ol>
 </section>
 <section id="doing-a-dry-run">
-<h3>8 Doing a dry run<a class="headerlink" href="#doing-a-dry-run" title="Permalink to this heading">#</a></h3>
+<h3>8 Doing a dry run<a class="headerlink" href="#doing-a-dry-run" title="Link to this heading">#</a></h3>
 <p>A loop is a way to do many things at once—or to make many mistakes at once if it does the wrong thing. One way to check what a loop <em>would</em> do is to <code class="docutils literal notranslate"><span class="pre">echo</span></code> the commands it would run instead of actually running them.</p>
 <p>Suppose we want to preview the commands the following loop will execute without actually running those commands (<code class="docutils literal notranslate"><span class="pre">analyze</span></code> is a hypothetical command):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
@@ -1028,7 +1036,7 @@ Wuthering Heights,1847
 </div>
 </section>
 <section id="variables-in-loops">
-<h3>9 Variables in loops<a class="headerlink" href="#variables-in-loops" title="Permalink to this heading">#</a></h3>
+<h3>9 Variables in loops<a class="headerlink" href="#variables-in-loops" title="Link to this heading">#</a></h3>
 <p>Given the files in <code class="docutils literal notranslate"><span class="pre">data/</span></code>, what is the output of the following code?</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>datafile<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
 &gt;<span class="w"> </span><span class="k">do</span>
@@ -1046,7 +1054,7 @@ Wuthering Heights,1847
 <p>Why do these two loops give different outputs?</p>
 </section>
 <section id="limiting-sets-of-files">
-<h3>10 Limiting sets of files<a class="headerlink" href="#limiting-sets-of-files" title="Permalink to this heading">#</a></h3>
+<h3>10 Limiting sets of files<a class="headerlink" href="#limiting-sets-of-files" title="Link to this heading">#</a></h3>
 <p>What would be the output of running the following loop in your <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory?</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span>d*
 &gt;<span class="w"> </span><span class="k">do</span>
@@ -1063,7 +1071,7 @@ Wuthering Heights,1847
 </div>
 </section>
 <section id="saving-to-a-file-in-a-loop">
-<h3>11 Saving to a file in a loop<a class="headerlink" href="#saving-to-a-file-in-a-loop" title="Permalink to this heading">#</a></h3>
+<h3>11 Saving to a file in a loop<a class="headerlink" href="#saving-to-a-file-in-a-loop" title="Link to this heading">#</a></h3>
 <p>Consider running the following loop in the  <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>book<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
 &gt;<span class="w"> </span><span class="k">do</span>
@@ -1081,7 +1089,7 @@ Wuthering Heights,1847
 </div>
 </section>
 <section id="why-does-history-record-commands-before-running-them">
-<h3>12 Why does <code class="docutils literal notranslate"><span class="pre">history</span></code> record commands before running them?<a class="headerlink" href="#why-does-history-record-commands-before-running-them" title="Permalink to this heading">#</a></h3>
+<h3>12 Why does <code class="docutils literal notranslate"><span class="pre">history</span></code> record commands before running them?<a class="headerlink" href="#why-does-history-record-commands-before-running-them" title="Link to this heading">#</a></h3>
 <p>If you run the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">history</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span>&gt;<span class="w"> </span>recent.sh
 </pre></div>
@@ -1092,9 +1100,9 @@ before running them. Why do you think it does this?</p>
 </section>
 </section>
 <section id="bash-advanced">
-<h2>BASH Advanced<a class="headerlink" href="#bash-advanced" title="Permalink to this heading">#</a></h2>
+<h2>BASH Advanced<a class="headerlink" href="#bash-advanced" title="Link to this heading">#</a></h2>
 <section id="cleaning-up">
-<h3>1 Cleaning up<a class="headerlink" href="#cleaning-up" title="Permalink to this heading">#</a></h3>
+<h3>1 Cleaning up<a class="headerlink" href="#cleaning-up" title="Link to this heading">#</a></h3>
 <p>As we have gone through this chapter, we have created several files that we won’t need again.
 We can clean them up with the following commands; briefly explain what each line does.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/zipf
@@ -1108,7 +1116,7 @@ $<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>res
 </div>
 </section>
 <section id="variables-in-shell-scripts">
-<h3>2 Variables in shell scripts<a class="headerlink" href="#variables-in-shell-scripts" title="Permalink to this heading">#</a></h3>
+<h3>2 Variables in shell scripts<a class="headerlink" href="#variables-in-shell-scripts" title="Link to this heading">#</a></h3>
 <p>Imagine you have a shell script called <code class="docutils literal notranslate"><span class="pre">script.sh</span></code> that contains:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>head<span class="w"> </span>-n<span class="w"> </span><span class="nv">$2</span><span class="w"> </span><span class="nv">$1</span>
 tail<span class="w"> </span>-n<span class="w"> </span><span class="nv">$3</span><span class="w"> </span><span class="nv">$1</span>
@@ -1128,7 +1136,7 @@ in the <code class="docutils literal notranslate"><span class="pre">data</span><
 </ol>
 </section>
 <section id="find-the-longest-file-with-a-given-extension">
-<h3>3 Find the longest file with a given extension<a class="headerlink" href="#find-the-longest-file-with-a-given-extension" title="Permalink to this heading">#</a></h3>
+<h3>3 Find the longest file with a given extension<a class="headerlink" href="#find-the-longest-file-with-a-given-extension" title="Link to this heading">#</a></h3>
 <p>Write a shell script called <code class="docutils literal notranslate"><span class="pre">longest.sh</span></code> that takes the name of a directory and a filename extension as its arguments, and prints out the name of the file with the most lines in that directory with that extension. For example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>bash<span class="w"> </span>longest.sh<span class="w"> </span>data/<span class="w"> </span>txt
 </pre></div>
@@ -1136,7 +1144,7 @@ in the <code class="docutils literal notranslate"><span class="pre">data</span><
 <p>would print the name of the <code class="docutils literal notranslate"><span class="pre">.txt</span></code> file in <code class="docutils literal notranslate"><span class="pre">data</span></code> that has the most lines.</p>
 </section>
 <section id="script-reading-comprehension">
-<h3>4 Script reading comprehension<a class="headerlink" href="#script-reading-comprehension" title="Permalink to this heading">#</a></h3>
+<h3>4 Script reading comprehension<a class="headerlink" href="#script-reading-comprehension" title="Link to this heading">#</a></h3>
 <p>For this question, consider your <code class="docutils literal notranslate"><span class="pre">data</span></code> directory once again.
 Explain what each of the following three scripts would do when run as <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">script1.sh</span> <span class="pre">*.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">script2.sh</span> <span class="pre">*.txt</span></code>, and <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">script3.sh</span> <span class="pre">*.txt</span></code> respectively.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># script1.sh</span>
@@ -1157,7 +1165,7 @@ Explain what each of the following three scripts would do when run as <code clas
 <p>(You may need to search online to find the meaning of <code class="docutils literal notranslate"><span class="pre">$&#64;</span></code>.)</p>
 </section>
 <section id="using-grep">
-<h3>5 Using <code class="docutils literal notranslate"><span class="pre">grep</span></code><a class="headerlink" href="#using-grep" title="Permalink to this heading">#</a></h3>
+<h3>5 Using <code class="docutils literal notranslate"><span class="pre">grep</span></code><a class="headerlink" href="#using-grep" title="Link to this heading">#</a></h3>
 <p>Assume the following text from <em>The Adventures of Sherlock Holmes</em> is contained in a file called <code class="docutils literal notranslate"><span class="pre">excerpt.txt</span></code>:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>To Sherlock Holmes she is always THE woman. I have seldom heard
 him mention her under any other name. In his eyes she eclipses
@@ -1177,12 +1185,12 @@ any emotion akin to love for Irene Adler.
 </ol>
 </section>
 <section id="tracking-publication-years">
-<h3>6 Tracking publication years<a class="headerlink" href="#tracking-publication-years" title="Permalink to this heading">#</a></h3>
+<h3>6 Tracking publication years<a class="headerlink" href="#tracking-publication-years" title="Link to this heading">#</a></h3>
 <p>In Exercise <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/bash.html#3-piping-commands">bash - pipe commands</a> you examined code that extracted the publication year from a list of book titles.</p>
 <p>Write a shell script called <code class="docutils literal notranslate"><span class="pre">year.sh</span></code> that takes any number of filenames as command-line arguments, and uses a variation of the code you used earlier to print a list of the unique publication years appearing in each of those files separately.</p>
 </section>
 <section id="counting-names">
-<h3>7 Counting names<a class="headerlink" href="#counting-names" title="Permalink to this heading">#</a></h3>
+<h3>7 Counting names<a class="headerlink" href="#counting-names" title="Link to this heading">#</a></h3>
 <p>You and your friend have just finished reading <em>Sense and Sensibility</em> and are now having an argument.
 Your friend thinks that the elder of the two Dashwood sisters, Elinor, was mentioned more frequently in the book, but you are certain it was the younger sister, Marianne.
 Luckily, <code class="docutils literal notranslate"><span class="pre">sense_and_sensibility.txt</span></code> contains the full text of the novel.</p>
@@ -1191,7 +1199,7 @@ Luckily, <code class="docutils literal notranslate"><span class="pre">sense_and_
 There is often more than one way to solve a problem with the shell; people choose solutions based on readability, speed, and what commands they are most familiar with.</p>
 </section>
 <section id="matching-and-subtracting">
-<h3>8 Matching and subtracting<a class="headerlink" href="#matching-and-subtracting" title="Permalink to this heading">#</a></h3>
+<h3>8 Matching and subtracting<a class="headerlink" href="#matching-and-subtracting" title="Link to this heading">#</a></h3>
 <p>Assume you are in the root directory of the <code class="docutils literal notranslate"><span class="pre">zipf</span></code> project.</p>
 <p>Which of the following commands will find all files in <code class="docutils literal notranslate"><span class="pre">data</span></code> whose names end in <code class="docutils literal notranslate"><span class="pre">e.txt</span></code>, but do <em>not</em> contain the word <code class="docutils literal notranslate"><span class="pre">machine</span></code>?</p>
 <ol class="arabic simple">
@@ -1202,14 +1210,14 @@ There is often more than one way to solve a problem with the shell; people choos
 </ol>
 </section>
 <section id="find-pipeline-reading-comprehension">
-<h3>9 <code class="docutils literal notranslate"><span class="pre">find</span></code> pipeline reading comprehension<a class="headerlink" href="#find-pipeline-reading-comprehension" title="Permalink to this heading">#</a></h3>
+<h3>9 <code class="docutils literal notranslate"><span class="pre">find</span></code> pipeline reading comprehension<a class="headerlink" href="#find-pipeline-reading-comprehension" title="Link to this heading">#</a></h3>
 <p>Write a short explanatory comment for the following shell script:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wc<span class="w"> </span>-l<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.dat&#39;</span><span class="k">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n
 </pre></div>
 </div>
 </section>
 <section id="finding-files-with-different-properties">
-<h3>10 Finding files with different properties<a class="headerlink" href="#finding-files-with-different-properties" title="Permalink to this heading">#</a></h3>
+<h3>10 Finding files with different properties<a class="headerlink" href="#finding-files-with-different-properties" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">find</span></code> command can be given criteria called “tests” to locate files with specific attributes, such as creation time, size, or ownership.</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">find</span></code> to explore these, then write a single command using <code class="docutils literal notranslate"><span class="pre">-type</span></code>, <code class="docutils literal notranslate"><span class="pre">-mtime</span></code>, and <code class="docutils literal notranslate"><span class="pre">-user</span></code> to find all files in or below your Desktop directory that are owned by you and were modified in the last 24 hours.</p>
 <p>Explain why the value for <code class="docutils literal notranslate"><span class="pre">-mtime</span></code> needs to be negative.</p>
@@ -1273,6 +1281,7 @@ There is often more than one way to solve a problem with the shell; people choos
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1353,7 +1362,7 @@ By Software Engineering Group - University of Potsdam
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1377,8 +1386,8 @@ By Software Engineering Group - University of Potsdam
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Using Git at the Command Line &#8212; RSE-ING</title>
   
@@ -19,50 +18,46 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/book.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css?v=c89437f7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/intro_version_control';</script>
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/intro_version_control.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -78,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -122,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -154,7 +151,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">RSE-ING</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -487,10 +495,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="using-git-at-the-command-line">
-<h1>Using Git at the Command Line<a class="headerlink" href="#using-git-at-the-command-line" title="Permalink to this heading">#</a></h1>
+<h1>Using Git at the Command Line<a class="headerlink" href="#using-git-at-the-command-line" title="Link to this heading">#</a></h1>
 <blockquote>
 <div><p>— Terry Pratchett</p>
 </div></blockquote>
@@ -567,7 +575,7 @@ This lesson describes how to perform fundamental operations using that interface
 </pre></div>
 </div>
 <section id="setting-up">
-<h2>Setting Up<a class="headerlink" href="#setting-up" title="Permalink to this heading">#</a></h2>
+<h2>Setting Up<a class="headerlink" href="#setting-up" title="Link to this heading">#</a></h2>
 <p>We write Git commands as <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">verb</span> <span class="pre">options</span></code>,
 where the <strong>subcommand</strong> <code class="docutils literal notranslate"><span class="pre">verb</span></code> tells Git what we want to do
 and <code class="docutils literal notranslate"><span class="pre">options</span></code> provide whatever additional information that subcommand needs.
@@ -622,7 +630,7 @@ we can list which ones are available using <code class="docutils literal notrans
 </div></blockquote>
 </section>
 <section id="creating-a-new-repository">
-<h2>Creating a New Repository<a class="headerlink" href="#creating-a-new-repository" title="Permalink to this heading">#</a></h2>
+<h2>Creating a New Repository<a class="headerlink" href="#creating-a-new-repository" title="Link to this heading">#</a></h2>
 <p>Once Git is configured, we can use it to track work on our Zipf’s Law project.
 Let’s make sure we are in the top-level directory of our project:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/zipf
@@ -681,7 +689,7 @@ present (use &quot;git add&quot; to track)
 there are things in <code class="docutils literal notranslate"><span class="pre">bin/</span></code>, <code class="docutils literal notranslate"><span class="pre">data/</span></code> and <code class="docutils literal notranslate"><span class="pre">results/</span></code> that it is not yet keeping track of.</p>
 </section>
 <section id="adding-existing-work">
-<h2>Adding Existing Work<a class="headerlink" href="#adding-existing-work" title="Permalink to this heading">#</a></h2>
+<h2>Adding Existing Work<a class="headerlink" href="#adding-existing-work" title="Link to this heading">#</a></h2>
 <p>Now that our project is a repository, we can tell Git to start recording its history.
 To do this, we add things to the list of things Git is tracking using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>.
 We can do this for single files:</p>
@@ -794,7 +802,7 @@ we won’t be able to see changes made before this point. This implies that we s
 rather than after we have done some work.</p>
 </section>
 <section id="describing-commits">
-<h2>Describing Commits<a class="headerlink" href="#describing-commits" title="Permalink to this heading">#</a></h2>
+<h2>Describing Commits<a class="headerlink" href="#describing-commits" title="Link to this heading">#</a></h2>
 <p>If we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> <em>without</em> the <code class="docutils literal notranslate"><span class="pre">-m</span></code> option, Git opens a text editor so that we can write a longer <strong>commit message</strong>. In this message,
 the first line is referred to as the “subject” and the rest as the “body”, just as in an email.</p>
 <p>When we use <code class="docutils literal notranslate"><span class="pre">-m</span></code>, we are only writing the subject line; this makes things easier in the short run, but if our project’s history fills up with one-liners like “Fixed problem” or “Updated”, our future self will wish that we had taken a few extra seconds to explain things in a little more detail.
@@ -824,7 +832,7 @@ execute the following command:</p>
 </div></blockquote>
 </section>
 <section id="saving-and-tracking-changes">
-<h2>Saving and Tracking Changes<a class="headerlink" href="#saving-and-tracking-changes" title="Permalink to this heading">#</a></h2>
+<h2>Saving and Tracking Changes<a class="headerlink" href="#saving-and-tracking-changes" title="Link to this heading">#</a></h2>
 <p>Our initial commit gave us a starting point.
 The process to build on top of it is similar:
 first add the file, then commit changes.
@@ -906,7 +914,7 @@ which makes it hard to see what is happening with the other ten thousand or so w
 <figure class="align-default" id="git-cmdline-initial-plot">
 <img alt="../_images/plot-initial.png" src="../_images/plot-initial.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Git CMDline initial plot</span><a class="headerlink" href="#git-cmdline-initial-plot" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Git CMDline initial plot</span><a class="headerlink" href="#git-cmdline-initial-plot" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>An alternative way to visually evaluate Zipf’s Law is
@@ -1062,7 +1070,7 @@ that have been added to the current changeset but not yet committed
 <figure class="align-default" id="git-cmdline-staging-area">
 <img alt="../_images/staging-area.png" src="../_images/staging-area.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Git CMDline staging area</span><a class="headerlink" href="#git-cmdline-staging-area" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Git CMDline staging area</span><a class="headerlink" href="#git-cmdline-staging-area" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Let’s take a look at our new plot (<a class="reference internal" href="#git-cmdline-loglog-plot2"><span class="std std-ref">Figure git cmdline - loglog plot #2</span></a>):</p>
@@ -1073,7 +1081,7 @@ that have been added to the current changeset but not yet committed
 <figure class="align-default" id="git-cmdline-loglog-plot2">
 <img alt="../_images/plot-loglog.png" src="../_images/plot-loglog.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Git CMDline LOG Plot</span><a class="headerlink" href="#git-cmdline-loglog-plot2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Git CMDline LOG Plot</span><a class="headerlink" href="#git-cmdline-loglog-plot2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <blockquote>
@@ -1133,12 +1141,12 @@ represent the tasks you perform in a basic Git workflow in a local repository
 <figure class="align-default" id="git-remote">
 <img alt="../_images/git-remote.png" src="../_images/git-remote.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Git Remote</span><a class="headerlink" href="#git-remote" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Git Remote</span><a class="headerlink" href="#git-remote" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="synchronizing-with-other-repositories">
-<h2>Synchronizing with Other Repositories<a class="headerlink" href="#synchronizing-with-other-repositories" title="Permalink to this heading">#</a></h2>
+<h2>Synchronizing with Other Repositories<a class="headerlink" href="#synchronizing-with-other-repositories" title="Link to this heading">#</a></h2>
 <p>Sooner or later our computer will experience a hardware failure,
 be stolen,
 or be thrown in the lake by someone who thinks that
@@ -1172,7 +1180,7 @@ The home page of our new repository on GitHub includes the string we need to ide
 <figure class="align-default" id="git-cmdline-repo-link">
 <img alt="../_images/repo-link.png" src="../_images/repo-link.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Git CMDline Repository link</span><a class="headerlink" href="#git-cmdline-repo-link" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Git CMDline Repository link</span><a class="headerlink" href="#git-cmdline-repo-link" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We can click on “HTTPS” to change the URL from SSH to HTTPS and then copy that URL.</p>
@@ -1230,7 +1238,7 @@ To https://github.com/amira-khan/zipf.git
 <figure class="align-default" id="git-cmdline-history">
 <img alt="../_images/repo-history.png" src="../_images/repo-history.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Git Commandline History</span><a class="headerlink" href="#git-cmdline-history" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Git Commandline History</span><a class="headerlink" href="#git-cmdline-history" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>\newpage</p>
@@ -1257,7 +1265,7 @@ Because <code class="docutils literal notranslate"><span class="pre">git</span> 
 it’s used to view changes between local and remote versions.</p>
 </div></blockquote>
 <p>The Git commands we’ve covered in this section (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>)
-are the main tasks associated with incorporating remote repositories into your workflow (<span class="xref myst">Figure Git cmdline remote</span> b).</p>
+are the main tasks associated with incorporating remote repositories into your workflow (<a class="reference internal" href="#git-cmdline-remote"><span class="xref myst">Figure Git cmdline remote</span></a> b).</p>
 <blockquote>
 <div><p><strong>Amira’s Repository</strong></p>
 <p>Amira’s repository referenced in this section
@@ -1267,7 +1275,7 @@ when proceeding through the rest of the book.</p>
 </div></blockquote>
 </section>
 <section id="exploring-history">
-<h2>Exploring History<a class="headerlink" href="#exploring-history" title="Permalink to this heading">#</a></h2>
+<h2>Exploring History<a class="headerlink" href="#exploring-history" title="Link to this heading">#</a></h2>
 <p>Git lets us look at previous versions of files
 and restore specific files to earlier states if we want to.
 In order to do these things, we need to identify the versions we want.</p>
@@ -1438,7 +1446,7 @@ but separating the identifier and file with a colon:</p>
 <p>This allows us to look through the file using a paging program.</p>
 </section>
 <section id="restoring-old-versions-of-files">
-<h2>Restoring Old Versions of Files<a class="headerlink" href="#restoring-old-versions-of-files" title="Permalink to this heading">#</a></h2>
+<h2>Restoring Old Versions of Files<a class="headerlink" href="#restoring-old-versions-of-files" title="Link to this heading">#</a></h2>
 <p>We can see what we changed, but how can we restore it?
 Suppose we change our mind about the last update to <code class="docutils literal notranslate"><span class="pre">bin/plotcounts.py</span></code>
 (removing <code class="docutils literal notranslate"><span class="pre">df['inverse_rank']</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">/</span> <span class="pre">df['rank']</span></code>)
@@ -1564,13 +1572,13 @@ nothing to commit, working tree clean
 </div>
 <p>We have restored the most recent commit. Since we didn’t commit the change that removed the line that calculates the inverse rank, that work is now lost:
 Git can only go back and forth between committed versions of files.</p>
-<p>This section has demonstrated a few different ways to view differences among versions, and to work with those changes (<span class="xref myst">Figure Git cmdline - Remote</span> c).
+<p>This section has demonstrated a few different ways to view differences among versions, and to work with those changes (<a class="reference internal" href="#git-cmdline-remote"><span class="xref myst">Figure Git cmdline - Remote</span></a> c).
 These commands can operate on either individual files or entire commits,
 and the behavior of them can sometimes differ based on your version of Git.
 Remember to reference documentation, and use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> frequently to understand your workflow.</p>
 </section>
 <section id="ignoring-files">
-<h2>Ignoring Files<a class="headerlink" href="#ignoring-files" title="Permalink to this heading">#</a></h2>
+<h2>Ignoring Files<a class="headerlink" href="#ignoring-files" title="Link to this heading">#</a></h2>
 <p>We don’t always want Git to track every file’s history.
 For example,
 we might want to track text files with names ending in <code class="docutils literal notranslate"><span class="pre">.txt</span></code>
@@ -1589,18 +1597,18 @@ so that Git knows to use it.</p>
 </div></blockquote>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>The biggest benefit of version control for individual research is that
 we can always go back to the precise set of files
 that we used to produce a particular result.
-While Git is complex <span id="id1">[<a class="reference internal" href="references.html#id57" title="Santiago Perez De Rosso and Daniel Jackson. What's Wrong With Git? In Proc. 2013 ACM International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software (Onward!'13). 2013. The first in a series exploring what's wrong with Git. doi:10.1145/2509578.2509584.">Perez De Rosso and Jackson, 2013</a>]</span>,
+While Git is complex <span id="id1">[<a class="reference internal" href="references.html#id58" title="Santiago Perez De Rosso and Daniel Jackson. What's Wrong With Git? In Proc. 2013 ACM International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software ( Onward!'13). 2013. The first in a series exploring what's wrong with Git. doi:10.1145/2509578.2509584.">Perez De Rosso and Jackson, 2013</a>]</span>,
 being able to back up our changes on sites like GitHub
 with just a few keystrokes can save us a lot of pain,
 and some of Git’s advanced features make it even more powerful.
 We will explore these in the next chapter.</p>
 </section>
 <section id="keypoints">
-<h2>Keypoints<a class="headerlink" href="#keypoints" title="Permalink to this heading">#</a></h2>
+<h2>Keypoints<a class="headerlink" href="#keypoints" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">{include}</span> <span class="pre">keypoints/version_control.md</span></code></p>
 </section>
 </section>
@@ -1662,6 +1670,7 @@ We will explore these in the next chapter.</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -1703,7 +1712,7 @@ By Software Engineering Group - University of Potsdam
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1727,8 +1736,8 @@ By Software Engineering Group - University of Potsdam
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

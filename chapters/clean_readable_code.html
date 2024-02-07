@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Writing Readable Code &#8212; RSE-ING</title>
   
@@ -19,50 +18,46 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/book.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css?v=c89437f7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/clean_readable_code';</script>
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/clean_readable_code.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -78,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -122,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -154,7 +151,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">RSE-ING</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -503,11 +511,11 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="writing-readable-code">
-<h1>Writing Readable Code<a class="headerlink" href="#writing-readable-code" title="Permalink to this heading">#</a></h1>
-<p>Nothing in biology makes sense except in light of evolution <span id="id1">[<a class="reference internal" href="references.html#id23" title="Theodosius Dobzhansky. Nothing in Biology Makes Sense Except in the Light of Evolution. The American Biology Teacher, 35(3):125–129, Mar 1973. A forceful statement of the central unifying theme of modern biology. doi:10.2307/4444260.">Dobzhansky, 1973</a>]</span>.
+<h1>Writing Readable Code<a class="headerlink" href="#writing-readable-code" title="Link to this heading">#</a></h1>
+<p>Nothing in biology makes sense except in light of evolution <span id="id1">[<a class="reference internal" href="references.html#id24" title="Theodosius Dobzhansky. Nothing in Biology Makes Sense Except in the Light of Evolution. The American Biology Teacher, 35(3):125–129, Mar 1973. A forceful statement of the central unifying theme of modern biology. doi:10.2307/4444260.">Dobzhansky, 1973</a>]</span>.
 Similarly, nothing in software development makes sense except in light of human psychology.
 This is particularly true when we look at programming style.
 Computers don’t need to understand programs in order to execute them,
@@ -518,16 +526,16 @@ This appendix discusses the style choices we made,
 presents guidelines for good Python programming style,
 and introduces some language features that can make programs more flexible and more readable.</p>
 <section id="python-style">
-<h2>Python Style<a class="headerlink" href="#python-style" title="Permalink to this heading">#</a></h2>
+<h2>Python Style<a class="headerlink" href="#python-style" title="Link to this heading">#</a></h2>
 <p>The single most important rule of style is to be consistent,
-both internally and with other programs <span id="id2">[<a class="reference internal" href="references.html#id39" title="Brian W. Kernighan and Rob Pike. The Practice of Programming. Addison-Wesley, 1999. ISBN 9788177582482. A programming style manual written by two of the creators of modern computing.">Kernighan and Pike, 1999</a>]</span>.
+both internally and with other programs <span id="id2">[<a class="reference internal" href="references.html#id40" title="Brian W. Kernighan and Rob Pike. The Practice of Programming. Addison-Wesley, 1999. ISBN 9788177582482. A programming style manual written by two of the creators of modern computing.">Kernighan and Pike, 1999</a>]</span>.
 Python’s standard style is called <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP-8</a>;
 the acronym “PEP” is short for “Python Enhancement Proposal,”
 and PEP-8 lays out the rules that Python’s own libraries use.
 Some of its rules are listed below,
 along with others borrowed from “<a class="reference external" href="https://github.com/jennybc/code-smells-and-feels">Code Smells and Feels</a>.”</p>
 <section id="spacing">
-<h3>Spacing<a class="headerlink" href="#spacing" title="Permalink to this heading">#</a></h3>
+<h3>Spacing<a class="headerlink" href="#spacing" title="Link to this heading">#</a></h3>
 <p><strong>Always indent code blocks using 4 spaces, and use spaces instead of tabs.</strong></p>
 <p>Python doesn’t actually require consistent indentation
 so long as each block is indented the same amount,
@@ -609,14 +617,14 @@ Although it’s not required for Python code to function,
 it does make it easier to view and edit code.</p>
 </section>
 <section id="naming">
-<h3>Naming<a class="headerlink" href="#naming" title="Permalink to this heading">#</a></h3>
+<h3>Naming<a class="headerlink" href="#naming" title="Link to this heading">#</a></h3>
 <p><strong>Use <code class="docutils literal notranslate"><span class="pre">ALL_CAPS_WITH_UNDERSCORES</span></code> for global variables.</strong></p>
 <p>This convention is inherited from C, which was used to write the first version of Python.
 In that language, upper case was used to indicate a constant whose value couldn’t be modified; Python doesn’t enforce that rule,
 but <code class="docutils literal notranslate"><span class="pre">SHOUTING_AT_PROGRAMMERS</span></code> helps remind them that
 some things shouldn’t be messed with.</p>
 <p><strong>Use <code class="docutils literal notranslate"><span class="pre">lower_case_with_underscores</span></code> for the names of functions and variables.</strong></p>
-<p>Research on naming conventions has produced mixed results <span id="id3">[<a class="reference internal" href="references.html#id9" title="Dave Binkley, Marcia Davis, Dawn Lawrie, Jonathan I. Maletic, Christopher Morrell, and Bonita Sharif. The Impact of Identifier Style on Effort and Comprehension. Empirical Software Engineering, 18(2):219–276, May 2012. Reports that reading and understanding code is fundamentally different from reading prose, and that experienced developers are relatively unaffected by identifier style, but beginners benefit from the use of camel case (versus pothole case). doi:10.1007/s10664-012-9201-4.">Binkley <em>et al.</em>, 2012</a>]</span>; <span id="id4">[<a class="reference internal" href="references.html#id64" title="Andrea Schankin, Annika Berger, Daniel V. Holt, Johannes C. Hofmeister, Till Riedel, and Michael Beigl. Descriptive Compound Identifier Names Improve Source Code Comprehension. In Proc. 26th Conference on Program Comprehension (ICPC'18). ACM Press, 2018. URL: https://doi.org/10.1145/3196321.3196332, doi:10.1145/3196321.3196332.">Schankin <em>et al.</em>, 2018</a>]</span> but Python has (mostly) settled on underscored names for most things.
+<p>Research on naming conventions has produced mixed results <span id="id3">[<a class="reference internal" href="references.html#id10" title="Dave Binkley, Marcia Davis, Dawn Lawrie, Jonathan I. Maletic, Christopher Morrell, and Bonita Sharif. The Impact of Identifier Style on Effort and Comprehension. Empirical Software Engineering, 18(2):219–276, May 2012. Reports that reading and understanding code is fundamentally different from reading prose, and that experienced developers are relatively unaffected by identifier style, but beginners benefit from the use of camel case (versus pothole case). doi:10.1007/s10664-012-9201-4.">Binkley <em>et al.</em>, 2012</a>]</span>; <span id="id4">[<a class="reference internal" href="references.html#id65" title="Andrea Schankin, Annika Berger, Daniel V. Holt, Johannes C. Hofmeister, Till Riedel, and Michael Beigl. Descriptive Compound Identifier Names Improve Source Code Comprehension. In Proc. 26th Conference on Program Comprehension (ICPC'18). ACM Press, 2018. URL: https://doi.org/10.1145/3196321.3196332, doi:10.1145/3196321.3196332.">Schankin <em>et al.</em>, 2018</a>]</span> but Python has (mostly) settled on underscored names for most things.
 This style is called <strong>snake case</strong> or <strong>pothole case</strong>;
 we should only use <strong>CamelCase</strong> for classes,
 which are outside the scope of this lesson.</p>
@@ -628,7 +636,7 @@ Following this rule doesn’t necessarily require more typing:
 a good programming editor will <strong>auto-complete</strong> names for us.</p>
 <p><strong>Use short names for short-lived local variables and longer names for things with wider scope.</strong></p>
 <p>Using <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> for loop indices is perfectly readable
-provided the loop is only a few lines long <span id="id5">[<a class="reference internal" href="references.html#id6" title="Gal Beniamini, Sarah Gingichashvili, Alon Klein Orbach, and Dror G. Feitelson. Meaningful Identifier Names: The Case of Single-Letter Variables. In Proc. 2017 International Conference on Program Comprehension (ICPC'17). Institute of Electrical and Electronics Engineers (IEEE), May 2017. Reports that use of single-letter variable names doesn't affect ability to modify code, and that some single-letter variable names have implicit types and meanings. doi:10.1109/icpc.2017.18.">Beniamini <em>et al.</em>, 2017</a>]</span>.
+provided the loop is only a few lines long <span id="id5">[<a class="reference internal" href="references.html#id7" title="Gal Beniamini, Sarah Gingichashvili, Alon Klein Orbach, and Dror G. Feitelson. Meaningful Identifier Names: The Case of Single-Letter Variables. In Proc. 2017 International Conference on Program Comprehension ( ICPC'17). Institute of Electrical and Electronics Engineers (IEEE), May 2017. Reports that use of single-letter variable names doesn't affect ability to modify code, and that some single-letter variable names have implicit types and meanings. doi:10.1109/icpc.2017.18.">Beniamini <em>et al.</em>, 2017</a>]</span>.
 Anything that is used at a greater distance
 or whose purpose isn’t immediately clear
 (such as a function) should have a longer name.</p>
@@ -647,7 +655,7 @@ we can always get it back from version control
 </section>
 </section>
 <section id="order">
-<h2>Order<a class="headerlink" href="#order" title="Permalink to this heading">#</a></h2>
+<h2>Order<a class="headerlink" href="#order" title="Link to this heading">#</a></h2>
 <p>The order of items in each file should be:</p>
 <ul class="simple">
 <li><p>The <strong>shebang</strong> line (because it has to be first to work).</p></li>
@@ -715,7 +723,7 @@ we could have kept all of our code in <code class="docutils literal notranslate"
 but collating felt like something we might want to do separately.</p>
 </section>
 <section id="checking-style">
-<h2>Checking Style<a class="headerlink" href="#checking-style" title="Permalink to this heading">#</a></h2>
+<h2>Checking Style<a class="headerlink" href="#checking-style" title="Link to this heading">#</a></h2>
 <p>Checking that code conforms to guidelines like PEP-8 would be time consuming
 if we had to do it manually,
 but most languages have tools that will check style rules for us.
@@ -805,21 +813,21 @@ and <code class="docutils literal notranslate"><span class="pre">x</span> <span 
 </div>
 </section>
 <section id="refactoring">
-<h2>Refactoring<a class="headerlink" href="#refactoring" title="Permalink to this heading">#</a></h2>
+<h2>Refactoring<a class="headerlink" href="#refactoring" title="Link to this heading">#</a></h2>
 <p>Once a program gets a clean bill of health from <code class="docutils literal notranslate"><span class="pre">pycodestyle</span></code>,
 it’s worth having a human being look it over and suggest improvements.
 To <strong>refactor</strong> code
 means to change its structure without changing what it does,
 like simplifying an equation.
 It is just as much a part of programming as writing code in the first place:
-nobody gets things right the first time <span id="id6">[<a class="reference internal" href="references.html#id13" title="Stewart Brand. How Buildings Learn: What Happens after They're Built. Penguin USA, 1995. ISBN 0140139966. How buildings evolve and adapt to meet the needs of those who live in them.">Brand, 1995</a>]</span>,
+nobody gets things right the first time <span id="id6">[<a class="reference internal" href="references.html#id14" title="Stewart Brand. How Buildings Learn: What Happens after They're Built. Penguin USA, 1995. ISBN 0140139966. How buildings evolve and adapt to meet the needs of those who live in them.">Brand, 1995</a>]</span>,
 and needs or insights can change over time.</p>
 <p>Most discussions of refactoring focus on <strong>object-oriented programming</strong>
 but many patterns can and should be used to clean up <strong>procedural</strong> code.
 Knowing a few of these patterns helps us create better software
 and makes it easier to communicate with our peers.</p>
 <section id="do-not-repeat-values">
-<h3>Do not repeat values<a class="headerlink" href="#do-not-repeat-values" title="Permalink to this heading">#</a></h3>
+<h3>Do not repeat values<a class="headerlink" href="#do-not-repeat-values" title="Link to this heading">#</a></h3>
 <p>The first and simplest refactoring is “replace value with name.”
 It tells us to replace magic numbers with names,
 i.e., to define constants.
@@ -840,7 +848,7 @@ Finally,
 a single value defined in one place is much easier to change
 than a bunch of numbers scattered throughout our program.
 We may not think we will have to change it,
-but then people want to use our software on Mars and we discover that constants aren’t <span id="id7">[<a class="reference internal" href="references.html#id46" title="Ronald Mak. The Martian Principles. Wiley, 2006. ISBN 0471789658. A short, enjoyable guide to software architecture from someone whose code had to deal with Mars.">Mak, 2006</a>]</span>.</p>
+but then people want to use our software on Mars and we discover that constants aren’t <span id="id7">[<a class="reference internal" href="references.html#id47" title="Ronald Mak. The Martian Principles. Wiley, 2006. ISBN 0471789658. A short, enjoyable guide to software architecture from someone whose code had to deal with Mars.">Mak, 2006</a>]</span>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...before...</span>
 <span class="n">seconds_elapsed</span> <span class="o">=</span> <span class="n">num_days</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
 </pre></div>
@@ -853,7 +861,7 @@ but then people want to use our software on Mars and we discover that constants 
 </div>
 </section>
 <section id="do-not-repeat-calculations-in-loops">
-<h3>Do not repeat calculations in loops<a class="headerlink" href="#do-not-repeat-calculations-in-loops" title="Permalink to this heading">#</a></h3>
+<h3>Do not repeat calculations in loops<a class="headerlink" href="#do-not-repeat-calculations-in-loops" title="Link to this heading">#</a></h3>
 <p>It’s inefficient to calculate the same value over and over again.
 It also makes code less readable:
 if a calculation is inside a loop or a function,
@@ -876,7 +884,7 @@ And naming that common value helps readers understand what its purpose is.</p>
 </div>
 </section>
 <section id="replace-tests-with-flags-to-clarify-repeated-tests">
-<h3>Replace tests with flags to clarify repeated tests<a class="headerlink" href="#replace-tests-with-flags-to-clarify-repeated-tests" title="Permalink to this heading">#</a></h3>
+<h3>Replace tests with flags to clarify repeated tests<a class="headerlink" href="#replace-tests-with-flags-to-clarify-repeated-tests" title="Link to this heading">#</a></h3>
 <p>Novice programmers frequently write conditional tests like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
     <span class="c1"># ...do something...</span>
@@ -929,7 +937,7 @@ we are more likely to get the refactored version right the first time,
 since the test only appears in one place and its result is given a name.</p>
 </section>
 <section id="use-in-place-operators-to-avoid-duplicating-expression">
-<h3>Use in-place operators to avoid duplicating expression<a class="headerlink" href="#use-in-place-operators-to-avoid-duplicating-expression" title="Permalink to this heading">#</a></h3>
+<h3>Use in-place operators to avoid duplicating expression<a class="headerlink" href="#use-in-place-operators-to-avoid-duplicating-expression" title="Link to this heading">#</a></h3>
 <p>An <strong>in-place operator</strong>,
 sometimes called an <strong>update operator</strong>,
 does a calculation with two values
@@ -977,7 +985,7 @@ converts normal assignments into their briefer equivalents.</p>
 </div>
 </section>
 <section id="handle-special-cases-first">
-<h3>Handle special cases first<a class="headerlink" href="#handle-special-cases-first" title="Permalink to this heading">#</a></h3>
+<h3>Handle special cases first<a class="headerlink" href="#handle-special-cases-first" title="Link to this heading">#</a></h3>
 <p>A <strong>short circuit test</strong> is a quick check to handle a special case,
 such as checking the length of a list of values
 and returning <code class="docutils literal notranslate"><span class="pre">math.nan</span></code> for the average if the list is empty.
@@ -1065,7 +1073,7 @@ Conditional expressions are the only ternary expressions in most programming lan
 </div></blockquote>
 </section>
 <section id="use-functions-to-make-code-more-comprehensible">
-<h3>Use functions to make code more comprehensible<a class="headerlink" href="#use-functions-to-make-code-more-comprehensible" title="Permalink to this heading">#</a></h3>
+<h3>Use functions to make code more comprehensible<a class="headerlink" href="#use-functions-to-make-code-more-comprehensible" title="Link to this heading">#</a></h3>
 <p>Functions were created so that programmers could re-use common operations,
 but moving code into functions also reduces <strong>cognitive load</strong>
 by reducing the number of things that have to be understood simultaneously.</p>
@@ -1105,7 +1113,7 @@ it’s often helpful to keep using the original variable names as parameter name
 to reduce typing.</p>
 </section>
 <section id="combine-operations-in-functions">
-<h3>Combine operations in functions<a class="headerlink" href="#combine-operations-in-functions" title="Permalink to this heading">#</a></h3>
+<h3>Combine operations in functions<a class="headerlink" href="#combine-operations-in-functions" title="Link to this heading">#</a></h3>
 <p>“Combine functions” is the opposite of “extract function.”
 If operations are always done together,
 it can sometimes be be more efficient to do them together,
@@ -1145,7 +1153,7 @@ people using the combination and throwing some of the result away.)</p>
 </div>
 </section>
 <section id="replace-code-with-data">
-<h3>Replace code with data<a class="headerlink" href="#replace-code-with-data" title="Permalink to this heading">#</a></h3>
+<h3>Replace code with data<a class="headerlink" href="#replace-code-with-data" title="Link to this heading">#</a></h3>
 <p>It is easier to understand and maintain lookup tables than complicated conditionals,
 so the “create lookup table” refactoring tells us to turn the latter into the former:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...before..</span>
@@ -1204,7 +1212,7 @@ We will explore ways of making this code more readable in the exercises.</p>
 </section>
 </section>
 <section id="code-reviews">
-<h2>Code Reviews<a class="headerlink" href="#code-reviews" title="Permalink to this heading">#</a></h2>
+<h2>Code Reviews<a class="headerlink" href="#code-reviews" title="Link to this heading">#</a></h2>
 <p>At the end of Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/clean_readable_code.html#checking-style">Checking Style</a>,
 our stop-word program looked like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
@@ -1283,30 +1291,30 @@ our program looks like this:</p>
 is called <strong>code review</strong>.
 Multiple studies over more than 40 years have shown that
 code review is the most effective way to find bugs in software
-<span id="id8">[<a class="reference internal" href="references.html#id24" title="Michael E. Fagan. Design and Code Inspections to Reduce Errors in Program Development. IBM Systems Journal, 15(3):182-211, 1976. An early and influential study of code review. doi:10.1147/sj.153.0182.">Fagan, 1976</a>]</span>; <span id="id9">[<a class="reference internal" href="references.html#id25" title="Michael E. Fagan. Advances in Software Inspections. IEEE Transactions on Software Engineering, 12(7):744-751, Jul 1986. Summarizes the author's early work on the benefits of code review. doi:10.1109/TSE.1986.6312976.">Fagan, 1986</a>]</span>; <span id="id10">[<a class="reference internal" href="references.html#id21" title="Jason Cohen. Modern Code Review. In Andy Oram and Greg Wilson, editors, Making Software. O'Reilly, 2010.">Cohen, 2010</a>]</span>; <span id="id11">[<a class="reference internal" href="references.html#id4" title="Alberto Bacchelli and Christian Bird. Expectations, Outcomes, and Challenges of Modern Code Review. In Proc. International Conference on Software Engineering. May 2013. Summarizes more than thirty years of research on the benefits of code review. URL: http://research.microsoft.com/apps/pubs/default.aspx?id=180283.">Bacchelli and Bird, 2013</a>]</span>.
+<span id="id8">[<a class="reference internal" href="references.html#id25" title="Michael E. Fagan. Design and Code Inspections to Reduce Errors in Program Development. IBM Systems Journal, 15(3):182-211, 1976. An early and influential study of code review. doi:10.1147/sj.153.0182.">Fagan, 1976</a>]</span>; <span id="id9">[<a class="reference internal" href="references.html#id26" title="Michael E. Fagan. Advances in Software Inspections. IEEE Transactions on Software Engineering, 12(7):744-751, Jul 1986. Summarizes the author's early work on the benefits of code review. doi:10.1109/TSE.1986.6312976.">Fagan, 1986</a>]</span>; <span id="id10">[<a class="reference internal" href="references.html#id22" title="Jason Cohen. Modern Code Review. In Andy Oram and Greg Wilson, editors, Making Software. O'Reilly, 2010.">Cohen, 2010</a>]</span>; <span id="id11">[<a class="reference internal" href="references.html#id5" title="Alberto Bacchelli and Christian Bird. Expectations, Outcomes, and Challenges of Modern Code Review. In Proc. International Conference on Software Engineering. May 2013. Summarizes more than thirty years of research on the benefits of code review. URL: http://research.microsoft.com/apps/pubs/default.aspx?id=180283.">Bacchelli and Bird, 2013</a>]</span>.
 It is also a great way to transfer knowledge between programmers:
 reading someone else’s code critically will give us lots of ideas about what we could do better,
 and highlight things that we should probably stop doing as well.</p>
 <p>Despite this,
 code review still isn’t common in research software development.
 This is partly a chicken-and-egg problem:
-people don’t do it because other people don’t do it <span id="id12">[<a class="reference internal" href="references.html#id66" title="Judith Segal. When Software Engineers Met Research Scientists: A Case Study. Empirical Software Engineering, 10(4):517-536, 2005. Looks at the chicken-and-egg problem of software review in science. doi:10.1007/s10664-005-3865-y.">Segal, 2005</a>]</span>.
+people don’t do it because other people don’t do it <span id="id12">[<a class="reference internal" href="references.html#id67" title="Judith Segal. When Software Engineers Met Research Scientists: A Case Study. Empirical Software Engineering, 10(4):517-536, 2005. Looks at the chicken-and-egg problem of software review in science. doi:10.1007/s10664-005-3865-y.">Segal, 2005</a>]</span>.
 Code review is also more difficult to do in specialized scientific fields:
 in order for review to be useful,
 reviewers need to understand the problem domain well enough to comment on algorithms and design choices
 rather than indentation and variable naming,
-and the number of people who can do that for a research project is often very small <span id="id13">[<a class="reference internal" href="references.html#id58" title="Marian Petre and Greg Wilson. Code Review For and By Scientists. In Proc. Second Workshop on Sustainable Software for Science: Practice and Experience. 2014. Found that effective code review depends on understanding the scientific problem that software is studying. doi:arXiv:1407.5648.">Petre and Wilson, 2014</a>]</span>.</p>
+and the number of people who can do that for a research project is often very small <span id="id13">[<a class="reference internal" href="references.html#id59" title="Marian Petre and Greg Wilson. Code Review For and By Scientists. In Proc. Second Workshop on Sustainable Software for Science: Practice and Experience. 2014. Found that effective code review depends on understanding the scientific problem that software is studying. doi:arXiv:1407.5648.">Petre and Wilson, 2014</a>]</span>.</p>
 <p>Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/git_advanced.html#pull-requests">Advanced Pull requests</a> explained how to create and merge pull requests.
 How we review these is just as important as what we look for:
 being dismissive or combative are good ways to ensure that people don’t pay attention to our reviews,
-or avoid having us review their work <span id="id14">[<a class="reference internal" href="references.html#id7" title="Gary Bernhardt. A Case Study in Not Being a Jerk in Open Source. 2018. Rewrites a typically abusive message by Linus Torvalds to be less repellant. URL: https://www.destroyallsoftware.com/blog/2018/a-case-study-in-not-being-a-jerk-in-open-source.">Bernhardt, 2018</a>]</span>.
+or avoid having us review their work <span id="id14">[<a class="reference internal" href="references.html#id8" title="Gary Bernhardt. A Case Study in Not Being a Jerk in Open Source. 2018. Rewrites a typically abusive message by Linus Torvalds to be less repellant. URL: https://www.destroyallsoftware.com/blog/2018/a-case-study-in-not-being-a-jerk-in-open-source.">Bernhardt, 2018</a>]</span>.
 Equally,
 being defensive when someone offers suggestions politely and sincerely is very human,
 but can stunt our development as a programmer.</p>
-<p>Lots of people have written guidelines for doing reviews that avoid these traps <span id="id15">[<a class="reference internal" href="references.html#id60" title="Joël Quenneville. Code Review. 2018. Guidelines for code review. URL: https://github.com/thoughtbot/guides/tree/master/code-review.">Quenneville, 2018</a>]</span>; <span id="id16">[<a class="reference internal" href="references.html#id62" title="Sandya Sankarram. Unlearning Toxic Behaviors in a Code Review Culture. 2018. What \emph not to do in code review. URL: https://medium.freecodecamp.org/unlearning-toxic-behaviors-in-a-code-review-culture-b7c295452a3c.">Sankarram, 2018</a>]</span>.
+<p>Lots of people have written guidelines for doing reviews that avoid these traps <span id="id15">[<a class="reference internal" href="references.html#id61" title="Joël Quenneville. Code Review. 2018. Guidelines for code review. URL: https://github.com/thoughtbot/guides/tree/master/code-review.">Quenneville, 2018</a>]</span>; <span id="id16">[<a class="reference internal" href="references.html#id63" title="Sandya Sankarram. Unlearning Toxic Behaviors in a Code Review Culture. 2018. What \emph not to do in code review. URL: https://medium.freecodecamp.org/unlearning-toxic-behaviors-in-a-code-review-culture-b7c295452a3c.">Sankarram, 2018</a>]</span>.
 A few common points are:</p>
 <p>Work in small increments.
-:   As <span id="id17">[<a class="reference internal" href="references.html#id21" title="Jason Cohen. Modern Code Review. In Andy Oram and Greg Wilson, editors, Making Software. O'Reilly, 2010.">Cohen, 2010</a>]</span> and others have found,
+:   As <span id="id17">[<a class="reference internal" href="references.html#id22" title="Jason Cohen. Modern Code Review. In Andy Oram and Greg Wilson, editors, Making Software. O'Reilly, 2010.">Cohen, 2010</a>]</span> and others have found,
 code review is most effective when done in short bursts.
 That means that change requests should also be short:
 anything that’s more than a couple of screens long
@@ -1368,15 +1376,15 @@ we should reply to their comment to point at the commit that includes the fix.</
 thank them for doing it.</p>
 <p>And finally:</p>
 <p><strong>Don’t let anyone break these rules just because they’re frequent contributors or in positions of power.</strong>
-As <span id="id18">[<a class="reference internal" href="references.html#id34" title="Steve Gruenert and Todd Whitaker. School Culture Rewired: How to Define, Assess, and Transform It. ASCD, 2015. ISBN 978-1416619901. The source of a much-quoted observation on culture.">Gruenert and Whitaker, 2015</a>]</span> says,
+As <span id="id18">[<a class="reference internal" href="references.html#id35" title="Steve Gruenert and Todd Whitaker. School Culture Rewired: How to Define, Assess, and Transform It. ASCD, 2015. ISBN 978-1416619901. The source of a much-quoted observation on culture.">Gruenert and Whitaker, 2015</a>]</span> says,
 the culture of any organization is shaped by the worst behavior it is willing to tolerate.
 The main figures in a project should be <em>more</em> respectful than everyone else
 in order to show what standards everyone else is expected to meet.</p>
 </section>
 <section id="python-features">
-<h2>Python Features<a class="headerlink" href="#python-features" title="Permalink to this heading">#</a></h2>
+<h2>Python Features<a class="headerlink" href="#python-features" title="Link to this heading">#</a></h2>
 <p><strong>Working memory</strong> can only hold a few items at once:
-initial estimates in the 1950s put the number at 7±2 <span id="id19">[<a class="reference internal" href="references.html#id50" title="George A. Miller. The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for Processing Information. Psychological Review, 63(2):81–97, 1956. The first definitive presentation of limits to human short-term memory. doi:10.1037/h0043158.">Miller, 1956</a>]</span>,
+initial estimates in the 1950s put the number at 7±2 <span id="id19">[<a class="reference internal" href="references.html#id51" title="George A. Miller. The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for Processing Information. Psychological Review, 63(2):81–97, 1956. The first definitive presentation of limits to human short-term memory. doi:10.1037/h0043158.">Miller, 1956</a>]</span>,
 and more recent estimates put it as low as 4 or 5.
 High-level languages from Fortran to Python
 are essentially a way to reduce the number of things programmers have to think about at once
@@ -1411,7 +1419,7 @@ suppose we want to create this matrix as a list of lists:</p>
 <p>An experienced programmer might recognize what the latter is doing;
 the rest of us are probably better off reading and writing the more verbose solution.</p>
 <section id="provide-default-values-for-parameters">
-<h3>Provide default values for parameters<a class="headerlink" href="#provide-default-values-for-parameters" title="Permalink to this heading">#</a></h3>
+<h3>Provide default values for parameters<a class="headerlink" href="#provide-default-values-for-parameters" title="Link to this heading">#</a></h3>
 <p>If our function requires two dozen parameters,
 the odds are very good that users will frequently forget them
 or put them in the wrong order.
@@ -1480,7 +1488,7 @@ to signal that the user didn’t provide a value:</p>
 </div>
 </section>
 <section id="handle-a-variable-number-of-arguments">
-<h3>Handle a variable number of arguments<a class="headerlink" href="#handle-a-variable-number-of-arguments" title="Permalink to this heading">#</a></h3>
+<h3>Handle a variable number of arguments<a class="headerlink" href="#handle-a-variable-number-of-arguments" title="Link to this heading">#</a></h3>
 <p>We can often make programs simpler by writing functions that take
 <strong>a variable number of arguments</strong>,
 just like <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code>.
@@ -1544,7 +1552,7 @@ we pass <code class="docutils literal notranslate"><span class="pre">color='blue
 not <code class="docutils literal notranslate"><span class="pre">'color'='blue'</span></code>.</p>
 </section>
 <section id="unpacking-variable-arguments">
-<h3>Unpacking variable arguments<a class="headerlink" href="#unpacking-variable-arguments" title="Permalink to this heading">#</a></h3>
+<h3>Unpacking variable arguments<a class="headerlink" href="#unpacking-variable-arguments" title="Link to this heading">#</a></h3>
 <p>We can use the inverse of <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> to match a list of values to arguments.
 In this case,
 we put the <code class="docutils literal notranslate"><span class="pre">*</span></code> in front of a list and <code class="docutils literal notranslate"><span class="pre">**</span></code> in front of a dictionary when <em>calling</em> the function,
@@ -1562,7 +1570,7 @@ rather than in front of the parameter when <em>defining</em> it:</p>
 </div>
 </section>
 <section id="use-destructuring-to-assign-multiple-values-at-once">
-<h3>Use destructuring to assign multiple values at once<a class="headerlink" href="#use-destructuring-to-assign-multiple-values-at-once" title="Permalink to this heading">#</a></h3>
+<h3>Use destructuring to assign multiple values at once<a class="headerlink" href="#use-destructuring-to-assign-multiple-values-at-once" title="Link to this heading">#</a></h3>
 <p>One last feature of Python is
 <strong>destructuring assignment</strong>.
 Suppose we have a nested list such as <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">[2,</span> <span class="pre">3]]</span></code>,
@@ -1599,7 +1607,7 @@ Marlyn Wescoff &lt;mwescoff@eniac.org&gt;
 </section>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>George Orwell laid out <a class="reference external" href="https://en.wikipedia.org/wiki/Politics_and_the_English_Language#Remedy_of_Six_Rules">six rules for good writing</a>,
 the last and most important of which is,
 “Break any of these rules sooner than say anything outright barbarous.”
@@ -1667,6 +1675,7 @@ but there are probably fewer of them than you think.</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -1724,7 +1733,7 @@ By Software Engineering Group - University of Potsdam
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1748,8 +1757,8 @@ By Software Engineering Group - University of Potsdam
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

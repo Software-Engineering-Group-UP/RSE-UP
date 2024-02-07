@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Building Tools with the Unix Shell &#8212; RSE-ING</title>
   
@@ -19,50 +18,46 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/book.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css?v=c89437f7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/bash_tools';</script>
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_tools.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -78,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -122,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -154,7 +151,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">RSE-ING</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -514,10 +522,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="building-tools-with-the-unix-shell">
-<h1>Building Tools with the Unix Shell<a class="headerlink" href="#building-tools-with-the-unix-shell" title="Permalink to this heading">#</a></h1>
+<h1>Building Tools with the Unix Shell<a class="headerlink" href="#building-tools-with-the-unix-shell" title="Link to this heading">#</a></h1>
 <blockquote>
 <div><p>Wisdom comes from experience. Experience is often a result of lack of wisdom.</p>
 <p>— Terry Pratchett</p>
@@ -542,7 +550,7 @@ which should contain the following files after the previous chapter:</p>
 </pre></div>
 </div>
 <section id="combining-commands">
-<h2>Combining Commands<a class="headerlink" href="#combining-commands" title="Permalink to this heading">#</a></h2>
+<h2>Combining Commands<a class="headerlink" href="#combining-commands" title="Link to this heading">#</a></h2>
 <p>To see how the shell lets us combine commands, let’s go into the <code class="docutils literal notranslate"><span class="pre">zipf/data</span></code> directory and count the number of lines in each file once again:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/zipf/data
 $<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span>*.txt
@@ -647,17 +655,17 @@ tells the shell that we want to use the output of the command on the left
 as the input to the command on the right.</p>
 <p>Running a command with a file as input has a clear flow of information:
 the command performs a task on that file and prints the output to the screen
-(<span class="xref myst"></span> a).
+(<a class="reference internal" href="#bash_tools_piper"><code class="xref myst docutils literal notranslate"><span class="pre">bash_tools_piper</span></code></a> a).
 When using pipes, however,
 the information flows differently after the first (upstream) command.
 The downstream command doesn’t read from a file.
 Instead,
 it reads the output of the upstream command
-(<span class="xref myst"></span> b).</p>
+(<a class="reference internal" href="#bash_tools_piper"><code class="xref myst docutils literal notranslate"><span class="pre">bash_tools_piper</span></code></a> b).</p>
 <figure class="align-default" id="bash-toots-piper">
 <img alt="../_images/pipe.png" src="../_images/pipe.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Bash tool pipe</span><a class="headerlink" href="#bash-toots-piper" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Bash tool pipe</span><a class="headerlink" href="#bash-toots-piper" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">|</span></code> to build pipes of any length.
@@ -703,7 +711,7 @@ so a very common sequence is:</p>
 </ul>
 </section>
 <section id="how-pipes-work">
-<h2>How Pipes Work<a class="headerlink" href="#how-pipes-work" title="Permalink to this heading">#</a></h2>
+<h2>How Pipes Work<a class="headerlink" href="#how-pipes-work" title="Link to this heading">#</a></h2>
 <p>In order to use pipes and redirection effectively,
 we need to know a little about how they work.
 When a computer runs a program—any program—it creates a <strong>process</strong>
@@ -726,7 +734,7 @@ to that process’s standard input and output (<a class="reference internal" hre
 <figure class="align-default" id="standard-io">
 <img alt="../_images/standard-io.png" src="../_images/standard-io.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Bash tools stdio</span><a class="headerlink" href="#standard-io" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Bash tools stdio</span><a class="headerlink" href="#standard-io" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>If we provide one or more files for the command to read,
@@ -749,8 +757,8 @@ three
 two
 </pre></div>
 </div>
-<p>Redirection with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> tells the shell to connect the program’s standard output to a file instead of the screen (<span class="xref myst"></span> c).</p>
-<p>When we create a pipe like <code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">*.txt</span> <span class="pre">|</span> <span class="pre">sort</span></code>, the shell creates one process for each command so that <code class="docutils literal notranslate"><span class="pre">wc</span></code> and <code class="docutils literal notranslate"><span class="pre">sort</span></code> will run simultaneously, and then connects the standard output of <code class="docutils literal notranslate"><span class="pre">wc</span></code> directly to the standard input of <code class="docutils literal notranslate"><span class="pre">sort</span></code> (<span class="xref myst"></span> d).</p>
+<p>Redirection with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> tells the shell to connect the program’s standard output to a file instead of the screen (<a class="reference internal" href="#bash_tools_stdio"><code class="xref myst docutils literal notranslate"><span class="pre">bash_tools_stdio</span></code></a> c).</p>
+<p>When we create a pipe like <code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">*.txt</span> <span class="pre">|</span> <span class="pre">sort</span></code>, the shell creates one process for each command so that <code class="docutils literal notranslate"><span class="pre">wc</span></code> and <code class="docutils literal notranslate"><span class="pre">sort</span></code> will run simultaneously, and then connects the standard output of <code class="docutils literal notranslate"><span class="pre">wc</span></code> directly to the standard input of <code class="docutils literal notranslate"><span class="pre">sort</span></code> (<a class="reference internal" href="#bash_tools_stdio"><code class="xref myst docutils literal notranslate"><span class="pre">bash_tools_stdio</span></code></a> d).</p>
 <p><code class="docutils literal notranslate"><span class="pre">wc</span></code> doesn’t know whether its output is going to the screen, another program,
 or to a file via <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>.
 Equally, <code class="docutils literal notranslate"><span class="pre">sort</span></code> doesn’t know if its input is coming from the keyboard or another process; it just knows that it has to read, sort, and print.</p>
@@ -819,7 +827,7 @@ every process has a second output channel called <strong>standard error</strong>
 There are ways to redirect standard error, but doing so is almost always a bad idea.</p>
 </section>
 <section id="repeating-commands-on-many-files">
-<h2>Repeating Commands on Many Files<a class="headerlink" href="#repeating-commands-on-many-files" title="Permalink to this heading">#</a></h2>
+<h2>Repeating Commands on Many Files<a class="headerlink" href="#repeating-commands-on-many-files" title="Link to this heading">#</a></h2>
 <p>A loop is a way to repeat a set of commands for each item in a list.
 We can use them to build complex workflows out of simple pieces, and (like wildcards) they reduce the typing we have to do and the number of mistakes we might make.</p>
 <p>Let’s suppose that we want to take a section out of each book
@@ -1003,7 +1011,7 @@ Language: English
 </div>
 </section>
 <section id="variable-names">
-<h2>Variable Names<a class="headerlink" href="#variable-names" title="Permalink to this heading">#</a></h2>
+<h2>Variable Names<a class="headerlink" href="#variable-names" title="Link to this heading">#</a></h2>
 <p>We should always choose meaningful names for variables,
 but we should remember that those names don’t mean anything to the computer.
 For example,we have called our loop variable <code class="docutils literal notranslate"><span class="pre">filename</span></code>
@@ -1027,7 +1035,7 @@ so meaningless names like <code class="docutils literal notranslate"><span class
 increase the odds of misunderstanding.</p>
 </section>
 <section id="redoing-things">
-<h2>Redoing Things<a class="headerlink" href="#redoing-things" title="Permalink to this heading">#</a></h2>
+<h2>Redoing Things<a class="headerlink" href="#redoing-things" title="Link to this heading">#</a></h2>
 <p>Loops are useful if we know in advance what we want to repeat,
 but we can also repeat commands that we have run recently.
 One way is to use <kbd>↑</kbd> and <kbd>↓</kbd>
@@ -1115,7 +1123,7 @@ indicate the code is on separate lines;
 the absence of either in shell commands indicates it is a single line of code.</p>
 </section>
 <section id="creating-new-filenames-automatically">
-<h2>Creating New Filenames Automatically<a class="headerlink" href="#creating-new-filenames-automatically" title="Permalink to this heading">#</a></h2>
+<h2>Creating New Filenames Automatically<a class="headerlink" href="#creating-new-filenames-automatically" title="Link to this heading">#</a></h2>
 <p>Suppose we want to create a backup copy of each book whose name ends in “e”.
 If we don’t want to change the files’ names,
 we can do this with <code class="docutils literal notranslate"><span class="pre">cp</span></code>:</p>
@@ -1180,13 +1188,13 @@ $<span class="w"> </span>ls<span class="w"> </span>../backup
 </div>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>The shell’s greatest strength is the way it combines a few powerful ideas with pipes and loops.
 The next chapter will show how we can make our work more reproducible
 by saving commands in files that we can run over and over again.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <p>The exercises below involve creating and moving new files,
 as well as considering hypothetical files.
 Please note that if you create or move any files or directories in your Zipf’s Law project,
@@ -1195,7 +1203,7 @@ If you accidentally delete necessary files,
 you can start with a fresh copy of the data files
 by following the instructions in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started#downloading-the-data">Downloading the Data</a>.</p>
 <section id="what-does-mean">
-<h3>What does <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> mean?<a class="headerlink" href="#what-does-mean" title="Permalink to this heading">#</a></h3>
+<h3>What does <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> mean?<a class="headerlink" href="#what-does-mean" title="Link to this heading">#</a></h3>
 <p>We have seen the use of <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, but there is a similar operator <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> which works slightly differently.
 We’ll learn about the differences between these two operators by printing some strings. We can use the <code class="docutils literal notranslate"><span class="pre">echo</span></code> command to print strings as shown below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>The<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nb">command</span><span class="w"> </span>prints<span class="w"> </span>text
@@ -1215,7 +1223,7 @@ We’ll learn about the differences between these two operators by printing some
 <p>Hint: Try executing each command twice in a row and then examining the output files.</p>
 </section>
 <section id="appending-data">
-<h3>Appending data<a class="headerlink" href="#appending-data" title="Permalink to this heading">#</a></h3>
+<h3>Appending data<a class="headerlink" href="#appending-data" title="Link to this heading">#</a></h3>
 <p>Given the following commands,
 what will be included in the file <code class="docutils literal notranslate"><span class="pre">extracted.txt</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">3</span><span class="w"> </span>dracula.txt<span class="w"> </span>&gt;<span class="w"> </span>extracted.txt
@@ -1230,7 +1238,7 @@ $<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><
 </ol>
 </section>
 <section id="piping-commands">
-<h3>Piping commands<a class="headerlink" href="#piping-commands" title="Permalink to this heading">#</a></h3>
+<h3>Piping commands<a class="headerlink" href="#piping-commands" title="Link to this heading">#</a></h3>
 <p>In our current directory, we want to find the 3 files which have the least number of
 lines. Which command listed below would work?</p>
 <ol class="arabic simple">
@@ -1241,7 +1249,7 @@ lines. Which command listed below would work?</p>
 </ol>
 </section>
 <section id="why-does-uniq-only-remove-adjacent-duplicates">
-<h3>Why does <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only remove adjacent duplicates?<a class="headerlink" href="#why-does-uniq-only-remove-adjacent-duplicates" title="Permalink to this heading">#</a></h3>
+<h3>Why does <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only remove adjacent duplicates?<a class="headerlink" href="#why-does-uniq-only-remove-adjacent-duplicates" title="Link to this heading">#</a></h3>
 <p>The command <code class="docutils literal notranslate"><span class="pre">uniq</span></code> removes adjacent duplicated lines from its input.
 Consider a hypothetical file <code class="docutils literal notranslate"><span class="pre">genres.txt</span></code> containing the following data:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>science fiction
@@ -1265,7 +1273,7 @@ science fiction
 you combine with it in a pipe to remove all duplicated lines?</p>
 </section>
 <section id="pipe-reading-comprehension">
-<h3>Pipe reading comprehension<a class="headerlink" href="#pipe-reading-comprehension" title="Permalink to this heading">#</a></h3>
+<h3>Pipe reading comprehension<a class="headerlink" href="#pipe-reading-comprehension" title="Link to this heading">#</a></h3>
 <p>A file called <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> contains a list of book titles and publication years:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Dracula,1897
 Frankenstein,1818
@@ -1285,7 +1293,7 @@ Wuthering Heights,1847
 <p>Hint: build the pipeline up one command at a time to test your understanding</p>
 </section>
 <section id="pipe-construction">
-<h3>Pipe construction<a class="headerlink" href="#pipe-construction" title="Permalink to this heading">#</a></h3>
+<h3>Pipe construction<a class="headerlink" href="#pipe-construction" title="Link to this heading">#</a></h3>
 <p>For the file <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> from the previous exercise, consider the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span>,<span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span>titles.txt
 </pre></div>
@@ -1293,7 +1301,7 @@ Wuthering Heights,1847
 <p>What does the <code class="docutils literal notranslate"><span class="pre">cut</span></code> command (and its options) accomplish?</p>
 </section>
 <section id="which-pipe">
-<h3>Which pipe?<a class="headerlink" href="#which-pipe" title="Permalink to this heading">#</a></h3>
+<h3>Which pipe?<a class="headerlink" href="#which-pipe" title="Link to this heading">#</a></h3>
 <p>Consider the same <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> from the previous exercises.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">uniq</span></code> command has a <code class="docutils literal notranslate"><span class="pre">-c</span></code> option which gives a count of the
 number of times a line occurs in its input.
@@ -1309,7 +1317,7 @@ a table that shows the total count of each publication year in the file?</p>
 </ol>
 </section>
 <section id="doing-a-dry-run">
-<h3>Doing a dry run<a class="headerlink" href="#doing-a-dry-run" title="Permalink to this heading">#</a></h3>
+<h3>Doing a dry run<a class="headerlink" href="#doing-a-dry-run" title="Link to this heading">#</a></h3>
 <p>A loop is a way to do many things at once—or to make many mistakes at
 once if it does the wrong thing. One way to check what a loop <em>would</em> do
 is to <code class="docutils literal notranslate"><span class="pre">echo</span></code> the commands it would run instead of actually running them.</p>
@@ -1339,7 +1347,7 @@ and which one would we want to run?</p>
 </div>
 </section>
 <section id="variables-in-loops">
-<h3>Variables in loops<a class="headerlink" href="#variables-in-loops" title="Permalink to this heading">#</a></h3>
+<h3>Variables in loops<a class="headerlink" href="#variables-in-loops" title="Link to this heading">#</a></h3>
 <p>Given the files in <code class="docutils literal notranslate"><span class="pre">data/</span></code>,
 what is the output of the following code?</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>datafile<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
@@ -1358,7 +1366,7 @@ what is the output of the following code?</p>
 <p>Why do these two loops give different outputs?</p>
 </section>
 <section id="limiting-sets-of-files">
-<h3>Limiting sets of files<a class="headerlink" href="#limiting-sets-of-files" title="Permalink to this heading">#</a></h3>
+<h3>Limiting sets of files<a class="headerlink" href="#limiting-sets-of-files" title="Link to this heading">#</a></h3>
 <p>What would be the output of running the following loop in your <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory?</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span>d*
 &gt;<span class="w"> </span><span class="k">do</span>
@@ -1375,7 +1383,7 @@ what is the output of the following code?</p>
 </div>
 </section>
 <section id="saving-to-a-file-in-a-loop">
-<h3>Saving to a file in a loop<a class="headerlink" href="#saving-to-a-file-in-a-loop" title="Permalink to this heading">#</a></h3>
+<h3>Saving to a file in a loop<a class="headerlink" href="#saving-to-a-file-in-a-loop" title="Link to this heading">#</a></h3>
 <p>Consider running the following loop in the  <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>book<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
 &gt;<span class="w"> </span><span class="k">do</span>
@@ -1393,7 +1401,7 @@ what is the output of the following code?</p>
 </div>
 </section>
 <section id="why-does-history-record-commands-before-running-them">
-<h3>Why does <code class="docutils literal notranslate"><span class="pre">history</span></code> record commands before running them?<a class="headerlink" href="#why-does-history-record-commands-before-running-them" title="Permalink to this heading">#</a></h3>
+<h3>Why does <code class="docutils literal notranslate"><span class="pre">history</span></code> record commands before running them?<a class="headerlink" href="#why-does-history-record-commands-before-running-them" title="Link to this heading">#</a></h3>
 <p>If you run the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">history</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span>&gt;<span class="w"> </span>recent.sh
 </pre></div>
@@ -1405,11 +1413,11 @@ before running them. Why do you think it does this?</p>
 </section>
 </section>
 <section id="key-points">
-<h2>Key Points<a class="headerlink" href="#key-points" title="Permalink to this heading">#</a></h2>
+<h2>Key Points<a class="headerlink" href="#key-points" title="Link to this heading">#</a></h2>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>Building Tools with the Unix Shell<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>Building Tools with the Unix Shell<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <blockquote>
 <div><p>Wisdom comes from experience. Experience is often a result of lack of wisdom.</p>
 <p>— Terry Pratchett</p>
@@ -1434,7 +1442,7 @@ which should contain the following files after the previous chapter:</p>
 </pre></div>
 </div>
 <section id="id2">
-<h2>Combining Commands<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>Combining Commands<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>To see how the shell lets us combine commands,
 let’s go into the <code class="docutils literal notranslate"><span class="pre">zipf/data</span></code> directory
 and count the number of lines in each file once again:</p>
@@ -1545,7 +1553,7 @@ tells the shell that we want to use the output of the command on the left
 as the input to the command on the right.</p>
 <p>Running a command with a file as input has a clear flow of information:
 the command performs a task on that file and prints the output to the screen
-(<span class="xref myst"></span> a).
+(<a class="reference internal" href="#bash_tool_pip"><code class="xref myst docutils literal notranslate"><span class="pre">bash_tool_pip</span></code></a> a).
 When using pipes, however,
 the information flows differently after the first (upstream) command.
 The downstream command doesn’t read from a file.
@@ -1555,7 +1563,7 @@ it reads the output of the upstream command
 <figure class="align-default" id="bash-tools-pipe">
 <img alt="../_images/pipe.png" src="../_images/pipe.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Bash tools pip</span><a class="headerlink" href="#bash-tools-pipe" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Bash tools pip</span><a class="headerlink" href="#bash-tools-pipe" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">|</span></code> to build pipes of any length.
@@ -1602,7 +1610,7 @@ so a very common sequence is:</p>
 </ul>
 </section>
 <section id="id3">
-<h2>How Pipes Work<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>How Pipes Work<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>In order to use pipes and redirection effectively,
 we need to know a little about how they work.
 When a computer runs a program—any program—it creates a <strong>process</strong>
@@ -1624,7 +1632,7 @@ to that process’s standard input and output (<a class="reference internal" hre
 <figure class="align-default" id="bash-tools-stdio-2">
 <img alt="../_images/standard-io.png" src="../_images/standard-io.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Bash Tools stdio</span><a class="headerlink" href="#bash-tools-stdio-2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Bash Tools stdio</span><a class="headerlink" href="#bash-tools-stdio-2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>If we provide one or more files for the command to read,
@@ -1654,7 +1662,7 @@ instead of the screen (<a class="reference internal" href="#bash-tools-stdio-2">
 <p>When we create a pipe like <code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">*.txt</span> <span class="pre">|</span> <span class="pre">sort</span></code>,
 the shell creates one process for each command so that <code class="docutils literal notranslate"><span class="pre">wc</span></code> and <code class="docutils literal notranslate"><span class="pre">sort</span></code> will run simultaneously,
 and then connects the standard output of <code class="docutils literal notranslate"><span class="pre">wc</span></code> directly to the standard input of <code class="docutils literal notranslate"><span class="pre">sort</span></code>
-(<span class="xref myst"></span>d).</p>
+(<a class="reference internal" href="#bash_tools_stdio"><code class="xref myst docutils literal notranslate"><span class="pre">bash_tools_stdio</span></code></a>d).</p>
 <p><code class="docutils literal notranslate"><span class="pre">wc</span></code> doesn’t know whether its output is going to the screen,
 another program, or to a file via <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>.
 Equally, <code class="docutils literal notranslate"><span class="pre">sort</span></code> doesn’t know if its input is coming from the keyboard or another process; it just knows that it has to read, sort, and print.</p>
@@ -1723,7 +1731,7 @@ Programs use it for error messages so that their attempts to tell us something h
 There are ways to redirect standard error, but doing so is almost always a bad idea.</p>
 </section>
 <section id="id4">
-<h2>Repeating Commands on Many Files<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2>Repeating Commands on Many Files<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>A loop is a way to repeat a set of commands for each item in a list. We can use them to build complex workflows out of simple pieces, and (like wildcards)
 they reduce the typing we have to do and the number of mistakes we might make.</p>
 <p>Let’s suppose that we want to take a section out of each book
@@ -1901,7 +1909,7 @@ Language: English
 </div>
 </section>
 <section id="id5">
-<h2>Variable Names<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2>Variable Names<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>We should always choose meaningful names for variables,
 but we should remember that those names don’t mean anything to the computer.
 For example,
@@ -1927,7 +1935,7 @@ so meaningless names like <code class="docutils literal notranslate"><span class
 increase the odds of misunderstanding.</p>
 </section>
 <section id="id6">
-<h2>Redoing Things<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2>Redoing Things<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>Loops are useful if we know in advance what we want to repeat,
 but we can also repeat commands that we have run recently.
 One way is to use <kbd>↑</kbd> and <kbd>↓</kbd>
@@ -2015,7 +2023,7 @@ indicate the code is on separate lines;
 the absence of either in shell commands indicates it is a single line of code.</p>
 </section>
 <section id="id7">
-<h2>Creating New Filenames Automatically<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h2>Creating New Filenames Automatically<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <p>Suppose we want to create a backup copy of each book whose name ends in “e”.
 If we don’t want to change the files’ names,
 we can do this with <code class="docutils literal notranslate"><span class="pre">cp</span></code>:</p>
@@ -2074,13 +2082,13 @@ $<span class="w"> </span>ls<span class="w"> </span>../backup
 </div>
 </section>
 <section id="id8">
-<h2>Summary<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
 <p>The shell’s greatest strength is the way it combines a few powerful ideas with pipes and loops.
 The next chapter will show how we can make our work more reproducible
 by saving commands in files that we can run over and over again.</p>
 </section>
 <section id="id9">
-<h2>Key Points<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<h2>Key Points<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cat</span></code> displays the contents of its inputs.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">head</span></code> displays the first few lines of its input.</p></li>
@@ -2159,6 +2167,7 @@ and a <strong>body</strong> containing commands to execute.</p></li>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -2227,7 +2236,7 @@ By Software Engineering Group - University of Potsdam
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -2251,8 +2260,8 @@ By Software Engineering Group - University of Potsdam
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>The Basics of the Unix Shell &#8212; RSE-ING</title>
   
@@ -19,50 +18,46 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/book.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css?v=c89437f7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/bash_basics';</script>
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_basics.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -78,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -122,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -154,7 +151,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">RSE-ING</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -486,10 +494,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-basics-of-the-unix-shell">
-<h1>The Basics of the Unix Shell<a class="headerlink" href="#the-basics-of-the-unix-shell" title="Permalink to this heading">#</a></h1>
+<h1>The Basics of the Unix Shell<a class="headerlink" href="#the-basics-of-the-unix-shell" title="Link to this heading">#</a></h1>
 <blockquote>
 <div><p>Ninety percent of most magic merely consists of knowing one extra fact.</p>
 <p>— Terry Pratchett</p>
@@ -524,7 +532,7 @@ or how they do what they do.</p>
 <figure class="align-default" id="the-shell">
 <img alt="../_images/the-shell.png" src="../_images/the-shell.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">The Shell</span><a class="headerlink" href="#the-shell" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">The Shell</span><a class="headerlink" href="#the-shell" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <blockquote>
@@ -543,7 +551,7 @@ we will point out a few differences as we go along.</p>
 <p>Please see Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started.html#downloading-the-data">getting started</a> for instructions
 on how to install and launch the shell on your computer.</p>
 <section id="exploring-files-and-directories">
-<h2>Exploring Files and Directories<a class="headerlink" href="#exploring-files-and-directories" title="Permalink to this heading">#</a></h2>
+<h2>Exploring Files and Directories<a class="headerlink" href="#exploring-files-and-directories" title="Link to this heading">#</a></h2>
 <p>Our first shell commands will let us explore our folders and files,
 and will also introduce us to several conventions that most Unix tools follow.
 To start, when Bash runs it presents us with a <strong>prompt</strong> to indicate that it is waiting for us to type something. This prompt is a simple dollar sign by default:</p>
@@ -597,7 +605,7 @@ On Amira’s computer the basic filesystem looks as follows:</p>
 <figure class="align-default" id="bash-basic-filesystem">
 <img alt="../_images/sample-filesystem.png" src="../_images/sample-filesystem.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Bash basic filesystem</span><a class="headerlink" href="#bash-basic-filesystem" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Bash basic filesystem</span><a class="headerlink" href="#bash-basic-filesystem" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>At the top is the <strong>root directory</strong> that holds everything else, which we can refer to using a slash character <code class="docutils literal notranslate"><span class="pre">/</span></code> on its own.
@@ -703,7 +711,7 @@ so it’s best to avoid doing this.</p>
 </div></blockquote>
 </section>
 <section id="moving-around">
-<h2>Moving Around<a class="headerlink" href="#moving-around" title="Permalink to this heading">#</a></h2>
+<h2>Moving Around<a class="headerlink" href="#moving-around" title="Link to this heading">#</a></h2>
 <p>Let’s run <code class="docutils literal notranslate"><span class="pre">ls</span></code> again.
 Without any arguments,
 it shows us what’s in our current working directory:</p>
@@ -905,7 +913,7 @@ it only works with <code class="docutils literal notranslate"><span class="pre">
 rather than showing us the contents of our previous directory.</p>
 </section>
 <section id="creating-new-files-and-directories">
-<h2>Creating New Files and Directories<a class="headerlink" href="#creating-new-files-and-directories" title="Permalink to this heading">#</a></h2>
+<h2>Creating New Files and Directories<a class="headerlink" href="#creating-new-files-and-directories" title="Link to this heading">#</a></h2>
 <p>We now know how to explore files and directories,
 but how do we create them?
 To find out,
@@ -972,7 +980,7 @@ $<span class="w"> </span>nano<span class="w"> </span>draft.txt
 <figure class="align-default" id="nano-editor">
 <img alt="../_images/nano-editor.png" src="../_images/nano-editor.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Nano Editor</span><a class="headerlink" href="#nano-editor" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Nano Editor</span><a class="headerlink" href="#nano-editor" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>When we say “Nano is a text editor” we really do mean “text”:
@@ -1044,7 +1052,7 @@ when someone double-clicks it.</p>
 </div></blockquote>
 </section>
 <section id="moving-files-and-directories">
-<h2>Moving Files and Directories<a class="headerlink" href="#moving-files-and-directories" title="Permalink to this heading">#</a></h2>
+<h2>Moving Files and Directories<a class="headerlink" href="#moving-files-and-directories" title="Link to this heading">#</a></h2>
 <p>Let’s go back to our <code class="docutils literal notranslate"><span class="pre">zipf</span></code> directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/zipf
 </pre></div>
@@ -1102,7 +1110,7 @@ just like we can give the name of a directory:</p>
 </div>
 </section>
 <section id="copying-files-and-directories">
-<h2>Copying Files and Directories<a class="headerlink" href="#copying-files-and-directories" title="Permalink to this heading">#</a></h2>
+<h2>Copying Files and Directories<a class="headerlink" href="#copying-files-and-directories" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">cp</span></code> command <strong>c</strong>o<strong>p</strong>ies files.
 It works like <code class="docutils literal notranslate"><span class="pre">mv</span></code> except it creates a file instead of moving an existing one:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cp<span class="w"> </span>prior-work.txt<span class="w"> </span>docs/section-1.txt
@@ -1166,7 +1174,7 @@ a secure connection to a remote computer via the shell.</p>
 </div></blockquote>
 </section>
 <section id="deleting-files-and-directories">
-<h2>Deleting Files and Directories<a class="headerlink" href="#deleting-files-and-directories" title="Permalink to this heading">#</a></h2>
+<h2>Deleting Files and Directories<a class="headerlink" href="#deleting-files-and-directories" title="Link to this heading">#</a></h2>
 <p>Let’s tidy up by removing the <code class="docutils literal notranslate"><span class="pre">prior-work.txt</span></code> file we created in our <code class="docutils literal notranslate"><span class="pre">zipf</span></code> directory.
 The command to do this is <code class="docutils literal notranslate"><span class="pre">rm</span></code> (for <strong>r</strong>e<strong>m</strong>ove):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rm<span class="w"> </span>prior-work.txt
@@ -1204,7 +1212,7 @@ to get <code class="docutils literal notranslate"><span class="pre">rm</span></c
 This option works the same way with <code class="docutils literal notranslate"><span class="pre">mv</span></code> and <code class="docutils literal notranslate"><span class="pre">cp</span></code>.</p>
 </section>
 <section id="wildcards">
-<h2>Wildcards<a class="headerlink" href="#wildcards" title="Permalink to this heading">#</a></h2>
+<h2>Wildcards<a class="headerlink" href="#wildcards" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">zipf/data</span></code> contains the text files for several ebooks
 from <a class="reference external" href="https://www.gutenberg.org">Project Gutenberg</a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>data
@@ -1292,7 +1300,7 @@ In this case, the command will usually print an error message:</p>
 </div>
 </section>
 <section id="reading-the-manual">
-<h2>Reading the Manual<a class="headerlink" href="#reading-the-manual" title="Permalink to this heading">#</a></h2>
+<h2>Reading the Manual<a class="headerlink" href="#reading-the-manual" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">wc</span></code> displays lines, words, and characters by default,
 but we can ask it to display only the number of lines:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span>data/s*.txt
@@ -1329,7 +1337,7 @@ and highlights a few of features useful for beginners.</p>
 <figure class="align-default" id="man-callouts">
 <img alt="../_images/man-callouts.png" src="../_images/man-callouts.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Bash basics manual</span><a class="headerlink" href="#man-callouts" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Bash basics manual</span><a class="headerlink" href="#man-callouts" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Some commands have a <code class="docutils literal notranslate"><span class="pre">--help</span></code> option that provides a succinct summary of possibilities, but the best place to go for help these days is probably the <a class="reference external" href="https://tldr.sh/">TLDR</a> website.
@@ -1361,7 +1369,7 @@ someone who wants to know how many lines there are in a data file
 is unlikely to think to look for <code class="docutils literal notranslate"><span class="pre">wc</span></code>.</p>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>The original Unix shell is celebrating its fiftieth anniversary.
 Its commands may be cryptic, but few programs have remained in daily use for so long.
 The next chapter will explore how we can combine and repeat commands
@@ -1370,7 +1378,7 @@ in order to create powerful, efficient workflows.</p>
 <p>These can be run online, just follow the instruction, right now you will not need a local version of the software, but later on this will be a necessity to follow along.</p>
 </section>
 <section id="key-points">
-<h2>Key Points<a class="headerlink" href="#key-points" title="Permalink to this heading">#</a></h2>
+<h2>Key Points<a class="headerlink" href="#key-points" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>A <strong>shell</strong> is a program that reads commands and runs other programs.</p></li>
 <li><p>The <strong>filesystem</strong> manages information stored on disk.</p></li>
@@ -1453,6 +1461,7 @@ in order to create powerful, efficient workflows.</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -1493,7 +1502,7 @@ By Software Engineering Group - University of Potsdam
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1517,8 +1526,8 @@ By Software Engineering Group - University of Potsdam
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

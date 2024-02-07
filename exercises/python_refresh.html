@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Python Refresher &#8212; RSE-ING</title>
   
@@ -19,50 +18,46 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/book.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css?v=c89437f7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/python_refresh';</script>
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/python_refresh.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -78,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -122,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -154,7 +151,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">RSE-ING</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -522,27 +530,27 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python-refresher">
-<h1>Python Refresher<a class="headerlink" href="#python-refresher" title="Permalink to this heading">#</a></h1>
+<h1>Python Refresher<a class="headerlink" href="#python-refresher" title="Link to this heading">#</a></h1>
 <p>This worksheet is not about the actual content of the Research Software Engineering (RSE) course, but meant to make sure that you are ready to use Python for the assignments and
 projects ahead. Therefore, it contains instructions on how to install the Anaconda framework for data science (including Python 3) and some programming exercises to revitalize your
 Python coding skills.</p>
 <p>This worksheet will be discussed in the labs in the next lab ( See moodle for the precise time table).</p>
 <section id="assignment-1-python-development-environment">
-<h2>Assignment 1: Python Development Environment<a class="headerlink" href="#assignment-1-python-development-environment" title="Permalink to this heading">#</a></h2>
+<h2>Assignment 1: Python Development Environment<a class="headerlink" href="#assignment-1-python-development-environment" title="Link to this heading">#</a></h2>
 <p>To get started you need a working Python development environment. You can either install Anaconda, or Python directly.
 For most tasks of the book, you won’t need that many packages, A list will be provided below. This book won’t go into detail on how to install python manually, but for those new to Python but experience in other languages you may follow the the instructions on Anaconda.</p>
 <section id="python-install-instructions">
-<h3>Python Install Instructions<a class="headerlink" href="#python-install-instructions" title="Permalink to this heading">#</a></h3>
+<h3>Python Install Instructions<a class="headerlink" href="#python-install-instructions" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>On Mac and Windows go to <a class="reference external" href="https://python.org">Python.org</a> and download Python 3 the latest version manully or follow or use your terminal to install python. Most Linux system come with python pre installed.</p></li>
 <li><p>Install a Text editor VS Code, Jetbrains Pycharm, or Neovim, Helix, Emacs, there are no requirements, but having an install of VS Code might make it easier, since VS code can run Jupyter notebooks without you having to install the whole Anaconda ecosystem and starting jupyter notebook server. And run the Notebooks in your Browser, instead you can use VScode including all python linting etc.</p></li>
 </ol>
 </section>
 <section id="anaconda-install-guide">
-<h3>Anaconda Install Guide<a class="headerlink" href="#anaconda-install-guide" title="Permalink to this heading">#</a></h3>
+<h3>Anaconda Install Guide<a class="headerlink" href="#anaconda-install-guide" title="Link to this heading">#</a></h3>
 <p>We will use the Anaconda Data Science platform in the course. Anaconda is a free and open source distribution of Python and some other programming languages used in scientific
 applications. It runs on all major operaBng systems and provides a number of very useful tools for Python programming, some of which we will use in the course.
 Here is what you need to do to get started:</p>
@@ -556,11 +564,11 @@ get in touch with <strong>TODO</strong> Akshay (<a class="reference external" hr
 </section>
 </section>
 <section id="assignment-2-revitalize-your-python">
-<h2>Assignment 2: Revitalize your Python<a class="headerlink" href="#assignment-2-revitalize-your-python" title="Permalink to this heading">#</a></h2>
+<h2>Assignment 2: Revitalize your Python<a class="headerlink" href="#assignment-2-revitalize-your-python" title="Link to this heading">#</a></h2>
 <p>Here are a couple of exercises to revitalize your basic Python skills. Do these in Spyder, using
 plain .py files, not Jupyter Notebooks or other interfaces.</p>
 <section id="arithmetics">
-<h3>2.1 Arithmetics<a class="headerlink" href="#arithmetics" title="Permalink to this heading">#</a></h3>
+<h3>2.1 Arithmetics<a class="headerlink" href="#arithmetics" title="Link to this heading">#</a></h3>
 <p>Write a Python program that welcomes the user, asks for their name (string), weight in kg (integer) and height in m (float), computes the body mass index (BMI) from the information
 (weight/height2) and finally displays a message to the user, saying something like:</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>Hello<span class="w"> </span>Jim,<span class="w"> </span>your<span class="w"> </span>BMI<span class="w"> </span>is<span class="w"> </span><span class="m">23</span>.4.
@@ -576,7 +584,7 @@ plain .py files, not Jupyter Notebooks or other interfaces.</p>
 </div>
 </section>
 <section id="conditional-branching">
-<h3>2.2 Conditional Branching<a class="headerlink" href="#conditional-branching" title="Permalink to this heading">#</a></h3>
+<h3>2.2 Conditional Branching<a class="headerlink" href="#conditional-branching" title="Link to this heading">#</a></h3>
 <p>Extend the BMI calculation program from the previous exercise so that after informing the user about the calculated BMI, it also prints out if the BMI is within the range that is generally
 considered normal (between 18.5 and 25) or higher (above 25) or lower (below 18.5) than that. The output of the modified program should then be something like:</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>Welcome<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>BMI<span class="w"> </span>calculator.
@@ -596,7 +604,7 @@ Your<span class="w"> </span>BMI<span class="w"> </span>is<span class="w"> </span
 </div>
 </section>
 <section id="while-loops">
-<h3>2.3 While-Loops<a class="headerlink" href="#while-loops" title="Permalink to this heading">#</a></h3>
+<h3>2.3 While-Loops<a class="headerlink" href="#while-loops" title="Link to this heading">#</a></h3>
 <p>Write a simple number-guessing game in Python. It generates a random number between 1 and 100 and asks the user to guess it. If the number guessed is too small or too big, a hint is
 given and the user can try again, unBl they guess the correct number. The output of the program should be something like:</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>Can<span class="w"> </span>you<span class="w"> </span>guess<span class="w"> </span>the<span class="w"> </span>number?<span class="w"> </span><span class="m">12</span>
@@ -616,7 +624,7 @@ Yes!
 </div>
 </section>
 <section id="for-loops-text-processing">
-<h3>2.4 For-Loops, Text Processing<a class="headerlink" href="#for-loops-text-processing" title="Permalink to this heading">#</a></h3>
+<h3>2.4 For-Loops, Text Processing<a class="headerlink" href="#for-loops-text-processing" title="Link to this heading">#</a></h3>
 <p>Write a simple text analysis program that finds the (first) longest word in a text. It should work on any text, but you can use the “lorem ipsum” as an example:</p>
 <blockquote>
 <div><p>text = “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <br />
@@ -639,16 +647,16 @@ The output of your program should report the longest word and its length, like t
 </div>
 </section>
 <section id="functions">
-<h3>2.5 Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h3>
+<h3>2.5 Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h3>
 <p>In our lifeBmes (unless we happen to get veeery old) a leap year occurs every four years. But actually, the rule is a bit more involved: A year is a leap year if it is a multiple of 4, but not a
 multiple of 100, unless it is also a mulBple of 400. For example, 1984 and 2000 were leap years, but 1900 and 1985 were not.</p>
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">is_leap_year(year)</span></code> that tests if the year is a leap year. If so, the function should return <code class="docutils literal notranslate"><span class="pre">True</span></code>, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise. Implement the function using only one Boolean expression. You can use the code below to test your function:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>tests = [1900, 1984, 1985, 2000, 2018]
-for test in tests:
-    if is_leap_year(test):
-        print(f”{test} is a leap year&quot;)
-    else:
-        print(f”{test} is not a leap year&quot;)
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">tests</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1900</span><span class="p">,</span> <span class="mi">1984</span><span class="p">,</span> <span class="mi">1985</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2018</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">test</span> <span class="ow">in</span> <span class="n">tests</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_leap_year</span><span class="p">(</span><span class="n">test</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="err">”</span><span class="p">{</span><span class="n">test</span><span class="p">}</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">leap</span> <span class="n">year</span><span class="s2">&quot;)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="err">”</span><span class="p">{</span><span class="n">test</span><span class="p">}</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">leap</span> <span class="n">year</span><span class="s2">&quot;)</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -660,7 +668,7 @@ for test in tests:
 </div>
 </section>
 <section id="dataframes-pandas">
-<h3>2.6 Dataframes, Pandas<a class="headerlink" href="#dataframes-pandas" title="Permalink to this heading">#</a></h3>
+<h3>2.6 Dataframes, Pandas<a class="headerlink" href="#dataframes-pandas" title="Link to this heading">#</a></h3>
 <p>Download the file mcdonalds_menu.csv from Moodle. Write a program that reads the content of the file into a dataframe, and displays simple descriptive statistics about the
 numerical values in the data frame. Then add some code to create a barplot that displays the number of items per category.
 The output should look something like:</p>
@@ -674,7 +682,7 @@ The output should look something like:</p>
 </div>
 </section>
 <section id="classes-inheritance">
-<h3>2.7 Classes, Inheritance<a class="headerlink" href="#classes-inheritance" title="Permalink to this heading">#</a></h3>
+<h3>2.7 Classes, Inheritance<a class="headerlink" href="#classes-inheritance" title="Link to this heading">#</a></h3>
 <p>Define two classes <code class="docutils literal notranslate"><span class="pre">Person</span></code> and <code class="docutils literal notranslate"><span class="pre">Student</span></code> with the following characteristics: The base class <code class="docutils literal notranslate"><span class="pre">Person</span></code> provides a field <code class="docutils literal notranslate"><span class="pre">name</span></code> and a function <code class="docutils literal notranslate"><span class="pre">printInfo</span></code> to print information about
 the person (i.e., the name). The class <code class="docutils literal notranslate"><span class="pre">Student</span></code> is derived from <code class="docutils literal notranslate"><span class="pre">Person</span></code>. A Student is a Person that in addition has a university, a study program and a number of <code class="docutils literal notranslate"><span class="pre">creditpoints</span></code>. The class <code class="docutils literal notranslate"><span class="pre">Student</span></code> also has a <code class="docutils literal notranslate"><span class="pre">printInfo</span></code> function, which displays information about the university and program in addition to the student’s name. With the functions <code class="docutils literal notranslate"><span class="pre">setCreditPoints</span></code> and <code class="docutils literal notranslate"><span class="pre">getCreditPoints</span></code> the credit points of the student can be set and retrieved</p>
 <div class="cell docutils container">
@@ -745,6 +753,7 @@ the person (i.e., the name). The class <code class="docutils literal notranslate
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -790,7 +799,7 @@ By Software Engineering Group - University of Potsdam
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -814,8 +823,8 @@ By Software Engineering Group - University of Potsdam
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Going Further with the Unix Shell &#8212; RSE-ING</title>
   
@@ -19,50 +18,46 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/book.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css?v=c89437f7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/bash_advanced';</script>
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_advanced.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -78,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -122,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -154,7 +151,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">RSE-ING</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -484,10 +492,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="going-further-with-the-unix-shell">
-<h1>Going Further with the Unix Shell<a class="headerlink" href="#going-further-with-the-unix-shell" title="Permalink to this heading">#</a></h1>
+<h1>Going Further with the Unix Shell<a class="headerlink" href="#going-further-with-the-unix-shell" title="Link to this heading">#</a></h1>
 <blockquote>
 <div><p>There isn’t a way things should be. There’s just what happens, and what we do.</p>
 <p>— Terry Pratchett</p>
@@ -521,7 +529,7 @@ If you have accidentally deleted files you need,
 you can download them again by following the instructions in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started.html#downloading-the-data">Downloading the Data</a>.</p>
 </div></blockquote>
 <section id="creating-new-commands">
-<h2>Creating New Commands<a class="headerlink" href="#creating-new-commands" title="Permalink to this heading">#</a></h2>
+<h2>Creating New Commands<a class="headerlink" href="#creating-new-commands" title="Link to this heading">#</a></h2>
 <p>Loops let us run the same commands many times,
 but we can go further and save commands in files
 so that we can repeat complex operations with a few keystrokes.
@@ -626,7 +634,7 @@ we count the number of words in the author line:</p>
 </div>
 </section>
 <section id="making-scripts-more-versatile">
-<h2>Making Scripts More Versatile<a class="headerlink" href="#making-scripts-more-versatile" title="Permalink to this heading">#</a></h2>
+<h2>Making Scripts More Versatile<a class="headerlink" href="#making-scripts-more-versatile" title="Link to this heading">#</a></h2>
 <p>Getting the name of the author for only one of the books isn’t particularly useful.
 What we really want is a way to get the name of the author from any of our files.
 Let’s edit <code class="docutils literal notranslate"><span class="pre">book_summary.sh</span></code> again
@@ -687,7 +695,7 @@ A description that sends readers in the wrong direction is worse than none at al
 </div>
 </section>
 <section id="turning-interactive-work-into-a-script">
-<h2>Turning Interactive Work into a Script<a class="headerlink" href="#turning-interactive-work-into-a-script" title="Permalink to this heading">#</a></h2>
+<h2>Turning Interactive Work into a Script<a class="headerlink" href="#turning-interactive-work-into-a-script" title="Link to this heading">#</a></h2>
 <p>Suppose we have just run a series of commands that did something useful,
 such as summarizing all books in a given directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>x<span class="w"> </span><span class="k">in</span><span class="w"> </span>../data/*.txt
@@ -731,7 +739,7 @@ $<span class="w"> </span>cat<span class="w"> </span>summarize_all_books.sh
 <p>We can now open the file in an editor, remove the serial numbers at the start of each line, and delete the lines we don’t want to create a script that captures exactly what we actually did. This is how we usually develop shell scripts: run commands interactively a few times to make sure they are doing the right thing, then save our recent history to a file and turn that into a reusable script.</p>
 </section>
 <section id="finding-things-in-files">
-<h2>Finding Things in Files<a class="headerlink" href="#finding-things-in-files" title="Permalink to this heading">#</a></h2>
+<h2>Finding Things in Files<a class="headerlink" href="#finding-things-in-files" title="Link to this heading">#</a></h2>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">head</span></code> and <code class="docutils literal notranslate"><span class="pre">tail</span></code> to select lines from a file by position,
 but we also often want to select lines that contain certain values.
 This is called <strong>filtering</strong>, and we usually do it in the shell with the command <code class="docutils literal notranslate"><span class="pre">grep</span></code> that we briefly met in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_advanced.html#creating-new-commands">creating new commands</a>.
@@ -936,10 +944,10 @@ if it begins with the search term—in this case, <code class="docutils literal 
 we can use them in programming languages, database queries, online search engines, and most text editors (though not Nano—its creators wanted to keep it as small as possible).
 A detailed guide of regular expressions is outside the scope of this book,
 but a wide range of tutorials are available online,
-and <span id="id1">[<a class="reference internal" href="references.html#id33" title="Jan Goyvaerts and Steven Levithan. Regular Expressions Cookbook. O'Reilly Media, 2nd edition, 2012. ISBN 978-1449327453. An exhaustive collection of useful regular expressions in several programming languages.">Goyvaerts and Levithan, 2012</a>]</span> is a useful companion if you need to go further.</p>
+and <span id="id1">[<a class="reference internal" href="references.html#id34" title="Jan Goyvaerts and Steven Levithan. Regular Expressions Cookbook. O'Reilly Media, 2nd edition, 2012. ISBN 978-1449327453. An exhaustive collection of useful regular expressions in several programming languages.">Goyvaerts and Levithan, 2012</a>]</span> is a useful companion if you need to go further.</p>
 </section>
 <section id="finding-files">
-<h2>Finding Files<a class="headerlink" href="#finding-files" title="Permalink to this heading">#</a></h2>
+<h2>Finding Files<a class="headerlink" href="#finding-files" title="Link to this heading">#</a></h2>
 <p>While <code class="docutils literal notranslate"><span class="pre">grep</span></code> finds things in files,
 the <code class="docutils literal notranslate"><span class="pre">find</span></code> command finds files themselves.
 It also has a lot of options, but unlike most Unix commands they are written as full words rather than single-letter abbreviations.
@@ -1126,7 +1134,7 @@ $<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-n
 </div>
 </section>
 <section id="configuring-the-shell">
-<h2>Configuring the Shell<a class="headerlink" href="#configuring-the-shell" title="Permalink to this heading">#</a></h2>
+<h2>Configuring the Shell<a class="headerlink" href="#configuring-the-shell" title="Link to this heading">#</a></h2>
 <p>As Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_tools.html#repeating-commands-on-many-files">repeating commands on many files</a> explained,
 the shell is a program, and it has variables like any other program.
 Some of those variables control the shell’s operations;
@@ -1304,7 +1312,7 @@ you can include a line in your <code class="docutils literal notranslate"><span 
 </div>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>As powerful as the Unix shell is, it does have its shortcomings: dollar signs, quotes, and other punctuation can make a complex shell script look as though
 it was created by a cat dancing on a keyboard.
 However, it is the glue that holds data science together:
@@ -1314,11 +1322,11 @@ specifying package installation directories to managing database login credentia
 And while <code class="docutils literal notranslate"><span class="pre">grep</span></code> and <code class="docutils literal notranslate"><span class="pre">find</span></code> may take some getting used to,
 they and their cousins can handle enormous datasets very efficiently.
 If you would like to go further,
-<span id="id2">[<a class="reference internal" href="references.html#id61" title="Eric J. Ray and Deborah S. Ray. Unix and Linux: Visual QuickStart Guide. Peachpit Press, 2014. ISBN 978-0321997548. An excellent general introduction to all things Unix.">Ray and Ray, 2014</a>]</span> is an excellent general introduction,
-while <span id="id3">[<a class="reference internal" href="references.html#id38" title="Jeroen Janssens. Data Science at the Command Line. O'Reilly Media, 2014. ISBN 978-1491947852. How to process data using the Unix shell.">Janssens, 2014</a>]</span> looks specifically at how to process data on the command line.</p>
+<span id="id2">[<a class="reference internal" href="references.html#id62" title="Eric J. Ray and Deborah S. Ray. Unix and Linux: Visual QuickStart Guide. Peachpit Press, 2014. ISBN 978-0321997548. An excellent general introduction to all things Unix.">Ray and Ray, 2014</a>]</span> is an excellent general introduction,
+while <span id="id3">[<a class="reference internal" href="references.html#id39" title="Jeroen Janssens. Data Science at the Command Line. O'Reilly Media, 2014. ISBN 978-1491947852. How to process data using the Unix shell.">Janssens, 2014</a>]</span> looks specifically at how to process data on the command line.</p>
 </section>
 <section id="key-points">
-<h2>Key Points<a class="headerlink" href="#key-points" title="Permalink to this heading">#</a></h2>
+<h2>Key Points<a class="headerlink" href="#key-points" title="Link to this heading">#</a></h2>
 <div class="highlight-{include notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
@@ -1382,6 +1390,7 @@ while <span id="id3">[<a class="reference internal" href="references.html#id38" 
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -1420,7 +1429,7 @@ By Software Engineering Group - University of Potsdam
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1444,8 +1453,8 @@ By Software Engineering Group - University of Potsdam
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

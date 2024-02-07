@@ -1,0 +1,756 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Week | Lecture | online/tutorial only &#8212; RSE-ING</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/book.css?v=c89437f7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'todo';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/todo.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="chapters/welcome.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RSE-ING</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="chapters/welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/python_refresh.html">Python Refresher</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bash and the CLI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/bash_basics.html">The Basics of the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/bash_tools.html">Building Tools with the Unix Shell</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapters/bash_advanced.html">Going Further with the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/bash.html">Bash Exercises</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/python_building_cli.html">Building Command-Line Tools with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/python_cli.html">Exercises - Scripting Python for CLI tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/intro_version_control.html">Using Git at the Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/version_control.html">Exercise Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/git_advanced.html">Going Further with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/git_advanced.html">Exercises Git Advanced</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Working in teams</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/working_in_teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/work_teams.html">Exercise - Work Teams</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to automation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/intro_make.html">Automating Analyses with Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/intro_make.html">Exercises - Make</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/configuration.html">Configuring Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/config.html">Exercises - Configuration</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing Software</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/testing_programs.html">Testing Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/testing.html">Exercises - Testing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Error Handling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/error_handling.html">Handling Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/error_handling.html">Exercises - Error Handling</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/tracking_provenance.html">Tracking Provenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/provenance.html">Exercises - Provenance</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Packaging</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/python_packaging.html">Creating Packages with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/packaging.html">Exercises - Packaging</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/clean_readable_code.html">Writing Readable Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/writing_documentation.html">Documenting Programs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/workflow.html">Introduction to Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/snakemake.html">Snake Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/advanced_cicd.html">CI/CD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Worksheets - Course Work</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="worksheets/worksheet2_install_more_tool_shell.html">Worksheet 2 - Installing more Tools, working with the Unix SHell, Getting Started with the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worksheets/worksheet3_cli_python_git.html">Worksheet 3 - Command Line Tools with Python , Git and the Command Line, Git UP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worksheets/worksheet4_readable_code.html">Worksheet 4 - Readable Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worksheets/worksheet6_software_license.html">Worksheet 6 - Software Licensing, Citation and FAIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worksheets/worksheet7_git_advanced.html">Worksheet 8 - Going further with Git</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">First Project - Invdividual</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="projects/individual/1_project_instructions.html">Project Assignment 1: Select a Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/individual/2_project_instructions.html">Project Assignment 2: Setting Up the Repository on Git.UP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/individual/3_project_instructions.html">Project Assignment 4: Start Coding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/individual/4_project_instructions.html">Project Assignment 4: More Code, a Notebook, and a README.md</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/individual/5_project_instructions.html">Project Assignment 5: Add License and Citation Informatoon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/individual/6_project_instructions.html">Project Assignment 6:</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Second Project - Group</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="projects/group/1_project_assignment.html">Project Assignment: Form Groups for Second Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/group/2_project_assignment.html">Project Assignment 2: Name, Idea and Basic Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/group/3_project_assignment.html">Project Assignment 3: Requirements, Architecture, Design and Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/group/4_project_assignment.html">Project Assignment 4: Testing and Error Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/group/5_project_assignment.html">Project Assignment 5: Program Configuration, Packaging and Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/group/6_project_assignment.html">Project Assignment 6: Finish and Submit the Project</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/solutions.html">Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/yaml.html">YAML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/working_remotely.html">Working Remotely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/tree.html">Project Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Ftodo.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/todo.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Week |  Lecture                         | online/tutorial only</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Week |  Lecture                         | online/tutorial only</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#course-introduction-python-refresher-git-basics">1    | Course Introduction              | Python Refresher, Git basics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-find-a-topic-shell">2    | Documentation / Find a topic     | Shell</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook-comp-narative">3    | Jupyter Notebook / Comp. Narative |</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#licensing-citation">4    | Licensing, Citation               |</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#working-in-teams-project-1-submission">5    | Working In Teams                  | Project 1 Submission</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-and-error-handling-find-groups-topic">6    | Testing and Error Handling        | Find Groups / Topic</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements-architectures-design-advanced-git">7    | Requirements, Architectures, Design| Advanced Git</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pycodestyle-clean-code-cli-intro-python">8    | PycodeStyle / Clean Code           | CLI Intro / Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-lec-1">9    | Workflow  Lec 1                    |</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-lec-2-snake-make">10   | Workflow Lec 2 - snake make        |</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-lec-3-topic-3-cicd">11   | Workflow Lec 3 - topic 3 + cicd    |</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-and-packaging">12   | Configuration and Packaging        |</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-provenance">13   | Tracking Provenance                |</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rse-in-practice-guest">14   | RSE in Practice / Guest            |</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-topic-project-presentation-project-submission">15   | Open Topic  / Project Presentation | Project Submission</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exam-date-1">16   | Exam date 1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-done-additions-taken-from-last-terms-slides">Changes done / Additions taken from last terms slides</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-1-introduction">Lecture 1 - introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-2">lecture 2 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-3">lecture 3 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-4">lecture 4 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-5">lecture 5 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-6">lecture 6 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-7">lecture 7 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-8">lecture 8 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-9">lecture 9 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-10">lecture 10 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-11">lecture 11 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-12">lecture 12 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-13">lecture 13 -</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>1 Github vs. Gitlab — VPN …..</p>
+<p>Preliminary Course Plan</p>
+<section id="week-lecture-online-tutorial-only">
+<h1>Week |  Lecture                         | online/tutorial only<a class="headerlink" href="#week-lecture-online-tutorial-only" title="Link to this heading">#</a></h1>
+</section>
+<section id="course-introduction-python-refresher-git-basics">
+<h1>1    | Course Introduction              | Python Refresher, Git basics<a class="headerlink" href="#course-introduction-python-refresher-git-basics" title="Link to this heading">#</a></h1>
+</section>
+<section id="documentation-find-a-topic-shell">
+<h1>2    | Documentation / Find a topic     | Shell<a class="headerlink" href="#documentation-find-a-topic-shell" title="Link to this heading">#</a></h1>
+</section>
+<section id="jupyter-notebook-comp-narative">
+<h1>3    | Jupyter Notebook / Comp. Narative |<a class="headerlink" href="#jupyter-notebook-comp-narative" title="Link to this heading">#</a></h1>
+</section>
+<section id="licensing-citation">
+<h1>4    | Licensing, Citation               |<a class="headerlink" href="#licensing-citation" title="Link to this heading">#</a></h1>
+</section>
+<section id="working-in-teams-project-1-submission">
+<h1>5    | Working In Teams                  | Project 1 Submission<a class="headerlink" href="#working-in-teams-project-1-submission" title="Link to this heading">#</a></h1>
+</section>
+<section id="testing-and-error-handling-find-groups-topic">
+<h1>6    | Testing and Error Handling        | Find Groups / Topic<a class="headerlink" href="#testing-and-error-handling-find-groups-topic" title="Link to this heading">#</a></h1>
+</section>
+<section id="requirements-architectures-design-advanced-git">
+<h1>7    | Requirements, Architectures, Design| Advanced Git<a class="headerlink" href="#requirements-architectures-design-advanced-git" title="Link to this heading">#</a></h1>
+</section>
+<section id="pycodestyle-clean-code-cli-intro-python">
+<h1>8    | PycodeStyle / Clean Code           | CLI Intro / Python<a class="headerlink" href="#pycodestyle-clean-code-cli-intro-python" title="Link to this heading">#</a></h1>
+</section>
+<section id="workflow-lec-1">
+<h1>9    | Workflow  Lec 1                    |<a class="headerlink" href="#workflow-lec-1" title="Link to this heading">#</a></h1>
+</section>
+<section id="workflow-lec-2-snake-make">
+<h1>10   | Workflow Lec 2 - snake make        |<a class="headerlink" href="#workflow-lec-2-snake-make" title="Link to this heading">#</a></h1>
+</section>
+<section id="workflow-lec-3-topic-3-cicd">
+<h1>11   | Workflow Lec 3 - topic 3 + cicd    |<a class="headerlink" href="#workflow-lec-3-topic-3-cicd" title="Link to this heading">#</a></h1>
+</section>
+<section id="configuration-and-packaging">
+<h1>12   | Configuration and Packaging        |<a class="headerlink" href="#configuration-and-packaging" title="Link to this heading">#</a></h1>
+</section>
+<section id="tracking-provenance">
+<h1>13   | Tracking Provenance                |<a class="headerlink" href="#tracking-provenance" title="Link to this heading">#</a></h1>
+</section>
+<section id="rse-in-practice-guest">
+<h1>14   | RSE in Practice / Guest            |<a class="headerlink" href="#rse-in-practice-guest" title="Link to this heading">#</a></h1>
+</section>
+<section id="open-topic-project-presentation-project-submission">
+<h1>15   | Open Topic  / Project Presentation | Project Submission<a class="headerlink" href="#open-topic-project-presentation-project-submission" title="Link to this heading">#</a></h1>
+</section>
+<section id="exam-date-1">
+<h1>16   | Exam date 1<a class="headerlink" href="#exam-date-1" title="Link to this heading">#</a></h1>
+<p>Additional lectures (possible) :
+1 profiling and optimization</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="changes-done-additions-taken-from-last-terms-slides">
+<h1>Changes done / Additions taken from last terms slides<a class="headerlink" href="#changes-done-additions-taken-from-last-terms-slides" title="Link to this heading">#</a></h1>
+<section id="lecture-1-introduction">
+<h2>Lecture 1 - introduction<a class="headerlink" href="#lecture-1-introduction" title="Link to this heading">#</a></h2>
+<p>Zipf Law - added image, added graph, Gutenberg</p>
+</section>
+<section id="lecture-2">
+<h2>lecture 2 -<a class="headerlink" href="#lecture-2" title="Link to this heading">#</a></h2>
+</section>
+<section id="lecture-3">
+<h2>lecture 3 -<a class="headerlink" href="#lecture-3" title="Link to this heading">#</a></h2>
+</section>
+<section id="lecture-4">
+<h2>lecture 4 -<a class="headerlink" href="#lecture-4" title="Link to this heading">#</a></h2>
+</section>
+<section id="lecture-5">
+<h2>lecture 5 -<a class="headerlink" href="#lecture-5" title="Link to this heading">#</a></h2>
+</section>
+<section id="lecture-6">
+<h2>lecture 6 -<a class="headerlink" href="#lecture-6" title="Link to this heading">#</a></h2>
+</section>
+<section id="lecture-7">
+<h2>lecture 7 -<a class="headerlink" href="#lecture-7" title="Link to this heading">#</a></h2>
+</section>
+<section id="lecture-8">
+<h2>lecture 8 -<a class="headerlink" href="#lecture-8" title="Link to this heading">#</a></h2>
+</section>
+<section id="lecture-9">
+<h2>lecture 9 -<a class="headerlink" href="#lecture-9" title="Link to this heading">#</a></h2>
+</section>
+<section id="lecture-10">
+<h2>lecture 10 -<a class="headerlink" href="#lecture-10" title="Link to this heading">#</a></h2>
+</section>
+<section id="lecture-11">
+<h2>lecture 11 -<a class="headerlink" href="#lecture-11" title="Link to this heading">#</a></h2>
+</section>
+<section id="lecture-12">
+<h2>lecture 12 -<a class="headerlink" href="#lecture-12" title="Link to this heading">#</a></h2>
+</section>
+<section id="lecture-13">
+<h2>lecture 13 -<a class="headerlink" href="#lecture-13" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Week |  Lecture                         | online/tutorial only</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#course-introduction-python-refresher-git-basics">1    | Course Introduction              | Python Refresher, Git basics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-find-a-topic-shell">2    | Documentation / Find a topic     | Shell</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook-comp-narative">3    | Jupyter Notebook / Comp. Narative |</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#licensing-citation">4    | Licensing, Citation               |</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#working-in-teams-project-1-submission">5    | Working In Teams                  | Project 1 Submission</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-and-error-handling-find-groups-topic">6    | Testing and Error Handling        | Find Groups / Topic</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements-architectures-design-advanced-git">7    | Requirements, Architectures, Design| Advanced Git</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pycodestyle-clean-code-cli-intro-python">8    | PycodeStyle / Clean Code           | CLI Intro / Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-lec-1">9    | Workflow  Lec 1                    |</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-lec-2-snake-make">10   | Workflow Lec 2 - snake make        |</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-lec-3-topic-3-cicd">11   | Workflow Lec 3 - topic 3 + cicd    |</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-and-packaging">12   | Configuration and Packaging        |</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-provenance">13   | Tracking Provenance                |</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rse-in-practice-guest">14   | RSE in Practice / Guest            |</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-topic-project-presentation-project-submission">15   | Open Topic  / Project Presentation | Project Submission</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exam-date-1">16   | Exam date 1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-done-additions-taken-from-last-terms-slides">Changes done / Additions taken from last terms slides</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-1-introduction">Lecture 1 - introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-2">lecture 2 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-3">lecture 3 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-4">lecture 4 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-5">lecture 5 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-6">lecture 6 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-7">lecture 7 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-8">lecture 8 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-9">lecture 9 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-10">lecture 10 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-11">lecture 11 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-12">lecture 12 -</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-13">lecture 13 -</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Software Engineering Group - University of Potsdam
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

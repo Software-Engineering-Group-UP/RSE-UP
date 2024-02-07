@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Building Command-Line Tools with Python &#8212; RSE-ING</title>
   
@@ -19,50 +18,46 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/book.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css?v=c89437f7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/python_building_cli';</script>
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/python_building_cli.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -78,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -122,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -154,7 +151,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">RSE-ING</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -518,10 +526,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="building-command-line-tools-with-python">
-<h1>Building Command-Line Tools with Python<a class="headerlink" href="#building-command-line-tools-with-python" title="Permalink to this heading">#</a></h1>
+<h1>Building Command-Line Tools with Python<a class="headerlink" href="#building-command-line-tools-with-python" title="Link to this heading">#</a></h1>
 <blockquote>
 <div><p>Multiple exclamation marks are a sure sign of a diseased mind.</p>
 <p>— Terry Pratchett</p>
@@ -530,7 +538,7 @@ document.write(`
 are great for prototyping code and exploring data, but eventually we may need to apply our code to thousands of data files,
 run it with many different parameters, or combine it with other programs as part of a data analysis pipeline.
 The easiest way to do this is often to turn our code into a standalone program that can be run in the Unix shell
-just like other command-line tools <span id="id1">[<a class="reference internal" href="references.html#id70" title="Morgan Taschuk and Greg Wilson. Ten Simple Rules for Making Research Software More Robust. PLoS Computational Biology, 13(4):e1005412, Apr 2017. A short guide to making research software usable by other people. doi:10.1371/journal.pcbi.1005412.">Taschuk and Wilson, 2017</a>]</span>.</p>
+just like other command-line tools <span id="id1">[<a class="reference internal" href="references.html#id71" title="Morgan Taschuk and Greg Wilson. Ten Simple Rules for Making Research Software More Robust. PLoS Computational Biology, 13(4):e1005412, Apr 2017. A short guide to making research software usable by other people. doi:10.1371/journal.pcbi.1005412.">Taschuk and Wilson, 2017</a>]</span>.</p>
 <p>In this chapter we will develop some <strong>command-line Python program</strong> that handle input and output in the same way as other shell commands,
 can be controlled by several option flags, and provide useful information when things go wrong.
 The result will have more scaffolding than useful application code, but that scaffolding stays more or less the same as programs get larger.</p>
@@ -562,7 +570,7 @@ We follow those guidelines throughout this book
 and discuss them in detail in Appendix <strong>TODO</strong> &#64;ref(style).</p>
 </div></blockquote>
 <section id="programs-and-modules">
-<h2>Programs and Modules<a class="headerlink" href="#programs-and-modules" title="Permalink to this heading">#</a></h2>
+<h2>Programs and Modules<a class="headerlink" href="#programs-and-modules" title="Link to this heading">#</a></h2>
 <p>To create a Python program that can run from the command line,\index{Python!program vs.\ module}
 the first thing we do is to add the following to the bottom of the file:</p>
 <div class="cell docutils container">
@@ -639,7 +647,7 @@ if it isn’t, we should assume that some other code is doing this.</p>
 <p>This top-level function is usually called <code class="docutils literal notranslate"><span class="pre">main</span></code>, but we can use whatever name we want.</p>
 </section>
 <section id="handling-command-line-options">
-<h2>Handling Command-Line Options<a class="headerlink" href="#handling-command-line-options" title="Permalink to this heading">#</a></h2>
+<h2>Handling Command-Line Options<a class="headerlink" href="#handling-command-line-options" title="Link to this heading">#</a></h2>
 <p>The main function in a program usually starts by parsing any options the user gave on the command line.
 The most commonly used library for doing this in Python is <a class="reference external" href="https://docs.python.org/3/library/argparse.html"><code class="docutils literal notranslate"><span class="pre">argparse</span></code></a>, which can handle options with or without arguments, convert arguments from strings to numbers or other types, display help, and many other things.</p>
 <p>The simplest way to explain how <code class="docutils literal notranslate"><span class="pre">argparse</span></code> works is by example.</p>
@@ -752,7 +760,7 @@ options:
 </div>
 </section>
 <section id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h2>
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h2>
 <p>Our program template is a good starting point, but we improve it right away by adding a bit of documentation.
 To demonstrate, let’s write a function that doubles a number:</p>
 <div class="cell docutils container">
@@ -871,7 +879,7 @@ FILE
 We talk more about what to put in a docstring in Appendix <strong>TODO</strong> ref(documentation).</p>
 </section>
 <section id="counting-words">
-<h2>Counting Words<a class="headerlink" href="#counting-words" title="Permalink to this heading">#</a></h2>
+<h2>Counting Words<a class="headerlink" href="#counting-words" title="Link to this heading">#</a></h2>
 <p>Now that we have a template for command-line Python programs, we can use it to check Zipf’s Law for our collection of classic novels.
 We start by moving the template into the directory where we store our runnable programs (Section <strong>TODO</strong> ref(getting-started-organize)):</p>
 <div class="cell docutils container">
@@ -1095,7 +1103,7 @@ it,2141
 </div>
 </section>
 <section id="pipelining">
-<h2>Pipelining<a class="headerlink" href="#pipelining" title="Permalink to this heading">#</a></h2>
+<h2>Pipelining<a class="headerlink" href="#pipelining" title="Link to this heading">#</a></h2>
 <p>As discussed in Section &#64;ref(bash-tools-stdio), most Unix commands follow a useful convention: if the user doesn’t specify the names of any input files, they read from <strong>standard input</strong> (stdin).
 Similarly, if no output file is specified, the command sends its results to <strong>standard output</strong> (stdout). This makes it easy to use the command in a pipeline.</p>
 <p>Our program always sends its output to standard output as noted above, we can always redirect it to a file with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>.
@@ -1154,7 +1162,7 @@ that,41
 </div>
 </section>
 <section id="positional-and-optional-arguments">
-<h2>Positional and Optional Arguments<a class="headerlink" href="#positional-and-optional-arguments" title="Permalink to this heading">#</a></h2>
+<h2>Positional and Optional Arguments<a class="headerlink" href="#positional-and-optional-arguments" title="Link to this heading">#</a></h2>
 <p>We have met two kinds of command-line arguments while writing <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code>.
 Optional arguments are defined using a leading <code class="docutils literal notranslate"><span class="pre">-</span></code> or <code class="docutils literal notranslate"><span class="pre">--</span></code> (or both), which means that all three of the following definitions are valid:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Limit output&#39;</span><span class="p">)</span>
@@ -1169,7 +1177,7 @@ The user can provide optional arguments at the command line in any order they li
 the user must provide them at the command line in the order in which they are specified to <code class="docutils literal notranslate"><span class="pre">add_argument</span></code> (unless <code class="docutils literal notranslate"><span class="pre">nargs='?'</span></code> is provided to say that the value is optional).</p>
 </section>
 <section id="collating-results">
-<h2>Collating Results<a class="headerlink" href="#collating-results" title="Permalink to this heading">#</a></h2>
+<h2>Collating Results<a class="headerlink" href="#collating-results" title="Link to this heading">#</a></h2>
 <p>Ultimately, we want to save the word counts to a CSV file for further analysis and plotting.
 Let’s create a subdirectory to hold our results (following the structure described in Section <strong>TODO</strong> ref(getting-started-structure)):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>results
@@ -1284,7 +1292,7 @@ he,6142
 </div>
 </section>
 <section id="writing-our-own-modules">
-<h2>Writing Our Own Modules<a class="headerlink" href="#writing-our-own-modules" title="Permalink to this heading">#</a></h2>
+<h2>Writing Our Own Modules<a class="headerlink" href="#writing-our-own-modules" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">countwords.py</span></code> and <code class="docutils literal notranslate"><span class="pre">collate.py</span></code> both now contain the function <code class="docutils literal notranslate"><span class="pre">collection_to_csv</span></code>.
 Having the same function in two or more places is a bad idea: if we want to improve it or fix a bug, we have to find and change every single script that contains a copy.</p>
 <p>The solution is to put the shared functions in a separate file and load that file as a module. Let’s create a file called <code class="docutils literal notranslate"><span class="pre">utilities.py</span></code> in the <code class="docutils literal notranslate"><span class="pre">bin</span></code> directory that looks like this:</p>
@@ -1414,7 +1422,7 @@ so we normally tell Git to ignore it as discussed in Section <strong>TODO</stro
 </div></blockquote>
 </section>
 <section id="plotting">
-<h2>Plotting<a class="headerlink" href="#plotting" title="Permalink to this heading">#</a></h2>
+<h2>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h2>
 <p>The last thing for us to do is to plot the word count distribution. Recall that <a class="reference external" href="https://en.wikipedia.org/wiki/Zipf%27s_law">Zipf’s Law</a> states the second most common word in a body of text
 appears half as often as the most common, the third most common appears a third as often, and so on.
 Mathematically, this might be written as “word frequency is proportional to 1/rank.”</p>
@@ -1440,7 +1448,7 @@ Mathematically, this might be written as “word frequency is proportional to 1/
 <p>You’ll build on this code to create a plotting script for your project in Exercise <strong>TODO</strong> ref(scripting-ex-better-plotting).</p>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>Why is building a simple command-line tool so complex?
 One answer is that the conventions for command-line programs have evolved over several decades, so libraries like <code class="docutils literal notranslate"><span class="pre">argparse</span></code> must now support several different generations of option handling.
 Another is that the things we want to do genuinely <em>are</em> complex:
@@ -1451,7 +1459,7 @@ our template for command-line tools can be re-used for programs that are much la
 Making tools that behave in ways people expect greatly increases the chances that others will find them useful.</p>
 </section>
 <section id="keypoints">
-<h2>Keypoints<a class="headerlink" href="#keypoints" title="Permalink to this heading">#</a></h2>
+<h2>Keypoints<a class="headerlink" href="#keypoints" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Write command-line Python programs that can be run in the <strong>Unix shell</strong> like other command-line tools.</p></li>
 <li><p>If the user does not specify any input files, read from <strong>standard input</strong>}.</p></li>
@@ -1523,6 +1531,7 @@ Making tools that behave in ways people expect greatly increases the chances tha
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -1564,7 +1573,7 @@ By Software Engineering Group - University of Potsdam
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1588,8 +1597,8 @@ By Software Engineering Group - University of Potsdam
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
