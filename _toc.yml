@@ -1,10 +1,10 @@
-format: jb-book
+format: jb-article
 root: chapters/welcome
 title: Research Software Engineering
 
 parts: 
   - caption: Getting Started
-    chapters:
+    sections:
       - file: chapters/getting_started.md
       - file: exercises/python_refresh.ipynb
   - caption: Refresher 
@@ -16,56 +16,56 @@ parts:
     - file: chapters/bash_advanced.md
     - file: exercises/bash.ipynb
   - caption: Building CLI with Python
-    chapters:
+    sections:
       - file: chapters/python_building_cli.ipynb
       - file: exercises/python_cli.ipynb
   - caption: Version Control
-    chapters:
+    sections:
       - file: chapters/intro_version_control.md
       - file: exercises/version_control.ipynb
       - file: chapters/git_advanced.md
       - file: exercises/git_advanced.ipynb
   - caption: Working in teams
-    chapters:
+    sections:
       - file: chapters/working_in_teams.md
       - file: exercises/work_teams.ipynb
   - caption: Introduction to automation
-    chapters:
+    sections:
       - file: chapters/intro_make.md 
       - file: exercises/intro_make.ipynb
   - caption: Configuration
-    chapters:
+    sections:
       - file: chapters/configuration.md
       - file: exercises/config.ipynb
   - caption: Testing Software
-    chapters:
+    sections:
       - file: chapters/testing_programs.md
       - file: exercises/testing.ipynb
   - caption: Error Handling
-    chapters:
+    sections:
       - file: chapters/error_handling.md
       - file: exercises/error_handling.ipynb
   - caption: Tracking Provenance
-    chapters:
+    sections:
       - file: chapters/tracking_provenance.md
       - file: exercises/provenance.ipynb
   - caption: Packaging
-    chapters:
+    sections:
       - file: chapters/python_packaging.md
       - file: exercises/packaging.ipynb
   - caption: Writing Clean Code
-    chapters:
+    sections:
       - file: chapters/clean_readable_code.md
   - caption: Documentation
-    chapters: 
+    sections: 
       - file: chapters/writing_documentation.md
   - caption: Workflows
-    chapters:
+    sections:
       - file: chapters/workflow.md
       - file: chapters/snakemake.md
       - file: chapters/advanced_cicd.md
   - caption: Worksheets - Course Work
-    chapters:
+    sections:
       #- file: worksheets/worksheet1_python_refresher.ipynb
       - file: worksheets/worksheet2_install_more_tool_shell.ipynb
       - file: worksheets/worksheet3_cli_python_git.ipynb
@@ -73,7 +73,7 @@ parts:
       - file: worksheets/worksheet6_software_license.ipynb
       - file: worksheets/worksheet7_git_advanced.ipynb
   - caption: First Project - Invdividual
-    chapters: 
+    sections: 
       - file: projects/individual/1_project_instructions.md
       - file: projects/individual/2_project_instructions.md
       - file: projects/individual/3_project_instructions.md
@@ -81,7 +81,7 @@ parts:
       - file: projects/individual/5_project_instructions.md
       - file: projects/individual/6_project_instructions.md
   - caption: Second Project - Group
-    chapters: 
+    sections: 
       - file: projects/group/1_project_assignment.md
       - file: projects/group/2_project_assignment.md
       - file: projects/group/3_project_assignment.md
@@ -89,7 +89,7 @@ parts:
       - file: projects/group/5_project_assignment.md  
       - file: projects/group/6_project_assignment.md
   - caption: Appendix
-    chapters:
+    sections:
       - file: chapters/solutions.md
       - file: chapters/anaconda.md
       - file: chapters/yaml.md
