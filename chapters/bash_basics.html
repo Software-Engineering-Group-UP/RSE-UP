@@ -62,8 +62,6 @@
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_basics.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Building Tools with the Unix Shell" href="bash_tools.html" />
-    <link rel="prev" title="Python Refresher" href="../exercises/python_refresh.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,6 +123,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -175,20 +175,14 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresh.html">Python Refresher</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Refresher</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">The Basics of the Unix Shell</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="bash_tools.html">Building Tools with the Unix Shell</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="bash_advanced.html">Going Further with the Unix Shell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/bash.html">Bash Exercises</a></li>
-</ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Building CLI with Python</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresh.html">Python Refresher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bash_tools.html">Building Tools with the Unix Shell</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="bash_advanced.html">Going Further with the Unix Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/bash.html">Bash Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_building_cli.html">Building Command-Line Tools with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/python_cli.html">Exercises - Scripting Python for CLI tools</a></li>
 </ul>
@@ -534,7 +528,7 @@ or how they do what they do.</p>
 <figure class="align-default" id="the-shell">
 <img alt="../_images/the-shell.png" src="../_images/the-shell.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">The Shell</span><a class="headerlink" href="#the-shell" title="Link to this image">#</a></p>
+<p><span class="caption-text">The Shell</span><a class="headerlink" href="#the-shell" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <blockquote>
@@ -607,7 +601,7 @@ On Amira’s computer the basic filesystem looks as follows:</p>
 <figure class="align-default" id="bash-basic-filesystem">
 <img alt="../_images/sample-filesystem.png" src="../_images/sample-filesystem.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Bash basic filesystem</span><a class="headerlink" href="#bash-basic-filesystem" title="Link to this image">#</a></p>
+<p><span class="caption-text">Bash basic filesystem</span><a class="headerlink" href="#bash-basic-filesystem" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>At the top is the <strong>root directory</strong> that holds everything else, which we can refer to using a slash character <code class="docutils literal notranslate"><span class="pre">/</span></code> on its own.
@@ -982,7 +976,7 @@ $<span class="w"> </span>nano<span class="w"> </span>draft.txt
 <figure class="align-default" id="nano-editor">
 <img alt="../_images/nano-editor.png" src="../_images/nano-editor.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Nano Editor</span><a class="headerlink" href="#nano-editor" title="Link to this image">#</a></p>
+<p><span class="caption-text">Nano Editor</span><a class="headerlink" href="#nano-editor" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>When we say “Nano is a text editor” we really do mean “text”:
@@ -1339,7 +1333,7 @@ and highlights a few of features useful for beginners.</p>
 <figure class="align-default" id="man-callouts">
 <img alt="../_images/man-callouts.png" src="../_images/man-callouts.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Bash basics manual</span><a class="headerlink" href="#man-callouts" title="Link to this image">#</a></p>
+<p><span class="caption-text">Bash basics manual</span><a class="headerlink" href="#man-callouts" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Some commands have a <code class="docutils literal notranslate"><span class="pre">--help</span></code> option that provides a succinct summary of possibilities, but the best place to go for help these days is probably the <a class="reference external" href="https://tldr.sh/">TLDR</a> website.
@@ -1404,8 +1398,6 @@ in order to create powerful, efficient workflows.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">man</span></code> displays the manual page for a given command; some commands also have a <code class="docutils literal notranslate"><span class="pre">--help</span></code> option.</p></li>
 </ul>
 </section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1438,24 +1430,6 @@ in order to create powerful, efficient workflows.</p>
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../exercises/python_refresh.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python Refresher</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="bash_tools.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Building Tools with the Unix Shell</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
