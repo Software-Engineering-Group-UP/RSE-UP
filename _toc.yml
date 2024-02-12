@@ -39,11 +39,15 @@ parts:
     chapters:
       - file: chapters/comp_narative.md  
   
+  - caption: Licenses, Software Citation and FAIR
+    chapters:
+      - file: chapters/licenses.md  
+  
   - caption: Working in teams
     chapters:
       - file: chapters/working_in_teams.md
       - file: exercises/work_teams.ipynb
-       
+    
   - caption: Testing and Error Handling
     chapters:
       - file: chapters/introduction/testing.md
@@ -54,6 +58,14 @@ parts:
         sections:
           - file: chapters/error_handling.md
           - file: exercises/error_handling.ipynb
+
+  - caption: Requirements, Architecture and Design
+    chapters:
+      - file: chapters/introduction/requirments_architecture_design.md
+        sections:
+          - file: requirements.md
+          - file: architecture.md
+          - file: design.md
   
   - caption: Writing Clean Code
     chapters:
@@ -72,6 +84,7 @@ parts:
       - file: chapters/introduction/cicd.md
         sections:
           - file: chapters/advanced_cicd.md
+
   
   - caption: Tracking Provenance
     chapters:
@@ -84,6 +97,7 @@ parts:
       - file: chapters/introduction/config.md
         sections:
           - file: chapters/configuration.md
+          - file: chapters/yaml.md
           - file: exercises/config.ipynb
       - file: chapters/introduction/packaging.md
         sections:
@@ -127,7 +141,7 @@ parts:
     chapters:
       - file: chapters/solutions.md
       #- file: chapters/anaconda.md
-      - file: chapters/yaml.md
+      #- file: chapters/yaml.md
       - file: chapters/working_remotely.md
       - file: chapters/tree.md 
       - file: chapters/references.md
