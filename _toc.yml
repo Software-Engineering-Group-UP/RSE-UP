@@ -7,11 +7,11 @@ parts:
     chapters:
       - file: chapters/getting_started.md
       
-  - caption: Python, Bash, CLI, Git Refresher 
+  - caption: Python, Bash, CLI, Git refresher 
     chapters:
       - file: chapters/intro_jupyter.md
         sections:
-          - file: chapters/anaconda.md
+        - file: chapters/anaconda.md
       - file: exercises/python_refresh.ipynb
       - file: chapters/intro_bash.md
         sections:
@@ -43,10 +43,7 @@ parts:
     chapters:
       - file: chapters/working_in_teams.md
       - file: exercises/work_teams.ipynb
-  - caption: Introduction to automation
-    chapters:
-      - file: chapters/intro_make.md 
-      - file: exercises/intro_make.ipynb
+  
   - caption: Configuration
     chapters:
       - file: chapters/configuration.md
@@ -75,30 +72,41 @@ parts:
       - file: chapters/workflow.md
       - file: chapters/snakemake.md
       - file: chapters/advanced_cicd.md
+  
+  - caption: Introduction to automation
+    chapters:
+      - file: chapters/intro_make.md 
+      - file: exercises/intro_make.ipynb  
   - caption: Worksheets - Course Work
     chapters:
       #- file: worksheets/worksheet1_python_refresher.ipynb
-      - file: worksheets/worksheet2_install_more_tool_shell.ipynb
-      - file: worksheets/worksheet3_cli_python_git.ipynb
-      - file: worksheets/worksheet4_readable_code.ipynb    
-      - file: worksheets/worksheet6_software_license.ipynb
-      - file: worksheets/worksheet7_git_advanced.ipynb
+      - file: worksheets/intro_worksheets.md
+        sections:
+        - file: worksheets/worksheet2_install_more_tool_shell.ipynb
+        - file: worksheets/worksheet3_cli_python_git.ipynb
+        - file: worksheets/worksheet4_readable_code.ipynb    
+        - file: worksheets/worksheet6_software_license.ipynb
+        - file: worksheets/worksheet7_git_advanced.ipynb
   - caption: First Project - Invdividual
-    chapters: 
-      - file: projects/individual/1_project_instructions.md
-      - file: projects/individual/2_project_instructions.md
-      - file: projects/individual/3_project_instructions.md
-      - file: projects/individual/4_project_instructions.md
-      - file: projects/individual/5_project_instructions.md
-      - file: projects/individual/6_project_instructions.md
+    chapters:
+      - file: projects/individual/intro_project1.md
+        sections: 
+        - file: projects/individual/1_project_instructions.md
+        - file: projects/individual/2_project_instructions.md
+        - file: projects/individual/3_project_instructions.md
+        - file: projects/individual/4_project_instructions.md
+        - file: projects/individual/5_project_instructions.md
+        - file: projects/individual/6_project_instructions.md
   - caption: Second Project - Group
-    chapters: 
-      - file: projects/group/1_project_assignment.md
-      - file: projects/group/2_project_assignment.md
-      - file: projects/group/3_project_assignment.md
-      - file: projects/group/4_project_assignment.md
-      - file: projects/group/5_project_assignment.md  
-      - file: projects/group/6_project_assignment.md
+    chapters:
+      - file: projects/group/intro_project2.md
+        sections: 
+        - file: projects/group/1_project_assignment.md
+        - file: projects/group/2_project_assignment.md
+        - file: projects/group/3_project_assignment.md
+        - file: projects/group/4_project_assignment.md
+        - file: projects/group/5_project_assignment.md  
+        - file: projects/group/6_project_assignment.md
   - caption: Appendix
     chapters:
       - file: chapters/solutions.md
