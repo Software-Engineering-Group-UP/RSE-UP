@@ -6,9 +6,12 @@ parts:
   - caption: Getting Started
     chapters:
       - file: chapters/getting_started.md
-      #- file: exercises/python_refresh.ipynb
-  - caption: Refresher 
+      
+  - caption: Python, Bash, CLI, Git Refresher 
     chapters:
+      - file: chapters/intro_jupyter.md
+        sections:
+          - file: chapters/anaconda.md
       - file: exercises/python_refresh.ipynb
       - file: chapters/intro_bash.md
         sections:
@@ -20,12 +23,22 @@ parts:
         sections:
         - file: chapters/python_building_cli.ipynb
         - file: exercises/python_cli.ipynb
-  - caption: Version Control
+      - file: chapters/intro_vcs.md
+        sections: 
+        - file: chapters/intro_version_control.md
+        - file: exercises/version_control.ipynb
+        - file: chapters/git_advanced.md
+        - file: exercises/git_advanced.ipynb
+  
+  - caption: Documentation
+    chapters: 
+      - file: chapters/writing_documentation.md
+
+  - caption: Jupyter Notebook and Computational Narative
     chapters:
-      - file: chapters/intro_version_control.md
-      - file: exercises/version_control.ipynb
-      - file: chapters/git_advanced.md
-      - file: exercises/git_advanced.ipynb
+      - file: chapters/comp_narative.md 
+      - file: chapters/anaconda.md    
+  
   - caption: Working in teams
     chapters:
       - file: chapters/working_in_teams.md
@@ -57,9 +70,6 @@ parts:
   - caption: Writing Clean Code
     chapters:
       - file: chapters/clean_readable_code.md
-  - caption: Documentation
-    chapters: 
-      - file: chapters/writing_documentation.md
   - caption: Workflows
     chapters:
       - file: chapters/workflow.md
@@ -92,8 +102,8 @@ parts:
   - caption: Appendix
     chapters:
       - file: chapters/solutions.md
-      - file: chapters/anaconda.md
+      #- file: chapters/anaconda.md
       - file: chapters/yaml.md
       - file: chapters/working_remotely.md
-      - file: chapters/tree.md
+      - file: chapters/tree.md 
       - file: chapters/references.md
