@@ -1,71 +1,72 @@
-format: jb-article
+format: jb-book
 root: chapters/welcome
 title: Research Software Engineering
 
 parts: 
   - caption: Getting Started
-    sections:
+    chapters:
       - file: chapters/getting_started.md
-      - file: exercises/python_refresh.ipynb
+      #- file: exercises/python_refresh.ipynb
   - caption: Refresher 
-    sections:
-      #- file: chapters/bash_basics.md
-        #sections:
-    - file: chapters/bash_basics.md
-    - file: chapters/bash_tools.md
-    - file: chapters/bash_advanced.md
-    - file: exercises/bash.ipynb
-  - caption: Building CLI with Python
-    sections:
-      - file: chapters/python_building_cli.ipynb
-      - file: exercises/python_cli.ipynb
+    chapters:
+      - file: exercises/python_refresh.ipynb
+      - file: chapters/intro_bash.md
+        sections:
+        #- file: chapters/bash_basics.md
+        - file: chapters/bash_tools.md
+        - file: chapters/bash_advanced.md
+        - file: exercises/bash.ipynb
+      - file: chapters/intro_python_cli.md
+        sections:
+        - file: chapters/python_building_cli.ipynb
+        - file: exercises/python_cli.ipynb
   - caption: Version Control
-    sections:
+    chapters:
       - file: chapters/intro_version_control.md
       - file: exercises/version_control.ipynb
       - file: chapters/git_advanced.md
       - file: exercises/git_advanced.ipynb
   - caption: Working in teams
-    sections:
+    chapters:
       - file: chapters/working_in_teams.md
       - file: exercises/work_teams.ipynb
   - caption: Introduction to automation
-    sections:
+    chapters:
       - file: chapters/intro_make.md 
       - file: exercises/intro_make.ipynb
   - caption: Configuration
-    sections:
+    chapters:
       - file: chapters/configuration.md
       - file: exercises/config.ipynb
   - caption: Testing Software
-    sections:
+    chapters:
       - file: chapters/testing_programs.md
       - file: exercises/testing.ipynb
   - caption: Error Handling
-    sections:
+    chapters:
       - file: chapters/error_handling.md
       - file: exercises/error_handling.ipynb
   - caption: Tracking Provenance
-    sections:
+    chapters:
       - file: chapters/tracking_provenance.md
       - file: exercises/provenance.ipynb
   - caption: Packaging
-    sections:
+    chapters:
       - file: chapters/python_packaging.md
       - file: exercises/packaging.ipynb
   - caption: Writing Clean Code
-    sections:
+    chapters:
       - file: chapters/clean_readable_code.md
   - caption: Documentation
-    sections: 
+    chapters: 
       - file: chapters/writing_documentation.md
   - caption: Workflows
-    sections:
+    chapters:
       - file: chapters/workflow.md
       - file: chapters/snakemake.md
       - file: chapters/advanced_cicd.md
   - caption: Worksheets - Course Work
-    sections:
+    chapters:
       #- file: worksheets/worksheet1_python_refresher.ipynb
       - file: worksheets/worksheet2_install_more_tool_shell.ipynb
       - file: worksheets/worksheet3_cli_python_git.ipynb
@@ -73,7 +74,7 @@ parts:
       - file: worksheets/worksheet6_software_license.ipynb
       - file: worksheets/worksheet7_git_advanced.ipynb
   - caption: First Project - Invdividual
-    sections: 
+    chapters: 
       - file: projects/individual/1_project_instructions.md
       - file: projects/individual/2_project_instructions.md
       - file: projects/individual/3_project_instructions.md
@@ -81,7 +82,7 @@ parts:
       - file: projects/individual/5_project_instructions.md
       - file: projects/individual/6_project_instructions.md
   - caption: Second Project - Group
-    sections: 
+    chapters: 
       - file: projects/group/1_project_assignment.md
       - file: projects/group/2_project_assignment.md
       - file: projects/group/3_project_assignment.md
@@ -89,7 +90,7 @@ parts:
       - file: projects/group/5_project_assignment.md  
       - file: projects/group/6_project_assignment.md
   - caption: Appendix
-    sections:
+    chapters:
       - file: chapters/solutions.md
       - file: chapters/anaconda.md
       - file: chapters/yaml.md
