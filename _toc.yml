@@ -9,7 +9,9 @@ parts:
       
   - caption: Python, Bash, CLI, Git refresher 
     chapters:
-      - file: chapters/anaconda.md
+      - file: chapters/intro_jupyter.md
+        sections:
+        - file: chapters/anaconda.md
       - file: exercises/python_refresh.ipynb
       - file: chapters/intro_bash.md
         sections:
@@ -35,7 +37,7 @@ parts:
   - caption: Jupyter Notebook and Computational Narative
     chapters:
       - file: chapters/comp_narative.md 
-      - file: chapters/anaconda.md    
+      #- file: chapters/anaconda.md    
   
   - caption: Working in teams
     chapters:
