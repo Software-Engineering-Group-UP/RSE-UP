@@ -9,26 +9,27 @@ parts:
       
   - caption: Python, Bash, CLI, Git refresher 
     chapters:
+      # intro file
       - file: chapters/introduction/jupyter.md
         sections:
-        - file: chapters/anaconda.md
+          - file: chapters/anaconda.md
       - file: exercises/python_refresh.ipynb
       - file: chapters/introduction/bash.md
         sections:
         #- file: chapters/bash_basics.md
-        - file: chapters/bash_tools.md
-        - file: chapters/bash_advanced.md
-        - file: exercises/bash.ipynb
+          - file: chapters/bash_tools.md
+          - file: chapters/bash_advanced.md
+          - file: exercises/bash.ipynb
       - file: chapters/introduction/python_cli.md
         sections:
-        - file: chapters/python_building_cli.ipynb
-        - file: exercises/python_cli.ipynb
+          - file: chapters/python_building_cli.ipynb
+          - file: exercises/python_cli.ipynb
       - file: chapters/introduction/vcs.md
         sections: 
-        - file: chapters/intro_version_control.md
-        - file: exercises/version_control.ipynb
-        - file: chapters/git_advanced.md
-        - file: exercises/git_advanced.ipynb
+          - file: chapters/intro_version_control.md
+          - file: exercises/version_control.ipynb
+          - file: chapters/git_advanced.md
+          - file: exercises/git_advanced.ipynb
   
   - caption: Documentation
     chapters: 
@@ -42,22 +43,17 @@ parts:
     chapters:
       - file: chapters/working_in_teams.md
       - file: exercises/work_teams.ipynb
-  
-  - caption: Configuration
-    chapters:
-      - file: chapters/configuration.md
-      - file: exercises/config.ipynb
-      
+       
   - caption: Testing and Error Handling
     chapters:
       - file: chapters/introduction/testing.md
         sections:
-        - file: chapters/testing_programs.md
-        - file: exercises/testing.ipynb
+          - file: chapters/testing_programs.md
+          - file: exercises/testing.ipynb
       - file: chapters/introduction/error_handling.md
         sections:
-        - file: chapters/error_handling.md
-        - file: exercises/error_handling.ipynb
+          - file: chapters/error_handling.md
+          - file: exercises/error_handling.ipynb
   
   - caption: Writing Clean Code
     chapters:
@@ -81,10 +77,18 @@ parts:
     chapters:
       - file: chapters/tracking_provenance.md
       - file: exercises/provenance.ipynb
-  - caption: Packaging
+ 
+ 
+  - caption: Configuration and Packaging
     chapters:
-      - file: chapters/python_packaging.md
-      - file: exercises/packaging.ipynb
+      - file: chapters/introduction/config.md
+        sections:
+          - file: chapters/configuration.md
+          - file: exercises/config.ipynb
+      - file: chapters/introduction/packaging.md
+        sections:
+          - file: chapters/python_packaging.md
+          - file: exercises/packaging.ipynb
        
   # - caption: Worksheets - Course Work
   #   chapters:
