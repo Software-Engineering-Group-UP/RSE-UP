@@ -9,21 +9,21 @@ parts:
       
   - caption: Python, Bash, CLI, Git refresher 
     chapters:
-      - file: chapters/intro_jupyter.md
+      - file: chapters/introduction/jupyter.md
         sections:
         - file: chapters/anaconda.md
       - file: exercises/python_refresh.ipynb
-      - file: chapters/intro_bash.md
+      - file: chapters/introduction/bash.md
         sections:
         #- file: chapters/bash_basics.md
         - file: chapters/bash_tools.md
         - file: chapters/bash_advanced.md
         - file: exercises/bash.ipynb
-      - file: chapters/intro_python_cli.md
+      - file: chapters/introduction/python_cli.md
         sections:
         - file: chapters/python_building_cli.ipynb
         - file: exercises/python_cli.ipynb
-      - file: chapters/intro_vcs.md
+      - file: chapters/introduction/vcs.md
         sections: 
         - file: chapters/intro_version_control.md
         - file: exercises/version_control.ipynb
@@ -34,10 +34,9 @@ parts:
     chapters: 
       - file: chapters/writing_documentation.md
 
-  - caption: Jupyter Notebook and Computational Narative
+  - caption: Computational Narative
     chapters:
-      - file: chapters/comp_narative.md 
-      #- file: chapters/anaconda.md    
+      - file: chapters/comp_narative.md  
   
   - caption: Working in teams
     chapters:
@@ -48,14 +47,36 @@ parts:
     chapters:
       - file: chapters/configuration.md
       - file: exercises/config.ipynb
-  - caption: Testing Software
+      
+  - caption: Testing and Error Handling
     chapters:
-      - file: chapters/testing_programs.md
-      - file: exercises/testing.ipynb
-  - caption: Error Handling
+      - file: chapters/introduction/testing.md
+        sections:
+        - file: chapters/testing_programs.md
+        - file: exercises/testing.ipynb
+      - file: chapters/introduction/error_handling.md
+        sections:
+        - file: chapters/error_handling.md
+        - file: exercises/error_handling.ipynb
+  
+  - caption: Writing Clean Code
     chapters:
-      - file: chapters/error_handling.md
-      - file: exercises/error_handling.ipynb
+      - file: chapters/clean_readable_code.md
+      
+  - caption: Workflows and Automation
+    chapters:
+      - file: chapters/introduction/workflows.md
+        sections:
+        - file: chapters/workflow.md
+      - file: chapters/introduction/automation.md
+        sections:
+        - file: chapters/intro_make.md 
+        - file: exercises/intro_make.ipynb 
+        - file: chapters/snakemake.md
+      - file: chapters/introduction/cicd.md
+        sections:
+          - file: chapters/advanced_cicd.md
+  
   - caption: Tracking Provenance
     chapters:
       - file: chapters/tracking_provenance.md
@@ -64,52 +85,40 @@ parts:
     chapters:
       - file: chapters/python_packaging.md
       - file: exercises/packaging.ipynb
-  - caption: Writing Clean Code
-    chapters:
-      - file: chapters/clean_readable_code.md
-  - caption: Workflows
-    chapters:
-      - file: chapters/workflow.md
-      - file: chapters/snakemake.md
-      - file: chapters/advanced_cicd.md
-  
-  - caption: Introduction to automation
-    chapters:
-      - file: chapters/intro_make.md 
-      - file: exercises/intro_make.ipynb  
-      
-  - caption: Worksheets - Course Work
-    chapters:
-      #- file: worksheets/worksheet1_python_refresher.ipynb
-      - file: worksheets/intro_worksheets.md
-        sections:
-        - file: worksheets/worksheet2_install_more_tool_shell.ipynb
-        - file: worksheets/worksheet3_cli_python_git.ipynb
-        - file: worksheets/worksheet4_readable_code.ipynb    
-        - file: worksheets/worksheet6_software_license.ipynb
-        - file: worksheets/worksheet7_git_advanced.ipynb
+       
+  # - caption: Worksheets - Course Work
+  #   chapters:
+  #     #- file: worksheets/worksheet1_python_refresher.ipynb
+  #     - file: worksheets/intro_worksheets.md
+  #       sections:
+  #       - file: worksheets/worksheet2_install_more_tool_shell.ipynb
+  #       - file: worksheets/worksheet3_cli_python_git.ipynb
+  #       - file: worksheets/worksheet4_readable_code.ipynb    
+  #       - file: worksheets/worksheet6_software_license.ipynb
+  #       - file: worksheets/worksheet7_git_advanced.ipynb
           
-  - caption: First Project - Invdividual
-    chapters:
-      - file: projects/individual/intro_project1.md
-        sections: 
-        - file: projects/individual/1_project_instructions.md
-        - file: projects/individual/2_project_instructions.md
-        - file: projects/individual/3_project_instructions.md
-        - file: projects/individual/4_project_instructions.md
-        - file: projects/individual/5_project_instructions.md
-        - file: projects/individual/6_project_instructions.md
+  # - caption: First Project - Invdividual
+  #   chapters:
+  #     - file: projects/individual/intro_project1.md
+  #       sections: 
+  #       - file: projects/individual/1_project_instructions.md
+  #       - file: projects/individual/2_project_instructions.md
+  #       - file: projects/individual/3_project_instructions.md
+  #       - file: projects/individual/4_project_instructions.md
+  #       - file: projects/individual/5_project_instructions.md
+  #       - file: projects/individual/6_project_instructions.md
           
-  - caption: Second Project - Group
-    chapters:
-      - file: projects/group/intro_project2.md
-        sections: 
-        - file: projects/group/1_project_assignment.md
-        - file: projects/group/2_project_assignment.md
-        - file: projects/group/3_project_assignment.md
-        - file: projects/group/4_project_assignment.md
-        - file: projects/group/5_project_assignment.md  
-        - file: projects/group/6_project_assignment.md
+  # - caption: Second Project - Group
+  #   chapters:
+  #     - file: projects/group/intro_project2.md
+  #       sections: 
+  #       - file: projects/group/1_project_assignment.md
+  #       - file: projects/group/2_project_assignment.md
+  #       - file: projects/group/3_project_assignment.md
+  #       - file: projects/group/4_project_assignment.md
+  #       - file: projects/group/5_project_assignment.md  
+  #       - file: projects/group/6_project_assignment.md
+
   - caption: Appendix
     chapters:
       - file: chapters/solutions.md
