@@ -9,9 +9,7 @@ parts:
       
   - caption: Python, Bash, CLI, Git refresher 
     chapters:
-      - file: chapters/intro_jupyter.md
-        sections:
-        - file: chapters/anaconda.md
+      - file: chapters/anaconda.md
       - file: exercises/python_refresh.ipynb
       - file: chapters/intro_bash.md
         sections:
@@ -77,6 +75,7 @@ parts:
     chapters:
       - file: chapters/intro_make.md 
       - file: exercises/intro_make.ipynb  
+      
   - caption: Worksheets - Course Work
     chapters:
       #- file: worksheets/worksheet1_python_refresher.ipynb
@@ -87,6 +86,7 @@ parts:
         - file: worksheets/worksheet4_readable_code.ipynb    
         - file: worksheets/worksheet6_software_license.ipynb
         - file: worksheets/worksheet7_git_advanced.ipynb
+          
   - caption: First Project - Invdividual
     chapters:
       - file: projects/individual/intro_project1.md
@@ -97,6 +97,7 @@ parts:
         - file: projects/individual/4_project_instructions.md
         - file: projects/individual/5_project_instructions.md
         - file: projects/individual/6_project_instructions.md
+          
   - caption: Second Project - Group
     chapters:
       - file: projects/group/intro_project2.md
