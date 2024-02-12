@@ -10,11 +10,9 @@ parts:
   - caption: Refresher 
     chapters:
       - file: chapters/bash_basics.md
-        sections:
-        - file: chapters/bash_basics.md
-        - file: chapters/bash_tools.md
-        - file: chapters/bash_advanced.md
-        - file: exercises/bash.ipynb
+      - file: chapters/bash_tools.md
+      - file: chapters/bash_advanced.md
+      - file: exercises/bash.ipynb
   - caption: Building CLI with Python
     chapters:
       - file: chapters/python_building_cli.ipynb
