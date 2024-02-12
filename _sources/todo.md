@@ -1,4 +1,4 @@
-1 Github vs. Gitlab --- VPN ..... 
+-  jupyter book -> menu items collapsed - save space  
 
 Preliminary Course Plan 
 
@@ -44,13 +44,16 @@ Additional lectures (possible) :
 # Changes done / Additions taken from last terms slides
 ## Lecture 1 - introduction 
   Zipf Law - added image, added graph, Gutenberg 
+  in getting started.md
 
 ## lecture 2 - 
-
+   Nothing to add
 ## lecture 3 - 
-
+   Nothing to add
+  
 ## lecture 4 - 
-
+   nothing to add - maybe create exercises 
+   
 ## lecture 5 - 
 
 ## lecture 6 - 
