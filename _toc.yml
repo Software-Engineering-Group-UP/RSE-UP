@@ -9,9 +9,9 @@ parts:
       - file: exercises/python_refresh.ipynb
   - caption: Refresher 
     chapters:
-      - file: chapters/bash_basics.md
+      #- file: chapters/bash_basics.md
         sections:
-        #- file: chapters/bash_basics.md
+        - file: chapters/bash_basics.md
         - file: chapters/bash_tools.md
         - file: chapters/bash_advanced.md
         - file: exercises/bash.ipynb
