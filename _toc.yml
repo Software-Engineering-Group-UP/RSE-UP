@@ -33,7 +33,9 @@ parts:
   
   - caption: Documentation
     chapters: 
-      - file: chapters/writing_documentation.md
+      - file: chapters/introduction/documentation.md
+        sections:
+        - file: chapters/writing_documentation.md
 
   - caption: Computational Narative
     chapters:
