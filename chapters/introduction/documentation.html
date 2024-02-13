@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; RSE-ING</title>
+    <title>Introduction to writing Documentation &#8212; RSE-ING</title>
   
   
   
@@ -58,10 +58,12 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/keypoints/git-advanced';</script>
-    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/keypoints/git-advanced.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/introduction/documentation';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/introduction/documentation.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Documenting Programs" href="../writing_documentation.html" />
+    <link rel="prev" title="Exercises Git Advanced" href="../../exercises/git_advanced.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -178,24 +178,24 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python, Bash, CLI, Git refresher</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/jupyter.html">Getting Started with Jupyter Notebook</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="jupyter.html">Getting Started with Jupyter Notebook</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../anaconda.html">Anaconda</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../exercises/python_refresh.html">Python Refresher</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/bash.html">Introduction to Bash</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="bash.html">Introduction to Bash</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../bash_tools.html">Building Tools with the Unix Shell</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../bash_advanced.html">Going Further with the Unix Shell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../exercises/bash.html">Bash Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/python_cli.html">Introduction to CLI application using Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="python_cli.html">Introduction to CLI application using Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../python_building_cli.html">Building Command-Line Tools with Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../exercises/python_cli.html">Exercises - Scripting Python for CLI tools</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/vcs.html">Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="vcs.html">Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro_version_control.html">Using Git at the Command Line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../exercises/version_control.html">Exercise Version Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git_advanced.html">Going Further with Git</a></li>
@@ -204,8 +204,8 @@
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/documentation.html">Introduction to writing Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Introduction to writing Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../writing_documentation.html">Documenting Programs</a></li>
 </ul>
 </li>
@@ -217,12 +217,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing and Error Handling</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/testing.html">Testing</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="testing.html">Testing</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../testing_programs.html">Testing Software</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../exercises/testing.html">Exercises - Testing</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/error_handling.html">Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="error_handling.html">Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../error_handling.html">Handling Errors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../exercises/error_handling.html">Exercises - Error Handling</a></li>
 </ul>
@@ -234,17 +234,17 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows and Automation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/workflows.html">Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="workflows.html">Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../workflow.html">Introduction to Workflows</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/automation.html">Automation</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="automation.html">Automation</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro_make.html">Automating Analyses with Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../exercises/intro_make.html">Exercises - Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../snakemake.html">Snake Make</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/cicd.html">CICD</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="cicd.html">CICD</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../advanced_cicd.html">CI/CD</a></li>
 </ul>
 </li>
@@ -339,7 +339,7 @@
       
       
       
-      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/keypoints/git-advanced.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/introduction/documentation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -369,7 +369,7 @@
       
       
       
-      <li><a href="../../_sources/chapters/keypoints/git-advanced.md" target="_blank"
+      <li><a href="../../_sources/chapters/introduction/documentation.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -453,7 +453,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Introduction to writing Documentation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -462,9 +462,21 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-files">Markdown Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax">Syntax</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax"><strong>Basic Syntax:</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-syntax-not-all-platforms-support-all-features"><strong>Extended Syntax: (Not all platforms support all features)</strong></a></li>
 </ul>
-
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readme-files">README Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristics-of-a-good-readme">Key characteristics of a good README:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sample-readme">A Sample README:</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
@@ -475,19 +487,144 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <ul class="simple">
-<li><p>Use a <strong>branch-per-feature</strong> workflow to develop new features while leaving the master branch in working order.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> creates a new branch.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> switches between branches.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code> <strong>merges</strong> changes from another branch into the current branch.</p></li>
-<li><p><strong>Conflicts</strong> occur when files or parts of files are changed in different ways on different branches.</p></li>
-<li><p>Version control systems do not allow people to overwrite changes silently;
-instead, they highlight conflicts that need to be resolved.</p></li>
-<li><p><strong>Forking</strong> a repository makes a copy of it on a server.</p></li>
-<li><p><strong>Cloning</strong> a repository with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> creates a local copy of a remote repository.</p></li>
-<li><p>Create a remote called <code class="docutils literal notranslate"><span class="pre">upstream</span></code> to point to the repository a fork was derived from.</p></li>
-<li><p>Create <strong>pull requests</strong> to submit changes from your fork to the upstream repository.</p></li>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-writing-documentation">
+<h1>Introduction to writing Documentation<a class="headerlink" href="#introduction-to-writing-documentation" title="Link to this heading">#</a></h1>
+<p>In the following Chapter you will learn about writing documentations suitable for research software projects and software projects in general.</p>
+<p>First you will learn what Markdown files are and how to use them, after that we will give an introduction into what a README file is in Git repositories, before moving on to the next section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/writing_documentation.html">Documentation</a></p>
+<section id="markdown-files">
+<h2>Markdown Files<a class="headerlink" href="#markdown-files" title="Link to this heading">#</a></h2>
+<p>Markdown, a free and open-source markup language, is today one of the most commonly used languages, that we use to write documentation in. Known for its lightweight and intuitive syntax, it allows writers to create simple formatted documents without getting bogged down in complex code. Unlike word documents markdown files can be opened with any text editor. And there are hardly any formations problem accross systems since it is basicly just plain text, using simple symbols and punctuation to achieve desired styles.</p>
+<p>What makes Markdown special:</p>
+<ul class="simple">
+<li><p>Readability: Markdown documents are easy to read and understand, both in
+their raw form and when converted to other formats.
+This makes them perfect for collaborative work and version control.</p></li>
+<li><p>Versatility: Markdown is not limited to a single output format.
+It can be seamlessly converted to HTML, PDF, Word, and many others, making it
+adaptable to various platforms and needs.</p></li>
+<li><p>Customization: While designed for simplicity, Markdown doesn’t lack power.
+For complex formatting or specific layouts, it allows embedding inline HTML
+code, giving you granular control over your document’s appearance.</p></li>
+<li><p>Efficiency: Writing in Markdown is fast and efficient.</p></li>
+<li><p>Ubiquity: Markdown’s popularity has skyrocketed in recent years.
+It’s widely used for documentation, README files, blog posts, online forums,
+and even entire books. Many platforms and applications, like GitHub,
+Stack Overflow, and Medium, natively support Markdown,
+making it a valuable tool for any online writer.</p></li>
 </ul>
+<p>Getting started with Markdown is easy:</p>
+<ul class="simple">
+<li><p>Learn the basics: Start by familiarizing yourself with the core syntax elements
+like headings, bold, italics, lists, and quotes. Many online resources offer interactive tutorials and cheat sheets.</p></li>
+<li><p>Practice: Experiment with different formatting options and discover how they work.</p></li>
+<li><p>Use Markdown-enabled platforms: Explore tools and websites that integrate seamlessly with Markdown, making the writing and publishing process smooth and efficient.</p></li>
+</ul>
+<p>With its simplicity, versatility, and growing community, Markdown offers a powerful and accessible way to format text online. So, ditch the complex editors and embrace the clean elegance of Markdown – your writing will thank you for it!</p>
+<section id="syntax">
+<h3>Syntax<a class="headerlink" href="#syntax" title="Link to this heading">#</a></h3>
+<p>Markdown’s intuitive syntax uses plain text characters to format your documents, making it easy to read and write while offering powerful customization options. Let’s explore the key elements:</p>
+</section>
+<section id="basic-syntax">
+<h3><strong>Basic Syntax:</strong><a class="headerlink" href="#basic-syntax" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Heading: Start with # signs for different heading levels (e.g., # H1, ## H2, ### H3, etc.)</p></li>
+<li><p>Bold font: Surround text with double asterisks (**) or underscores (_).</p></li>
+</ul>
+<p>-Italic font: Use asterisks (*) or underscores (_).</p>
+<ul class="simple">
+<li><p>Blockquote: Indent text by four spaces or start with a greater-than symbol (&gt;).</p></li>
+<li><p>Ordered List: Start each item with a number followed by a dot (.).</p></li>
+<li><p>Unordered List: Use hyphens (-) or asterisks (*) for each item.</p></li>
+<li><p>Code: Wrap inline code with single backticks (`) or create code blocks with three backticks on separate lines.</p></li>
+<li><p>Horizontal Rule: Use three hyphens (-), underscores (_), or asterisks (*).</p></li>
+<li><p>Link: Write text you want to display in square brackets and the actual URL in parentheses, separated by a space (Link Text: <a class="reference external" href="https://example.com">https://example.com</a>).</p></li>
+<li><p>Image: Use an exclamation mark (!), followed by alt text in square brackets, then the image URL in parentheses, and an optional title in quotes (Alt Text: [[invalid URL removed]]([invalid URL removed]) “Image Title”).</p></li>
+</ul>
+<section id="extended-syntax-not-all-platforms-support-all-features">
+<h4><strong>Extended Syntax: (Not all platforms support all features)</strong><a class="headerlink" href="#extended-syntax-not-all-platforms-support-all-features" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Table: Create columns with pipes (|) and define headers and content in separate rows.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">Column</span> <span class="mi">1</span> <span class="o">|</span> <span class="n">Column</span> <span class="mi">2</span> <span class="o">|</span>
+<span class="o">|---|---|</span>
+<span class="o">|</span> <span class="n">Header</span> <span class="mi">1</span> <span class="o">|</span> <span class="n">Content</span> <span class="mi">1</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">Header</span> <span class="mi">2</span> <span class="o">|</span> <span class="n">Content</span> <span class="mi">2</span> <span class="o">|</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Fenced Code Block: Use three backticks or tildes to highlight code with optional language specification (python code).</p></li>
+<li><p>Footnote: Use superscript number after text and define the footnote below with the same number in square brackets and the content, enclosed in parentheses.</p></li>
+<li><p>Heading ID: Add an ID after a heading enclosed in curly braces (e.g., ### My Heading {#custom-id}).</p></li>
+<li><p>Definition List: Define terms and their meanings with colon (:) separation.</p></li>
+<li><p>Strikethrough: Wrap text with two tildes (~).</p></li>
+<li><p>Task List: Use hyphens (-) followed by square brackets ([ ]) and checkboxes (x) for completed tasks.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="p">[</span> <span class="p">]</span> <span class="n">Buy</span> <span class="n">groceries</span>
+<span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Clean</span> <span class="n">the</span> <span class="n">house</span>
+
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Emoji: Use emoji unicode characters directly (e.g., :smile:).</p></li>
+<li><p>Highlight: Wrap text with two equal signs (=) for inline highlighting or use syntax specific to your platform for code highlighting.</p></li>
+<li><p>Sub-/Superscript: Use tilde (~) for subscript (H~2~O) and caret (^) for superscript (X^2^).</p></li>
+</ul>
+<p>Remember, this is just a starting point. Explore different platforms and resources to discover further functionalities and unleash the full potential of Markdown!</p>
+</section>
+</section>
+</section>
+<section id="readme-files">
+<h2>README Files<a class="headerlink" href="#readme-files" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="readme-git">
+<img alt="../../_images/readme.png" src="../../_images/readme.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">A <a class="reference external" href="http://README.md">README.md</a> inside a Git repository</span><a class="headerlink" href="#readme-git" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>A README file, typically named <strong><a class="reference external" href="http://README.md">README.md</a></strong> in Git projects, is the first point of contact for anyone encountering your open-source project.</p>
+<p>It serves as a comprehensive introduction and guide, aiming to:</p>
+<ul class="simple">
+<li><p>Orient users: Newcomers can quickly grasp the purpose, features, and benefits of your project.</p></li>
+<li><p>Empower contributors: Developers understand contributing guidelines, workflows, and coding standards.</p></li>
+<li><p>Provide essential information: Users readily access installation instructions, usage guides, and documentation links.</p></li>
+<li><p>Encourage engagement: The README fosters a welcoming and participatory atmosphere for your project community.</p></li>
+</ul>
+<section id="key-characteristics-of-a-good-readme">
+<h3>Key characteristics of a good README:<a class="headerlink" href="#key-characteristics-of-a-good-readme" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Conciseness: Keep it brief and to the point, highlighting the most crucial information.</p></li>
+<li><p>Clarity: Use clear and easy-to-understand language, suitable for various technical backgrounds.</p></li>
+<li><p>Structure: Organize information logically and visually appealingly, making it easy to navigate.</p></li>
+<li><p>Accessibility: Ensure good formatting and markdown usage for optimal readability across platforms.</p></li>
+</ul>
+<p>By crafting a compelling and informative README, you can attract users, guide contributors, and establish a solid foundation for your open-source project’s growth and success.</p>
+</section>
+<section id="a-sample-readme">
+<h3>A Sample README:<a class="headerlink" href="#a-sample-readme" title="Link to this heading">#</a></h3>
+<p>This README serves as your guide to getting started with [Project Name], an open-source project focused on [brief project description]. Whether you’re a curious user or a potential contributor, we’re glad you’re here!</p>
+<p>Getting Started:</p>
+<ul class="simple">
+<li><p>Project Overview: Understand the purpose, features, and goals of [Project Name] by reading the overview document: path/to/overview.md.</p></li>
+<li><p>Installation: Follow the step-by-step instructions for installing and setting up the project in your environment. Check out the installation guide: path/to/installation.md.</p></li>
+<li><p>Usage: Dive into how to use the project effectively. Get clear directions in the usage guide: path/to/usage.md.</p></li>
+<li><p>Contributing: We welcome contributions from the community! Learn how to contribute code, documentation, and other ways to help in the contribution</p></li>
+<li><p>guide: path/to/contribution.md.
+Key Information:</p></li>
+<li><p>Documentation: Find additional resources, FAQs, and detailed explanations in the documentation folder: path/to/documentation.</p></li>
+<li><p>Community: Join the discussion and connect with other users and contributors in the project forum/chat/etc.: link to community platform.</p></li>
+<li><p>License: This project is licensed under the License Name: path/to/license.md.</p></li>
+</ul>
+<p>Stay Connected:</p>
+<ul class="simple">
+<li><p>Website: [Project website link]</p></li>
+<li><p>Repository: [GitHub repository link]</p></li>
+<li><p>Social Media: [Link to social media channels]</p></li>
+</ul>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -502,7 +639,7 @@ instead, they highlight conflicts that need to be resolved.</p></li>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapters/keypoints"
+            path: "./chapters/introduction"
         },
         predefinedOutput: true
     }
@@ -519,6 +656,24 @@ instead, they highlight conflicts that need to be resolved.</p></li>
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../../exercises/git_advanced.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercises Git Advanced</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../writing_documentation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Documenting Programs</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -534,9 +689,21 @@ instead, they highlight conflicts that need to be resolved.</p></li>
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-files">Markdown Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax">Syntax</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax"><strong>Basic Syntax:</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-syntax-not-all-platforms-support-all-features"><strong>Extended Syntax: (Not all platforms support all features)</strong></a></li>
 </ul>
-
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readme-files">README Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristics-of-a-good-readme">Key characteristics of a good README:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sample-readme">A Sample README:</a></li>
+</ul>
+</li>
+</ul>
   </nav></div>
 
 </div></div>
