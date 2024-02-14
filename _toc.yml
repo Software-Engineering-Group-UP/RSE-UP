@@ -41,9 +41,6 @@ parts:
         sections:
         - file: chapters/writing_documentation.md
 
-  - caption: Computational Narative
-    chapters:
-      - file: chapters/comp_narative.md  
   
   - caption: Licenses, Software Citation and FAIR
     chapters:
