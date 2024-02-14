@@ -444,7 +444,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -460,6 +462,51 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licenses">Licenses</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-software-licenses">Types of software licenses</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#permissive-licenses">Permissive licenses:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#copyleft-licenses">Copyleft licenses:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#proprietary-licenses">Proprietary licenses:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-data-licenses">Software and Data licenses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-open-source-software-licenses">Common Open Source Software Licenses</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mit-license">MIT License:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-license">Apache License:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gnu-general-public-license-gpl">GNU General Public License (GPL):</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creative-commons-cc-licenses">Creative Commons (CC) Licenses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-license-should-you-choose">Which License should you choose?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-publication-and-citation">Software Publication and Citation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-broader-landscape">A Broader Landscape:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-the-shift-with-key-principles-in-mind">Making the Shift with Key Principles in Mind:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-could-you-do">What could you do?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-cite-software">How to Cite software?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-the-relevant-metadata">Identifying the Relevant Metadata:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enter-the-citation-file-format-cff">Enter the Citation File Format (CFF):</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-publish-software">How to Publish Software</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#publication-repositories">1. Publication Repositories:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#software-journals">2. Software Journals:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#publication-as-a-tools-paper">3. “Publication” as a (Tools) Paper:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#publication-in-the-methods-section">4. “Publication” in the Methods Section:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fair-principles-for-research-software-fair4rs">FAIR Principles for Research Software (FAIR4RS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pragmatic-fair">Pragmatic FAIR</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -471,6 +518,253 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="licenses-software-citation-and-fair">
 <h1>Licenses, Software Citation and FAIR<a class="headerlink" href="#licenses-software-citation-and-fair" title="Link to this heading">#</a></h1>
+<p>In this chapter we will talk about what Licenses are and how they can be applied to research software. Furthermore, in this chapter we will explore the FAIR principles for research software including a pragmatic approach to FAIR.</p>
+<section id="licenses">
+<h2>Licenses<a class="headerlink" href="#licenses" title="Link to this heading">#</a></h2>
+<p>Software licenses are crucial tools for both creators and users, they can be outlined as follows:</p>
+<p><strong>Software as Intellectual Property</strong>:</p>
+<p>Like artwork, designs, and texts, software is considered intellectual property, a creation of the human mind deserving legal protection. This protection prevents unauthorized use and copying, giving creators control over their work.</p>
+<p><strong>Common Forms of Protection</strong>:</p>
+<p>Copyright is the primary form of legal protection for software, safeguarding its code and functionality. Other relevant forms include patents (for unique algorithms or processes) and trade secrets (for confidential information).</p>
+<p><strong>Software Licenses: Contracts for Use</strong>:</p>
+<p>A software license acts as a legal agreement between the owner (licensor) and the user (licensee). It grants permission to use the software under specific terms and conditions outlined in the agreement.</p>
+<p><strong>What Licenses Define</strong>:</p>
+<p>Licenses typically specify:</p>
+<ul class="simple">
+<li><p>The number of permitted installations.</p></li>
+<li><p>Commercial or non-commercial use allowed.</p></li>
+<li><p>Modification or distribution rights.</p></li>
+<li><p>Warranties and liabilities of the licensor.</p></li>
+</ul>
+<p><strong>Importance of Licenses</strong>:</p>
+<p>Without a license, using copyrighted software is illegal. Licenses ensure legal and ethical use, protecting both creators and users.</p>
+<p>There are numerous types of software licenses, ranging from free and open-source (e.g., GNU GPL) to paid commercial licenses with varying restrictions.
+Understanding license terms is crucial before installing or using any software.
+Breaching license terms can have legal consequences.</p>
+<p>It is important think of Licenses when working with software, since they are vital for responsible and legal software use. Always take the time to read and understand the terms before using any software!</p>
+<p>Fortunately, while there are a lot of different software licenses, there are only a few standard ones used.</p>
+<section id="types-of-software-licenses">
+<h3>Types of software licenses<a class="headerlink" href="#types-of-software-licenses" title="Link to this heading">#</a></h3>
+<p>In general, there are three types of licenses.</p>
+<section id="permissive-licenses">
+<h4>Permissive licenses:<a class="headerlink" href="#permissive-licenses" title="Link to this heading">#</a></h4>
+<p>Allow users to use, modify, and distribute the work under certain conditions. They typically have few restrictions and allow for combination with other licenses.</p>
+</section>
+<section id="copyleft-licenses">
+<h4>Copyleft licenses:<a class="headerlink" href="#copyleft-licenses" title="Link to this heading">#</a></h4>
+<p>Require that derivative works or modifications of the work be distributed under the same license terms. They aim to ensure that any improvements or modifications made to the work remain freely available to the community.</p>
+</section>
+<section id="proprietary-licenses">
+<h4>Proprietary licenses:<a class="headerlink" href="#proprietary-licenses" title="Link to this heading">#</a></h4>
+<p>Grant limited rights to use the work under specific conditions defined by the owner. These licenses usually restrict the redistribution, and modification of the work, or reverse engineering in case of software.</p>
+</section>
+</section>
+<section id="software-and-data-licenses">
+<h3>Software and Data licenses<a class="headerlink" href="#software-and-data-licenses" title="Link to this heading">#</a></h3>
+<p>Both are relevant in the context of research data and software Tend to use similar yet different licenses. The distinction arises from the inherent differences in their nature and the legal considerations associated with them, such as:</p>
+<ul class="simple">
+<li><p>Software is creative work, data is factual information</p></li>
+<li><p>Software is subject to copyright law, data may also be subject to privacy laws (sensitive data)</p></li>
+<li><p>Software licenses govern usage, modification and distribution of source code or executables.</p></li>
+<li><p>Data licenses address questions of access, usage, and sharing.</p></li>
+<li><p>Continuously evolving practice in both fields.</p></li>
+</ul>
+</section>
+<section id="common-open-source-software-licenses">
+<h3>Common Open Source Software Licenses<a class="headerlink" href="#common-open-source-software-licenses" title="Link to this heading">#</a></h3>
+<section id="mit-license">
+<h4>MIT License:<a class="headerlink" href="#mit-license" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Permissive license allowing users to freely use, modify, and distribute the software.</p></li>
+<li><p>Requires including the original license and copyright notice in the distribution.</p></li>
+<li><p>Provides flexibility for commercial and proprietary use.</p></li>
+<li><p>Does not impose copyleft requirements on derivative works.</p></li>
+<li><p>Compatible with other licenses, including copyleft licenses.</p></li>
+</ul>
+<p>The also popular <strong>BSD</strong> license is quite similar.</p>
+</section>
+<section id="apache-license">
+<h4>Apache License:<a class="headerlink" href="#apache-license" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Permissive license allowing users to use, modify, and distribute the software under certain conditions.</p></li>
+<li><p>Requires including the original copyright notice and license in distributions.</p></li>
+<li><p>Provides patent protection through a patent grant clause.</p></li>
+<li><p>Compatible with other licenses, including copyleft licenses.</p></li>
+<li><p>Promotes the combination of open-source and commercial software.</p></li>
+</ul>
+</section>
+<section id="gnu-general-public-license-gpl">
+<h4>GNU General Public License (GPL):<a class="headerlink" href="#gnu-general-public-license-gpl" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Copyleft license that ensures derivative works are also licensed under the GPL.</p></li>
+<li><p>Requires distributing the source code of the software when distributing the software itself.</p></li>
+<li><p>Encourages sharing and collaboration within the open-source community.</p></li>
+<li><p>Version 2 (GPLv2) is widely used and compatible with GPLv3 but less compatible with other licenses.</p></li>
+<li><p>Version 3 (GPLv3) includes additional provisions for patent protection.</p></li>
+</ul>
+</section>
+</section>
+<section id="creative-commons-cc-licenses">
+<h3>Creative Commons (CC) Licenses<a class="headerlink" href="#creative-commons-cc-licenses" title="Link to this heading">#</a></h3>
+<p>CC license are:
+A set of licenses used primarily for creative works, including artwork, literature, and media. They also are frequently used for data and other scientific outputs, but not recommended for software or hardware.
+Various CC licenses exist, with different combinations of attribution, share-alike, and non-commercial clauses. They provides a framework for granting permissions and specifying usage restrictions. CC licenses offer flexibility in allowing creators to define the terms of use and distribution for their works.</p>
+<p>CC Licenses offer varying levels of flexibility and restrictions, allowing creators to choose the terms that align with their desired balance between openness and control:</p>
+<ul class="simple">
+<li><p>Public Domain (<strong>CC0</strong>)</p></li>
+<li><p>Attribution (<strong>CC BY</strong>)</p></li>
+<li><p>Attribution-ShareAlike (<strong>CC BY-SA</strong>)</p></li>
+<li><p>Attribution-NoDerivs (<strong>CC BY-ND</strong>)</p></li>
+<li><p>Attribution-NonCommercial (<strong>CC BY-NC</strong>)</p></li>
+<li><p>Attribution-NonCommercial-ShareAlike (<strong>CC BY-NC-SA</strong>)</p></li>
+<li><p>Attribution-NonCommercial-NoDerivs (<strong>CC BY-NC-ND</strong>)</p></li>
+</ul>
+<p>All CC licenses can be found <a class="reference external" href="https://creativecommons.org/licenses/">here</a></p>
+</section>
+<section id="which-license-should-you-choose">
+<h3>Which License should you choose?<a class="headerlink" href="#which-license-should-you-choose" title="Link to this heading">#</a></h3>
+<p>Which license is the most suitable for your situation depends on a number of aspects:</p>
+<ul class="simple">
+<li><p>Do we want to license the work at all?</p></li>
+<li><p>Is the content we are licensing source code?</p></li>
+<li><p>Do we require people distributing derivative works to also distribute their code?</p></li>
+<li><p>Do we want to address patent rights?</p></li>
+<li><p>Is our license compatible with the licenses of the software we depend on?</p></li>
+<li><p>Do our institutions have any policies that may overrule our choices?</p></li>
+<li><p>Are there any copyright experts within our institution who can assist us?</p></li>
+</ul>
+<p>You can get more help at: <a class="reference external" href="https://choosealicense.com/">Choosealicense.com</a></p>
+<p><strong>IMPORTANT:</strong> <strong><em>Don’t write your own license. Legalese is a highly technical language, and words don’t mean what you think they do.</em></strong></p>
+</section>
+</section>
+<section id="software-publication-and-citation">
+<h2>Software Publication and Citation<a class="headerlink" href="#software-publication-and-citation" title="Link to this heading">#</a></h2>
+<p>For decades, publishing peer-reviewed papers has been the cornerstone of scientific progress. Papers serve as crucial building blocks, allowing researchers to share findings, build upon existing knowledge, and receive credit for their work. However, the research ecosystem extends far beyond the written word. Data, code, and software play equally pivotal roles, yet their publication and citation remain significantly less common. This creates a gap that hinders transparency, reproducibility, and ultimately, scientific advancement.</p>
+<section id="a-broader-landscape">
+<h3>A Broader Landscape:<a class="headerlink" href="#a-broader-landscape" title="Link to this heading">#</a></h3>
+<p>Just as papers deserve publication and citation, so do other research outputs. Embracing this shift offers several benefits, aligned with key software citation principles:</p>
+<p><strong>Importance and Credit &amp; Attribution</strong>: Sharing software alongside papers enhances transparency and empowers Research Software Engineers (RSEs). Formal citation practices give RSEs rightful credit for their contributions, adhering to the “Importance” and “Credit &amp; Attribution” principles.</p>
+<p><strong>Transparency and Unique Identification</strong>: Making software openly available with persistent unique identifiers allows others to readily understand the “how” of research and identify the specific software version used (“Specificity” principle).</p>
+<p><strong>Reproducibility and Persistence</strong>: Openly available software enables others to run the same analyses, ensuring replicability and adherence to the “Persistence” principle.</p>
+<p><strong>Collaboration and Accessibility</strong>: Shared software fosters collaboration by offering reusable tools and codebases. This reduces duplication of effort, promotes community-driven development, and ensures the long-term sustainability of valuable research tools, fulfilling the “Accessibility” principle.</p>
+</section>
+<section id="making-the-shift-with-key-principles-in-mind">
+<h3>Making the Shift with Key Principles in Mind:<a class="headerlink" href="#making-the-shift-with-key-principles-in-mind" title="Link to this heading">#</a></h3>
+<p>Several initiatives promote software publication and citation, aligned with these core principles:</p>
+<ul class="simple">
+<li><p><strong>Dedicated repositories</strong>: Platforms like Zenodo and Software Heritage provide persistent, citable archives for research software, upholding the “Persistence” principle.</p></li>
+<li><p><strong>Citation guidelines</strong>: Organizations like FORCE11 offer clear guidelines for formatting software citations in reference lists, ensuring “Specificity” and clarity.</p></li>
+<li><p><strong>Incentives and mandates</strong>: Funding agencies and journals increasingly encourage or even mandate software publication as part of research outputs, promoting the overall importance of software.</p></li>
+</ul>
+<p>By embracing these developments and adhering to these key principles, a research environment where software is valued, shared, and cited as readily as papers can be created. This shift will ultimately lead to more robust, transparent, and collaborative scientific progress, benefiting both researchers and society as a whole.</p>
+</section>
+<section id="what-could-you-do">
+<h3>What could you do?<a class="headerlink" href="#what-could-you-do" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Advocate for software publication and citation within your research community and institutions.</p></li>
+<li><p>Utilize resources like the Zenodo guide for researchers to simplify software publication.</p></li>
+<li><p>Encourage colleagues to use dedicated repositories for long-term accessibility.</p></li>
+<li><p>Support the development of robust software citation metrics to properly acknowledge RSE contributions.</p></li>
+</ul>
+</section>
+<section id="how-to-cite-software">
+<h3>How to Cite software?<a class="headerlink" href="#how-to-cite-software" title="Link to this heading">#</a></h3>
+<p>Giving credit where credit is due applies to software just as much as any other intellectual creation. However, software citation can be tricky due to its unique nature. This guide explores how to identify the relevant metadata needed for proper software citation, highlighting resources like the Citation File Format (CFF) to make the process smoother.</p>
+<section id="identifying-the-relevant-metadata">
+<h4>Identifying the Relevant Metadata:<a class="headerlink" href="#identifying-the-relevant-metadata" title="Link to this heading">#</a></h4>
+<p>The ideal scenario is for the software project itself to clearly provide essential metadata for citation. This information typically includes:</p>
+<ul class="simple">
+<li><p><strong>Software name and version</strong>: This seems obvious, but specifying the exact version ensures clarity and reproducibility.</p></li>
+<li><p><strong>Authors or developers</strong>: Identify individuals or teams responsible for the software’s creation.</p></li>
+<li><p><strong>Publication date or release date</strong>: Pinpoint the initial release or significant update dates.</p></li>
+<li><p><strong>URL or access information</strong>: Include links to official websites, repositories, or download locations.</p></li>
+<li><p><strong>DOI (Digital Object Identifier)</strong>: If available, a DOI offers a persistent identifier for the software.</p></li>
+<li><p><strong>License information</strong>: Specify the terms under which the software is distributed for proper ethical and legal attribution.</p></li>
+</ul>
+<p>Unfortunately, not all software projects provide such detailed information. In such cases, consider these next steps:</p>
+<ul class="simple">
+<li><p>Consult the software website or documentation: Documentation often includes information about creators, release dates, and access details.</p></li>
+<li><p><strong>Search for publications</strong> : Explore research papers or other publications related to the software’s development. They often cite the software itself and might provide valuable metadata.</p></li>
+<li><p>Engage with the community forums or mailing lists: Reach out to the software’s developer community for specific guidance on how to cite their work.</p></li>
+</ul>
+</section>
+<section id="enter-the-citation-file-format-cff">
+<h4>Enter the Citation File Format (CFF):<a class="headerlink" href="#enter-the-citation-file-format-cff" title="Link to this heading">#</a></h4>
+<p>The Citation File Format (CFF) offers a standardized way to store and share software citation metadata.</p>
+<p>Imagine it as a dedicated passport for your software, holding all the key information in a machine-readable format. Benefits of using CFF include:</p>
+<ul class="simple">
+<li><p><strong>Clarity and accuracy</strong>: CFF ensures consistent and complete citation information, minimizing errors and ambiguity.
+Tool support: Tools like cffinit help automatically generate CFF files from existing project data, streamlining the process.</p></li>
+<li><p><strong>Platform integration</strong>: CFF can be integrated with platforms like Zenodo and GitHub, facilitating discovery and access to the software and its citation information.</p></li>
+<li><p><strong>Community adoption</strong>: With over 16,000 CFF files already existing on GitHub, the format is gaining traction in the software development community.</p></li>
+</ul>
+<p>Not all software projects utilize CFF yet. However, adopting this format demonstrates good scientific practice and encourages others to do the same, ultimately benefitting the entire research ecosystem.</p>
+<p>In conclusion, citing software effectively requires identifying the relevant metadata, and resources like CFF make the process more efficient and standardized.</p>
+</section>
+</section>
+<section id="how-to-publish-software">
+<h3>How to Publish Software<a class="headerlink" href="#how-to-publish-software" title="Link to this heading">#</a></h3>
+<p>While making your software publicly available on platforms like GitHub is crucial for collaboration and access, it doesn’t qualify as a formal “publication” in the academic sphere. To gain recognition and establish a proper citation record for your software, you need to follow specific strategies.</p>
+<p>Here’s how to effectively publish your software and ensure its academic merit:</p>
+<section id="publication-repositories">
+<h4>1. Publication Repositories:<a class="headerlink" href="#publication-repositories" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="http://Zenodo.org">Zenodo.org</a></strong>: This open-access repository for research outputs allows you to upload your software along with associated data, documentation, and version control information. Zenodo assigns persistent identifiers (DOIs) for easy citation and tracking.</p></li>
+<li><p><strong>Figshare</strong>: Another open-access platform, Figshare accepts various research artifacts, including software, and provides DOIs for citation. Similar to Zenodo, it offers version control and detailed metadata options.</p></li>
+</ul>
+</section>
+<section id="software-journals">
+<h4>2. Software Journals:<a class="headerlink" href="#software-journals" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Journal of Open Source Software (JOSS)</strong>: A peer-reviewed, open-access journal dedicated to scientific software. Publication in JOSS involves a thorough review process ensuring software quality, reproducibility, and documentation clarity.</p></li>
+<li><p><strong>Journal of Research on Software (JORS)</strong>: Similar to JOSS, JORS is a peer-reviewed open-access journal for software publications. It focuses on research software with significant contributions to scientific advancement.</p></li>
+<li><p><strong>Other options</strong>: Explore discipline-specific software journals relevant to your field. Many engineering and computational sciences journals have dedicated software sections accepting peer-reviewed publications.</p></li>
+</ul>
+</section>
+<section id="publication-as-a-tools-paper">
+<h4>3. “Publication” as a (Tools) Paper:<a class="headerlink" href="#publication-as-a-tools-paper" title="Link to this heading">#</a></h4>
+<p>Consider writing a dedicated “tools paper” describing your software’s development, methodology, functionalities, and impact. Submit this paper to relevant journals in your field, highlighting the software’s contribution to your research area.</p>
+<p>Ensure the paper clearly distinguishes itself from a user manual or technical documentation by focusing on the scientific significance and broader implications of your software.</p>
+</section>
+<section id="publication-in-the-methods-section">
+<h4>4. “Publication” in the Methods Section:<a class="headerlink" href="#publication-in-the-methods-section" title="Link to this heading">#</a></h4>
+<p>If your software is instrumental to your research findings, embed a detailed description of its functionality and development within the Methods section of your primary research paper.</p>
+<p>Provide clear instructions on accessing and using the software, alongside a link to the publicly available code repository.</p>
+<p>Additional considerations:</p>
+<p><strong>Open Source Licensing</strong>: Consider releasing your software under an open-source license like MIT or GPL to encourage contribution and wider adoption.
+Version Control: Use a version control system like Git to track changes and ensure different versions are properly cited.</p>
+<p><strong>Community Engagement</strong>: Actively engage with users and developers on forums and platforms like GitHub to improve your software and foster a user community.
+By following these strategies, you can effectively publish your software and gain the recognition it deserves within the academic community. Remember, formal publication goes beyond code availability and emphasizes transparency, reproducibility, and scientific contribution.</p>
+</section>
+</section>
+</section>
+<section id="fair-principles-for-research-software-fair4rs">
+<h2>FAIR Principles for Research Software (FAIR4RS)<a class="headerlink" href="#fair-principles-for-research-software-fair4rs" title="Link to this heading">#</a></h2>
+<p>In the age of information overload, ensuring the quality and usefulness of data is paramount. The FAIR principles offer a framework for managing data effectively, promoting its findability, accessibility, interoperability, and reusability.</p>
+<figure class="align-default" id="fair-princeples">
+<img alt="../_images/fair.png" src="../_images/fair.png" />
+<figcaption>
+<p><span class="caption-text">FAIR</span><a class="headerlink" href="#fair-princeples" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Findability</strong>: Think of data as hidden treasures. They need clear labels, descriptions, and identifiers (like unique file names) so people and machines can easily “discover” them. This means having rich metadata - information about the data itself, its format, context, and creation - that’s searchable and discoverable through online repositories and catalogues.</p></li>
+<li><p><strong>Accessibility</strong>: Once found, the treasure chest needs to be unlocked. Data should be readily accessible to authorized users. This requires clear access procedures, understandable licensing terms, and appropriate authentication processes. Consider factors like cost, technological barriers, and legal restrictions when defining accessibility.</p></li>
+<li><p><strong>Interoperability</strong>: Imagine building with Lego bricks from different sets. Data interoperability ensures seamless integration with other datasets and analysis tools, regardless of format or origin. This requires using standardized vocabularies, data structures, and communication protocols. Think of it as creating a common language for different datasets to “talk” to each other.</p></li>
+</ul>
+<p>-<strong>Reusability</strong>: Data should be more than just a one-time treasure trove. By having well-described metadata and clear documentation, data becomes reusable for future research, analysis, or even creative projects. This includes providing information about the data’s limitations, provenance, and any modifications made. Reusability encourages collaboration, innovation, and maximizes the value of data beyond its initial purpose.</p>
+<p><strong><em>The FAIR principles are not just guidelines; they’re essential for responsible data stewardship</em></strong>. By adhering to them, organizations, researchers, and individuals can unlock the true potential of their data, fostering research advancement, collaboration, and ultimately, knowledge creation.</p>
+<p>Additional considerations:</p>
+<ul class="simple">
+<li><p><strong>Context is key</strong> : The FAIR principles need to be applied within the specific context of the data and its intended use.</p></li>
+<li><p><strong>Community standards</strong>: Existing community standards and best practices should be leveraged when implementing FAIR principles.</p></li>
+<li><p><strong>Technology can help</strong>: Many tools and technologies exist to facilitate FAIR data management, from repositories to metadata creation platforms.</p></li>
+<li><p><strong>It’s an ongoing process</strong>: Implementing and maintaining FAIR data practices is an iterative process that requires continuous attention and collaboration.</p></li>
+</ul>
+</section>
+<section id="pragmatic-fair">
+<h2>Pragmatic FAIR<a class="headerlink" href="#pragmatic-fair" title="Link to this heading">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -510,7 +804,57 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licenses">Licenses</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-software-licenses">Types of software licenses</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#permissive-licenses">Permissive licenses:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#copyleft-licenses">Copyleft licenses:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#proprietary-licenses">Proprietary licenses:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-data-licenses">Software and Data licenses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-open-source-software-licenses">Common Open Source Software Licenses</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mit-license">MIT License:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-license">Apache License:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gnu-general-public-license-gpl">GNU General Public License (GPL):</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creative-commons-cc-licenses">Creative Commons (CC) Licenses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-license-should-you-choose">Which License should you choose?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-publication-and-citation">Software Publication and Citation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-broader-landscape">A Broader Landscape:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-the-shift-with-key-principles-in-mind">Making the Shift with Key Principles in Mind:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-could-you-do">What could you do?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-cite-software">How to Cite software?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-the-relevant-metadata">Identifying the Relevant Metadata:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enter-the-citation-file-format-cff">Enter the Citation File Format (CFF):</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-publish-software">How to Publish Software</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#publication-repositories">1. Publication Repositories:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#software-journals">2. Software Journals:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#publication-as-a-tools-paper">3. “Publication” as a (Tools) Paper:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#publication-in-the-methods-section">4. “Publication” in the Methods Section:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fair-principles-for-research-software-fair4rs">FAIR Principles for Research Software (FAIR4RS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pragmatic-fair">Pragmatic FAIR</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

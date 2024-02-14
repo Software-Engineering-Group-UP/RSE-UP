@@ -1,5 +1,5 @@
 # Introduction to Jupyter Notebook
-**TODO** LINK TO COMP NARRATIVE
+
 Jupyter Notebooks represent a shift in scientific computing and data analysis, offering an interactive and exploratory environment unlike traditional scripting or command-line interfaces. Their key characteristic lies in the confluence of live code execution, rich media embedding, and collaborative features, paving the way for reproducible and shareable workflows.
 
 ## The shift in Scientific Computing
@@ -23,7 +23,7 @@ Jupyter Notebooks transcend disciplinary boundaries by supporting diverse progra
 
 Traditional analysis often focused solely on code, leaving a gap in clear communication and understanding.
 
-Jupyter Notebooks seamlessly integrate code, visualizations, equations, and explanatory text within the same document. This creates a narrative flow, enabling scientists to not only present results but also explain their thought process and reasoning, crucial for reproducibility and collaboration.
+Jupyter Notebooks seamlessly integrate code, visualizations, equations, and explanatory text within the same document. This creates a [narrative](https://software-engineering-group-up.github.io/RSE-UP/chapters/comp_narative.html) flow, enabling scientists to not only present results but also explain their thought process and reasoning, crucial for reproducibility and collaboration.
 
 ### From Individual Workflows to Collaborative Ecosystems:
 
@@ -85,7 +85,7 @@ use .py files for providing the core functionality in well-defined modules (poss
 ✅ Code reusability<br> 
 ✅ Better Version control
 
-**Cons: ** 
+**Cons:** 
 
 ❌ Lack of interactivity<br> 
 ❌ Limited documentation capabilities<br> 

@@ -35,7 +35,7 @@ Several factors contribute to the excitement surrounding computational narrative
 
 - Jupyter Notebooks: A popular tool for computational storytelling
 
-Jupyter Notebooks have become a go-to platform for creating computational narratives. These interactive notebooks allow you to combine text, code, and data visualizations seamlessly, making it easy to craft your story and share it with others. **TODO** add link to Jupyter Notebooks here
+Jupyter Notebooks have become a go-to platform for creating computational narratives. These interactive notebooks allow you to combine text, code, and data visualizations seamlessly, making it easy to craft your story and share it with others. More on Jupyter Notebooks can be found [here](https://software-engineering-group-up.github.io/RSE-UP/chapters/introduction/jupyter.html).
 
 ## Real-world applications
 
