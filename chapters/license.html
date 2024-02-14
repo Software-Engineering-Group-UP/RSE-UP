@@ -503,7 +503,27 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fair-principles-for-research-software-fair4rs">FAIR Principles for Research Software (FAIR4RS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fair-principles-for-research-software-fair4rs">FAIR Principles for Research Software (FAIR4RS)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-objects">Digital Objects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fair-not-equal-foss">FAIR not equal FOSS</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#similarities">Similarities:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#differences">Differences:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#software-quality-and-fair">Software Quality and FAIR</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-two-dimensions-of-software-quality">The Two Dimensions of Software Quality:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-of-fair-for-form-quality">Potential of FAIR for Form Quality:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#complementary-approaches">Complementary Approaches:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fair4rs-principles">FAIR4RS Principles</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points-of-the-fair4rs-principles">Key Points of the FAIR4RS Principles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-of-fair4rs-principles">Impact of FAIR4RS Principles</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pragmatic-fair">Pragmatic FAIR</a></li>
 </ul>
             </nav>
@@ -740,7 +760,7 @@ By following these strategies, you can effectively publish your software and gai
 </section>
 <section id="fair-principles-for-research-software-fair4rs">
 <h2>FAIR Principles for Research Software (FAIR4RS)<a class="headerlink" href="#fair-principles-for-research-software-fair4rs" title="Link to this heading">#</a></h2>
-<p>In the age of information overload, ensuring the quality and usefulness of data is paramount. The FAIR principles offer a framework for managing data effectively, promoting its findability, accessibility, interoperability, and reusability.</p>
+<p>In the age of information overload, ensuring the quality and usefulness of data is paramount. The FAIR principles offer a framework for managing data effectively, promoting its findability, accessibility, interoperability, and reusability. <span id="id1">[<a class="reference internal" href="references.html#id5" title="Mark D Wilkinson, Michel Dumontier, IJsbrand Jan Aalbersberg, Gabrielle Appleton, Myles Axton, Arie Baak, Niklas Blomberg, Jan-Willem Boiten, Luiz Bonino da Silva Santos, Philip E Bourne, and others. The fair guiding principles for scientific data management and stewardship. Scientific data, 3(1):1–9, 2016.">Wilkinson <em>et al.</em>, 2016</a>]</span></p>
 <figure class="align-default" id="fair-princeples">
 <img alt="../_images/fair.png" src="../_images/fair.png" />
 <figcaption>
@@ -761,9 +781,154 @@ By following these strategies, you can effectively publish your software and gai
 <li><p><strong>Technology can help</strong>: Many tools and technologies exist to facilitate FAIR data management, from repositories to metadata creation platforms.</p></li>
 <li><p><strong>It’s an ongoing process</strong>: Implementing and maintaining FAIR data practices is an iterative process that requires continuous attention and collaboration.</p></li>
 </ul>
+<section id="digital-objects">
+<h3>Digital Objects<a class="headerlink" href="#digital-objects" title="Link to this heading">#</a></h3>
+<p>According to the European Commision:</p>
+<blockquote>
+<div><p>Central to the realization of FAIR are FAIR Digital Objects, which may represent data, software or other research resources.</p>
+</div></blockquote>
+<p>But: How do the FAIR Principles relate to software?</p>
+<p>There is a mismatch between the broad intentions of the 4 foundational FAIR principles and how the 15 FAIR Guiding Principles are communicated and perceived.</p>
+<p>It is also Important to note that <strong>Software is (not) Data</strong></p>
+<figure class="align-default" id="fair-digital-objects">
+<img alt="../_images/fair_digital_objects.png" src="../_images/fair_digital_objects.png" />
+<figcaption>
+<p><span class="caption-text">Fair Digital Objects</span><a class="headerlink" href="#fair-digital-objects" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="fair-not-equal-foss">
+<h3>FAIR not equal FOSS<a class="headerlink" href="#fair-not-equal-foss" title="Link to this heading">#</a></h3>
+<p>Both FAIR principles and Open Source software (FOSS) aim for greater transparency, accessibility, and collaboration. However, they differ in their specific focus and requirements.</p>
+<section id="similarities">
+<h4>Similarities:<a class="headerlink" href="#similarities" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Transparency</strong>: Both promote openness and understanding of underlying systems. FAIR encourages clear metadata and documentation, while FOSS provides public access to code.</p></li>
+<li><p><strong>Accessibility</strong>: Both aim to make data or code readily available to users. FAIR advocates for accessible licensing and clear user guides, while FOSS utilizes open licenses for free access and modification.</p></li>
+<li><p><strong>Collaboration</strong>: Both encourage community involvement and improvement. FAIR facilitates data reuse and integration, while FOSS enables collaborative development and modification of code.</p></li>
+</ul>
+</section>
+<section id="differences">
+<h4>Differences:<a class="headerlink" href="#differences" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Open Data not Mandatory for FAIR</strong>: While FAIR encourages open access to data, it acknowledges limitations due to privacy, security, and ethical concerns. In contrast, FOSS requires the source code to be publicly available.</p></li>
+<li><p><strong>Specificity</strong>: FAIR focuses on data management for findability, accessibility, interoperability, and reusability. FOSS focuses on the code itself, with its specific licensing and community development practices.</p></li>
+</ul>
+<p><strong><em>Examples</em></strong>:</p>
+<ul class="simple">
+<li><p><strong>Patient health data</strong>: Sharing such data openly could violate privacy. FAIR principles can still be applied by providing detailed metadata and access controls for authorized users.</p></li>
+<li><p><strong>Research software</strong>: Openly sharing the code allows others to verify, improve, and build upon it. This aligns with both FAIR and FOSS principles.</p></li>
+</ul>
+<p><strong><em>The Case for Open Research Software</em></strong>:</p>
+<p>While open data in certain fields might pose challenges, open research software aligns well with both FAIR and FOSS principles. Sharing methods and code improves transparency, reproducibility, and collaboration in research.</p>
+</section>
+<section id="summary">
+<h4>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h4>
+<p>FAIR and FOSS are not equivalent, but they have significant overlap in promoting transparency, accessibility, and collaboration. While FAIR focuses on data management practices, FOSS focuses on open access to code. Both play crucial roles in fostering knowledge creation and innovation, often working hand-in-hand in research areas like computational biology where sharing both data and methods is crucial.</p>
+</section>
+</section>
+<section id="software-quality-and-fair">
+<h3>Software Quality and FAIR<a class="headerlink" href="#software-quality-and-fair" title="Link to this heading">#</a></h3>
+<p>For Research Software Engineers (RSEs), ensuring software quality is paramount. It directly impacts the reliability, reproducibility, and ultimately, the credibility of research findings. The FAIR (Findable, Accessible, Interoperable, Reusable) principles have emerged as a potent framework for enhancing research data quality. But can FAIR adequately address the multifaceted concerns surrounding software quality in RSE?</p>
+<section id="the-two-dimensions-of-software-quality">
+<h4>The Two Dimensions of Software Quality:<a class="headerlink" href="#the-two-dimensions-of-software-quality" title="Link to this heading">#</a></h4>
+<p>One has to distinguish between the form and function of software, each contributing to its overall quality:</p>
+<ul class="simple">
+<li><p><strong>Form</strong>: Focuses on code quality, maintainability, and documentation. These aspects are closely aligned with FAIR principles. <strong><em>Clear documentation (F1)</em></strong>, use of <strong><em>persistent identifiers (F2)</em></strong>, and <strong><em>well-defined metadata (F3)</em></strong> improve findability and understanding. Adherence to <strong><em>community standards and open-source practices (F4)</em></strong> promotes interoperability and reusability.</p></li>
+<li><p><strong>Function</strong>: Encompasses software’s core functionality, including correctness, security, and computational efficiency. While FAIR indirectly supports some (e.g., clear documentation aids usability), it primarily addresses data management and sharing, leaving these crucial aspects outside its immediate scope.</p></li>
+</ul>
+</section>
+<section id="potential-of-fair-for-form-quality">
+<h4>Potential of FAIR for Form Quality:<a class="headerlink" href="#potential-of-fair-for-form-quality" title="Link to this heading">#</a></h4>
+<p>FAIR principles offer invaluable tools for RSEs:</p>
+<ul class="simple">
+<li><p><strong>Transparency and Trust</strong>: By making software findable and accessible (F1, A1), researchers can easily review and understand its functionality, fostering trust and collaboration.</p></li>
+<li><p><strong>Reproducibility and Sustainability</strong>: Interoperable and reusable software (F4) facilitates re-running analyses and building upon existing work, enhancing research reproducibility and sustainability.</p></li>
+<li><p><strong>Community Engagement</strong>: Open access to software through repositories (A1) encourages contributions and improves code quality through community scrutiny and testing.</p></li>
+</ul>
+<p><strong><em>Limitations of FAIR for Function Quality</em></strong>:</p>
+<p>Despite its strengths, FAIR doesn’t directly address:</p>
+<ul class="simple">
+<li><p><strong>Functional Correctness</strong>: Ensuring software produces accurate results remains the responsibility of RSEs and requires rigorous testing, validation, and domain expertise.</p></li>
+<li><p><strong>Security</strong>: FAIR doesn’t explicitly cover security practices crucial for protecting sensitive data and preventing vulnerabilities.</p></li>
+<li><p><strong>Computational Efficiency</strong>: Optimizing software performance falls outside FAIR’s focus, relying on the RSE’s understanding of algorithms and hardware constraints.</p></li>
+</ul>
+</section>
+<section id="complementary-approaches">
+<h4>Complementary Approaches:<a class="headerlink" href="#complementary-approaches" title="Link to this heading">#</a></h4>
+<p>To address these limitations, RSEs need to combine FAIR principles with other established software quality practices:</p>
+<ul class="simple">
+<li><p><strong>Unit and integration testing</strong>: Rigorous testing ensures functional correctness and identifies bugs.</p></li>
+<li><p><strong>Static code analysis</strong>: Tools can detect potential vulnerabilities and code quality issues.</p></li>
+<li><p><strong>Peer review</strong>: Expert evaluation provides valuable insights into both function and form.</p></li>
+<li><p><strong>Domain expertise</strong>: Understanding the research context is crucial for ensuring software produces meaningful results.</p></li>
+</ul>
+<p>FAIR principles offer a powerful framework for improving the form of research software, promoting findability, accessibility, interoperability, and reusability. However, RSEs need to employ complementary practices to ensure the functional quality of their software, including correctness, security, and efficiency. By combining FAIR with established software quality practices, RSEs can ensure their software meets the rigorous expectations of research.</p>
+</section>
+</section>
+<section id="fair4rs-principles">
+<h3>FAIR4RS Principles<a class="headerlink" href="#fair4rs-principles" title="Link to this heading">#</a></h3>
+<p>The FAIR4RS Principles (Findable, Accessible, Interoperable, and Reusable for Research Software) <span id="id2">[<a class="reference internal" href="references.html#id3" title="Michelle Barker, Neil P Chue Hong, Daniel S Katz, Anna-Lena Lamprecht, Carlos Martinez-Ortiz, Fotis Psomopoulos, Jennifer Harrow, Leyla Jael Castro, Morane Gruenpeter, Paula Andrea Martinez, and others. Introducing the fair principles for research software. Scientific Data, 9(1):622, 2022.">Barker <em>et al.</em>, 2022</a>, <a class="reference internal" href="references.html#id2">Hong <em>et al.</em>, 2022</a>, <a class="reference internal" href="references.html#id4" title="Anna-Lena Lamprecht, Leyla Garcia, Mateusz Kuzak, Carlos Martinez, Ricardo Arcila, Eva Martin Del Pico, Victoria Dominguez Del Angel, Stephanie Van De Sandt, Jon Ison, Paula Andrea Martinez, and others. Towards fair principles for research software. Data Science, 3(1):37–59, 2020.">Lamprecht <em>et al.</em>, 2020</a>]</span> aim to improve the sharing and reuse of research software, ultimately leading to more transparent, reproducible, and robust research. Developed by a collaborative effort from the Research Data Alliance, FORCE11, and Research Software Alliance, these principles provide a framework for researchers, developers, and other stakeholders to create and manage research software effectively.</p>
+<section id="key-points-of-the-fair4rs-principles">
+<h4>Key Points of the FAIR4RS Principles<a class="headerlink" href="#key-points-of-the-fair4rs-principles" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Findability:</strong>
+Software, and its associated metadata, is easy for both humans and machines to find</p></li>
+</ul>
+<p>F1. Software is assigned a globally unique and persistent identifier.
+F1.1. Components of the software representing levels of granularity are assigned distinct identifiers.
+F1.2. Different versions of the software are assigned distinct identifiers.
+F2. Software is described with rich metadata.
+F3. Metadata clearly and explicitly include the identifier of the software they describe.
+F4. Metadata are FAIR, searchable and indexable.</p>
+<ul class="simple">
+<li><p><strong>Accessibility:</strong>
+Software, and its metadata, is retrievable via standardised protocols.</p></li>
+</ul>
+<p>A1. Software is retrievable by its identifier using a standardised communications protocol.
+A1.1. The protocol is open, free, and universally implementable.
+A1.2. The protocol allows for an authentication and authorization procedure, where necessary.
+A2. Metadata are accessible, even when the software is no longer available.</p>
+<ul class="simple">
+<li><p><strong>Interoperability:</strong>
+Software interoperates with other software by exchanging data and/or metadata, and/or through interaction via application programming interfaces (APIs), described through standards.</p></li>
+</ul>
+<p>I1: Software uses community-recognized formats and standards for data, inputs, and outputs.
+I2: Application Programming Interfaces (APIs) are well-documented and support interoperability with other software.
+I3: The software interacts seamlessly with other relevant research tools and workflows.</p>
+<ul class="simple">
+<li><p><strong>Reusability:</strong>
+Software is both usable (can be executed) and reusable (can be understood, modified, built upon, or incorporated into other software)</p></li>
+</ul>
+<p>R1: Software is described with a plurality of accurate and relevant attributes.
+R1.1: Software is given a clear and accessible license.
+R1.2: Software is associated with detailed provenance.
+R2: Software includes qualified references to other software.
+R3: Software meets domain-relevant community standards.</p>
+</section>
+<section id="impact-of-fair4rs-principles">
+<h4>Impact of FAIR4RS Principles<a class="headerlink" href="#impact-of-fair4rs-principles" title="Link to this heading">#</a></h4>
+<p>Adopting these principles benefits various stakeholders in the research community:</p>
+<ul class="simple">
+<li><p><strong>Researchers</strong>: Increased transparency, reproducibility, and efficiency in conducting research.</p></li>
+<li><p><strong>Software developers</strong>: Improved usability, maintenance, and community engagement for their software.</p></li>
+<li><p><strong>Funders</strong>: More confident in investing in research with sustainable and reusable software practices.</p></li>
+<li><p><strong>Publishers</strong>: Clear guidelines for evaluating and promoting FAIR research software.</p></li>
+</ul>
+<p>Overall, the FAIR4RS Principles offer a valuable framework for creating and managing research software that contributes to a more collaborative, efficient, and trustworthy research ecosystem.</p>
+</section>
+</section>
 </section>
 <section id="pragmatic-fair">
 <h2>Pragmatic FAIR<a class="headerlink" href="#pragmatic-fair" title="Link to this heading">#</a></h2>
+<p><strong>“Five Recommendations for FAIR Software”</strong>, <a class="reference external" href="https://fair-software.eu/">Netherlands eScience Center - fair-software.eu</a></p>
+<ol class="arabic simple">
+<li><p>Use a publicly accessible repository with version control.</p></li>
+<li><p>Add a license.</p></li>
+<li><p>Register your code in a community registry.</p></li>
+<li><p>Enable citation of the software.</p></li>
+<li><p>Use a software quality checklist.</p></li>
+</ol>
 </section>
 </section>
 
@@ -849,7 +1014,27 @@ By following these strategies, you can effectively publish your software and gai
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fair-principles-for-research-software-fair4rs">FAIR Principles for Research Software (FAIR4RS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fair-principles-for-research-software-fair4rs">FAIR Principles for Research Software (FAIR4RS)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-objects">Digital Objects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fair-not-equal-foss">FAIR not equal FOSS</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#similarities">Similarities:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#differences">Differences:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#software-quality-and-fair">Software Quality and FAIR</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-two-dimensions-of-software-quality">The Two Dimensions of Software Quality:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-of-fair-for-form-quality">Potential of FAIR for Form Quality:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#complementary-approaches">Complementary Approaches:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fair4rs-principles">FAIR4RS Principles</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points-of-the-fair4rs-principles">Key Points of the FAIR4RS Principles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-of-fair4rs-principles">Impact of FAIR4RS Principles</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pragmatic-fair">Pragmatic FAIR</a></li>
 </ul>
   </nav></div>
