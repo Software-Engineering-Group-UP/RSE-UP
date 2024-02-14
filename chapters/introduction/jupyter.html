@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Getting Started with Jupyter Notebook &#8212; RSE-ING</title>
+    <title>Introduction to Jupyter Notebook &#8212; RSE-ING</title>
   
   
   
@@ -62,7 +62,7 @@
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/introduction/jupyter.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Anaconda" href="../anaconda.html" />
+    <link rel="next" title="Install Anaconda" href="../anaconda.html" />
     <link rel="prev" title="Getting Started" href="../getting_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -178,8 +178,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python, Bash, CLI, Git refresher</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Getting Started with Jupyter Notebook</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../anaconda.html">Anaconda</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Introduction to Jupyter Notebook</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../anaconda.html">Install Anaconda</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../exercises/python_refresh.html">Python Refresher</a></li>
@@ -202,6 +202,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../exercises/git_advanced.html">Exercises Git Advanced</a></li>
 </ul>
 </li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computational Narrative</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../comp_narative.html">Story Telling with Data Computational Narrative</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="nav bd-sidenav">
@@ -440,7 +444,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -451,11 +457,34 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Getting Started with Jupyter Notebook</h1>
+    <h1>Introduction to Jupyter Notebook</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shift-in-scientific-computing">The shift in Scientific Computing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-static-scripts-to-dynamic-exploration">From Static Scripts to Dynamic Exploration:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-discipline-specific-tools-to-universal-platform">From Discipline-Specific Tools to Universal Platform:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-code-centric-analysis-to-narrative-communication">From Code-Centric Analysis to Narrative Communication:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-individual-workflows-to-collaborative-ecosystems">From Individual Workflows to Collaborative Ecosystems:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-traditional-computing-environments">Beyond Traditional Computing Environments:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embracing-open-source-and-community">Embracing Open Source and Community:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format-of-jupyter-notebooks">Format of Jupyter Notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipynb-vs-py">.ipynb vs .py</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipynb-pros-and-cons">.ipynb pros and cons:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#py-pros-and-cons">.py pros and cons</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keypoints">Keypoints:</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -465,8 +494,96 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="getting-started-with-jupyter-notebook">
-<h1>Getting Started with Jupyter Notebook<a class="headerlink" href="#getting-started-with-jupyter-notebook" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-jupyter-notebook">
+<h1>Introduction to Jupyter Notebook<a class="headerlink" href="#introduction-to-jupyter-notebook" title="Link to this heading">#</a></h1>
+<p><strong>TODO</strong> LINK TO COMP NARRATIVE
+Jupyter Notebooks represent a shift in scientific computing and data analysis, offering an interactive and exploratory environment unlike traditional scripting or command-line interfaces. Their key characteristic lies in the confluence of live code execution, rich media embedding, and collaborative features, paving the way for reproducible and shareable workflows.</p>
+<section id="the-shift-in-scientific-computing">
+<h2>The shift in Scientific Computing<a class="headerlink" href="#the-shift-in-scientific-computing" title="Link to this heading">#</a></h2>
+<p>The Shift in Scientific Computing with Jupyter Notebooks
+Jupyter Notebooks represent a shift in scientific computing, moving beyond traditional approaches in several key ways:</p>
+<section id="from-static-scripts-to-dynamic-exploration">
+<h3>From Static Scripts to Dynamic Exploration:<a class="headerlink" href="#from-static-scripts-to-dynamic-exploration" title="Link to this heading">#</a></h3>
+<p>Previously, scientific analysis often relied on static scripts requiring linear execution and analysis. Errors wouldn’t be caught until the end, hindering exploration and iteration.</p>
+<p>Jupyter Notebooks enable cell-based execution, allowing scientists to test code snippets individually, visualize results instantly, and make real-time adjustments. This fosters an exploratory and iterative workflow, uncovering insights that might be missed in a purely linear approach.</p>
+</section>
+<section id="from-discipline-specific-tools-to-universal-platform">
+<h3>From Discipline-Specific Tools to Universal Platform:<a class="headerlink" href="#from-discipline-specific-tools-to-universal-platform" title="Link to this heading">#</a></h3>
+<p>Historically, specific disciplines relied on specialized tools, hindering collaboration and knowledge sharing across fields.</p>
+<p>Jupyter Notebooks transcend disciplinary boundaries by supporting diverse programming languages like Python, R, Julia, and Scala. This allows scientists to utilize their preferred tools while enjoying the interactive notebook environment, facilitating collaboration and cross-pollination of ideas.</p>
+</section>
+<section id="from-code-centric-analysis-to-narrative-communication">
+<h3>From Code-Centric Analysis to Narrative Communication:<a class="headerlink" href="#from-code-centric-analysis-to-narrative-communication" title="Link to this heading">#</a></h3>
+<p>Traditional analysis often focused solely on code, leaving a gap in clear communication and understanding.</p>
+<p>Jupyter Notebooks seamlessly integrate code, visualizations, equations, and explanatory text within the same document. This creates a narrative flow, enabling scientists to not only present results but also explain their thought process and reasoning, crucial for reproducibility and collaboration.</p>
+</section>
+<section id="from-individual-workflows-to-collaborative-ecosystems">
+<h3>From Individual Workflows to Collaborative Ecosystems:<a class="headerlink" href="#from-individual-workflows-to-collaborative-ecosystems" title="Link to this heading">#</a></h3>
+<p>Scientific computing was often an individual endeavor, limiting knowledge sharing and reproducibility.
+Jupyter Notebooks promote collaboration by facilitating the sharing of entire analysis workflows (“.ipynb” files) encompassing code, outputs, and annotations. This allows teams to work on projects jointly, track changes, and ensure reproducibility, fostering collective progress.</p>
+</section>
+<section id="beyond-traditional-computing-environments">
+<h3>Beyond Traditional Computing Environments:<a class="headerlink" href="#beyond-traditional-computing-environments" title="Link to this heading">#</a></h3>
+<p>Scientific computing primarily resided in desktop environments, limiting accessibility and flexibility.
+Jupyter Notebooks are web-based, accessible from various devices and platforms. This expands access to researchers worldwide, democratizing scientific exploration and analysis.</p>
+</section>
+<section id="embracing-open-source-and-community">
+<h3>Embracing Open Source and Community:<a class="headerlink" href="#embracing-open-source-and-community" title="Link to this heading">#</a></h3>
+<p>Traditional tools might have limited customization options.</p>
+<p>Jupyter Notebooks benefit from being open-source, fostering a vibrant community that develops numerous extensions and libraries. This empowers scientists to tailor the notebook environment to their specific needs and disciplines, driving innovation and adaptability.</p>
+<p>In conclusion, Jupyter Notebooks represent a transformative shift in scientific computing, moving towards a more interactive, collaborative, and accessible environment. This empowers researchers to explore data, share knowledge, and accelerate scientific progress in meaningful ways.</p>
+<p>Jupyter Notebooks represent a paradigm shift in scientific computing and data analysis, offering an interactive and exploratory environment unlike traditional scripting or command-line interfaces. Their key characteristic lies in the confluence of live code execution, rich media embedding, and collaborative features, paving the way for reproducible and shareable workflows.</p>
+</section>
+</section>
+<section id="format-of-jupyter-notebooks">
+<h2>Format of Jupyter Notebooks<a class="headerlink" href="#format-of-jupyter-notebooks" title="Link to this heading">#</a></h2>
+<p>Jupyter notebooks are saved in the <strong>.ipynb</strong> file format. Where <strong>.ipynb</strong> stands for Interactive Python Notebook, reflecting its Python roots, but the format now supports multiple languages. The file uses JSON-based storage which ensures platform independence and facilitates sharing and version control.</p>
+<p>Numerous software environments (Jupyter Notebook, JupyterLab, VSCode etc.) enable interaction with .ipynb files.</p>
+<p>Why <strong>.ipynb</strong> instead of just (<strong>.py</strong>) standard python script files?</p>
+<section id="ipynb-vs-py">
+<h3>.ipynb vs .py<a class="headerlink" href="#ipynb-vs-py" title="Link to this heading">#</a></h3>
+<p>The choice depends on your specific needs and preferences.
+Generally, .py files are suitable for traditional script development and code reuse, while .ipynb files excel in interactive data analysis, exploration, and documentation.</p>
+<p>Often, a combination of both is beneficial in projects:
+use .py files for providing the core functionality in well-defined modules (possibly with command-line interfaces), import to .ipynb files as alternative, interactive interfaces</p>
+</section>
+<section id="ipynb-pros-and-cons">
+<h3>.ipynb pros and cons:<a class="headerlink" href="#ipynb-pros-and-cons" title="Link to this heading">#</a></h3>
+<p><strong>Pro:</strong></p>
+<p>✅ Interactivity and visualization<br>
+✅ Rich documentation<br>
+✅ Exploratory data analysis<br>
+✅ Collaboration and sharing</p>
+<p><strong>Cons:</strong></p>
+<p>❌ Complexity<br>
+❌ Limited portability<br>
+❌ Version control challenges</p>
+</section>
+<section id="py-pros-and-cons">
+<h3>.py pros and cons<a class="headerlink" href="#py-pros-and-cons" title="Link to this heading">#</a></h3>
+<p><strong>Pros:</strong></p>
+<p>✅ Simplicity<br>
+✅ Portability<br>
+✅ Code reusability<br>
+✅ Better Version control</p>
+<p>**Cons: **</p>
+<p>❌ Lack of interactivity<br>
+❌ Limited documentation capabilities<br>
+❌ Linear execution<br>
+❌ Visualization cumbersome</p>
+</section>
+</section>
+<section id="keypoints">
+<h2>Keypoints:<a class="headerlink" href="#keypoints" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Interactive Computing: Unlike static scripts, Jupyter Notebooks allow for cell-based execution, enabling scientists to test code snippets, visualize results, and iterate on their analysis in real-time. This promotes an exploratory approach where hypotheses can be readily evaluated and refined.</p></li>
+<li><p>Multilingual Support: While Python is great, Jupyter Notebooks cater to scientists across disciplines by supporting various programming languages like R, Julia, and Scala. This allows researchers to leverage their preferred language while reaping the benefits of the notebook environment.</p></li>
+<li><p>Multimedia Integration: Embedding equations, visualizations, and explanatory text within the same document fosters clearer communication and understanding of the scientific process. This is particularly valuable for collaborative projects where researchers from diverse backgrounds can share and interpret results effectively.</p></li>
+<li><p>Reproducibility and Collaboration: Notebooks stored as .ipynb files encapsulate the entire analysis, including code, outputs, and annotations. This facilitates version control, sharing, and replication, ensuring transparency and reproducibility in scientific endeavors.</p></li>
+<li><p>Community and Ecosystem: Jupyter boasts a vibrant community fostering extensive extensions and libraries. This empowers scientists to tailor the notebook experience to their specific needs and disciplines, further enhancing its scientific utility.</p></li>
+</ul>
+<p>In essence, Jupyter Notebooks bridge the gap between scripting and graphical user interfaces, providing a dynamic and versatile platform for scientific computing and data analysis. Their ability to seamlessly integrate code, results, and explanations fosters creativity, reproducibility, and collaboration, driving advancements across diverse scientific fields.c</p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -515,7 +632,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Anaconda</p>
+        <p class="prev-next-title">Install Anaconda</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -526,7 +643,35 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shift-in-scientific-computing">The shift in Scientific Computing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-static-scripts-to-dynamic-exploration">From Static Scripts to Dynamic Exploration:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-discipline-specific-tools-to-universal-platform">From Discipline-Specific Tools to Universal Platform:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-code-centric-analysis-to-narrative-communication">From Code-Centric Analysis to Narrative Communication:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-individual-workflows-to-collaborative-ecosystems">From Individual Workflows to Collaborative Ecosystems:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-traditional-computing-environments">Beyond Traditional Computing Environments:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embracing-open-source-and-community">Embracing Open Source and Community:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format-of-jupyter-notebooks">Format of Jupyter Notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipynb-vs-py">.ipynb vs .py</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipynb-pros-and-cons">.ipynb pros and cons:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#py-pros-and-cons">.py pros and cons</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keypoints">Keypoints:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
