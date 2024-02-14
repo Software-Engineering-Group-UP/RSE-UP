@@ -395,39 +395,39 @@ The FAIR4RS Principles (Findable, Accessible, Interoperable, and Reusable for Re
 #### Key Points of the FAIR4RS Principles
 
 - **Findability:**
-Software, and its associated metadata, is easy for both humans and machines to find
+Software, and its associated metadata, is easy for both humans and machines to find.  
 
-F1. Software is assigned a globally unique and persistent identifier.
-F1.1. Components of the software representing levels of granularity are assigned distinct identifiers.
+F1. Software is assigned a globally unique and persistent identifier.  
+F1.1. Components of the software representing levels of granularity are assigned distinct identifiers.  
 F1.2. Different versions of the software are assigned distinct identifiers.
-F2. Software is described with rich metadata.
-F3. Metadata clearly and explicitly include the identifier of the software they describe.
-F4. Metadata are FAIR, searchable and indexable.
+F2. Software is described with rich metadata.  
+F3. Metadata clearly and explicitly include the identifier of the software they describe.  
+F4. Metadata are FAIR, searchable and indexable.  
 
 - **Accessibility:**
-Software, and its metadata, is retrievable via standardised protocols.
+Software, and its metadata, is retrievable via standardised protocols.  
 
-A1. Software is retrievable by its identifier using a standardised communications protocol.
-A1.1. The protocol is open, free, and universally implementable.
-A1.2. The protocol allows for an authentication and authorization procedure, where necessary.
-A2. Metadata are accessible, even when the software is no longer available.
+A1. Software is retrievable by its identifier using a standardised communications protocol.  
+A1.1. The protocol is open, free, and universally implementable.  
+A1.2. The protocol allows for an authentication and authorization procedure, where necessary.  
+A2. Metadata are accessible, even when the software is no longer available.  
 
 
 - **Interoperability:**
-Software interoperates with other software by exchanging data and/or metadata, and/or through interaction via application programming interfaces (APIs), described through standards.
+Software interoperates with other software by exchanging data and/or metadata, and/or through interaction via application programming interfaces (APIs), described through standards.  
 
-I1: Software uses community-recognized formats and standards for data, inputs, and outputs.
-I2: Application Programming Interfaces (APIs) are well-documented and support interoperability with other software.
+I1: Software uses community-recognized formats and standards for data, inputs, and outputs.  
+I2: Application Programming Interfaces (APIs) are well-documented and support interoperability with other software.  
 I3: The software interacts seamlessly with other relevant research tools and workflows.
 
 - **Reusability:**
 Software is both usable (can be executed) and reusable (can be understood, modified, built upon, or incorporated into other software)
 
-R1: Software is described with a plurality of accurate and relevant attributes.
-R1.1: Software is given a clear and accessible license.
-R1.2: Software is associated with detailed provenance.
-R2: Software includes qualified references to other software.
-R3: Software meets domain-relevant community standards.
+R1: Software is described with a plurality of accurate and relevant attributes.  
+R1.1: Software is given a clear and accessible license.  
+R1.2: Software is associated with detailed provenance.  
+R2: Software includes qualified references to other software.  
+R3: Software meets domain-relevant community standards.  
 #### Impact of FAIR4RS Principles
 
 Adopting these principles benefits various stakeholders in the research community:
