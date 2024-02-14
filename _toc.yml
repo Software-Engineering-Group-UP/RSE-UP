@@ -31,6 +31,10 @@ parts:
           - file: chapters/git_advanced.md
           - file: exercises/git_advanced.ipynb
   
+  - caption: Computational Narrative
+    chapters:
+      - file: chapters/comp_narative.md
+
   - caption: Documentation
     chapters: 
       - file: chapters/introduction/documentation.md
