@@ -44,7 +44,7 @@ parts:
   
   - caption: Licenses, Software Citation and FAIR
     chapters:
-      - file: chapters/licenses.md  
+      - file: chapters/license.md  
   
   - caption: Working in teams
     chapters:
