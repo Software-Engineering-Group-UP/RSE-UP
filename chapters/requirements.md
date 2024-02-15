@@ -4,7 +4,10 @@ The software development process typically consists of several central phases, w
 
 Here is a brief introduction to the central phases of the software development process:
 
-```{figure} ../figures/app_class/software_dev_phases.png```
+```{figure} ../figures/app_classes/software_dev_phases.png
+:name: Software_dev_cycle
+Software Development Process
+```
 
 
 1. Requirements Gathering:
@@ -101,7 +104,7 @@ Advantages: Allows stakeholders to visualize the end product early in the develo
 
 Adaptability: Particularly useful for eliciting feedback on the design and user interface.
 
-```{figure} ../figures/app_class/mock_up.png
+```{figure} ../figures/app_classes/mock_up.png
 :name: mock_up
 Porsche example mock up
 ```
@@ -177,7 +180,7 @@ Unified Modeling Language (UML) is a standardized visual modeling language widel
 
 An example UML-diagram {cite:p}`williams2016statistical`:
 
-```{figure} ../figures/app_class/uml_diagram.png
+```{figure} ../figures/app_classes/uml_diagram.png
 :name: UML
 Taxonomy of UML diagramming notations.. PLOS ONE. Figure.
 ```

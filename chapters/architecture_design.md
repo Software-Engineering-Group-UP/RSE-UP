@@ -52,7 +52,7 @@ Identifies where different components will be integrated and how they depend on 
 
 A pipeline or workflow architecture is a systematic approach to organizing and executing complex tasks or processes in software development, particularly in data-intensive research or scientific workflows. This architecture structures the software as a sequence of interconnected processing stages or tasks, creating a streamlined flow for data to move through the various steps of the process. This organization helps manage and optimize the execution of tasks, making it especially useful in scenarios where data processing and analysis involve multiple, interdependent steps.
 
-```{figure} ../figures/app_class/pipeline.png
+```{figure} ../figures/app_classes/pipeline.png
 :name: pipeline
 Pipeline
 ```
@@ -99,7 +99,7 @@ Scalability is crucial for handling large-scale data processing tasks, common in
 Client-server architecture is a computing model that divides the functionality of a software application into two distinct components: the client and the server. This separation allows for efficient processing, improved scalability, and centralized management of data. Here are key aspects of client-server architecture:
 
 
-```{figure} ../figures/app_class/client_server.png
+```{figure} ../figures/app_classes/client_server.png
 :name: client_server
 Client Server flow diagram
 ```
@@ -157,7 +157,7 @@ Client-server architecture is commonly employed in web applications, where the w
 The Model-View-Controller (MVC) architectural pattern is a widely used design pattern in software development that helps in organizing and structuring code for better maintainability and scalability. It divides an application into three interconnected components, each responsible for a specific aspect of the application:
 
 
-```{figure} ../figures/app_class/mvc.png
+```{figure} ../figures/app_classes/mvc.png
 :name: mvc
 Model View Controller
 ```
@@ -202,7 +202,7 @@ Microservices architecture is a modern approach to designing and building softwa
 
 
 
-```{figure} ../figures/app_class/microservices.png
+```{figure} ../figures/app_classes/microservices.png
 :name: microservices
 Microservices
 ```
@@ -243,7 +243,7 @@ Despite these advantages, it's important to note that implementing a microservic
 
 Layered architecture is a fundamental design paradigm that systematically structures a software system into distinct horizontal layers, with each layer dedicated to executing specific functions. This architectural approach arranges these layers in a hierarchical manner, resembling a stack, where each layer interacts exclusively with the one directly above or below it. This strict layer-to-layer communication fosters a modular and organized environment, facilitating a more efficient and scalable software development process.
 
-```{figure} ../figures/app_class/layered.png
+```{figure} ../figures/app_classes/layered.png
 :name: layered
 Layered Architecture
 ```
@@ -261,7 +261,7 @@ The selection of a programming paradigm hinges on the particular project's requi
 
 The following Table shows a direct comparison between Procedural and Object Oriented Programming. 
 
-```{figure} ../figures/app_class/pstyles.png
+```{figure} ../figures/app_classes/pstyles.png
 :name:pstyles
 Programming Styles
 ```
@@ -280,7 +280,7 @@ These diagrams provide a comprehensive view of classes, encompassing their attri
 
 [A tutorial can be found here](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/ )
 
-```{figure} ../figures/app_class/uml_class.png
+```{figure} ../figures/app_classes/uml_class.png
 :name:uml_class
 UML Class Diagram 
 ```
@@ -294,7 +294,7 @@ Classes are represented as rectangles divided into three sections.
 - bottom section: methods (operations or functions)
 
 
-```{figure} ../figures/app_class/class.png
+```{figure} ../figures/app_classes/class.png
 :name:class
 Class Diagram 
 ```
@@ -308,7 +308,7 @@ Additionally, OOP introduces associations, aggregations, and compositions to mod
 
 Effective use of class relationships in OOP allows developers to create modular and scalable systems. By carefully designing and managing these relationships, developers can achieve code that is not only robust but also adaptable to changing requirements, fostering the principles of encapsulation, abstraction, and code reusability.
 
-```{figure} ../figures/app_class/class_rel.png
+```{figure} ../figures/app_classes/class_rel.png
 :name:class_rel
 Class Relationships 
 ```
