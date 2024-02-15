@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Welcome &#8212; RSE-ING</title>
+    <title>Application Classes &#8212; RSE-ING</title>
   
   
   
@@ -58,11 +58,10 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/welcome';</script>
-    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/welcome.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/application_classes';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/application_classes.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Getting Started" href="getting_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -142,7 +141,7 @@
 
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="welcome.html">
   
   
   
@@ -167,8 +166,8 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
                     Welcome
                 </a>
             </li>
@@ -348,7 +347,7 @@
       
       
       
-      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/welcome.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/application_classes.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -378,7 +377,7 @@
       
       
       
-      <li><a href="../_sources/chapters/welcome.md" target="_blank"
+      <li><a href="../_sources/chapters/application_classes.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -462,7 +461,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome</h1>
+    <h1>Application Classes</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -472,12 +471,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-audience">Intended Audience</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-big-picture">The Big Picture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-will-learn">What You Will Learn</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-this-book">Using this Book</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-and-re-use">Contributing and Re-Use</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-class-0">Application Class 0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-class-1">Application Class 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-class-2">Application Class 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-class-3">Application Class 3</a></li>
 </ul>
             </nav>
         </div>
@@ -489,164 +486,39 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome">
-<h1>Welcome<a class="headerlink" href="#welcome" title="Link to this heading">#</a></h1>
-<p>Software is now as essential to research as telescopes, test tubes, and reference libraries.
-This means that researchers <strong>need</strong> to know how to build, check, use, and share programs.
-However, most introductions to programming focus on developing commercial applications, not on exploring problems whose answers aren’t yet known.
-Our goal is to show you how to do that, both on your own and as part of a team.</p>
-<p>We believe every researcher should know how to write short programs that clean and analyze data in a reproducible way and how to use version control to keep track of what they have done.
-But just as some astronomers spend their careers designing telescopes,
-some researchers focus on building the software that makes research possible.
-People who do this are called <strong>research software engineers</strong>;
-the aim of this online textbook is to get you ready for this role by helping you go from writing code for yourself to creating tools that help your entire field advance.</p>
-<section id="intended-audience">
-<h2>Intended Audience<a class="headerlink" href="#intended-audience" title="Link to this heading">#</a></h2>
-<p>This book is written for researchers who are already using Python for their data analysis, but who want to take their coding and software development to the next level. You don’t have to be highly proficient with Python,
-but you should already be comfortable doing things like reading data from files
-and writing loops, conditionals, and functions.</p>
-<p>You can either follow our provided <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/python_refresh.html">python refresher</a> or if your already experienced with other programming languages you can also checkout out the python tutorials on <a class="reference external" href="https://exercism.org/">Exercism.org</a> to get up to speed with the python syntax.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="application-classes">
+<h1>Application Classes<a class="headerlink" href="#application-classes" title="Link to this heading">#</a></h1>
+<p>The German Aerospace Center (DLR) <span id="id1">[<a class="reference internal" href="references.html#id2">Schlauch <em>et al.</em>, 2018</a>]</span> has established a framework for classifying software applications based on their criticality and associated risks.</p>
+<p>The Application Classes (AC) play a crucial role in defining suitable measures for software quality. They enable the customization of activities and tools according to specific needs while organizing stakeholder communication related to software quality.</p>
+<p>These classes provide recommendations that build on each other to ensure proper engineering practices and software quality. Their primary objectives include safeguarding investment, reducing risks, and retaining knowledge. The measures implemented should align with the requirements of the respective application class.</p>
+<p>The primary focus of application classes is to support the development of individual software within facilities. Moreover, they can serve as a foundation for establishing requirements when outsourcing software development to external companies, ensuring the quality of development. This is particularly valuable when externally created software is intended for future maintenance or further development by the facility.</p>
+<figure class="align-default" id="app-class">
+<img alt="figure/app_class/app_class.pnd" src="figure/app_class/app_class.pnd" />
+<figcaption>
+<p><span class="caption-text">Application Classes 0 - 3</span><a class="headerlink" href="#app-class" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="application-class-0">
+<h2>Application Class 0<a class="headerlink" href="#application-class-0" title="Link to this heading">#</a></h2>
+<p>This class concentrates on software intended for personal use within a limited scope, without plans for distribution within or outside the DLR. Software falling into this category often emerges in the context of specific research problems, with the respective facility determining the necessary measures, such as adhering to good scientific practices.</p>
+<p>Examples of application class 0 include scripts for data processing related to publications, basic administrative scripts for task automation, and software developed solely for demonstrating specific functions or testing purposes.</p>
 </section>
-<section id="the-big-picture">
-<h2>The Big Picture<a class="headerlink" href="#the-big-picture" title="Link to this heading">#</a></h2>
-<p>Our approach to research software engineering is based on three related concepts:</p>
-<ul class="simple">
-<li><p><strong>Open Science</strong>: Making data, methods, and results
-freely available to all by publishing them under <strong>open license</strong>.</p></li>
-<li><p><strong>Reproducible research</strong>: Ensuring that anyone
-with access to the data and software can feasibly reproduce results, both to
-check them and to build on them.</p></li>
-<li><p><strong>Sustainable software</strong>: The ease with which to
-maintain and extend it rather than to replace it. Sustainability isn’t
-just a property of the software: it also depends on the skills and culture
-of its users.</p></li>
-</ul>
-<p>People often conflate these three ideas, but they are distinct.
-For example, if you share your data and the programs that analyze it,
-but don’t document what steps to take in what order, your work is open but not reproducible.
-Conversely, if you completely automate your analysis, but your data is only available to people in your lab, your work is reproducible but not open.
-Finally, if a software package is being maintained by a couple of post-docs
-who are being paid a fraction of what they could earn in industry
-and have no realistic hope of promotion because their field doesn’t value tool building, then sooner or later it will become <strong>abandonware</strong>,
-at which point openness and reproducibility become less relevant.</p>
-<p>Nobody argues that research should be irreproducible or unsustainable,
-but “not against it” and actively supporting it are very different things.
-Academia doesn’t yet know how to reward people for writing useful software,
-so while you may be thanked, the effort you put in may not translate into academic job security or decent pay.</p>
-<p>Some people worry that if they make their data and code publicly available,
-someone else will use it and publish a result they could have come up with themselves.
-This is almost unheard of in practice, but that doesn’t stop it being used as a scare tactic.
-Other people are afraid of looking foolish or incompetent by sharing code that might contain bugs.
-This isn’t just <strong>impostor syndrome</strong>:
-members of marginalized groups are frequently judged more harshly than others,
-so being wrong in public is much riskier for them.</p>
-<p>With this course, we hope to give researchers the tools and knowledge to be
-better research software developers, to be more efficient in their work, make
-less mistakes, and work more openly and reproducibly.
-We hope that by having more researchers with these skills and knowledge,
-research culture can improve to address the issues raised above.</p>
-<p>// ## Intended Audience</p>
-<p>// This book is written for researchers who are already using Python for their data analysis, but who want to take their coding and software development to the next level. You don’t have to be highly proficient with Python,
-// but you should already be comfortable doing things like reading data from files
-// and writing loops, conditionals, and functions.
-// The following personas are examples of the types of people that are our target audience.</p>
-<p>// Amira Khan
-// :   completed a master’s in library science five years ago
-//     and has since worked for a small aid organization.
-//     She did some statistics during her degree,
-//     and has learned some R and Python by doing data science courses online,
-//     but has no formal training in programming.
-//     Amira would like to tidy up the scripts, datasets, and reports she has created
-//     in order to share them with her colleagues.
-//     These lessons will show her how to do this.</p>
-<p>// Jun Hsu
-// :   completed an Insight Data Science fellowship last year after doing a PhD in geology
-//     and now works for a company that does forensic audits.
-//     He uses a variety of machine learning and visualization packages,
-//     and would now like to turn some of his own work into an open source project.
-//     This book will show him how such a project should be organized
-//     and how to encourage people to contribute to it.</p>
-<p>// Sami Virtanen
-// :   became a competent programmer during a bachelor’s degree in applied math
-//     and was then hired by the university’s research computing center.
-//     The kinds of applications they are being asked to support
-//     have shifted from fluid dynamics to data analysis;
-//     this guide will teach them how to build and run data pipelines
-//     so that they can pass those skills on to their users.c</p>
+<section id="application-class-1">
+<h2>Application Class 1<a class="headerlink" href="#application-class-1" title="Link to this heading">#</a></h2>
+<p>Software in this class should be usable by individuals not involved in its development, with the potential for ongoing development. This serves as the foundational level for software intended for broader use beyond personal purposes. To achieve this, the current version must be traceable and reproducible, showcasing essential requirements, constraints, functional scope, and known issues.</p>
+<p>Application class 1 is recommended when the software has a narrower functional scope or when the facility develops it within specific limitations. Examples include software developed by students during studies, bachelor or master theses, software resulting from dissertations with no long-term development focus, and software from third-party projects emphasizing demonstration without planned long-term development.</p>
 </section>
-<section id="what-you-will-learn">
-<h2>What You Will Learn<a class="headerlink" href="#what-you-will-learn" title="Link to this heading">#</a></h2>
-<p>Rather than simply providing reference material about good coding practices,
-the book follows by example on how to write an actual software package to address a real research question. The data analysis task that we focus on
-relates to a fascinating result in the field of quantitative linguistics.
-Namely, <strong>Zipf’s Law</strong>, which states that the second most common word in a body of text appears half as often as the most common, the third most common appears a third as often, and so on. To test whether Zipf’s Law holds for a collection of classic novels that are freely available from <strong>Project Gutenberg</strong>, we write a software package that counts and analyzes the word frequency distribution in any arbitrary body of text.</p>
-<p>In the process of writing and publishing a Python package to verify Zipf’s Law,
-we will show you how to do the following:</p>
-<ul class="simple">
-<li><p>Organize small and medium-sized data science projects.</p></li>
-<li><p>Use the Unix shell to efficiently manage your data and code.</p></li>
-<li><p>Write Python programs that can be used on the command line.</p></li>
-<li><p>Use Git and GitHub to track and share your work.</p></li>
-<li><p>Work productively in a small team where everyone is welcome.</p></li>
-<li><p>Use Make to automate complex workflows.</p></li>
-<li><p>Enable users to configure your software without modifying it directly.</p></li>
-<li><p>Test your software and know which parts have not yet been tested.</p></li>
-<li><p>Find, handle, and fix errors in your code.</p></li>
-<li><p>Publish your code and research in open and reproducible ways.</p></li>
-<li><p>Create Python packages that can be installed in standard ways.</p></li>
-</ul>
+<section id="application-class-2">
+<h2>Application Class 2<a class="headerlink" href="#application-class-2" title="Link to this heading">#</a></h2>
+<p>Class 2 Is designed to ensure the enduring development and maintainability of software in this category, serving as a foundation for transitioning to product status. Structured management of specific requirements is crucial, with a focus on addressing constraints and quality requirements through an appropriate software architecture. This involves defining technical concepts and software structure, preserving development know-how, and enabling an evaluation of suitability for new usage scenarios. A defined development process, design and implementation rules, along with the incorporation of test automation, are essential.</p>
+<p>This class is recommended for software with extensive functionality developed for the long term, such as those resulting from dissertations emphasizing maintainability and long-term usage, third-party projects with similar concerns beyond the project’s scope, and large research frameworks lacking product characteristics.</p>
 </section>
-<section id="using-this-book">
-<h2>Using this Book<a class="headerlink" href="#using-this-book" title="Link to this heading">#</a></h2>
-<p>This textbook was written to be used as the material for a (potentially) semester-long course at the university level, although it can also be used for independent self-study.
-Participatory live-coding is the anticipated style for teaching the material,
-rather than lectures simply talking about the code presented <span id="id1">[<a class="reference internal" href="references.html#id22" title="Neil C.C. Brown and Greg Wilson. Ten Quick Tips for Teaching Programming. PLOS Computational Biology, 14(4):e1006023, Apr 2018. URL: https://doi.org/10.1371/journal.pcbi.1006023, doi:10.1371/journal.pcbi.1006023.">Brown and Wilson, 2018</a>, <a class="reference internal" href="references.html#id83" title="Greg Wilson. Teaching Tech Together. Taylor &amp; Francis, 2019. ISBN 978-0-367-35328-5. How to create and deliver lessons that work and build a teaching community around them.">Wilson, 2019</a>]</span>. The chapters and their content are generally designed to be used in the order given.</p>
-<p>Chapters are structured with the introduction at the start, content in the middle, and exercises at the end. Callout boxes are interspersed throughout the content to be used as a supplement to the main text, but not a requirement for the course overall.
-Early chapters have many small exercises; later chapters have fewer but larger exercises. In order to break up long periods of live-coding while teaching,
-it may be preferable to stop and complete some of the exercises at key points throughout the chapter, rather than waiting until the end.</p>
-<p>Possible exercise solutions are provided (Appendix <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/solutions.html">solutions</a>, in addition to learning objectives (Appendix ref(objectives)) and key points (Appendix ref(keypoints)) for each chapter. <strong>TODO_discuss</strong></p>
+<section id="application-class-3">
+<h2>Application Class 3<a class="headerlink" href="#application-class-3" title="Link to this heading">#</a></h2>
+<p>In contrast, class 3 emphasizes the imperative of error avoidance and risk reduction, particularly for critical software with product characteristics. Active risk management is integral, involving the identification and mitigation of technical solution risks within the software architecture. Expanding test automation and implementing structured reviews are essential to detect errors early and ideally prevent them in the production version. Ensuring traceability of changes is also emphasized.</p>
+<p>This class is recommended for software development associated with high risks, including those related to product liability, certification, external requirements, or the software’s significance for value-adding activities.</p>
+<p>Examples include mission-critical software in aircraft, autonomous vehicles, or space missions, software with warranties from the facility (internally or externally), and software making substantial contributions to third-party funding and research results, necessitating reliable performance.</p>
 </section>
-<section id="contributing-and-re-use">
-<h2>Contributing and Re-Use<a class="headerlink" href="#contributing-and-re-use" title="Link to this heading">#</a></h2>
-<p>The source for the book can be found at the <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP">‘RSE-UP’ GitHub repository</a> and any corrections, additions, or contributions are very welcome.
-Everyone whose work is included will be credited in the acknowledgments.
-Check out our <a class="reference external" href="https://github.com/Software-Engineering-Group-UP/RSE-UP/blob/main/CONTRIBUTION.md">contributing guidelines</a>
-as well as our <a class="reference external" href="https://github.com/Software-Engineering-Group-UP/RSE-UP/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a> for more information on how to contribute.</p>
-<p>The content and code of this book can be freely re-used as it is
-<a class="reference external" href="https://github.com/Software-Engineering-Group-UP/RSE-UP/blob/main/LICENSE.md">licensed</a> under a  <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a> (CC-BY 4.0) and a <a class="reference external" href="https://github.com/Software-Engineering-Group-UP/RSE-UP/blob/main/LICENSE-MIT.md">MIT License</a>, so the material can be used, re-used, and modified, as long as there is attribution to this source.</p>
-</section>
-<section id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
-<p>This book was created on basis of the book ‘Research Software Engineering with Python: Building Software that Makes Research Possible’, that was created by:
-Damien Irving and Kate Hertweck and Luke Johnston and Joel Ostblom and Charlotte Wickham and Greg Wilson.</p>
-<p>The online version can be found <a class="reference external" href="https://merely-useful.tech/py-rse/">here!</a></p>
-</section>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -679,15 +551,6 @@ Damien Irving and Kate Hertweck and Luke Johnston and Joel Ostblom and Charlotte
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="getting_started.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Getting Started</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -704,12 +567,10 @@ Damien Irving and Kate Hertweck and Luke Johnston and Joel Ostblom and Charlotte
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-audience">Intended Audience</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-big-picture">The Big Picture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-will-learn">What You Will Learn</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-this-book">Using this Book</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-and-re-use">Contributing and Re-Use</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-class-0">Application Class 0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-class-1">Application Class 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-class-2">Application Class 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-class-3">Application Class 3</a></li>
 </ul>
   </nav></div>
 

@@ -511,7 +511,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="writing-readable-code">
 <h1>Writing Readable Code<a class="headerlink" href="#writing-readable-code" title="Link to this heading">#</a></h1>
-<p>Nothing in biology makes sense except in light of evolution <span id="id1">[<a class="reference internal" href="references.html#id28" title="Theodosius Dobzhansky. Nothing in Biology Makes Sense Except in the Light of Evolution. The American Biology Teacher, 35(3):125–129, Mar 1973. A forceful statement of the central unifying theme of modern biology. doi:10.2307/4444260.">Dobzhansky, 1973</a>]</span>.
+<p>Nothing in biology makes sense except in light of evolution <span id="id1">[<a class="reference internal" href="references.html#id29" title="Theodosius Dobzhansky. Nothing in Biology Makes Sense Except in the Light of Evolution. The American Biology Teacher, 35(3):125–129, Mar 1973. A forceful statement of the central unifying theme of modern biology. doi:10.2307/4444260.">Dobzhansky, 1973</a>]</span>.
 Similarly, nothing in software development makes sense except in light of human psychology.
 This is particularly true when we look at programming style.
 Computers don’t need to understand programs in order to execute them,
@@ -524,7 +524,7 @@ and introduces some language features that can make programs more flexible and m
 <section id="python-style">
 <h2>Python Style<a class="headerlink" href="#python-style" title="Link to this heading">#</a></h2>
 <p>The single most important rule of style is to be consistent,
-both internally and with other programs <span id="id2">[<a class="reference internal" href="references.html#id44" title="Brian W. Kernighan and Rob Pike. The Practice of Programming. Addison-Wesley, 1999. ISBN 9788177582482. A programming style manual written by two of the creators of modern computing.">Kernighan and Pike, 1999</a>]</span>.
+both internally and with other programs <span id="id2">[<a class="reference internal" href="references.html#id45" title="Brian W. Kernighan and Rob Pike. The Practice of Programming. Addison-Wesley, 1999. ISBN 9788177582482. A programming style manual written by two of the creators of modern computing.">Kernighan and Pike, 1999</a>]</span>.
 Python’s standard style is called <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP-8</a>;
 the acronym “PEP” is short for “Python Enhancement Proposal,”
 and PEP-8 lays out the rules that Python’s own libraries use.
@@ -620,7 +620,7 @@ In that language, upper case was used to indicate a constant whose value couldn�
 but <code class="docutils literal notranslate"><span class="pre">SHOUTING_AT_PROGRAMMERS</span></code> helps remind them that
 some things shouldn’t be messed with.</p>
 <p><strong>Use <code class="docutils literal notranslate"><span class="pre">lower_case_with_underscores</span></code> for the names of functions and variables.</strong></p>
-<p>Research on naming conventions has produced mixed results <span id="id3">[<a class="reference internal" href="references.html#id14" title="Dave Binkley, Marcia Davis, Dawn Lawrie, Jonathan I. Maletic, Christopher Morrell, and Bonita Sharif. The Impact of Identifier Style on Effort and Comprehension. Empirical Software Engineering, 18(2):219–276, May 2012. Reports that reading and understanding code is fundamentally different from reading prose, and that experienced developers are relatively unaffected by identifier style, but beginners benefit from the use of camel case (versus pothole case). doi:10.1007/s10664-012-9201-4.">Binkley <em>et al.</em>, 2012</a>]</span>; <span id="id4">[<a class="reference internal" href="references.html#id69" title="Andrea Schankin, Annika Berger, Daniel V. Holt, Johannes C. Hofmeister, Till Riedel, and Michael Beigl. Descriptive Compound Identifier Names Improve Source Code Comprehension. In Proc. 26th Conference on Program Comprehension (ICPC'18). ACM Press, 2018. URL: https://doi.org/10.1145/3196321.3196332, doi:10.1145/3196321.3196332.">Schankin <em>et al.</em>, 2018</a>]</span> but Python has (mostly) settled on underscored names for most things.
+<p>Research on naming conventions has produced mixed results <span id="id3">[<a class="reference internal" href="references.html#id15" title="Dave Binkley, Marcia Davis, Dawn Lawrie, Jonathan I. Maletic, Christopher Morrell, and Bonita Sharif. The Impact of Identifier Style on Effort and Comprehension. Empirical Software Engineering, 18(2):219–276, May 2012. Reports that reading and understanding code is fundamentally different from reading prose, and that experienced developers are relatively unaffected by identifier style, but beginners benefit from the use of camel case (versus pothole case). doi:10.1007/s10664-012-9201-4.">Binkley <em>et al.</em>, 2012</a>]</span>; <span id="id4">[<a class="reference internal" href="references.html#id70" title="Andrea Schankin, Annika Berger, Daniel V. Holt, Johannes C. Hofmeister, Till Riedel, and Michael Beigl. Descriptive Compound Identifier Names Improve Source Code Comprehension. In Proc. 26th Conference on Program Comprehension (ICPC'18). ACM Press, 2018. URL: https://doi.org/10.1145/3196321.3196332, doi:10.1145/3196321.3196332.">Schankin <em>et al.</em>, 2018</a>]</span> but Python has (mostly) settled on underscored names for most things.
 This style is called <strong>snake case</strong> or <strong>pothole case</strong>;
 we should only use <strong>CamelCase</strong> for classes,
 which are outside the scope of this lesson.</p>
@@ -632,7 +632,7 @@ Following this rule doesn’t necessarily require more typing:
 a good programming editor will <strong>auto-complete</strong> names for us.</p>
 <p><strong>Use short names for short-lived local variables and longer names for things with wider scope.</strong></p>
 <p>Using <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> for loop indices is perfectly readable
-provided the loop is only a few lines long <span id="id5">[<a class="reference internal" href="references.html#id11" title="Gal Beniamini, Sarah Gingichashvili, Alon Klein Orbach, and Dror G. Feitelson. Meaningful Identifier Names: The Case of Single-Letter Variables. In Proc. 2017 International Conference on Program Comprehension ( ICPC'17). Institute of Electrical and Electronics Engineers (IEEE), May 2017. Reports that use of single-letter variable names doesn't affect ability to modify code, and that some single-letter variable names have implicit types and meanings. doi:10.1109/icpc.2017.18.">Beniamini <em>et al.</em>, 2017</a>]</span>.
+provided the loop is only a few lines long <span id="id5">[<a class="reference internal" href="references.html#id12" title="Gal Beniamini, Sarah Gingichashvili, Alon Klein Orbach, and Dror G. Feitelson. Meaningful Identifier Names: The Case of Single-Letter Variables. In Proc. 2017 International Conference on Program Comprehension ( ICPC'17). Institute of Electrical and Electronics Engineers (IEEE), May 2017. Reports that use of single-letter variable names doesn't affect ability to modify code, and that some single-letter variable names have implicit types and meanings. doi:10.1109/icpc.2017.18.">Beniamini <em>et al.</em>, 2017</a>]</span>.
 Anything that is used at a greater distance
 or whose purpose isn’t immediately clear
 (such as a function) should have a longer name.</p>
@@ -816,7 +816,7 @@ To <strong>refactor</strong> code
 means to change its structure without changing what it does,
 like simplifying an equation.
 It is just as much a part of programming as writing code in the first place:
-nobody gets things right the first time <span id="id6">[<a class="reference internal" href="references.html#id18" title="Stewart Brand. How Buildings Learn: What Happens after They're Built. Penguin USA, 1995. ISBN 0140139966. How buildings evolve and adapt to meet the needs of those who live in them.">Brand, 1995</a>]</span>,
+nobody gets things right the first time <span id="id6">[<a class="reference internal" href="references.html#id19" title="Stewart Brand. How Buildings Learn: What Happens after They're Built. Penguin USA, 1995. ISBN 0140139966. How buildings evolve and adapt to meet the needs of those who live in them.">Brand, 1995</a>]</span>,
 and needs or insights can change over time.</p>
 <p>Most discussions of refactoring focus on <strong>object-oriented programming</strong>
 but many patterns can and should be used to clean up <strong>procedural</strong> code.
@@ -844,7 +844,7 @@ Finally,
 a single value defined in one place is much easier to change
 than a bunch of numbers scattered throughout our program.
 We may not think we will have to change it,
-but then people want to use our software on Mars and we discover that constants aren’t <span id="id7">[<a class="reference internal" href="references.html#id51" title="Ronald Mak. The Martian Principles. Wiley, 2006. ISBN 0471789658. A short, enjoyable guide to software architecture from someone whose code had to deal with Mars.">Mak, 2006</a>]</span>.</p>
+but then people want to use our software on Mars and we discover that constants aren’t <span id="id7">[<a class="reference internal" href="references.html#id52" title="Ronald Mak. The Martian Principles. Wiley, 2006. ISBN 0471789658. A short, enjoyable guide to software architecture from someone whose code had to deal with Mars.">Mak, 2006</a>]</span>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...before...</span>
 <span class="n">seconds_elapsed</span> <span class="o">=</span> <span class="n">num_days</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
 </pre></div>
@@ -1287,30 +1287,30 @@ our program looks like this:</p>
 is called <strong>code review</strong>.
 Multiple studies over more than 40 years have shown that
 code review is the most effective way to find bugs in software
-<span id="id8">[<a class="reference internal" href="references.html#id29" title="Michael E. Fagan. Design and Code Inspections to Reduce Errors in Program Development. IBM Systems Journal, 15(3):182-211, 1976. An early and influential study of code review. doi:10.1147/sj.153.0182.">Fagan, 1976</a>]</span>; <span id="id9">[<a class="reference internal" href="references.html#id30" title="Michael E. Fagan. Advances in Software Inspections. IEEE Transactions on Software Engineering, 12(7):744-751, Jul 1986. Summarizes the author's early work on the benefits of code review. doi:10.1109/TSE.1986.6312976.">Fagan, 1986</a>]</span>; <span id="id10">[<a class="reference internal" href="references.html#id26" title="Jason Cohen. Modern Code Review. In Andy Oram and Greg Wilson, editors, Making Software. O'Reilly, 2010.">Cohen, 2010</a>]</span>; <span id="id11">[<a class="reference internal" href="references.html#id9" title="Alberto Bacchelli and Christian Bird. Expectations, Outcomes, and Challenges of Modern Code Review. In Proc. International Conference on Software Engineering. May 2013. Summarizes more than thirty years of research on the benefits of code review. URL: http://research.microsoft.com/apps/pubs/default.aspx?id=180283.">Bacchelli and Bird, 2013</a>]</span>.
+<span id="id8">[<a class="reference internal" href="references.html#id30" title="Michael E. Fagan. Design and Code Inspections to Reduce Errors in Program Development. IBM Systems Journal, 15(3):182-211, 1976. An early and influential study of code review. doi:10.1147/sj.153.0182.">Fagan, 1976</a>]</span>; <span id="id9">[<a class="reference internal" href="references.html#id31" title="Michael E. Fagan. Advances in Software Inspections. IEEE Transactions on Software Engineering, 12(7):744-751, Jul 1986. Summarizes the author's early work on the benefits of code review. doi:10.1109/TSE.1986.6312976.">Fagan, 1986</a>]</span>; <span id="id10">[<a class="reference internal" href="references.html#id27" title="Jason Cohen. Modern Code Review. In Andy Oram and Greg Wilson, editors, Making Software. O'Reilly, 2010.">Cohen, 2010</a>]</span>; <span id="id11">[<a class="reference internal" href="references.html#id10" title="Alberto Bacchelli and Christian Bird. Expectations, Outcomes, and Challenges of Modern Code Review. In Proc. International Conference on Software Engineering. May 2013. Summarizes more than thirty years of research on the benefits of code review. URL: http://research.microsoft.com/apps/pubs/default.aspx?id=180283.">Bacchelli and Bird, 2013</a>]</span>.
 It is also a great way to transfer knowledge between programmers:
 reading someone else’s code critically will give us lots of ideas about what we could do better,
 and highlight things that we should probably stop doing as well.</p>
 <p>Despite this,
 code review still isn’t common in research software development.
 This is partly a chicken-and-egg problem:
-people don’t do it because other people don’t do it <span id="id12">[<a class="reference internal" href="references.html#id71" title="Judith Segal. When Software Engineers Met Research Scientists: A Case Study. Empirical Software Engineering, 10(4):517-536, 2005. Looks at the chicken-and-egg problem of software review in science. doi:10.1007/s10664-005-3865-y.">Segal, 2005</a>]</span>.
+people don’t do it because other people don’t do it <span id="id12">[<a class="reference internal" href="references.html#id72" title="Judith Segal. When Software Engineers Met Research Scientists: A Case Study. Empirical Software Engineering, 10(4):517-536, 2005. Looks at the chicken-and-egg problem of software review in science. doi:10.1007/s10664-005-3865-y.">Segal, 2005</a>]</span>.
 Code review is also more difficult to do in specialized scientific fields:
 in order for review to be useful,
 reviewers need to understand the problem domain well enough to comment on algorithms and design choices
 rather than indentation and variable naming,
-and the number of people who can do that for a research project is often very small <span id="id13">[<a class="reference internal" href="references.html#id63" title="Marian Petre and Greg Wilson. Code Review For and By Scientists. In Proc. Second Workshop on Sustainable Software for Science: Practice and Experience. 2014. Found that effective code review depends on understanding the scientific problem that software is studying. doi:arXiv:1407.5648.">Petre and Wilson, 2014</a>]</span>.</p>
+and the number of people who can do that for a research project is often very small <span id="id13">[<a class="reference internal" href="references.html#id64" title="Marian Petre and Greg Wilson. Code Review For and By Scientists. In Proc. Second Workshop on Sustainable Software for Science: Practice and Experience. 2014. Found that effective code review depends on understanding the scientific problem that software is studying. doi:arXiv:1407.5648.">Petre and Wilson, 2014</a>]</span>.</p>
 <p>Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/git_advanced.html#pull-requests">Advanced Pull requests</a> explained how to create and merge pull requests.
 How we review these is just as important as what we look for:
 being dismissive or combative are good ways to ensure that people don’t pay attention to our reviews,
-or avoid having us review their work <span id="id14">[<a class="reference internal" href="references.html#id12" title="Gary Bernhardt. A Case Study in Not Being a Jerk in Open Source. 2018. Rewrites a typically abusive message by Linus Torvalds to be less repellant. URL: https://www.destroyallsoftware.com/blog/2018/a-case-study-in-not-being-a-jerk-in-open-source.">Bernhardt, 2018</a>]</span>.
+or avoid having us review their work <span id="id14">[<a class="reference internal" href="references.html#id13" title="Gary Bernhardt. A Case Study in Not Being a Jerk in Open Source. 2018. Rewrites a typically abusive message by Linus Torvalds to be less repellant. URL: https://www.destroyallsoftware.com/blog/2018/a-case-study-in-not-being-a-jerk-in-open-source.">Bernhardt, 2018</a>]</span>.
 Equally,
 being defensive when someone offers suggestions politely and sincerely is very human,
 but can stunt our development as a programmer.</p>
-<p>Lots of people have written guidelines for doing reviews that avoid these traps <span id="id15">[<a class="reference internal" href="references.html#id65" title="Joël Quenneville. Code Review. 2018. Guidelines for code review. URL: https://github.com/thoughtbot/guides/tree/master/code-review.">Quenneville, 2018</a>]</span>; <span id="id16">[<a class="reference internal" href="references.html#id67" title="Sandya Sankarram. Unlearning Toxic Behaviors in a Code Review Culture. 2018. What \emph not to do in code review. URL: https://medium.freecodecamp.org/unlearning-toxic-behaviors-in-a-code-review-culture-b7c295452a3c.">Sankarram, 2018</a>]</span>.
+<p>Lots of people have written guidelines for doing reviews that avoid these traps <span id="id15">[<a class="reference internal" href="references.html#id66" title="Joël Quenneville. Code Review. 2018. Guidelines for code review. URL: https://github.com/thoughtbot/guides/tree/master/code-review.">Quenneville, 2018</a>]</span>; <span id="id16">[<a class="reference internal" href="references.html#id68" title="Sandya Sankarram. Unlearning Toxic Behaviors in a Code Review Culture. 2018. What \emph not to do in code review. URL: https://medium.freecodecamp.org/unlearning-toxic-behaviors-in-a-code-review-culture-b7c295452a3c.">Sankarram, 2018</a>]</span>.
 A few common points are:</p>
 <p>Work in small increments.
-:   As <span id="id17">[<a class="reference internal" href="references.html#id26" title="Jason Cohen. Modern Code Review. In Andy Oram and Greg Wilson, editors, Making Software. O'Reilly, 2010.">Cohen, 2010</a>]</span> and others have found,
+:   As <span id="id17">[<a class="reference internal" href="references.html#id27" title="Jason Cohen. Modern Code Review. In Andy Oram and Greg Wilson, editors, Making Software. O'Reilly, 2010.">Cohen, 2010</a>]</span> and others have found,
 code review is most effective when done in short bursts.
 That means that change requests should also be short:
 anything that’s more than a couple of screens long
@@ -1372,7 +1372,7 @@ we should reply to their comment to point at the commit that includes the fix.</
 thank them for doing it.</p>
 <p>And finally:</p>
 <p><strong>Don’t let anyone break these rules just because they’re frequent contributors or in positions of power.</strong>
-As <span id="id18">[<a class="reference internal" href="references.html#id39" title="Steve Gruenert and Todd Whitaker. School Culture Rewired: How to Define, Assess, and Transform It. ASCD, 2015. ISBN 978-1416619901. The source of a much-quoted observation on culture.">Gruenert and Whitaker, 2015</a>]</span> says,
+As <span id="id18">[<a class="reference internal" href="references.html#id40" title="Steve Gruenert and Todd Whitaker. School Culture Rewired: How to Define, Assess, and Transform It. ASCD, 2015. ISBN 978-1416619901. The source of a much-quoted observation on culture.">Gruenert and Whitaker, 2015</a>]</span> says,
 the culture of any organization is shaped by the worst behavior it is willing to tolerate.
 The main figures in a project should be <em>more</em> respectful than everyone else
 in order to show what standards everyone else is expected to meet.</p>
@@ -1380,7 +1380,7 @@ in order to show what standards everyone else is expected to meet.</p>
 <section id="python-features">
 <h2>Python Features<a class="headerlink" href="#python-features" title="Link to this heading">#</a></h2>
 <p><strong>Working memory</strong> can only hold a few items at once:
-initial estimates in the 1950s put the number at 7±2 <span id="id19">[<a class="reference internal" href="references.html#id55" title="George A. Miller. The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for Processing Information. Psychological Review, 63(2):81–97, 1956. The first definitive presentation of limits to human short-term memory. doi:10.1037/h0043158.">Miller, 1956</a>]</span>,
+initial estimates in the 1950s put the number at 7±2 <span id="id19">[<a class="reference internal" href="references.html#id56" title="George A. Miller. The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for Processing Information. Psychological Review, 63(2):81–97, 1956. The first definitive presentation of limits to human short-term memory. doi:10.1037/h0043158.">Miller, 1956</a>]</span>,
 and more recent estimates put it as low as 4 or 5.
 High-level languages from Fortran to Python
 are essentially a way to reduce the number of things programmers have to think about at once
