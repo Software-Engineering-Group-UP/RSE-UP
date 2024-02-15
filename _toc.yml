@@ -66,9 +66,10 @@ parts:
     chapters:
       - file: chapters/introduction/requirments_architecture_design.md
         sections:
+          - file: application_classes.md
           - file: requirements.md
-          - file: architecture.md
-          - file: design.md
+          - file: architecture_design.md
+  
   
   - caption: Writing Clean Code
     chapters:
