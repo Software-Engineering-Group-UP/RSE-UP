@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; RSE-ING</title>
+    <title>Architecture and Design &#8212; RSE-ING</title>
   
   
   
@@ -461,7 +461,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Architecture and Design</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -470,9 +470,30 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design">Design:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-architectural-styles">Some Architectural Styles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-or-workflow-architecture">Pipeline or Workflow architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#client-server-architecture">Client-Server Architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-model-view-controller-mvc">The Model-View_Controller (MVC)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-mvc">Benefits of MVC:</a></li>
 </ul>
-
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microservices">Microservices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layered-architecture">Layered Architecture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-styles">Programming Styles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-approach">OOP Approach</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relationship-between-classes">Relationship between Classes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#to-find-the-required-classes-objects-in-the-requirements-you-can-follow-these-steps"><strong>To find the required classes/objects in the requirements, you can follow these steps:</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
@@ -483,7 +504,325 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  
+  <section class="tex2jax_ignore mathjax_ignore" id="architecture-and-design">
+<h1>Architecture and Design<a class="headerlink" href="#architecture-and-design" title="Link to this heading">#</a></h1>
+<p>While architecture sets the overarching structure and direction of the software system, detailed design delves into the nitty-gritty details, transforming abstract ideas into executable instructions for development teams. Both are crucial phases in the software development lifecycle, working in tandem to ensure the creation of a robust, functional, and scalable software product.</p>
+<section id="architecture">
+<h2>Architecture:<a class="headerlink" href="#architecture" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>High-Level Structure and Organization:</p></li>
+</ol>
+<p>Architecture provides a bird’s-eye view of the system, outlining its major components, their interactions, and the overall structure.
+It defines the system’s boundaries and highlights the key elements that make up the entire software.</p>
+<ol class="arabic simple" start="2">
+<li><p>Defines the System’s Components and Their Relationships:</p></li>
+</ol>
+<p>It identifies the main components of the system and their roles in fulfilling the system’s purpose.
+Describes how these components interact, including the flow of data, control, and communication between them.</p>
+<ol class="arabic simple" start="3">
+<li><p>Guides the Development Process:</p></li>
+</ol>
+<p>Acts as a roadmap for the development team, providing a clear vision of the system’s structure and behavior.
+Helps in making crucial decisions about technology choices, scalability, and other architectural considerations.</p>
+<ol class="arabic simple" start="4">
+<li><p>Ensures the System Meets Requirements:</p></li>
+</ol>
+<p>Architecture is aligned with the functional and non-functional requirements of the system, ensuring that it satisfies the needs of stakeholders.
+Acts as a blueprint for development, serving as a reference to validate that the final product aligns with the initial vision.</p>
+</section>
+<section id="design">
+<h2>Design:<a class="headerlink" href="#design" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Implementation Details of Individual Components:</p></li>
+</ol>
+<p>Detailed design zooms into individual components identified in the architecture, providing specifics on how each component will be implemented.
+It may include decisions regarding programming languages, frameworks, and libraries.</p>
+<ol class="arabic simple" start="2">
+<li><p>Internal Structure, Interfaces, Algorithms, and Data Structures:</p></li>
+</ol>
+<p>Specifies the internal workings of each component, detailing how data is processed, algorithms employed, and the data structures used.
+Defines the interfaces between different components, specifying how they communicate and exchange information.</p>
+<ol class="arabic simple" start="3">
+<li><p>Translates High-Level Architectural Decisions:</p></li>
+</ol>
+<p>Takes the abstract concepts outlined in the architecture and translates them into concrete instructions for developers.
+Bridges the gap between the high-level architectural vision and the low-level implementation details.</p>
+<ol class="arabic simple" start="4">
+<li><p>Integration Points and Dependencies:</p></li>
+</ol>
+<p>Identifies where different components will be integrated and how they depend on each other. Provides insights into potential challenges and solutions related to integration points.</p>
+</section>
+<section id="some-architectural-styles">
+<h2>Some Architectural Styles<a class="headerlink" href="#some-architectural-styles" title="Link to this heading">#</a></h2>
+<section id="pipeline-or-workflow-architecture">
+<h3>Pipeline or Workflow architecture<a class="headerlink" href="#pipeline-or-workflow-architecture" title="Link to this heading">#</a></h3>
+<p>A pipeline or workflow architecture is a systematic approach to organizing and executing complex tasks or processes in software development, particularly in data-intensive research or scientific workflows. This architecture structures the software as a sequence of interconnected processing stages or tasks, creating a streamlined flow for data to move through the various steps of the process. This organization helps manage and optimize the execution of tasks, making it especially useful in scenarios where data processing and analysis involve multiple, interdependent steps.</p>
+<figure class="align-default" id="pipeline">
+<img alt="figures/app_class/pipeline.png" src="figures/app_class/pipeline.png" />
+<figcaption>
+<p><span class="caption-text">Pipeline</span><a class="headerlink" href="#pipeline" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Key characteristics of pipeline or workflow architecture include:</p>
+<ul class="simple">
+<li><p><strong>Sequential Processing:</strong></p></li>
+</ul>
+<p>Tasks are arranged in a sequential order, forming a pipeline where data flows from one stage to the next.
+Each stage performs a specific function or operation on the input data, leading to the gradual refinement or transformation of the data as it progresses through the pipeline.</p>
+<ul class="simple">
+<li><p><strong>Modularity and Reusability:</strong></p></li>
+</ul>
+<p>Each stage in the pipeline is designed as a modular component with a well-defined purpose.
+Modular design promotes reusability, allowing developers to easily replace or update individual components without affecting the entire pipeline.</p>
+<ul class="simple">
+<li><p><strong>Interconnectivity:</strong></p></li>
+</ul>
+<p>Stages in the pipeline are interconnected, with the output of one stage serving as the input to the next.
+This interconnectivity enables a seamless and efficient flow of data through the entire workflow.</p>
+<ul class="simple">
+<li><p><strong>Parallelism:</strong></p></li>
+</ul>
+<p>In some cases, certain stages of the pipeline can be executed in parallel to improve overall processing speed and efficiency.
+Parallel execution is particularly beneficial when dealing with large datasets or when multiple tasks can be performed concurrently without dependencies.</p>
+<ul class="simple">
+<li><p><strong>Error Handling:</strong></p></li>
+</ul>
+<p>Pipeline architectures often include mechanisms for error handling and fault tolerance.
+If an error occurs at any stage, the pipeline can be designed to handle exceptions gracefully, log errors, and potentially retry or skip problematic stages.</p>
+<ul class="simple">
+<li><p><strong>Visualization and Monitoring:</strong></p></li>
+</ul>
+<p>To facilitate understanding and management, pipeline architectures often include tools for visualizing the workflow.
+Monitoring capabilities help developers and operators track the progress of data through the pipeline, identify bottlenecks, and troubleshoot any issues.</p>
+<ul class="simple">
+<li><p><strong>Scalability:</strong></p></li>
+</ul>
+<p>Pipelines are designed to be scalable, accommodating changes in data volume or computational requirements.
+Scalability is crucial for handling large-scale data processing tasks, common in scientific research or data-intensive applications.</p>
+</section>
+<section id="client-server-architecture">
+<h3>Client-Server Architecture<a class="headerlink" href="#client-server-architecture" title="Link to this heading">#</a></h3>
+<p>Client-server architecture is a computing model that divides the functionality of a software application into two distinct components: the client and the server. This separation allows for efficient processing, improved scalability, and centralized management of data. Here are key aspects of client-server architecture:</p>
+<figure class="align-default" id="client-server">
+<img alt="figures/app_class/client_server.png" src="figures/app_class/client_server.png" />
+<figcaption>
+<p><span class="caption-text">Client Server flow diagram</span><a class="headerlink" href="#client-server" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Separation of User Interface and Data Processing:</strong></p></li>
+</ul>
+<p>In client-server architecture, the user interface (client) is separated from the data processing and storage (server).
+The client is responsible for presenting information to the user and handling user inputs, while the server manages the business logic, data processing, and storage.</p>
+<ul class="simple">
+<li><p><strong>Communication Between Client and Server:</strong></p></li>
+</ul>
+<p>The client sends requests to the server, requesting specific actions or data.
+The server processes these requests, executes the necessary operations, interacts with the database (if applicable), and returns the results to the client.</p>
+<ul class="simple">
+<li><p><strong>Client Responsibilities:</strong></p></li>
+</ul>
+<p>The client is focused on providing a user-friendly interface and handling user interactions.
+It may also perform some local processing, such as input validation or basic computations, before sending requests to the server.</p>
+<ul class="simple">
+<li><p><strong>Server Responsibilities:</strong></p></li>
+</ul>
+<p>The server hosts the application’s core logic, handling complex computations, data processing, and storage operations.
+It interacts with databases or other data storage systems to retrieve or update information based on client requests.</p>
+<ul class="simple">
+<li><p><strong>Communication Protocols:</strong></p></li>
+</ul>
+<p>Communication between the client and server typically relies on standardized protocols, such as HTTP, HTTPS, or WebSocket, facilitating seamless data exchange.
+These protocols ensure that the client and server can understand and interpret each other’s messages.</p>
+<ul class="simple">
+<li><p><strong>Distributed Processing:</strong></p></li>
+</ul>
+<p>Client-server architecture is well-suited for distributed processing, where tasks are divided between multiple servers to improve efficiency and performance.
+This enables applications to scale horizontally by adding more servers to distribute the workload.</p>
+<ul class="simple">
+<li><p><strong>Scalability:</strong></p></li>
+</ul>
+<p>The separation of concerns in client-server architecture makes it easier to scale the system.
+Scalability can be achieved by adding more clients, servers, or both, allowing the system to handle increased user load or data volume.</p>
+<ul class="simple">
+<li><p><strong>Centralized Data Management:</strong></p></li>
+</ul>
+<p>Data is typically stored centrally on the server, ensuring consistency and ease of management.
+Centralized data management simplifies tasks such as backups, updates, and security measures.</p>
+<ul class="simple">
+<li><p><strong>Security Considerations:</strong></p></li>
+</ul>
+<p>Security measures are often implemented on both the client and server sides to protect against unauthorized access and ensure the integrity of data during communication.</p>
+<ul class="simple">
+<li><p><strong>Examples of Usage:</strong></p></li>
+</ul>
+<p>Client-server architecture is commonly employed in web applications, where the web browser (client) interacts with a web server to request and display web pages. It is also used in various enterprise applications, databases, and distributed systems where the separation of concerns and scalability are essential.</p>
+</section>
+<section id="the-model-view-controller-mvc">
+<h3>The Model-View_Controller (MVC)<a class="headerlink" href="#the-model-view-controller-mvc" title="Link to this heading">#</a></h3>
+<p>The Model-View-Controller (MVC) architectural pattern is a widely used design pattern in software development that helps in organizing and structuring code for better maintainability and scalability. It divides an application into three interconnected components, each responsible for a specific aspect of the application:</p>
+<figure class="align-default" id="mvc">
+<img alt="figures/app_class/mvc.png" src="figures/app_class/mvc.png" />
+<figcaption>
+<p><span class="caption-text">Model View Controller</span><a class="headerlink" href="#mvc" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Model (Data and Business Logic):</strong></p></li>
+</ul>
+<p>The model represents the application’s data and business logic. It encapsulates the data structure, storage, and manipulation, as well as the rules and algorithms that define the application’s behavior.
+By isolating data-related operations in the model, developers can make changes to the data structure or storage without affecting the user interface or the input handling logic. This promotes flexibility and ease of maintenance.</p>
+<ul class="simple">
+<li><p><strong>View (User Interface):</strong></p></li>
+</ul>
+<p>The view is responsible for presenting the data to the user and displaying the user interface. It receives information from the model and presents it in a way that is understandable and visually appealing to the user.
+Separating the view from the model ensures that changes in the user interface (UI) do not directly impact the underlying data or business logic. This separation allows for the development of multiple views for the same data, supporting different presentation formats or device-specific interfaces.</p>
+<ul class="simple">
+<li><p><strong>Controller (Handles User Input and Manages Interactions):</strong></p></li>
+</ul>
+<p>The controller acts as an intermediary between the model and the view. It receives user input from the UI, processes it, and updates the model accordingly. Additionally, the controller listens for changes in the model and updates the view to reflect any modifications in the underlying data.
+By isolating user input handling and interaction management in the controller, the model and view components remain independent. This separation allows for the reuse of controllers with different views or models, contributing to modularity and code reusability.</p>
+<section id="benefits-of-mvc">
+<h4>Benefits of MVC:<a class="headerlink" href="#benefits-of-mvc" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Code Organization:</strong></p></li>
+</ul>
+<p>The MVC pattern provides a clear and structured organization of code, making it easier for developers to understand and maintain the application.</p>
+<ul class="simple">
+<li><p><strong>Modularity:</strong></p></li>
+</ul>
+<p>Each component (model, view, and controller) operates independently, promoting modularity. Changes in one component have minimal impact on the others, facilitating easier updates and modifications.</p>
+<ul class="simple">
+<li><p><strong>Flexibility:</strong></p></li>
+</ul>
+<p>The separation of concerns in MVC allows for flexibility in making changes to one component without affecting the others. This adaptability is crucial for evolving and scaling applications over time.</p>
+<ul class="simple">
+<li><p><strong>Collaboration:</strong></p></li>
+</ul>
+<p>MVC supports collaborative development as different teams or developers can work on different components simultaneously, reducing conflicts and improving productivity.</p>
+</section>
+</section>
+<section id="microservices">
+<h3>Microservices<a class="headerlink" href="#microservices" title="Link to this heading">#</a></h3>
+<p>Microservices architecture is a modern approach to designing and building software systems, emphasizing the decomposition of a monolithic application into a collection of small, independent, and loosely coupled services. This architectural style has gained popularity due to its ability to address various challenges associated with traditional monolithic architectures.</p>
+<figure class="align-default" id="id1">
+<img alt="figures/app_class/microservices.png" src="figures/app_class/microservices.png" />
+<figcaption>
+<p><span class="caption-text">Microservices</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Key Characteristics of Microservices Architecture:</p>
+<ul class="simple">
+<li><p><strong>Decomposition into Small Services:</strong>
+Microservices architecture breaks down a complex system into smaller, manageable services, each focusing on a specific business capability. These services are independent entities that communicate with each other through well-defined APIs.</p></li>
+<li><p><strong>Loose Coupling:</strong>
+Services in a microservices architecture are loosely coupled, meaning that changes to one service do not significantly impact others. This independence allows for easier maintenance, updates, and modifications without affecting the entire system.</p></li>
+<li><p><strong>Independence and Autonomy:</strong>
+Each microservice is an autonomous unit with its own database, logic, and user interface if needed. This autonomy enables development teams to work on and deploy individual services independently, fostering faster release cycles.</p></li>
+<li><p><strong>Modularity:</strong>
+Microservices promote modularity by dividing a large system into smaller, self-contained modules. This makes it easier to understand, develop, test, deploy, and scale specific functionalities independently, promoting a more maintainable and scalable codebase.</p></li>
+<li><p><strong>Flexibility and Scalability:</strong>
+Microservices architecture provides flexibility in technology choices for each service, allowing developers to choose the most suitable technology stack for a specific task. This flexibility also enables horizontal scaling, where individual services can be scaled independently based on demand.</p></li>
+<li><p><strong>Fault Isolation:</strong>
+The isolation of services ensures that if one service fails, it does not necessarily lead to the failure of the entire system. This enhances the system’s fault tolerance and makes it more resilient.</p></li>
+<li><p><strong>Ease of Deployment and Continuous Delivery:</strong>
+Microservices architecture facilitates continuous integration and continuous delivery (CI/CD) practices. Smaller, independent services can be deployed more frequently, reducing the time between development and production releases.</p></li>
+<li><p><strong>Improved Maintenance and Upgrades:</strong>
+Since each service is independent, maintaining and upgrading the system becomes more manageable. Developers can focus on specific services without affecting the entire application, making it easier to address evolving requirements.</p></li>
+<li><p><strong>Evolvability:</strong>
+Microservices are well-suited for projects with evolving requirements. The modular nature of the architecture allows teams to adapt and change specific services without disrupting the entire system.</p></li>
+</ul>
+<p>Despite these advantages, it’s important to note that implementing a microservices architecture also introduces challenges such as increased complexity in managing distributed systems, communication overhead, and potential issues with data consistency. Organizations need to carefully consider the trade-offs and suitability for their specific use cases before adopting this architectural style.</p>
+</section>
+<section id="layered-architecture">
+<h3>Layered Architecture<a class="headerlink" href="#layered-architecture" title="Link to this heading">#</a></h3>
+<p>Layered architecture is a fundamental design paradigm that systematically structures a software system into distinct horizontal layers, with each layer dedicated to executing specific functions. This architectural approach arranges these layers in a hierarchical manner, resembling a stack, where each layer interacts exclusively with the one directly above or below it. This strict layer-to-layer communication fosters a modular and organized environment, facilitating a more efficient and scalable software development process.</p>
+<figure class="align-default" id="layered">
+<img alt="figures/app_class/layered.png" src="figures/app_class/layered.png" />
+<figcaption>
+<p><span class="caption-text">Layered Architecture</span><a class="headerlink" href="#layered" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The primary advantage of a layered architecture lies in its modular and structured nature. By compartmentalizing functionalities into discrete layers, developers can focus on specific aspects of the system without being overwhelmed by the entire complexity. This separation of concerns not only simplifies the development process but also enhances the system’s maintainability and comprehensibility.</p>
+<p>Each layer within the architecture is designed to handle a specific set of responsibilities, contributing to the overall functionality of the system. This delineation of tasks allows for a more straightforward identification and resolution of issues within individual layers, streamlining the debugging and maintenance processes. Moreover, the well-defined interfaces between layers promote a standardized communication protocol, minimizing dependencies and potential conflicts between different parts of the system.</p>
+<p>Another key advantage of layered architecture is the promotion of reusability. Since each layer encapsulates a distinct set of functionalities, developers can reuse these modular components across different projects or within the same project, thereby reducing redundancy and saving valuable development time. This reusability not only accelerates the development process but also ensures consistency and reliability in the implementation of common functionalities.</p>
+<p>In summary, layered architecture provides a systematic and disciplined approach to software development by organizing the system into hierarchical layers. This design principle enhances modularity, promotes separation of concerns, and facilitates reusability, ultimately leading to more scalable, maintainable, and efficient software systems.</p>
+</section>
+</section>
+<section id="programming-styles">
+<h2>Programming Styles<a class="headerlink" href="#programming-styles" title="Link to this heading">#</a></h2>
+<p>The selection of a programming paradigm hinges on the particular project’s requirements, complexity, and characteristics. Procedural programming may prove more fitting for smaller projects or scenarios that prioritize simplicity and direct data control. On the other hand, object-oriented programming is frequently preferred for larger, intricate systems where the emphasis lies on modularity, encapsulation, and code reuse. It is also feasible to incorporate both programming styles within a single project.</p>
+<p>The following Table shows a direct comparison between Procedural and Object Oriented Programming.</p>
+<figure class="align-default" id="id2">
+<img alt="figures/app_class/pstyles.png" src="figures/app_class/pstyles.png" />
+<figcaption>
+<p><span class="caption-text">Programming Styles</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="oop-approach">
+<h3>OOP Approach<a class="headerlink" href="#oop-approach" title="Link to this heading">#</a></h3>
+<p>If you go for an OOP approach, you need to identify the relevant objects and classes, and their properties, behaviour and interactions.</p>
+<p>The process is not always straightforward, and it requires a deep understanding of the domain and collaboration with stakeholders.</p>
+<p>Essential to consider the context, project constraints, and the specific needs of the software system.</p>
+<p>Utilize UML (Unified Modeling Language) class diagrams to depict the structure and interconnections among classes.</p>
+<p>These diagrams provide a comprehensive view of classes, encompassing their attributes, methods, and the associations linking them. They offer a standardized and visual method for illustrating the static structure of a system.</p>
+<p><a class="reference external" href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/">A tutorial can be found here</a></p>
+<figure class="align-default" id="id3">
+<img alt="figures/app_class/uml_class.png" src="figures/app_class/uml_class.png" />
+<figcaption>
+<p><span class="caption-text">UML Class Diagram</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="classes">
+<h4>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h4>
+<p>Classes are represented as rectangles divided into three sections.</p>
+<ul class="simple">
+<li><p>top section: class name</p></li>
+<li><p>middle section: attributes (data members or variables)</p></li>
+<li><p>bottom section: methods (operations or functions)</p></li>
+</ul>
+<figure class="align-default" id="id4">
+<img alt="figures/app_class/class.png" src="figures/app_class/class.png" />
+<figcaption>
+<p><span class="caption-text">Class Diagram</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="relationship-between-classes">
+<h4>Relationship between Classes<a class="headerlink" href="#relationship-between-classes" title="Link to this heading">#</a></h4>
+<p>In Object-Oriented Programming (OOP), class relationships play a pivotal role in organizing and modeling the structure of a software system. At the core of OOP is the concept of classes, which are blueprints for creating objects, encapsulating data, and defining behavior. Class relationships establish connections between these classes, facilitating the creation of complex, modular, and maintainable code.</p>
+<p>One fundamental type of class relationship is inheritance, where a class (subclass or derived class) can inherit attributes and methods from another class (superclass or base class). This promotes code reuse, enhances extensibility, and fosters a hierarchical structure. Polymorphism is another crucial relationship, enabling objects of different classes to be treated interchangeably, enhancing flexibility and adaptability.</p>
+<p>Additionally, OOP introduces associations, aggregations, and compositions to model more complex relationships. Associations represent connections between classes, aggregations depict a whole-part relationship with weaker coupling, and compositions signify a stronger bond where the existence of one class is dependent on another.</p>
+<p>Effective use of class relationships in OOP allows developers to create modular and scalable systems. By carefully designing and managing these relationships, developers can achieve code that is not only robust but also adaptable to changing requirements, fostering the principles of encapsulation, abstraction, and code reusability.</p>
+<figure class="align-default" id="id5">
+<img alt="figures/app_class/class_rel.png" src="figures/app_class/class_rel.png" />
+<figcaption>
+<p><span class="caption-text">Class Relationships</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="to-find-the-required-classes-objects-in-the-requirements-you-can-follow-these-steps">
+<h4><strong>To find the required classes/objects in the requirements, you can follow these steps:</strong><a class="headerlink" href="#to-find-the-required-classes-objects-in-the-requirements-you-can-follow-these-steps" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Consider Functional Requirements: Examine the functional requirements and use cases in the requirements document. They often describe interactions and collaborations between different classes or objects.</p></li>
+<li><p>Identify Key Concepts: Look for domain-specific or problem-specific concepts mentioned in the requirements. These concepts often correspond to classes or objects in the software system.</p></li>
+<li><p>Analyze the Verbs and Nouns: Review the requirements document or statement and identify the verbs and nouns used. Verbs often indicate actions or behaviors, while nouns typically represent entities or objects in the system.</p></li>
+<li><p>Extract Entities and Relationships: Identify the entities or objects described in the requirements and the relationships between them. Look for phrases or descriptions that imply associations, dependencies, or interactions between entities.</p></li>
+<li><p>Look for System Boundaries: Determine the boundaries of the system as described in the requirements. This can help identify the main components or objects in the system.</p></li>
+</ol>
+<p><strong>Also important:</strong></p>
+<ul class="simple">
+<li><p><strong>Collaborate with Stakeholders</strong>: Engage in discussions with stakeholders, including domain experts, users, and developers. Their insights and perspectives can help identify the relevant classes or objects in the requirements.</p></li>
+<li><p><strong>Iterate and Refine</strong>: Continuously refine and iterate your understanding of the requirements. Capture any uncertainties or questions you may have and seek clarification from stakeholders to ensure a comprehensive understanding.</p></li>
+</ul>
+<p>For more advanced design patterns (become more important with larger systems) see, e.g.:</p>
+<p><a class="reference external" href="http://w3sdesign.com/index0100.php">“Gang of Four” Design Patterns Reference</a>
+<a class="reference external" href="https://refactoring.guru/design-patterns/python">GoF design patterns in Python</a></p>
+</section>
+</section>
+</section>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -529,9 +868,30 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design">Design:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-architectural-styles">Some Architectural Styles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-or-workflow-architecture">Pipeline or Workflow architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#client-server-architecture">Client-Server Architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-model-view-controller-mvc">The Model-View_Controller (MVC)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-mvc">Benefits of MVC:</a></li>
 </ul>
-
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microservices">Microservices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layered-architecture">Layered Architecture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-styles">Programming Styles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-approach">OOP Approach</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relationship-between-classes">Relationship between Classes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#to-find-the-required-classes-objects-in-the-requirements-you-can-follow-these-steps"><strong>To find the required classes/objects in the requirements, you can follow these steps:</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
   </nav></div>
 
 </div></div>

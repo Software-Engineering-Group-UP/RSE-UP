@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; RSE-ING</title>
+    <title>Software Development Process and Requirements Engineering in RSE &#8212; RSE-ING</title>
   
   
   
@@ -461,7 +461,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Software Development Process and Requirements Engineering in RSE</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -470,9 +470,21 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterative-processes">Iterative Processes:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements-engineering-in-rse">Requirements Engineering in RSE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-approach">Recommended approach:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documenting-requirements">Documenting Requirements:</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moscow-prioritization">MoSCoW Prioritization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-moscow-prioritization">Benefits of MoSCoW Prioritization:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uml-diagrams">UML Diagrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-put-this-in-the-repo">Where to put this in the repo?</a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -483,7 +495,223 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  
+  <section class="tex2jax_ignore mathjax_ignore" id="software-development-process-and-requirements-engineering-in-rse">
+<h1>Software Development Process and Requirements Engineering in RSE<a class="headerlink" href="#software-development-process-and-requirements-engineering-in-rse" title="Link to this heading">#</a></h1>
+<p>The software development process typically consists of several central phases, which collectively guide the creation, implementation, and maintenance of software systems. These phases help ensure a systematic and organized approach to building software.</p>
+<p>Here is a brief introduction to the central phases of the software development process:</p>
+<p><code class="docutils literal notranslate"><span class="pre">{figure}</span> <span class="pre">../figures/app_class/software_dev_phases.png</span></code></p>
+<ol class="arabic simple">
+<li><p>Requirements Gathering:</p></li>
+</ol>
+<p>This phase involves understanding and documenting the needs and expectations of stakeholders, including clients, end-users, and other relevant parties.
+The goal is to define the functionality, features, and constraints that the software must satisfy.</p>
+<ol class="arabic simple" start="2">
+<li><p>System Design:</p></li>
+</ol>
+<p>In this phase, the overall architecture and structure of the software are planned. It includes high-level design decisions, such as choosing the appropriate technology stack, defining data structures, and outlining the software’s components and modules.</p>
+<ol class="arabic simple" start="3">
+<li><p>Implementation:</p></li>
+</ol>
+<p>This is the phase where the actual code is written based on the design specifications.
+Developers follow coding standards, best practices, and use the chosen programming languages to translate the design into executable code.</p>
+<ol class="arabic simple" start="4">
+<li><p>Testing:</p></li>
+</ol>
+<p>The testing phase involves verifying that the software meets the specified requirements and functions correctly.
+Various testing methods, such as unit testing, integration testing, and system testing, are employed to identify and fix defects and ensure the software’s reliability.</p>
+<ol class="arabic simple" start="5">
+<li><p>Deployment and Maintenance &amp; support:</p></li>
+</ol>
+<p>Once the software has passed testing and quality assurance, it is deployed to a production environment for actual use.
+This phase involves setting up the necessary infrastructure, configuring servers, and making the software accessible to end-users.</p>
+<p>After deployment, ongoing maintenance is required to address issues, bugs, and updates. This phase involves providing support, troubleshooting, and releasing updates or patches to improve or enhance the software based on user feedback and changing requirements.</p>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h2>
+<p>Throughout the entire software development process, documentation is crucial. It includes requirements documents, design documents, and user manuals to provide clear guidelines for understanding, using, and maintaining the software.</p>
+</section>
+<section id="iterative-processes">
+<h2>Iterative Processes:<a class="headerlink" href="#iterative-processes" title="Link to this heading">#</a></h2>
+<p>Many software development methodologies, such as Agile or DevOps, involve iterative processes where the development cycle is repeated, allowing for continuous improvement and adaptation to changing requirements.
+These phases collectively form a structured framework for developing reliable, maintainable, and scalable software systems. The specific details of each phase may vary based on the development methodology being employed and the nature of the project.</p>
+</section>
+<section id="requirements-engineering-in-rse">
+<h2>Requirements Engineering in RSE<a class="headerlink" href="#requirements-engineering-in-rse" title="Link to this heading">#</a></h2>
+<p>Approaching research projects necessitates a flexible and iterative method, acknowledging the exploratory and evolving nature of such endeavors.</p>
+<p>Developers must consistently collaborate with stakeholders to adapt to changes, ensuring the software aligns with research objectives. Descriptions and specifications outline what the software should achieve and its expected behavior, encompassing needs, functionalities, constraints, and quality attributes. These serve as a groundwork for software design, development, and validation, offering guidance throughout the entire software engineering lifecycle.</p>
+<p><strong>User requirements</strong> concentrate on user needs and expectations, fostering a user-centric approach that aids in comprehending the system’s context and goals. For instance: “Users should have the ability to post updates, photos, and videos.”</p>
+<p>On the other hand, <strong>system requirements</strong> furnish technical specifications for construction, adopting a developer-centric standpoint to steer implementation. Functional requirements delineate desired software behavior, such as “The system should enable users to create new accounts” or “The system should present summarized figures in a dashboard.”</p>
+<p><strong>Non-functional requirements</strong> delineate additional qualities or characteristics sought in the software system, like response time (“The system should respond within 2 seconds”) or compatibility with web browsers (“The system should be compatible with all major web browsers”).</p>
+<section id="recommended-approach">
+<h3>Recommended approach:<a class="headerlink" href="#recommended-approach" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Understand the Research Context: Gain a deep understanding of the research domain, objectives, and constraints. Collaborate closely with the researchers to grasp the scientific goals and the problem being addressed.</p></li>
+<li><p>Stakeholder Identification: Identify the stakeholders involved in the research project. This typically includes researchers, domain experts, funding agencies, end-users, and potentially software developers.</p></li>
+<li><p>Elicitation Techniques: Employ appropriate elicitation techniques to capture requirements. These techniques may include interviews, workshops, surveys, and observations. Researchers and domain experts should be actively involved in this process to ensure the accuracy and relevance of requirements.</p></li>
+<li><p>Prioritize Requirements: Research projects often have time and resource constraints. Collaborate with stakeholders to prioritize requirements based on their importance and potential impact on the research outcomes. Consider factors such as scientific significance, feasibility, and project timelines.</p></li>
+<li><p>Document Requirements: Document the requirements in a clear and concise manner. Use a combination of natural language, diagrams, and mockups to communicate requirements effectively. Ensure that the documentation is accessible and understandable.</p></li>
+<li><p>Iterative Refinement: Recognize that research projects are dynamic and subject to change. Embrace an iterative approach to requirements engineering, allow for continuous refinement and adaptation. Regularly review and update requirements based on new insights, research findings, and evolving stakeholder needs.</p></li>
+<li><p>Traceability and Versioning: Establish traceability between requirements and the research outcomes. This helps to ensure that the developed software meets the intended objectives. Maintain version control for the requirements documentation to track changes and facilitate collaboration.</p></li>
+<li><p>Collaboration and Communication: Foster open and frequent communication channels among stakeholders, including researchers, software developers, and end-users. Encourage feedback and collaboration throughout the research software development process to ensure alignment with evolving research needs.</p></li>
+<li><p>Validation and Verification: Establish mechanisms for validating and verifying the implemented software against the requirements. This can involve rigorous testing, peer reviews, and involving domain experts to assess the alignment of the software with the research objectives.</p></li>
+</ol>
+</section>
+<section id="documenting-requirements">
+<h3>Documenting Requirements:<a class="headerlink" href="#documenting-requirements" title="Link to this heading">#</a></h3>
+<p>Being flexible in documentation entails the ability to tailor the documentation forms to the unique needs of the project, ensuring accessibility, comprehensibility, and adaptability. It involves a recognition that different projects may require different approaches to convey information effectively.</p>
+<p>Consideration of various documentation forms is crucial to achieving this flexibility:</p>
+<ul class="simple">
+<li><p><strong>Natural Language</strong>:</p></li>
+</ul>
+<p>Description: Utilizing natural language involves expressing project information in a narrative, conversational manner.</p>
+<p>Advantages: Readable and accessible to a diverse audience, accommodating different levels of technical expertise.</p>
+<p>Adaptability: Allows for detailed explanations and provides a comprehensive overview of project elements.</p>
+<ul class="simple">
+<li><p><strong>Diagrams</strong>:</p></li>
+</ul>
+<p>Description: Visual representations such as flowcharts, UML diagrams, or data flow diagrams.
+Advantages: Offers a visual understanding of complex relationships or processes.
+Adaptability: Useful for conveying system architecture, data flow, and interactions between components.</p>
+<ul class="simple">
+<li><p><strong>Mockups and Prototypes</strong>:</p></li>
+</ul>
+<p>Description: Visual representations or interactive models showcasing the intended look and feel of the software.</p>
+<p>Advantages: Allows stakeholders to visualize the end product early in the development process.</p>
+<p>Adaptability: Particularly useful for eliciting feedback on the design and user interface.</p>
+<figure class="align-default" id="mock-up">
+<img alt="figures/app_class/mock_up.png" src="figures/app_class/mock_up.png" />
+<figcaption>
+<p><span class="caption-text">Porsche example mock up</span><a class="headerlink" href="#mock-up" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><em>(image can be found <a class="reference external" href="https://pixabay.com/de/illustrations/lamborghini-gallardo-lp-560-1651701/">here</a>)</em></p>
+<ul class="simple">
+<li><p><strong>Use Cases:</strong></p></li>
+</ul>
+<p>Description: Use cases are a technique employed to capture the interactions and behaviors between actors (users or external systems) and a system. They provide a detailed account of how the system will be used in various scenarios.</p>
+<p>Advantages: Enables a comprehensive understanding of user-system interactions, facilitating the identification of functional requirements.</p>
+<p>Adaptability: Ideal for describing functional requirements by illustrating the steps and actions necessary to accomplish a specific goal or task within the system.</p>
+<p>Example: In a research software application, a specific use case might be “Generate Report” with the following main flow:</p>
+<p><strong>Use Case: Generate Report</strong></p>
+<p>Primary Actor: Researcher
+Main Flow:</p>
+<ol class="arabic simple">
+<li><p>The researcher selects the “Generate Report” option in the research software.</p></li>
+<li><p>The system prompts the researcher to choose the desired report format (e.g., PDF, Excel).</p></li>
+<li><p>. The researcher selects the report format.</p></li>
+<li><p>. The system processes the available research data.</p></li>
+<li><p>The system generates the report in the selected format.</p></li>
+<li><p>The researcher receives the generated report.</p></li>
+</ol>
+<p>This specific use case illustrates the step-by-step process of how a researcher interacts with the system to generate a report, showcasing the practical application of use cases in describing system functionality.</p>
+<ul class="simple">
+<li><p><strong>User Stories:</strong></p></li>
+</ul>
+<p>Description: User stories are concise, user-centric narratives following the template “As a [user role], I want [action/features] so that [benefit/reason].” They focus on expressing end-users’ needs, providing a tangible understanding of their goals and the value the features bring.</p>
+<p>Advantages: Offers a direct connection to user needs, promoting a user-centric approach to development.</p>
+<p>Adaptability: Particularly effective for agile development, enabling clear communication of user requirements and expectations.</p>
+<p><strong><em>Example User Story:</em></strong></p>
+<p>User Story: “As a researcher, I want to generate a report in PDF or Excel format, so that I can easily share and analyze the research findings.”</p>
+<p>By incorporating user stories into the documentation, the project team ensures that the development process aligns closely with the needs and expectations of the end-users, fostering a more user-centered and value-driven approach.</p>
+</section>
+</section>
+<section id="moscow-prioritization">
+<h2>MoSCoW Prioritization<a class="headerlink" href="#moscow-prioritization" title="Link to this heading">#</a></h2>
+<p>MoSCoW prioritization is a widely utilized technique in project management and software development to prioritize user stories or other requirements based on their importance and urgency. The acronym stands for:</p>
+<ul class="simple">
+<li><p><strong>Must have</strong>: Denotes essential, critical, and core functionality that is imperative for the project’s success. These are features without which the project cannot proceed.</p></li>
+<li><p><strong>Should have</strong>: Represents valuable and important features that are not critical for the project’s immediate success. While desirable, these functionalities can be deferred to subsequent phases if necessary.</p></li>
+<li><p><strong>Could have</strong>: Encompasses features that are considered nice to have but are not necessary for the project’s essential functionality. These can be considered as potential enhancements but are not critical for the current scope.</p></li>
+<li><p><strong>Won’t have</strong>: Indicates features that are of the lowest priority or currently out of scope. These are functionalities that are acknowledged but intentionally deferred for the moment.</p></li>
+</ul>
+<section id="benefits-of-moscow-prioritization">
+<h3>Benefits of MoSCoW Prioritization:<a class="headerlink" href="#benefits-of-moscow-prioritization" title="Link to this heading">#</a></h3>
+<p>MoSCoW Prioritization offers several advantages in project management:</p>
+<ul class="simple">
+<li><p><strong>Informed Decision-Making</strong>: By categorizing requirements into distinct priority levels, teams can make informed decisions about where to focus their efforts, ensuring that critical aspects are addressed first.</p></li>
+<li><p><strong>Incremental Development</strong>: The prioritization scheme supports incremental development by emphasizing the importance of delivering essential functionality first. This allows for iterative releases and continuous improvement.</p></li>
+<li><p><strong>Resource Optimization</strong>: MoSCoW helps optimize resource allocation by directing attention to must-have and should-have features first. This prevents unnecessary investment in less critical functionalities.</p></li>
+<li><p><strong>Clear Communication</strong>: The classification of requirements into must-have, should-have, could-have, and won’t-have provides a clear and shared understanding among team members and stakeholders about the project’s priorities.</p></li>
+</ul>
+<p>By systematically organizing requirements into priority levels, teams can ensure that they address critical needs while allowing flexibility for future enhancements. This approach fosters an iterative and adaptive development process.</p>
+</section>
+</section>
+<section id="uml-diagrams">
+<h2>UML Diagrams<a class="headerlink" href="#uml-diagrams" title="Link to this heading">#</a></h2>
+<p>Unified Modeling Language (UML) is a standardized visual modeling language widely used in software development to represent, document, and communicate system architectures and designs. UML diagrams serve as powerful tools for various stages of the software development lifecycle. You can find a more detailed discription <a class="reference external" href="https://www.visual-paradigm.com/tutorials/">here</a>.</p>
+<p>An example UML-diagram <span id="id1">[<a class="reference internal" href="references.html#id2" title="Richard A Williams, Jon Timmis, and Eva E Qwarnstrom. Statistical techniques complement uml when developing domain models of complex dynamical biosystems. PloS one, 11(8):e0160834, 2016.">Williams <em>et al.</em>, 2016</a>]</span>:</p>
+<figure class="align-default" id="uml">
+<img alt="figures/app_class/uml_diagram.png" src="figures/app_class/uml_diagram.png" />
+<figcaption>
+<p><span class="caption-text">Taxonomy of UML diagramming notations.. PLOS ONE. Figure.</span><a class="headerlink" href="#uml" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>When it comes to capturing and analyzing requirements, several key UML diagrams play a crucial role:</p>
+<ul class="simple">
+<li><p><strong>Use Case Diagrams</strong>:</p></li>
+</ul>
+<p>Purpose: Use case diagrams provide a high-level view of the system’s functionality from the end-users’ perspective.</p>
+<p>Content: They depict actors, representing external entities, and use cases, representing specific functionalities or features of the system.</p>
+<p>Benefit for Requirements: Use case diagrams help identify and clarify user requirements by illustrating the interactions between users and the system, highlighting the main functionalities required.</p>
+<ul class="simple">
+<li><p><strong>Activity Diagrams:</strong></p></li>
+</ul>
+<p>Purpose: Activity diagrams model the flow of activities within a system, illustrating how different tasks are performed and how they relate to each other.</p>
+<p>Content: Nodes represent activities, and transitions depict the flow of control between them.</p>
+<p>Benefit for Requirements: Activity diagrams are useful for understanding the dynamic aspects of a system, helping to refine and elaborate on requirements by visualizing the sequence of actions and decision points.</p>
+<ul class="simple">
+<li><p><strong>Class Diagrams:</strong></p></li>
+</ul>
+<p>Purpose: Class diagrams provide a static view of the system, depicting the structure and relationships among classes.</p>
+<p>Content: Classes, attributes, and associations between classes are represented in class diagrams.</p>
+<p>Benefit for Requirements: Class diagrams help in understanding the data and object-oriented aspects of the system, facilitating the identification and organization of key entities and their relationships.</p>
+<ul class="simple">
+<li><p><strong>State Machine Diagrams:</strong></p></li>
+</ul>
+<p>Purpose: State machine diagrams model the behavior of a system in response to external stimuli, illustrating the different states a system can be in and the transitions between them.</p>
+<p>Content: States, transitions, and events are key elements in state machine diagrams.</p>
+<p>Benefit for Requirements: State machine diagrams assist in capturing and refining the requirements related to the dynamic behavior of the system, particularly when the system’s response depends on its current state.</p>
+<ul class="simple">
+<li><p><strong>Sequence Diagrams:</strong></p></li>
+</ul>
+<p>Purpose: Sequence diagrams focus on the interactions between objects over time, illustrating the order of messages exchanged between them.</p>
+<p>Content: Objects, lifelines, and messages are fundamental components of sequence diagrams.</p>
+<p>Benefit for Requirements: Sequence diagrams help in understanding the flow of communication and collaboration between different components of the system, aiding in the refinement and validation of requirements related to system interactions.</p>
+</section>
+<section id="where-to-put-this-in-the-repo">
+<h2>Where to put this in the repo?<a class="headerlink" href="#where-to-put-this-in-the-repo" title="Link to this heading">#</a></h2>
+<p>There are multiple approaches to this, no single solution fits all. Typical approaches use either <strong>README file, Documentation folder, Wiki pages</strong>, and <strong>Issue Tracking</strong>  or a combination of them to manage and organize information within a project. Each approach has its own advantages and is suitable for different scenarios. Let’s elaborate on each:</p>
+<ul class="simple">
+<li><p><strong>README File:</strong></p></li>
+</ul>
+<p>Purpose: A README file is typically placed in the root directory of a project and serves as a quick introduction and guide for users and contributors.</p>
+<p>Content: It often includes essential information such as project overview, installation instructions, usage guidelines, and basic troubleshooting tips.</p>
+<p>Advantages: Simple and easy to create and maintain. It’s especially useful for small to medium-sized projects where a concise guide is sufficient.</p>
+<ul class="simple">
+<li><p><strong>Documentation Folder:</strong></p></li>
+</ul>
+<p>Purpose: A Documentation folder is more extensive than a README file and contains comprehensive documentation about the project.</p>
+<p>Content: This may include user guides, developer guides, API documentation, and other detailed information related to the project.</p>
+<p>Advantages: Suitable for larger projects with multiple components or extensive features. It provides a structured way to organize information and is more detailed than a README.</p>
+<ul class="simple">
+<li><p><strong>Wiki Pages:</strong></p></li>
+</ul>
+<p>Purpose: Wikis are collaborative spaces where team members can collectively create, edit, and organize content.</p>
+<p>Content: Wiki pages can cover a wide range of topics, including project history, design decisions, team guidelines, and more.</p>
+<p>Advantages: Enables collaborative documentation, making it suitable for teams that prefer to distribute the responsibility of maintaining and updating documentation. Useful for projects with evolving and dynamic information.</p>
+<ul class="simple">
+<li><p><strong>Issue Tracking:</strong></p></li>
+</ul>
+<p>Purpose: Issue tracking systems (e.g., GitHub Issues, Jira) are primarily used for managing tasks, bugs, and feature requests.
+Content: Each issue can have its own discussion, attachments, and labels, making it a central hub for communication related to specific tasks or problems.
+Advantages: While not a traditional documentation method, issue tracking is crucial for managing project tasks. It helps in tracking progress, discussing specific issues, and maintaining a record of changes over time.
+Choosing an Approach:</p>
+<p>Consider the size and complexity of your project. For smaller projects, a well-structured README might be sufficient. Larger projects may benefit from a combination of approaches.</p>
+<p>Assess your team’s preferences and collaboration style. If your team is accustomed to working collaboratively, a Wiki or shared Documentation folder might be suitable.</p>
+<p>Understand the needs of your users and contributors. If your project has a user base that requires detailed documentation, investing in a comprehensive Documentation folder or Wiki could be essential.</p>
+<p>Ultimately, the choice of approach should align with your team’s culture, project requirements, and collaboration dynamics. Combining multiple approaches is also a valid strategy, as long as it enhances overall project understanding and contributes to a positive collaborative environment.</p>
+</section>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -529,9 +757,21 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterative-processes">Iterative Processes:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements-engineering-in-rse">Requirements Engineering in RSE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-approach">Recommended approach:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documenting-requirements">Documenting Requirements:</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moscow-prioritization">MoSCoW Prioritization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-moscow-prioritization">Benefits of MoSCoW Prioritization:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uml-diagrams">UML Diagrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-put-this-in-the-repo">Where to put this in the repo?</a></li>
+</ul>
   </nav></div>
 
 </div></div>
