@@ -64,7 +64,7 @@ parts:
 
   - caption: Requirements, Architecture and Design
     chapters:
-      - file: chapters/introduction/requirments_architecture_design.md
+      - file: chapters/introduction/requirements_architecture_design.md
         sections:
           - file: application_classes.md
           - file: requirements.md
