@@ -8,7 +8,7 @@ These classes provide recommendations that build on each other to ensure proper 
 
 The primary focus of application classes is to support the development of individual software within facilities. Moreover, they can serve as a foundation for establishing requirements when outsourcing software development to external companies, ensuring the quality of development. This is particularly valuable when externally created software is intended for future maintenance or further development by the facility.
 
-```{figure} ../figure/app_class/app_class.pnd
+```{figure} ../figures/app_classes/app_class.pnd
 :name: app_class
 Application Classes 0 - 3
 ```
