@@ -1,7 +1,9 @@
 # Research Software Engineering - University of Potsdam
 
-This repository contains material for a semester-long course on computing skills for researchers at the Univeristy of Potsdam. The course uses the material provided in the Merely-useful book (<https://merely-useful.tech/py-rse/>) as a base and makes some changes to the structure and adds additional topics.
- - TODO CITATION FOR THIS REPO
+This repository contains material for a semester-long course on computing skills for researchers at the Univeristy of Potsdam. The course uses the material provided in the Merely-useful book (<https://merely-useful.tech/py-rse/>) as a foundation and makes some changes to the structure and adds additional topics.
+
+**PLEASE NOTE** currently still a WIP! 
+
 
 The source material for our iteration of the work can be cited as: 
  ```
@@ -32,7 +34,9 @@ The source material for our iteration of the work can be cited as:
 11. Error Handling
 12. Configuration of Programs
 13. Workflow Management
-14. Tracking Provenance
+14. Snakemake
+15. CICD? 
+16. Tracking Provenance
 
 ### Course Work
 
@@ -54,14 +58,16 @@ Software has been licensed under the MIT License found [here](https://github.com
 
 ## TODOs
 
-[ ] Concsistency Check ch 0 -> 15
-[ ] Intro / guide to jupyter notebook
-[ ] Contribution guide how to run and install if cont.
-[ ] Binder
-[ ] Collab
+[ ] Review and expand 5,6 and 9
+[ ] Intro to Workflows
+[ ] Snakemake
+[ ] CICD
+[ ] Add functioning binder and collab integration
+[ ] Contribution guide how to run and install
 
-[ ] Rewrite Worksheets / project work for course into 2 seperate MDs / more in flow with rest of book instead of seperate 
+[ ] Citation for this repo
 
-[ ] Content from Presentations 
+[ ] Rewrite Worksheets / project instructions
+[ ] How to distribute coursework to students
 
  [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
