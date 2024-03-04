@@ -1,0 +1,25 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+count_words_moby_dick        1
+total                        1
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Mar  3 16:14:46 2024]
+localrule count_words_moby_dick:
+    input: ../data/moby_dick.txt
+    output: ../data/moby.dat
+    jobid: 0
+    reason: Missing output files: ../data/moby.dat
+    resources: tmpdir=/tmp
+
+[Sun Mar  3 16:14:46 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2024-03-03T161446.301442.snakemake.log

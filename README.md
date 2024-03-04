@@ -4,6 +4,11 @@ This repository contains material for a semester-long course on computing skills
 
 **PLEASE NOTE** currently still a WIP! 
 
+a general todo list is as follows
+[ ] Workflow section
+[ ] more exercises
+[ ] re-evaluate course after 2024 run. 
+
 
 The source material for our iteration of the work can be cited as: 
  ```
@@ -19,30 +24,48 @@ The source material for our iteration of the work can be cited as:
    
 ## Table of Contents
 
-** PRELIMINARY *** SUBJECT TO CHANGE
-### Topics covered
-0. Welcome 
-1. Introduction
-2. Unix Shell
-3. Build CLI tools using Python, Version Control
-4. Coding Standards, Writing Readable Code
-5. Compuational Narative
-6. Licensing, Citation, FAIR
-8. Working in Teams
-9. Requirements and Architecture, Design
-10. Testing Software
-11. Error Handling
-12. Configuration of Programs
-13. Workflow Management
-14. Snakemake
-15. CICD? 
-16. Tracking Provenance
+***PRELIMINARY*** SUBJECT TO CHANGE
+
+Week |  Lecture                               | Lab only / online only
+-----------------------------------------------------------------------------
+1    | Course Introduction                    | Python Refresher, Git Basics
+-----------------------------------------------------------------------------
+2    | Documentation / Find a topic           | Shell
+-----------------------------------------------------------------------------
+3    | Jupyter Notebook / Comp. Narative      | 
+-----------------------------------------------------------------------------
+4    | Licensing, Citation                    | 
+-----------------------------------------------------------------------------
+5    | Working In Teams                       | Project 1 Submission
+-----------------------------------------------------------------------------
+6    | Testing and Error Handling             | Find Groups / Topic
+-----------------------------------------------------------------------------
+7    | Requirements, Architectures, Design    | Advanced Git
+-----------------------------------------------------------------------------
+8    | PycodeStyle / Clean Code               | CLI Intro / Python
+----------------------------------------------------------------------------- 
+9    | Workflow - Introduction                | 
+-----------------------------------------------------------------------------
+10   | Workflow -  make snake make            |
+-----------------------------------------------------------------------------
+11   | Workflow -  cicd ?                     |
+-----------------------------------------------------------------------------
+12   | Configuration and Packaging            | 
+-----------------------------------------------------------------------------
+13   | Tracking Provenance                    |
+-----------------------------------------------------------------------------
+14   | RSE in Practice / Guest                |
+-----------------------------------------------------------------------------
+15   | Open Topic  / Project Presentation     | Project Submission 
+-----------------------------------------------------------------------------
+16   | Exam date 1 
+-----------------------------------------------------------------------------
 
 ### Course Work
 
 0. Python and Git Refresher 
-1. Small Indiviual Project
-2. Larger Group Project (~4 People)
+1. Small Indiviual Project (2-3 weeks)
+2. Larger Group Project (~4 People) (6 weeks)
 
 ## Link to Interactive Binder
 
@@ -56,18 +79,5 @@ International license (CC-BY-4.0) found [here](https://github.com/Software-Engin
 
 Software has been licensed under the MIT License found [here](https://github.com/Software-Engineering-Group-UP/RSE-UP/blob/main/LICENSE-MIT.MD)
 
-## TODOs
-
-[ ] Review and expand 5,6 and 9
-[ ] Intro to Workflows
-[ ] Snakemake
-[ ] CICD
-[ ] Add functioning binder and collab integration
-[ ] Contribution guide how to run and install
-
-[ ] Citation for this repo
-
-[ ] Rewrite Worksheets / project instructions
-[ ] How to distribute coursework to students
 
  [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
