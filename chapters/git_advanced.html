@@ -253,14 +253,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows and Automation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/workflows.html">Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/workflows.html">Introduction to Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Automation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
-<li class="toctree-l2"><a class="reference internal" href="snakemake.html">Snake Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snakemake_continued.html">Snakemake Continued</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">CICD</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -284,6 +286,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="solutions.html">Solutions</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="working_remotely.html">Working Remotely</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tree.html">Project Tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">Bibliography</a></li>
@@ -712,8 +715,8 @@ The linear relationship between the log word frequency and log rank is then</p>
 <p><span class="math notranslate nohighlight">\( \large \log(r) = \log(c) - \frac{1}{\alpha}\log(f) \)</span></p>
 <p>This suggests that the points on our log-log plot should fall on a straight  line with a slope of <span class="math notranslate nohighlight">\(- \tfrac{1}{\alpha}\)</span> and intercept <span class="math notranslate nohighlight">\(\log(c)\)</span>.
 To fit a line to our word count data we therefore need to estimate the value of <span class="math notranslate nohighlight">\(\alpha\)</span>; we’ll see later that <span class="math notranslate nohighlight">\(c\)</span> is completely defined.</p>
-<p>In order to determine the best method for estimating <span class="math notranslate nohighlight">\(\alpha\)</span>, we turn to <span id="id1">[<a class="reference internal" href="references.html#id60" title="Isabel Moreno-Sánchez, Francesc Font-Clos, and Á lvaro Corral. Large-scale Analysis of Zipf's Law in English Texts. PLoS ONE, 11(1):e0147073, Jan 2016. doi:10.1371/journal.pone.0147073.">Moreno-Sánchez <em>et al.</em>, 2016</a>]</span>, which suggests using a method called <strong>maximum likelihood estimation</strong>. The likelihood function is the probability of our observed data
-as a function of the parameters in the statistical model that we assume generated it. We estimate the parameters in the model by choosing them to maximize this likelihood; computationally, it is often easier to minimize the negative log likelihood function. <span id="id2">[<a class="reference internal" href="references.html#id60" title="Isabel Moreno-Sánchez, Francesc Font-Clos, and Á lvaro Corral. Large-scale Analysis of Zipf's Law in English Texts. PLoS ONE, 11(1):e0147073, Jan 2016. doi:10.1371/journal.pone.0147073.">Moreno-Sánchez <em>et al.</em>, 2016</a>]</span> define the likelihood using a parameter <span class="math notranslate nohighlight">\(\beta\)</span>, which is related to the <span class="math notranslate nohighlight">\(\alpha\)</span> parameter in our definition of Zipf’s Law through <span class="math notranslate nohighlight">\(\large \alpha = \tfrac{1}{\beta-1}\)</span>.
+<p>In order to determine the best method for estimating <span class="math notranslate nohighlight">\(\alpha\)</span>, we turn to <span id="id1">[<a class="reference internal" href="references.html#id61" title="Isabel Moreno-Sánchez, Francesc Font-Clos, and Á lvaro Corral. Large-scale Analysis of Zipf's Law in English Texts. PLoS ONE, 11(1):e0147073, Jan 2016. doi:10.1371/journal.pone.0147073.">Moreno-Sánchez <em>et al.</em>, 2016</a>]</span>, which suggests using a method called <strong>maximum likelihood estimation</strong>. The likelihood function is the probability of our observed data
+as a function of the parameters in the statistical model that we assume generated it. We estimate the parameters in the model by choosing them to maximize this likelihood; computationally, it is often easier to minimize the negative log likelihood function. <span id="id2">[<a class="reference internal" href="references.html#id61" title="Isabel Moreno-Sánchez, Francesc Font-Clos, and Á lvaro Corral. Large-scale Analysis of Zipf's Law in English Texts. PLoS ONE, 11(1):e0147073, Jan 2016. doi:10.1371/journal.pone.0147073.">Moreno-Sánchez <em>et al.</em>, 2016</a>]</span> define the likelihood using a parameter <span class="math notranslate nohighlight">\(\beta\)</span>, which is related to the <span class="math notranslate nohighlight">\(\alpha\)</span> parameter in our definition of Zipf’s Law through <span class="math notranslate nohighlight">\(\large \alpha = \tfrac{1}{\beta-1}\)</span>.
 Under their model, the value of <span class="math notranslate nohighlight">\(c\)</span> is the total number of unique words,
 or equivalently the largest value of the rank.</p>
 <p>Expressed as a Python function, the negative log likelihood function is:</p>

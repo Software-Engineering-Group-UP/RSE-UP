@@ -251,14 +251,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows and Automation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/workflows.html">Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/workflows.html">Introduction to Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Automation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
-<li class="toctree-l2"><a class="reference internal" href="snakemake.html">Snake Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snakemake_continued.html">Snakemake Continued</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">CICD</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -282,6 +284,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="solutions.html">Solutions</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="working_remotely.html">Working Remotely</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tree.html">Project Tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">Bibliography</a></li>
@@ -773,7 +776,7 @@ By following these strategies, you can effectively publish your software and gai
 </section>
 <section id="fair-principles-for-research-software-fair4rs">
 <h2>FAIR Principles for Research Software (FAIR4RS)<a class="headerlink" href="#fair-principles-for-research-software-fair4rs" title="Link to this heading">#</a></h2>
-<p>In the age of information overload, ensuring the quality and usefulness of data is paramount. The FAIR principles offer a framework for managing data effectively, promoting its findability, accessibility, interoperability, and reusability. <span id="id1">[<a class="reference internal" href="references.html#id7" title="Mark D Wilkinson, Michel Dumontier, IJsbrand Jan Aalbersberg, Gabrielle Appleton, Myles Axton, Arie Baak, Niklas Blomberg, Jan-Willem Boiten, Luiz Bonino da Silva Santos, Philip E Bourne, and others. The fair guiding principles for scientific data management and stewardship. Scientific data, 3(1):1–9, 2016.">Wilkinson <em>et al.</em>, 2016</a>]</span></p>
+<p>In the age of information overload, ensuring the quality and usefulness of data is paramount. The FAIR principles offer a framework for managing data effectively, promoting its findability, accessibility, interoperability, and reusability. <span id="id1">[<a class="reference internal" href="references.html#id8" title="Mark D Wilkinson, Michel Dumontier, IJsbrand Jan Aalbersberg, Gabrielle Appleton, Myles Axton, Arie Baak, Niklas Blomberg, Jan-Willem Boiten, Luiz Bonino da Silva Santos, Philip E Bourne, and others. The fair guiding principles for scientific data management and stewardship. Scientific data, 3(1):1–9, 2016.">Wilkinson <em>et al.</em>, 2016</a>]</span></p>
 <figure class="align-default" id="fair-princeples">
 <img alt="../_images/fair.png" src="../_images/fair.png" />
 <figcaption>
@@ -881,7 +884,7 @@ By following these strategies, you can effectively publish your software and gai
 </section>
 <section id="fair4rs-principles">
 <h3>FAIR4RS Principles<a class="headerlink" href="#fair4rs-principles" title="Link to this heading">#</a></h3>
-<p>The FAIR4RS Principles (Findable, Accessible, Interoperable, and Reusable for Research Software) <span id="id2">[<a class="reference internal" href="references.html#id5" title="Michelle Barker, Neil P Chue Hong, Daniel S Katz, Anna-Lena Lamprecht, Carlos Martinez-Ortiz, Fotis Psomopoulos, Jennifer Harrow, Leyla Jael Castro, Morane Gruenpeter, Paula Andrea Martinez, and others. Introducing the fair principles for research software. Scientific Data, 9(1):622, 2022.">Barker <em>et al.</em>, 2022</a>, <a class="reference internal" href="references.html#id4">Hong <em>et al.</em>, 2022</a>, <a class="reference internal" href="references.html#id6" title="Anna-Lena Lamprecht, Leyla Garcia, Mateusz Kuzak, Carlos Martinez, Ricardo Arcila, Eva Martin Del Pico, Victoria Dominguez Del Angel, Stephanie Van De Sandt, Jon Ison, Paula Andrea Martinez, and others. Towards fair principles for research software. Data Science, 3(1):37–59, 2020.">Lamprecht <em>et al.</em>, 2020</a>]</span> aim to improve the sharing and reuse of research software, ultimately leading to more transparent, reproducible, and robust research. Developed by a collaborative effort from the Research Data Alliance, FORCE11, and Research Software Alliance, these principles provide a framework for researchers, developers, and other stakeholders to create and manage research software effectively.</p>
+<p>The FAIR4RS Principles (Findable, Accessible, Interoperable, and Reusable for Research Software) <span id="id2">[<a class="reference internal" href="references.html#id6" title="Michelle Barker, Neil P Chue Hong, Daniel S Katz, Anna-Lena Lamprecht, Carlos Martinez-Ortiz, Fotis Psomopoulos, Jennifer Harrow, Leyla Jael Castro, Morane Gruenpeter, Paula Andrea Martinez, and others. Introducing the fair principles for research software. Scientific Data, 9(1):622, 2022.">Barker <em>et al.</em>, 2022</a>, <a class="reference internal" href="references.html#id5">Hong <em>et al.</em>, 2022</a>, <a class="reference internal" href="references.html#id7" title="Anna-Lena Lamprecht, Leyla Garcia, Mateusz Kuzak, Carlos Martinez, Ricardo Arcila, Eva Martin Del Pico, Victoria Dominguez Del Angel, Stephanie Van De Sandt, Jon Ison, Paula Andrea Martinez, and others. Towards fair principles for research software. Data Science, 3(1):37–59, 2020.">Lamprecht <em>et al.</em>, 2020</a>]</span> aim to improve the sharing and reuse of research software, ultimately leading to more transparent, reproducible, and robust research. Developed by a collaborative effort from the Research Data Alliance, FORCE11, and Research Software Alliance, these principles provide a framework for researchers, developers, and other stakeholders to create and manage research software effectively.</p>
 <section id="key-points-of-the-fair4rs-principles">
 <h4>Key Points of the FAIR4RS Principles<a class="headerlink" href="#key-points-of-the-fair4rs-principles" title="Link to this heading">#</a></h4>
 <ul class="simple">

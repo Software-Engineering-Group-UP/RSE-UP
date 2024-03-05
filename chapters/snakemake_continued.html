@@ -1,0 +1,1498 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Snakemake Continued &#8212; RSE-UP</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css?v=c89437f7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/snakemake_continued';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/snakemake_continued.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="snakemake_advanced.html" />
+    <link rel="prev" title="Introduction to Snakemake" href="intro_snakemake.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="welcome.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RSE-UP</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python, Bash, CLI, Git refresher</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/jupyter.html">Introduction to Jupyter Notebook</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="anaconda.html">Install Anaconda</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresh.html">Python Refresher</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/bash.html">Introduction to Bash</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="bash_tools.html">Building Tools with the Unix Shell</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="bash_advanced.html">Going Further with the Unix Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/bash.html">Bash Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/python_cli.html">Introduction to CLI application using Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_building_cli.html">Building Command-Line Tools with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/python_cli.html">Exercises - Scripting Python for CLI tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/vcs.html">Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro_version_control.html">Using Git at the Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/version_control.html">Exercise Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git_advanced.html">Going Further with Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/git_advanced.html">Exercises Git Advanced</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computational Narrative</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="comp_narative.html">Story Telling with Data Computational Narrative</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/documentation.html">Introduction to writing Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing_documentation.html">Documenting Programs</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Licenses, Software Citation and FAIR</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="license.html">Licenses, Software Citation and FAIR</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Working in teams</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="working_in_teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/work_teams.html">Exercise - Work Teams</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing and Error Handling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/testing.html">Testing</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing_programs.html">Testing Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/testing.html">Exercises - Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/error_handling.html">Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="error_handling.html">Handling Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/error_handling.html">Exercises - Error Handling</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Requirements, Architecture and Design</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/requirements_architecture_design.html">Application Classes, Software Requirements, Architecture and Design</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="application_classes.html">Application Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirements.html">Software Development Process and Requirements Engineering in RSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_design.html">Architecture and Design</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="clean_readable_code.html">Writing Readable Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows and Automation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/workflows.html">Introduction to Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction/automation.html">Automation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Snakemake Continued</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">CICD</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tracking_provenance.html">Tracking Provenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/provenance.html">Exercises - Provenance</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuration and Packaging</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="yaml.html">YAML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="solutions.html">Solutions</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="working_remotely.html">Working Remotely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tree.html">Project Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/snakemake_continued.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/snakemake_continued.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Snakemake Continued</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-workflow-the-snakefile">Building the Workflow: The Snakefile</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-executing-snakemake">Getting started - Executing Snakemake:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snakefiles-as-documentation">Snakefiles as Documentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nothing-to-be-done-and-missingruleexception">Nothing to be Done and MissingRuleException</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-all-rule">Remove all Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies">Dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wildcards">Wildcards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-dependencies-differently">Handling dependencies differently</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#patterns">Patterns</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-your-snakefile-now">Update your Snakefile now</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-wildcards-continued">Using wildcards continued</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snakefiles-are-python-code">Snakefiles are Python code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#named-dependencies">Named Dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-named-vs-indexed">Inputs: named vs indexed?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-your-snakefile">Update your Snakefile</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-are-snakefiles-executed">When are Snakefiles executed?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-functions-in-snakefiles">Using functions in Snakefiles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-file-names-with-expand">Generating file names with expand()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-wildcard-values-with-glob-wildcards">Get wildcard values with glob_wildcards()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-python-code-as-actions">Using Python code as actions</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="snakemake-continued">
+<h1>Snakemake Continued<a class="headerlink" href="#snakemake-continued" title="Link to this heading">#</a></h1>
+<p>Snakemake stands out among data processing tools for its versatility and user-friendliness. It empowers researchers to create reproducible and scalable analyses through a human-readable, Python-based language. If you’re familiar with the make tool, picking up Snakemake will be a breeze.</p>
+<section id="building-the-workflow-the-snakefile">
+<h2>Building the Workflow: The Snakefile<a class="headerlink" href="#building-the-workflow-the-snakefile" title="Link to this heading">#</a></h2>
+<p>The heart of Snakemake lies in the Snakefile, acting as its build file. It defines a series of rules dictating the workflow’s execution. Each rule details how to produce a specific target (output) using its required dependencies (inputs) and the necessary actions.</p>
+<section id="getting-started-executing-snakemake">
+<h3>Getting started - Executing Snakemake:<a class="headerlink" href="#getting-started-executing-snakemake" title="Link to this heading">#</a></h3>
+<p>By default, running Snakemake without specifying a target prompts it to search for a file named Snakefile. Upon execution, it provides details about the workflow, including the number of steps, involved rules, input and output files.
+Therefore we need to create a <code class="docutils literal notranslate"><span class="pre">snakefile</span></code>. For the purpose of the course we start with an example that counts words.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Count words in one of the books</span>
+<span class="n">rule</span> <span class="n">count_words</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;../data/dracula.txt&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;../data/dracula.dat&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python wordcount.py ../data/dracula.txt ../data/dracula.dat&#39;</span>
+</pre></div>
+</div>
+<p>This is a <strong>build file</strong>, which for Snakemake is called a
+Snakefile - a file executed by Snakemake. Note that aside from a few keyword
+additions like <code class="docutils literal notranslate"><span class="pre">rule</span></code>, it follows standard Python 3 syntax.</p>
+<p>The parts included in to the snakefile are explained as follows:</p>
+<ul class="simple">
+<li><p><strong>Comments</strong>: Lines starting with # provide explanations and are ignored by Snakemake.</p></li>
+<li><p><strong>Target</strong>: This represents the desired outcome, denoted by a filename (e.g., dracula.dat).</p></li>
+<li><p><strong>Dependencies</strong>: These are files (e.g., data/dracula.txt) needed to create or update the target.</p></li>
+<li><p><strong>Action</strong>: This shell command (e.g., python <a class="reference external" href="http://wordcount.py">wordcount.py</a> data/dracula.txt dracula.dat) is responsible for generating or updating the target using the dependencies.</p></li>
+</ul>
+<p><em>Snakemake follows Python 3 syntax</em>, introducing keywords like rule. Indentation, whether using tabs or spaces, adheres to Python conventions. A rule combines target, dependencies, and actions, forming a “recipe” for a specific step in the workflow.</p>
+<p>The rule we just created describes how to build the output <code class="docutils literal notranslate"><span class="pre">dracula.dat</span></code> using
+the action <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">wordcount.py</span></code> and the input <code class="docutils literal notranslate"><span class="pre">data/dracula.txt</span></code>.</p>
+<p>Information that was implicit in our shell script - that we are generating a
+file called <code class="docutils literal notranslate"><span class="pre">dracula.dat</span></code> and that creating this file requires
+<code class="docutils literal notranslate"><span class="pre">data/dracula.txt</span></code> - is now made explicit by Snakemake’s syntax.</p>
+<p>Let’s first ensure we start from scratch and delete the <code class="docutils literal notranslate"><span class="pre">.dat</span></code>, <code class="docutils literal notranslate"><span class="pre">.png</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">results.txt</span></code> files we created earlier:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>*.dat<span class="w"> </span>*.png<span class="w"> </span>results.txt
+</pre></div>
+</div>
+<p>to run snakemake we just have to call it while being in the same directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake
+</pre></div>
+</div>
+<p>Depending on your system the following error message may appear:</p>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Assuming unrestricted shared filesystem usage for local execution.</span>
+<span class="go">Error: cores have to be specified for local execution (use --cores N with N being a number &gt;= 1 or &#39;all&#39;)</span>
+</pre></div>
+</div>
+<p>Instead run the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake<span class="w"> </span>--cores<span class="w"> </span>all
+</pre></div>
+</div>
+<p>By default, Snakemake tells us what it’s doing as it executes actions:</p>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Assuming unrestricted shared filesystem usage for local execution.</span>
+<span class="go">Building DAG of jobs...</span>
+<span class="go">Using shell: /usr/bin/bash</span>
+<span class="go">Provided cores: 8</span>
+<span class="go">Rules claiming more threads will be scaled down.</span>
+<span class="go">Job stats:</span>
+<span class="go">job            count</span>
+<span class="go">-----------  -------</span>
+<span class="go">count_words        1</span>
+<span class="go">total              1</span>
+
+<span class="go">Select jobs to execute...</span>
+<span class="go">Execute 1 jobs...</span>
+
+<span class="go">[Sun Feb 18 15:30:44 2024]</span>
+<span class="go">localrule count_words:</span>
+<span class="go">    input: ../data/dracula.txt</span>
+<span class="go">    output: ../data/dracula.dat</span>
+<span class="go">    jobid: 0</span>
+<span class="go">    reason: Missing output files: ../data/dracula.dat</span>
+<span class="go">    resources: tmpdir=/tmp</span>
+
+<span class="go">[Sun Feb  18 15:30:44 2024]</span>
+<span class="go">Finished job 0.</span>
+<span class="go">1 of 1 steps (100%) done</span>
+<span class="go">Complete log: .snakemake/log/2024-02-18T153044.591897.snakemake.log</span>
+</pre></div>
+</div>
+<p>If there are errors, check your syntax. Remember, aside from new keywords
+like <code class="docutils literal notranslate"><span class="pre">rule</span></code> and <code class="docutils literal notranslate"><span class="pre">input</span></code>, Snakemake follows Python syntax. Let’s see if we got
+what we expected:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>head<span class="w"> </span>-5<span class="w"> </span>../data/dracula.dat
+</pre></div>
+</div>
+<p>The output should look like this:</p>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">the 8089 4.836269931901207</span>
+<span class="go">and 5976 3.5729446301201144</span>
+<span class="go">i 4846 2.897337630114136</span>
+<span class="go">to 4745 2.836951517724221</span>
+<span class="go">of 3748 2.240862863736645</span>
+</pre></div>
+</div>
+<p>If you now try to rerun snakemake the following error will occur:</p>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Assuming unrestricted shared filesystem usage for local execution.</span>
+<span class="go">Building DAG of jobs...</span>
+<span class="go">Nothing to be done (all requested files are present and up to date).</span>
+</pre></div>
+</div>
+<p>This basicly means that since the output files are already present the workflow is not re-run. To re-run the snakefile just delete the <code class="docutils literal notranslate"><span class="pre">.dat</span></code>.</p>
+<p>At the same time snakemake checks the last modification time, if <code class="docutils literal notranslate"><span class="pre">.dat</span></code> is younger than the input <code class="docutils literal notranslate"><span class="pre">.txt</span></code> file it won’t rerun but if changes where done and save to the <code class="docutils literal notranslate"><span class="pre">.txt</span></code> file and there by make the modification <em>younger</em> than the <code class="docutils literal notranslate"><span class="pre">.dat</span></code>, snakemake will re-run the workflow.</p>
+<p>An argument for this approach would be that only rebuilding files when required, makes processing more efficient.</p>
+<p>It also important to note snakefiles do not need to be named <code class="docutils literal notranslate"><span class="pre">snakefile</span></code>, you only need to tell snakemake the name on usage. This means you can have snakefiles for multiple workflows stored in the same location.</p>
+<p>For example using the <code class="docutils literal notranslate"><span class="pre">-s</span></code> flag / option:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake<span class="w"> </span>-s<span class="w"> </span>snakefileXYZ
+</pre></div>
+</div>
+</section>
+<section id="snakefiles-as-documentation">
+<h3>Snakefiles as Documentation<a class="headerlink" href="#snakefiles-as-documentation" title="Link to this heading">#</a></h3>
+<p>By explicitly recording the inputs to and outputs from steps in our analysis and the dependencies between files, Snakefiles act as a type of documentation, reducing the number of things we have to remember.</p>
+<p>We can add additional rules to the snakefile i.e.:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">count_words</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;../data/dracula.txt&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;../data/dracula.dat&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python wordcount.py ../data/dracula.txt ../data/dracula.dat&#39;</span>
+
+<span class="n">rule</span> <span class="n">count_words_moby_dick</span><span class="p">:</span>
+	<span class="nb">input</span><span class="p">:</span> 	<span class="s1">&#39;../data/moby_dick.txt&#39;</span>
+	<span class="n">output</span><span class="p">:</span> <span class="s1">&#39;../data/moby.dat&#39;</span>
+	<span class="n">shell</span><span class="p">:</span> 	<span class="s1">&#39;python wordcount.py ../data/moby_dick.txt ../data/moby.dat&#39;</span>
+
+</pre></div>
+</div>
+<p>If you run snakemake now, nothing will happen, since snakemake will by default choose the firt rule, ignoring the others. to change this you need to ru the following command instead:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake<span class="w"> </span>--cores<span class="w"> </span>all<span class="w"> </span>../data/moby.dat
+</pre></div>
+</div>
+<p>This will give the following output:</p>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Assuming unrestricted shared filesystem usage for local execution.</span>
+<span class="go">Building DAG of jobs...</span>
+<span class="go">Using shell: /usr/bin/bash</span>
+<span class="go">Provided cores: 8</span>
+<span class="go">Rules claiming more threads will be scaled down.</span>
+<span class="go">Job stats:</span>
+<span class="go">job                      count</span>
+<span class="go">---------------------  -------</span>
+<span class="go">count_words_moby_dick        1</span>
+<span class="go">total                        1</span>
+
+<span class="go">Select jobs to execute...</span>
+<span class="go">Execute 1 jobs...</span>
+
+<span class="go">[Sun Feb  18 16:14:46 2024]</span>
+<span class="go">localrule count_words_moby_dick:</span>
+<span class="go">    input: ../data/moby_dick.txt</span>
+<span class="go">    output: ../data/moby.dat</span>
+<span class="go">    jobid: 0</span>
+<span class="go">    reason: Missing output files: ../data/moby.dat</span>
+<span class="go">    resources: tmpdir=/tmp</span>
+
+<span class="go">[Sun Feb  18 16:14:46 2024]</span>
+<span class="go">Finished job 0.</span>
+<span class="go">1 of 1 steps (100%) done</span>
+<span class="go">Complete log: .snakemake/log/2024-02-18T161446.301442.snakemake.log</span>
+</pre></div>
+</div>
+</section>
+<section id="nothing-to-be-done-and-missingruleexception">
+<h3>Nothing to be Done and MissingRuleException<a class="headerlink" href="#nothing-to-be-done-and-missingruleexception" title="Link to this heading">#</a></h3>
+<p>As you might have seen earlier, if the output file already exists snakemake will return the sentence: ‘<code class="docutils literal notranslate"><span class="pre">nothing</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">done</span></code>’.</p>
+<p>But if you try to invoke a rule that does exists, the missing rule exception will be triggered. This looks like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>snakemake<span class="w"> </span>what.dat
+
+MissingRuleException:
+No<span class="w"> </span>rule<span class="w"> </span>to<span class="w"> </span>produce<span class="w"> </span>what.dat<span class="w"> </span><span class="o">(</span><span class="k">if</span><span class="w"> </span>you<span class="w"> </span>use<span class="w"> </span>input<span class="w"> </span>functions<span class="w"> </span>make<span class="w"> </span>sure<span class="w"> </span>that<span class="w"> </span>they
+don<span class="err">&#39;</span>t<span class="w"> </span>raise<span class="w"> </span>unexpected<span class="w"> </span>exceptions<span class="o">)</span>.
+</pre></div>
+</div>
+<p>You need check the spelling of <code class="docutils literal notranslate"><span class="pre">what.dat</span></code> to fix this.</p>
+</section>
+<section id="remove-all-rule">
+<h3>Remove all Rule<a class="headerlink" href="#remove-all-rule" title="Link to this heading">#</a></h3>
+<p>One could also create a rule that deletes all output, this could look like the following:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete everything so we can re-run things</span>
+<span class="n">rule</span> <span class="n">clean</span><span class="p">:</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;rm -f *.dat&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">#</a></h3>
+<p>Often workflows have dependencies or files that need be created before running a certain rule. In the following example, the rule <code class="docutils literal notranslate"><span class="pre">dats</span></code> relies on the input files dracula.dat and moby_dick.dat.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">dats</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+          <span class="s1">&#39;dracula.dat&#39;</span>
+          <span class="s1">&#39;moby_dick.dat&#39;</span>
+</pre></div>
+</div>
+<p>If you run snakemake now, snakemake will first check whether or not the input files exist and if not snakemake will look for rules that generate the input files and run them. It is important to note that dependencies must form a directed acyclic graph. A target cannot depend on a dependency which itself, or one of its dependencies, depends on that target.</p>
+<p>The output of</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake<span class="w"> </span>--cores<span class="w"> </span><span class="m">1</span><span class="w"> </span>dats
+</pre></div>
+</div>
+<p>will look like this</p>
+<div class="highlight-Output notranslate"><div class="highlight"><pre><span></span><span class="go">Provided cores: 1</span>
+<span class="go">Rules claiming more threads will be scaled down.</span>
+<span class="go">Job counts:</span>
+<span class="go">        count   jobs</span>
+<span class="go">        1       count_words</span>
+<span class="go">        1       count_words_abyss</span>
+<span class="go">        1       dats</span>
+<span class="go">        3</span>
+
+<span class="go">rule count_words_abyss:</span>
+<span class="go">    input: ../data/moby_dick.txt</span>
+<span class="go">    output: ../data/moby_dick.dat</span>
+<span class="go">    jobid: 1</span>
+
+<span class="go">Finished job 1.</span>
+<span class="go">1 of 3 steps (33%) done</span>
+
+<span class="go">rule count_words:</span>
+<span class="go">    input: ../data/dracula.txt</span>
+<span class="go">    output: ../data/dracula.dat</span>
+<span class="go">    jobid: 2</span>
+
+<span class="go">Finished job 2.</span>
+<span class="go">2 of 3 steps (67%) done</span>
+
+<span class="go">localrule dats:</span>
+<span class="go">    input: ../data/dracula.dat, ../data/moby_dick.dat</span>
+<span class="go">    jobid: 0</span>
+
+<span class="go">Finished job 0.</span>
+<span class="go">3 of 3 steps (100%) done</span>
+</pre></div>
+</div>
+<p>While the snakefile should look as follows:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">dats</span><span class="p">:</span>
+     <span class="nb">input</span><span class="p">:</span>
+         <span class="s1">&#39;../data/dracula.dat&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;../data/moby_dick.dat&#39;</span>
+
+<span class="c1"># delete everything so we can re-run things</span>
+<span class="n">rule</span> <span class="n">clean</span><span class="p">:</span>
+    <span class="n">shell</span><span class="p">:</span>  <span class="s1">&#39;rm -f *.dat&#39;</span>
+
+<span class="c1"># Count words in one of the books</span>
+<span class="n">rule</span> <span class="n">count_words</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> 	<span class="s1">&#39;../data/dracula.txt&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;../data/dracula.dat&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> 	<span class="s1">&#39;python wordcount.py ../data/dracula.txt ../data/dracula.dat&#39;</span>
+
+<span class="n">rule</span> <span class="n">count_words_abyss</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> 	<span class="s1">&#39;../data/moby_dick.txt&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;../data/moby_dick.dat&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> 	<span class="s1">&#39;python wordcount.py ../data/moby_dick.txt ../data/moby_dick.dat&#39;</span>
+</pre></div>
+</div>
+<p>the directed graph of the dependencies looks like this:</p>
+<figure class="align-default" id="dats-graph">
+<img alt="../_images/dats_graph.svg" src="../_images/dats_graph.svg" /><figcaption>
+<p><span class="caption-number">Fig. 60 </span><span class="caption-text">Dats Graph</span><a class="headerlink" href="#dats-graph" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="debugging">
+<h3>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h3>
+<p>At this point, it becomes important to see what snakemake is doing behind the scenes. What commands is snakemake actually running? Snakemake has a special option (-p), that prints every command it is about to run. Additionally, we can also perform a dry run with -n. A dry run does nothing, and simply prints out commands instead of actually executing them. Very useful for debugging!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake<span class="w"> </span>clean
+snakemake<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> </span>dracula.dat
+</pre></div>
+</div>
+<div class="highlight-Output notranslate"><div class="highlight"><pre><span></span><span class="go">Building DAG of jobs...</span>
+<span class="go">Job counts:</span>
+<span class="go">	count	jobs</span>
+<span class="go">	1	count_words</span>
+<span class="go">	1</span>
+
+<span class="go">rule count_words:</span>
+<span class="go">    input: ../data/dracula.txt</span>
+<span class="go">    output: ../data/dracula.dat</span>
+<span class="go">    jobid: 0 </span>
+
+<span class="go">python wordcount.py ../data/dracula.txt ../data/dracula.dat</span>
+<span class="go">Job counts:</span>
+<span class="go">	count	jobs</span>
+<span class="go">	1	count_words</span>
+<span class="go">	1</span>
+<span class="go">This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.</span>
+</pre></div>
+</div>
+<p>**Before you continue with the book below, it is advised to first look at the exercise: <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/snakemake.html">Write two new rules</a> since it would come in handy for the next section.</p>
+</section>
+</section>
+<section id="wildcards">
+<h2>Wildcards<a class="headerlink" href="#wildcards" title="Link to this heading">#</a></h2>
+<p>When you have completed the exercise, you notice that there is a lot of duplications and repetitions. It is always good practice to not repeat yourself.
+Let’s start from the top on go rule by rule and refactor the snakefile.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">zipf_test</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;data/jane_eyre.dat&#39;</span><span class="p">,</span><span class="s1">&#39;data/frankenstein.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;data/sherlock_holmes.dat&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;data/results.txt&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python zipf_test.py data/frankenstein.dat data/jane_eyre.dat data/sherlock_holmes.dat &gt; data/results.txt&#39;</span>
+</pre></div>
+</div>
+<p>Here we can shorten the shell command by using variables.
+This could look like the following, were we add an <code class="docutils literal notranslate"><span class="pre">{input}</span></code> and <code class="docutils literal notranslate"><span class="pre">{output}</span></code> <strong>wildcards</strong>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">zipf_test</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;data/jane_eyre.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;data/frankenstein.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;data/sherlock_holmes.dat&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;data/results.txt&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python zipf_test.py </span><span class="si">{input}</span><span class="s1"> &gt; </span><span class="si">{output}</span><span class="s1">&#39;</span>
+  
+</pre></div>
+</div>
+</section>
+<section id="handling-dependencies-differently">
+<h2>Handling dependencies differently<a class="headerlink" href="#handling-dependencies-differently" title="Link to this heading">#</a></h2>
+<p>For many rules, we will need to make finer distinctions between inputs. It is not always appropriate to pass all inputs as a lump to your action. For example, our rules for <code class="docutils literal notranslate"><span class="pre">.dat</span></code> use their first (and only) dependency specifically as the input file to <code class="docutils literal notranslate"><span class="pre">wordcount.py</span></code>. If we add additional dependencies (as we will soon do) then we don’t want these being passed as input files to <code class="docutils literal notranslate"><span class="pre">wordcount.py</span></code>: it expects just one input file.</p>
+<p>Let’s see this in action. We need to add <a class="reference external" href="http://wordcount.py">wordcount.py</a> as a dependency of each of our data files so that the rules will be executed if the script changes. In this case, we can use <code class="docutils literal notranslate"><span class="pre">{input[0]}</span></code> to refer to the first dependency, and <code class="docutils literal notranslate"><span class="pre">{input[1]}</span></code> to refer to the second:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">count_words</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;wordcount.py&#39;</span><span class="p">,</span> <span class="s1">&#39;data/dracula.txt&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;dracula.dat&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python </span><span class="si">{input[0]}</span><span class="s1"> </span><span class="si">{input[1]}</span><span class="s1"> </span><span class="si">{output}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>Alternatively, we can name our dependencies:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">count_words_frankenstein</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">cmd</span><span class="o">=</span><span class="s1">&#39;wordcount.py&#39;</span><span class="p">,</span>
+        <span class="n">book</span><span class="o">=</span><span class="s1">&#39;data/frankenstein.txt&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;frankenstein.dat&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python </span><span class="si">{input.cmd}</span><span class="s1"> </span><span class="si">{input.book}</span><span class="s1"> </span><span class="si">{output}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>Let’s mark <code class="docutils literal notranslate"><span class="pre">wordcount.py</span></code> as updated, and re-run the pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>wordcount.py
+snakemake
+</pre></div>
+</div>
+<div class="highlight-Output notranslate"><div class="highlight"><pre><span></span><span class="go">Provided cores: 1</span>
+<span class="go">Rules claiming more threads will be scaled down.</span>
+<span class="go">Job counts:</span>
+<span class="go">	count	jobs</span>
+<span class="go">	1	count_words</span>
+<span class="go">	1	count_words_frankenstein</span>
+<span class="go">	1	zipf_test</span>
+<span class="go">	3</span>
+
+<span class="go">rule count_words_frankenstein:</span>
+<span class="go">    input: wordcount.py, data/frankenstein.txt</span>
+<span class="go">    output: data/frankenstein.dat</span>
+<span class="go">    jobid: 2</span>
+
+<span class="go">Finished job 2.</span>
+<span class="go">1 of 3 steps (33%) done</span>
+
+<span class="go">rule count_words:</span>
+<span class="go">    input: wordcount.py, data/dracula.txt</span>
+<span class="go">    output: data/dracula.dat</span>
+<span class="go">    jobid: 1</span>
+
+<span class="go">Finished job 1.</span>
+<span class="go">2 of 3 steps (67%) done</span>
+
+<span class="go">rule zipf_test:</span>
+<span class="go">    input: data/frankenstein.dat, data/last.dat, data/dracula.dat</span>
+<span class="go">    output: results.txt</span>
+<span class="go">    jobid: 0</span>
+
+<span class="go">Finished job 0.</span>
+<span class="go">3 of 3 steps (100%) done</span>
+</pre></div>
+</div>
+<p>Notice how <code class="docutils literal notranslate"><span class="pre">jane_eyre.dat</span></code> (which does not depend on <code class="docutils literal notranslate"><span class="pre">wordcount.py</span></code>) is not rebuilt.</p>
+<p>Intuitively, we should also add <code class="docutils literal notranslate"><span class="pre">wordcount.py</span></code> as dependency for <code class="docutils literal notranslate"><span class="pre">results.txt</span></code>, as the final table should be rebuilt if we remake the .dat files. However, it turns out we don’t have to! Let’s see what happens to <code class="docutils literal notranslate"><span class="pre">results.txt</span></code> when we update <code class="docutils literal notranslate"><span class="pre">wordcount.py</span></code>:</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>wordcount.py
+snakemake<span class="w"> </span>results.txt
+</pre></div>
+</div>
+<p>then we get:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Provided<span class="w"> </span>cores:<span class="w"> </span><span class="m">1</span>
+Rules<span class="w"> </span>claiming<span class="w"> </span>more<span class="w"> </span>threads<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>scaled<span class="w"> </span>down.
+Job<span class="w"> </span>counts:
+<span class="w">	</span>count<span class="w">	</span><span class="nb">jobs</span>
+<span class="w">	</span><span class="m">1</span><span class="w">	</span>count_words
+<span class="w">	</span><span class="m">1</span><span class="w">	</span>count_words_frankenstein
+<span class="w">	</span><span class="m">1</span><span class="w">	</span>zipf_test
+<span class="w">	</span><span class="m">3</span>
+
+rule<span class="w"> </span>count_words_frankenstein:
+<span class="w">    </span>input:<span class="w"> </span>wordcount.py,<span class="w"> </span>data/data/frankenstein.txt
+<span class="w">    </span>output:<span class="w"> </span>data/frankenstein.dat
+<span class="w">    </span>jobid:<span class="w"> </span><span class="m">2</span>
+
+Finished<span class="w"> </span>job<span class="w"> </span><span class="m">2</span>.
+<span class="m">1</span><span class="w"> </span>of<span class="w"> </span><span class="m">3</span><span class="w"> </span>steps<span class="w"> </span><span class="o">(</span><span class="m">33</span>%<span class="o">)</span><span class="w"> </span><span class="k">done</span>
+
+rule<span class="w"> </span>count_words:
+<span class="w">    </span>input:<span class="w"> </span>wordcount.py,<span class="w"> </span>data/dracula.txt
+<span class="w">    </span>output:<span class="w"> </span>data/dracula.dat
+<span class="w">    </span>jobid:<span class="w"> </span><span class="m">1</span>
+
+Finished<span class="w"> </span>job<span class="w"> </span><span class="m">1</span>.
+<span class="m">2</span><span class="w"> </span>of<span class="w"> </span><span class="m">3</span><span class="w"> </span>steps<span class="w"> </span><span class="o">(</span><span class="m">67</span>%<span class="o">)</span><span class="w"> </span><span class="k">done</span>
+
+rule<span class="w"> </span>zipf_test:
+<span class="w">    </span>input:<span class="w"> </span>data/frankenstein.dat,<span class="w"> </span>data/last.dat,<span class="w"> </span>dracula.dat
+<span class="w">    </span>output:<span class="w"> </span>results.txt
+<span class="w">    </span>jobid:<span class="w"> </span><span class="m">0</span>
+
+Finished<span class="w"> </span>job<span class="w"> </span><span class="m">0</span>.
+<span class="m">3</span><span class="w"> </span>of<span class="w"> </span><span class="m">3</span><span class="w"> </span>steps<span class="w"> </span><span class="o">(</span><span class="m">100</span>%<span class="o">)</span><span class="w"> </span><span class="k">done</span>
+</pre></div>
+</div>
+<p>The whole pipeline is triggered, even the creation of the <code class="docutils literal notranslate"><span class="pre">results.txt</span></code> file! To understand this, note that according to the dependency graph, <code class="docutils literal notranslate"><span class="pre">results.txt</span></code> depends on the <code class="docutils literal notranslate"><span class="pre">.dat</span></code> files. The update of <code class="docutils literal notranslate"><span class="pre">wordcount.py</span></code> triggers an update of the *.dat files. Thus, Snakemake sees that the dependencies (the <code class="docutils literal notranslate"><span class="pre">.dat</span></code> files) are newer than the target file (<code class="docutils literal notranslate"><span class="pre">results.txt</span></code>) and it therefore recreates <code class="docutils literal notranslate"><span class="pre">results.txt</span></code>. This is an example of the power of Snakemake: updating a subset of the files in the pipeline triggers rerunning the appropriate downstream steps.</p>
+</section>
+<section id="patterns">
+<h2>Patterns<a class="headerlink" href="#patterns" title="Link to this heading">#</a></h2>
+<p>Our Snakefile still has a ton of repeated content. The rules for each .dat file all follow a consistent pattern. We can replace these rules with a single pattern rule which can be used to build any <code class="docutils literal notranslate"><span class="pre">.dat</span></code> file from a <code class="docutils literal notranslate"><span class="pre">.txt</span></code> file in <code class="docutils literal notranslate"><span class="pre">data/</span></code>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">count_words</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">cmd</span><span class="o">=</span><span class="s1">&#39;wordcount.py&#39;</span><span class="p">,</span>
+        <span class="n">book</span><span class="o">=</span><span class="s1">&#39;data/</span><span class="si">{book}</span><span class="s1">.txt&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{book}</span><span class="s1">.dat&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python </span><span class="si">{input.cmd}</span><span class="s1"> </span><span class="si">{input.book}</span><span class="s1"> </span><span class="si">{output}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">{book}</span></code> is an arbitrary wildcard that we can use as a placeholder for any generic book to analyze. Note that we don’t have to use <code class="docutils literal notranslate"><span class="pre">{book}</span></code> as the name of our <em>wildcard</em> - it can be anything we want!</p>
+<p>This rule can be interpreted as: “In order to build a file named [something].dat (the target) find a file named <code class="docutils literal notranslate"><span class="pre">data/[that</span> <span class="pre">same</span> <span class="pre">something].txt</span></code> (the dependency) and run <code class="docutils literal notranslate"><span class="pre">wordcount.py</span> <span class="pre">[the</span> <span class="pre">dependency]</span> <span class="pre">[the</span> <span class="pre">target]</span></code>.”</p>
+<section id="update-your-snakefile-now">
+<h3>Update your Snakefile now<a class="headerlink" href="#update-your-snakefile-now" title="Link to this heading">#</a></h3>
+<p>Replace all your <code class="docutils literal notranslate"><span class="pre">count_words</span></code> rules with the given pattern rule now.</p>
+<p>Let’s test the new pattern rule. We use the -p option to show that it is running things correctly:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake<span class="w"> </span>clean
+snakemake<span class="w"> </span>-p<span class="w"> </span>dats
+</pre></div>
+</div>
+<p>We should see the same output as before. Note that we can still use snakemake to build individual <code class="docutils literal notranslate"><span class="pre">.dat</span></code> targets as before, and that our new rule will work no matter what stem is being matched.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake<span class="w"> </span>-p<span class="w"> </span>sierra.dat
+</pre></div>
+</div>
+<p>which gives the output below:</p>
+<div class="highlight-Output notranslate"><div class="highlight"><pre><span></span><span class="go">Provided cores: 1</span>
+<span class="go">Rules claiming more threads will be scaled down.</span>
+<span class="go">Job counts:</span>
+<span class="go">	count	jobs</span>
+<span class="go">	1	count_words</span>
+<span class="go">	1</span>
+
+<span class="go">rule count_words:</span>
+<span class="go">    input: wordcount.py, data/time_machine.txt</span>
+<span class="go">    output: data/time_machine.dat</span>
+<span class="go">    jobid: 0</span>
+<span class="go">    wildcards: file=time_machine</span>
+
+<span class="go">python wordcount.py data/time_machine.txt data/time_machine.dat</span>
+<span class="go">Finished job 0.</span>
+<span class="go">1 of 1 steps (100%) done</span>
+</pre></div>
+</div>
+</section>
+<section id="using-wildcards-continued">
+<h3>Using wildcards continued<a class="headerlink" href="#using-wildcards-continued" title="Link to this heading">#</a></h3>
+<p>Our arbitrary wildcards like <code class="docutils literal notranslate"><span class="pre">{book}</span></code> can only be used in input: and output: fields. They cannot be used directly in actions. If you need to refer to the current value of a wildcard in an action you need to qualify it with wildcards.. For example: <code class="docutils literal notranslate"><span class="pre">{wildcards.file}.</span></code></p>
+<p>Running Pattern Rules
+Note that although Snakemake lets you execute a non-pattern rule by name, such as snakemake clean, you cannot execute a pattern rule this way:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake<span class="w"> </span>count_words
+</pre></div>
+</div>
+<div class="highlight-Output notranslate"><div class="highlight"><pre><span></span><span class="go">Building DAG of jobs...</span>
+<span class="go">WorkflowError:</span>
+<span class="go">Target rules may not contain wildcards. Please specify concrete files or a rule without wildcards.</span>
+</pre></div>
+</div>
+<p>As the error message indicates, you need to ask for specific files. For example,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>snakemake<span class="w"> </span>last.dat.
+</pre></div>
+</div>
+<p>Our Snakefile is now much shorter and cleaner:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># generate summary table</span>
+<span class="n">rule</span> <span class="n">zipf_test</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;zipf_test.py&#39;</span><span class="p">,</span> <span class="s1">&#39;data/sherlock_holmes.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;data/frankenstein.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;data/dracula.dat&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;results.txt&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python </span><span class="si">{input[0]}</span><span class="s1"> </span><span class="si">{input[1]}</span><span class="s1"> </span><span class="si">{input[2]}</span><span class="s1"> </span><span class="si">{input[3]}</span><span class="s1"> &gt; </span><span class="si">{output}</span><span class="s1">&#39;</span>
+
+<span class="n">rule</span> <span class="n">dats</span><span class="p">:</span>
+     <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;data/dracula.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;data/frankenstein.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;data/sherlock_holmes.dat&#39;</span>
+
+<span class="c1"># delete everything so we can re-run things</span>
+<span class="n">rule</span> <span class="n">clean</span><span class="p">:</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;rm -f *.dat results.txt&#39;</span>
+
+<span class="c1"># count words in one of our &quot;books&quot;</span>
+<span class="n">rule</span> <span class="n">count_words</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">cmd</span><span class="o">=</span><span class="s1">&#39;wordcount.py&#39;</span><span class="p">,</span>
+        <span class="n">book</span><span class="o">=</span><span class="s1">&#39;data/</span><span class="si">{book}</span><span class="s1">.txt&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{book}</span><span class="s1">.dat&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python </span><span class="si">{input.cmd}</span><span class="s1"> </span><span class="si">{input.book}</span><span class="s1"> </span><span class="si">{output}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>Now all that is left to do is update you snakefile</p>
+</section>
+</section>
+<section id="snakefiles-are-python-code">
+<h2>Snakefiles are Python code<a class="headerlink" href="#snakefiles-are-python-code" title="Link to this heading">#</a></h2>
+<p>Despite our efforts, our pipeline still has repeated content,
+for instance the names of input and output files
+(<em>dependencies and targets</em>).
+Our <code class="docutils literal notranslate"><span class="pre">zipf_test</span></code> rule, for instance, is extremely clunky.
+What happens if we want to analyze <code class="docutils literal notranslate"><span class="pre">data/frankenstein.txt</span></code> as well?</p>
+<p>We’d have to update everything!</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">zipf_test</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>  <span class="s1">&#39;zipf_test.py&#39;</span><span class="p">,</span> <span class="s1">&#39;data/frankenstein.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;jane_eyre.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;dracula.dat&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;results.txt&#39;</span>
+    <span class="n">shell</span><span class="p">:</span>  <span class="s1">&#39;python </span><span class="si">{input[0]}</span><span class="s1"> </span><span class="si">{input[1]}</span><span class="s1"> </span><span class="si">{input[2]}</span><span class="s1"> </span><span class="si">{input[3]}</span><span class="s1"> &gt; </span><span class="si">{output}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>Let’s try to improve this rule. One thing you’ve probably noticed is that all
+of our rules are using Python strings. Other data structures work too - let’s
+try a list:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">zipf_test</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">cmd</span><span class="o">=</span><span class="s1">&#39;zipf_test.py&#39;</span><span class="p">,</span>
+        <span class="n">dats</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;abyss.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;last.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;isles.dat&#39;</span><span class="p">]</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;results.txt&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python </span><span class="si">{input.cmd}</span><span class="s1"> </span><span class="si">{input.dats}</span><span class="s1"> &gt; </span><span class="si">{output}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>After updating your rule, run <code class="docutils literal notranslate"><span class="pre">snakemake</span> <span class="pre">clean</span></code> and <code class="docutils literal notranslate"><span class="pre">snakemake</span> <span class="pre">-p</span></code> to confirm
+that the pipeline still works.</p>
+<section id="named-dependencies">
+<h3>Named Dependencies<a class="headerlink" href="#named-dependencies" title="Link to this heading">#</a></h3>
+<p><em><strong>Note that we also had to switch to using named dependencies.  This was required since the first input, <code class="docutils literal notranslate"><span class="pre">zipf_text.py</span></code>, <strong>should not</strong> be in the list of input files.</strong></em></p>
+</section>
+<section id="inputs-named-vs-indexed">
+<h3>Inputs: named vs indexed?<a class="headerlink" href="#inputs-named-vs-indexed" title="Link to this heading">#</a></h3>
+<p><em><strong>Having seen the use of both named and indexed dependencies, which approach do you prefer?
+Which approach do you think leads to Snakefiles that are easier to read and maintain?</strong></em></p>
+<p>The use of a list for the input files illustrates a key feature of Snakemake:
+<strong>Snakefiles are just Python code.</strong></p>
+<p>We can make our list into a variable to demonstrate this. Let’s create the
+global variable DATS and use it in our <code class="docutils literal notranslate"><span class="pre">zipf_test</span></code> and <code class="docutils literal notranslate"><span class="pre">dats</span></code> rules:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">DATS</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;data/frankenstein.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;data/jane_eyre.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;dracula.dat&#39;</span><span class="p">]</span>
+
+<span class="c1"># generate summary table</span>
+<span class="n">rule</span> <span class="n">zipf_test</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">cmd</span><span class="o">=</span><span class="s1">&#39;zipf_test.py&#39;</span><span class="p">,</span>
+        <span class="n">dats</span><span class="o">=</span><span class="n">DATS</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;results.txt&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python </span><span class="si">{input.cmd}</span><span class="s1"> </span><span class="si">{input.dats}</span><span class="s1"> &gt; </span><span class="si">{output}</span><span class="s1">&#39;</span>
+
+<span class="n">rule</span> <span class="n">dats</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="n">DATS</span>
+</pre></div>
+</div>
+<p>Great! One more step towards reducing code duplication. Now there is just
+one place to update the list of files to process.</p>
+<section id="update-your-snakefile">
+<h4>Update your Snakefile<a class="headerlink" href="#update-your-snakefile" title="Link to this heading">#</a></h4>
+<p>Update your Snakefile with the <code class="docutils literal notranslate"><span class="pre">DATS</span></code> global variable.</p>
+<p>Try recreating both the <code class="docutils literal notranslate"><span class="pre">dats</span></code> and <code class="docutils literal notranslate"><span class="pre">results.txt</span></code> targets
+(run <code class="docutils literal notranslate"><span class="pre">snakemake</span> <span class="pre">clean</span></code> in between).</p>
+</section>
+<section id="solution">
+<h4>Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h4>
+<p><em>TODO</em> See <code class="docutils literal notranslate"><span class="pre">.solutions/snakefiles_are_python/Snakefile_dats_list</span></code> for a full Snakefile. Otherwise, just refer to the code extracts above and modify your own file.</p>
+</section>
+</section>
+<section id="when-are-snakefiles-executed">
+<h3>When are Snakefiles executed?<a class="headerlink" href="#when-are-snakefiles-executed" title="Link to this heading">#</a></h3>
+<p>The last example illustrated that we can use arbitrary Python code in our Snakefile. It’s
+important to understand when this code gets executed. Let’s add a print
+statement to the top of our Snakefile:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Snakefile is being executed!&#39;</span><span class="p">)</span>
+
+<span class="n">DATS</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;frankenstein.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;jane_eyre.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;dracula.dat&#39;</span><span class="p">]</span>
+
+<span class="c1"># generate summary table</span>
+<span class="n">rule</span> <span class="n">zipf_test</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+<span class="c1"># more output below</span>
+</pre></div>
+</div>
+<p>Now let’s clean up our workspace with <code class="docutils literal notranslate"><span class="pre">snakemake</span> <span class="pre">clean</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake<span class="w"> </span>clean
+</pre></div>
+</div>
+<div class="highlight-Output notranslate"><div class="highlight"><pre><span></span><span class="go">Snakefile is being executed!</span>
+<span class="go">Provided cores: 1</span>
+<span class="go">Rules claiming more threads will be scaled down.</span>
+<span class="go">Job counts:</span>
+<span class="go">	count	jobs</span>
+<span class="go">	1	clean</span>
+<span class="go">	1</span>
+
+<span class="go">rule clean:</span>
+<span class="go">    jobid: 0</span>
+
+<span class="go">Finished job 0.</span>
+<span class="go">1 of 1 steps (100%) done</span>
+</pre></div>
+</div>
+<p>Now let’s re-run the pipeline…</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake
+</pre></div>
+</div>
+<div class="highlight-Output notranslate"><div class="highlight"><pre><span></span><span class="go">Snakefile is being executed!</span>
+<span class="go">Provided cores: 1</span>
+<span class="go">Rules claiming more threads will be scaled down.</span>
+<span class="go">Job counts:</span>
+<span class="go">	count	jobs</span>
+<span class="go">	3	count_words</span>
+<span class="go">	1	zipf_test</span>
+<span class="go">	4</span>
+
+<span class="go">rule count_words:</span>
+<span class="go">    input: wordcount.py, data/jane_eyre.txt</span>
+<span class="go">    output: data/jane_eyre.dat</span>
+<span class="go">    jobid: 3</span>
+<span class="go">    wildcards: file=last</span>
+
+<span class="go">Finished job 3.</span>
+<span class="go">1 of 4 steps (25%) done</span>
+
+<span class="go">rule count_words:</span>
+<span class="go">    input: wordcount.py, data/frankenstein.txt</span>
+<span class="go">    output: data/frankenstein.dat</span>
+<span class="go">    jobid: 1</span>
+<span class="go">    wildcards: file=abyss</span>
+
+<span class="go">Finished job 1.</span>
+<span class="go">2 of 4 steps (50%) done</span>
+
+<span class="go">rule count_words:</span>
+<span class="go">    input: wordcount.py, data/dracula.txt</span>
+<span class="go">    output: data/dracula.dat</span>
+<span class="go">    jobid: 2</span>
+<span class="go">    wildcards: file=isles</span>
+
+<span class="go">Finished job 2.</span>
+<span class="go">3 of 4 steps (75%) done</span>
+
+<span class="go">rule zipf_test:</span>
+<span class="go">    input: zipf_test.py, data/frankenstein.dat, data/jane_eyre.dat, data/dracula.dat</span>
+<span class="go">    output: results.txt</span>
+<span class="go">    jobid: 0</span>
+
+<span class="go">Finished job 0.</span>
+<span class="go">4 of 4 steps (100%) done</span>
+</pre></div>
+</div>
+<p>Let’s do a dry-run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake<span class="w"> </span>-n
+</pre></div>
+</div>
+<div class="highlight-Output notranslate"><div class="highlight"><pre><span></span><span class="go">Snakefile is being executed!</span>
+<span class="go">Nothing to be done.</span>
+</pre></div>
+</div>
+<p>In every case, the <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement ran before any of the actual pipeline
+code. What we can take away from this is that Snakemake executes the entire
+Snakefile every time we run <code class="docutils literal notranslate"><span class="pre">snakemake</span></code>, even for a dry-run. Because of this
+we need to be careful and only put tasks that do “real work” (changing files
+on disk) inside rules.</p>
+<p>Common tasks, such as building lists of input files that will be reused in
+multiple rules are a good fit for Python code that lives outside the rules.</p>
+<blockquote>
+<div><h3 class="rubric" id="is-your-print-output-appearing-last">Is your <code class="docutils literal notranslate"><span class="pre">print</span></code> output appearing last?</h3>
+<p>On some systems, output is buffered. This means that nothing is actually output
+until the buffer is full. While this is more efficient, it can delay the output
+from the <code class="docutils literal notranslate"><span class="pre">print</span></code> command.</p>
+<p>In my testing on Windows using the combination of Git Bash and Anaconda, the
+<code class="docutils literal notranslate"><span class="pre">print</span></code> statement is buffered, resulting in the text printing to the terminal
+<em><strong>after</strong></em> all the Snakemake output. If this is happening to you, tell the
+<code class="docutils literal notranslate"><span class="pre">print</span></code> statement to force a flush of the output buffer:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Snakefile is being executed!&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You should then see the printed text before the Snakemake output, confirming
+that this code executes first.</p>
+</div></blockquote>
+</section>
+<section id="using-functions-in-snakefiles">
+<h3>Using functions in Snakefiles<a class="headerlink" href="#using-functions-in-snakefiles" title="Link to this heading">#</a></h3>
+<p>In our example here, we only have 4 books (and just 3 are being processed).
+But what if we had 700 books to be processed? It would be a massive effort to
+update our <code class="docutils literal notranslate"><span class="pre">DATS</span></code> variable to add the name of every single book’s
+corresponding <code class="docutils literal notranslate"><span class="pre">.dat</span></code> filename.</p>
+<p>Fortunately, Snakemake ships with several functions that make working with
+large numbers of files much easier. The two most helpful ones are
+<code class="docutils literal notranslate"><span class="pre">glob_wildcards()</span></code> and <code class="docutils literal notranslate"><span class="pre">expand()</span></code>. Let’s start a Python session to see how
+they work.</p>
+<blockquote>
+<div><h3 class="rubric" id="this-can-be-done-in-any-python-environment">This can be done in any Python environment</h3>
+<p>You can use any Python environment for the following code exploring <code class="docutils literal notranslate"><span class="pre">expand()</span></code>
+and <code class="docutils literal notranslate"><span class="pre">glob_wildcards()</span></code>. The standard Python interpreter, ipython, or
+a Jupyter Notebook. It’s up to personal preference and what you have installed.</p>
+<p>On Windows, calling <code class="docutils literal notranslate"><span class="pre">python</span></code> from Git Bash does not always work. It is better
+to use the Anaconda start menu entries to run a Python prompt and then run
+<code class="docutils literal notranslate"><span class="pre">python</span></code> from there.</p>
+<p>Make sure you change to your Snakefile directory before launching Python.</p>
+</div></blockquote>
+<p>In this example, we will import these Snakemake functions directly in our
+Python session.</p>
+<blockquote>
+<div><h3 class="rubric" id="importing-is-not-required-in-a-snakefile">Importing is not required in a Snakefile</h3>
+<p>You don’t need to import the Snakemake utility functions within your Snakefile - they are
+always imported for you.</p>
+</div></blockquote>
+<p>So in your chosen Python environment, run the following:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">snakemake.io</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</section>
+<section id="generating-file-names-with-expand">
+<h3>Generating file names with expand()<a class="headerlink" href="#generating-file-names-with-expand" title="Link to this heading">#</a></h3>
+<p>The first function we’ll use is <code class="docutils literal notranslate"><span class="pre">expand()</span></code>. <code class="docutils literal notranslate"><span class="pre">expand()</span></code> is used quite
+literally, to expand snakemake wildcards into a set of filenames:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">expand</span><span class="p">(</span><span class="s1">&#39;folder/</span><span class="si">{wildcard1}</span><span class="s1">_</span><span class="si">{wildcard2}</span><span class="s1">.txt&#39;</span><span class="p">,</span> <span class="n">wildcard1</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="n">wildcard2</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-Output notranslate"><div class="highlight"><pre><span></span><span class="go">[&#39;folder/a_1.txt&#39;,</span>
+<span class="go"> &#39;folder/a_2.txt&#39;,</span>
+<span class="go"> &#39;folder/a_3.txt&#39;,</span>
+<span class="go"> &#39;folder/b_1.txt&#39;,</span>
+<span class="go"> &#39;folder/b_2.txt&#39;,</span>
+<span class="go"> &#39;folder/b_3.txt&#39;,</span>
+<span class="go"> &#39;folder/c_1.txt&#39;,</span>
+<span class="go"> &#39;folder/c_2.txt&#39;,</span>
+<span class="go"> &#39;folder/c_3.txt&#39;]</span>
+</pre></div>
+</div>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">expand()</span></code> created every possible combination of filenames from
+the two wildcards. Nice! Of course, this still leaves us needing to get the
+values for <code class="docutils literal notranslate"><span class="pre">wildcard1</span></code> and <code class="docutils literal notranslate"><span class="pre">wildcard2</span></code> in the first place.</p>
+</section>
+<section id="get-wildcard-values-with-glob-wildcards">
+<h3>Get wildcard values with glob_wildcards()<a class="headerlink" href="#get-wildcard-values-with-glob-wildcards" title="Link to this heading">#</a></h3>
+<p>To get a set of wildcards from a list of files, we can use the
+<code class="docutils literal notranslate"><span class="pre">glob_wildcards()</span></code> function. It matches the given pattern against files
+on the file system, returning a named tuple containing all the matches. Let’s
+try grabbing all of the book titles in our <code class="docutils literal notranslate"><span class="pre">books</span></code> folder:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">glob_wildcards</span><span class="p">(</span><span class="s1">&#39;data/</span><span class="si">{example}</span><span class="s1">.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-Output notranslate"><div class="highlight"><pre><span></span><span class="go">Wildcards(example=[&#39;dracula&#39;, &#39;jane_eyre&#39;, &#39;frankenstein&#39;, &#39;sherlock_holmes&#39;])</span>
+</pre></div>
+</div>
+<p>In this case, there is only one wildcard, <code class="docutils literal notranslate"><span class="pre">{example}</span></code>.
+We can extract the values for name by getting the <code class="docutils literal notranslate"><span class="pre">example</span></code>
+property from the output of <code class="docutils literal notranslate"><span class="pre">glob_wildcards()</span></code>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">glob_wildcards</span><span class="p">(</span><span class="s1">&#39;data/</span><span class="si">{example}</span><span class="s1">.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">example</span>
+</pre></div>
+</div>
+<div class="highlight-Output notranslate"><div class="highlight"><pre><span></span><span class="go">[&#39;dracula&#39;, &#39;jane_eyre&#39;, &#39;frankenstein&#39;, &#39;sherlock_holmes&#39;]</span>
+</pre></div>
+</div>
+<blockquote>
+<div><h3 class="rubric" id="putting-it-all-together">Putting it all together</h3>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">expand()</span></code> and <code class="docutils literal notranslate"><span class="pre">glob_wildcards()</span></code> functions,
+modify the pipeline so that it automatically detects and analyzes
+all the files in the <code class="docutils literal notranslate"><span class="pre">data/</span></code> folder.</p>
+<blockquote>
+<div><h2 class="rubric" id="hint">Hint</h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">expand()</span></code> and <code class="docutils literal notranslate"><span class="pre">glob_wildcards()</span></code> together to create the value of <code class="docutils literal notranslate"><span class="pre">DATS</span></code>.</p>
+</div></blockquote>
+<blockquote>
+<div><h2 class="rubric" id="id1">Solution</h2>
+<p>The critical change is to the assignment of <code class="docutils literal notranslate"><span class="pre">DATS</span></code>, building it dynamically from
+the input <code class="docutils literal notranslate"><span class="pre">*.txt</span></code> file names.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">DATS</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{book}</span><span class="s1">.dat&#39;</span><span class="p">,</span> <span class="n">book</span><span class="o">=</span><span class="n">glob_wildcards</span><span class="p">(</span><span class="s1">&#39;./data/</span><span class="si">{book}</span><span class="s1">.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">book</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>TODO</em> See <code class="docutils literal notranslate"><span class="pre">.solutions/snakefiles_are_python/Snakefile_glob_dats</span></code> for a full Snakefile using
+this approach.</p>
+</div></blockquote>
+</div></blockquote>
+</section>
+<section id="using-python-code-as-actions">
+<h3>Using Python code as actions<a class="headerlink" href="#using-python-code-as-actions" title="Link to this heading">#</a></h3>
+<p>One very useful feature of Snakemake is the ability to execute Python code
+instead of just shell commands. Instead of <code class="docutils literal notranslate"><span class="pre">shell:</span></code> as an action, we can use
+<code class="docutils literal notranslate"><span class="pre">run:</span></code> instead.</p>
+<p>Add the following to your snakefile:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># at the top of the file</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># add as the last rule (we don&#39;t want it to be the default)</span>
+<span class="n">rule</span> <span class="n">print_book_names</span><span class="p">:</span>
+    <span class="n">run</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;These are all the book names:&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;books/*.txt&#39;</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Upon execution of the corresponding rule, Snakemake runs our Python code
+in the <code class="docutils literal notranslate"><span class="pre">run:</span></code> block:</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>snakemake<span class="w"> </span>--quiet<span class="w"> </span>print_book_names
+</pre></div>
+</div>
+<div class="highlight-Output notranslate"><div class="highlight"><pre><span></span><span class="go">Provided cores: 1</span>
+<span class="go">Rules claiming more threads will be scaled down.</span>
+<span class="go">Job counts:</span>
+<span class="go">	count	jobs</span>
+<span class="go">	1	print_book_names</span>
+<span class="go">	1</span>
+
+<span class="go">rule print_book_names:</span>
+<span class="go">    jobid: 0</span>
+
+<span class="go">These are all the book names:</span>
+<span class="go">data/dracula.txt</span>
+<span class="go">data/jane_eyre.txt</span>
+<span class="go">data/frankenstein.txt</span>
+<span class="go">data/sherlock_holmes.txt</span>
+<span class="go">Finished job 0.</span>
+<span class="go">1 of 1 steps (100%) done</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Note the <code class="docutils literal notranslate"><span class="pre">--quiet</span></code> option</p>
+<p><code class="docutils literal notranslate"><span class="pre">--quiet</span></code> or <code class="docutils literal notranslate"><span class="pre">-q</span></code> suppresses a lot of the rule progress output from Snakemake.
+This can be useful when you just want to see your own output.</p>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro_snakemake.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to Snakemake</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="snakemake_advanced.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-workflow-the-snakefile">Building the Workflow: The Snakefile</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-executing-snakemake">Getting started - Executing Snakemake:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snakefiles-as-documentation">Snakefiles as Documentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nothing-to-be-done-and-missingruleexception">Nothing to be Done and MissingRuleException</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-all-rule">Remove all Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies">Dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wildcards">Wildcards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-dependencies-differently">Handling dependencies differently</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#patterns">Patterns</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-your-snakefile-now">Update your Snakefile now</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-wildcards-continued">Using wildcards continued</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snakefiles-are-python-code">Snakefiles are Python code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#named-dependencies">Named Dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-named-vs-indexed">Inputs: named vs indexed?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-your-snakefile">Update your Snakefile</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-are-snakefiles-executed">When are Snakefiles executed?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-functions-in-snakefiles">Using functions in Snakefiles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-file-names-with-expand">Generating file names with expand()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-wildcard-values-with-glob-wildcards">Get wildcard values with glob_wildcards()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-python-code-as-actions">Using Python code as actions</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Software Engineering Group - University of Potsdam
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

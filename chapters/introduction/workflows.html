@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Workflows &#8212; RSE-UP</title>
+    <title>Introduction to Workflows &#8212; RSE-UP</title>
   
   
   
@@ -251,14 +251,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows and Automation</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Workflows</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Introduction to Workflows</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../workflow.html">Introduction to Workflows</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="automation.html">Automation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro_make.html">Automating Analyses with Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../exercises/intro_make.html">Exercises - Make</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../snakemake.html">Snake Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro_snakemake.html">Introduction to Snakemake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake_continued.html">Snakemake Continued</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/snakemake.html">Snakemake Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="cicd.html">CICD</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -282,6 +284,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../solutions.html">Solutions</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../working_remotely.html">Working Remotely</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tree.html">Project Tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">Bibliography</a></li>
@@ -457,7 +460,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -468,11 +473,32 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Workflows</h1>
+    <h1>Introduction to Workflows</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflows-in-general">1 Workflows in General</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make">2 Make</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snakemake">Snakemake</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subsection-2">SubSection 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-decorating-the-example-workflow">Advanced: Decorating the example workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-features">Additional features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-3-best-practices-read-the-docs-snakemake">Section 3: Best Practices (read the docs snakemake)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">EXERCISES</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -482,8 +508,101 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="workflows">
-<h1>Workflows<a class="headerlink" href="#workflows" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-workflows">
+<h1>Introduction to Workflows<a class="headerlink" href="#introduction-to-workflows" title="Link to this heading">#</a></h1>
+<p>This section will give an introdution to workflows in general and more specificly make and snakemake.</p>
+<p>While this section is still a <strong>WIP</strong> the following subsection will be added in the following order:</p>
+<section id="workflows-in-general">
+<h2>1 Workflows in General<a class="headerlink" href="#workflows-in-general" title="Link to this heading">#</a></h2>
+</section>
+<section id="make">
+<h2>2 Make<a class="headerlink" href="#make" title="Link to this heading">#</a></h2>
+</section>
+<section id="snakemake">
+<h2>Snakemake<a class="headerlink" href="#snakemake" title="Link to this heading">#</a></h2>
+<section id="setup">
+<h3>setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h3>
+</section>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Introduction to the example workflow</p>
+<ol class="arabic simple">
+<li><p>layout of example package</p></li>
+<li><p>book files</p></li>
+<li><p>running the wordcount script manually</p></li>
+<li><p>running plotcount</p></li>
+<li><p>testing for zipf’s law</p></li>
+<li><p>bash version of a workflow and discussion of limitations</p></li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+<section id="subsection-2">
+<h2>SubSection 2<a class="headerlink" href="#subsection-2" title="Link to this heading">#</a></h2>
+<ol class="arabic simple" start="3">
+<li><p>Snakefiles</p>
+<ol class="arabic simple">
+<li><p>count words</p></li>
+<li><p>running snakemake</p></li>
+<li><p>clean rule</p></li>
+<li><p>default rule is first in the file</p></li>
+</ol>
+</li>
+<li><p>Wildcards</p>
+<ol class="arabic simple">
+<li><p>Keep it DRY</p></li>
+<li><p>highlight duplication in current Snakefile</p></li>
+<li><p>introduce wildcards</p></li>
+<li><p>cleaning up dependencies</p></li>
+</ol>
+</li>
+<li><p>Pattern rules</p>
+<ol class="arabic simple">
+<li><p>identify remaining duplication in word count rules: they have a common pattern</p></li>
+<li><p>wildcards</p></li>
+<li><p>replace all count words rules with a single pattern rule</p></li>
+</ol>
+</li>
+</ol>
+<p><strong>TODO :</strong>
+6. Snakefiles are Python code</p>
+<ol class="arabic simple">
+<li><p>importing and calling python functions</p></li>
+<li><p>simplify dynamic handling of input files</p></li>
+<li><p>Adding remaining stages to pipeline</p>
+<ol class="arabic simple">
+<li><p>Creating png plots</p></li>
+<li><p>Creating an archive.</p></li>
+<li><p>Adding more books</p></li>
+</ol>
+</li>
+<li><p>Resources and parallelism</p></li>
+<li><p>Submitting to a SLURM cluster</p></li>
+</ol>
+<section id="advanced-decorating-the-example-workflow">
+<h3>Advanced: Decorating the example workflow<a class="headerlink" href="#advanced-decorating-the-example-workflow" title="Link to this heading">#</a></h3>
+</section>
+<section id="additional-features">
+<h3>Additional features<a class="headerlink" href="#additional-features" title="Link to this heading">#</a></h3>
+<p>benchmarking ….</p>
+</section>
+<section id="section-3-best-practices-read-the-docs-snakemake">
+<h3>Section 3: Best Practices (read the docs snakemake)<a class="headerlink" href="#section-3-best-practices-read-the-docs-snakemake" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<hr class="docutils" />
+<section id="exercises">
+<h2>EXERCISES<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Exercise use the genome example as exercise example.</p></li>
+<li><p>use additional example from readthedocs</p></li>
+</ul>
+<p><strong>TODO</strong>
+[ ] after capentries course is added, extend with documentation and other resource where needed.</p>
+<p>[ ] create graphs to visualize workflows</p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -543,7 +662,33 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflows-in-general">1 Workflows in General</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make">2 Make</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snakemake">Snakemake</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subsection-2">SubSection 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-decorating-the-example-workflow">Advanced: Decorating the example workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-features">Additional features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-3-best-practices-read-the-docs-snakemake">Section 3: Best Practices (read the docs snakemake)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">EXERCISES</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

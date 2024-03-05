@@ -251,14 +251,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows and Automation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/workflows.html">Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/workflows.html">Introduction to Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Automation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
-<li class="toctree-l2"><a class="reference internal" href="snakemake.html">Snake Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snakemake_continued.html">Snakemake Continued</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">CICD</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -282,6 +284,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Solutions</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="working_remotely.html">Working Remotely</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tree.html">Project Tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">Bibliography</a></li>
@@ -480,6 +483,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Solutions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-bash-basics">Chapter Bash Basics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
@@ -618,6 +622,17 @@ document.write(`
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#snakemake-exercise-solutions">Snakemake Exercise Solutions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-two-new-rules">1. Write two New Rules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-dependencies">2. Update Dependencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite-dat-rules-to-use-wildcards">3. Rewrite .dat rules to use wildcards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-one-input-file">4. Updating One Input File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-zipf-test-rule">5. Updating Zipf_test rule</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -2351,7 +2366,7 @@ uses a different subset of interviews and does not mention demographics,
 nor links to the deposited dataset.
 The <a class="reference external" href="https://lawdigitalcommons.bc.edu/cgi/viewcontent.cgi?article=3318&amp;amp;context=bclr">Boston College Law Review article</a>
 has the same two problems of different data and no dataset citation.</p>
-<p>Searching more broadly through Meili’s work, we can find <span id="id76">[<a class="reference internal" href="references.html#id54" title="Stephen Meili. Do Human Rights Treaties Help Asylum-Seekers?: Lessons from the United Kingdom. Minnesota Legal Studies Research Paper, 2015. doi:10.2139/ssrn.2668259.">Meili, 2015</a>]</span>.
+<p>Searching more broadly through Meili’s work, we can find <span id="id76">[<a class="reference internal" href="references.html#id55" title="Stephen Meili. Do Human Rights Treaties Help Asylum-Seekers?: Lessons from the United Kingdom. Minnesota Legal Studies Research Paper, 2015. doi:10.2139/ssrn.2668259.">Meili, 2015</a>]</span>.
 This lists the dataset as a footnote and reports the 51 interviews
 with demographic data on reported gender of the interviewees.
 This paper lists data collection as 2010–2014,
@@ -2379,7 +2394,7 @@ The <code class="docutils literal notranslate"><span class="pre">README</span></
 but the GitHub repo does have a release <code class="docutils literal notranslate"><span class="pre">v1.0</span></code> with the description “Published manuscript (1.0)” beside it.
 A zip file of this release could be downloaded from GitHub.</p></li>
 </ol>
-<p>For <a class="reference external" href="https://doi.org/10.6084/m9.figshare.7575830">the figshare page</a> that accompanies the paper <span id="id78">[<a class="reference internal" href="references.html#id44" title="D. B. Irving, S. Wijffels, and J. A. Church. Anthropogenic Aerosols, Greenhouse Gases, and the Uptake, Transport, and Storage of Excess Heat in the Climate System. Geophysical Research Letters, 46(9):4894-4903, 2019. URL: https://doi.org/10.1029/2019GL082015.">Irving <em>et al.</em>, 2019</a>]</span>:</p>
+<p>For <a class="reference external" href="https://doi.org/10.6084/m9.figshare.7575830">the figshare page</a> that accompanies the paper <span id="id78">[<a class="reference internal" href="references.html#id45" title="D. B. Irving, S. Wijffels, and J. A. Church. Anthropogenic Aerosols, Greenhouse Gases, and the Uptake, Transport, and Storage of Excess Heat in the Climate System. Geophysical Research Letters, 46(9):4894-4903, 2019. URL: https://doi.org/10.1029/2019GL082015.">Irving <em>et al.</em>, 2019</a>]</span>:</p>
 <ol class="arabic">
 <li><p>The figshare page includes a “Software environment” section.
 To re-create the <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment, you would need the file <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>.</p></li>
@@ -2559,6 +2574,81 @@ $<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> <
 </section>
 </section>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="snakemake-exercise-solutions">
+<h1>Snakemake Exercise Solutions<a class="headerlink" href="#snakemake-exercise-solutions" title="Link to this heading">#</a></h1>
+<section id="write-two-new-rules">
+<h2>1. Write two New Rules<a class="headerlink" href="#write-two-new-rules" title="Link to this heading">#</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">zipf_test</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="s1">&#39;data/jane_eyre.dat&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;data/frankenstein.dat&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;data/sherlock_holmes.dat&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;data/results.txt&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python zipf_test.py data/frankenstein.dat data/jane_eyre.dat data/sherlock_holmes.dat &gt; data/results.txt&#39;</span>
+
+<span class="n">rule</span> <span class="n">dats</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="s1">&#39;isles.dat&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;abyss.dat&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;sherlock_holmes.dat&#39;</span>
+
+<span class="c1"># delete everything so we can re-run things</span>
+<span class="n">rule</span> <span class="n">clean</span><span class="p">:</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;rm -f data/*.dat data/results.txt&#39;</span>
+
+<span class="c1"># Count words in one of the books</span>
+<span class="n">rule</span> <span class="n">count_words</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;data/frankenstein.txt&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;data/frankenstein.dat&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python wordcount.py data/frankenstein.txt data/frankenstein.dat&#39;</span>
+
+<span class="n">rule</span> <span class="n">count_words_jane</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;data/jane_eyre.txt&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;data/jane_eyre.dat&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python wordcount.py data/jane_eyre.txt data/jane_eyre.dat&#39;</span>
+
+<span class="n">rule</span> <span class="n">count_words_sherlock</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;data/sherlock_holmes.txt&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;data/sherlock_holmes.dat&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python wordcount.py data/sherlock_holmes.txt data/sherlock_holmes.dat&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="update-dependencies">
+<h2>2. Update Dependencies<a class="headerlink" href="#update-dependencies" title="Link to this heading">#</a></h2>
+<p>Only <code class="docutils literal notranslate"><span class="pre">results.txt</span></code> recreated.</p>
+<p>The rules for <code class="docutils literal notranslate"><span class="pre">*.dat</span></code> are not executed because their corresponding <code class="docutils literal notranslate"><span class="pre">.txt</span></code> files haven’t been modified.</p>
+<p>if you run :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>data/*.txt
+snakemake<span class="w"> </span>results.txt
+</pre></div>
+</div>
+</section>
+<section id="rewrite-dat-rules-to-use-wildcards">
+<h2>3. Rewrite .dat rules to use wildcards<a class="headerlink" href="#rewrite-dat-rules-to-use-wildcards" title="Link to this heading">#</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">count_words</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;data/dracula.txt&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;data/dracula.dat&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python wordcount.py </span><span class="si">{input}</span><span class="s1"> </span><span class="si">{output}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="updating-one-input-file">
+<h2>4. Updating One Input File<a class="headerlink" href="#updating-one-input-file" title="Link to this heading">#</a></h2>
+<ol class="arabic simple" start="3">
+<li><p>only last.dat and results.txt are recreated</p></li>
+</ol>
+</section>
+<section id="updating-zipf-test-rule">
+<h2>5. Updating Zipf_test rule<a class="headerlink" href="#updating-zipf-test-rule" title="Link to this heading">#</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">zipf_test</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>  <span class="s1">&#39;zipf_test.py&#39;</span><span class="p">,</span> <span class="s1">&#39;data/dracula.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;data/frankenstein.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;data/last.dat&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;results.txt&#39;</span>
+    <span class="n">shell</span><span class="p">:</span>  <span class="s1">&#39;python </span><span class="si">{input[0]}</span><span class="s1"> </span><span class="si">{input[1]}</span><span class="s1"> </span><span class="si">{input[2]}</span><span class="s1"> </span><span class="si">{input[3]}</span><span class="s1"> &gt; </span><span class="si">{output}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2624,6 +2714,7 @@ $<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> <
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Solutions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-bash-basics">Chapter Bash Basics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
@@ -2762,6 +2853,17 @@ $<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> <
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#snakemake-exercise-solutions">Snakemake Exercise Solutions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-two-new-rules">1. Write two New Rules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-dependencies">2. Update Dependencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite-dat-rules-to-use-wildcards">3. Rewrite .dat rules to use wildcards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-one-input-file">4. Updating One Input File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-zipf-test-rule">5. Updating Zipf_test rule</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

@@ -67,4 +67,5 @@ Commits noted in a solution reference **TODO** Amira's `zipf` repository on GitH
 ```{include} ../exercises/solutions/packaging.md
   
 ```
-
+```{include} ../exercises/solutions/snakemake.md
+```

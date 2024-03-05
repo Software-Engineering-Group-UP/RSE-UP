@@ -251,14 +251,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows and Automation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/workflows.html">Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/workflows.html">Introduction to Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Automation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
-<li class="toctree-l2"><a class="reference internal" href="snakemake.html">Snake Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snakemake_continued.html">Snakemake Continued</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">CICD</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -282,6 +284,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="solutions.html">Solutions</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="working_remotely.html">Working Remotely</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tree.html">Project Tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">Bibliography</a></li>
@@ -639,7 +642,7 @@ Choose one style for your project and be consistent with it.</p>
 <h2>Defining Your Audience<a class="headerlink" href="#defining-your-audience" title="Link to this heading">#</a></h2>
 <p>It’s important to consider who documentation is for.
 There are three kinds of people in any domain:
-<strong>novices</strong>, <strong>competent practitioners</strong>, and <strong>experts</strong> <span id="id1">[<a class="reference internal" href="references.html#id84" title="Greg Wilson. Teaching Tech Together. Taylor &amp; Francis, 2019. ISBN 978-0-367-35328-5. How to create and deliver lessons that work and build a teaching community around them.">Wilson, 2019</a>]</span>.
+<strong>novices</strong>, <strong>competent practitioners</strong>, and <strong>experts</strong> <span id="id1">[<a class="reference internal" href="references.html#id85" title="Greg Wilson. Teaching Tech Together. Taylor &amp; Francis, 2019. ISBN 978-0-367-35328-5. How to create and deliver lessons that work and build a teaching community around them.">Wilson, 2019</a>]</span>.
 A novice doesn’t yet have a <strong>mental model</strong> of the domain:
 they don’t know what the key terms are,
 how they relate,
@@ -695,7 +698,7 @@ that shows them how they would do a task with the system they know well
 and then how to do the equivalent task with the new system.</p>
 </div></blockquote>
 <p>In an ideal world,
-we would satisfy these needs with a chorus of explanations <span id="id2">[<a class="reference internal" href="references.html#id27" title="Mike Caulfield. Choral Explanations. 2016. URL: https://hapgood.us/2016/05/13/choral-explanations/.">Caulfield, 2016</a>]</span>,
+we would satisfy these needs with a chorus of explanations <span id="id2">[<a class="reference internal" href="references.html#id28" title="Mike Caulfield. Choral Explanations. 2016. URL: https://hapgood.us/2016/05/13/choral-explanations/.">Caulfield, 2016</a>]</span>,
 some long and detailed,others short and to the point.
 In our world, though, time and resources are limited, so all but the most popular packages must make do with single explanations.</p>
 </section>
@@ -746,7 +749,7 @@ from scientific papers to left-handed musical instruments.</p>
 :   Writing this way forces us to think more clearly about
 what someone might actually be thinking when they need help.</p>
 <p>Keep each item short.
-:   The “minimal manual” approach to instructional design <span id="id3">[<a class="reference internal" href="references.html#id26" title="John Carroll. Creating Minimalist Instruction. International Journal of Designs for Learning, 5(2):56-65, Nov 2014. A look back on the author's work on minimalist instruction. doi:10.14434/ijdl.v5i2.12887.">Carroll, 2014</a>]</span>
+:   The “minimal manual” approach to instructional design <span id="id3">[<a class="reference internal" href="references.html#id27" title="John Carroll. Creating Minimalist Instruction. International Journal of Designs for Learning, 5(2):56-65, Nov 2014. A look back on the author's work on minimalist instruction. doi:10.14434/ijdl.v5i2.12887.">Carroll, 2014</a>]</span>
 breaks everything down into single-page steps,
 with half of that page devoted to troubleshooting.
 This may feel trivializing to the person doing the writing,

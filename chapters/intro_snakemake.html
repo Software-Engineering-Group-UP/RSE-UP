@@ -1,0 +1,925 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction to Snakemake &#8212; RSE-UP</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css?v=c89437f7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/intro_snakemake';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/intro_snakemake.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Snakemake Continued" href="snakemake_continued.html" />
+    <link rel="prev" title="Exercises - Make" href="../exercises/intro_make.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="welcome.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RSE-UP</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python, Bash, CLI, Git refresher</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/jupyter.html">Introduction to Jupyter Notebook</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="anaconda.html">Install Anaconda</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresh.html">Python Refresher</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/bash.html">Introduction to Bash</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="bash_tools.html">Building Tools with the Unix Shell</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="bash_advanced.html">Going Further with the Unix Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/bash.html">Bash Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/python_cli.html">Introduction to CLI application using Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_building_cli.html">Building Command-Line Tools with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/python_cli.html">Exercises - Scripting Python for CLI tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/vcs.html">Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro_version_control.html">Using Git at the Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/version_control.html">Exercise Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git_advanced.html">Going Further with Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/git_advanced.html">Exercises Git Advanced</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computational Narrative</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="comp_narative.html">Story Telling with Data Computational Narrative</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/documentation.html">Introduction to writing Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing_documentation.html">Documenting Programs</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Licenses, Software Citation and FAIR</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="license.html">Licenses, Software Citation and FAIR</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Working in teams</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="working_in_teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/work_teams.html">Exercise - Work Teams</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing and Error Handling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/testing.html">Testing</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing_programs.html">Testing Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/testing.html">Exercises - Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/error_handling.html">Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="error_handling.html">Handling Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/error_handling.html">Exercises - Error Handling</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Requirements, Architecture and Design</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/requirements_architecture_design.html">Application Classes, Software Requirements, Architecture and Design</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="application_classes.html">Application Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirements.html">Software Development Process and Requirements Engineering in RSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_design.html">Architecture and Design</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="clean_readable_code.html">Writing Readable Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows and Automation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/workflows.html">Introduction to Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction/automation.html">Automation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Introduction to Snakemake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snakemake_continued.html">Snakemake Continued</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">CICD</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tracking_provenance.html">Tracking Provenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/provenance.html">Exercises - Provenance</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuration and Packaging</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="yaml.html">YAML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="solutions.html">Solutions</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="working_remotely.html">Working Remotely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tree.html">Project Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/intro_snakemake.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/intro_snakemake.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to Snakemake</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-snakemake-what-is-it">Introduction to Snakemake - What is it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-via-conda-mamba">Installation via Conda/Mamba</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-installation">Full installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-on-bioconda-as-a-package-source">Notes on Bioconda as a package source</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-via-pip">Installation via pip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-a-development-version-via-pip">Installation of a development version via pip</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-workflow-based-on-zipf-s-law">Example Workflow based on Zipf’s Law</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-snakemake">
+<h1>Introduction to Snakemake<a class="headerlink" href="#introduction-to-snakemake" title="Link to this heading">#</a></h1>
+<p>This section will give you a brief introduction into what snake make is and how to set it up.</p>
+<section id="introduction-to-snakemake-what-is-it">
+<h2>Introduction to Snakemake - What is it?<a class="headerlink" href="#introduction-to-snakemake-what-is-it" title="Link to this heading">#</a></h2>
+<p>Imagine a complex scientific analysis with multiple steps, each requiring specific inputs and generating outputs. Keeping track of individual commands, handling data dependencies, and ensuring reproducibility can become a real headache. This is where Snakemake comes in, offering a powerful solution for automating and managing your workflows.</p>
+<p>Snakemake operates through a simple yet versatile concept: defining rules in a configuration file called a “Snakefile.” These rules specify the relationships between tasks, their inputs and outputs. Snakemake, acting like a smart conductor, analyzes these rules and creates an execution plan. It automatically identifies dependencies between tasks, ensuring that only completed tasks’ outputs are used as inputs for subsequent ones. This eliminates the risk of errors due to manual execution and facilitates reproducibility, allowing you to easily rerun your analysis with the same results.<span id="id1">[<a class="reference internal" href="references.html#id2" title="Felix Mölder, Kim Philipp Jablonski, Brice Letcher, Michael B Hall, Christopher H Tomkins-Tinch, Vanessa Sochat, Jan Forster, Soohyun Lee, Sven O Twardziok, Alexander Kanitz, and others. Sustainable data analysis with snakemake. F1000Research, 2021.">Mölder <em>et al.</em>, 2021</a>]</span></p>
+<p>But why choose Snakemake over other options? Here are some compelling reasons:</p>
+<ul class="simple">
+<li><p>Simplicity: Snakemake utilizes Python syntax, making it easy to learn and use, even for those without extensive coding experience.</p></li>
+<li><p>Cross-platform compatibility: Regardless of your operating system (Windows, Mac, or Linux), Snakemake runs seamlessly, ensuring your workflow remains portable.</p></li>
+<li><p>Scalability: Whether you’re working on a personal computer or a high-performance computing cluster, Snakemake can efficiently utilize available resources by parallelizing tasks whenever possible.</p></li>
+<li><p>Flexibility: Snakemake integrates seamlessly with various tools and languages, allowing you to leverage existing code and data formats within your workflow.</p></li>
+<li><p>Reproducibility: By capturing the entire analysis process in the Snakefile, Snakemake guarantees consistent and verifiable results, facilitating collaboration and sharing within scientific communities.</p></li>
+</ul>
+<p>Whether you’re working in genomics, bioinformatics, or any domain requiring complex data analysis, Snakemake offers a valuable tool for streamlining your work, improving its efficiency and reproducibility. Its intuitive approach and powerful features make it an excellent choice for researchers and scientists seeking to automate their workflows and achieve reliable results.</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<p>Snakemake is available on PyPi as well as through Bioconda and also from source code.
+You can use one of the following ways for installing Snakemake.</p>
+<p>Thanks to the Snakemake Team for providing the installation <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/getting_started/installation.html">Documentation</a>.</p>
+<section id="installation-via-conda-mamba">
+<h3>Installation via Conda/Mamba<a class="headerlink" href="#installation-via-conda-mamba" title="Link to this heading">#</a></h3>
+<p>If you already use Conda for other parts of the project you are working on it is recommended to install Snakemake through Conda as well,
+because it also enables Snakemake to handle other software dependencies.</p>
+<p>First, you need to install a Conda-based Python3 distribution.
+The recommended choice is Mambaforge_ which not only provides the required Python and Conda commands,
+but also includes Mamba_ an extremely fast and robust replacement for the Conda_ package manager which is highly recommended.
+The default conda solver is a bit slow and sometimes has issues with <a class="reference external" href="https://github.com/conda/conda/issues/9905">selecting the latest package releases</a>.
+Therefore, we recommend to in any case use Mamba_.</p>
+<p>In case you don’t use Mambaforge_ you can always install Mamba_ into any other Conda-based Python distribution with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>mamba
+</pre></div>
+</div>
+</section>
+<section id="full-installation">
+<h3>Full installation<a class="headerlink" href="#full-installation" title="Link to this heading">#</a></h3>
+<p>Snakemake can be installed with all goodies needed to run in any environment and for creating interactive reports via</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>$<span class="w"> </span>mamba<span class="w"> </span>create<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-c<span class="w"> </span>bioconda<span class="w"> </span>-n<span class="w"> </span>snakemake<span class="w"> </span>snakemake
+</pre></div>
+</div>
+<p>from the <a class="reference external" href="https://bioconda.github.io">Bioconda</a> channel.
+This will install snakemake into an isolated software environment, that has to be activated with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>$<span class="w"> </span>mamba<span class="w"> </span>activate<span class="w"> </span>snakemake
+<span class="w">    </span>$<span class="w"> </span>snakemake<span class="w"> </span>--help
+</pre></div>
+</div>
+<p>Installing into isolated environments is best practice in order to avoid side effects with other packages.</p>
+</section>
+<section id="notes-on-bioconda-as-a-package-source">
+<h3>Notes on Bioconda as a package source<a class="headerlink" href="#notes-on-bioconda-as-a-package-source" title="Link to this heading">#</a></h3>
+<p>Note that Snakemake is available via Bioconda for historical, reproducibility, and continuity reasons (although it is not limited to biology applications at all).
+However, it is easy to combine Snakemake installation with other channels, e.g., by prefixing the package name with <code class="docutils literal notranslate"><span class="pre">::bioconda</span></code>, i.e.,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>$<span class="w"> </span>mamba<span class="w"> </span>activate<span class="w"> </span>base
+<span class="w">    </span>$<span class="w"> </span>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>some-env<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>bioconda::snakemake<span class="w"> </span>...
+</pre></div>
+</div>
+</section>
+<section id="installation-via-pip">
+<h3>Installation via pip<a class="headerlink" href="#installation-via-pip" title="Link to this heading">#</a></h3>
+<p>Instead of conda, snakemake can be installed with pip.
+However, note that snakemake has non-python dependencies, such that the pip based installation has a limited functionality if those dependencies are not manually installed in addition.</p>
+<p>A list of Snakemake’s dependencies can be found within its <a class="reference external" href="https://bioconda.github.io/recipes/snakemake/README.html">meta.yaml conda recipe</a></p>
+<p><strong>IMPORTANT</strong> If you have problems installing snakemake using pip and you get an error message like this: <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">Failed</span> <span class="pre">building</span> <span class="pre">wheel</span> <span class="pre">for</span> <span class="pre">datrie</span></code> you first need to install the Python development headers.</p>
+<p>In Fedora this would be:</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>python3-devel
+</pre></div>
+</div>
+<p>On Ubuntu this would be:</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python-dev
+</pre></div>
+</div>
+<p>On Windows this would be:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>setuptools
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>wheel
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>python-dev
+</pre></div>
+</div>
+<p>After that you can just use the following command to install snakemake:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>snakemake
+</pre></div>
+</div>
+</section>
+<section id="installation-of-a-development-version-via-pip">
+<h3>Installation of a development version via pip<a class="headerlink" href="#installation-of-a-development-version-via-pip" title="Link to this heading">#</a></h3>
+<p>If you want to quickly try out an unreleased version from the snakemake repository (which you cannot get via bioconda, yet), for example to check whether a bug fix works for you workflow, you can get the current state of the main branch with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>$<span class="w"> </span>mamba<span class="w"> </span>create<span class="w"> </span>--only-deps<span class="w"> </span>-n<span class="w"> </span>snakemake-dev<span class="w"> </span>snakemake
+<span class="w">    </span>$<span class="w"> </span>mamba<span class="w"> </span>activate<span class="w"> </span>snakemake-dev
+<span class="w">    </span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/snakemake/snakemake
+</pre></div>
+</div>
+<p>You can also install the current state of another branch or the repository state at a particular commit.
+For information on the syntax for this, see <a class="reference external" href="https://pip.pypa.io/en/stable/topics/vcs-support/#git">the pip documentation on git support</a>.</p>
+</section>
+</section>
+<section id="example-workflow-based-on-zipf-s-law">
+<h2>Example Workflow based on Zipf’s Law<a class="headerlink" href="#example-workflow-based-on-zipf-s-law" title="Link to this heading">#</a></h2>
+<p>By now you should be familiar with what Zipf’s Law is, in the following subsection we will present you an example workflow using snakemake and Zipf’s Law as data.</p>
+<p>We are interested in understanding the frequency of words in various books, testing how closely each book conforms to Zipf’s Law.</p>
+<p>We’ve compiled our raw data (the books we want to analyze) and have prepared
+several Python scripts that together make up our analysis pipeline.</p>
+<p>Let’s take quick look at one of the books using the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>head<span class="w"> </span>data<span class="w"> </span>zipf/data/dracula.txt
+</pre></div>
+</div>
+<p>Will give the following result.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The Project Gutenberg EBook of Dracula, by Bram Stoker
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org/license
+
+
+
+Title: Dracula
+</pre></div>
+</div>
+<p>Our directory has the Python scripts and data files we we will be working
+with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span>-<span class="w"> </span>data
+<span class="p">|</span><span class="w">  </span><span class="p">|</span>-<span class="w"> </span>dracula.txt
+<span class="p">|</span><span class="w">  </span><span class="p">|</span>-<span class="w"> </span>jane_eyre.txt
+<span class="p">|</span><span class="w">  </span><span class="p">|</span>-<span class="w"> </span>moby_dick.txt
+<span class="p">|</span><span class="w">  </span><span class="p">|</span>-<span class="w"> </span>...<span class="w"> </span>.md
+<span class="p">|</span>-<span class="w"> </span>snakemake
+<span class="p">|</span><span class="w">  </span><span class="p">|</span>-<span class="w"> </span>plotcount.py
+<span class="p">|</span><span class="w">  </span><span class="p">|</span>-<span class="w"> </span>wordcount.py
+<span class="p">|</span><span class="w">  </span><span class="p">|</span>-<span class="w"> </span>zipf_test.py
+</pre></div>
+</div>
+<p>There may be some other files as well, but the ones listed above are the
+ones we are concerned with at present.</p>
+<p>The first step is to count the frequency of each word in a book. For this, we
+use the <code class="docutils literal notranslate"><span class="pre">wordcound.py</span></code> script. The first argument (<code class="docutils literal notranslate"><span class="pre">books/isles.txt</span></code>) to
+<a class="reference external" href="http://wordcount.py">wordcount.py</a> is the file to analyze, and the last argument (<code class="docutils literal notranslate"><span class="pre">isles.dat</span></code>)
+specifies the output file to write:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>snakemake/wordcount.py<span class="w"> </span>data/dracula.txt<span class="w"> </span>dracula.dat
+</pre></div>
+</div>
+<p>Let’s take a quick peek at the result:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">head</span> <span class="o">-</span><span class="mi">5</span> <span class="n">isles</span><span class="o">.</span><span class="n">dat</span>
+</pre></div>
+</div>
+<p>{: .language-bash}</p>
+<p>This shows us the first 5 lines in the output file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>the<span class="w"> </span><span class="m">8089</span><span class="w"> </span><span class="m">4</span>.836269931901207<span class="w">   </span>
+and<span class="w"> </span><span class="m">5976</span><span class="w"> </span><span class="m">3</span>.5729446301201144<span class="w">   </span>
+i<span class="w"> </span><span class="m">4846</span><span class="w"> </span><span class="m">2</span>.897337630114136<span class="w">   </span>
+to<span class="w"> </span><span class="m">4745</span><span class="w"> </span><span class="m">2</span>.836951517724221<span class="w">   </span>
+of<span class="w"> </span><span class="m">3748</span><span class="w"> </span><span class="m">2</span>.240862863736645<span class="w">  </span>
+a<span class="w"> </span><span class="m">3013</span><span class="w"> </span><span class="m">1</span>.8014193725823135<span class="w">   </span>
+he<span class="w"> </span><span class="m">2581</span><span class="w"> </span><span class="m">1</span>.5431342185977268
+...
+</pre></div>
+</div>
+<p>We can see that the file consists of one row per word. Each row shows the
+word itself, the number of occurrences of that word, and the number of
+occurrences as a percentage of the total number of words in the text file.
+The file is sorted by descending frequency, so the first 5 lines
+are the 5 most frequent words in the input text.</p>
+<p>Let’s visualize the results. The script <code class="docutils literal notranslate"><span class="pre">plotcount.py</span></code> reads in a data file
+and plots the 10 most frequently occurring words as a text-based bar plot:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>snakemake/plotcount.py<span class="w"> </span>data/dracula.dat<span class="w"> </span>ascii
+</pre></div>
+</div>
+<p><em><strong>in case the error: cannot import Sequence from Collections either add or remove the .abc from ‘from collections.abc import Sequence’</strong></em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>the<span class="w">   </span><span class="c1">########################################################################</span>
+and<span class="w">   </span><span class="c1">#####################################################</span>
+i<span class="w">     </span><span class="c1">###########################################</span>
+to<span class="w">    </span><span class="c1">##########################################</span>
+of<span class="w">    </span><span class="c1">#################################</span>
+a<span class="w">     </span><span class="c1">###########################</span>
+he<span class="w">    </span><span class="c1">#######################</span>
+<span class="k">in</span><span class="w">    </span><span class="c1">#######################</span>
+that<span class="w">  </span><span class="c1">######################</span>
+it<span class="w">    </span><span class="c1">###################</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">plotcount.py</span></code> can also create the plot as an image file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>snakemakeplotcount.py<span class="w"> </span>data/dracula.dat<span class="w"> </span>data/dracula.png
+</pre></div>
+</div>
+<p>Finally, let’s test Zipf’s law for these two books:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>snakemake/zipf_test.py<span class="w"> </span>data/moby_dick.dat<span class="w"> </span>data/dracula.dat
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Book<span class="w">            </span>First<span class="w">   </span>Second<span class="w">  </span>Ratio
+data/dracula<span class="w">    </span><span class="m">8089</span><span class="w">    </span><span class="m">5976</span><span class="w">    </span><span class="m">1</span>.35
+data/moby_dick<span class="w">  </span><span class="m">14519</span><span class="w">   </span><span class="m">6734</span><span class="w">    </span><span class="m">2</span>.16
+</pre></div>
+</div>
+<blockquote>
+<div><h3 class="rubric" id="zipf-s-law">Zipf’s Law</h3>
+<p>Recall that Zipf’s Law predicts that the most frequent word will
+occur approximately twice as often as the second most frequent word.</p>
+</div></blockquote>
+<p>Together these scripts implement a common workflow:</p>
+<ol class="arabic simple">
+<li><p>Read a data file.</p></li>
+<li><p>Perform an analysis on this data file.</p></li>
+<li><p>Write the analysis results to a new file.</p></li>
+<li><p>Plot a graph of the analysis results.</p></li>
+<li><p>Save the graph as an image, so we can put it in a paper.</p></li>
+<li><p>Make a summary table of the analyses, which requires aggregation of all previous results.</p></li>
+</ol>
+<p>Running <code class="docutils literal notranslate"><span class="pre">wordcount.py</span></code> and <code class="docutils literal notranslate"><span class="pre">plotcount.py</span></code> at the shell prompt, as we have
+been doing, is fine for one or two files. If, however, we had 5 or 10 or 20
+text files, or if the number of steps in the pipeline were to expand, this
+could turn into a lot of work. Plus, no one wants to sit and wait for a
+command to finish, even just for 30 seconds.</p>
+<p>The most common solution to the tedium of data processing is to write
+a shell script that runs the whole pipeline from start to finish.</p>
+<p>Using your text editor of choice (e.g. nano), add the following to a new file named
+<code class="docutils literal notranslate"><span class="pre">run_pipeline.sh</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE: bash run_pipeline.sh</span>
+<span class="c1"># to produce plots for isles and abyss</span>
+<span class="c1"># and the summary table for the Zipf&#39;s law tests</span>
+
+python<span class="w"> </span>wordcount.py<span class="w"> </span>books/isles.txt<span class="w"> </span>isles.dat
+python<span class="w"> </span>wordcount.py<span class="w"> </span>books/abyss.txt<span class="w"> </span>abyss.dat
+
+python<span class="w"> </span>plotcount.py<span class="w"> </span>isles.dat<span class="w"> </span>isles.png
+python<span class="w"> </span>plotcount.py<span class="w"> </span>abyss.dat<span class="w"> </span>abyss.png
+
+<span class="c1"># Generate summary table</span>
+python<span class="w"> </span>zipf_test.py<span class="w"> </span>abyss.dat<span class="w"> </span>isles.dat<span class="w"> </span>&gt;<span class="w"> </span>results.txt<span class="w"> </span>
+</pre></div>
+</div>
+<p>Run the script and check that the output is the same as before:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>run_pipeline.sh
+cat<span class="w"> </span>results.txt
+</pre></div>
+</div>
+<p>This shell script solves several problems in computational reproducibility:</p>
+<ol class="arabic simple">
+<li><p>It explicitly documents our pipeline,
+making communication with colleagues (and our future selves) more efficient.</p></li>
+<li><p>It allows us to type a single command, <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">run_pipeline.sh</span></code>, to
+reproduce the full analysis.</p></li>
+<li><p>It prevents us from <em>repeating</em> typos or mistakes.
+You might not get it right the first time, but once you fix something
+it’ll stay fixed.</p></li>
+</ol>
+<p>Despite these benefits it has a few shortcomings.</p>
+<p>Let’s adjust the width of the bars in our plot produced by <code class="docutils literal notranslate"><span class="pre">plotcount.py</span></code>.</p>
+<p>Edit <code class="docutils literal notranslate"><span class="pre">plotcount.py</span></code> so that the bars are 0.8 units wide instead of 1 unit.
+(Hint: replace <code class="docutils literal notranslate"><span class="pre">width</span> <span class="pre">=</span> <span class="pre">1.0</span></code> with <code class="docutils literal notranslate"><span class="pre">width</span> <span class="pre">=</span> <span class="pre">0.8</span></code> in the definition of
+<code class="docutils literal notranslate"><span class="pre">plot_word_counts</span></code>.)</p>
+<p>Now we want to recreate our figures. We <em>could</em> just <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">run_pipeline.sh</span></code>
+again. That would work, but it could also be a big pain if counting words
+takes more than a few seconds. The word counting routine hasn’t changed; we
+shouldn’t need to recreate those files.</p>
+<p>Alternatively, we could manually rerun the plotting for each word-count file.
+(Experienced shell scripters can make this easier on themselves using a
+for-loop.)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>book<span class="w"> </span><span class="k">in</span><span class="w"> </span>abyss<span class="w"> </span>isles<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span>python<span class="w"> </span>plotcount.py<span class="w"> </span><span class="nv">$book</span>.dat<span class="w"> </span><span class="nv">$book</span>.png
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>Another popular option is to comment out a subset of the lines in
+<code class="docutils literal notranslate"><span class="pre">run_pipeline.sh</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE: bash run_pipeline.sh</span>
+<span class="c1"># to produce plots for isles and abyss</span>
+<span class="c1"># and the summary table</span>
+
+<span class="c1"># These lines are commented out because they don&#39;t need to be rerun.</span>
+<span class="c1">#python wordcount.py books/isles.txt isles.dat</span>
+<span class="c1">#python wordcount.py books/abyss.txt abyss.dat</span>
+
+python<span class="w"> </span>plotcount.py<span class="w"> </span>isles.dat<span class="w"> </span>isles.png
+python<span class="w"> </span>plotcount.py<span class="w"> </span>abyss.dat<span class="w"> </span>abyss.png
+
+<span class="c1"># This line is also commented out because it doesn&#39;t need to be rerun.</span>
+python<span class="w"> </span>zipf_test.py<span class="w"> </span>abyss.dat<span class="w"> </span>isles.dat<span class="w"> </span>&gt;<span class="w"> </span>results.txt
+</pre></div>
+</div>
+<p>Then, we would run our modified shell script using <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">run_pipeline.sh</span></code>.</p>
+<p>But commenting out these lines, and subsequently uncommenting them, can be a
+hassle and source of errors in complicated pipelines. What happens if we have
+hundreds of input files? No one wants to enter the same command a hundred
+times, and then edit the result.</p>
+<p>What we really want is an executable <em>description</em> of our pipeline that
+allows software to do the tricky part for us: figuring out what tasks need to
+be run where and when, then perform those tasks for us.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../exercises/intro_make.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercises - Make</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="snakemake_continued.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Snakemake Continued</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-snakemake-what-is-it">Introduction to Snakemake - What is it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-via-conda-mamba">Installation via Conda/Mamba</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-installation">Full installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-on-bioconda-as-a-package-source">Notes on Bioconda as a package source</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-via-pip">Installation via pip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-a-development-version-via-pip">Installation of a development version via pip</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-workflow-based-on-zipf-s-law">Example Workflow based on Zipf’s Law</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Software Engineering Group - University of Potsdam
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
