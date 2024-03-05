@@ -66,4 +66,7 @@ benchmarking ....
 - use additional example from readthedocs
 
 
-**TODO** after capentries course is added, extend with documentation and other resource where needed. 
+**TODO** 
+[ ] after capentries course is added, extend with documentation and other resource where needed. 
+
+[ ] create graphs to visualize workflows
