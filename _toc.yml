@@ -84,7 +84,10 @@ parts:
         sections:
         - file: chapters/intro_make.md 
         - file: exercises/intro_make.ipynb 
-        - file: chapters/snakemake.md
+        - file: chapters/intro_snakemake.md
+        - file: chapters/snakemake_continued.md
+        - file: chapters/snakemake_advanced.md
+        - file: exercises/snakemake.md
       - file: chapters/introduction/cicd.md
         sections:
           - file: chapters/advanced_cicd.md

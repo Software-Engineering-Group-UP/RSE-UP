@@ -1,0 +1,10 @@
+rule count_words:
+    input: '../data/dracula.txt'
+    output: '../data/dracula.dat'
+    shell: 'python wordcount.py ../data/dracula.txt ../data/dracula.dat'
+
+rule count_words_moby_dick:
+	input: 	'../data/moby_dick.txt'
+	output: '../data/moby.dat'
+	shell: 	'python wordcount.py ../data/moby_dick.txt ../data/moby.dat'
+

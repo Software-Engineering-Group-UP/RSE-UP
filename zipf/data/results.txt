@@ -1,0 +1,3 @@
+Book	First	Second	Ratio
+../data/moby_dick	14519	6734	2.16
+../data/dracula	8089	5976	1.35
