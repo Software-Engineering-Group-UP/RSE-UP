@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>CI/CD &#8212; RSE-UP</title>
+    <title>Adding CI/CD to a project on Gitlab &#8212; RSE-UP</title>
   
   
   
@@ -58,12 +58,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/advanced_cicd';</script>
-    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/advanced_cicd.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/cicd_gitlab';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/cicd_gitlab.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Tracking Provenance" href="tracking_provenance.html" />
-    <link rel="prev" title="CICD" href="introduction/cicd.html" />
+    <link rel="prev" title="CI/CD Basics" href="cicd_basics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,6 +184,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresh.html">Python Refresher</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="introduction/bash.html">Introduction to Bash</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="bash_basics.html">The Basics of the Unix Shell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bash_tools.html">Building Tools with the Unix Shell</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="bash_advanced.html">Going Further with the Unix Shell</a></li>
@@ -225,12 +226,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing and Error Handling</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/testing.html">Testing</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/testing.html">Introduction to Testing</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="testing_programs.html">Testing Software</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/testing.html">Exercises - Testing</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/error_handling.html">Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/error_handling.html">Introduction to Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="error_handling.html">Handling Errors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/error_handling.html">Exercises - Error Handling</a></li>
 </ul>
@@ -255,7 +256,7 @@
 <li class="toctree-l2"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Automation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Introduction to Make</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
@@ -263,8 +264,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction/cicd.html">CICD</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">CI/CD</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction/cicd.html">Introduction to CI/CD</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cicd_basics.html">CI/CD Basics</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Adding CI/CD to a project on Gitlab</a></li>
 </ul>
 </li>
 </ul>
@@ -275,11 +277,24 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuration and Packaging</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="yaml.html">YAML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/config.html">Introduction to Configuration</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">YAML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/packaging.html">Introduction to Packaging Python Software</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">First Project - Invdividual</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../projects/individual/intro_project1.html">Introduction to the Individual Project</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../projects/individual/1_project_instructions.html">Project Assignment 1: Select a Dataset</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -359,7 +374,7 @@
       
       
       
-      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/advanced_cicd.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/cicd_gitlab.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -389,7 +404,7 @@
       
       
       
-      <li><a href="../_sources/chapters/advanced_cicd.md" target="_blank"
+      <li><a href="../_sources/chapters/cicd_gitlab.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -460,7 +475,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -471,11 +488,25 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>CI/CD</h1>
+    <h1>Adding CI/CD to a project on Gitlab</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-branches">Feature Branches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validating-ci-cd-yaml-configuration">Validating CI/CD YAML Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#but-what-s-a-linter">But what’s a linter?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-in-progress">Work In Progress?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-the-yaml">Fixing the YAML</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -485,8 +516,72 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ci-cd">
-<h1>CI/CD<a class="headerlink" href="#ci-cd" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="adding-ci-cd-to-a-project-on-gitlab">
+<h1>Adding CI/CD to a project on Gitlab<a class="headerlink" href="#adding-ci-cd-to-a-project-on-gitlab" title="Link to this heading">#</a></h1>
+<p>To continue please create a repository on <a class="reference external" href="http://Gitlab.com">Gitlab.com</a>. We call the first one <code class="docutils literal notranslate"><span class="pre">hello_cicd</span></code> and the second one <code class="docutils literal notranslate"><span class="pre">bye_cicd</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>hello_cicd
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello world&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitlab-ci.yml
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/add-ci
+git<span class="w"> </span>add<span class="w"> </span>.gitlab-ci.yml
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;my first ci/cd&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>feature/add-ci
+</pre></div>
+</div>
+<section id="feature-branches">
+<h2>Feature Branches<a class="headerlink" href="#feature-branches" title="Link to this heading">#</a></h2>
+<p>Since we’re adding a new feature (CI/CD) to our project, we’ll work in a feature branch. This is just a human-friendly named branch to indicate that it’s adding a new feature.</p>
+<p>Now, if you navigate to the GitLab webpage for that project and branch, you’ll notice a shiny new button</p>
+<figure class="align-default" id="first-push">
+<img alt="../_images/first_push.png" src="../_images/first_push.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 66 </span><span class="caption-text">First commit  CI failure</span><a class="headerlink" href="#first-push" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>which will link to the newly added <code class="docutils literal notranslate"><span class="pre">.gitlab-ci.yml</span></code>. But wait a minute, there’s also a big red <code class="docutils literal notranslate"><span class="pre">x</span></code> on the page too!</p>
+<p>What happened??? Let’s find out. Click on the red <code class="docutils literal notranslate"><span class="pre">x</span></code> which takes us to the <code class="docutils literal notranslate"><span class="pre">pipelines</span></code> page for the commit. On this page, we can see that this failed because the YAML was invalid…</p>
+<figure class="align-default" id="fail-state">
+<img alt="../_images/failure_status.png" src="../_images/failure_status.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 67 </span><span class="caption-text">Failure Status of the Pipeline</span><a class="headerlink" href="#fail-state" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We should fix this. If you click through again on the red <code class="docutils literal notranslate"><span class="pre">x</span></code> on the left for the pipeline there, you can get to the detailed page for the given pipeline to find out more information</p>
+<figure class="align-default" id="fail-info">
+<img alt="../_images/failure_info.png" src="../_images/failure_info.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 68 </span><span class="caption-text">Failure Information of the Pipeline</span><a class="headerlink" href="#fail-info" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="validating-ci-cd-yaml-configuration">
+<h3>Validating CI/CD YAML Configuration<a class="headerlink" href="#validating-ci-cd-yaml-configuration" title="Link to this heading">#</a></h3>
+<p>Every single project you make on GitLab comes with a linter for the YAML you write. This linter can be found at <code class="docutils literal notranslate"><span class="pre">&lt;project-url&gt;/-/ci/lint</span></code>. For example, if I have a project at <a class="reference external" href="https://gitlab.cern.ch/MultiBJets/MBJ_Analysis">https://gitlab.cern.ch/MultiBJets/MBJ_Analysis</a>, then the linter is at <a class="reference external" href="https://gitlab.cern.ch/MultiBJets/MBJ_Analysis/-/ci/lint">https://gitlab.cern.ch/MultiBJets/MBJ_Analysis/-/ci/lint</a>.</p>
+<p>This can also be found by going to <code class="docutils literal notranslate"><span class="pre">CI/CD</span> <span class="pre">-&gt;</span> <span class="pre">Pipelines</span></code> or <code class="docutils literal notranslate"><span class="pre">CI/CD</span> <span class="pre">-&gt;</span> <span class="pre">Jobs</span></code> page and clicking the <code class="docutils literal notranslate"><span class="pre">CI</span> <span class="pre">Lint</span></code> button at the top right.</p>
+</section>
+<section id="but-what-s-a-linter">
+<h3>But what’s a linter?<a class="headerlink" href="#but-what-s-a-linter" title="Link to this heading">#</a></h3>
+<p>From <a class="reference external" href="https://en.wikipedia.org/wiki/Lint_(software)">wikipedia</a>: <code class="docutils literal notranslate"><span class="pre">lint</span></code>, or a linter, is a tool that analyzes source code to flag programming errors, bugs, stylistic errors, and suspicious constructs. The term originates from a Unix utility that examined C language source code.</p>
+<p>Lastly, we’ll open up a merge request for this branch, since we plan to merge this back into master when we’re happy with the first iteration of the CI/CD.</p>
+</section>
+</section>
+<section id="work-in-progress">
+<h2>Work In Progress?<a class="headerlink" href="#work-in-progress" title="Link to this heading">#</a></h2>
+<p>If you expect to be working on a branch for a bit of time while you have a merge request open, it’s good etiquette to mark it as a Work-In-Progress (WIP).</p>
+<figure class="align-default" id="merge-request">
+<img alt="figures/cicd/merge_request.png" src="figures/cicd/merge_request.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 69 </span><span class="caption-text">WIP merge request</span><a class="headerlink" href="#merge-request" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="fixing-the-yaml">
+<h2>Fixing the YAML<a class="headerlink" href="#fixing-the-yaml" title="Link to this heading">#</a></h2>
+<p>Now, our YAML is currently invalid, but this makes sense because we didn’t actually define any script to run. Let’s go ahead and update our first job that simply echoes “Hello World”.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">hello world</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Hello World&quot;</span>
+</pre></div>
+</div>
+<p><strong>TODO</strong> before CONTINUING NEED CONTACT WITH ADMIN running PIPELINES….</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -520,12 +615,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="introduction/cicd.html"
+       href="cicd_basics.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">CICD</p>
+        <p class="prev-next-title">CI/CD Basics</p>
       </div>
     </a>
     <a class="right-next"
@@ -544,7 +639,26 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-branches">Feature Branches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validating-ci-cd-yaml-configuration">Validating CI/CD YAML Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#but-what-s-a-linter">But what’s a linter?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-in-progress">Work In Progress?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-the-yaml">Fixing the YAML</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

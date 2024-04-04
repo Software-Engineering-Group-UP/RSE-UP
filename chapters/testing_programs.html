@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Exercises - Testing" href="../exercises/testing.html" />
-    <link rel="prev" title="Testing" href="introduction/testing.html" />
+    <link rel="prev" title="Introduction to Testing" href="introduction/testing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,6 +186,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresh.html">Python Refresher</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="introduction/bash.html">Introduction to Bash</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="bash_basics.html">The Basics of the Unix Shell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bash_tools.html">Building Tools with the Unix Shell</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="bash_advanced.html">Going Further with the Unix Shell</a></li>
@@ -227,12 +228,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing and Error Handling</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction/testing.html">Testing</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction/testing.html">Introduction to Testing</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Testing Software</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/testing.html">Exercises - Testing</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/error_handling.html">Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/error_handling.html">Introduction to Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="error_handling.html">Handling Errors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/error_handling.html">Exercises - Error Handling</a></li>
 </ul>
@@ -257,7 +258,7 @@
 <li class="toctree-l2"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Automation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Introduction to Make</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
@@ -265,8 +266,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">CICD</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">Introduction to CI/CD</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="cicd_basics.html">CI/CD Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cicd_gitlab.html">Adding CI/CD to a project on Gitlab</a></li>
 </ul>
 </li>
 </ul>
@@ -277,11 +279,24 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuration and Packaging</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="yaml.html">YAML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/config.html">Introduction to Configuration</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">YAML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/packaging.html">Introduction to Packaging Python Software</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">First Project - Invdividual</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../projects/individual/intro_project1.html">Introduction to the Individual Project</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../projects/individual/1_project_instructions.html">Project Assignment 1: Select a Dataset</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -508,29 +523,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="testing-software">
 <h1>Testing Software<a class="headerlink" href="#testing-software" title="Link to this heading">#</a></h1>
-<blockquote>
-<div><p>Opera happens because a large number of things amazingly fail to go wrong.</p>
-<p>— Terry Pratchett</p>
-</div></blockquote>
-<p>We have written software to count and analyze the words in classic texts,
-but how can we be sure it’s producing reliable results?
-The short is answer is that we can’t—not completely—but
-we can test its behavior against our expectations to decide if we are sure enough.
-This chapter explores ways to do this,
-including assertions, unit tests, integration tests, and regression tests.</p>
-<blockquote>
-<div><p><strong>A Scientist’s Nightmare</strong></p>
-<p>Why is testing research software important?
-A successful early career researcher in protein crystallography,
-Geoffrey Chang,
-had to retract five published papers—three from
-the journal <em>Science</em>—because his code had
-inadvertently flipped two columns of data [<span id="id1">[<a class="reference internal" href="references.html#id59" title="Greg Miller. A Scientist's Nightmare: Software Problem Leads to Five Retractions. Science, 314(5807):1856–1857, 2006. doi:10.1126/science.314.5807.1856.">Miller, 2006</a>]</span>].
-More recently, a simple calculation mistake in a paper by Reinhart and Rogoff
-contributed to making the financial crash of 2008 even worse
-for millions of people [<span id="id2">[<a class="reference internal" href="references.html#id19" title="Jonathan Borwein and David H. Bailey. The Reinhart-Rogoff Error—Or, How not to Excel at Economics. 2013. Summarizes the now-infamous Reinhart–Rogoff spreadsheet. URL: https://theconversation.com/the-reinhart-rogoff-error-or-how-not-to-excel-at-economics-13646.">Borwein and Bailey, 2013</a>]</span>].
-Testing helps to catch errors like these.</p>
-</div></blockquote>
 <p>Here’s the current structure of our Zipf’s Law project files:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zipf/
 ├── .gitignore
@@ -951,7 +943,7 @@ if the actual value is within some <strong>tolerance</strong> of the expected va
 The tolerance can be expressed as the <strong>absolute error</strong>,
 which is the absolute value of the difference between two,
 or the <strong>relative error</strong>,
-which the ratio of the absolute error to the value we’re approximating <span id="id3">[<a class="reference internal" href="references.html#id39" title="David Goldberg. What Every Computer Scientist Should Know about Floating-Point Arithmetic. ACM Computing Surveys, 23(1):5-48, Mar 1991. A detailed but accessible explanation of how computer arithmetic actually works. doi:10.1145/103162.103163.">Goldberg, 1991</a>]</span>.
+which the ratio of the absolute error to the value we’re approximating <span id="id1">[<a class="reference internal" href="references.html#id39" title="David Goldberg. What Every Computer Scientist Should Know about Floating-Point Arithmetic. ACM Computing Surveys, 23(1):5-48, Mar 1991. A detailed but accessible explanation of how computer arithmetic actually works. doi:10.1145/103162.103163.">Goldberg, 1991</a>]</span>.
 For example,
 if we add 9+1 and get 11,
 the absolute error is 1 (i.e., <span class="math notranslate nohighlight">\(11-10\)</span>,
@@ -1221,7 +1213,7 @@ produces the colorized line-by-line display shown in <a class="reference interna
 <figure class="align-default" id="python-coverage">
 <img alt="../_images/python-coverage.png" src="../_images/python-coverage.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 39 </span><span class="caption-text">Python Coverage</span><a class="headerlink" href="#python-coverage" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Python Coverage</span><a class="headerlink" href="#python-coverage" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This output confirms that all lines relating to word counting were tested,
@@ -1384,7 +1376,7 @@ on the left-hand side of the Travis CI homepage (<a class="reference internal" 
 <figure class="align-default" id="testing-add-repo">
 <img alt="../_images/travis-add-repo.png" src="../_images/travis-add-repo.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Travis Adding a repo</span><a class="headerlink" href="#testing-add-repo" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Travis Adding a repo</span><a class="headerlink" href="#testing-add-repo" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>To add the GitHub repository we have been using throughout this book,
@@ -1399,7 +1391,7 @@ Click the “Trigger a build” button to initiate your first test using Travis 
 <figure class="align-default" id="testing-list-repo">
 <img alt="../_images/travis-list-repos.png" src="../_images/travis-list-repos.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 41 </span><span class="caption-text">List repos</span><a class="headerlink" href="#testing-list-repo" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">List repos</span><a class="headerlink" href="#testing-list-repo" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Once your repository has been activated,
@@ -1422,12 +1414,12 @@ repository name
 <figure class="align-default" id="testing-build-pass">
 <img alt="../_images/travis-build-pass.png" src="../_images/travis-build-pass.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 42 </span><span class="caption-text">Build pass</span><a class="headerlink" href="#testing-build-pass" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 46 </span><span class="caption-text">Build pass</span><a class="headerlink" href="#testing-build-pass" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This example shows one of the other benefits of CI:
 it forces us to be explicit about what we are doing and how we do it,
-just as writing a Makefile forces us to be explicit about exactly how we produce results <span id="id4">[<a class="reference internal" href="references.html#id88" title="Fiorella Zampetti, Carmine Vassallo, Sebastiano Panichella, Gerardo Canfora, Harald Gall, and Massimiliano Di Penta. An Empirical Characterization of Bad Practices in Continuous Integration. Empirical Software Engineering, 25(2):1095–1135, Jan 2020. Presents and categorizes common errors in continuous integration. URL: https://doi.org/10.1007/s10664-019-09785-8, doi:10.1007/s10664-019-09785-8.">Zampetti <em>et al.</em>, 2020</a>]</span>.</p>
+just as writing a Makefile forces us to be explicit about exactly how we produce results <span id="id2">[<a class="reference internal" href="references.html#id88" title="Fiorella Zampetti, Carmine Vassallo, Sebastiano Panichella, Gerardo Canfora, Harald Gall, and Massimiliano Di Penta. An Empirical Characterization of Bad Practices in Continuous Integration. Empirical Software Engineering, 25(2):1095–1135, Jan 2020. Presents and categorizes common errors in continuous integration. URL: https://doi.org/10.1007/s10664-019-09785-8, doi:10.1007/s10664-019-09785-8.">Zampetti <em>et al.</em>, 2020</a>]</span>.</p>
 </section>
 <section id="when-to-write-tests">
 <h2>When to Write Tests<a class="headerlink" href="#when-to-write-tests" title="Link to this heading">#</a></h2>
@@ -1453,7 +1445,7 @@ instead of trying to uncover errors.</p></li>
 </ol>
 <p>These arguments are plausible.
 However,
-studies such as <span id="id5">[<a class="reference internal" href="references.html#id36" title="Davide Fucci, Giuseppe Scanniello, Simone Romano, Martin Shepperd, Boyce Sigweni, Fernando Uyaguari, Burak Turhan, Natalia Juristo, and Markku Oivo. An External Replication on the Effects of Test-driven Development Using a Multi-site Blind Analysis Approach. In Proc. 10th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM'16). ACM Press, 2016. The latest in a long line of studies to find that test-driven development (TDD) has little or no impact on development time or code quality. doi:10.1145/2961111.2962592.">Fucci <em>et al.</em>, 2016</a>]</span> and <span id="id6">[<a class="reference internal" href="references.html#id37" title="Davide Fucci, Hakan Erdogmus, Burak Turhan, Markku Oivo, and Natalia Juristo. A Dissection of the Test-Driven Development Process: Does It Really Matter to Test-First or to Test-Last? IEEE Transactions on Software Engineering, 43(7):597-614, Jul 2017. An evidence-based look at whether writing tests first produces better code faster. doi:10.1109/tse.2016.2616877.">Fucci <em>et al.</em>, 2017</a>]</span> don’t support them:
+studies such as <span id="id3">[<a class="reference internal" href="references.html#id36" title="Davide Fucci, Giuseppe Scanniello, Simone Romano, Martin Shepperd, Boyce Sigweni, Fernando Uyaguari, Burak Turhan, Natalia Juristo, and Markku Oivo. An External Replication on the Effects of Test-driven Development Using a Multi-site Blind Analysis Approach. In Proc. 10th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM'16). ACM Press, 2016. The latest in a long line of studies to find that test-driven development (TDD) has little or no impact on development time or code quality. doi:10.1145/2961111.2962592.">Fucci <em>et al.</em>, 2016</a>]</span> and <span id="id4">[<a class="reference internal" href="references.html#id37" title="Davide Fucci, Hakan Erdogmus, Burak Turhan, Markku Oivo, and Natalia Juristo. A Dissection of the Test-Driven Development Process: Does It Really Matter to Test-First or to Test-Last? IEEE Transactions on Software Engineering, 43(7):597-614, Jul 2017. An evidence-based look at whether writing tests first produces better code faster. doi:10.1109/tse.2016.2616877.">Fucci <em>et al.</em>, 2017</a>]</span> don’t support them:
 in practice,
 writing tests first or last doesn’t appear to affect productivity.
 What <em>does</em> have an impact is working in small, interleaved increments,
@@ -1490,7 +1482,7 @@ runnable assertions can’t fall out of step with what the code is actually doin
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>Testing data analysis pipelines is often harder than testing mainstream software applications,
-since data analysts often don’t know what the right answer is [<span id="id7">[<a class="reference internal" href="references.html#id20" title="Houssem Ben Braiek and Foutse Khomh. On Testing Machine Learning Programs. 2018. Looks at how developers (don't) test machine learning programs. URL: https://arxiv.org/abs/1812.02257.">Braiek and Khomh, 2018</a>]</span>].
+since data analysts often don’t know what the right answer is [<span id="id5">[<a class="reference internal" href="references.html#id20" title="Houssem Ben Braiek and Foutse Khomh. On Testing Machine Learning Programs. 2018. Looks at how developers (don't) test machine learning programs. URL: https://arxiv.org/abs/1812.02257.">Braiek and Khomh, 2018</a>]</span>].
 (If we did,
 we would have submitted our report and moved on to the next problem already.)
 The key distinction is the difference between <strong>validation</strong>,
@@ -1550,7 +1542,7 @@ and to make tolerances on “enough” explicit.</p></li>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Testing</p>
+        <p class="prev-next-title">Introduction to Testing</p>
       </div>
     </a>
     <a class="right-next"

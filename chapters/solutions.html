@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Working Remotely" href="working_remotely.html" />
-    <link rel="prev" title="Exercises - Packaging" href="../exercises/packaging.html" />
+    <link rel="prev" title="Project Assignment 1: Select a Dataset" href="../projects/individual/1_project_instructions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,6 +184,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresh.html">Python Refresher</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="introduction/bash.html">Introduction to Bash</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="bash_basics.html">The Basics of the Unix Shell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bash_tools.html">Building Tools with the Unix Shell</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="bash_advanced.html">Going Further with the Unix Shell</a></li>
@@ -225,12 +226,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing and Error Handling</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/testing.html">Testing</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/testing.html">Introduction to Testing</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="testing_programs.html">Testing Software</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/testing.html">Exercises - Testing</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/error_handling.html">Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/error_handling.html">Introduction to Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="error_handling.html">Handling Errors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/error_handling.html">Exercises - Error Handling</a></li>
 </ul>
@@ -255,7 +256,7 @@
 <li class="toctree-l2"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Automation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Introduction to Make</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
@@ -263,8 +264,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">CICD</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">Introduction to CI/CD</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="cicd_basics.html">CI/CD Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cicd_gitlab.html">Adding CI/CD to a project on Gitlab</a></li>
 </ul>
 </li>
 </ul>
@@ -275,11 +277,24 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuration and Packaging</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="yaml.html">YAML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/config.html">Introduction to Configuration</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">YAML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/packaging.html">Introduction to Packaging Python Software</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">First Project - Invdividual</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../projects/individual/intro_project1.html">Introduction to the Individual Project</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../projects/individual/1_project_instructions.html">Project Assignment 1: Select a Dataset</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="current nav bd-sidenav">
@@ -629,6 +644,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite-dat-rules-to-use-wildcards">3. Rewrite .dat rules to use wildcards</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-one-input-file">4. Updating One Input File</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-zipf-test-rule">5. Updating Zipf_test rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">6. Putting it all Together</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-the-dat-files">7. Moving the <code class="docutils literal notranslate"><span class="pre">dat</span></code> files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-pngs">8. Creating PNGs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-plots">9. Generating Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-archive">10. Creating an Archive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-if-snakemake-does-not-have-enough-resources">12. What happens if Snakemake does not have enough resources?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-all-other-duplicated-strings-with-global-variables">13. Replace all other duplicated strings with global variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-global-variables-and-wildcards-in-formatted-strings">14 Combining global variables and wildcards in formatted strings</a></li>
 </ul>
 </li>
 </ul>
@@ -2576,41 +2599,42 @@ $<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> <
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="snakemake-exercise-solutions">
 <h1>Snakemake Exercise Solutions<a class="headerlink" href="#snakemake-exercise-solutions" title="Link to this heading">#</a></h1>
+<p><strong>NOTE</strong> the solution are only meant to be a guide, therefore the file paths might not be 100% accurate.</p>
 <section id="write-two-new-rules">
 <h2>1. Write two New Rules<a class="headerlink" href="#write-two-new-rules" title="Link to this heading">#</a></h2>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">zipf_test</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="s1">&#39;data/jane_eyre.dat&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;data/frankenstein.dat&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;data/sherlock_holmes.dat&#39;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;data/results.txt&#39;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python zipf_test.py data/frankenstein.dat data/jane_eyre.dat data/sherlock_holmes.dat &gt; data/results.txt&#39;</span>
+        <span class="s1">&#39;results/jane_eyre.dat&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;results/frankenstein.dat&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;results/sherlock_holmes.dat&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;results/results.txt&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python zipf_test.py results/frankenstein.dat results/jane_eyre.dat results/sherlock_holmes.dat &gt; results/results.txt&#39;</span>
 
 <span class="n">rule</span> <span class="n">dats</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="s1">&#39;isles.dat&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;abyss.dat&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;jane_eyre.dat&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dracula.dat&#39;</span><span class="p">,</span>
         <span class="s1">&#39;sherlock_holmes.dat&#39;</span>
 
 <span class="c1"># delete everything so we can re-run things</span>
 <span class="n">rule</span> <span class="n">clean</span><span class="p">:</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;rm -f data/*.dat data/results.txt&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;rm -f results/*.dat results/results.txt&#39;</span>
 
 <span class="c1"># Count words in one of the books</span>
 <span class="n">rule</span> <span class="n">count_words</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;data/frankenstein.txt&#39;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;data/frankenstein.dat&#39;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python wordcount.py data/frankenstein.txt data/frankenstein.dat&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;results/frankenstein.dat&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python wordcount.py data/frankenstein.txt results/frankenstein.dat&#39;</span>
 
 <span class="n">rule</span> <span class="n">count_words_jane</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;data/jane_eyre.txt&#39;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;data/jane_eyre.dat&#39;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python wordcount.py data/jane_eyre.txt data/jane_eyre.dat&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;results/jane_eyre.dat&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python wordcount.py data/jane_eyre.txt results/jane_eyre.dat&#39;</span>
 
 <span class="n">rule</span> <span class="n">count_words_sherlock</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;data/sherlock_holmes.txt&#39;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;data/sherlock_holmes.dat&#39;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python wordcount.py data/sherlock_holmes.txt data/sherlock_holmes.dat&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;results/sherlock_holmes.dat&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python wordcount.py data/sherlock_holmes.txt results/sherlock_holmes.dat&#39;</span>
 </pre></div>
 </div>
 </section>
@@ -2628,7 +2652,7 @@ snakemake<span class="w"> </span>results.txt
 <h2>3. Rewrite .dat rules to use wildcards<a class="headerlink" href="#rewrite-dat-rules-to-use-wildcards" title="Link to this heading">#</a></h2>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">count_words</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;data/dracula.txt&#39;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;data/dracula.dat&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;results/dracula.dat&#39;</span>
     <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python wordcount.py </span><span class="si">{input}</span><span class="s1"> </span><span class="si">{output}</span><span class="s1">&#39;</span>
 </pre></div>
 </div>
@@ -2642,11 +2666,189 @@ snakemake<span class="w"> </span>results.txt
 <section id="updating-zipf-test-rule">
 <h2>5. Updating Zipf_test rule<a class="headerlink" href="#updating-zipf-test-rule" title="Link to this heading">#</a></h2>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">zipf_test</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span>  <span class="s1">&#39;zipf_test.py&#39;</span><span class="p">,</span> <span class="s1">&#39;data/dracula.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;data/frankenstein.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;data/last.dat&#39;</span>
+    <span class="nb">input</span><span class="p">:</span>  <span class="s1">&#39;zipf_test.py&#39;</span><span class="p">,</span> <span class="s1">&#39;results/dracula.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;results/frankenstein.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;results/sherlock_holmes.dat&#39;</span>
     <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;results.txt&#39;</span>
     <span class="n">shell</span><span class="p">:</span>  <span class="s1">&#39;python </span><span class="si">{input[0]}</span><span class="s1"> </span><span class="si">{input[1]}</span><span class="s1"> </span><span class="si">{input[2]}</span><span class="s1"> </span><span class="si">{input[3]}</span><span class="s1"> &gt; </span><span class="si">{output}</span><span class="s1">&#39;</span>
 </pre></div>
 </div>
+</section>
+<section id="putting-it-all-together">
+<h2>6. Putting it all Together<a class="headerlink" href="#putting-it-all-together" title="Link to this heading">#</a></h2>
+<p>The critical change is to the assignment of <code class="docutils literal notranslate"><span class="pre">DATS</span></code>, building it dynamically from the input <code class="docutils literal notranslate"><span class="pre">*.txt</span></code> file names.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">DATS</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{book}</span><span class="s1">.dat&#39;</span><span class="p">,</span> <span class="n">book</span><span class="o">=</span><span class="n">glob_wildcards</span><span class="p">(</span><span class="s1">&#39;./data/</span><span class="si">{book}</span><span class="s1">.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">book</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="moving-the-dat-files">
+<h2>7. Moving the <code class="docutils literal notranslate"><span class="pre">dat</span></code> files<a class="headerlink" href="#moving-the-dat-files" title="Link to this heading">#</a></h2>
+<p>First update the <code class="docutils literal notranslate"><span class="pre">DATS</span></code> variable with the <code class="docutils literal notranslate"><span class="pre">dats</span></code> directory:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">DATS</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="s1">&#39;dats/</span><span class="si">{file}</span><span class="s1">.dat&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">glob_wildcards</span><span class="p">(</span><span class="s1">&#39;./books/</span><span class="si">{book}</span><span class="s1">.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">book</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then update <code class="docutils literal notranslate"><span class="pre">count_words</span></code> so the dat files get created in the same place:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">count_words</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">cmd</span><span class="o">=</span><span class="s1">&#39;wordcount.py&#39;</span><span class="p">,</span>
+        <span class="n">book</span><span class="o">=</span><span class="s1">&#39;data/</span><span class="si">{file}</span><span class="s1">.txt&#39;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;results/dats/</span><span class="si">{file}</span><span class="s1">.dat&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python </span><span class="si">{input.cmd}</span><span class="s1"> </span><span class="si">{input.book}</span><span class="s1"> </span><span class="si">{output}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>Finally, update the <code class="docutils literal notranslate"><span class="pre">clean</span></code> rule to remove the <code class="docutils literal notranslate"><span class="pre">dats</span></code> directory:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">clean</span><span class="p">:</span>
+      <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;rm -rf results/dats/ *.dat results/results.txt&#39;</span>
+</pre></div>
+</div>
+<p><em>Note that in the clean rule there is no harm from keeping the <code class="docutils literal notranslate"><span class="pre">*.dat</span></code> pattern in the <code class="docutils literal notranslate"><span class="pre">rm</span></code> command even though no new files will be created in that location. It will help clean up if you forgot to run <code class="docutils literal notranslate"><span class="pre">snakemake</span> <span class="pre">clean</span></code> before updating the Snakefile.</em></p>
+</section>
+<section id="creating-pngs">
+<h2>8. Creating PNGs<a class="headerlink" href="#creating-pngs" title="Link to this heading">#</a></h2>
+<p>Modify the <code class="docutils literal notranslate"><span class="pre">clean</span></code> rule and add a new pattern rule <code class="docutils literal notranslate"><span class="pre">make_plot</span></code>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete everything so we can re-run things</span>
+<span class="n">rule</span> <span class="n">clean</span><span class="p">:</span>
+     <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;rm -rf dats/ plots/ *.dat results.txt&#39;</span>
+
+<span class="c1"># plot one word count dat file</span>
+<span class="n">rule</span> <span class="n">make_plot</span><span class="p">:</span>
+     <span class="nb">input</span><span class="p">:</span>
+         <span class="n">cmd</span><span class="o">=</span><span class="s1">&#39;plotcount.py&#39;</span><span class="p">,</span>
+         <span class="n">dat</span><span class="o">=</span><span class="s1">&#39;dats/</span><span class="si">{file}</span><span class="s1">.dat&#39;</span>
+     <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;plots/</span><span class="si">{file}</span><span class="s1">.png&#39;</span>
+     <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python </span><span class="si">{input.cmd}</span><span class="s1"> </span><span class="si">{input.dat}</span><span class="s1"> </span><span class="si">{output}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="generating-plots">
+<h2>9. Generating Plots<a class="headerlink" href="#generating-plots" title="Link to this heading">#</a></h2>
+<p>First, we modify the existing code that builds <code class="docutils literal notranslate"><span class="pre">DATS</span></code> to first extract the list of book names, and then to build <code class="docutils literal notranslate"><span class="pre">DATS</span></code> and a new global variable <code class="docutils literal notranslate"><span class="pre">PLOTS</span></code>listing all plots:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build the list of book names. We need to use it multiple times when building</span>
+<span class="c1"># the lists of files that will be built in the workflow</span>
+<span class="n">BOOK_NAMES</span> <span class="o">=</span> <span class="n">glob_wildcards</span><span class="p">(</span><span class="s1">&#39;./data/</span><span class="si">{book}</span><span class="s1">.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">book</span>
+
+<span class="c1"># The list of all dat files</span>
+<span class="n">DATS</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="s1">&#39;dats/</span><span class="si">{file}</span><span class="s1">.dat&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">BOOK_NAMES</span><span class="p">)</span>
+<span class="c1"># The list of all plot files</span>
+<span class="n">PLOTS</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="s1">&#39;plots/</span><span class="si">{file}</span><span class="s1">.png&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">BOOK_NAMES</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now we can define the <code class="docutils literal notranslate"><span class="pre">all</span></code> rule:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pseudo-rule that tries to build everything.</span>
+<span class="c1"># Just add all the final outputs that you want built.</span>
+<span class="n">rule</span> <span class="nb">all</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;results.txt&#39;</span><span class="p">,</span> <span class="n">PLOTS</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-an-archive">
+<h2>10. Creating an Archive<a class="headerlink" href="#creating-an-archive" title="Link to this heading">#</a></h2>
+<p>First the <code class="docutils literal notranslate"><span class="pre">create_archive</span></code> rule:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create an archive with all results</span>
+<span class="n">rule</span> <span class="n">create_archive</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;results.txt&#39;</span><span class="p">,</span> <span class="n">DATS</span><span class="p">,</span> <span class="n">PLOTS</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;zipf_analysis.tar.gz&#39;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;tar -czvf </span><span class="si">{output}</span><span class="s1"> </span><span class="si">{input}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>Then the update to the <code class="docutils literal notranslate"><span class="pre">clean</span> <span class="pre">target</span></code>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete everything so we can re-run things</span>
+<span class="n">rule</span> <span class="n">clean</span><span class="p">:</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;rm -rf dats/ plots/ *.dat results.txt zipf_analysis.tar.gz&#39;</span>
+</pre></div>
+</div>
+<p>Then the change to <code class="docutils literal notranslate"><span class="pre">all</span></code>. The workflow would still be correct without this step, but since <code class="docutils literal notranslate"><span class="pre">create_archive</span></code> requires building everything, it is simpler to just get <code class="docutils literal notranslate"><span class="pre">all</span></code> to depend on <code class="docutils literal notranslate"><span class="pre">create_archive</span></code>. This means we have just one rule to maintain if we add new outputs later on.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pseudo-rule that tries to build everything.</span>
+<span class="c1"># Just add all the final outputs that you want built.</span>
+<span class="n">rule</span> <span class="nb">all</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;zipf_analysis.tar.gz&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="what-happens-if-snakemake-does-not-have-enough-resources">
+<h2>12. What happens if Snakemake does not have enough resources?<a class="headerlink" href="#what-happens-if-snakemake-does-not-have-enough-resources" title="Link to this heading">#</a></h2>
+<p>Similar to the case where a rule specifies more threads than are available, the rule still runs.</p>
+<p>Resource constraints will limit the maximum number of rules that Snakemake will attempt to run at the same time, but not the minimum.
+Where sufficient resources are not available, Snakemake will still run at least one task.</p>
+<p>Once again, it is up to the code being run by the rule to check that sufficient resources are actually available.</p>
+<p>The Bash <code class="docutils literal notranslate"><span class="pre">if</span></code> test approach used for <code class="docutils literal notranslate"><span class="pre">{threads}</span></code> works equally well to check for minimum required resource values. Just use <code class="docutils literal notranslate"><span class="pre">{resources.gpu}</span></code> (or your actual resource name) to access the value.</p>
+</section>
+<section id="replace-all-other-duplicated-strings-with-global-variables">
+<h2>13. Replace all other duplicated strings with global variables<a class="headerlink" href="#replace-all-other-duplicated-strings-with-global-variables" title="Link to this heading">#</a></h2>
+<p>This solution is also available as <code class="docutils literal notranslate"><span class="pre">.solutions/reduce_duplication/Snakefile-remove-duplicates</span></code>.
+Possibly the only tricky part is in the <code class="docutils literal notranslate"><span class="pre">clean</span></code> rule where we use
+a formatted Python string to build the global variables into the shell
+command. We used f-string notation, but <code class="docutils literal notranslate"><span class="pre">string.format</span></code> would also work.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">RESULTS_FILE</span> <span class="o">=</span> <span class="s1">&#39;results.txt&#39;</span>
+<span class="n">ARCHIVE_FILE</span> <span class="o">=</span> <span class="s1">&#39;zipf_analysis.tar.gz&#39;</span>
+
+<span class="c1"># a single plot file</span>
+<span class="n">PLOT_FILE</span> <span class="o">=</span> <span class="s1">&#39;plots/</span><span class="si">{book}</span><span class="s1">.png&#39;</span>
+
+<span class="c1"># a single dat file</span>
+<span class="n">DAT_FILE</span> <span class="o">=</span> <span class="s1">&#39;dats/</span><span class="si">{book}</span><span class="s1">.dat&#39;</span>
+
+<span class="c1"># a single input book</span>
+<span class="n">BOOK_FILE</span> <span class="o">=</span> <span class="s1">&#39;books/</span><span class="si">{book}</span><span class="s1">.txt&#39;</span>
+
+<span class="c1"># Build the list of book names.</span>
+<span class="n">BOOK_NAMES</span> <span class="o">=</span> <span class="n">glob_wildcards</span><span class="p">(</span><span class="n">BOOK_FILE</span><span class="p">)</span><span class="o">.</span><span class="n">book</span>
+
+<span class="c1"># The list of all dat files</span>
+<span class="n">ALL_DATS</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">DAT_FILE</span><span class="p">,</span> <span class="n">book</span><span class="o">=</span><span class="n">BOOK_NAMES</span><span class="p">)</span>
+
+<span class="c1"># The list of all plot files</span>
+<span class="n">ALL_PLOTS</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">PLOT_FILE</span><span class="p">,</span> <span class="n">book</span><span class="o">=</span><span class="n">BOOK_NAMES</span><span class="p">)</span>
+
+<span class="c1"># pseudo-rule that tries to build everything.</span>
+<span class="c1"># Just add all the final outputs that you want built.</span>
+<span class="n">rule</span> <span class="nb">all</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="n">ARCHIVE_FILE</span>
+
+<span class="c1"># Generate summary table</span>
+<span class="n">rule</span> <span class="n">zipf_test</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">cmd</span><span class="o">=</span><span class="s1">&#39;zipf_test.py&#39;</span><span class="p">,</span>
+        <span class="n">dats</span><span class="o">=</span><span class="n">ALL_DATS</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">RESULTS_FILE</span>
+    <span class="n">shell</span><span class="p">:</span>  <span class="s1">&#39;python </span><span class="si">{input.cmd}</span><span class="s1"> </span><span class="si">{input.dats}</span><span class="s1"> </span><span class="si">{output}</span><span class="s1">&#39;</span>
+
+<span class="c1"># delete everything so we can re-run things</span>
+<span class="n">rule</span> <span class="n">clean</span><span class="p">:</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;rm -rf dats/ plots/ </span><span class="si">{</span><span class="n">RESULTS_FILE</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">ARCHIVE_FILE</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="c1"># Count words in one of the books</span>
+<span class="n">rule</span> <span class="n">count_words</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">cmd</span><span class="o">=</span><span class="s1">&#39;wordcount.py&#39;</span><span class="p">,</span>
+        <span class="n">book</span><span class="o">=</span><span class="n">BOOK_FILE</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">DAT_FILE</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python </span><span class="si">{input.cmd}</span><span class="s1"> </span><span class="si">{input.book}</span><span class="s1"> </span><span class="si">{output}</span><span class="s1">&#39;</span>
+
+<span class="c1"># plot one word count dat file</span>
+<span class="n">rule</span> <span class="n">make_plot</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">cmd</span><span class="o">=</span><span class="s1">&#39;plotcount.py&#39;</span><span class="p">,</span>
+        <span class="n">dat</span><span class="o">=</span><span class="n">DAT_FILE</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">PLOT_FILE</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;python </span><span class="si">{input.cmd}</span><span class="s1"> </span><span class="si">{input.dat}</span><span class="s1"> </span><span class="si">{output}</span><span class="s1">&#39;</span>
+
+<span class="c1"># create an archive with all results</span>
+<span class="n">rule</span> <span class="n">create_archive</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="n">RESULTS_FILE</span><span class="p">,</span> <span class="n">ALL_DATS</span><span class="p">,</span> <span class="n">ALL_PLOTS</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">ARCHIVE_FILE</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;tar -czvf </span><span class="si">{output}</span><span class="s1"> </span><span class="si">{input}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="combining-global-variables-and-wildcards-in-formatted-strings">
+<h2>14 Combining global variables and wildcards in formatted strings<a class="headerlink" href="#combining-global-variables-and-wildcards-in-formatted-strings" title="Link to this heading">#</a></h2>
+<p>No example code is given here. By this stage you should be able to trust your
+own judgement.</p>
+<p><strong>TODO</strong>
+If you really need it, a full example of the entire workflow with no duplication and all configurable values moved into a configuration file is in <code class="docutils literal notranslate"><span class="pre">.solutions/reduce_duplication/Snakefile</span></code> and <code class="docutils literal notranslate"><span class="pre">.solutions/reduce_duplication/config.yaml</span></code> in the downloaded code package.</p>
+<p>Note that the example uses <a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">f-strings</a>, which are only available in Python 3.6
+and higher.</p>
+<p>If you must use an older version of Python then you can use the older string formatting
+methods, although the results will be less concise.</p>
 </section>
 </section>
 
@@ -2681,12 +2883,12 @@ snakemake<span class="w"> </span>results.txt
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../exercises/packaging.html"
+       href="../projects/individual/1_project_instructions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Exercises - Packaging</p>
+        <p class="prev-next-title">Project Assignment 1: Select a Dataset</p>
       </div>
     </a>
     <a class="right-next"
@@ -2860,6 +3062,14 @@ snakemake<span class="w"> </span>results.txt
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite-dat-rules-to-use-wildcards">3. Rewrite .dat rules to use wildcards</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-one-input-file">4. Updating One Input File</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-zipf-test-rule">5. Updating Zipf_test rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">6. Putting it all Together</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-the-dat-files">7. Moving the <code class="docutils literal notranslate"><span class="pre">dat</span></code> files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-pngs">8. Creating PNGs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-plots">9. Generating Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-archive">10. Creating an Archive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-if-snakemake-does-not-have-enough-resources">12. What happens if Snakemake does not have enough resources?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-all-other-duplicated-strings-with-global-variables">13. Replace all other duplicated strings with global variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-global-variables-and-wildcards-in-formatted-strings">14 Combining global variables and wildcards in formatted strings</a></li>
 </ul>
 </li>
 </ul>

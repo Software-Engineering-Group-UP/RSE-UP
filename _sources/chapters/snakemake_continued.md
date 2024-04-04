@@ -2,11 +2,16 @@
 
 Snakemake stands out among data processing tools for its versatility and user-friendliness. It empowers researchers to create reproducible and scalable analyses through a human-readable, Python-based language. If you're familiar with the make tool, picking up Snakemake will be a breeze.
 
-## Building the Workflow: The Snakefile
+## 1. Building the Workflow: The Snakefile
 
 The heart of Snakemake lies in the Snakefile, acting as its build file. It defines a series of rules dictating the workflow's execution. Each rule details how to produce a specific target (output) using its required dependencies (inputs) and the necessary actions.
 
+**In the intro chapter it was enough to call the pipeline from the ZIPF directory as root. For the following guide you need to change the directory for each section** 
+
 ### Getting started - Executing Snakemake:
+
+if not already done create a new directory for example as the one provided `snakemake/1_the_snakefile`.
+Depending on how you follow the guide the paths for your solution might be different!
 
 By default, running Snakemake without specifying a target prompts it to search for a file named Snakefile. Upon execution, it provides details about the workflow, including the number of steps, involved rules, input and output files.
 Therefore we need to create a `snakefile`. For the purpose of the course we start with an example that counts words. 
@@ -14,9 +19,9 @@ Therefore we need to create a `snakefile`. For the purpose of the course we star
 ```python
 # Count words in one of the books
 rule count_words:
-    input: '../data/dracula.txt'
-    output: '../data/dracula.dat'
-    shell: 'python wordcount.py ../data/dracula.txt ../data/dracula.dat'
+    input: '../../data/dracula.txt'
+    output: '../../results/dracula.dat'
+    shell: 'python ../wordcount.py ../../data/dracula.txt ../../results/dracula.dat'
 ```
 This is a **build file**, which for Snakemake is called a
 Snakefile - a file executed by Snakemake. Note that aside from a few keyword
@@ -35,17 +40,17 @@ The parts included in to the snakefile are explained as follows:
 *Snakemake follows Python 3 syntax*, introducing keywords like rule. Indentation, whether using tabs or spaces, adheres to Python conventions. A rule combines target, dependencies, and actions, forming a "recipe" for a specific step in the workflow. 
 
 The rule we just created describes how to build the output `dracula.dat` using
-the action `python wordcount.py` and the input `data/dracula.txt`.
+the action `python wordcount.py` and the input `dracula.txt`.
 
 Information that was implicit in our shell script - that we are generating a
 file called `dracula.dat` and that creating this file requires
-`data/dracula.txt` - is now made explicit by Snakemake's syntax.
+`dracula.txt` - is now made explicit by Snakemake's syntax.
 
 Let's first ensure we start from scratch and delete the `.dat`, `.png`, and
 `results.txt` files we created earlier:
 
 ```bash
-rm *.dat *.png results.txt
+rm results/*.dat results/*.png results/results.txt
 ```
 
 to run snakemake we just have to call it while being in the same directory:
@@ -99,7 +104,7 @@ like `rule` and `input`, Snakemake follows Python syntax. Let's see if we got
 what we expected:
 
 ```bash
-head -5 ../data/dracula.dat
+head -5 results/dracula.dat
 ```
 The output should look like this:
 
@@ -128,7 +133,7 @@ It also important to note snakefiles do not need to be named `snakefile`, you on
 
 For example using the `-s` flag / option:
 ```bash
-snakemake -s snakefileXYZ
+snakemake -s snakefile.txt
 ```
 
 ### Snakefiles as Documentation
@@ -138,21 +143,21 @@ By explicitly recording the inputs to and outputs from steps in our analysis and
 We can add additional rules to the snakefile i.e.:
 ```python
 rule count_words:
-    input: '../data/dracula.txt'
-    output: '../data/dracula.dat'
-    shell: 'python wordcount.py ../data/dracula.txt ../data/dracula.dat'
+    input: '../../data/dracula.txt'
+    output: '../../data/dracula.dat'
+    shell: 'python ../wordcount.py ../../data/dracula.txt ../../results/dracula.dat'
 
 rule count_words_moby_dick:
-	input: 	'../data/moby_dick.txt'
-	output: '../data/moby.dat'
-	shell: 	'python wordcount.py ../data/moby_dick.txt ../data/moby.dat'
+	input: 	'../../data/moby_dick.txt'
+	output: '../../results/moby_dick.dat'
+	shell: 	'python ../wordcount.py ../../data/moby_dick.txt ../../results/moby.dat'
 
 ```
 
 If you run snakemake now, nothing will happen, since snakemake will by default choose the firt rule, ignoring the others. to change this you need to ru the following command instead:
 
 ```bash
-snakemake --cores all ../data/moby.dat
+snakemake --cores all ../../results/moby.dat
 ```
 This will give the following output: 
 ```output
@@ -205,7 +210,7 @@ One could also create a rule that deletes all output, this could look like the f
 ```Python
 # delete everything so we can re-run things
 rule clean:
-    shell: 'rm -f *.dat'
+    shell: 'rm -f ../../results/*.dat'
 ```
 
 ### Dependencies
@@ -215,8 +220,8 @@ Often workflows have dependencies or files that need be created before running a
 ```Python
 rule dats:
     input:
-          'dracula.dat'
-          'moby_dick.dat'
+          '../../results/dracula.dat',
+          '../../results/moby_dick.dat'
 ```
 
 If you run snakemake now, snakemake will first check whether or not the input files exist and if not snakemake will look for rules that generate the input files and run them. It is important to note that dependencies must form a directed acyclic graph. A target cannot depend on a dependency which itself, or one of its dependencies, depends on that target.
@@ -233,28 +238,28 @@ Rules claiming more threads will be scaled down.
 Job counts:
         count   jobs
         1       count_words
-        1       count_words_abyss
+        1       count_words_moby_dick
         1       dats
         3
 
-rule count_words_abyss:
-    input: ../data/moby_dick.txt
-    output: ../data/moby_dick.dat
+rule count_words_moby_dick:
+    input: ../../data/moby_dick.txt
+    output: ../../results/moby_dick.dat
     jobid: 1
 
 Finished job 1.
 1 of 3 steps (33%) done
 
 rule count_words:
-    input: ../data/dracula.txt
-    output: ../data/dracula.dat
+    input: ../../data/dracula.txt
+    output: ../../results/dracula.dat
     jobid: 2
 
 Finished job 2.
 2 of 3 steps (67%) done
 
 localrule dats:
-    input: ../data/dracula.dat, ../data/moby_dick.dat
+    input: ../../data/dracula.dat, ../../data/moby_dick.dat
     jobid: 0
 
 Finished job 0.
@@ -265,27 +270,27 @@ While the snakefile should look as follows:
 ```Python
 rule dats:
      input:
-         '../data/dracula.dat',
-         '../data/moby_dick.dat'
+         '../../results/dracula.dat',
+         '../../results/moby_dick.dat'
 
 # delete everything so we can re-run things
 rule clean:
-    shell:  'rm -f *.dat'
+    shell:  'rm -f ../../results/*.dat'
 
 # Count words in one of the books
 rule count_words:
-    input: 	'../data/dracula.txt'
-    output: '../data/dracula.dat'
-    shell: 	'python wordcount.py ../data/dracula.txt ../data/dracula.dat'
+    input: 	'../../data/dracula.txt'
+    output: '../../results/dracula.dat'
+    shell: 	'python ../wordcount.py ../../data/dracula.txt ../../results/dracula.dat'
 
-rule count_words_abyss:
-    input: 	'../data/moby_dick.txt'
-    output: '../data/moby_dick.dat'
-    shell: 	'python wordcount.py ../data/moby_dick.txt ../data/moby_dick.dat'
+rule count_words_moby_dick:
+    input: 	'../../data/moby_dick.txt'
+    output: '../../results/moby_dick.dat'
+    shell: 	'../python wordcount.py ../../data/moby_dick.txt ../../results/moby_dick.dat'
 ```
 the directed graph of the dependencies looks like this: 
 
-```{figure} ../figures/snakemake/dats_graph.svg
+```{figure} ../figures/snakemake/dats_graph_1.svg
 :name: dats graph
 Dats Graph
 ```
@@ -307,11 +312,11 @@ Job counts:
 	1
 
 rule count_words:
-    input: ../data/dracula.txt
-    output: ../data/dracula.dat
+    input: ../../data/dracula.txt
+    output: ../../results/dracula.dat
     jobid: 0 
 
-python wordcount.py ../data/dracula.txt ../data/dracula.dat
+python ../wordcount.py ../../data/dracula.txt ../../results/dracula.dat
 Job counts:
 	count	jobs
 	1	count_words
@@ -320,15 +325,15 @@ This was a dry-run (flag -n). The order of jobs does not reflect the order of ex
 ```
 **Before you continue with the book below, it is advised to first look at the exercise: [Write two new rules](https://software-engineering-group-up.github.io/RSE-UP/exercises/snakemake.html) since it would come in handy for the next section. 
 
-## Wildcards
+## 2 Wildcards
 
 When you have completed the exercise, you notice that there is a lot of duplications and repetitions. It is always good practice to not repeat yourself. 
 Let's start from the top on go rule by rule and refactor the snakefile.
 ```Python
 rule zipf_test:
-    input: 'data/jane_eyre.dat','data/frankenstein.dat', 'data/sherlock_holmes.dat'
-    output: 'data/results.txt'
-    shell: 'python zipf_test.py data/frankenstein.dat data/jane_eyre.dat data/sherlock_holmes.dat > data/results.txt'
+    input: '../../results/dracula.dat','../../results/frankenstein.dat', '../../results/sherlock_holmes.dat'
+    output: '../../results/results.txt'
+    shell: 'python ../zipf_test.py ../../results/frankenstein.dat ../../results/dracula.dat ../../results/sherlock_holmes.dat > ../../results/wildcards_results.txt'
 
 ```
 Here we can shorten the shell command by using variables. 
@@ -336,13 +341,13 @@ This could look like the following, were we add an `{input}` and `{output}` **wi
 
 ```Python
 rule zipf_test:
-    input: 'data/jane_eyre.dat', 'data/frankenstein.dat', 'data/sherlock_holmes.dat'
-    output: 'data/results.txt'
-    shell: 'python zipf_test.py {input} > {output}'
+    input: '../../results/dracula.dat', '../../results/frankenstein.dat', '../../results/sherlock_holmes.dat'
+    output: '../../results/wildcards_zipf_results.txt'
+    shell: 'python ../zipf_test.py {input} > {output}'
   
 ```
 
-## Handling dependencies differently
+### Handling dependencies differently
 
 For many rules, we will need to make finer distinctions between inputs. It is not always appropriate to pass all inputs as a lump to your action. For example, our rules for `.dat` use their first (and only) dependency specifically as the input file to `wordcount.py`. If we add additional dependencies (as we will soon do) then we don't want these being passed as input files to `wordcount.py`: it expects just one input file.
 
@@ -350,8 +355,8 @@ Let's see this in action. We need to add wordcount.py as a dependency of each of
 
 ```Python
 rule count_words:
-    input: 'wordcount.py', 'data/dracula.txt'
-    output: 'dracula.dat'
+    input: '../wordcount.py', '../../data/dracula.txt'
+    output: '../../results/dracula.dat'
     shell: 'python {input[0]} {input[1]} {output}'
 ```
 
@@ -372,87 +377,79 @@ touch wordcount.py
 snakemake
 ```
 ```Output
-Provided cores: 1
+Assuming unrestricted shared filesystem usage for local execution.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
 Rules claiming more threads will be scaled down.
-Job counts:
-	count	jobs
-	1	count_words
-	1	count_words_frankenstein
-	1	zipf_test
-	3
+Job stats:
+job                         count
+------------------------  -------
+count_words                     1
+count_words_frankenstein        1
+count_words_sherlock            1
+zipf_test                       1
+total                           4
 
-rule count_words_frankenstein:
-    input: wordcount.py, data/frankenstein.txt
-    output: data/frankenstein.dat
+Select jobs to execute...
+Execute 3 jobs...
+
+localrule count_words:
+    input: ../wordcount.py, ../../data/dracula.txt
+    output: ../../results/dracula.dat
+    jobid: 1
+    reason: Missing output files: ../../results/dracula.dat
+    resources: tmpdir=/tmp
+
+localrule count_words_frankenstein:
+    input: ../wordcount.py, ../../data/frankenstein.txt
+    output: ../../results/frankenstein.dat
     jobid: 2
+    reason: Missing output files: ../../results/frankenstein.dat
+    resources: tmpdir=/tmp
+
+localrule count_words_sherlock:
+    input: ../wordcount.py, ../../data/sherlock_holmes.txt
+    output: ../../results/sherlock_holmes.dat
+    jobid: 3
+    reason: Missing output files: ../../results/sherlock_holmes.dat
+    resources: tmpdir=/tmp
 
 Finished job 2.
-1 of 3 steps (33%) done
+1 of 4 steps (25%) done
 
-rule count_words:
-    input: wordcount.py, data/dracula.txt
-    output: data/dracula.dat
-    jobid: 1
+Finished job 3.
+2 of 4 steps (50%) done
 
 Finished job 1.
-2 of 3 steps (67%) done
+3 of 4 steps (75%) done
+Select jobs to execute...
+Execute 1 jobs...
 
-rule zipf_test:
-    input: data/frankenstein.dat, data/last.dat, data/dracula.dat
-    output: results.txt
+localrule zipf_test:
+    input: ../../results/dracula.dat, ../../results/frankenstein.dat, ../../results/sherlock_holmes.dat
+    output: ../../results/wildcards_zipf_results.txt
     jobid: 0
+    reason: Missing output files: ../../results/wildcards_zipf_results.txt; Input files updated by another job: ../../results/frankenstein.dat, ../../results/dracula.dat, ../../results/sherlock_holmes.dat
+    resources: tmpdir=/tmp
 
 Finished job 0.
-3 of 3 steps (100%) done
-```
+4 of 4 steps (100%) done
+Complete log: .snakemake/log/2024-04-02T154614.819856.snakemake.log
 
-Notice how `jane_eyre.dat` (which does not depend on `wordcount.py`) is not rebuilt.
+
+```
+In case a *.dat file such as `dracula.dat` does already exist, that pipeline will not be triggered.  
 
 Intuitively, we should also add `wordcount.py` as dependency for `results.txt`, as the final table should be rebuilt if we remake the .dat files. However, it turns out we don't have to! Let's see what happens to `results.txt` when we update `wordcount.py`:
 ```Bash
-touch wordcount.py
-snakemake results.txt
-```
-
-then we get:
-```bash
-Provided cores: 1
-Rules claiming more threads will be scaled down.
-Job counts:
-	count	jobs
-	1	count_words
-	1	count_words_frankenstein
-	1	zipf_test
-	3
-
-rule count_words_frankenstein:
-    input: wordcount.py, data/data/frankenstein.txt
-    output: data/frankenstein.dat
-    jobid: 2
-
-Finished job 2.
-1 of 3 steps (33%) done
-
-rule count_words:
-    input: wordcount.py, data/dracula.txt
-    output: data/dracula.dat
-    jobid: 1
-
-Finished job 1.
-2 of 3 steps (67%) done
-
-rule zipf_test:
-    input: data/frankenstein.dat, data/last.dat, dracula.dat
-    output: results.txt
-    jobid: 0
-
-Finished job 0.
-3 of 3 steps (100%) done
+touch wordcount.py # or make a change / save it so that it has a newer date
+snakemake ../../results/results.txt
 ```
 
 The whole pipeline is triggered, even the creation of the `results.txt` file! To understand this, note that according to the dependency graph, `results.txt` depends on the `.dat` files. The update of `wordcount.py` triggers an update of the *.dat files. Thus, Snakemake sees that the dependencies (the `.dat` files) are newer than the target file (`results.txt`) and it therefore recreates `results.txt`. This is an example of the power of Snakemake: updating a subset of the files in the pipeline triggers rerunning the appropriate downstream steps.
 
-## Patterns
+## 3 Patterns
 
 Our Snakefile still has a ton of repeated content. The rules for each .dat file all follow a consistent pattern. We can replace these rules with a single pattern rule which can be used to build any `.dat` file from a `.txt` file in `data/`:
 
@@ -467,7 +464,7 @@ rule count_words:
 
 Here `{book}` is an arbitrary wildcard that we can use as a placeholder for any generic book to analyze. Note that we don't have to use `{book}` as the name of our *wildcard* - it can be anything we want!
 
-This rule can be interpreted as: "In order to build a file named [something].dat (the target) find a file named `data/[that same something].txt` (the dependency) and run `wordcount.py [the dependency] [the target]`."
+This rule can be interpreted as: "In order to build a file named `[something].dat` (the target) find a file named `data/[that same something].txt` (the dependency) and run `wordcount.py [the dependency] [the target]`."
 
 ### Update your Snakefile now
 Replace all your `count_words` rules with the given pattern rule now.
@@ -482,7 +479,7 @@ snakemake -p dats
 We should see the same output as before. Note that we can still use snakemake to build individual `.dat` targets as before, and that our new rule will work no matter what stem is being matched.
 
 ```bash
-snakemake -p sierra.dat
+snakemake -p dracula.dat
 ```
 
 which gives the output below:
@@ -496,12 +493,12 @@ Job counts:
 	1
 
 rule count_words:
-    input: wordcount.py, data/time_machine.txt
-    output: data/time_machine.dat
+    input: ../wordcount.py, ../../data/dracula.txt
+    output: ../../results/dracula.dat
     jobid: 0
-    wildcards: file=time_machine
+    wildcards: file=dracula
 
-python wordcount.py data/time_machine.txt data/time_machine.dat
+python ../wordcount.py ../../data/dracula.txt ../../results/dracula.dat
 Finished job 0.
 1 of 1 steps (100%) done
 ```
@@ -527,7 +524,7 @@ Target rules may not contain wildcards. Please specify concrete files or a rule 
 
 As the error message indicates, you need to ask for specific files. For example,
 ```bash
- snakemake last.dat.
+ snakemake ../../results/dracula.dat.
 
 ```
 
@@ -535,29 +532,29 @@ Our Snakefile is now much shorter and cleaner:
 ```Python
 # generate summary table
 rule zipf_test:
-    input: 'zipf_test.py', 'data/sherlock_holmes.dat', 'data/frankenstein.dat', 'data/dracula.dat'
-    output: 'results.txt'
+    input: '../../zipf_test.py', '../../results/sherlock_holmes.dat', '../../results/frankenstein.dat', '../../results/dracula.dat'
+    output: '../../results/wildcard_2_results.txt'
     shell: 'python {input[0]} {input[1]} {input[2]} {input[3]} > {output}'
 
 rule dats:
-     input: 'data/dracula.dat', 'data/frankenstein.dat', 'data/sherlock_holmes.dat'
+     input: '../../results/dracula.dat', '../../results/frankenstein.dat', '../../results/sherlock_holmes.dat'
 
 # delete everything so we can re-run things
 rule clean:
-    shell: 'rm -f *.dat results.txt'
+    shell: 'rm -f ../../results/*.dat ../../results/wild*.txt'
 
 # count words in one of our "books"
 rule count_words:
     input:
-        cmd='wordcount.py',
-        book='data/{book}.txt'
-    output: '{book}.dat'
+        cmd='../wordcount.py',
+        book='../../data{book}.txt'
+    output: '../../results{book}.dat'
     shell: 'python {input.cmd} {input.book} {output}'
 ```
 
 Now all that is left to do is update you snakefile
 
-## Snakefiles are Python code
+## 4 Snakefiles are Python code
 
 
 Despite our efforts, our pipeline still has repeated content,
@@ -570,7 +567,7 @@ We'd have to update everything!
 
 ```Python
 rule zipf_test:
-    input:  'zipf_test.py', 'data/frankenstein.dat', 'jane_eyre.dat', 'dracula.dat'
+    input:  'zipf_test.py', 'frankenstein.dat', 'jane_eyre.dat', 'dracula.dat'
     output: 'results.txt'
     shell:  'python {input[0]} {input[1]} {input[2]} {input[3]} > {output}'
 ```
@@ -581,12 +578,15 @@ of our rules are using Python strings. Other data structures work too - let's
 try a list:
 
 ```Python
+
 rule zipf_test:
     input:
-        cmd='zipf_test.py',
-        dats=['abyss.dat', 'last.dat', 'isles.dat']
-    output: 'results.txt'
+        cmd='../zipf_test.py',
+        dats=['../../results/dracula.dat', '../../results/sherlock_holmes.dat', '../../results/frankenstein.dat']
+    output: '../../results/results.txt'
     shell: 'python {input.cmd} {input.dats} > {output}'
+
+
 ```
 
 
@@ -607,7 +607,7 @@ We can make our list into a variable to demonstrate this. Let's create the
 global variable DATS and use it in our `zipf_test` and `dats` rules:
 
 ```Python
-DATS=['data/frankenstein.dat', 'data/jane_eyre.dat', 'dracula.dat']
+DATS=['../../results/frankenstein.dat', '../../results/sherlock_holmes.dat', '../../results/dracula.dat']
 
 # generate summary table
 rule zipf_test:
@@ -631,7 +631,7 @@ Try recreating both the `dats` and `results.txt` targets
 (run `snakemake clean` in between).
 
 #### Solution
-*TODO* See `.solutions/snakefiles_are_python/Snakefile_dats_list` for a full Snakefile. Otherwise, just refer to the code extracts above and modify your own file.
+See [Solution on Github](https://github.com/Software-Engineering-Group-UP/RSE-UP/tree/snakemake/zipf/results/4_snakefiles_python) for the full Snakefile. Otherwise, just refer to the code extracts above and modify your own file.
 
 ### When are Snakefiles executed?
 
@@ -746,7 +746,7 @@ on disk) inside rules.
 Common tasks, such as building lists of input files that will be reused in
 multiple rules are a good fit for Python code that lives outside the rules.
 
-> ### Is your `print` output appearing last?
+### Is your `print` output appearing last?
 >
 > On some systems, output is buffered. This means that nothing is actually output
 > until the buffer is full. While this is more efficient, it can delay the output
@@ -766,7 +766,7 @@ multiple rules are a good fit for Python code that lives outside the rules.
 > that this code executes first.
 
 
-### Using functions in Snakefiles
+## Using functions in Snakefiles
 
 In our example here, we only have 4 books (and just 3 are being processed).
 But what if we had 700 books to be processed? It would be a massive effort to
@@ -778,8 +778,8 @@ large numbers of files much easier. The two most helpful ones are
 `glob_wildcards()` and `expand()`. Let's start a Python session to see how
 they work.
 
-> ### This can be done in any Python environment
->
+### This can be done in any Python environment
+
 > You can use any Python environment for the following code exploring `expand()`
 > and `glob_wildcards()`. The standard Python interpreter, ipython, or
 > a Jupyter Notebook. It's up to personal preference and what you have installed.
@@ -794,7 +794,7 @@ they work.
 In this example, we will import these Snakemake functions directly in our
 Python session.
 
-> ### Importing is not required in a Snakefile
+### Importing is not required in a Snakefile
 >
 > You don't need to import the Snakemake utility functions within your Snakefile - they are
 > always imported for you.
@@ -858,29 +858,6 @@ glob_wildcards('data/{example}.txt').example
 ['dracula', 'jane_eyre', 'frankenstein', 'sherlock_holmes']
 ```
 
-> ### Putting it all together
->
-> Using the `expand()` and `glob_wildcards()` functions,
-> modify the pipeline so that it automatically detects and analyzes
-> all the files in the `data/` folder.
->
-> > ## Hint
-> >
-> > Use `expand()` and `glob_wildcards()` together to create the value of `DATS`.
->
-> > ## Solution
-> >
-> > The critical change is to the assignment of `DATS`, building it dynamically from
-> > the input `*.txt` file names.
-> >
-> >```Python
-> >DATS = expand('{book}.dat', book=glob_wildcards('./data/{book}.txt').book)
-> >```
-> >
-> >
-> > *TODO* See `.solutions/snakefiles_are_python/Snakefile_glob_dats` for a full Snakefile using
-> > this approach.
-> 
 
 ### Using Python code as actions
 
@@ -899,7 +876,7 @@ import os
 rule print_book_names:
     run:
         print('These are all the book names:')
-        for book in glob.glob('books/*.txt'):
+        for book in glob.glob('../../data/*.txt'):
             print(book)
 ```
 
@@ -935,3 +912,17 @@ Finished job 0.
 > `--quiet` or `-q` suppresses a lot of the rule progress output from Snakemake.
 > This can be useful when you just want to see your own output.
 
+### Cleaning House
+
+It is common practice to have a `clean` rule that deletes all intermediate
+and generated files, taking your workflow back to a blank slate.
+
+We already have a `clean` rule, so now is a good time to check that it
+removes all intermediate and output files. First do a `snakemake all` followed
+by `snakemake clean`. Then check to see if any output files remain and add them
+to the clean rule if required.
+
+
+## Next steps
+
+It would be best if you start doing some of the exercises now, especially the exercises related to working with files and outputs before going to the next section! *TODO* insert link

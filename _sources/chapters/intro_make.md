@@ -1,28 +1,5 @@
 # Automating Analyses with Make 
 
-> The three rules of the Librarians of Time and Space are:
-> 1) Silence;
-> 2) Books must be returned no later than the last date shown; and
-> 3) Do not interfere with the nature of causality.
->
-> --- Terry Pratchett
-
-It's easy to run one program to process a single data file,
-but what happens when our analysis depends on many files,
-or when we need to re-do the analysis every time new data arrives?
-What should we do if the analysis has several steps
-that we have to do in a particular order?
-
-If we try to keep track of this ourselves,
-we will inevitably forget some crucial steps
-and it will be hard for other people to pick up our work.
-Instead,
-we should use a **build manager**
-to keep track of what depends on what
-and run our analysis programs automatically.
-These tools were invented to help programmers compile complex software,
-but can be used to automate any workflow.
-
 Our Zipf's Law project currently includes these files:
 
 ```text

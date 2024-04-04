@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Exercises - Make" href="../exercises/intro_make.html" />
-    <link rel="prev" title="Automation" href="introduction/automation.html" />
+    <link rel="prev" title="Introduction to Make" href="introduction/automation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,6 +184,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresh.html">Python Refresher</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="introduction/bash.html">Introduction to Bash</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="bash_basics.html">The Basics of the Unix Shell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bash_tools.html">Building Tools with the Unix Shell</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="bash_advanced.html">Going Further with the Unix Shell</a></li>
@@ -225,12 +226,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing and Error Handling</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/testing.html">Testing</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/testing.html">Introduction to Testing</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="testing_programs.html">Testing Software</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/testing.html">Exercises - Testing</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/error_handling.html">Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/error_handling.html">Introduction to Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="error_handling.html">Handling Errors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/error_handling.html">Exercises - Error Handling</a></li>
 </ul>
@@ -255,7 +256,7 @@
 <li class="toctree-l2"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction/automation.html">Automation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction/automation.html">Introduction to Make</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Automating Analyses with Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
@@ -263,8 +264,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">CICD</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">Introduction to CI/CD</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="cicd_basics.html">CI/CD Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cicd_gitlab.html">Adding CI/CD to a project on Gitlab</a></li>
 </ul>
 </li>
 </ul>
@@ -275,11 +277,24 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuration and Packaging</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="yaml.html">YAML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/config.html">Introduction to Configuration</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">YAML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/packaging.html">Introduction to Packaging Python Software</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">First Project - Invdividual</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../projects/individual/intro_project1.html">Introduction to the Individual Project</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../projects/individual/1_project_instructions.html">Project Assignment 1: Select a Dataset</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -507,29 +522,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="automating-analyses-with-make">
 <h1>Automating Analyses with Make<a class="headerlink" href="#automating-analyses-with-make" title="Link to this heading">#</a></h1>
-<blockquote>
-<div><p>The three rules of the Librarians of Time and Space are:</p>
-<ol class="arabic simple">
-<li><p>Silence;</p></li>
-<li><p>Books must be returned no later than the last date shown; and</p></li>
-<li><p>Do not interfere with the nature of causality.</p></li>
-</ol>
-<p>— Terry Pratchett</p>
-</div></blockquote>
-<p>It’s easy to run one program to process a single data file,
-but what happens when our analysis depends on many files,
-or when we need to re-do the analysis every time new data arrives?
-What should we do if the analysis has several steps
-that we have to do in a particular order?</p>
-<p>If we try to keep track of this ourselves,
-we will inevitably forget some crucial steps
-and it will be hard for other people to pick up our work.
-Instead,
-we should use a <strong>build manager</strong>
-to keep track of what depends on what
-and run our analysis programs automatically.
-These tools were invented to help programmers compile complex software,
-but can be used to automate any workflow.</p>
 <p>Our Zipf’s Law project currently includes these files:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zipf/
 ├── .gitignore
@@ -726,7 +718,7 @@ then brings each of those prerequisites up to date (<a class="reference internal
 <figure class="align-default" id="automate-all">
 <img alt="../_images/make-dependency-graph.png" src="../_images/make-dependency-graph.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 58 </span><span class="caption-text">Automate All</span><a class="headerlink" href="#automate-all" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 62 </span><span class="caption-text">Automate All</span><a class="headerlink" href="#automate-all" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The order in which rules appear in the Makefile
@@ -1327,7 +1319,7 @@ alpha: 1.1712445413685917
 <figure class="align-default" id="automate-collated">
 <img alt="../_images/collated.png" src="../_images/collated.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 59 </span><span class="caption-text">Automate Collated</span><a class="headerlink" href="#automate-collated" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 63 </span><span class="caption-text">Automate Collated</span><a class="headerlink" href="#automate-collated" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Finally,
@@ -1409,7 +1401,7 @@ which makes it a great way to assemble pipelines out of whatever is lying around
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Automation</p>
+        <p class="prev-next-title">Introduction to Make</p>
       </div>
     </a>
     <a class="right-next"

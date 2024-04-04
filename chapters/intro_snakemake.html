@@ -184,6 +184,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresh.html">Python Refresher</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="introduction/bash.html">Introduction to Bash</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="bash_basics.html">The Basics of the Unix Shell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bash_tools.html">Building Tools with the Unix Shell</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="bash_advanced.html">Going Further with the Unix Shell</a></li>
@@ -225,12 +226,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing and Error Handling</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/testing.html">Testing</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/testing.html">Introduction to Testing</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="testing_programs.html">Testing Software</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/testing.html">Exercises - Testing</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/error_handling.html">Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/error_handling.html">Introduction to Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="error_handling.html">Handling Errors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/error_handling.html">Exercises - Error Handling</a></li>
 </ul>
@@ -255,7 +256,7 @@
 <li class="toctree-l2"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction/automation.html">Automation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction/automation.html">Introduction to Make</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Introduction to Snakemake</a></li>
@@ -263,8 +264,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">CICD</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">Introduction to CI/CD</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="cicd_basics.html">CI/CD Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cicd_gitlab.html">Adding CI/CD to a project on Gitlab</a></li>
 </ul>
 </li>
 </ul>
@@ -275,11 +277,24 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuration and Packaging</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="yaml.html">YAML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/config.html">Introduction to Configuration</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">YAML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/packaging.html">Introduction to Packaging Python Software</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">First Project - Invdividual</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../projects/individual/intro_project1.html">Introduction to the Individual Project</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../projects/individual/1_project_instructions.html">Project Assignment 1: Select a Dataset</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -634,6 +649,9 @@ with:</p>
 <span class="p">|</span><span class="w">  </span><span class="p">|</span>-<span class="w"> </span>plotcount.py
 <span class="p">|</span><span class="w">  </span><span class="p">|</span>-<span class="w"> </span>wordcount.py
 <span class="p">|</span><span class="w">  </span><span class="p">|</span>-<span class="w"> </span>zipf_test.py
+<span class="p">|</span>-<span class="w"> </span>results
+<span class="p">|</span><span class="w">  </span><span class="p">|</span>-<span class="w"> </span>...
+<span class="p">|</span>-<span class="w"> </span>...
 </pre></div>
 </div>
 <p>There may be some other files as well, but the ones listed above are the
@@ -646,7 +664,7 @@ specifies the output file to write:</p>
 </pre></div>
 </div>
 <p>Let’s take a quick peek at the result:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">head</span> <span class="o">-</span><span class="mi">5</span> <span class="n">isles</span><span class="o">.</span><span class="n">dat</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">head</span> <span class="o">-</span><span class="mi">5</span> <span class="n">dracula</span><span class="o">.</span><span class="n">dat</span>
 </pre></div>
 </div>
 <p>{: .language-bash}</p>
@@ -656,8 +674,6 @@ and<span class="w"> </span><span class="m">5976</span><span class="w"> </span><s
 i<span class="w"> </span><span class="m">4846</span><span class="w"> </span><span class="m">2</span>.897337630114136<span class="w">   </span>
 to<span class="w"> </span><span class="m">4745</span><span class="w"> </span><span class="m">2</span>.836951517724221<span class="w">   </span>
 of<span class="w"> </span><span class="m">3748</span><span class="w"> </span><span class="m">2</span>.240862863736645<span class="w">  </span>
-a<span class="w"> </span><span class="m">3013</span><span class="w"> </span><span class="m">1</span>.8014193725823135<span class="w">   </span>
-he<span class="w"> </span><span class="m">2581</span><span class="w"> </span><span class="m">1</span>.5431342185977268
 ...
 </pre></div>
 </div>
@@ -668,7 +684,7 @@ The file is sorted by descending frequency, so the first 5 lines
 are the 5 most frequent words in the input text.</p>
 <p>Let’s visualize the results. The script <code class="docutils literal notranslate"><span class="pre">plotcount.py</span></code> reads in a data file
 and plots the 10 most frequently occurring words as a text-based bar plot:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>snakemake/plotcount.py<span class="w"> </span>data/dracula.dat<span class="w"> </span>ascii
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>snakemake/plotcount.py<span class="w"> </span>results/dracula.dat<span class="w"> </span>ascii
 </pre></div>
 </div>
 <p><em><strong>in case the error: cannot import Sequence from Collections either add or remove the .abc from ‘from collections.abc import Sequence’</strong></em></p>
@@ -685,11 +701,11 @@ it<span class="w">    </span><span class="c1">###################</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">plotcount.py</span></code> can also create the plot as an image file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>snakemakeplotcount.py<span class="w"> </span>data/dracula.dat<span class="w"> </span>data/dracula.png
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>snakemakeplotcount.py<span class="w"> </span>results/dracula.dat<span class="w"> </span>results/dracula.png
 </pre></div>
 </div>
 <p>Finally, let’s test Zipf’s law for these two books:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>snakemake/zipf_test.py<span class="w"> </span>data/moby_dick.dat<span class="w"> </span>data/dracula.dat
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>snakemake/zipf_test.py<span class="w"> </span>results/moby_dick.dat<span class="w"> </span>/results/dracula.dat
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Book<span class="w">            </span>First<span class="w">   </span>Second<span class="w">  </span>Ratio
@@ -724,26 +740,26 @@ a shell script that runs the whole pipeline from start to finish.</p>
 <span class="c1"># to produce plots for isles and abyss</span>
 <span class="c1"># and the summary table for the Zipf&#39;s law tests</span>
 
-python<span class="w"> </span>wordcount.py<span class="w"> </span>books/isles.txt<span class="w"> </span>isles.dat
-python<span class="w"> </span>wordcount.py<span class="w"> </span>books/abyss.txt<span class="w"> </span>abyss.dat
+python<span class="w"> </span>snakemake/wordcount.py<span class="w"> </span>data/dracula.txt<span class="w"> </span>results/dracula.dat
+python<span class="w"> </span>snakemake/wordcount.py<span class="w"> </span>data/jane_eyre.txt<span class="w"> </span>jane.dat
 
-python<span class="w"> </span>plotcount.py<span class="w"> </span>isles.dat<span class="w"> </span>isles.png
-python<span class="w"> </span>plotcount.py<span class="w"> </span>abyss.dat<span class="w"> </span>abyss.png
+python<span class="w"> </span>snakemake/plotcount.py<span class="w"> </span>results/dracula.dat<span class="w"> </span>results/dracula.png
+python<span class="w"> </span>snakemake/plotcount.py<span class="w"> </span>results/jane.dat<span class="w"> </span>results/jane.png
 
 <span class="c1"># Generate summary table</span>
-python<span class="w"> </span>zipf_test.py<span class="w"> </span>abyss.dat<span class="w"> </span>isles.dat<span class="w"> </span>&gt;<span class="w"> </span>results.txt<span class="w"> </span>
+python<span class="w"> </span>snakemake/zipf_test.py<span class="w"> </span>results/dracula.dat<span class="w"> </span>results/jane.dat<span class="w"> </span>&gt;<span class="w"> </span>results/results.txt<span class="w"> </span>
 </pre></div>
 </div>
 <p>Run the script and check that the output is the same as before:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>run_pipeline.sh
-cat<span class="w"> </span>results.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>snakemake/intro/run_pipeline.sh
+cat<span class="w"> </span>results/bash_pipeline_results.txt
 </pre></div>
 </div>
 <p>This shell script solves several problems in computational reproducibility:</p>
 <ol class="arabic simple">
 <li><p>It explicitly documents our pipeline,
 making communication with colleagues (and our future selves) more efficient.</p></li>
-<li><p>It allows us to type a single command, <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">run_pipeline.sh</span></code>, to
+<li><p>It allows us to type a single command, <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">intro/run_pipeline.sh</span></code>, to
 reproduce the full analysis.</p></li>
 <li><p>It prevents us from <em>repeating</em> typos or mistakes.
 You might not get it right the first time, but once you fix something
@@ -761,8 +777,8 @@ shouldn’t need to recreate those files.</p>
 <p>Alternatively, we could manually rerun the plotting for each word-count file.
 (Experienced shell scripters can make this easier on themselves using a
 for-loop.)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>book<span class="w"> </span><span class="k">in</span><span class="w"> </span>abyss<span class="w"> </span>isles<span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">    </span>python<span class="w"> </span>plotcount.py<span class="w"> </span><span class="nv">$book</span>.dat<span class="w"> </span><span class="nv">$book</span>.png
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>book<span class="w"> </span><span class="k">in</span><span class="w"> </span>dracula<span class="w"> </span>jane<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span>python<span class="w"> </span>snakemake/plotcount.py<span class="w"> </span><span class="nv">$book</span>.dat<span class="w"> </span><span class="nv">$book</span>.png
 <span class="k">done</span>
 </pre></div>
 </div>
@@ -776,11 +792,11 @@ for-loop.)</p>
 <span class="c1">#python wordcount.py books/isles.txt isles.dat</span>
 <span class="c1">#python wordcount.py books/abyss.txt abyss.dat</span>
 
-python<span class="w"> </span>plotcount.py<span class="w"> </span>isles.dat<span class="w"> </span>isles.png
-python<span class="w"> </span>plotcount.py<span class="w"> </span>abyss.dat<span class="w"> </span>abyss.png
+python<span class="w"> </span>snakemake/plotcount.py<span class="w"> </span>results/dracula.dat<span class="w"> </span>results/dracula.png
+python<span class="w"> </span>snakemake/plotcount.py<span class="w"> </span>results/jane.dat<span class="w"> </span>results/jane.png
 
 <span class="c1"># This line is also commented out because it doesn&#39;t need to be rerun.</span>
-python<span class="w"> </span>zipf_test.py<span class="w"> </span>abyss.dat<span class="w"> </span>isles.dat<span class="w"> </span>&gt;<span class="w"> </span>results.txt
+python<span class="w"> </span>snakemake/zipf_test.py<span class="w"> </span>results/dracula.dat<span class="w"> </span>results/jane.dat<span class="w"> </span>&gt;<span class="w"> </span>results/2_bash_pipeline_results.txt
 </pre></div>
 </div>
 <p>Then, we would run our modified shell script using <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">run_pipeline.sh</span></code>.</p>

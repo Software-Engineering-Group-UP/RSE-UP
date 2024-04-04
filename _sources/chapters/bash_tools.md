@@ -1,5 +1,6 @@
 # Building Tools with the Unix Shell 
 
+
 > Wisdom comes from experience. Experience is often a result of lack of wisdom.
 >
 > --- Terry Pratchett
@@ -9,6 +10,8 @@ it lets us combine programs to create pipelines
 that can handle large volumes of data.
 This lesson shows how to do that,
 and how to repeat commands to process as many files as we want automatically.
+
+ 
 
 We'll be continuing to work in the `zipf` project,
 which should contain the following files after the previous chapter:

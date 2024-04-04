@@ -184,6 +184,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresh.html">Python Refresher</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="introduction/bash.html">Introduction to Bash</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="bash_basics.html">The Basics of the Unix Shell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bash_tools.html">Building Tools with the Unix Shell</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="bash_advanced.html">Going Further with the Unix Shell</a></li>
@@ -225,12 +226,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing and Error Handling</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/testing.html">Testing</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/testing.html">Introduction to Testing</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="testing_programs.html">Testing Software</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/testing.html">Exercises - Testing</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/error_handling.html">Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/error_handling.html">Introduction to Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="error_handling.html">Handling Errors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/error_handling.html">Exercises - Error Handling</a></li>
 </ul>
@@ -255,7 +256,7 @@
 <li class="toctree-l2"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Automation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Introduction to Make</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
@@ -263,8 +264,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">CICD</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="advanced_cicd.html">CI/CD</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">Introduction to CI/CD</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="cicd_basics.html">CI/CD Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cicd_gitlab.html">Adding CI/CD to a project on Gitlab</a></li>
 </ul>
 </li>
 </ul>
@@ -275,11 +277,24 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuration and Packaging</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">YAML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction/config.html">Introduction to Configuration</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">YAML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/packaging.html">Introduction to Packaging Python Software</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">First Project - Invdividual</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../projects/individual/intro_project1.html">Introduction to the Individual Project</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../projects/individual/1_project_instructions.html">Project Assignment 1: Select a Dataset</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -460,7 +475,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -476,6 +493,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalars">Scalars</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inline-syntax">Inline-Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiline-strings">Multiline Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nested">Nested</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anchors">Anchors</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -503,16 +532,39 @@ with a colon separating the key from the value:</p>
 <span class="nt">moons</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </pre></div>
 </div>
-<p>Here,
-the keys are <code class="docutils literal notranslate"><span class="pre">&quot;project-name&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;purpose&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;moons&quot;</span></code>,
-and the values are <code class="docutils literal notranslate"><span class="pre">&quot;planet</span> <span class="pre">earth&quot;</span></code>,
-<code class="docutils literal notranslate"><span class="pre">&quot;science</span> <span class="pre">fair&quot;</span></code>,
-and (hopefully) the number 1,
-since most YAML implementations try to guess the type of data.</p>
-<p>If we want to create a list of values without keys,
-we can write it either using square brackets (like a Python array)
-or dashed items (like a Markdown,
-so:</p>
+<p>Here, the keys are <code class="docutils literal notranslate"><span class="pre">&quot;project-name&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;purpose&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;moons&quot;</span></code>, and the values are <code class="docutils literal notranslate"><span class="pre">&quot;planet</span> <span class="pre">earth&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;science</span> <span class="pre">fair&quot;</span></code>, and (hopefully) the number 1, since most YAML implementations try to guess the type of data.</p>
+<section id="scalars">
+<h2>Scalars<a class="headerlink" href="#scalars" title="Link to this heading">#</a></h2>
+<p>Knowing the following scalars might come in handy!</p>
+<div class="highlight-YAML notranslate"><div class="highlight"><pre><span></span><span class="nt">number-value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">42</span>
+<span class="nt">floating-point-value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.141592</span>
+<span class="nt">boolean-value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># on, yes -- also work</span>
+<span class="c1"># strings can be both &#39;single-quoted` and &quot;double-quoted&quot;</span>
+<span class="nt">string-value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Bonjour&#39;</span>
+<span class="nt">unquoted-string</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hello World</span>
+<span class="nt">hexadecimal</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x12d4</span>
+<span class="nt">scientific</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12.3015e+05</span>
+<span class="nt">infinity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.inf</span>
+<span class="nt">not-a-number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.NAN</span>
+<span class="nt">null</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~</span>
+<span class="nt">another-null</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<span class="nt">key with spaces</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span>
+<span class="nt">datetime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2001-12-15T02:59:43.1Z</span>
+<span class="nt">datetime_with_spaces</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2001-12-14 21:59:43.10 -5</span>
+<span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2002-12-14</span>
+</pre></div>
+</div>
+</section>
+<section id="inline-syntax">
+<h2>Inline-Syntax<a class="headerlink" href="#inline-syntax" title="Link to this heading">#</a></h2>
+<p>Since YAML is a superset of JSON, you can also write JSON-style maps and sequences.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">episodes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">6</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">7</span><span class="p p-Indicator">]</span>
+<span class="nt">best-jedi</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="nv">Obi-Wan</span><span class="p p-Indicator">,</span><span class="nt"> side</span><span class="p">:</span><span class="w"> </span><span class="nv">light</span><span class="p p-Indicator">}</span>
+</pre></div>
+</div>
+<p>We can also write:</p>
+<p>If we want to create a list of values without keys, we can write it either using square brackets (like a Python array)
+or dashed items like a Markdown, so:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">rotation-time</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;1</span><span class="nv"> </span><span class="s">year&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;12</span><span class="nv"> </span><span class="s">months&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;365.25</span><span class="nv"> </span><span class="s">days&quot;</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
@@ -523,15 +575,51 @@ so:</p>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">365.25 days</span>
 </pre></div>
 </div>
-<p>are equivalent.
-(The indentation isn’t absolutely required in this case,
-but helps make the intention clear.)
-If we want to write entire paragraphs,
-we can use a marker to show that a value spans multiple lines:</p>
+<p>are equivalent. (The indentation isn’t absolutely required in this case, but helps make the intention clear.)</p>
+<p>If we want to write entire paragraphs, we can use a marker to show that a value spans multiple lines:</p>
+</section>
+<section id="multiline-strings">
+<h2>Multiline Strings<a class="headerlink" href="#multiline-strings" title="Link to this heading">#</a></h2>
+<p>In YAML, there are two different ways to handle multiline strings. This is useful, for example, when you have a long code block that you want to format in a pretty way, but don’t want to impact the functionality of the underlying CI script. In these cases, multiline strings can help. For an interactive demonstration, you can visit <a class="reference external" href="https://yaml-multiline.info/">https://yaml-multiline.info/</a>.</p>
+<p>Put simply, you have two operators you can use to determine whether to keep newlines (<code class="docutils literal notranslate"><span class="pre">|</span></code>, exactly how you wrote it) or to remove newlines (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, fold them in). Similarly, you can also choose whether you want a single newline at the end of the multiline string, multiple newlines at the end (<code class="docutils literal notranslate"><span class="pre">+</span></code>), or no newlines at the end (<code class="docutils literal notranslate"><span class="pre">-</span></code>). The below is a summary of some variations:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">folded_no_ending_newline</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span>
+<span class="w">      </span><span class="no">echo &quot;foo&quot; &amp;&amp;</span>
+<span class="w">      </span><span class="no">echo &quot;bar&quot; &amp;&amp;</span>
+<span class="w">      </span><span class="no">echo &quot;baz&quot;</span>
+
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;do something else&quot;</span>
+
+<span class="nt">unfolded_ending_single_newline</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">echo &quot;foo&quot; &amp;&amp; \</span>
+<span class="w">      </span><span class="no">echo &quot;bar&quot; &amp;&amp; \</span>
+<span class="w">      </span><span class="no">echo &quot;baz&quot;</span>
+
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;do something else&quot;</span>
+</pre></div>
+</div>
+<p>or</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">feedback</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <span class="w">    </span><span class="no">Neat molten core concept.</span>
 <span class="w">    </span><span class="no">Too much water.</span>
 <span class="w">    </span><span class="no">Could have used more imaginative ending.</span>
+</pre></div>
+</div>
+</section>
+<section id="nested">
+<h2>Nested<a class="headerlink" href="#nested" title="Link to this heading">#</a></h2>
+<p>Yaml also supports nesting</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">requests</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># first item of `requests` list is just a string</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://example.com/</span>
+<span class="w">  </span><span class="c1"># second item of `requests` list is a dictionary</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://example.com/</span>
+<span class="w">    </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GET</span>
 </pre></div>
 </div>
 <p>We can also add comments using <code class="docutils literal notranslate"><span class="pre">#</span></code> just as we do in many programming languages.</p>
@@ -569,6 +657,27 @@ this is part of the YAML configuration file for formatting this book:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+</section>
+<section id="anchors">
+<h2>Anchors<a class="headerlink" href="#anchors" title="Link to this heading">#</a></h2>
+<p>YAML also has a handy feature called ‘anchors’, which let you easily duplicate content across your document. Anchors look like references <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> in C/C++ and named anchors can be dereferenced using <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">anchored_content</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;anchor_name</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This string will appear as the value of two keys.</span>
+<span class="nt">other_anchor</span><span class="p">:</span><span class="w"> </span><span class="nv">*anchor_name</span>
+
+<span class="nt">base</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;base</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Everyone has same name</span>
+
+<span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;foo</span>
+<span class="w">  </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*base</span>
+<span class="w">  </span><span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+
+<span class="nt">bar</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;bar</span>
+<span class="w">  </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*base</span>
+<span class="w">  </span><span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> allows you to merge the items in a dereferenced anchor. Both <code class="docutils literal notranslate"><span class="pre">bar</span></code> and <code class="docutils literal notranslate"><span class="pre">foo</span></code> will have a <code class="docutils literal notranslate"><span class="pre">name</span></code> key.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -626,7 +735,24 @@ this is part of the YAML configuration file for formatting this book:</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalars">Scalars</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inline-syntax">Inline-Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiline-strings">Multiline Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nested">Nested</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anchors">Anchors</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
