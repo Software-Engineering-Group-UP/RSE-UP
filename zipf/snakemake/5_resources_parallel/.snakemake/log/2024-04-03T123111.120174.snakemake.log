@@ -1,0 +1,24 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count
+-----  -------
+clean        1
+total        1
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr  3 12:31:11 2024]
+localrule clean:
+    jobid: 0
+    reason: Rules with neither input nor output files are always executed.
+    resources: tmpdir=/tmp
+
+rm -rf ../../results/dats/ ../../results/plots/ ../../results/results.txt ../../results/zipf_analysis.tar.gz
+[Wed Apr  3 12:31:11 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2024-04-03T123111.120174.snakemake.log

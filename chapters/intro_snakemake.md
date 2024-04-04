@@ -172,6 +172,9 @@ with:
 |  |- plotcount.py
 |  |- wordcount.py
 |  |- zipf_test.py
+|- results
+|  |- ...
+|- ...
 ```
 
 
@@ -192,7 +195,7 @@ python snakemake/wordcount.py data/dracula.txt dracula.dat
 Let's take a quick peek at the result:
 
 ~~~
-head -5 isles.dat
+head -5 dracula.dat
 ~~~
 {: .language-bash}
 
@@ -204,8 +207,6 @@ and 5976 3.5729446301201144
 i 4846 2.897337630114136   
 to 4745 2.836951517724221   
 of 3748 2.240862863736645  
-a 3013 1.8014193725823135   
-he 2581 1.5431342185977268
 ...
 ```
 
@@ -220,7 +221,7 @@ Let's visualize the results. The script `plotcount.py` reads in a data file
 and plots the 10 most frequently occurring words as a text-based bar plot:
 
 ```bash
-python snakemake/plotcount.py data/dracula.dat ascii
+python snakemake/plotcount.py results/dracula.dat ascii
 ```
 ***in case the error: cannot import Sequence from Collections either add or remove the .abc from 'from collections.abc import Sequence'***
 ```bash
@@ -240,13 +241,13 @@ it    ###################
 `plotcount.py` can also create the plot as an image file:
 
 ```bash
-python snakemakeplotcount.py data/dracula.dat data/dracula.png
+python snakemakeplotcount.py results/dracula.dat results/dracula.png
 ```
 
 Finally, let's test Zipf's law for these two books:
 
 ```bash
-python snakemake/zipf_test.py data/moby_dick.dat data/dracula.dat
+python snakemake/zipf_test.py results/moby_dick.dat /results/dracula.dat
 ```
 
 ```bash
@@ -288,28 +289,28 @@ Using your text editor of choice (e.g. nano), add the following to a new file na
 # to produce plots for isles and abyss
 # and the summary table for the Zipf's law tests
 
-python wordcount.py books/isles.txt isles.dat
-python wordcount.py books/abyss.txt abyss.dat
+python snakemake/wordcount.py data/dracula.txt results/dracula.dat
+python snakemake/wordcount.py data/jane_eyre.txt jane.dat
 
-python plotcount.py isles.dat isles.png
-python plotcount.py abyss.dat abyss.png
+python snakemake/plotcount.py results/dracula.dat results/dracula.png
+python snakemake/plotcount.py results/jane.dat results/jane.png
 
 # Generate summary table
-python zipf_test.py abyss.dat isles.dat > results.txt 
+python snakemake/zipf_test.py results/dracula.dat results/jane.dat > results/results.txt 
 ```
 
 Run the script and check that the output is the same as before:
 
 ```bash
-bash run_pipeline.sh
-cat results.txt
+bash snakemake/intro/run_pipeline.sh
+cat results/bash_pipeline_results.txt
 ```
 
 This shell script solves several problems in computational reproducibility:
 
 1. It explicitly documents our pipeline,
     making communication with colleagues (and our future selves) more efficient.
-2. It allows us to type a single command, `bash run_pipeline.sh`, to
+2. It allows us to type a single command, `bash intro/run_pipeline.sh`, to
     reproduce the full analysis.
 3. It prevents us from *repeating* typos or mistakes.
     You might not get it right the first time, but once you fix something
@@ -333,8 +334,8 @@ Alternatively, we could manually rerun the plotting for each word-count file.
 for-loop.)
 
 ```bash
-for book in abyss isles; do
-    python plotcount.py $book.dat $book.png
+for book in dracula jane; do
+    python snakemake/plotcount.py $book.dat $book.png
 done
 ```
 
@@ -351,11 +352,11 @@ Another popular option is to comment out a subset of the lines in
 #python wordcount.py books/isles.txt isles.dat
 #python wordcount.py books/abyss.txt abyss.dat
 
-python plotcount.py isles.dat isles.png
-python plotcount.py abyss.dat abyss.png
+python snakemake/plotcount.py results/dracula.dat results/dracula.png
+python snakemake/plotcount.py results/jane.dat results/jane.png
 
 # This line is also commented out because it doesn't need to be rerun.
-python zipf_test.py abyss.dat isles.dat > results.txt
+python snakemake/zipf_test.py results/dracula.dat results/jane.dat > results/2_bash_pipeline_results.txt
 ```
 
 Then, we would run our modified shell script using `bash run_pipeline.sh`.

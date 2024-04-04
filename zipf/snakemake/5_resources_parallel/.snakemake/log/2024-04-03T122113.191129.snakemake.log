@@ -1,0 +1,41 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+all              1
+make_plot        1
+total            2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr  3 12:21:13 2024]
+localrule make_plot:
+    input: ../plotcount.py, ../../results/dats/sherlock_holmes.dat
+    output: ../../results/plots/sherlock_holmes.png
+    jobid: 1
+    reason: Missing output files: ../../results/plots/sherlock_holmes.png
+    wildcards: book=/sherlock_holmes
+    resources: tmpdir=/tmp
+
+python ../plotcount.py ../../results/dats/sherlock_holmes.dat ../../results/plots/sherlock_holmes.png
+[Wed Apr  3 12:21:13 2024]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr  3 12:21:13 2024]
+localrule all:
+    input: ../../results/plots/sherlock_holmes.png
+    jobid: 0
+    reason: Input files updated by another job: ../../results/plots/sherlock_holmes.png
+    resources: tmpdir=/tmp
+
+[Wed Apr  3 12:21:13 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-04-03T122113.191129.snakemake.log

@@ -1,0 +1,49 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                         count
+------------------------  -------
+count_words_frankenstein        1
+count_words_sherlock            1
+zipf_test                       1
+total                           3
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue Apr  2 15:40:37 2024]
+localrule count_words_sherlock:
+    input: ../../data/sherlock_holmes.txt
+    output: ../../results/sherlock_holmes.dat
+    jobid: 3
+    reason: Missing output files: ../../results/sherlock_holmes.dat
+    resources: tmpdir=/tmp
+
+
+[Tue Apr  2 15:40:37 2024]
+localrule count_words_frankenstein:
+    input: ../wordcount.py, ../../data/frankenstein.txt
+    output: ../../results/frankenstein.dat
+    jobid: 2
+    reason: Missing output files: ../../results/frankenstein.dat
+    resources: tmpdir=/tmp
+
+[Tue Apr  2 15:40:37 2024]
+Error in rule count_words_sherlock:
+    jobid: 3
+    input: ../../data/sherlock_holmes.txt
+    output: ../../results/sherlock_holmes.dat
+    shell:
+        ../python wordcount.py ../../data/sherlock_holmes.txt ../../results/sherlock_holmes.dat
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Tue Apr  2 15:40:37 2024]
+Finished job 2.
+1 of 3 steps (33%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-04-02T154037.459492.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

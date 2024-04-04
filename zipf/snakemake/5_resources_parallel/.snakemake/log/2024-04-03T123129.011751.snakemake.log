@@ -1,0 +1,52 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+count_words           7
+create_archive        1
+make_plot             7
+zipf_test             1
+total                17
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed Apr  3 12:31:29 2024]
+localrule count_words:
+    input: ../wordcount.py, ../../data/jane_eyre.txt
+    output: ../../results/dats/jane_eyre.dat
+    jobid: 5
+    reason: Missing output files: ../../results/dats/jane_eyre.dat; Code has changed since last execution
+    wildcards: book=/jane_eyre
+    threads: 4
+    resources: tmpdir=/tmp
+
+echo "hello"python ../wordcount.py ../../data/jane_eyre.txt ../../results/dats/jane_eyre.dat
+
+[Wed Apr  3 12:31:29 2024]
+localrule count_words:
+    input: ../wordcount.py, ../../data/moby_dick.txt
+    output: ../../results/dats/moby_dick.dat
+    jobid: 6
+    reason: Missing output files: ../../results/dats/moby_dick.dat; Code has changed since last execution
+    wildcards: book=/moby_dick
+    threads: 4
+    resources: tmpdir=/tmp
+
+echo "hello"python ../wordcount.py ../../data/moby_dick.txt ../../results/dats/moby_dick.dat
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule count_words in file /home/nibe/PROJECTS/RSE-UP/zipf/snakemake/5_resources_parallel/snakefile, line 29:
+Job 5  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+../../results/dats/jane_eyre.dat
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule count_words in file /home/nibe/PROJECTS/RSE-UP/zipf/snakemake/5_resources_parallel/snakefile, line 29:
+Job 6  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+../../results/dats/moby_dick.dat
+Terminating processes on user request, this might take some time.
+Complete log: .snakemake/log/2024-04-03T123129.011751.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

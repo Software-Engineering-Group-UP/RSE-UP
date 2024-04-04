@@ -1,0 +1,28 @@
+Building DAG of jobs...
+File path ../../data//dracula.txt contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path ../../data//sherlock_holmes.txt contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path ../../data//frankenstein.txt contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+zipf_test        1
+total            1
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr  3 11:08:10 2024]
+localrule zipf_test:
+    input: ../zipf_test.py, ../../results/dracula.dat, ../../results/sherlock_holmes.dat, ../../results/frankenstein.dat
+    output: ../../results/results.txt
+    jobid: 0
+    reason: Missing output files: ../../results/results.txt
+    resources: tmpdir=/tmp
+
+[Wed Apr  3 11:08:10 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2024-04-03T110810.866310.snakemake.log

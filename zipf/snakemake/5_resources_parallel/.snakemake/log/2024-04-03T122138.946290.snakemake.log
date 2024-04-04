@@ -1,0 +1,113 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+create_archive        1
+make_plot             5
+total                 7
+
+Select jobs to execute...
+Execute 5 jobs...
+
+[Wed Apr  3 12:21:38 2024]
+localrule make_plot:
+    input: ../plotcount.py, ../../results/dats/moby_dick.dat
+    output: ../../results/plots/moby_dick.png
+    jobid: 13
+    reason: Missing output files: ../../results/plots/moby_dick.png
+    wildcards: book=/moby_dick
+    resources: tmpdir=/tmp
+
+python ../plotcount.py ../../results/dats/moby_dick.dat ../../results/plots/moby_dick.png
+
+[Wed Apr  3 12:21:38 2024]
+localrule make_plot:
+    input: ../plotcount.py, ../../results/dats/frankenstein.dat
+    output: ../../results/plots/frankenstein.png
+    jobid: 11
+    reason: Missing output files: ../../results/plots/frankenstein.png
+    wildcards: book=/frankenstein
+    resources: tmpdir=/tmp
+
+python ../plotcount.py ../../results/dats/frankenstein.dat ../../results/plots/frankenstein.png
+
+[Wed Apr  3 12:21:38 2024]
+localrule make_plot:
+    input: ../plotcount.py, ../../results/dats/jane_eyre.dat
+    output: ../../results/plots/jane_eyre.png
+    jobid: 12
+    reason: Missing output files: ../../results/plots/jane_eyre.png
+    wildcards: book=/jane_eyre
+    resources: tmpdir=/tmp
+
+python ../plotcount.py ../../results/dats/jane_eyre.dat ../../results/plots/jane_eyre.png
+
+[Wed Apr  3 12:21:38 2024]
+localrule make_plot:
+    input: ../plotcount.py, ../../results/dats/time_machine.dat
+    output: ../../results/plots/time_machine.png
+    jobid: 16
+    reason: Missing output files: ../../results/plots/time_machine.png
+    wildcards: book=/time_machine
+    resources: tmpdir=/tmp
+
+python ../plotcount.py ../../results/dats/time_machine.dat ../../results/plots/time_machine.png
+
+[Wed Apr  3 12:21:38 2024]
+localrule make_plot:
+    input: ../plotcount.py, ../../results/dats/sense_and_sensibility.dat
+    output: ../../results/plots/sense_and_sensibility.png
+    jobid: 14
+    reason: Missing output files: ../../results/plots/sense_and_sensibility.png
+    wildcards: book=/sense_and_sensibility
+    resources: tmpdir=/tmp
+
+python ../plotcount.py ../../results/dats/sense_and_sensibility.dat ../../results/plots/sense_and_sensibility.png
+[Wed Apr  3 12:21:39 2024]
+Finished job 11.
+1 of 7 steps (14%) done
+[Wed Apr  3 12:21:39 2024]
+Finished job 14.
+2 of 7 steps (29%) done
+[Wed Apr  3 12:21:39 2024]
+Finished job 12.
+3 of 7 steps (43%) done
+[Wed Apr  3 12:21:39 2024]
+Finished job 16.
+4 of 7 steps (57%) done
+[Wed Apr  3 12:21:39 2024]
+Finished job 13.
+5 of 7 steps (71%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr  3 12:21:39 2024]
+localrule create_archive:
+    input: ../../results/results.txt, ../../results/dats/dracula.dat, ../../results/dats/frankenstein.dat, ../../results/dats/jane_eyre.dat, ../../results/dats/moby_dick.dat, ../../results/dats/sense_and_sensibility.dat, ../../results/dats/sherlock_holmes.dat, ../../results/dats/time_machine.dat, ../../results/plots/dracula.png, ../../results/plots/frankenstein.png, ../../results/plots/jane_eyre.png, ../../results/plots/moby_dick.png, ../../results/plots/sense_and_sensibility.png, ../../results/plots/sherlock_holmes.png, ../../results/plots/time_machine.png
+    output: ../../results/zipf_analysis.tar.gz
+    jobid: 1
+    reason: Missing output files: ../../results/zipf_analysis.tar.gz; Input files updated by another job: ../../results/plots/frankenstein.png, ../../results/plots/time_machine.png, ../../results/plots/sense_and_sensibility.png, ../../results/plots/jane_eyre.png, ../../results/plots/moby_dick.png
+    resources: tmpdir=/tmp
+
+tar -czvf ../../results/zipf_analysis.tar.gz ../../results/results.txt ../../results/dats/dracula.dat ../../results/dats/frankenstein.dat ../../results/dats/jane_eyre.dat ../../results/dats/moby_dick.dat ../../results/dats/sense_and_sensibility.dat ../../results/dats/sherlock_holmes.dat ../../results/dats/time_machine.dat ../../results/plots/dracula.png ../../results/plots/frankenstein.png ../../results/plots/jane_eyre.png ../../results/plots/moby_dick.png ../../results/plots/sense_and_sensibility.png ../../results/plots/sherlock_holmes.png ../../results/plots/time_machine.png
+[Wed Apr  3 12:21:40 2024]
+Finished job 1.
+6 of 7 steps (86%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr  3 12:21:40 2024]
+localrule all:
+    input: ../../results/zipf_analysis.tar.gz
+    jobid: 0
+    reason: Input files updated by another job: ../../results/zipf_analysis.tar.gz
+    resources: tmpdir=/tmp
+
+[Wed Apr  3 12:21:40 2024]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: .snakemake/log/2024-04-03T122138.946290.snakemake.log

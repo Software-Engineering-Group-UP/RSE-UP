@@ -1,0 +1,26 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+make_plot        1
+total            1
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr  3 12:17:01 2024]
+localrule make_plot:
+    input: ../plotcount.py, ../../results/dats/dracula.dat
+    output: ../../results/plots/dracula.png
+    jobid: 0
+    reason: Missing output files: ../../results/plots/dracula.png
+    resources: tmpdir=/tmp
+
+python ../plotcount.py ../../results/dats/dracula.dat ../../results/plots/dracula.png
+[Wed Apr  3 12:17:02 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2024-04-03T121701.926802.snakemake.log

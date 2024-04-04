@@ -1,0 +1,36 @@
+print('Snakefile is being executed....!!')
+
+
+#rule zipf_test:
+#    input: '../../zipf_test.py', '../../results/sherlock_holmes.dat', '../../results/frankenstein.dat', '../../results/dracula.dat'
+#    output: '../../results/wildcard_2_results.txt'
+#    shell: 'python {input[0]} {input[1]} {input[2]} {input[3]} > {output}'
+
+#rule dats:
+#     input: '../../results/dracula.dat', '../../results/frankenstein.dat', '../../results/sherlock_holmes.dat'
+
+
+DATS=['../../results/frankenstein.dat', '../../results/sherlock_holmes.dat', '../../results/dracula.dat']
+
+rule zipf_test:
+    input:
+        cmd='../zipf_test.py',
+        dats=DATS
+    output: '../../results/results.txt'
+    shell: 'python {input.cmd} {input.dats} > {output}'
+
+rule dats:
+    input: DATS
+
+# delete everything so we can re-run things
+rule clean:
+    shell: 'rm -f ../../results/*.dat ../../results/wild*.txt'
+
+# count words in one of our "books"
+rule count_words:
+    input:
+        cmd='../wordcount.py',
+        book='../../data{book}.txt'
+    output: '../../results{book}.dat'
+    shell: 'python {input.cmd} {input.book} {output}'
+

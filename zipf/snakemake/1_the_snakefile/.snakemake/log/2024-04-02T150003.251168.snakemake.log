@@ -1,0 +1,44 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+count_words                  1
+count_words_moby_dick        1
+dats                         1
+total                        3
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue Apr  2 15:00:03 2024]
+localrule count_words:
+    input: ../../data/dracula.txt
+    output: ../../results/dracula.dat
+    jobid: 1
+    reason: Missing output files: ../../results/dracula.dat
+    resources: tmpdir=/tmp
+
+
+[Tue Apr  2 15:00:03 2024]
+localrule count_words_moby_dick:
+    input: ../../data/moby_dick.txt
+    output: ../../results/moby_dick.dat
+    jobid: 2
+    reason: Missing output files: ../../results/moby_dick.dat
+    resources: tmpdir=/tmp
+
+[Tue Apr  2 15:00:03 2024]
+Finished job 1.
+1 of 3 steps (33%) done
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule count_words_moby_dick in file /home/nibe/PROJECTS/RSE-UP/zipf/snakemake/1_the_snakefile/snakefile, line 17:
+Job 2  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+../../results/moby_dick.dat
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-04-02T150003.251168.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

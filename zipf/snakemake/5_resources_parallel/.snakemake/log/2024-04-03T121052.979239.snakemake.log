@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule make_plot in file /home/nibe/PROJECTS/RSE-UP/zipf/snakemake/5_resources_parallel/snakefile, line 37:
+Missing input files for rule make_plot:
+    output: ../../results/plots/dracula.png
+    wildcards: book=/dracula
+    affected files:
+        plotcount.py

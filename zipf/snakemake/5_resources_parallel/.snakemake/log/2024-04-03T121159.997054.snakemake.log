@@ -1,0 +1,119 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+count_words        7
+zipf_test          1
+total              8
+
+Select jobs to execute...
+Execute 7 jobs...
+
+[Wed Apr  3 12:12:00 2024]
+localrule count_words:
+    input: ../wordcount.py, ../../data/sense_and_sensibility.txt
+    output: ../../results/dats/sense_and_sensibility.dat
+    jobid: 5
+    reason: Missing output files: ../../results/dats/sense_and_sensibility.dat
+    wildcards: book=/sense_and_sensibility
+    resources: tmpdir=/tmp
+
+
+[Wed Apr  3 12:12:00 2024]
+localrule count_words:
+    input: ../wordcount.py, ../../data/moby_dick.txt
+    output: ../../results/dats/moby_dick.dat
+    jobid: 4
+    reason: Missing output files: ../../results/dats/moby_dick.dat
+    wildcards: book=/moby_dick
+    resources: tmpdir=/tmp
+
+
+[Wed Apr  3 12:12:00 2024]
+localrule count_words:
+    input: ../wordcount.py, ../../data/sherlock_holmes.txt
+    output: ../../results/dats/sherlock_holmes.dat
+    jobid: 6
+    reason: Missing output files: ../../results/dats/sherlock_holmes.dat
+    wildcards: book=/sherlock_holmes
+    resources: tmpdir=/tmp
+
+
+[Wed Apr  3 12:12:00 2024]
+localrule count_words:
+    input: ../wordcount.py, ../../data/time_machine.txt
+    output: ../../results/dats/time_machine.dat
+    jobid: 7
+    reason: Missing output files: ../../results/dats/time_machine.dat
+    wildcards: book=/time_machine
+    resources: tmpdir=/tmp
+
+
+[Wed Apr  3 12:12:00 2024]
+localrule count_words:
+    input: ../wordcount.py, ../../data/dracula.txt
+    output: ../../results/dats/dracula.dat
+    jobid: 1
+    reason: Missing output files: ../../results/dats/dracula.dat
+    wildcards: book=/dracula
+    resources: tmpdir=/tmp
+
+
+[Wed Apr  3 12:12:00 2024]
+localrule count_words:
+    input: ../wordcount.py, ../../data/jane_eyre.txt
+    output: ../../results/dats/jane_eyre.dat
+    jobid: 3
+    reason: Missing output files: ../../results/dats/jane_eyre.dat
+    wildcards: book=/jane_eyre
+    resources: tmpdir=/tmp
+
+
+[Wed Apr  3 12:12:00 2024]
+localrule count_words:
+    input: ../wordcount.py, ../../data/frankenstein.txt
+    output: ../../results/dats/frankenstein.dat
+    jobid: 2
+    reason: Missing output files: ../../results/dats/frankenstein.dat
+    wildcards: book=/frankenstein
+    resources: tmpdir=/tmp
+
+[Wed Apr  3 12:12:00 2024]
+Finished job 7.
+1 of 8 steps (12%) done
+[Wed Apr  3 12:12:00 2024]
+Finished job 2.
+2 of 8 steps (25%) done
+[Wed Apr  3 12:12:00 2024]
+Finished job 5.
+3 of 8 steps (38%) done
+[Wed Apr  3 12:12:00 2024]
+Finished job 6.
+4 of 8 steps (50%) done
+[Wed Apr  3 12:12:00 2024]
+Finished job 1.
+5 of 8 steps (62%) done
+[Wed Apr  3 12:12:00 2024]
+Finished job 3.
+6 of 8 steps (75%) done
+[Wed Apr  3 12:12:00 2024]
+Finished job 4.
+7 of 8 steps (88%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr  3 12:12:00 2024]
+localrule zipf_test:
+    input: ../zipf_test.py, ../../results/dats/dracula.dat, ../../results/dats/frankenstein.dat, ../../results/dats/jane_eyre.dat, ../../results/dats/moby_dick.dat, ../../results/dats/sense_and_sensibility.dat, ../../results/dats/sherlock_holmes.dat, ../../results/dats/time_machine.dat
+    output: ../../results/results.txt
+    jobid: 0
+    reason: Missing output files: ../../results/results.txt; Input files updated by another job: ../../results/dats/sherlock_holmes.dat, ../../results/dats/moby_dick.dat, ../../results/dats/jane_eyre.dat, ../../results/dats/frankenstein.dat, ../../results/dats/sense_and_sensibility.dat, ../../results/dats/dracula.dat, ../../results/dats/time_machine.dat
+    resources: tmpdir=/tmp
+
+[Wed Apr  3 12:12:00 2024]
+Finished job 0.
+8 of 8 steps (100%) done
+Complete log: .snakemake/log/2024-04-03T121159.997054.snakemake.log
