@@ -1,8 +1,8 @@
-# Snakemake Exercise Solutions
+## Snakemake Exercise Solutions
 
 **NOTE** the solution are only meant to be a guide, therefore the file paths might not be 100% accurate. 
 
-## 1. Write two New Rules
+### 1. Write two New Rules
 ```Python
 rule zipf_test:
     input:
@@ -38,7 +38,7 @@ rule count_words_sherlock:
     output: 'results/sherlock_holmes.dat'
     shell: 'python wordcount.py data/sherlock_holmes.txt results/sherlock_holmes.dat'
 ```
-## 2. Update Dependencies
+### 2. Update Dependencies
 
  Only `results.txt` recreated.
 
@@ -50,7 +50,7 @@ touch data/*.txt
 snakemake results.txt
 ```
 
-## 3. Rewrite .dat rules to use wildcards
+### 3. Rewrite .dat rules to use wildcards
 
 ```Python
 rule count_words:
@@ -59,11 +59,11 @@ rule count_words:
     shell: 'python wordcount.py {input} {output}'
 
 ```
-## 4. Updating One Input File
+### 4. Updating One Input File
 
 3. only last.dat and results.txt are recreated
 
-## 5. Updating Zipf_test rule
+### 5. Updating Zipf_test rule
 
 ```Python
 rule zipf_test:
@@ -72,7 +72,7 @@ rule zipf_test:
     shell:  'python {input[0]} {input[1]} {input[2]} {input[3]} > {output}'
 ```
 
-## 6. Putting it all Together
+### 6. Putting it all Together
 
 The critical change is to the assignment of `DATS`, building it dynamically from the input `*.txt` file names.
 
@@ -80,7 +80,7 @@ The critical change is to the assignment of `DATS`, building it dynamically from
 DATS = expand('{book}.dat', book=glob_wildcards('./data/{book}.txt').book)
 ```
 
-## 7. Moving the `dat` files
+### 7. Moving the `dat` files
 
 First update the `DATS` variable with the `dats` directory:
 ```Python
@@ -107,7 +107,7 @@ rule clean:
  *Note that in the clean rule there is no harm from keeping the `*.dat` pattern in the `rm` command even though no new files will be created in that location. It will help clean up if you forgot to run `snakemake clean` before updating the Snakefile.*
  
 
-## 8. Creating PNGs
+### 8. Creating PNGs
 
  Modify the `clean` rule and add a new pattern rule `make_plot`:
 ```Python
@@ -124,7 +124,7 @@ rule make_plot:
      shell: 'python {input.cmd} {input.dat} {output}'
 ```
 
-## 9. Generating Plots
+### 9. Generating Plots
 First, we modify the existing code that builds `DATS` to first extract the list of book names, and then to build `DATS` and a new global variable `PLOTS`listing all plots:
 ```Python
 
@@ -145,7 +145,7 @@ rule all:
     input: 'results.txt', PLOTS
 ```
 
-## 10. Creating an Archive
+### 10. Creating an Archive
 
 First the `create_archive` rule:
 ```Python
@@ -171,7 +171,7 @@ rule all:
     input: 'zipf_analysis.tar.gz'
 ```
 
-## 12. What happens if Snakemake does not have enough resources?
+### 12. What happens if Snakemake does not have enough resources?
 
 Similar to the case where a rule specifies more threads than are available, the rule still runs.
 
@@ -182,7 +182,7 @@ Once again, it is up to the code being run by the rule to check that sufficient 
 
 The Bash `if` test approach used for `{threads}` works equally well to check for minimum required resource values. Just use `{resources.gpu}` (or your actual resource name) to access the value.
 
-## 13. Replace all other duplicated strings with global variables
+### 13. Replace all other duplicated strings with global variables
 This solution is also available as `.solutions/reduce_duplication/Snakefile-remove-duplicates`.
 Possibly the only tricky part is in the `clean` rule where we use
 a formatted Python string to build the global variables into the shell
@@ -250,13 +250,12 @@ rule create_archive:
     shell: 'tar -czvf {output} {input}'
 ```
 
-## 14 Combining global variables and wildcards in formatted strings
+### 14 Combining global variables and wildcards in formatted strings
 
 No example code is given here. By this stage you should be able to trust your
 own judgement.
 
-**TODO**
-If you really need it, a full example of the entire workflow with no duplication and all configurable values moved into a configuration file is in `.solutions/reduce_duplication/Snakefile` and `.solutions/reduce_duplication/config.yaml` in the downloaded code package.
+If you really need it, a full example of the entire workflow with no duplication and all configurable values moved into a configuration file is in [here on Github](https://github.com/Software-Engineering-Group-UP/RSE-UP/tree/main/zipf/snakemake). .
 
 Note that the example uses [f-strings](https://docs.python.org/3/reference/lexical_analysis.html#f-strings), which are only available in Python 3.6
 and higher.

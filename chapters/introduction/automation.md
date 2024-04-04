@@ -1,4 +1,4 @@
-# Introduction to Make
+# Introduction to Make and Snakemake
 
 > Multiple exclamation marks are a sure sign of a diseased mind.
 >
