@@ -256,7 +256,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/workflow.html">Introduction to Workflows</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapters/introduction/automation.html">Introduction to Make</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapters/introduction/automation.html">Introduction to Make and Snakemake</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/intro_make.html">Automating Analyses with Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro_make.html">Exercises - Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/intro_snakemake.html">Introduction to Snakemake</a></li>
@@ -299,7 +299,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/solutions.html">Solutions</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/working_remotely.html">Working Remotely</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/tree.html">Project Tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/references.html">Bibliography</a></li>
@@ -522,7 +521,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="snakemake-exercise-solutions">
+  <section id="snakemake-exercise-solutions">
 <h1>Snakemake Exercise Solutions<a class="headerlink" href="#snakemake-exercise-solutions" title="Link to this heading">#</a></h1>
 <p><strong>NOTE</strong> the solution are only meant to be a guide, therefore the file paths might not be 100% accurate.</p>
 <section id="write-two-new-rules">
@@ -768,8 +767,7 @@ command. We used f-string notation, but <code class="docutils literal notranslat
 <h2>14 Combining global variables and wildcards in formatted strings<a class="headerlink" href="#combining-global-variables-and-wildcards-in-formatted-strings" title="Link to this heading">#</a></h2>
 <p>No example code is given here. By this stage you should be able to trust your
 own judgement.</p>
-<p><strong>TODO</strong>
-If you really need it, a full example of the entire workflow with no duplication and all configurable values moved into a configuration file is in <code class="docutils literal notranslate"><span class="pre">.solutions/reduce_duplication/Snakefile</span></code> and <code class="docutils literal notranslate"><span class="pre">.solutions/reduce_duplication/config.yaml</span></code> in the downloaded code package.</p>
+<p>If you really need it, a full example of the entire workflow with no duplication and all configurable values moved into a configuration file is in <a class="reference external" href="https://github.com/Software-Engineering-Group-UP/RSE-UP/tree/main/zipf/snakemake">here on Github</a>. .</p>
 <p>Note that the example uses <a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">f-strings</a>, which are only available in Python 3.6
 and higher.</p>
 <p>If you must use an older version of Python then you can use the older string formatting

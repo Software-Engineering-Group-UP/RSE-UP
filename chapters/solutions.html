@@ -256,7 +256,7 @@
 <li class="toctree-l2"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Introduction to Make</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Introduction to Make and Snakemake</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
@@ -299,7 +299,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Solutions</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="working_remotely.html">Working Remotely</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tree.html">Project Tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">Bibliography</a></li>
@@ -498,7 +497,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Solutions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-bash-basics">Chapter Bash Basics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
@@ -636,26 +634,23 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id85">Exercise 4</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snakemake-exercise-solutions">Snakemake Exercise Solutions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-two-new-rules">1. Write two New Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-dependencies">2. Update Dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite-dat-rules-to-use-wildcards">3. Rewrite .dat rules to use wildcards</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-one-input-file">4. Updating One Input File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-zipf-test-rule">5. Updating Zipf_test rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">6. Putting it all Together</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-the-dat-files">7. Moving the <code class="docutils literal notranslate"><span class="pre">dat</span></code> files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-pngs">8. Creating PNGs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-plots">9. Generating Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-archive">10. Creating an Archive</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-if-snakemake-does-not-have-enough-resources">12. What happens if Snakemake does not have enough resources?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-all-other-duplicated-strings-with-global-variables">13. Replace all other duplicated strings with global variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-global-variables-and-wildcards-in-formatted-strings">14 Combining global variables and wildcards in formatted strings</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#snakemake-exercise-solutions">Snakemake Exercise Solutions</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-two-new-rules">1. Write two New Rules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-dependencies">2. Update Dependencies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite-dat-rules-to-use-wildcards">3. Rewrite .dat rules to use wildcards</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-one-input-file">4. Updating One Input File</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-zipf-test-rule">5. Updating Zipf_test rule</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">6. Putting it all Together</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-the-dat-files">7. Moving the <code class="docutils literal notranslate"><span class="pre">dat</span></code> files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-pngs">8. Creating PNGs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-plots">9. Generating Plots</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-archive">10. Creating an Archive</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-if-snakemake-does-not-have-enough-resources">12. What happens if Snakemake does not have enough resources?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-all-other-duplicated-strings-with-global-variables">13. Replace all other duplicated strings with global variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-global-variables-and-wildcards-in-formatted-strings">14 Combining global variables and wildcards in formatted strings</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -2596,12 +2591,11 @@ $<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> <
 </div>
 </section>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="snakemake-exercise-solutions">
-<h1>Snakemake Exercise Solutions<a class="headerlink" href="#snakemake-exercise-solutions" title="Link to this heading">#</a></h1>
+<section id="snakemake-exercise-solutions">
+<h2>Snakemake Exercise Solutions<a class="headerlink" href="#snakemake-exercise-solutions" title="Link to this heading">#</a></h2>
 <p><strong>NOTE</strong> the solution are only meant to be a guide, therefore the file paths might not be 100% accurate.</p>
 <section id="write-two-new-rules">
-<h2>1. Write two New Rules<a class="headerlink" href="#write-two-new-rules" title="Link to this heading">#</a></h2>
+<h3>1. Write two New Rules<a class="headerlink" href="#write-two-new-rules" title="Link to this heading">#</a></h3>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">zipf_test</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
         <span class="s1">&#39;results/jane_eyre.dat&#39;</span><span class="p">,</span>
@@ -2639,7 +2633,7 @@ $<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> <
 </div>
 </section>
 <section id="update-dependencies">
-<h2>2. Update Dependencies<a class="headerlink" href="#update-dependencies" title="Link to this heading">#</a></h2>
+<h3>2. Update Dependencies<a class="headerlink" href="#update-dependencies" title="Link to this heading">#</a></h3>
 <p>Only <code class="docutils literal notranslate"><span class="pre">results.txt</span></code> recreated.</p>
 <p>The rules for <code class="docutils literal notranslate"><span class="pre">*.dat</span></code> are not executed because their corresponding <code class="docutils literal notranslate"><span class="pre">.txt</span></code> files haven’t been modified.</p>
 <p>if you run :</p>
@@ -2649,7 +2643,7 @@ snakemake<span class="w"> </span>results.txt
 </div>
 </section>
 <section id="rewrite-dat-rules-to-use-wildcards">
-<h2>3. Rewrite .dat rules to use wildcards<a class="headerlink" href="#rewrite-dat-rules-to-use-wildcards" title="Link to this heading">#</a></h2>
+<h3>3. Rewrite .dat rules to use wildcards<a class="headerlink" href="#rewrite-dat-rules-to-use-wildcards" title="Link to this heading">#</a></h3>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">count_words</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span> <span class="s1">&#39;data/dracula.txt&#39;</span>
     <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;results/dracula.dat&#39;</span>
@@ -2658,13 +2652,13 @@ snakemake<span class="w"> </span>results.txt
 </div>
 </section>
 <section id="updating-one-input-file">
-<h2>4. Updating One Input File<a class="headerlink" href="#updating-one-input-file" title="Link to this heading">#</a></h2>
+<h3>4. Updating One Input File<a class="headerlink" href="#updating-one-input-file" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="3">
 <li><p>only last.dat and results.txt are recreated</p></li>
 </ol>
 </section>
 <section id="updating-zipf-test-rule">
-<h2>5. Updating Zipf_test rule<a class="headerlink" href="#updating-zipf-test-rule" title="Link to this heading">#</a></h2>
+<h3>5. Updating Zipf_test rule<a class="headerlink" href="#updating-zipf-test-rule" title="Link to this heading">#</a></h3>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">zipf_test</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>  <span class="s1">&#39;zipf_test.py&#39;</span><span class="p">,</span> <span class="s1">&#39;results/dracula.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;results/frankenstein.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;results/sherlock_holmes.dat&#39;</span>
     <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;results.txt&#39;</span>
@@ -2673,14 +2667,14 @@ snakemake<span class="w"> </span>results.txt
 </div>
 </section>
 <section id="putting-it-all-together">
-<h2>6. Putting it all Together<a class="headerlink" href="#putting-it-all-together" title="Link to this heading">#</a></h2>
+<h3>6. Putting it all Together<a class="headerlink" href="#putting-it-all-together" title="Link to this heading">#</a></h3>
 <p>The critical change is to the assignment of <code class="docutils literal notranslate"><span class="pre">DATS</span></code>, building it dynamically from the input <code class="docutils literal notranslate"><span class="pre">*.txt</span></code> file names.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">DATS</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{book}</span><span class="s1">.dat&#39;</span><span class="p">,</span> <span class="n">book</span><span class="o">=</span><span class="n">glob_wildcards</span><span class="p">(</span><span class="s1">&#39;./data/</span><span class="si">{book}</span><span class="s1">.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">book</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="moving-the-dat-files">
-<h2>7. Moving the <code class="docutils literal notranslate"><span class="pre">dat</span></code> files<a class="headerlink" href="#moving-the-dat-files" title="Link to this heading">#</a></h2>
+<h3>7. Moving the <code class="docutils literal notranslate"><span class="pre">dat</span></code> files<a class="headerlink" href="#moving-the-dat-files" title="Link to this heading">#</a></h3>
 <p>First update the <code class="docutils literal notranslate"><span class="pre">DATS</span></code> variable with the <code class="docutils literal notranslate"><span class="pre">dats</span></code> directory:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">DATS</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="s1">&#39;dats/</span><span class="si">{file}</span><span class="s1">.dat&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">glob_wildcards</span><span class="p">(</span><span class="s1">&#39;./books/</span><span class="si">{book}</span><span class="s1">.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">book</span><span class="p">)</span>
 </pre></div>
@@ -2702,7 +2696,7 @@ snakemake<span class="w"> </span>results.txt
 <p><em>Note that in the clean rule there is no harm from keeping the <code class="docutils literal notranslate"><span class="pre">*.dat</span></code> pattern in the <code class="docutils literal notranslate"><span class="pre">rm</span></code> command even though no new files will be created in that location. It will help clean up if you forgot to run <code class="docutils literal notranslate"><span class="pre">snakemake</span> <span class="pre">clean</span></code> before updating the Snakefile.</em></p>
 </section>
 <section id="creating-pngs">
-<h2>8. Creating PNGs<a class="headerlink" href="#creating-pngs" title="Link to this heading">#</a></h2>
+<h3>8. Creating PNGs<a class="headerlink" href="#creating-pngs" title="Link to this heading">#</a></h3>
 <p>Modify the <code class="docutils literal notranslate"><span class="pre">clean</span></code> rule and add a new pattern rule <code class="docutils literal notranslate"><span class="pre">make_plot</span></code>:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete everything so we can re-run things</span>
 <span class="n">rule</span> <span class="n">clean</span><span class="p">:</span>
@@ -2719,7 +2713,7 @@ snakemake<span class="w"> </span>results.txt
 </div>
 </section>
 <section id="generating-plots">
-<h2>9. Generating Plots<a class="headerlink" href="#generating-plots" title="Link to this heading">#</a></h2>
+<h3>9. Generating Plots<a class="headerlink" href="#generating-plots" title="Link to this heading">#</a></h3>
 <p>First, we modify the existing code that builds <code class="docutils literal notranslate"><span class="pre">DATS</span></code> to first extract the list of book names, and then to build <code class="docutils literal notranslate"><span class="pre">DATS</span></code> and a new global variable <code class="docutils literal notranslate"><span class="pre">PLOTS</span></code>listing all plots:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build the list of book names. We need to use it multiple times when building</span>
 <span class="c1"># the lists of files that will be built in the workflow</span>
@@ -2740,7 +2734,7 @@ snakemake<span class="w"> </span>results.txt
 </div>
 </section>
 <section id="creating-an-archive">
-<h2>10. Creating an Archive<a class="headerlink" href="#creating-an-archive" title="Link to this heading">#</a></h2>
+<h3>10. Creating an Archive<a class="headerlink" href="#creating-an-archive" title="Link to this heading">#</a></h3>
 <p>First the <code class="docutils literal notranslate"><span class="pre">create_archive</span></code> rule:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create an archive with all results</span>
 <span class="n">rule</span> <span class="n">create_archive</span><span class="p">:</span>
@@ -2764,7 +2758,7 @@ snakemake<span class="w"> </span>results.txt
 </div>
 </section>
 <section id="what-happens-if-snakemake-does-not-have-enough-resources">
-<h2>12. What happens if Snakemake does not have enough resources?<a class="headerlink" href="#what-happens-if-snakemake-does-not-have-enough-resources" title="Link to this heading">#</a></h2>
+<h3>12. What happens if Snakemake does not have enough resources?<a class="headerlink" href="#what-happens-if-snakemake-does-not-have-enough-resources" title="Link to this heading">#</a></h3>
 <p>Similar to the case where a rule specifies more threads than are available, the rule still runs.</p>
 <p>Resource constraints will limit the maximum number of rules that Snakemake will attempt to run at the same time, but not the minimum.
 Where sufficient resources are not available, Snakemake will still run at least one task.</p>
@@ -2772,7 +2766,7 @@ Where sufficient resources are not available, Snakemake will still run at least 
 <p>The Bash <code class="docutils literal notranslate"><span class="pre">if</span></code> test approach used for <code class="docutils literal notranslate"><span class="pre">{threads}</span></code> works equally well to check for minimum required resource values. Just use <code class="docutils literal notranslate"><span class="pre">{resources.gpu}</span></code> (or your actual resource name) to access the value.</p>
 </section>
 <section id="replace-all-other-duplicated-strings-with-global-variables">
-<h2>13. Replace all other duplicated strings with global variables<a class="headerlink" href="#replace-all-other-duplicated-strings-with-global-variables" title="Link to this heading">#</a></h2>
+<h3>13. Replace all other duplicated strings with global variables<a class="headerlink" href="#replace-all-other-duplicated-strings-with-global-variables" title="Link to this heading">#</a></h3>
 <p>This solution is also available as <code class="docutils literal notranslate"><span class="pre">.solutions/reduce_duplication/Snakefile-remove-duplicates</span></code>.
 Possibly the only tricky part is in the <code class="docutils literal notranslate"><span class="pre">clean</span></code> rule where we use
 a formatted Python string to build the global variables into the shell
@@ -2840,15 +2834,15 @@ command. We used f-string notation, but <code class="docutils literal notranslat
 </div>
 </section>
 <section id="combining-global-variables-and-wildcards-in-formatted-strings">
-<h2>14 Combining global variables and wildcards in formatted strings<a class="headerlink" href="#combining-global-variables-and-wildcards-in-formatted-strings" title="Link to this heading">#</a></h2>
+<h3>14 Combining global variables and wildcards in formatted strings<a class="headerlink" href="#combining-global-variables-and-wildcards-in-formatted-strings" title="Link to this heading">#</a></h3>
 <p>No example code is given here. By this stage you should be able to trust your
 own judgement.</p>
-<p><strong>TODO</strong>
-If you really need it, a full example of the entire workflow with no duplication and all configurable values moved into a configuration file is in <code class="docutils literal notranslate"><span class="pre">.solutions/reduce_duplication/Snakefile</span></code> and <code class="docutils literal notranslate"><span class="pre">.solutions/reduce_duplication/config.yaml</span></code> in the downloaded code package.</p>
+<p>If you really need it, a full example of the entire workflow with no duplication and all configurable values moved into a configuration file is in <a class="reference external" href="https://github.com/Software-Engineering-Group-UP/RSE-UP/tree/main/zipf/snakemake">here on Github</a>. .</p>
 <p>Note that the example uses <a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">f-strings</a>, which are only available in Python 3.6
 and higher.</p>
 <p>If you must use an older version of Python then you can use the older string formatting
 methods, although the results will be less concise.</p>
+</section>
 </section>
 </section>
 
@@ -2916,7 +2910,6 @@ methods, although the results will be less concise.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Solutions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-bash-basics">Chapter Bash Basics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
@@ -3054,26 +3047,23 @@ methods, although the results will be less concise.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id85">Exercise 4</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snakemake-exercise-solutions">Snakemake Exercise Solutions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-two-new-rules">1. Write two New Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-dependencies">2. Update Dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite-dat-rules-to-use-wildcards">3. Rewrite .dat rules to use wildcards</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-one-input-file">4. Updating One Input File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-zipf-test-rule">5. Updating Zipf_test rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">6. Putting it all Together</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-the-dat-files">7. Moving the <code class="docutils literal notranslate"><span class="pre">dat</span></code> files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-pngs">8. Creating PNGs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-plots">9. Generating Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-archive">10. Creating an Archive</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-if-snakemake-does-not-have-enough-resources">12. What happens if Snakemake does not have enough resources?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-all-other-duplicated-strings-with-global-variables">13. Replace all other duplicated strings with global variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-global-variables-and-wildcards-in-formatted-strings">14 Combining global variables and wildcards in formatted strings</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#snakemake-exercise-solutions">Snakemake Exercise Solutions</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-two-new-rules">1. Write two New Rules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-dependencies">2. Update Dependencies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite-dat-rules-to-use-wildcards">3. Rewrite .dat rules to use wildcards</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-one-input-file">4. Updating One Input File</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-zipf-test-rule">5. Updating Zipf_test rule</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">6. Putting it all Together</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-the-dat-files">7. Moving the <code class="docutils literal notranslate"><span class="pre">dat</span></code> files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-pngs">8. Creating PNGs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-plots">9. Generating Plots</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-archive">10. Creating an Archive</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-if-snakemake-does-not-have-enough-resources">12. What happens if Snakemake does not have enough resources?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-all-other-duplicated-strings-with-global-variables">13. Replace all other duplicated strings with global variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-global-variables-and-wildcards-in-formatted-strings">14 Combining global variables and wildcards in formatted strings</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
