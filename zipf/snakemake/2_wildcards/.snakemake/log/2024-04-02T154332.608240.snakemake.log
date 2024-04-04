@@ -1,0 +1,40 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count
+--------------------  -------
+count_words_sherlock        1
+zipf_test                   1
+total                       2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Apr  2 15:43:32 2024]
+localrule count_words_sherlock:
+    input: ../wordcount.py, ../../data/sherlock_holmes.txt
+    output: ../../results/sherlock_holmes.dat
+    jobid: 3
+    reason: Missing output files: ../../results/sherlock_holmes.dat
+    resources: tmpdir=/tmp
+
+[Tue Apr  2 15:43:32 2024]
+Finished job 3.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Apr  2 15:43:32 2024]
+localrule zipf_test:
+    input: ../../results/dracula.dat, ../../results/frankenstein.dat, ../../results/sherlock_holmes.dat
+    output: ../../results/wildcards_zipf_results.txt
+    jobid: 0
+    reason: Missing output files: ../../results/wildcards_zipf_results.txt; Input files updated by another job: ../../results/sherlock_holmes.dat
+    resources: tmpdir=/tmp
+
+[Tue Apr  2 15:43:32 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-04-02T154332.608240.snakemake.log

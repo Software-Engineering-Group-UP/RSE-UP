@@ -4,10 +4,7 @@ This repository contains material for a semester-long course on computing skills
 
 **PLEASE NOTE** currently still a WIP! 
 
-a general todo list is as follows
-[ ] Workflow section
-[ ] more exercises
-[ ] re-evaluate course after 2024 run. 
+[ ]CICD SECTION -> problems with RUNNER on University Instance 
 
 
 The source material for our iteration of the work can be cited as: 
@@ -26,40 +23,23 @@ The source material for our iteration of the work can be cited as:
 
 ***PRELIMINARY*** SUBJECT TO CHANGE
 
-Week |  Lecture                               | Lab only / online only
------------------------------------------------------------------------------
-1    | Course Introduction                    | Python Refresher, Git Basics
------------------------------------------------------------------------------
-2    | Documentation / Find a topic           | Shell
------------------------------------------------------------------------------
-3    | Jupyter Notebook / Comp. Narative      | 
------------------------------------------------------------------------------
-4    | Licensing, Citation                    | 
------------------------------------------------------------------------------
-5    | Working In Teams                       | Project 1 Submission
------------------------------------------------------------------------------
+Week |  Lecture   | Lab only / online only
+-----|------------|-----------------------
+1    | Course Introduction | Python Refresher, Git Basics
+2    | Documentation / Find a topic | Shell
+3    | Jupyter Notebook / Comp. Narative | -
+4    | Licensing, Citation | 
+5    | Working In Teams | Project 1 Submission
 6    | Testing and Error Handling             | Find Groups / Topic
------------------------------------------------------------------------------
 7    | Requirements, Architectures, Design    | Advanced Git
------------------------------------------------------------------------------
 8    | PycodeStyle / Clean Code               | CLI Intro / Python
------------------------------------------------------------------------------ 
-9    | Workflow - Introduction                | 
------------------------------------------------------------------------------
-10   | Workflow -  make snake make            |
------------------------------------------------------------------------------
-11   | Workflow -  cicd ?                     |
------------------------------------------------------------------------------
-12   | Configuration and Packaging            | 
------------------------------------------------------------------------------
-13   | Tracking Provenance                    |
------------------------------------------------------------------------------
-14   | RSE in Practice / Guest                |
------------------------------------------------------------------------------
-15   | Open Topic  / Project Presentation     | Project Submission 
------------------------------------------------------------------------------
-16   | Exam date 1 
------------------------------------------------------------------------------
+9    | Workflow - Introduction                | -
+10   | Workflow -  make snake make            | -
+11   | Workflow -  cicd  | -
+12   | Configuration and Packaging | - 
+13   | Tracking Provenance     | -
+14   | RSE in Practice / Guest | -
+15   | Open Topic  / Project Presentation | Project Submission  
 
 ### Course Work
 

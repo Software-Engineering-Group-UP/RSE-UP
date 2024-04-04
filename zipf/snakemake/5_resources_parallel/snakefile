@@ -1,0 +1,54 @@
+# Build the list of book names. We need to use it multiple times when building
+# the lists of files that will be built in the workflow
+BOOK_NAMES = glob_wildcards('../../data/{book}.txt').book
+
+# The list of all dat files
+DATS = expand('../../results/dats/{file}.dat', file=BOOK_NAMES)
+
+# The list of all plot files
+PLOTS = expand('../../results/plots/{file}.png', file=BOOK_NAMES)
+
+# pseudo-rule that tries to build everything.
+# Just add all the final outputs that you want built.
+rule all:
+    input: '../../results/zipf_analysis.tar.gz'
+
+# Generate summary table
+rule zipf_test:
+    input:
+        cmd='../zipf_test.py',
+        dats=DATS
+    output: '../../results/results.txt'
+    shell:  'python {input.cmd} {input.dats} > {output}'
+
+# delete everything so we can re-run things
+rule clean:
+    shell: 'rm -rf ../../results/dats/ ../../results/plots/ ../../results/results.txt ../../results/zipf_analysis.tar.gz'
+
+# Count words in one of the books
+rule count_words:
+    input:
+        cmd='../wordcount.py',
+        book='../../data{book}.txt'
+    output: '../../results/dats{book}.dat'
+    threads: 4
+    shell: 
+        '''
+        echo "Running {input.cmd} with {threads}"
+        python {input.cmd} {input.book} {output}
+        '''
+
+# plot one word count dat file
+rule make_plot:
+    input:
+        cmd='../plotcount.py',
+        dats='../../results/dats{book}.dat'
+    output: '../../results/plots{book}.png'
+    shell: 'python {input.cmd} {input.dats} {output}'
+
+# create an archive with all results
+rule create_archive:
+    input: '../../results/results.txt', DATS, PLOTS
+    output: '../../results/zipf_analysis.tar.gz'
+    shell: 'tar -czvf {output} {input}'
+

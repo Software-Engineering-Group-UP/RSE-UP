@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule dats in file /home/nibe/PROJECTS/RSE-UP/zipf/snakemake/3_pattern/snakefile, line 1:
+Missing input files for rule dats:
+    affected files:
+        ../../results/dracula.dat
+        ../../results/frankenstein.dat
+        ../../results/sherlock_holmes.dat

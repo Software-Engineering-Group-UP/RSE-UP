@@ -1,0 +1,21 @@
+# delete everything so we can re-run things
+rule clean:
+    shell: 'rm -f ../../results/*.dat'
+
+rule dats:
+    input:
+          '../../results/dracula.dat',
+          '../../results/moby_dick.dat'
+
+
+# Count words in one of the books
+rule count_words:
+	input: '../../data/dracula.txt'
+	output: '../../results/dracula.dat'
+	shell: 'python ../wordcount.py ../../data/dracula.txt ../../results/dracula.dat'
+
+rule count_words_moby_dick:
+	input: 	'../../data/moby_dick.txt'
+	output: '../../results/moby_dick.dat'
+	shell: 	'python ../wordcount.py ../../data/moby_dick.txt ../../results/moby.dat'
+

@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /home/nibe/PROJECTS/RSE-UP/zipf/snakemake/5_resources_parallel/snakefile, line 13:
+Missing input files for rule all:
+    affected files:
+        ../results/zipf_analysis.tar.gz

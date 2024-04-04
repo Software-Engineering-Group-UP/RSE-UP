@@ -16,7 +16,7 @@ parts:
       - file: exercises/python_refresh.ipynb
       - file: chapters/introduction/bash.md
         sections:
-        #- file: chapters/bash_basics.md
+          - file: chapters/bash_basics.md
           - file: chapters/bash_tools.md
           - file: chapters/bash_advanced.md
           - file: exercises/bash.ipynb
@@ -86,11 +86,12 @@ parts:
         - file: exercises/intro_make.ipynb 
         - file: chapters/intro_snakemake.md
         - file: chapters/snakemake_continued.md
-        - file: chapters/snakemake_advanced.md
+        #- file: chapters/snakemake_advanced.md
         - file: exercises/snakemake.md
       - file: chapters/introduction/cicd.md
         sections:
-          - file: chapters/advanced_cicd.md
+        - file: chapters/cicd_basics.md
+        - file: chapters/cicd_gitlab.md
 
   
   - caption: Tracking Provenance
@@ -122,11 +123,11 @@ parts:
   #       - file: worksheets/worksheet6_software_license.ipynb
   #       - file: worksheets/worksheet7_git_advanced.ipynb
           
-  # - caption: First Project - Invdividual
-  #   chapters:
-  #     - file: projects/individual/intro_project1.md
-  #       sections: 
-  #       - file: projects/individual/1_project_instructions.md
+  - caption: First Project - Invdividual
+    chapters:
+      - file: projects/individual/intro_project1.md
+        sections: 
+         - file: projects/individual/1_project_instructions.md
   #       - file: projects/individual/2_project_instructions.md
   #       - file: projects/individual/3_project_instructions.md
   #       - file: projects/individual/4_project_instructions.md

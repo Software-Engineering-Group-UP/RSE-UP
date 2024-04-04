@@ -1,0 +1,21 @@
+rule zipf_test:
+	input: '../../results/dracula.dat', '../../results/frankenstein.dat', '../../results/sherlock_holmes.dat'
+	output: '../../results/wildcards_zipf_results.txt'
+	shell: 'python ../zipf_test.py {input} > {output}'
+
+rule count_words:
+    input: '../wordcount.py', '../../data/dracula.txt'
+    output: '../../results/dracula.dat'
+    shell: 'python {input[0]} {input[1]} {output}'
+
+rule count_words_frankenstein:
+    input:
+        cmd='../wordcount.py',
+        book='../../data/frankenstein.txt'
+    output: '../../results/frankenstein.dat'
+    shell: 'python {input.cmd} {input.book} {output}'
+
+rule count_words_sherlock:
+	input: '../wordcount.py', '../../data/sherlock_holmes.txt'
+	output: '../../results/sherlock_holmes.dat'
+	shell: 'python {input[0]} {input[1]} {output}'

@@ -1,0 +1,5 @@
+Building DAG of jobs...
+File path ../../data//dracula.txt contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path ../../data//sherlock_holmes.txt contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path ../../data//frankenstein.txt contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+Nothing to be done (all requested files are present and up to date).

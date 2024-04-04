@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule zipf_test in file /home/nibe/PROJECTS/RSE-UP/zipf/snakemake/2_wildcards/snakefile, line 1:
+Missing input files for rule zipf_test:
+    output: ../../results/wildcards_zipf_results.txt
+    affected files:
+        ../../results/jane_eyre.dat
+        ../../results/sherlock_holmes.dat
