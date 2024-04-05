@@ -1,4 +1,31 @@
-# Getting Started
+# Welcome
+
+Welcome to our interactive online course on Research Software Engineering. This course was created by the Software Engineering Group at the University of Potsdam, Germany. The contents of the course was assembled from different sources. As inspiration and main source material the [Merely useful book](https://third-bit.com/py-rse/) was used.
+
+We have incorporated all the material from the Merely Useful book adjusted or expanded them when needed and added additional topics. These include the chapters and sections on:
+
+- Licensing and FAIR
+- Requirements, Architectures and Software Design
+- Workflows 
+- Workflows - Snakemake
+- Workflows - CI/CD 
+
+ Some of the tutorials used were taken from the [Carpentries](https://carpentries.org/) and adjusted. 
+While the material will always remain a work in progress, we hope that using this course students and researchers will have a great experience getting into research software engineering!
+
+
+The course is taught in person every summer term at the University of Potsdam by Prof. Anna-Lena Lamprecht, and this online, publicly available course material will be used by the students as reference material.
+
+Project assignment and course Schedule of 2024 term can be found on our University of Potsdam Gitlab instance [right here](https://gitup.uni-potsdam.de/seg/rse_course/rse_material_assignments).     
+
+The course itself concists of lectures and 2 project assignments, one individual and one group project.  
+
+
+**Without further ado let's start the course!**
+
+
+## Getting Started
+
 
 > Everything starts somewhere, though many physicists disagree.
 >
