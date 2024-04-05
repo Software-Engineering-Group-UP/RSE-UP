@@ -1,5 +1,28 @@
 # Welcome 
 
+Welcome to our interactive online course on Research Software Engineering. This course was created by the Software Engineering Group at the University of Potsdam, Germany. The contents of the course was assembled from different sources. As inspiration and main source material the [Merely useful book](https://third-bit.com/py-rse/) was used.
+
+We have incorporated all the material from the Merely Useful book adjusted or expanded them when needed and added additional topics. These include the chapters and sections on:
+
+- Licensing and FAIR
+- Requirements, Architectures and Software Design
+- Workflows 
+- Workflows - Snakemake
+- Workflows - CI/CD 
+
+ Some of the tutorials used were taken from the [Carpentries](https://carpentries.org/) and adjusted. 
+While the material will always remain a work in progress, we hope that using this course students and researchers will have a great experience getting into research software engineering!
+
+
+The course is taught in person every summer term at the University of Potsdam by Prof. Anna-Lena Lamprecht, and this online, publicly available course material will be used by the students as reference material.
+
+Project assignment and course Schedule of 2024 term can be found on our University of Potsdam Gitlab instance [right here](https://gitup.uni-potsdam.de/seg/rse_course/rse_material_assignments).     
+
+The course itself concists of lectures and 2 project assignments, one individual and one group project.  
+
+
+## Why should you care about this course?
+
 Software is now as essential to research as telescopes, test tubes, and reference libraries.
 This means that researchers **need** to know how to build, check, use, and share programs.
 However, most introductions to programming focus on developing commercial applications, not on exploring problems whose answers aren't yet known.
@@ -150,5 +173,5 @@ The content and code of this book can be freely re-used as it is
 This book was created on basis of the book 'Research Software Engineering with Python: Building Software that Makes Research Possible', that was created by: 
 Damien Irving and Kate Hertweck and Luke Johnston and Joel Ostblom and Charlotte Wickham and Greg Wilson. 
 
-The online version can be found [here!](https://merely-useful.tech/py-rse/)
+The online version can be found [here!](https://third-bit.com/py-rse/index.html)
 
