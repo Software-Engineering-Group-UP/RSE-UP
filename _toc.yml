@@ -123,11 +123,11 @@ parts:
   #       - file: worksheets/worksheet6_software_license.ipynb
   #       - file: worksheets/worksheet7_git_advanced.ipynb
           
-  - caption: First Project - Invdividual
-    chapters:
-      - file: projects/individual/intro_project1.md
-        sections: 
-         - file: projects/individual/1_project_instructions.md
+#  - caption: First Project - Invdividual
+#    chapters:
+#      - file: projects/individual/intro_project1.md
+#        sections: 
+#         - file: projects/individual/1_project_instructions.md
   #       - file: projects/individual/2_project_instructions.md
   #       - file: projects/individual/3_project_instructions.md
   #       - file: projects/individual/4_project_instructions.md

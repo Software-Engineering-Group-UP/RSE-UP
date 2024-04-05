@@ -1,6 +1,8 @@
 # Research Software Engineering - University of Potsdam
 
-This repository contains material for a semester-long course on computing skills for researchers at the Univeristy of Potsdam. The course uses the material provided in the Merely-useful book (<https://merely-useful.tech/py-rse/>) as a foundation and makes some changes to the structure and adds additional topics.
+
+
+This repository contains material for a semester-long course on computing skills for researchers at the Univeristy of Potsdam. The course uses the material provided in the [Merely-useful book](https://third-bit.com/py-rse/) as a foundation and makes some changes to the structure and adds additional topics.
 
 **PLEASE NOTE** currently still a WIP! 
 
@@ -20,26 +22,27 @@ The source material for our iteration of the work can be cited as:
 ```
    
 ## Table of Contents
+Course Schedule: 
 
-***PRELIMINARY*** SUBJECT TO CHANGE
+Week | Date  |  Lecture   | Lab only / online only | Assignment 
+-----|-------|------------|------------------------| -------------
+1    |08.04 - 12.4  | Course Introduction | Python Refresher, Git Basics | 1. Find a Topic
+2    |15.04 - 19.4  | Documentation / Find a topic | Shell | 2. 
+3    |22.04 - 26.04 | Jupyter Notebook / Comp. Narative | - | 3.
+4    |29.04 - 03.05 | Licensing, Citation | - | 4. 
+5    |06.05 - 10.05 | Working In Teams | - | Project Submission 
+6    |13.05 - 17.05 | Testing and Error Handling             | - | 1. Find Groups / Topic
+7    |20.05 - 24.05 | Requirements, Architectures, Design    | Advanced Git | 2.  
+8    |27.05 - 31.05 | PycodeStyle / Clean Code               | CLI Intro / Python | 3. 
+9    |03.06 - 07.06 | Workflow - Introduction                | - | 4. 
+10   |10.06 - 14.06 | Workflow -  make snake make            | - | 5. 
+11   |17.06 - 21.06 | Workflow -  cicd  | - | 6. 
+12   |24.06 - 28.06 | Configuration and Packaging | - | 7.  
+13   |01.07 - 05.07 | Tracking Provenance     | - | 8. 
+14   |08.07 - 12.07 | RSE in Practice / Guest | - | 9.
+15   |15.07 - 19.07 | Open Topic  / Project Presentation | - | Group Project Submission  
 
-Week |  Lecture   | Lab only / online only
------|------------|-----------------------
-1    | Course Introduction | Python Refresher, Git Basics
-2    | Documentation / Find a topic | Shell
-3    | Jupyter Notebook / Comp. Narative | -
-4    | Licensing, Citation | 
-5    | Working In Teams | Project 1 Submission
-6    | Testing and Error Handling             | Find Groups / Topic
-7    | Requirements, Architectures, Design    | Advanced Git
-8    | PycodeStyle / Clean Code               | CLI Intro / Python
-9    | Workflow - Introduction                | -
-10   | Workflow -  make snake make            | -
-11   | Workflow -  cicd  | -
-12   | Configuration and Packaging | - 
-13   | Tracking Provenance     | -
-14   | RSE in Practice / Guest | -
-15   | Open Topic  / Project Presentation | Project Submission  
+  
 
 ### Course Work
 
