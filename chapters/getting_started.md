@@ -240,4 +240,6 @@ and installed the required software ([as described here](https://software-engine
 
 ## Key Points
 
-```{include} keypoints/getting_started.md```
+```{include} keypoints/getting_started.md
+
+```
