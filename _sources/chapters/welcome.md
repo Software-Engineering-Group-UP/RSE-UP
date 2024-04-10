@@ -154,7 +154,8 @@ Chapters are structured with the introduction at the start, content in the middl
 Early chapters have many small exercises; later chapters have fewer but larger exercises. In order to break up long periods of live-coding while teaching,
 it may be preferable to stop and complete some of the exercises at key points throughout the chapter, rather than waiting until the end. 
 
-Possible exercise solutions are provided (Appendix [solutions](https://software-engineering-group-up.github.io/RSE-UP/chapters/solutions.html), in addition to learning objectives (Appendix ref(objectives)) and key points (Appendix ref(keypoints)) for each chapter. **TODO_discuss**
+Possible exercise solutions are provided (Appendix [solutions](https://software-engineering-group-up.github.io/RSE-UP/chapters/solutions.html).
+\\, in addition to learning objectives (Appendix ref(objectives)) and key points (Appendix ref(keypoints)) for each chapter. **TODO_discuss**
 
 
 ## Contributing and Re-Use
