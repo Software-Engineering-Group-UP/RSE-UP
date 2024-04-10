@@ -11,8 +11,7 @@ parts:
     chapters:
       # intro file
       - file: chapters/introduction/jupyter.md
-        sections:
-          - file: chapters/anaconda.md
+      - file: chapters/anaconda.md
       - file: exercises/python_refresh.ipynb
       - file: chapters/introduction/bash.md
         sections:
@@ -30,27 +29,39 @@ parts:
           - file: exercises/version_control.ipynb
           - file: chapters/git_advanced.md
           - file: exercises/git_advanced.ipynb
-  
-  - caption: Computational Narrative
+# 2
+  - caption: Writing Clean Code
     chapters:
-      - file: chapters/comp_narative.md
+      - file: chapters/clean_readable_code.md
+      - file: chapters/writing_documentation.md     
 
+# 3  
   - caption: Documentation
     chapters: 
       - file: chapters/introduction/documentation.md
-        sections:
-        - file: chapters/writing_documentation.md
-
-  
+      
+  - caption: Computational Narrative
+    chapters:
+      - file: chapters/comp_narative.md
+ # 4 
   - caption: Licenses, Software Citation and FAIR
     chapters:
       - file: chapters/license.md  
-  
+ # 6  
   - caption: Working in teams
     chapters:
       - file: chapters/working_in_teams.md
       - file: exercises/work_teams.ipynb
-    
+
+  # 7
+  - caption: Requirements, Architecture and Design
+    chapters:
+      - file: chapters/introduction/requirements_architecture_design.md
+        sections:
+          - file: chapters/application_classes.md
+          - file: chapters/requirements.md
+          - file: chapters/architecture_design.md
+  # 8  
   - caption: Testing and Error Handling
     chapters:
       - file: chapters/introduction/testing.md
@@ -61,20 +72,20 @@ parts:
         sections:
           - file: chapters/error_handling.md
           - file: exercises/error_handling.ipynb
-
-  - caption: Requirements, Architecture and Design
+  # 9
+  - caption: Configuration and Packaging
     chapters:
-      - file: chapters/introduction/requirements_architecture_design.md
+      - file: chapters/introduction/config.md
         sections:
-          - file: chapters/application_classes.md
-          - file: chapters/requirements.md
-          - file: chapters/architecture_design.md
-  
-  
-  - caption: Writing Clean Code
-    chapters:
-      - file: chapters/clean_readable_code.md
-      
+          - file: chapters/configuration.md
+          - file: chapters/yaml.md
+          - file: exercises/config.ipynb
+      - file: chapters/introduction/packaging.md
+        sections:
+          - file: chapters/python_packaging.md
+          - file: exercises/packaging.ipynb
+
+  # 10, 11 
   - caption: Workflows and Automation
     chapters:
       - file: chapters/introduction/workflows.md
@@ -93,6 +104,7 @@ parts:
         - file: chapters/cicd_basics.md
         - file: chapters/cicd_gitlab.md
 
+  # 12
   
   - caption: Tracking Provenance
     chapters:
@@ -100,18 +112,7 @@ parts:
       - file: exercises/provenance.ipynb
  
  
-  - caption: Configuration and Packaging
-    chapters:
-      - file: chapters/introduction/config.md
-        sections:
-          - file: chapters/configuration.md
-          - file: chapters/yaml.md
-          - file: exercises/config.ipynb
-      - file: chapters/introduction/packaging.md
-        sections:
-          - file: chapters/python_packaging.md
-          - file: exercises/packaging.ipynb
-       
+      
   # - caption: Worksheets - Course Work
   #   chapters:
   #     #- file: worksheets/worksheet1_python_refresher.ipynb
