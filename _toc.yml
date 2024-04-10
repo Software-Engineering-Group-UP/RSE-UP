@@ -11,19 +11,19 @@ parts:
     chapters:
       # intro file
       - file: exercises/python_refresh.ipynb
-      - file: chapters/introduction/bash.md
-        sections:
-          - file: chapters/bash_basics.md
-          - file: chapters/bash_tools.md
-          - file: chapters/bash_advanced.md
-          - file: exercises/bash.ipynb
       - file: chapters/introduction/vcs.md
         sections: 
           - file: chapters/intro_version_control.md
           - file: exercises/version_control.ipynb
           - file: chapters/git_advanced.md
           - file: exercises/git_advanced.ipynb
-# 2
+      - file: chapters/introduction/bash.md
+        sections:
+          - file: chapters/bash_basics.md
+          - file: chapters/bash_tools.md
+          - file: chapters/bash_advanced.md
+          - file: exercises/bash.ipynb
+      # 2
   - caption: Writing Clean Code
     chapters:
       - file: chapters/clean_readable_code.md
