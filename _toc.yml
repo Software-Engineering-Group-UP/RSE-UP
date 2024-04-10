@@ -7,11 +7,9 @@ parts:
     chapters:
       - file: chapters/getting_started.md
       
-  - caption: Python, Bash, CLI, Git refresher 
+  - caption: Python, Bash and Git Basics 
     chapters:
       # intro file
-      - file: chapters/introduction/jupyter.md
-      - file: chapters/anaconda.md
       - file: exercises/python_refresh.ipynb
       - file: chapters/introduction/bash.md
         sections:
@@ -19,10 +17,6 @@ parts:
           - file: chapters/bash_tools.md
           - file: chapters/bash_advanced.md
           - file: exercises/bash.ipynb
-      - file: chapters/introduction/python_cli.md
-        sections:
-          - file: chapters/python_building_cli.ipynb
-          - file: exercises/python_cli.ipynb
       - file: chapters/introduction/vcs.md
         sections: 
           - file: chapters/intro_version_control.md
@@ -42,6 +36,8 @@ parts:
       
   - caption: Computational Narrative
     chapters:
+      - file: chapters/introduction/jupyter.md
+      - file: chapters/anaconda.md
       - file: chapters/comp_narative.md
  # 4 
   - caption: Licenses, Software Citation and FAIR
@@ -62,7 +58,7 @@ parts:
           - file: chapters/requirements.md
           - file: chapters/architecture_design.md
   # 8  
-  - caption: Testing and Error Handling
+  - caption: Testing, Error Handling and CLI Apps using Python
     chapters:
       - file: chapters/introduction/testing.md
         sections:
@@ -71,8 +67,12 @@ parts:
       - file: chapters/introduction/error_handling.md
         sections:
           - file: chapters/error_handling.md
-          - file: exercises/error_handling.ipynb
-  # 9
+          - file: exercises/error_handling.ipynb  
+      - file: chapters/introduction/python_cli.md
+        sections:
+          - file: chapters/python_building_cli.ipynb
+          - file: exercises/python_cli.ipynb  
+# 9
   - caption: Configuration and Packaging
     chapters:
       - file: chapters/introduction/config.md
