@@ -1,4 +1,4 @@
-# Install Anaconda
+# Working with Anaconda
 
 When people first started using Python for data science,
 installing the relevant libraries could be difficult. The main problem was that the Python package installer ([`pip`](https://pypi.org/project/pip/))

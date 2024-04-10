@@ -184,7 +184,7 @@ In order to conduct our analysis, we need to install the following software:
 1. A **Shell** ( Bash, ZSH, Fish,...)
 2. **Git** version control
 3. A text editor
-4. [Python 3](https://www.python.org) or using [Anaconda](https://www.anaconda.com)
+4. [Python 3](https://www.python.org) or using [Anaconda](https://www.anaconda.com)( see below)
 5. [GNU Make](https://www.gnu.org/software/make/)
 
 *Note* While Anaconda seems easy to install, depending on the use case it might be more efficient and simpler to use Python [Pip](https://pypi.org/project/pip) to install some necessary packages. 
@@ -207,26 +207,16 @@ If it is not, you can install it as follows:
 - *Windows*: Follow the [installation instructions]( https://ubc-mds.github.io/resources_pages/install_ds_stack_windows/#make) maintained by the
   Master of Data Science program at the University of British Columbia.
 
-> **conda in the Shell on Windows**
->
-> If you are using Windows and the `conda` command isn't available at the Bash shell,
-> you'll need to open the Anaconda Prompt program (via the Windows start menu)
-> and run the command `conda init bash` (this only needs to be done once).
-> After that, your shell will be configured to use conda going forward.
+### Tools 
 
-> **Software Versions**
-> 
-> Throughout the book,
-> we'll be showing you examples of the output you can expect to see.
-> This output is derived from running a Mac with:
-> Git version 2.29.2, Python version 3.7.6,
-> GNU bash version 3.2.57(1)-release (x86_64-apple-darwin19),
-> GNU Make 3.81, and conda 4.9.2.
-> In some cases,
-> what you see printed to the screen may differ slightly 
-> based on software version.
-> We'll help you understand how to interpret the output
-> so you can keep working and troubleshoot regardless of software version.
+To finish your work, you need some environment to code in. Thus, you need some means to edit text. 
+You could install VS Code, Jetbrains Pycharm (free EDU version), or Neovim, Helix, Emacs, there are no requirements, but having an install of VS Code might make it easier, since VS code can run Jupyter notebooks without you having to install the whole Anaconda ecosystem and messing arround with and starting jupyter notebook servers. Instead of running the Notebooks in your Browser, you can use VScode including all python linting etc..
+
+
+## Notes on using Anaconda
+While it is not necessary,  you may use the Anaconda platform, for that go to [https://docs.anaconda.com/anaconda/install/](https://docs.anaconda.com/anaconda/install/) and follow the installation instructions for your operating system. For more information on working with anaconda click [here](https://software-engineering-group-up.github.io/RSE-UP/chapters/anaconda.html). 
+
+**AGAIN it is not necessary** 
 
 ## Summary 
 
