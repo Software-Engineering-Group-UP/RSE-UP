@@ -45,8 +45,8 @@ Course Schedule:
 Week | Date  |  Lab (Tuesday)   | Lecture (Thursday) | Assignment 
 -----|-------|------------|------------------------| -------------
 1    |08.04 - 12.4  | NO LAB | Course Introduction  | Get set up, find a Topic
-2    |15.04 - 19.4  | Python refresher, git basics refresher | Writing readable code, code documentation | Plan data analysis 
-3    |22.04 - 26.04 | Working with the Unix shell | Project structure, Markdown, Jupyter NB, Computational Narrative | implement data analsysis as comp. narrative in jupyter NB
+2    |15.04 - 19.4  | Python refresher, Bash basics  | Writing readable code, code documentation | Fix Codestyle, Plan data analysis 
+3    |22.04 - 26.04 | Git Basic Bash Advanced | Project structure, Markdown, Jupyter NB, Computational Narrative | implement data analsysis as comp. narrative in jupyter NB
 4    |29.04 - 03.05 | Project Support | Licensing, Citation, FAIR |  Add additional project information 
 5    |06.05 - 10.05 | Project Support | **Holiday** | Project Submission 
 6    |13.05 - 17.05 | Advanced Git | Working in Teams | Building Teams
