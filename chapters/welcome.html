@@ -507,38 +507,36 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="welcome">
 <h1>Welcome<a class="headerlink" href="#welcome" title="Link to this heading">#</a></h1>
-<p>Welcome to our interactive online course on Research Software Engineering. This course was created by the Software Engineering Group at the University of Potsdam, Germany. The contents of the course was assembled from different sources. As inspiration and main source material the <a class="reference external" href="https://third-bit.com/py-rse/">Research Software Engineering with Python</a> by Irving et al. was used.</p>
-<p>We have incorporated all the material from the Merely Useful book adjusted or expanded them when needed and added additional topics. These include the chapters and sections on:</p>
+<p>Welcome to our interactive online textbook on Research Software Engineering!</p>
+<p>This book was created by us, the Software Engineering Group at the University of Potsdam, as reference material for our semester-long class on Research Software Engineering. The contents are assembled from different sources. As main source the fantastic online textbook <a class="reference external" href="https://third-bit.com/py-rse/">Research Software Engineering with Python</a> by Irving et al. was used. We have incorporated, adjusted, expanded and rearranged its contents, and added some additional chapters and sections on topics like:</p>
 <ul class="simple">
-<li><p>Licensing and FAIR</p></li>
-<li><p>Requirements, Architectures and Software Design</p></li>
-<li><p>Workflows</p></li>
-<li><p>Workflows - Snakemake</p></li>
-<li><p>Workflows - CI/CD</p></li>
+<li><p>FAIR principles for research software</p></li>
+<li><p>Software requirements, architectures and design</p></li>
+<li><p>Introduction to computational workflows</p></li>
+<li><p>Computational workflows with Snakemake</p></li>
+<li><p>Workflows CI/CD</p></li>
 </ul>
 <p>Some of the tutorials used were taken from the <a class="reference external" href="https://carpentries.org/">Carpentries</a> and adjusted.
-While the material will always remain a work in progress, we hope that using this course students and researchers will have a great experience getting into research software engineering!</p>
-<p>The course is taught in person every summer term at the University of Potsdam by Prof. Anna-Lena Lamprecht, and this online, publicly available course material will be used by the students as reference material.</p>
-<p>Project assignment and course Schedule of 2024 term can be found on our University of Potsdam Gitlab instance <a class="reference external" href="https://gitup.uni-potsdam.de/seg/rse_course/rse_course_materials">right here</a>.</p>
-<p>The course itself concists of lectures and 2 project assignments, one individual and one group project.</p>
+While the material will remain a work in progress, we hope that using this book students and researchers will have a great experience getting into research software engineering!</p>
+<p>For projects assignments and course schedule for the summer term of 2024, please refer to our University of Potsdam Gitlab instance <a class="reference external" href="https://gitup.uni-potsdam.de/seg/rse_course/rse_course_materials">right here</a>.</p>
 <section id="why-should-you-care-about-this-course">
 <h2>Why should you care about this course?<a class="headerlink" href="#why-should-you-care-about-this-course" title="Link to this heading">#</a></h2>
 <p>Software is now as essential to research as telescopes, test tubes, and reference libraries.
 This means that researchers <strong>need</strong> to know how to build, check, use, and share programs.
-However, most introductions to programming focus on developing commercial applications, not on exploring problems whose answers aren’t yet known.
+However, most introductions to software engineering focus on developing commercial applications, not on exploring problems whose answers aren’t yet known.
 Our goal is to show you how to do that, both on your own and as part of a team.</p>
 <p>We believe every researcher should know how to write short programs that clean and analyze data in a reproducible way and how to use version control to keep track of what they have done.
 But just as some astronomers spend their careers designing telescopes,
 some researchers focus on building the software that makes research possible.
 People who do this are called <strong>research software engineers</strong>;
-the aim of this online textbook is to get you ready for this role by helping you go from writing code for yourself to creating tools that help your entire field advance.</p>
+the aim of this course is to get you ready for this role by helping you go from writing code for yourself to creating tools that help your entire field advance.</p>
 </section>
 <section id="intended-audience">
 <h2>Intended Audience<a class="headerlink" href="#intended-audience" title="Link to this heading">#</a></h2>
-<p>This book is written for researchers who are already using Python for their data analysis, but who want to take their coding and software development to the next level. You don’t have to be highly proficient with Python,
+<p>This course is designed for students researchers who are already using Python for their data analysis, but who want to take their coding and software development to the next level. You don’t have to be highly proficient with Python,
 but you should already be comfortable doing things like reading data from files
 and writing loops, conditionals, and functions.</p>
-<p>You can either follow our provided <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/python_refresh.html">python refresher</a> or if your already experienced with other programming languages you can also checkout out the python tutorials on <a class="reference external" href="https://exercism.org/">Exercism.org</a> to get up to speed with the python syntax.</p>
+<p>To make sure that your Python skills are at the expected level, you can either follow our provided <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/python_refresh.html">python refresher</a> or if your already experienced with other programming languages you can also checkout out the python tutorials on <a class="reference external" href="https://exercism.org/">Exercism.org</a> to get up to speed with the python syntax.</p>
 </section>
 <section id="the-big-picture">
 <h2>The Big Picture<a class="headerlink" href="#the-big-picture" title="Link to this heading">#</a></h2>
@@ -573,7 +571,7 @@ Other people are afraid of looking foolish or incompetent by sharing code that m
 This isn’t just <strong>impostor syndrome</strong>:
 members of marginalized groups are frequently judged more harshly than others,
 so being wrong in public is much riskier for them.</p>
-<p>With this course, we hope to give researchers the tools and knowledge to be
+<p>With this course, we hope to give students and researchers the tools and knowledge to be
 better research software developers, to be more efficient in their work, make
 less mistakes, and work more openly and reproducibly.
 We hope that by having more researchers with these skills and knowledge,
@@ -610,7 +608,7 @@ research culture can improve to address the issues raised above.</p>
 <section id="what-you-will-learn">
 <h2>What You Will Learn<a class="headerlink" href="#what-you-will-learn" title="Link to this heading">#</a></h2>
 <p>Rather than simply providing reference material about good coding practices,
-the book follows by example on how to write an actual software package to address a real research question. The data analysis task that we focus on
+the course follows by example on how to write an actual software package to address a real research question. The data analysis task that we focus on
 relates to a fascinating result in the field of quantitative linguistics.
 Namely, <strong>Zipf’s Law</strong>, which states that the second most common word in a body of text appears half as often as the most common, the third most common appears a third as often, and so on. To test whether Zipf’s Law holds for a collection of classic novels that are freely available from <strong>Project Gutenberg</strong>, we write a software package that counts and analyzes the word frequency distribution in any arbitrary body of text.</p>
 <p>In the process of writing and publishing a Python package to verify Zipf’s Law,
@@ -632,13 +630,15 @@ we will show you how to do the following:</p>
 <section id="using-this-book">
 <h2>Using this Book<a class="headerlink" href="#using-this-book" title="Link to this heading">#</a></h2>
 <p>This textbook was written to be used as the material for a (potentially) semester-long course at the university level, although it can also be used for independent self-study.
-Participatory live-coding is the anticipated style for teaching the material,
-rather than lectures simply talking about the code presented <span id="id1">[<a class="reference internal" href="references.html#id24" title="Neil C.C. Brown and Greg Wilson. Ten Quick Tips for Teaching Programming. PLOS Computational Biology, 14(4):e1006023, Apr 2018. URL: https://doi.org/10.1371/journal.pcbi.1006023, doi:10.1371/journal.pcbi.1006023.">Brown and Wilson, 2018</a>, <a class="reference internal" href="references.html#id85" title="Greg Wilson. Teaching Tech Together. Taylor &amp; Francis, 2019. ISBN 978-0-367-35328-5. How to create and deliver lessons that work and build a teaching community around them.">Wilson, 2019</a>]</span>. The chapters and their content are generally designed to be used in the order given.</p>
+// Participatory live-coding is the anticipated style for teaching the material,
+// rather than lectures simply talking about the code presented <span id="id1">[<a class="reference internal" href="references.html#id24" title="Neil C.C. Brown and Greg Wilson. Ten Quick Tips for Teaching Programming. PLOS Computational Biology, 14(4):e1006023, Apr 2018. URL: https://doi.org/10.1371/journal.pcbi.1006023, doi:10.1371/journal.pcbi.1006023.">Brown and Wilson, 2018</a>, <a class="reference internal" href="references.html#id85" title="Greg Wilson. Teaching Tech Together. Taylor &amp; Francis, 2019. ISBN 978-0-367-35328-5. How to create and deliver lessons that work and build a teaching community around them.">Wilson, 2019</a>]</span>.
+The chapters and their content are generally designed to be used in the order given.</p>
 <p>Chapters are structured with the introduction at the start, content in the middle, and exercises at the end. Callout boxes are interspersed throughout the content to be used as a supplement to the main text, but not a requirement for the course overall.
-Early chapters have many small exercises; later chapters have fewer but larger exercises. In order to break up long periods of live-coding while teaching,
-it may be preferable to stop and complete some of the exercises at key points throughout the chapter, rather than waiting until the end.</p>
+Early chapters have many small exercises; later chapters have fewer but larger exercises.
+// In order to break up long periods of live-coding while teaching,
+// it may be preferable to stop and complete some of the exercises at key points throughout the chapter, rather than waiting until the end.</p>
 <p>Possible exercise solutions are provided (Appendix <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/solutions.html">solutions</a>.
-\, in addition to learning objectives (Appendix ref(objectives)) and key points (Appendix ref(keypoints)) for each chapter. <strong>TODO_discuss</strong></p>
+\, in addition to learning objectives (Appendix ref(objectives)) and key points (Appendix ref(keypoints)) for each chapter.</p>
 </section>
 <section id="contributing-and-re-use">
 <h2>Contributing and Re-Use<a class="headerlink" href="#contributing-and-re-use" title="Link to this heading">#</a></h2>
@@ -652,8 +652,7 @@ as well as our <a class="reference external" href="https://github.com/Software-E
 <section id="acknowledgements">
 <h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
 <p>This book was created on basis of the book ‘Research Software Engineering with Python: Building Software that Makes Research Possible’, that was created by:
-Damien Irving and Kate Hertweck and Luke Johnston and Joel Ostblom and Charlotte Wickham and Greg Wilson.</p>
-<p>The online version can be found <a class="reference external" href="https://third-bit.com/py-rse/index.html">here!</a></p>
+Damien Irving, Kate Hertweck, Luke Johnston, Joel Ostblom, Charlotte Wickham and Greg Wilson. The online version can be found <a class="reference external" href="https://third-bit.com/py-rse/index.html">here!</a></p>
 </section>
 <div class="toctree-wrapper compound">
 </div>
