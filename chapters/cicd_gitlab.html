@@ -62,8 +62,6 @@
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/cicd_gitlab.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tracking Provenance" href="tracking_provenance.html" />
-    <link rel="prev" title="CI/CD Basics" href="cicd_basics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,6 +122,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -261,7 +261,7 @@
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows and Automation</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="introduction/workflows.html">Introduction to Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
 </ul>
@@ -274,11 +274,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction/cicd.html">Introduction to CI/CD</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="cicd_basics.html">CI/CD Basics</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Adding CI/CD to a project on Gitlab</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="introduction/cicd.html">Introduction to CI/CD</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
 <ul class="nav bd-sidenav">
@@ -522,7 +518,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 <figure class="align-default" id="first-push">
 <img alt="../_images/first_push.png" src="../_images/first_push.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 73 </span><span class="caption-text">First commit  CI failure</span><a class="headerlink" href="#first-push" title="Link to this image">#</a></p>
+<p><span class="caption-text">First commit  CI failure</span><a class="headerlink" href="#first-push" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>which will link to the newly added <code class="docutils literal notranslate"><span class="pre">.gitlab-ci.yml</span></code>. But wait a minute, there’s also a big red <code class="docutils literal notranslate"><span class="pre">x</span></code> on the page too!</p>
@@ -530,14 +526,14 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 <figure class="align-default" id="fail-state">
 <img alt="../_images/failure_status.png" src="../_images/failure_status.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 74 </span><span class="caption-text">Failure Status of the Pipeline</span><a class="headerlink" href="#fail-state" title="Link to this image">#</a></p>
+<p><span class="caption-text">Failure Status of the Pipeline</span><a class="headerlink" href="#fail-state" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We should fix this. If you click through again on the red <code class="docutils literal notranslate"><span class="pre">x</span></code> on the left for the pipeline there, you can get to the detailed page for the given pipeline to find out more information</p>
 <figure class="align-default" id="fail-info">
 <img alt="../_images/failure_info.png" src="../_images/failure_info.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 75 </span><span class="caption-text">Failure Information of the Pipeline</span><a class="headerlink" href="#fail-info" title="Link to this image">#</a></p>
+<p><span class="caption-text">Failure Information of the Pipeline</span><a class="headerlink" href="#fail-info" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="validating-ci-cd-yaml-configuration">
@@ -557,7 +553,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 <figure class="align-default" id="merge-request">
 <img alt="figures/cicd/merge_request.png" src="figures/cicd/merge_request.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 76 </span><span class="caption-text">WIP merge request</span><a class="headerlink" href="#merge-request" title="Link to this image">#</a></p>
+<p><span class="caption-text">WIP merge request</span><a class="headerlink" href="#merge-request" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -602,24 +598,6 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="cicd_basics.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">CI/CD Basics</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="tracking_provenance.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tracking Provenance</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
