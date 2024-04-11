@@ -83,7 +83,7 @@ We hope that by having more researchers with these skills and knowledge,
 research culture can improve to address the issues raised above.
 
 
-// ## Intended Audience 
+<!-- // ## Intended Audience 
 
 // This book is written for researchers who are already using Python for their data analysis, but who want to take their coding and software development to the next level. You don't have to be highly proficient with Python,
 // but you should already be comfortable doing things like reading data from files
@@ -114,7 +114,7 @@ research culture can improve to address the issues raised above.
 //     The kinds of applications they are being asked to support
 //     have shifted from fluid dynamics to data analysis;
 //     this guide will teach them how to build and run data pipelines
-//     so that they can pass those skills on to their users.c
+//     so that they can pass those skills on to their users. -->
     
 ## What You Will Learn
 
@@ -142,17 +142,16 @@ we will show you how to do the following:
 ## Using this Book
 
 This textbook was written to be used as the material for a (potentially) semester-long course at the university level, although it can also be used for independent self-study.
-// Participatory live-coding is the anticipated style for teaching the material,
-// rather than lectures simply talking about the code presented {cite:p}`Brow2018, Wils2018`. 
+<!-- // Participatory live-coding is the anticipated style for teaching the material,
+// rather than lectures simply talking about the code presented {cite:p}`Brow2018, Wils2018`. -->
 The chapters and their content are generally designed to be used in the order given.
 
 Chapters are structured with the introduction at the start, content in the middle, and exercises at the end. Callout boxes are interspersed throughout the content to be used as a supplement to the main text, but not a requirement for the course overall. 
 Early chapters have many small exercises; later chapters have fewer but larger exercises. 
-// In order to break up long periods of live-coding while teaching,
-// it may be preferable to stop and complete some of the exercises at key points throughout the chapter, rather than waiting until the end. 
+<!-- // In order to break up long periods of live-coding while teaching,
+// it may be preferable to stop and complete some of the exercises at key points throughout the chapter, rather than waiting until the end. -->
 
-Possible exercise solutions are provided (Appendix [solutions](https://software-engineering-group-up.github.io/RSE-UP/chapters/solutions.html).
-\\, in addition to learning objectives (Appendix ref(objectives)) and key points (Appendix ref(keypoints)) for each chapter.
+Possible exercise solutions are provided (Appendix [solutions](https://software-engineering-group-up.github.io/RSE-UP/chapters/solutions.html), in addition to learning objectives (Appendix ref(objectives)) and key points (Appendix ref(keypoints)) for each chapter.
 
 ## Contributing and Re-Use
 
