@@ -45,8 +45,8 @@ Course Schedule:
 Week | Date  |  Lab (Tuesday)   | Lecture (Thursday) | Assignment 
 -----|-------|------------|------------------------| -------------
 1    |08.04 - 12.4  | NO LAB | Course Introduction  | Get set up, find a Topic
-2    |15.04 - 19.4  | Python refresher, Bash basics  | Writing readable code, code documentation | Fix Codestyle, Plan data analysis 
-3    |22.04 - 26.04 | Git Basic Bash Advanced | Project structure, Markdown, Jupyter NB, Computational Narrative | implement data analsysis as comp. narrative in jupyter NB
+2    |15.04 - 19.4  | Python refresher, git basics refresher | Writing readable code, code documentation | Plan data analysis 
+3    |22.04 - 26.04 | Working with the Unix shell | Project structure, Markdown, Jupyter NB, Computational Narrative | implement data analsysis as comp. narrative in jupyter NB
 4    |29.04 - 03.05 | Project Support | Licensing, Citation, FAIR |  Add additional project information 
 5    |06.05 - 10.05 | Project Support | **Holiday** | Project Submission 
 6    |13.05 - 17.05 | Advanced Git | Working in Teams | Building Teams
@@ -54,9 +54,9 @@ Week | Date  |  Lab (Tuesday)   | Lecture (Thursday) | Assignment
 8    |27.05 - 31.05 |  Building CLI tools with Python | Software life cycle II (validation & verification, testing and error handling)  | implement and test required tools 
 9    |03.06 - 07.06 |Project Support | Software life cycle III (configuration, packaging, deployment and evolution)  | Improve and release tools 
 10   |10.06 - 14.06 | Project Support | Workflows I  (Intro, life cycle, make, snake make| Implement workflow with make/snakemake 
-11   |17.06 - 21.06 | Project Support | Workflow II - (CICD)  | Add CI/CD to project *tbd 
-12   |24.06 - 28.06 | Project Support |Tracking Provenance | Add additional project information  
-13   |01.07 - 05.07 | Project Support | Tracking Provenance | improve project further
+11   |17.06 - 21.06 | Project Support | Workflow II - (CICD)  | Continue working on the Project 
+12   |24.06 - 28.06 | Project Support | Tracking Provenance | Add additional project information  
+13   |01.07 - 05.07 | Project Support | Current topics in RSE Research | improve project further
 14   |08.07 - 12.07 | Project Support | RSE in Practice / Guest | Submission of second project
 15   |15.07 - 19.07 | Project SUpport | Project Presentation  | -  
   

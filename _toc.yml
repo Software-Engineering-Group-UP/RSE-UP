@@ -101,9 +101,9 @@ parts:
         #- file: chapters/snakemake_advanced.md
         - file: exercises/snakemake.md
       - file: chapters/introduction/cicd.md
-        sections:
-        - file: chapters/cicd_basics.md
-        - file: chapters/cicd_gitlab.md
+      #  sections:
+      #  - file: chapters/cicd_basics.md
+      #  - file: chapters/cicd_gitlab.md
 
   # 12
   
