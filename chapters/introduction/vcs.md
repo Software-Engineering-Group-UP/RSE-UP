@@ -15,7 +15,7 @@ In this way, version control records a complete revision history (i.e., of every
 This is useful from an individual viewpoint, because you don't need to store multiple (but slightly different) copies of the same script as seen in the comix below. 
 It's also useful from a collaboration viewpoint, because the system keeps a record of who made what changes and when.
 
-![Git CMDLINE](../figures/git-cmdline/phd-comics.png)
+![Git CMDLINE](../../figures/git-cmdline/phd-comics.png)
 
 There are many different version control systems, such as CVS, Subversion, and Mercurial, but the most widely used version control system today is **Git**.
 Many people first encounter it through a GUI like the [Github desktop client](https://desktop.github.com/) or paid tools like [GitKraken](https://www.gitkraken.com/) or terminal application like [GitUI](https://github.com/extrawurst/gitui).

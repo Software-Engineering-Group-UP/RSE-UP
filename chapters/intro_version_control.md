@@ -1258,4 +1258,5 @@ We will explore these in the next chapter.
 
 ## Keypoints
 
-```{include} keypoints/version_control.md```
+```{include} keypoints/version_control.md
+```
