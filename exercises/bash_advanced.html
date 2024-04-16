@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exercises - Provenance &#8212; RSE-UP</title>
+    <title>BASH Advanced &#8212; RSE-UP</title>
   
   
   
@@ -58,12 +58,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/provenance';</script>
-    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/provenance.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/bash_advanced';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/bash_advanced.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Solutions" href="../chapters/solutions.html" />
-    <link rel="prev" title="Tracking Provenance" href="../chapters/tracking_provenance.html" />
+    <link rel="next" title="Version Control" href="../chapters/introduction/vcs.html" />
+    <link rel="prev" title="Going Further with the Unix Shell" href="../chapters/bash_advanced.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,16 +177,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/getting_started.html">Getting Started</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python, Bash and Git Basics</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python_refresher.html">Python Refresher</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapters/introduction/bash.html">Introduction to Bash</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../chapters/introduction/bash.html">Introduction to Bash</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../chapters/bash_basics.html">The Basics of the Unix Shell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bash_basics.html">Bash Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapters/bash_tools.html">Building Tools with the Unix Shell</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="bash_tools.html">BASH Tool Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapters/bash_advanced.html">Going Further with the Unix Shell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bash_advanced.html">BASH Advanced</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">BASH Advanced</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapters/introduction/vcs.html">Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -279,9 +279,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/introduction/cicd.html">Introduction to CI/CD</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapters/tracking_provenance.html">Tracking Provenance</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercises - Provenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="provenance.html">Exercises - Provenance</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -360,7 +360,7 @@
       
       
       
-      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fexercises/provenance.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fexercises/bash_advanced.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -390,7 +390,7 @@
       
       
       
-      <li><a href="../_sources/exercises/provenance.ipynb" target="_blank"
+      <li><a href="../_sources/exercises/bash_advanced.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -474,7 +474,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercises - Provenance</h1>
+    <h1>BASH Advanced</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -484,13 +484,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orcid">1) ORCID</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-fair-test">2) A FAIR test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-a-project-s-data-provenance">3) Evaluate a project’s data provenance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-a-project-s-code-provenance">4) Evaluate a project’s code provenance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-permanent-links">5) Making permanent links</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-an-archive-of-your-zipf-s-analysis">6) Create an archive of your Zipf’s analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing-your-code">7) Publishing your code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-up">1 Cleaning up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-shell-scripts">2 Variables in shell scripts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-longest-file-with-a-given-extension">3 Find the longest file with a given extension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#script-reading-comprehension">4 Script reading comprehension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grep">5 Using <code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-publication-years">6 Tracking publication years</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-names">7 Counting names</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-and-subtracting">8 Matching and subtracting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-pipeline-reading-comprehension">9 <code class="docutils literal notranslate"><span class="pre">find</span></code> pipeline reading comprehension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-files-with-different-properties">10 Finding files with different properties</a></li>
 </ul>
             </nav>
         </div>
@@ -502,78 +505,128 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exercises-provenance">
-<h1>Exercises - Provenance<a class="headerlink" href="#exercises-provenance" title="Link to this heading">#</a></h1>
-<section id="orcid">
-<h2>1) ORCID<a class="headerlink" href="#orcid" title="Link to this heading">#</a></h2>
-<p>If you don’t already have an <strong>ORCID</strong>, go to the website and register now.
-If you do have an ORCID, log in and make sure that your details and publication record are up-to-date.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="bash-advanced">
+<h1>BASH Advanced<a class="headerlink" href="#bash-advanced" title="Link to this heading">#</a></h1>
+<section id="cleaning-up">
+<h2>1 Cleaning up<a class="headerlink" href="#cleaning-up" title="Link to this heading">#</a></h2>
+<p>As we have gone through this chapter, we have created several files that we won’t need again.
+We can clean them up with the following commands; briefly explain what each line does.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/zipf
+$<span class="w"> </span><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.bak&quot;</span><span class="k">)</span>
+&gt;<span class="w"> </span><span class="k">do</span>
+&gt;<span class="w">   </span>rm<span class="w"> </span><span class="nv">$file</span>
+&gt;<span class="w"> </span><span class="k">done</span>
+$<span class="w"> </span>rm<span class="w"> </span>bin/summarize_all_books.sh
+$<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>results
+</pre></div>
+</div>
 </section>
-<section id="a-fair-test">
-<h2>2) A FAIR test<a class="headerlink" href="#a-fair-test" title="Link to this heading">#</a></h2>
-<p>An <a class="reference external" href="https://ardc.edu.au/resources/working-with-data/fair-data/fair-self-assessment-tool">online questionnaire</a> for measuring the extent to which datasets are FAIR has been created by the Australian Research Data Commons.
-Fill in the questionnaire for a dataset you have published or that you use often.</p>
-</section>
-<section id="evaluate-a-project-s-data-provenance">
-<h2>3) Evaluate a project’s data provenance<a class="headerlink" href="#evaluate-a-project-s-data-provenance" title="Link to this heading">#</a></h2>
-<p><em>This exercise is modified from <span id="id1">[<a class="reference internal" href="../chapters/references.html#id82" title="Elizabeth Wickes and Ayla Stein. Data Documentation Material. 2016. Source material for our lesson on data sharing. URL: http://hdl.handle.net/2142/91611.">Wickes and Stein, 2016</a>]</span> and explores the dataset from <span id="id2">[<a class="reference internal" href="../chapters/references.html#id56" title="Stephen Meili. Do Human Rights Treaties Help Asylum-Seekers: Findings from the U.K. 2016. URL: http://www.openicpsr.org/openicpsr/project/100049/version/V2/view, doi:10.3886/E17507V2.">Meili, 2016</a>]</span>. Go to the dataset’s page <a class="reference external" href="http://doi.org/10.3886/E17507V2">http://doi.org/10.3886/E17507V2</a> and download the files.
-You will need to make an ICPSER account and agree to their data agreement before you can download.</em></p>
-<p>Review the dataset’s main page to get a sense of the study,
-then review the spreadsheet file and the coded response file.</p>
+<section id="variables-in-shell-scripts">
+<h2>2 Variables in shell scripts<a class="headerlink" href="#variables-in-shell-scripts" title="Link to this heading">#</a></h2>
+<p>Imagine you have a shell script called <code class="docutils literal notranslate"><span class="pre">script.sh</span></code> that contains:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>head<span class="w"> </span>-n<span class="w"> </span><span class="nv">$2</span><span class="w"> </span><span class="nv">$1</span>
+tail<span class="w"> </span>-n<span class="w"> </span><span class="nv">$3</span><span class="w"> </span><span class="nv">$1</span>
+</pre></div>
+</div>
+<p>With this script in your <code class="docutils literal notranslate"><span class="pre">data</span></code> directory, you type the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>bash<span class="w"> </span>script.sh<span class="w"> </span><span class="s1">&#39;*.txt&#39;</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span>
+</pre></div>
+</div>
+<p>Which of the following outputs would you expect to see?</p>
 <ol class="arabic simple">
-<li><p>Who are the participants of this study?</p></li>
-<li><p>What types of data were collected and used for analysis?</p></li>
-<li><p>Can you find information on the demographics of the interviewees?</p></li>
-<li><p>This dataset is clearly in support of an article.
-What information can you find about it, and can you find a link to it?</p></li>
+<li><p>All of the lines between the first and the last lines of each file ending in <code class="docutils literal notranslate"><span class="pre">.txt</span></code>
+in the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory</p></li>
+<li><p>The first and the last line of each file ending in <code class="docutils literal notranslate"><span class="pre">.txt</span></code> in the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory</p></li>
+<li><p>The first and the last line of each file in the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory</p></li>
+<li><p>An error because of the quotes around <code class="docutils literal notranslate"><span class="pre">*.txt</span></code></p></li>
 </ol>
 </section>
-<section id="evaluate-a-project-s-code-provenance">
-<h2>4) Evaluate a project’s code provenance<a class="headerlink" href="#evaluate-a-project-s-code-provenance" title="Link to this heading">#</a></h2>
-<p>The GitHub repository <a class="reference external" href="https://github.com/borstlab/reversephi_paper/"><code class="docutils literal notranslate"><span class="pre">borstlab/reversephi_paper</span></code></a> provides the code and data for the paper &#64;Leon2017.
-Browse the repository and answer the following questions:</p>
+<section id="find-the-longest-file-with-a-given-extension">
+<h2>3 Find the longest file with a given extension<a class="headerlink" href="#find-the-longest-file-with-a-given-extension" title="Link to this heading">#</a></h2>
+<p>Write a shell script called <code class="docutils literal notranslate"><span class="pre">longest.sh</span></code> that takes the name of a directory and a filename extension as its arguments, and prints out the name of the file with the most lines in that directory with that extension. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>bash<span class="w"> </span>longest.sh<span class="w"> </span>data/<span class="w"> </span>txt
+</pre></div>
+</div>
+<p>would print the name of the <code class="docutils literal notranslate"><span class="pre">.txt</span></code> file in <code class="docutils literal notranslate"><span class="pre">data</span></code> that has the most lines.</p>
+</section>
+<section id="script-reading-comprehension">
+<h2>4 Script reading comprehension<a class="headerlink" href="#script-reading-comprehension" title="Link to this heading">#</a></h2>
+<p>For this question, consider your <code class="docutils literal notranslate"><span class="pre">data</span></code> directory once again.
+Explain what each of the following three scripts would do when run as <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">script1.sh</span> <span class="pre">*.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">script2.sh</span> <span class="pre">*.txt</span></code>, and <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">script3.sh</span> <span class="pre">*.txt</span></code> respectively.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># script1.sh</span>
+<span class="nb">echo</span><span class="w"> </span>*.*
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># script2.sh</span>
+<span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="nv">$2</span><span class="w"> </span><span class="nv">$3</span>
+<span class="w">  </span><span class="k">do</span>
+<span class="w">    </span>cat<span class="w"> </span><span class="nv">$filename</span>
+<span class="w">  </span><span class="k">done</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># script3.sh</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$@</span>.txt
+</pre></div>
+</div>
+<p>(You may need to search online to find the meaning of <code class="docutils literal notranslate"><span class="pre">$&#64;</span></code>.)</p>
+</section>
+<section id="using-grep">
+<h2>5 Using <code class="docutils literal notranslate"><span class="pre">grep</span></code><a class="headerlink" href="#using-grep" title="Link to this heading">#</a></h2>
+<p>Assume the following text from <em>The Adventures of Sherlock Holmes</em> is contained in a file called <code class="docutils literal notranslate"><span class="pre">excerpt.txt</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>To Sherlock Holmes she is always THE woman. I have seldom heard
+him mention her under any other name. In his eyes she eclipses
+and predominates the whole of her sex. It was not that he felt
+any emotion akin to love for Irene Adler.
+</pre></div>
+</div>
+<p>Which of the following commands would provide the following output:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>and predominates the whole of her sex. It was not that he felt
+</pre></div>
+</div>
 <ol class="arabic simple">
-<li><p>Where is the software environment described? What files would you need to re-create the software environment?</p></li>
-<li><p>Where are the data processing steps described? How could you re-create the results included in the manuscript?</p></li>
-<li><p>How are the scripts and data archived?
-That is, where can you download the version of the code and data as it was when the manuscript was published?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">&quot;he&quot;</span> <span class="pre">excerpt.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-E</span> <span class="pre">&quot;he&quot;</span> <span class="pre">excerpt.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-w</span> <span class="pre">&quot;he&quot;</span> <span class="pre">excerpt.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">&quot;he&quot;</span> <span class="pre">excerpt.txt</span></code></p></li>
 </ol>
-<p>To get a feel for the different approaches to code provenance, repeat steps 1-3 with the following:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://doi.org/10.6084/m9.figshare.7575830">The figshare page</a> that accompanies the paper <span id="id3">[<a class="reference internal" href="../chapters/references.html#id45" title="D. B. Irving, S. Wijffels, and J. A. Church. Anthropogenic Aerosols, Greenhouse Gases, and the Uptake, Transport, and Storage of Excess Heat in the Climate System. Geophysical Research Letters, 46(9):4894-4903, 2019. URL: https://doi.org/10.1029/2019GL082015.">Irving <em>et al.</em>, 2019</a>]</span>.</p></li>
-<li><p>The GitHub repo <a class="reference external" href="https://github.com/blab/h3n2-reassortment"><code class="docutils literal notranslate"><span class="pre">blab/h3n2-reassortment</span></code></a> that accompanies the paper <span id="id4">[<a class="reference internal" href="../chapters/references.html#id67" title="Barney I. Potter, Rebecca Garten, James Hadfield, John Huddleston, John Barnes, Thomas Rowe, Lizheng Guo, Xiyan Xu, Richard A. Neher, Trevor Bedford, and David Wentworth. Evolution and Rapid Spread of a Reassortant A(H3N2) Virus that Predominated the 2017–2018 Influenza Season. Virus Evolution, 5(2):vez046, 2019. URL: https://doi.org/10.1093/ve/vez046.">Potter <em>et al.</em>, 2019</a>]</span>.</p></li>
-</ul>
 </section>
-<section id="making-permanent-links">
-<h2>5) Making permanent links<a class="headerlink" href="#making-permanent-links" title="Link to this heading">#</a></h2>
-<p>The link to the UK Home Office’s <a class="reference external" href="https://ukhomeoffice.github.io/accessibility-posters/posters/accessibility-posters.pdf">accessibility guideline posters</a> might change in future.
-Use the <a class="reference external" href="https://web.archive.org/">Wayback Machine</a> to find a link that is more likely to be usable in the long run.</p>
+<section id="tracking-publication-years">
+<h2>6 Tracking publication years<a class="headerlink" href="#tracking-publication-years" title="Link to this heading">#</a></h2>
+<p>In Exercise <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/bash_tools.html#3-piping-commands">bash - pipe commands</a> you examined code that extracted the publication year from a list of book titles.</p>
+<p>Write a shell script called <code class="docutils literal notranslate"><span class="pre">year.sh</span></code> that takes any number of filenames as command-line arguments, and uses a variation of the code you used earlier to print a list of the unique publication years appearing in each of those files separately.</p>
 </section>
-<section id="create-an-archive-of-your-zipf-s-analysis">
-<h2>6) Create an archive of your Zipf’s analysis<a class="headerlink" href="#create-an-archive-of-your-zipf-s-analysis" title="Link to this heading">#</a></h2>
-<p>A slightly less permanent alternative to having a DOI for your analysis code
-is to provide a link to a GitHub release.
-Follow <a class="reference external" href="https://docs.github.com/en/github/administering-a-repository/managing-releases-in-a-repository">the instructions on GitHub</a> to create a release for the current state of your <code class="docutils literal notranslate"><span class="pre">zipf/</span></code> project.</p>
-<p>Once you’ve created the release,
-<a class="reference external" href="https://docs.github.com/en/github/administering-a-repository/linking-to-releases">read about how to link to it</a>.
-What is the URL that allows direct download of the zip archive
-of your release?</p>
-<blockquote>
-<div><p><strong>What about getting a DOI?</strong></p>
-<p>Creating a GitHub release is also a necessary step
-to get a DOI through the Zenodo/GitHub integration
-(Section &#64;ref(provenance-code-scripts)).
-We are stopping short of getting the DOI here,
-since nobody reading this book needs to formally cite
-or archive the example Zipf’s Law software we’ve been developing.
-Also, if every reader of the book generated a DOI,
-we’d have many DOIs pointing to the same code!</p>
-</div></blockquote>
+<section id="counting-names">
+<h2>7 Counting names<a class="headerlink" href="#counting-names" title="Link to this heading">#</a></h2>
+<p>You and your friend have just finished reading <em>Sense and Sensibility</em> and are now having an argument.
+Your friend thinks that the elder of the two Dashwood sisters, Elinor, was mentioned more frequently in the book, but you are certain it was the younger sister, Marianne.
+Luckily, <code class="docutils literal notranslate"><span class="pre">sense_and_sensibility.txt</span></code> contains the full text of the novel.</p>
+<p>Using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, how would you tabulate the number of times each of the sisters is mentioned?</p>
+<p>Hint: one solution might employ the commands <code class="docutils literal notranslate"><span class="pre">grep</span></code> and <code class="docutils literal notranslate"><span class="pre">wc</span></code> and a <code class="docutils literal notranslate"><span class="pre">|</span></code>, while another might utilize <code class="docutils literal notranslate"><span class="pre">grep</span></code> options.
+There is often more than one way to solve a problem with the shell; people choose solutions based on readability, speed, and what commands they are most familiar with.</p>
 </section>
-<section id="publishing-your-code">
-<h2>7) Publishing your code<a class="headerlink" href="#publishing-your-code" title="Link to this heading">#</a></h2>
-<p>Think about a project that you’re currently working on.</p>
-<p>How would you go about publishing the code associated with that project (i.e., the software description, analysis scripts, and data processing steps)?</p>
+<section id="matching-and-subtracting">
+<h2>8 Matching and subtracting<a class="headerlink" href="#matching-and-subtracting" title="Link to this heading">#</a></h2>
+<p>Assume you are in the root directory of the <code class="docutils literal notranslate"><span class="pre">zipf</span></code> project.</p>
+<p>Which of the following commands will find all files in <code class="docutils literal notranslate"><span class="pre">data</span></code> whose names end in <code class="docutils literal notranslate"><span class="pre">e.txt</span></code>, but do <em>not</em> contain the word <code class="docutils literal notranslate"><span class="pre">machine</span></code>?</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">data</span> <span class="pre">-name</span> <span class="pre">'*e.txt'</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">machine</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">data</span> <span class="pre">-name</span> <span class="pre">*e.txt</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">machine</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">&quot;machine&quot;</span> <span class="pre">$(find</span> <span class="pre">data</span> <span class="pre">-name</span> <span class="pre">'*e.txt')</span></code></p></li>
+<li><p>None of the above.</p></li>
+</ol>
+</section>
+<section id="find-pipeline-reading-comprehension">
+<h2>9 <code class="docutils literal notranslate"><span class="pre">find</span></code> pipeline reading comprehension<a class="headerlink" href="#find-pipeline-reading-comprehension" title="Link to this heading">#</a></h2>
+<p>Write a short explanatory comment for the following shell script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wc<span class="w"> </span>-l<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.dat&#39;</span><span class="k">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n
+</pre></div>
+</div>
+</section>
+<section id="finding-files-with-different-properties">
+<h2>10 Finding files with different properties<a class="headerlink" href="#finding-files-with-different-properties" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">find</span></code> command can be given criteria called “tests” to locate files with specific attributes, such as creation time, size, or ownership.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">find</span></code> to explore these, then write a single command using <code class="docutils literal notranslate"><span class="pre">-type</span></code>, <code class="docutils literal notranslate"><span class="pre">-mtime</span></code>, and <code class="docutils literal notranslate"><span class="pre">-user</span></code> to find all files in or below your Desktop directory that are owned by you and were modified in the last 24 hours.</p>
+<p>Explain why the value for <code class="docutils literal notranslate"><span class="pre">-mtime</span></code> needs to be negative.</p>
 </section>
 </section>
 
@@ -608,20 +661,20 @@ we’d have many DOIs pointing to the same code!</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../chapters/tracking_provenance.html"
+       href="../chapters/bash_advanced.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tracking Provenance</p>
+        <p class="prev-next-title">Going Further with the Unix Shell</p>
       </div>
     </a>
     <a class="right-next"
-       href="../chapters/solutions.html"
+       href="../chapters/introduction/vcs.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Solutions</p>
+        <p class="prev-next-title">Version Control</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -641,13 +694,16 @@ we’d have many DOIs pointing to the same code!</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orcid">1) ORCID</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-fair-test">2) A FAIR test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-a-project-s-data-provenance">3) Evaluate a project’s data provenance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-a-project-s-code-provenance">4) Evaluate a project’s code provenance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-permanent-links">5) Making permanent links</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-an-archive-of-your-zipf-s-analysis">6) Create an archive of your Zipf’s analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing-your-code">7) Publishing your code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-up">1 Cleaning up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-shell-scripts">2 Variables in shell scripts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-longest-file-with-a-given-extension">3 Find the longest file with a given extension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#script-reading-comprehension">4 Script reading comprehension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grep">5 Using <code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-publication-years">6 Tracking publication years</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-names">7 Counting names</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-and-subtracting">8 Matching and subtracting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-pipeline-reading-comprehension">9 <code class="docutils literal notranslate"><span class="pre">find</span></code> pipeline reading comprehension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-files-with-different-properties">10 Finding files with different properties</a></li>
 </ul>
   </nav></div>
 

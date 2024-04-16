@@ -58,8 +58,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/python_refresh';</script>
-    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/python_refresh.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/python_refresher';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/python_refresher.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Introduction to Bash" href="../chapters/introduction/bash.html" />
@@ -181,10 +181,12 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Refresher</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapters/introduction/bash.html">Introduction to Bash</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapters/bash_basics.html">The Basics of the Unix Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash_basics.html">Bash Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapters/bash_tools.html">Building Tools with the Unix Shell</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="bash_tools.html">BASH Tool Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapters/bash_advanced.html">Going Further with the Unix Shell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bash.html">Bash Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash_advanced.html">BASH Advanced</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapters/introduction/vcs.html">Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -358,7 +360,7 @@
       
       
       
-      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fexercises/python_refresh.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fexercises/python_refresher.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -388,7 +390,7 @@
       
       
       
-      <li><a href="../_sources/exercises/python_refresh.ipynb" target="_blank"
+      <li><a href="../_sources/exercises/python_refresher.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -599,7 +601,7 @@ The output of your program should report the longest word and its length, like t
 <section id="functions">
 <h3>2.5 Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h3>
 <p>In our lifeBmes (unless we happen to get veeery old) a leap year occurs every four years. But actually, the rule is a bit more involved: A year is a leap year if it is a multiple of 4, but not a
-multiple of 100, unless it is also a mulBple of 400. For example, 1984 and 2000 were leap years, but 1900 and 1985 were not.</p>
+multiple of 100, unless it is also a multiple of 400. For example, 1984 and 2000 were leap years, but 1900 and 1985 were not.</p>
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">is_leap_year(year)</span></code> that tests if the year is a leap year. If so, the function should return <code class="docutils literal notranslate"><span class="pre">True</span></code>, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise. Implement the function using only one Boolean expression. You can use the code below to test your function:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">tests</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1900</span><span class="p">,</span> <span class="mi">1984</span><span class="p">,</span> <span class="mi">1985</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2018</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">test</span> <span class="ow">in</span> <span class="n">tests</span><span class="p">:</span>

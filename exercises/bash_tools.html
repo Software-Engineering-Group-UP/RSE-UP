@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exercises - Provenance &#8212; RSE-UP</title>
+    <title>BASH Tool Exercises &#8212; RSE-UP</title>
   
   
   
@@ -58,12 +58,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/provenance';</script>
-    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/provenance.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/bash_tools';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/bash_tools.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Solutions" href="../chapters/solutions.html" />
-    <link rel="prev" title="Tracking Provenance" href="../chapters/tracking_provenance.html" />
+    <link rel="next" title="Going Further with the Unix Shell" href="../chapters/bash_advanced.html" />
+    <link rel="prev" title="Building Tools with the Unix Shell" href="../chapters/bash_tools.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,14 +177,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/getting_started.html">Getting Started</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python, Bash and Git Basics</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python_refresher.html">Python Refresher</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapters/introduction/bash.html">Introduction to Bash</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../chapters/introduction/bash.html">Introduction to Bash</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../chapters/bash_basics.html">The Basics of the Unix Shell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bash_basics.html">Bash Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapters/bash_tools.html">Building Tools with the Unix Shell</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="bash_tools.html">BASH Tool Exercises</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">BASH Tool Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapters/bash_advanced.html">Going Further with the Unix Shell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bash_advanced.html">BASH Advanced</a></li>
 </ul>
@@ -279,9 +279,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/introduction/cicd.html">Introduction to CI/CD</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapters/tracking_provenance.html">Tracking Provenance</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercises - Provenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="provenance.html">Exercises - Provenance</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -360,7 +360,7 @@
       
       
       
-      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fexercises/provenance.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fexercises/bash_tools.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -390,7 +390,7 @@
       
       
       
-      <li><a href="../_sources/exercises/provenance.ipynb" target="_blank"
+      <li><a href="../_sources/exercises/bash_tools.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -474,7 +474,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercises - Provenance</h1>
+    <h1>BASH Tool Exercises</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -484,13 +484,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orcid">1) ORCID</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-fair-test">2) A FAIR test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-a-project-s-data-provenance">3) Evaluate a project’s data provenance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-a-project-s-code-provenance">4) Evaluate a project’s code provenance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-permanent-links">5) Making permanent links</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-an-archive-of-your-zipf-s-analysis">6) Create an archive of your Zipf’s analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing-your-code">7) Publishing your code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-mean">1 What does <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> mean?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appending-data">2 Appending data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#piping-commands">3 Piping commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-uniq-only-remove-adjacent-duplicates">4 Why does <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only remove adjacent duplicates?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipe-reading-comprehension">5 Pipe reading comprehension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipe-construction">6 Pipe construction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-pipe">7 Which pipe?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doing-a-dry-run">8 Doing a dry run</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-loops">9 Variables in loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limiting-sets-of-files">10 Limiting sets of files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-to-a-file-in-a-loop">11 Saving to a file in a loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-history-record-commands-before-running-them">12 Why does <code class="docutils literal notranslate"><span class="pre">history</span></code> record commands before running them?</a></li>
 </ul>
             </nav>
         </div>
@@ -502,78 +509,204 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exercises-provenance">
-<h1>Exercises - Provenance<a class="headerlink" href="#exercises-provenance" title="Link to this heading">#</a></h1>
-<section id="orcid">
-<h2>1) ORCID<a class="headerlink" href="#orcid" title="Link to this heading">#</a></h2>
-<p>If you don’t already have an <strong>ORCID</strong>, go to the website and register now.
-If you do have an ORCID, log in and make sure that your details and publication record are up-to-date.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="bash-tool-exercises">
+<h1>BASH Tool Exercises<a class="headerlink" href="#bash-tool-exercises" title="Link to this heading">#</a></h1>
+<section id="what-does-mean">
+<h2>1 What does <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> mean?<a class="headerlink" href="#what-does-mean" title="Link to this heading">#</a></h2>
+<p>We have seen the use of <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, but there is a similar operator <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> which works slightly differently.
+We’ll learn about the differences between these two operators by printing some strings.
+We can use the <code class="docutils literal notranslate"><span class="pre">echo</span></code> command to print strings as shown below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>The<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nb">command</span><span class="w"> </span>prints<span class="w"> </span>text
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The echo command prints text
+</pre></div>
+</div>
+<p>Now test the commands below to reveal the difference between the two operators:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span>testfile01.txt
+</pre></div>
+</div>
+<p>and:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;&gt;<span class="w"> </span>testfile02.txt
+</pre></div>
+</div>
+<p>Hint: Try executing each command twice in a row and then examining the output files.</p>
 </section>
-<section id="a-fair-test">
-<h2>2) A FAIR test<a class="headerlink" href="#a-fair-test" title="Link to this heading">#</a></h2>
-<p>An <a class="reference external" href="https://ardc.edu.au/resources/working-with-data/fair-data/fair-self-assessment-tool">online questionnaire</a> for measuring the extent to which datasets are FAIR has been created by the Australian Research Data Commons.
-Fill in the questionnaire for a dataset you have published or that you use often.</p>
-</section>
-<section id="evaluate-a-project-s-data-provenance">
-<h2>3) Evaluate a project’s data provenance<a class="headerlink" href="#evaluate-a-project-s-data-provenance" title="Link to this heading">#</a></h2>
-<p><em>This exercise is modified from <span id="id1">[<a class="reference internal" href="../chapters/references.html#id82" title="Elizabeth Wickes and Ayla Stein. Data Documentation Material. 2016. Source material for our lesson on data sharing. URL: http://hdl.handle.net/2142/91611.">Wickes and Stein, 2016</a>]</span> and explores the dataset from <span id="id2">[<a class="reference internal" href="../chapters/references.html#id56" title="Stephen Meili. Do Human Rights Treaties Help Asylum-Seekers: Findings from the U.K. 2016. URL: http://www.openicpsr.org/openicpsr/project/100049/version/V2/view, doi:10.3886/E17507V2.">Meili, 2016</a>]</span>. Go to the dataset’s page <a class="reference external" href="http://doi.org/10.3886/E17507V2">http://doi.org/10.3886/E17507V2</a> and download the files.
-You will need to make an ICPSER account and agree to their data agreement before you can download.</em></p>
-<p>Review the dataset’s main page to get a sense of the study,
-then review the spreadsheet file and the coded response file.</p>
+<section id="appending-data">
+<h2>2 Appending data<a class="headerlink" href="#appending-data" title="Link to this heading">#</a></h2>
+<p>Given the following commands, what will be included in the file <code class="docutils literal notranslate"><span class="pre">extracted.txt</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">3</span><span class="w"> </span>dracula.txt<span class="w"> </span>&gt;<span class="w"> </span>extracted.txt
+$<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>dracula.txt<span class="w"> </span>&gt;&gt;<span class="w"> </span>extracted.txt
+</pre></div>
+</div>
 <ol class="arabic simple">
-<li><p>Who are the participants of this study?</p></li>
-<li><p>What types of data were collected and used for analysis?</p></li>
-<li><p>Can you find information on the demographics of the interviewees?</p></li>
-<li><p>This dataset is clearly in support of an article.
-What information can you find about it, and can you find a link to it?</p></li>
+<li><p>The first three lines of <code class="docutils literal notranslate"><span class="pre">dracula.txt</span></code></p></li>
+<li><p>The last two lines of <code class="docutils literal notranslate"><span class="pre">dracula.txt</span></code></p></li>
+<li><p>The first three lines and the last two lines of <code class="docutils literal notranslate"><span class="pre">dracula.txt</span></code></p></li>
+<li><p>The second and third lines of <code class="docutils literal notranslate"><span class="pre">dracula.txt</span></code></p></li>
 </ol>
 </section>
-<section id="evaluate-a-project-s-code-provenance">
-<h2>4) Evaluate a project’s code provenance<a class="headerlink" href="#evaluate-a-project-s-code-provenance" title="Link to this heading">#</a></h2>
-<p>The GitHub repository <a class="reference external" href="https://github.com/borstlab/reversephi_paper/"><code class="docutils literal notranslate"><span class="pre">borstlab/reversephi_paper</span></code></a> provides the code and data for the paper &#64;Leon2017.
-Browse the repository and answer the following questions:</p>
+<section id="piping-commands">
+<h2>3 Piping commands<a class="headerlink" href="#piping-commands" title="Link to this heading">#</a></h2>
+<p>In our current directory, we want to find the 3 files which have the least number of lines.</p>
+<p>Which command listed below would work?</p>
 <ol class="arabic simple">
-<li><p>Where is the software environment described? What files would you need to re-create the software environment?</p></li>
-<li><p>Where are the data processing steps described? How could you re-create the results included in the manuscript?</p></li>
-<li><p>How are the scripts and data archived?
-That is, where can you download the version of the code and data as it was when the manuscript was published?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">&gt;</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">&gt;</span> <span class="pre">head</span> <span class="pre">-n</span> <span class="pre">3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-n</span> <span class="pre">1-3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-n</span> <span class="pre">3</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-n</span> <span class="pre">3</span></code></p></li>
 </ol>
-<p>To get a feel for the different approaches to code provenance, repeat steps 1-3 with the following:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://doi.org/10.6084/m9.figshare.7575830">The figshare page</a> that accompanies the paper <span id="id3">[<a class="reference internal" href="../chapters/references.html#id45" title="D. B. Irving, S. Wijffels, and J. A. Church. Anthropogenic Aerosols, Greenhouse Gases, and the Uptake, Transport, and Storage of Excess Heat in the Climate System. Geophysical Research Letters, 46(9):4894-4903, 2019. URL: https://doi.org/10.1029/2019GL082015.">Irving <em>et al.</em>, 2019</a>]</span>.</p></li>
-<li><p>The GitHub repo <a class="reference external" href="https://github.com/blab/h3n2-reassortment"><code class="docutils literal notranslate"><span class="pre">blab/h3n2-reassortment</span></code></a> that accompanies the paper <span id="id4">[<a class="reference internal" href="../chapters/references.html#id67" title="Barney I. Potter, Rebecca Garten, James Hadfield, John Huddleston, John Barnes, Thomas Rowe, Lizheng Guo, Xiyan Xu, Richard A. Neher, Trevor Bedford, and David Wentworth. Evolution and Rapid Spread of a Reassortant A(H3N2) Virus that Predominated the 2017–2018 Influenza Season. Virus Evolution, 5(2):vez046, 2019. URL: https://doi.org/10.1093/ve/vez046.">Potter <em>et al.</em>, 2019</a>]</span>.</p></li>
-</ul>
 </section>
-<section id="making-permanent-links">
-<h2>5) Making permanent links<a class="headerlink" href="#making-permanent-links" title="Link to this heading">#</a></h2>
-<p>The link to the UK Home Office’s <a class="reference external" href="https://ukhomeoffice.github.io/accessibility-posters/posters/accessibility-posters.pdf">accessibility guideline posters</a> might change in future.
-Use the <a class="reference external" href="https://web.archive.org/">Wayback Machine</a> to find a link that is more likely to be usable in the long run.</p>
+<section id="why-does-uniq-only-remove-adjacent-duplicates">
+<h2>4 Why does <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only remove adjacent duplicates?<a class="headerlink" href="#why-does-uniq-only-remove-adjacent-duplicates" title="Link to this heading">#</a></h2>
+<p>The command <code class="docutils literal notranslate"><span class="pre">uniq</span></code> removes adjacent duplicated lines from its input. Consider a hypothetical file <code class="docutils literal notranslate"><span class="pre">genres.txt</span></code> containing the following data:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>science fiction
+fantasy
+science fiction
+fantasy
+science fiction
+science fiction
+</pre></div>
+</div>
+<p>Running the command <code class="docutils literal notranslate"><span class="pre">uniq</span> <span class="pre">genres.txt</span></code> produces:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>science fiction
+fantasy
+science fiction
+fantasy
+science fiction
+</pre></div>
+</div>
+<p>Why do you think <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only removes <em>adjacent</em> duplicated lines? (Hint: think about very large datasets.)</p>
+<p>What other command could you combine with it in a pipe to remove all duplicated lines?</p>
 </section>
-<section id="create-an-archive-of-your-zipf-s-analysis">
-<h2>6) Create an archive of your Zipf’s analysis<a class="headerlink" href="#create-an-archive-of-your-zipf-s-analysis" title="Link to this heading">#</a></h2>
-<p>A slightly less permanent alternative to having a DOI for your analysis code
-is to provide a link to a GitHub release.
-Follow <a class="reference external" href="https://docs.github.com/en/github/administering-a-repository/managing-releases-in-a-repository">the instructions on GitHub</a> to create a release for the current state of your <code class="docutils literal notranslate"><span class="pre">zipf/</span></code> project.</p>
-<p>Once you’ve created the release,
-<a class="reference external" href="https://docs.github.com/en/github/administering-a-repository/linking-to-releases">read about how to link to it</a>.
-What is the URL that allows direct download of the zip archive
-of your release?</p>
-<blockquote>
-<div><p><strong>What about getting a DOI?</strong></p>
-<p>Creating a GitHub release is also a necessary step
-to get a DOI through the Zenodo/GitHub integration
-(Section &#64;ref(provenance-code-scripts)).
-We are stopping short of getting the DOI here,
-since nobody reading this book needs to formally cite
-or archive the example Zipf’s Law software we’ve been developing.
-Also, if every reader of the book generated a DOI,
-we’d have many DOIs pointing to the same code!</p>
-</div></blockquote>
+<section id="pipe-reading-comprehension">
+<h2>5 Pipe reading comprehension<a class="headerlink" href="#pipe-reading-comprehension" title="Link to this heading">#</a></h2>
+<p>A file called <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> contains a list of book titles and publication years:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Dracula,1897
+Frankenstein,1818
+Jane Eyre,1847
+Moby Dick,1851
+Sense and Sensibility,1811
+The Adventures of Sherlock Holmes,1892
+The Invisible Man,1897
+The Time Machine,1895
+Wuthering Heights,1847
+</pre></div>
+</div>
+<p>What text passes through each of the pipes and the final redirect in the pipeline below?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>titles.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-r<span class="w"> </span>&gt;<span class="w"> </span>final.txt
+</pre></div>
+</div>
+<p>Hint: build the pipeline up one command at a time to test your understanding</p>
 </section>
-<section id="publishing-your-code">
-<h2>7) Publishing your code<a class="headerlink" href="#publishing-your-code" title="Link to this heading">#</a></h2>
-<p>Think about a project that you’re currently working on.</p>
-<p>How would you go about publishing the code associated with that project (i.e., the software description, analysis scripts, and data processing steps)?</p>
+<section id="pipe-construction">
+<h2>6 Pipe construction<a class="headerlink" href="#pipe-construction" title="Link to this heading">#</a></h2>
+<p>For the file <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> from the previous exercise, consider the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span>,<span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span>titles.txt
+</pre></div>
+</div>
+<p>What does the <code class="docutils literal notranslate"><span class="pre">cut</span></code> command (and its options) accomplish?</p>
+<section id="which-pipe">
+<h3>7 Which pipe?<a class="headerlink" href="#which-pipe" title="Link to this heading">#</a></h3>
+<p>Consider the same <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> from the previous exercises.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">uniq</span></code> command has a <code class="docutils literal notranslate"><span class="pre">-c</span></code> option which gives a count of the number of times a line occurs in its input.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> was in your working directory, what command would you use to produce a table that shows the total count of each publication year in the file?</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sort</span> <span class="pre">titles.txt</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sort</span> <span class="pre">-t,</span> <span class="pre">-k2,2</span> <span class="pre">titles.txt</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cut</span> <span class="pre">-d,</span> <span class="pre">-f</span> <span class="pre">2</span> <span class="pre">titles.txt</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cut</span> <span class="pre">-d,</span> <span class="pre">-f</span> <span class="pre">2</span> <span class="pre">titles.txt</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cut</span> <span class="pre">-d,</span> <span class="pre">-f</span> <span class="pre">2</span> <span class="pre">titles.txt</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></code></p></li>
+</ol>
+</section>
+</section>
+<section id="doing-a-dry-run">
+<h2>8 Doing a dry run<a class="headerlink" href="#doing-a-dry-run" title="Link to this heading">#</a></h2>
+<p>A loop is a way to do many things at once—or to make many mistakes at once if it does the wrong thing. One way to check what a loop <em>would</em> do is to <code class="docutils literal notranslate"><span class="pre">echo</span></code> the commands it would run instead of actually running them.</p>
+<p>Suppose we want to preview the commands the following loop will execute without actually running those commands (<code class="docutils literal notranslate"><span class="pre">analyze</span></code> is a hypothetical command):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
+&gt;<span class="w"> </span><span class="k">do</span>
+&gt;<span class="w">   </span>analyze<span class="w"> </span><span class="nv">$file</span><span class="w"> </span>&gt;<span class="w"> </span>analyzed-<span class="nv">$file</span>
+&gt;<span class="w"> </span><span class="k">done</span>
+</pre></div>
+</div>
+<p>What is the difference between the two loops below, and which one would we want to run?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
+&gt;<span class="w"> </span><span class="k">do</span>
+&gt;<span class="w">   </span><span class="nb">echo</span><span class="w"> </span>analyze<span class="w"> </span><span class="nv">$file</span><span class="w"> </span>&gt;<span class="w"> </span>analyzed-<span class="nv">$file</span>
+&gt;<span class="w"> </span><span class="k">done</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
+&gt;<span class="w"> </span><span class="k">do</span>
+&gt;<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;analyze </span><span class="nv">$file</span><span class="s2"> &gt; analyzed-</span><span class="nv">$file</span><span class="s2">&quot;</span>
+&gt;<span class="w"> </span><span class="k">done</span>
+</pre></div>
+</div>
+</section>
+<section id="variables-in-loops">
+<h2>9 Variables in loops<a class="headerlink" href="#variables-in-loops" title="Link to this heading">#</a></h2>
+<p>Given the files in <code class="docutils literal notranslate"><span class="pre">data/</span></code>, what is the output of the following code?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>datafile<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
+&gt;<span class="w"> </span><span class="k">do</span>
+&gt;<span class="w">    </span>ls<span class="w"> </span>*.txt
+&gt;<span class="w"> </span><span class="k">done</span>
+</pre></div>
+</div>
+<p>Now, what is the output of the following code?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>datafile<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
+&gt;<span class="w"> </span><span class="k">do</span>
+&gt;<span class="w">	</span>ls<span class="w"> </span><span class="nv">$datafile</span>
+&gt;<span class="w"> </span><span class="k">done</span>
+</pre></div>
+</div>
+<p>Why do these two loops give different outputs?</p>
+</section>
+<section id="limiting-sets-of-files">
+<h2>10 Limiting sets of files<a class="headerlink" href="#limiting-sets-of-files" title="Link to this heading">#</a></h2>
+<p>What would be the output of running the following loop in your <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span>d*
+&gt;<span class="w"> </span><span class="k">do</span>
+&gt;<span class="w">    </span>ls<span class="w"> </span><span class="nv">$filename</span>
+&gt;<span class="w"> </span><span class="k">done</span>
+</pre></div>
+</div>
+<p>How would the output differ from using this command instead?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span>*d*
+&gt;<span class="w"> </span><span class="k">do</span>
+&gt;<span class="w">    </span>ls<span class="w"> </span><span class="nv">$filename</span>
+&gt;<span class="w"> </span><span class="k">done</span>
+</pre></div>
+</div>
+</section>
+<section id="saving-to-a-file-in-a-loop">
+<h2>11 Saving to a file in a loop<a class="headerlink" href="#saving-to-a-file-in-a-loop" title="Link to this heading">#</a></h2>
+<p>Consider running the following loop in the  <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>book<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
+&gt;<span class="w"> </span><span class="k">do</span>
+&gt;<span class="w">     </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$book</span>
+&gt;<span class="w">     </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="nv">$book</span><span class="w"> </span>&gt;<span class="w"> </span>headers.txt
+&gt;<span class="w"> </span><span class="k">done</span>
+</pre></div>
+</div>
+<p>Why would the following loop be preferable?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>book<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
+&gt;<span class="w"> </span><span class="k">do</span>
+&gt;<span class="w">     </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="nv">$book</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>headers.txt
+&gt;<span class="w"> </span><span class="k">done</span>
+</pre></div>
+</div>
+</section>
+<section id="why-does-history-record-commands-before-running-them">
+<h2>12 Why does <code class="docutils literal notranslate"><span class="pre">history</span></code> record commands before running them?<a class="headerlink" href="#why-does-history-record-commands-before-running-them" title="Link to this heading">#</a></h2>
+<p>If you run the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">history</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span>&gt;<span class="w"> </span>recent.sh
+</pre></div>
+</div>
+<p>The last command in the file is the <code class="docutils literal notranslate"><span class="pre">history</span></code> command itself, i.e., the shell has added <code class="docutils literal notranslate"><span class="pre">history</span></code> to the command log before actually running it.
+In fact, the shell <em>always</em> adds commands to the log
+before running them. Why do you think it does this?</p>
 </section>
 </section>
 
@@ -608,20 +741,20 @@ we’d have many DOIs pointing to the same code!</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../chapters/tracking_provenance.html"
+       href="../chapters/bash_tools.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tracking Provenance</p>
+        <p class="prev-next-title">Building Tools with the Unix Shell</p>
       </div>
     </a>
     <a class="right-next"
-       href="../chapters/solutions.html"
+       href="../chapters/bash_advanced.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Solutions</p>
+        <p class="prev-next-title">Going Further with the Unix Shell</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -641,13 +774,20 @@ we’d have many DOIs pointing to the same code!</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orcid">1) ORCID</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-fair-test">2) A FAIR test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-a-project-s-data-provenance">3) Evaluate a project’s data provenance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-a-project-s-code-provenance">4) Evaluate a project’s code provenance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-permanent-links">5) Making permanent links</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-an-archive-of-your-zipf-s-analysis">6) Create an archive of your Zipf’s analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing-your-code">7) Publishing your code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-mean">1 What does <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> mean?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appending-data">2 Appending data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#piping-commands">3 Piping commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-uniq-only-remove-adjacent-duplicates">4 Why does <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only remove adjacent duplicates?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipe-reading-comprehension">5 Pipe reading comprehension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipe-construction">6 Pipe construction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-pipe">7 Which pipe?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doing-a-dry-run">8 Doing a dry run</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-loops">9 Variables in loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limiting-sets-of-files">10 Limiting sets of files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-to-a-file-in-a-loop">11 Saving to a file in a loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-history-record-commands-before-running-them">12 Why does <code class="docutils literal notranslate"><span class="pre">history</span></code> record commands before running them?</a></li>
 </ul>
   </nav></div>
 

@@ -58,12 +58,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/bash';</script>
-    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/bash.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/bash_basics';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/bash_basics.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Version Control" href="../chapters/introduction/vcs.html" />
-    <link rel="prev" title="Going Further with the Unix Shell" href="../chapters/bash_advanced.html" />
+    <link rel="next" title="Building Tools with the Unix Shell" href="../chapters/bash_tools.html" />
+    <link rel="prev" title="The Basics of the Unix Shell" href="../chapters/bash_basics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,13 +178,15 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python, Bash and Git Basics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python_refresh.html">Python Refresher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_refresher.html">Python Refresher</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../chapters/introduction/bash.html">Introduction to Bash</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../chapters/bash_basics.html">The Basics of the Unix Shell</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Bash Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapters/bash_tools.html">Building Tools with the Unix Shell</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="bash_tools.html">BASH Tool Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapters/bash_advanced.html">Going Further with the Unix Shell</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Bash Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash_advanced.html">BASH Advanced</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapters/introduction/vcs.html">Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -358,7 +360,7 @@
       
       
       
-      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fexercises/bash.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fexercises/bash_basics.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -388,7 +390,7 @@
       
       
       
-      <li><a href="../_sources/exercises/bash.ipynb" target="_blank"
+      <li><a href="../_sources/exercises/bash_basics.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -501,33 +503,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wildcard-expressions">15 Wildcard expressions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-unneeded-files">16 Removing unneeded files</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-wildcards">17 Other wildcards</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-tool-exercises">BASH Tool Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-mean">1 What does <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> mean?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appending-data">2 Appending data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#piping-commands">3 Piping commands</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-uniq-only-remove-adjacent-duplicates">4 Why does <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only remove adjacent duplicates?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipe-reading-comprehension">5 Pipe reading comprehension</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipe-construction">6 Pipe construction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-pipe">7 Which pipe?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doing-a-dry-run">8 Doing a dry run</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-loops">9 Variables in loops</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limiting-sets-of-files">10 Limiting sets of files</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-to-a-file-in-a-loop">11 Saving to a file in a loop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-history-record-commands-before-running-them">12 Why does <code class="docutils literal notranslate"><span class="pre">history</span></code> record commands before running them?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-advanced">BASH Advanced</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-up">1 Cleaning up</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-shell-scripts">2 Variables in shell scripts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-longest-file-with-a-given-extension">3 Find the longest file with a given extension</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#script-reading-comprehension">4 Script reading comprehension</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grep">5 Using <code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-publication-years">6 Tracking publication years</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-names">7 Counting names</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-and-subtracting">8 Matching and subtracting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-pipeline-reading-comprehension">9 <code class="docutils literal notranslate"><span class="pre">find</span></code> pipeline reading comprehension</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-files-with-different-properties">10 Finding files with different properties</a></li>
 </ul>
 </li>
@@ -609,7 +584,6 @@ echo $RAND
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can also pass python variables into your shell commands, and vise versa!</span>
 <span class="n">python_var</span> <span class="o">=</span> <span class="p">[]</span>
-
 
 <span class="n">output_of_ls_as_python_var</span> <span class="o">=</span> <span class="o">!</span>ls<span class="w"> </span>-a
 <span class="nb">print</span><span class="p">(</span><span class="n">output_of_ls_as_python_var</span><span class="p">)</span>
@@ -874,324 +848,6 @@ The raw files end in <code class="docutils literal notranslate"><span class="pre
 <p>The shell provides several wildcards beyond the widely used <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
 <p>To explore them, explain in plain language what (hypothetical) files the expression <code class="docutils literal notranslate"><span class="pre">novel-????-[ab]*.{txt,pdf}</span></code> matches and why.</p>
 </section>
-</section>
-<section id="bash-tool-exercises">
-<h2>BASH Tool Exercises<a class="headerlink" href="#bash-tool-exercises" title="Link to this heading">#</a></h2>
-<section id="what-does-mean">
-<h3>1 What does <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> mean?<a class="headerlink" href="#what-does-mean" title="Link to this heading">#</a></h3>
-<p>We have seen the use of <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, but there is a similar operator <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> which works slightly differently.
-We’ll learn about the differences between these two operators by printing some strings.
-We can use the <code class="docutils literal notranslate"><span class="pre">echo</span></code> command to print strings as shown below:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>The<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nb">command</span><span class="w"> </span>prints<span class="w"> </span>text
-</pre></div>
-</div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The echo command prints text
-</pre></div>
-</div>
-<p>Now test the commands below to reveal the difference between the two operators:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span>testfile01.txt
-</pre></div>
-</div>
-<p>and:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;&gt;<span class="w"> </span>testfile02.txt
-</pre></div>
-</div>
-<p>Hint: Try executing each command twice in a row and then examining the output files.</p>
-</section>
-<section id="appending-data">
-<h3>2 Appending data<a class="headerlink" href="#appending-data" title="Link to this heading">#</a></h3>
-<p>Given the following commands, what will be included in the file <code class="docutils literal notranslate"><span class="pre">extracted.txt</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">3</span><span class="w"> </span>dracula.txt<span class="w"> </span>&gt;<span class="w"> </span>extracted.txt
-$<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>dracula.txt<span class="w"> </span>&gt;&gt;<span class="w"> </span>extracted.txt
-</pre></div>
-</div>
-<ol class="arabic simple">
-<li><p>The first three lines of <code class="docutils literal notranslate"><span class="pre">dracula.txt</span></code></p></li>
-<li><p>The last two lines of <code class="docutils literal notranslate"><span class="pre">dracula.txt</span></code></p></li>
-<li><p>The first three lines and the last two lines of <code class="docutils literal notranslate"><span class="pre">dracula.txt</span></code></p></li>
-<li><p>The second and third lines of <code class="docutils literal notranslate"><span class="pre">dracula.txt</span></code></p></li>
-</ol>
-</section>
-<section id="piping-commands">
-<h3>3 Piping commands<a class="headerlink" href="#piping-commands" title="Link to this heading">#</a></h3>
-<p>In our current directory, we want to find the 3 files which have the least number of lines.</p>
-<p>Which command listed below would work?</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">&gt;</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">&gt;</span> <span class="pre">head</span> <span class="pre">-n</span> <span class="pre">3</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-n</span> <span class="pre">1-3</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-n</span> <span class="pre">3</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-n</span> <span class="pre">3</span></code></p></li>
-</ol>
-</section>
-<section id="why-does-uniq-only-remove-adjacent-duplicates">
-<h3>4 Why does <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only remove adjacent duplicates?<a class="headerlink" href="#why-does-uniq-only-remove-adjacent-duplicates" title="Link to this heading">#</a></h3>
-<p>The command <code class="docutils literal notranslate"><span class="pre">uniq</span></code> removes adjacent duplicated lines from its input. Consider a hypothetical file <code class="docutils literal notranslate"><span class="pre">genres.txt</span></code> containing the following data:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>science fiction
-fantasy
-science fiction
-fantasy
-science fiction
-science fiction
-</pre></div>
-</div>
-<p>Running the command <code class="docutils literal notranslate"><span class="pre">uniq</span> <span class="pre">genres.txt</span></code> produces:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>science fiction
-fantasy
-science fiction
-fantasy
-science fiction
-</pre></div>
-</div>
-<p>Why do you think <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only removes <em>adjacent</em> duplicated lines? (Hint: think about very large datasets.)</p>
-<p>What other command could you combine with it in a pipe to remove all duplicated lines?</p>
-</section>
-<section id="pipe-reading-comprehension">
-<h3>5 Pipe reading comprehension<a class="headerlink" href="#pipe-reading-comprehension" title="Link to this heading">#</a></h3>
-<p>A file called <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> contains a list of book titles and publication years:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Dracula,1897
-Frankenstein,1818
-Jane Eyre,1847
-Moby Dick,1851
-Sense and Sensibility,1811
-The Adventures of Sherlock Holmes,1892
-The Invisible Man,1897
-The Time Machine,1895
-Wuthering Heights,1847
-</pre></div>
-</div>
-<p>What text passes through each of the pipes and the final redirect in the pipeline below?</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>titles.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-r<span class="w"> </span>&gt;<span class="w"> </span>final.txt
-</pre></div>
-</div>
-<p>Hint: build the pipeline up one command at a time to test your understanding</p>
-</section>
-<section id="pipe-construction">
-<h3>6 Pipe construction<a class="headerlink" href="#pipe-construction" title="Link to this heading">#</a></h3>
-<p>For the file <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> from the previous exercise, consider the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span>,<span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span>titles.txt
-</pre></div>
-</div>
-<p>What does the <code class="docutils literal notranslate"><span class="pre">cut</span></code> command (and its options) accomplish?</p>
-</section>
-<section id="which-pipe">
-<h3>7 Which pipe?<a class="headerlink" href="#which-pipe" title="Link to this heading">#</a></h3>
-<p>Consider the same <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> from the previous exercises.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">uniq</span></code> command has a <code class="docutils literal notranslate"><span class="pre">-c</span></code> option which gives a count of the number of times a line occurs in its input.</p>
-<p>If <code class="docutils literal notranslate"><span class="pre">titles.txt</span></code> was in your working directory, what command would you use to produce a table that shows the total count of each publication year in the file?</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sort</span> <span class="pre">titles.txt</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sort</span> <span class="pre">-t,</span> <span class="pre">-k2,2</span> <span class="pre">titles.txt</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cut</span> <span class="pre">-d,</span> <span class="pre">-f</span> <span class="pre">2</span> <span class="pre">titles.txt</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cut</span> <span class="pre">-d,</span> <span class="pre">-f</span> <span class="pre">2</span> <span class="pre">titles.txt</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cut</span> <span class="pre">-d,</span> <span class="pre">-f</span> <span class="pre">2</span> <span class="pre">titles.txt</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></code></p></li>
-</ol>
-</section>
-<section id="doing-a-dry-run">
-<h3>8 Doing a dry run<a class="headerlink" href="#doing-a-dry-run" title="Link to this heading">#</a></h3>
-<p>A loop is a way to do many things at once—or to make many mistakes at once if it does the wrong thing. One way to check what a loop <em>would</em> do is to <code class="docutils literal notranslate"><span class="pre">echo</span></code> the commands it would run instead of actually running them.</p>
-<p>Suppose we want to preview the commands the following loop will execute without actually running those commands (<code class="docutils literal notranslate"><span class="pre">analyze</span></code> is a hypothetical command):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
-&gt;<span class="w"> </span><span class="k">do</span>
-&gt;<span class="w">   </span>analyze<span class="w"> </span><span class="nv">$file</span><span class="w"> </span>&gt;<span class="w"> </span>analyzed-<span class="nv">$file</span>
-&gt;<span class="w"> </span><span class="k">done</span>
-</pre></div>
-</div>
-<p>What is the difference between the two loops below, and which one would we want to run?</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
-&gt;<span class="w"> </span><span class="k">do</span>
-&gt;<span class="w">   </span><span class="nb">echo</span><span class="w"> </span>analyze<span class="w"> </span><span class="nv">$file</span><span class="w"> </span>&gt;<span class="w"> </span>analyzed-<span class="nv">$file</span>
-&gt;<span class="w"> </span><span class="k">done</span>
-</pre></div>
-</div>
-<p>or:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
-&gt;<span class="w"> </span><span class="k">do</span>
-&gt;<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;analyze </span><span class="nv">$file</span><span class="s2"> &gt; analyzed-</span><span class="nv">$file</span><span class="s2">&quot;</span>
-&gt;<span class="w"> </span><span class="k">done</span>
-</pre></div>
-</div>
-</section>
-<section id="variables-in-loops">
-<h3>9 Variables in loops<a class="headerlink" href="#variables-in-loops" title="Link to this heading">#</a></h3>
-<p>Given the files in <code class="docutils literal notranslate"><span class="pre">data/</span></code>, what is the output of the following code?</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>datafile<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
-&gt;<span class="w"> </span><span class="k">do</span>
-&gt;<span class="w">    </span>ls<span class="w"> </span>*.txt
-&gt;<span class="w"> </span><span class="k">done</span>
-</pre></div>
-</div>
-<p>Now, what is the output of the following code?</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>datafile<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
-&gt;<span class="w"> </span><span class="k">do</span>
-&gt;<span class="w">	</span>ls<span class="w"> </span><span class="nv">$datafile</span>
-&gt;<span class="w"> </span><span class="k">done</span>
-</pre></div>
-</div>
-<p>Why do these two loops give different outputs?</p>
-</section>
-<section id="limiting-sets-of-files">
-<h3>10 Limiting sets of files<a class="headerlink" href="#limiting-sets-of-files" title="Link to this heading">#</a></h3>
-<p>What would be the output of running the following loop in your <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory?</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span>d*
-&gt;<span class="w"> </span><span class="k">do</span>
-&gt;<span class="w">    </span>ls<span class="w"> </span><span class="nv">$filename</span>
-&gt;<span class="w"> </span><span class="k">done</span>
-</pre></div>
-</div>
-<p>How would the output differ from using this command instead?</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span>*d*
-&gt;<span class="w"> </span><span class="k">do</span>
-&gt;<span class="w">    </span>ls<span class="w"> </span><span class="nv">$filename</span>
-&gt;<span class="w"> </span><span class="k">done</span>
-</pre></div>
-</div>
-</section>
-<section id="saving-to-a-file-in-a-loop">
-<h3>11 Saving to a file in a loop<a class="headerlink" href="#saving-to-a-file-in-a-loop" title="Link to this heading">#</a></h3>
-<p>Consider running the following loop in the  <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>book<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
-&gt;<span class="w"> </span><span class="k">do</span>
-&gt;<span class="w">     </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$book</span>
-&gt;<span class="w">     </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="nv">$book</span><span class="w"> </span>&gt;<span class="w"> </span>headers.txt
-&gt;<span class="w"> </span><span class="k">done</span>
-</pre></div>
-</div>
-<p>Why would the following loop be preferable?</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>book<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.txt
-&gt;<span class="w"> </span><span class="k">do</span>
-&gt;<span class="w">     </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="nv">$book</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>headers.txt
-&gt;<span class="w"> </span><span class="k">done</span>
-</pre></div>
-</div>
-</section>
-<section id="why-does-history-record-commands-before-running-them">
-<h3>12 Why does <code class="docutils literal notranslate"><span class="pre">history</span></code> record commands before running them?<a class="headerlink" href="#why-does-history-record-commands-before-running-them" title="Link to this heading">#</a></h3>
-<p>If you run the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">history</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span>&gt;<span class="w"> </span>recent.sh
-</pre></div>
-</div>
-<p>The last command in the file is the <code class="docutils literal notranslate"><span class="pre">history</span></code> command itself, i.e., the shell has added <code class="docutils literal notranslate"><span class="pre">history</span></code> to the command log before actually running it.
-In fact, the shell <em>always</em> adds commands to the log
-before running them. Why do you think it does this?</p>
-</section>
-</section>
-<section id="bash-advanced">
-<h2>BASH Advanced<a class="headerlink" href="#bash-advanced" title="Link to this heading">#</a></h2>
-<section id="cleaning-up">
-<h3>1 Cleaning up<a class="headerlink" href="#cleaning-up" title="Link to this heading">#</a></h3>
-<p>As we have gone through this chapter, we have created several files that we won’t need again.
-We can clean them up with the following commands; briefly explain what each line does.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/zipf
-$<span class="w"> </span><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.bak&quot;</span><span class="k">)</span>
-&gt;<span class="w"> </span><span class="k">do</span>
-&gt;<span class="w">   </span>rm<span class="w"> </span><span class="nv">$file</span>
-&gt;<span class="w"> </span><span class="k">done</span>
-$<span class="w"> </span>rm<span class="w"> </span>bin/summarize_all_books.sh
-$<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>results
-</pre></div>
-</div>
-</section>
-<section id="variables-in-shell-scripts">
-<h3>2 Variables in shell scripts<a class="headerlink" href="#variables-in-shell-scripts" title="Link to this heading">#</a></h3>
-<p>Imagine you have a shell script called <code class="docutils literal notranslate"><span class="pre">script.sh</span></code> that contains:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>head<span class="w"> </span>-n<span class="w"> </span><span class="nv">$2</span><span class="w"> </span><span class="nv">$1</span>
-tail<span class="w"> </span>-n<span class="w"> </span><span class="nv">$3</span><span class="w"> </span><span class="nv">$1</span>
-</pre></div>
-</div>
-<p>With this script in your <code class="docutils literal notranslate"><span class="pre">data</span></code> directory, you type the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>bash<span class="w"> </span>script.sh<span class="w"> </span><span class="s1">&#39;*.txt&#39;</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span>
-</pre></div>
-</div>
-<p>Which of the following outputs would you expect to see?</p>
-<ol class="arabic simple">
-<li><p>All of the lines between the first and the last lines of each file ending in <code class="docutils literal notranslate"><span class="pre">.txt</span></code>
-in the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory</p></li>
-<li><p>The first and the last line of each file ending in <code class="docutils literal notranslate"><span class="pre">.txt</span></code> in the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory</p></li>
-<li><p>The first and the last line of each file in the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory</p></li>
-<li><p>An error because of the quotes around <code class="docutils literal notranslate"><span class="pre">*.txt</span></code></p></li>
-</ol>
-</section>
-<section id="find-the-longest-file-with-a-given-extension">
-<h3>3 Find the longest file with a given extension<a class="headerlink" href="#find-the-longest-file-with-a-given-extension" title="Link to this heading">#</a></h3>
-<p>Write a shell script called <code class="docutils literal notranslate"><span class="pre">longest.sh</span></code> that takes the name of a directory and a filename extension as its arguments, and prints out the name of the file with the most lines in that directory with that extension. For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>bash<span class="w"> </span>longest.sh<span class="w"> </span>data/<span class="w"> </span>txt
-</pre></div>
-</div>
-<p>would print the name of the <code class="docutils literal notranslate"><span class="pre">.txt</span></code> file in <code class="docutils literal notranslate"><span class="pre">data</span></code> that has the most lines.</p>
-</section>
-<section id="script-reading-comprehension">
-<h3>4 Script reading comprehension<a class="headerlink" href="#script-reading-comprehension" title="Link to this heading">#</a></h3>
-<p>For this question, consider your <code class="docutils literal notranslate"><span class="pre">data</span></code> directory once again.
-Explain what each of the following three scripts would do when run as <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">script1.sh</span> <span class="pre">*.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">script2.sh</span> <span class="pre">*.txt</span></code>, and <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">script3.sh</span> <span class="pre">*.txt</span></code> respectively.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># script1.sh</span>
-<span class="nb">echo</span><span class="w"> </span>*.*
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># script2.sh</span>
-<span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="nv">$2</span><span class="w"> </span><span class="nv">$3</span>
-<span class="w">  </span><span class="k">do</span>
-<span class="w">    </span>cat<span class="w"> </span><span class="nv">$filename</span>
-<span class="w">  </span><span class="k">done</span>
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># script3.sh</span>
-<span class="nb">echo</span><span class="w"> </span><span class="nv">$@</span>.txt
-</pre></div>
-</div>
-<p>(You may need to search online to find the meaning of <code class="docutils literal notranslate"><span class="pre">$&#64;</span></code>.)</p>
-</section>
-<section id="using-grep">
-<h3>5 Using <code class="docutils literal notranslate"><span class="pre">grep</span></code><a class="headerlink" href="#using-grep" title="Link to this heading">#</a></h3>
-<p>Assume the following text from <em>The Adventures of Sherlock Holmes</em> is contained in a file called <code class="docutils literal notranslate"><span class="pre">excerpt.txt</span></code>:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>To Sherlock Holmes she is always THE woman. I have seldom heard
-him mention her under any other name. In his eyes she eclipses
-and predominates the whole of her sex. It was not that he felt
-any emotion akin to love for Irene Adler.
-</pre></div>
-</div>
-<p>Which of the following commands would provide the following output:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>and predominates the whole of her sex. It was not that he felt
-</pre></div>
-</div>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">&quot;he&quot;</span> <span class="pre">excerpt.txt</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-E</span> <span class="pre">&quot;he&quot;</span> <span class="pre">excerpt.txt</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-w</span> <span class="pre">&quot;he&quot;</span> <span class="pre">excerpt.txt</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">&quot;he&quot;</span> <span class="pre">excerpt.txt</span></code></p></li>
-</ol>
-</section>
-<section id="tracking-publication-years">
-<h3>6 Tracking publication years<a class="headerlink" href="#tracking-publication-years" title="Link to this heading">#</a></h3>
-<p>In Exercise <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/bash.html#3-piping-commands">bash - pipe commands</a> you examined code that extracted the publication year from a list of book titles.</p>
-<p>Write a shell script called <code class="docutils literal notranslate"><span class="pre">year.sh</span></code> that takes any number of filenames as command-line arguments, and uses a variation of the code you used earlier to print a list of the unique publication years appearing in each of those files separately.</p>
-</section>
-<section id="counting-names">
-<h3>7 Counting names<a class="headerlink" href="#counting-names" title="Link to this heading">#</a></h3>
-<p>You and your friend have just finished reading <em>Sense and Sensibility</em> and are now having an argument.
-Your friend thinks that the elder of the two Dashwood sisters, Elinor, was mentioned more frequently in the book, but you are certain it was the younger sister, Marianne.
-Luckily, <code class="docutils literal notranslate"><span class="pre">sense_and_sensibility.txt</span></code> contains the full text of the novel.</p>
-<p>Using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, how would you tabulate the number of times each of the sisters is mentioned?</p>
-<p>Hint: one solution might employ the commands <code class="docutils literal notranslate"><span class="pre">grep</span></code> and <code class="docutils literal notranslate"><span class="pre">wc</span></code> and a <code class="docutils literal notranslate"><span class="pre">|</span></code>, while another might utilize <code class="docutils literal notranslate"><span class="pre">grep</span></code> options.
-There is often more than one way to solve a problem with the shell; people choose solutions based on readability, speed, and what commands they are most familiar with.</p>
-</section>
-<section id="matching-and-subtracting">
-<h3>8 Matching and subtracting<a class="headerlink" href="#matching-and-subtracting" title="Link to this heading">#</a></h3>
-<p>Assume you are in the root directory of the <code class="docutils literal notranslate"><span class="pre">zipf</span></code> project.</p>
-<p>Which of the following commands will find all files in <code class="docutils literal notranslate"><span class="pre">data</span></code> whose names end in <code class="docutils literal notranslate"><span class="pre">e.txt</span></code>, but do <em>not</em> contain the word <code class="docutils literal notranslate"><span class="pre">machine</span></code>?</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">data</span> <span class="pre">-name</span> <span class="pre">'*e.txt'</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">machine</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">data</span> <span class="pre">-name</span> <span class="pre">*e.txt</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">machine</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">&quot;machine&quot;</span> <span class="pre">$(find</span> <span class="pre">data</span> <span class="pre">-name</span> <span class="pre">'*e.txt')</span></code></p></li>
-<li><p>None of the above.</p></li>
-</ol>
-</section>
-<section id="find-pipeline-reading-comprehension">
-<h3>9 <code class="docutils literal notranslate"><span class="pre">find</span></code> pipeline reading comprehension<a class="headerlink" href="#find-pipeline-reading-comprehension" title="Link to this heading">#</a></h3>
-<p>Write a short explanatory comment for the following shell script:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wc<span class="w"> </span>-l<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.dat&#39;</span><span class="k">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n
-</pre></div>
-</div>
-</section>
 <section id="finding-files-with-different-properties">
 <h3>10 Finding files with different properties<a class="headerlink" href="#finding-files-with-different-properties" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">find</span></code> command can be given criteria called “tests” to locate files with specific attributes, such as creation time, size, or ownership.</p>
@@ -1232,20 +888,20 @@ There is often more than one way to solve a problem with the shell; people choos
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../chapters/bash_advanced.html"
+       href="../chapters/bash_basics.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Going Further with the Unix Shell</p>
+        <p class="prev-next-title">The Basics of the Unix Shell</p>
       </div>
     </a>
     <a class="right-next"
-       href="../chapters/introduction/vcs.html"
+       href="../chapters/bash_tools.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Version Control</p>
+        <p class="prev-next-title">Building Tools with the Unix Shell</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1284,33 +940,6 @@ There is often more than one way to solve a problem with the shell; people choos
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wildcard-expressions">15 Wildcard expressions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-unneeded-files">16 Removing unneeded files</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-wildcards">17 Other wildcards</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-tool-exercises">BASH Tool Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-mean">1 What does <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> mean?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appending-data">2 Appending data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#piping-commands">3 Piping commands</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-uniq-only-remove-adjacent-duplicates">4 Why does <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only remove adjacent duplicates?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipe-reading-comprehension">5 Pipe reading comprehension</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipe-construction">6 Pipe construction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-pipe">7 Which pipe?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doing-a-dry-run">8 Doing a dry run</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-loops">9 Variables in loops</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limiting-sets-of-files">10 Limiting sets of files</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-to-a-file-in-a-loop">11 Saving to a file in a loop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-history-record-commands-before-running-them">12 Why does <code class="docutils literal notranslate"><span class="pre">history</span></code> record commands before running them?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-advanced">BASH Advanced</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-up">1 Cleaning up</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-shell-scripts">2 Variables in shell scripts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-longest-file-with-a-given-extension">3 Find the longest file with a given extension</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#script-reading-comprehension">4 Script reading comprehension</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grep">5 Using <code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-publication-years">6 Tracking publication years</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-names">7 Counting names</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-and-subtracting">8 Matching and subtracting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-pipeline-reading-comprehension">9 <code class="docutils literal notranslate"><span class="pre">find</span></code> pipeline reading comprehension</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-files-with-different-properties">10 Finding files with different properties</a></li>
 </ul>
 </li>

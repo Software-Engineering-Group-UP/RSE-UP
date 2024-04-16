@@ -62,8 +62,8 @@
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/bash_advanced.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bash Exercises" href="../exercises/bash.html" />
-    <link rel="prev" title="Building Tools with the Unix Shell" href="bash_tools.html" />
+    <link rel="next" title="BASH Advanced" href="../exercises/bash_advanced.html" />
+    <link rel="prev" title="BASH Tool Exercises" href="../exercises/bash_tools.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,13 +178,15 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python, Bash and Git Basics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresh.html">Python Refresher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresher.html">Python Refresher</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction/bash.html">Introduction to Bash</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="bash_basics.html">The Basics of the Unix Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/bash_basics.html">Bash Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bash_tools.html">Building Tools with the Unix Shell</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="../exercises/bash_tools.html">BASH Tool Exercises</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Going Further with the Unix Shell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/bash.html">Bash Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/bash_advanced.html">BASH Advanced</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="introduction/vcs.html">Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -513,11 +515,9 @@ and how to combine commands in new ways using pipes and redirection.
 This chapter extends those ideas to show
 how we can create new tools by saving commands in files
 and how to use a more powerful version of <strong>wildcards</strong> to extract data from files.</p>
-<p>We’ll be continuing to work in the <code class="docutils literal notranslate"><span class="pre">zipf</span></code> project,
-which after the previous chapter should contain the following files:</p>
+<p>We’ll be working with <code class="docutils literal notranslate"><span class="pre">zipf</span></code> project (found <a class="reference external" href="https://gitup.uni-potsdam.de/seg/rse_course/rse_course_materials/labs/lab_02">here</a>), which should contain the following files:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zipf/
 └── data
-    ├── README.md
     ├── dracula.txt
     ├── frankenstein.txt
     ├── jane_eyre.txt
@@ -965,7 +965,6 @@ including files we created earlier in this chapter:</p>
 │   ├── book_summary.sh
 │   ├── summarize_all_books.sh
 ├── data
-│   ├── README.md
 │   ├── dracula.txt
 │   ├── frankenstein.txt
 │   ├── jane_eyre.txt
@@ -1000,7 +999,6 @@ $<span class="w"> </span>find<span class="w"> </span>.
 ./data/sherlock_holmes.txt
 ./data/time_machine.txt
 ./data/frankenstein.txt
-./data/README.md
 ./data/dracula.txt
 ./data/jane_eyre.txt
 </pre></div>
@@ -1030,7 +1028,6 @@ we get a listing of all the files instead:</p>
 ./data/sherlock_holmes.txt
 ./data/time_machine.txt
 ./data/frankenstein.txt
-./data/README.md
 ./data/dracula.txt
 ./data/jane_eyre.txt
 </pre></div>
@@ -1147,6 +1144,8 @@ the shell is a program, and it has variables like any other program.
 Some of those variables control the shell’s operations;
 by changing their values we can change how the shell and other programs behave.</p>
 <p>Let’s run the command <code class="docutils literal notranslate"><span class="pre">set</span></code>and look at some of the variables the shell defines:</p>
+<p><strong>DEPENDING ON THE SYSTEM YOU RUN OR WHETHER OR NOT YOU USE ANACONDA THE FOLLOWING WILL LOOK DIFFERENT</strong>
+<strong>EXAMPLES BASED ON WINDOWS AND USING ANACONDA</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">set</span>
 </pre></div>
 </div>
@@ -1371,20 +1370,20 @@ while <span id="id3">[<a class="reference internal" href="references.html#id46" 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="bash_tools.html"
+       href="../exercises/bash_tools.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Building Tools with the Unix Shell</p>
+        <p class="prev-next-title">BASH Tool Exercises</p>
       </div>
     </a>
     <a class="right-next"
-       href="../exercises/bash.html"
+       href="../exercises/bash_advanced.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bash Exercises</p>
+        <p class="prev-next-title">BASH Advanced</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

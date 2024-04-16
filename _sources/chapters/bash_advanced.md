@@ -11,13 +11,12 @@ This chapter extends those ideas to show
 how we can create new tools by saving commands in files
 and how to use a more powerful version of **wildcards** to extract data from files.
 
-We'll be continuing to work in the `zipf` project,
-which after the previous chapter should contain the following files:
+We'll be working with `zipf` project (found [here](https://gitup.uni-potsdam.de/seg/rse_course/rse_course_materials/labs/lab_02)), which should contain the following files:
+
 
 ```text
 zipf/
 └── data
-    ├── README.md
     ├── dracula.txt
     ├── frankenstein.txt
     ├── jane_eyre.txt
@@ -556,7 +555,6 @@ zipf/
 │   ├── book_summary.sh
 │   ├── summarize_all_books.sh
 ├── data
-│   ├── README.md
 │   ├── dracula.txt
 │   ├── frankenstein.txt
 │   ├── jane_eyre.txt
@@ -594,7 +592,6 @@ $ find .
 ./data/sherlock_holmes.txt
 ./data/time_machine.txt
 ./data/frankenstein.txt
-./data/README.md
 ./data/dracula.txt
 ./data/jane_eyre.txt
 ```
@@ -630,7 +627,6 @@ $ find . -type f
 ./data/sherlock_holmes.txt
 ./data/time_machine.txt
 ./data/frankenstein.txt
-./data/README.md
 ./data/dracula.txt
 ./data/jane_eyre.txt
 ```
@@ -768,6 +764,9 @@ Some of those variables control the shell's operations;
 by changing their values we can change how the shell and other programs behave.
 
 Let's run the command `set`and look at some of the variables the shell defines:
+
+**DEPENDING ON THE SYSTEM YOU RUN OR WHETHER OR NOT YOU USE ANACONDA THE FOLLOWING WILL LOOK DIFFERENT**
+**EXAMPLES BASED ON WINDOWS AND USING ANACONDA**
 
 ```bash
 $ set

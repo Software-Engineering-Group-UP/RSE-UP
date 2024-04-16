@@ -178,13 +178,15 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python, Bash and Git Basics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresh.html">Python Refresher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresher.html">Python Refresher</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="introduction/bash.html">Introduction to Bash</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="bash_basics.html">The Basics of the Unix Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/bash_basics.html">Bash Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bash_tools.html">Building Tools with the Unix Shell</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="../exercises/bash_tools.html">BASH Tool Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bash_advanced.html">Going Further with the Unix Shell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/bash.html">Bash Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/bash_advanced.html">BASH Advanced</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction/vcs.html">Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -506,63 +508,19 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="using-git-at-the-command-line">
 <h1>Using Git at the Command Line<a class="headerlink" href="#using-git-at-the-command-line" title="Link to this heading">#</a></h1>
-<p>To show how Git works, we will apply it to the Zipf’s Law project. Our project directory should currently include:</p>
+<p>To show how Git works, we will apply it to the Zipf’s Law project. Our project directory should currently include:
+We’ll be working with <code class="docutils literal notranslate"><span class="pre">zipf</span></code> project (found <a class="reference external" href="https://gitup.uni-potsdam.de/seg/rse_course/rse_course_materials/labs/lab_02">here</a>), which should contain the following files:</p>
+<p><strong>FOR THOSE FOLLOWING THE RSE COURSE AT UNIVERSITY OF POTSDAM</strong> use these instructions below as guideline to setup your first project repository on GitUP!</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zipf/
 ├── bin
 │   ├── book_summary.sh
-│   ├── collate.py
-│   ├── countwords.py
-│   ├── plotcounts.py
-│   ├── script_template.py
-│   └── utilities.py
 ├── data
 │   ├── README.md
 │   ├── dracula.txt
 │   ├── frankenstein.txt
 │   └── ...
 └── results
-    ├── dracula.csv
-    ├── jane_eyre.csv
-    ├── jane_eyre.png
-    └── moby_dick.csv
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">bin/plotcounts.py</span></code> is the solution to Exercise <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/python_cli.html#a-better-plotting-program">Scripting - Exercise Better Plotting</a>; over the course of this chapter we will edit it to produce more informative plots.  Initially, it looks like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Plot word counts.&quot;&quot;&quot;</span>
-
-<span class="kn">import</span> <span class="nn">argparse</span>
-
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run the command line program.&quot;&quot;&quot;</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">infile</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                     <span class="n">names</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;word&#39;</span><span class="p">,</span> <span class="s1">&#39;word_frequency&#39;</span><span class="p">))</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;word_frequency&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                                           <span class="n">method</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">)</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;inverse_rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rank&#39;</span><span class="p">]</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;word_frequency&#39;</span><span class="p">,</span>
-                         <span class="n">y</span><span class="o">=</span><span class="s1">&#39;inverse_rank&#39;</span><span class="p">,</span>
-                         <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
-                         <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                         <span class="n">xlim</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">xlim</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">outfile</span><span class="p">)</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;infile&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">FileType</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">),</span>
-                        <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>
-                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Word count csv file name&#39;</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--outfile&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
-                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;plotcounts.png&#39;</span><span class="p">,</span>
-                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Output image file name&#39;</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--xlim&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-                        <span class="n">metavar</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;XMIN&#39;</span><span class="p">,</span> <span class="s1">&#39;XMAX&#39;</span><span class="p">),</span>
-                        <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;X-axis limits&#39;</span><span class="p">)</span>
-    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
-    <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    └── ...
 </pre></div>
 </div>
 <section id="setting-up">
@@ -571,8 +529,8 @@ document.write(`
 where the <strong>subcommand</strong> <code class="docutils literal notranslate"><span class="pre">verb</span></code> tells Git what we want to do
 and <code class="docutils literal notranslate"><span class="pre">options</span></code> provide whatever additional information that subcommand needs.
 Using this syntax, the first thing we need to do is configure Git.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Amira Khan&quot;</span>
-$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;amira@zipf.org&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;FIRST- LAST-NAME&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;EMAIL@EMAIL.org&quot;</span>
 </pre></div>
 </div>
 <p>(Please use your own name and email address instead of the one shown.)
@@ -592,8 +550,8 @@ We can also check our settings using the <code class="docutils literal notransla
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--list
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>user.name=Amira Khan
-user.email=amira@zipf.org
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>user.name=Your Name
+user.email=email@EMAIL.org
 core.autocrlf=input
 core.editor=nano
 core.repositoryformatversion=0
@@ -637,7 +595,7 @@ We do this using the <code class="docutils literal notranslate"><span class="pre
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>init<span class="w"> </span>.
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /Users/amira/zipf/.git/
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /Users/YOU/zipf/.git/
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ls</span></code> seems to show that nothing has changed:</p>
@@ -660,7 +618,7 @@ If we ever delete it, we will lose that history.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch main
 
 No commits yet
 
@@ -700,7 +658,7 @@ is to tell Git to add everything in the current directory using <code class="doc
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch main
 
 No commits yet
 
@@ -784,7 +742,7 @@ its <strong>short identifier</strong> <code class="docutils literal notranslate"
 </div>
 <p>the output tells us that
 all of our existing work is tracked and up to date:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch main
 nothing to commit, working tree clean
 </pre></div>
 </div>
@@ -831,12 +789,12 @@ Let’s check that we’re in the right directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">pwd</span>
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/Users/amira/zipf
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/Users/YOU/zipf
 </pre></div>
 </div>
-<p>Let’s use <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> to plot the word counts in <code class="docutils literal notranslate"><span class="pre">results/dracula.csv</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>bin/plotcounts.py<span class="w"> </span>results/dracula.csv<span class="w"> </span>--outfile
-<span class="w">  </span>results/dracula.png
+<p>Let’s use Create a new file and add something to it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>hello.txt
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>hello.txt
 </pre></div>
 </div>
 <p>If we check the status of our repository again,
@@ -844,11 +802,11 @@ Git tells us that we have a new file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch main
 Untracked files:
   (use &quot;git add &lt;file&gt;...&quot; to include in what will be
   committed)
-    results/dracula.png
+    hello.txt
 
 nothing added to commit but untracked files
 present (use &quot;git add&quot; to track)
@@ -856,13 +814,13 @@ present (use &quot;git add&quot; to track)
 </div>
 <p>Git isn’t tracking this file yet because we haven’t told it to.
 Let’s do that with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and then commit our change:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>results/dracula.png
-$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add plot of word counts for &#39;Dracula&#39;&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>hello.txt
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Jello World&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[master 851d590] Add plot of word counts for &#39;Dracula&#39;
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[master 851d590] Jello World
  1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 results/dracula.png
+ create mode 100644 hello.txt
 </pre></div>
 </div>
 <p>If we want to know what we’ve done recently,
@@ -870,17 +828,17 @@ we can display the project’s history using <code class="docutils literal notra
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>commit 851d590a214c7859eafa0998c6c951f8e0eb359b (HEAD -&gt; master)
-Author: Amira Khan &lt;amira@zipf.org&gt;
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>commit 851d590a214c7859eafa0998c6c951f8e0eb359b (HEAD -&gt; main)
+Author: YOU Yu &lt;email@mail.org&gt;
 Date:   Sat Dec 19 09:32:41 2020 -0800
 
-    Add plot of word counts for &#39;Dracula&#39;
+    Jello World
 
 commit 173222bf90216b408c8997f4e143572b99637750
-Author: Amira Khan &lt;amira@zipf.org&gt;
+Author: You Yu &lt;yuyou@mail.org&gt;
 Date:   Sat Dec 19 09:30:23 2020 -0800
 
-    Add scripts, novels, word counts, and plots
+    .... .... ... .. 
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> lists all commits made to a repository in reverse chronological order.
@@ -896,52 +854,8 @@ When you begin working with longer logs
 you’ll notice that the commits are shown in a pager program,
 as you saw in Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/bash_basics.html#reading-the-manual">bash-basics-help</a> with manual pages.
 You can apply the same keystrokes to scroll through the log
-and exit the paging program.
-The plot we have made is shown in <a class="reference internal" href="#git-cmdline-initial-plot"><span class="std std-ref">Figure Git cmdline - initial plot</span></a>.
-It could be better:
-most of the visual space is devoted to a few very common words,
-which makes it hard to see what is happening with the other ten thousand or so words.</p>
+and exit the paging program.</p>
 </div></blockquote>
-<figure class="align-default" id="git-cmdline-initial-plot">
-<img alt="../_images/plot-initial.png" src="../_images/plot-initial.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Git CMDline initial plot</span><a class="headerlink" href="#git-cmdline-initial-plot" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>An alternative way to visually evaluate Zipf’s Law is
-to plot the word frequency against rank on log-log axes.
-Let’s change the section:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;word_frequency&#39;</span><span class="p">,</span>
-                         <span class="n">y</span><span class="o">=</span><span class="s1">&#39;inverse_rank&#39;</span><span class="p">,</span>
-                         <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
-                         <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                         <span class="n">xlim</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">xlim</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>to put <code class="docutils literal notranslate"><span class="pre">'rank'</span></code> on the y-axis and add <code class="docutils literal notranslate"><span class="pre">loglog=True</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;word_frequency&#39;</span><span class="p">,</span>
-                         <span class="n">y</span><span class="o">=</span><span class="s1">&#39;rank&#39;</span><span class="p">,</span> <span class="n">loglog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                         <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
-                         <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                         <span class="n">xlim</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">xlim</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>When we check our status again,
-it prints:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
-</pre></div>
-</div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
-Changes not staged for commit:
-  (use &quot;git add &lt;file&gt;...&quot; to update what will be 
-  committed)
-  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in
-  working directory)
-	  modified:   bin/plotcounts.py
-
-no changes added to commit (use &quot;git add&quot; or &quot;git commit -a&quot;)
-</pre></div>
-</div>
 <p>The last line tells us that
 a file Git already knows about has been modified.</p>
 <blockquote>
@@ -969,19 +883,13 @@ and the most recently saved version:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>diff
 </pre></div>
 </div>
-<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/bin/plotcounts.py b/bin/plotcounts.py</span>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git A/file.txt B/file.txt</span>
 <span class="gh">index f274473..c4c5b5a 100644</span>
-<span class="gd">--- a/bin/plotcounts.py</span>
-<span class="gi">+++ b/bin/plotcounts.py</span>
+<span class="gd">--- A/file.txt </span>
+<span class="gi">+++ B/file.txt</span>
 <span class="gu">@@ -13,7 +13,7 @@ def main(args):</span>
-<span class="w"> </span>                                           method=&#39;max&#39;)
-<span class="w"> </span>    df[&#39;inverse_rank&#39;] = 1 / df[&#39;rank&#39;]
-<span class="w"> </span>    ax = df.plot.scatter(x=&#39;word_frequency&#39;,
-<span class="gd">-                         y=&#39;inverse_rank&#39;,</span>
-<span class="gi">+                         y=&#39;rank&#39;, loglog=True,</span>
-<span class="w"> </span>                         figsize=[12, 6],
-<span class="w"> </span>                         grid=True,
-<span class="w"> </span>                         xlim=args.xlim)
+<span class="gd">-                         Jello World</span>
+<span class="gi">+                         Hello World</span>
 </pre></div>
 </div>
 <p>The output is cryptic,
@@ -1008,16 +916,16 @@ using the <code class="docutils literal notranslate"><span class="pre">--word-di
 These are particularly useful when running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> on prose rather than code.</p>
 <p>After reviewing our change
 we can commit it just as we did before:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Plot frequency against rank on log-log axes&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Fixed spelling mistake&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch main
 Changes not staged for commit:
   (use &quot;git add &lt;file&gt;...&quot; to update what will be 
   committed)
   (use &quot;git restore &lt;file&gt;...&quot; to discard changes in 
   working directory)
-	  modified:   bin/plotcounts.py
+	  modified:   hello.txt
 
 no changes added to commit (use &quot;git add&quot; or &quot;git commit -a&quot;)
 </pre></div>
@@ -1025,20 +933,20 @@ no changes added to commit (use &quot;git add&quot; or &quot;git commit -a&quot;
 <p>Whoops:
 we forgot to add the file to the set of things we want to commit.
 Let’s do that and then try the commit again:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>bin/plotcounts.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>hello.txt
 $<span class="w"> </span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch main
 Changes to be committed:
   (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
-	  modified:   bin/plotcounts.py
+	  modified:  hello.txt
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Plot frequency against rank on log-log axes&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;X Message&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[master 582f7f6] Plot frequency against rank on log-log axes
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[main 582f7f6] Plot frequency against rank on log-log axes
 1 file changed, 1 insertion(+), 1 deletion(-)
 </pre></div>
 </div>
@@ -1061,78 +969,16 @@ that have been added to the current changeset but not yet committed
 <figure class="align-default" id="git-cmdline-staging-area">
 <img alt="../_images/staging-area.png" src="../_images/staging-area.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Git CMDline staging area</span><a class="headerlink" href="#git-cmdline-staging-area" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Git CMDline staging area</span><a class="headerlink" href="#git-cmdline-staging-area" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Let’s take a look at our new plot (<a class="reference internal" href="#git-cmdline-loglog-plot2"><span class="std std-ref">Figure git cmdline - loglog plot #2</span></a>):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>bin/plotcounts.py<span class="w"> </span>results/dracula.csv<span class="w"> </span>--outfile
-<span class="w">  </span>results/dracula.png
-</pre></div>
-</div>
-<figure class="align-default" id="git-cmdline-loglog-plot2">
-<img alt="../_images/plot-loglog.png" src="../_images/plot-loglog.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Git CMDline LOG Plot</span><a class="headerlink" href="#git-cmdline-loglog-plot2" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<blockquote>
-<div><p><strong>Interpreting Our Plot</strong></p>
-<p>If Zipf’s Law holds,
-we should still see a linear relationship,
-although now it will be negative, rather than positive
-(since we’re plotting the rank instead of the reverse rank).
-The low-frequency words (below about 120 instances)
-seem to follow a straight line very closely,
-but we currently have to make this evaluation by eye.
-In the next chapter,
-we’ll write code to fit and add a line to our plot.</p>
-</div></blockquote>
-<p>Running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> again shows that our plot has been modified:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
-Changes not staged for commit:
-  (use &quot;git add &lt;file&gt;...&quot; to update what will be
-  committed)
-  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in
-  working directory)
-	  modified:   results/dracula.png
-
-no changes added to commit (use &quot;git add&quot; or &quot;git commit -a&quot;)
-</pre></div>
-</div>
-<p>Since <code class="docutils literal notranslate"><span class="pre">results/dracula.png</span></code> is a binary file rather than text,
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> can’t show what has changed.
-It therefore simply tells us that the new file is different from the old one:</p>
-<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/results/dracula.png b/results/dracula.png</span>
-<span class="gh">index c1f62fd..57a7b70 100644</span>
-Binary files a/results/dracula.png and 
-b/results/dracula.png differ
-</pre></div>
-</div>
-<p>This is one of the biggest weaknesses of Git
-(and other version control systems):
-they are built to handle text.
-They can track changes to images, PDFs, and other formats,
-but they cannot do as much to show or merge differences.
-In a better world than ours,
-programmers fixed this years ago.</p>
-<p>If we are sure we want to save all of our changes,
-we can add and commit in a single command
-by giving <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Update dracula plot&quot;</span>
-</pre></div>
-</div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[master ee8684c] Update dracula plot
- 1 file changed, 0 insertions(+), 0 deletions(-)
- rewrite results/dracula.png (99%)
-</pre></div>
-</div>
 <p>The Git commands we’ve covered so far (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>)
 represent the tasks you perform in a basic Git workflow in a local repository
 (<a class="reference internal" href="#git-remote"><span class="std std-ref">Figure Git remote </span></a> a).</p>
 <figure class="align-default" id="git-remote">
 <img alt="../_images/git-remote.png" src="../_images/git-remote.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Git Remote</span><a class="headerlink" href="#git-remote" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Git Remote</span><a class="headerlink" href="#git-remote" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1171,7 +1017,7 @@ The home page of our new repository on GitHub includes the string we need to ide
 <figure class="align-default" id="git-cmdline-repo-link">
 <img alt="../_images/repo-link.png" src="../_images/repo-link.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Git CMDline Repository link</span><a class="headerlink" href="#git-cmdline-repo-link" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Git CMDline Repository link</span><a class="headerlink" href="#git-cmdline-repo-link" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We can click on “HTTPS” to change the URL from SSH to HTTPS and then copy that URL.</p>
@@ -1187,7 +1033,7 @@ explain the steps required.</p>
 </div></blockquote>
 <p>Next, let’s go into the local <code class="docutils literal notranslate"><span class="pre">zipf</span></code> repository and run this command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/zipf
-$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/amira-khan/zipf.git
+$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/you/repo.git
 </pre></div>
 </div>
 <p>Make sure to use the URL for your repository instead of the one shown:
@@ -1199,8 +1045,8 @@ We can check that the command has worked by running <code class="docutils litera
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>-v
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>origin	https://github.com/amira-khan/zipf.git (fetch)
-origin	https://github.com/amira-khan/zipf.git (push)
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>origin	https://github.com/you/zipf.git (fetch)
+origin	https://github.com/you/zipf.git (push)
 </pre></div>
 </div>
 <p>Git displays two lines because it’s actually possible to set up a remote
@@ -1209,7 +1055,7 @@ Sensible people don’t do this,
 so we won’t explore this possibility any further.</p>
 <p>Now that we have configured a remote,
 we can <strong>push</strong> the work we have done so far to the repository on GitHub:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div>
 </div>
 <p>This may prompt us to enter our username and password;
@@ -1221,24 +1067,24 @@ Compressing objects: 100% (35/35), done.
 Writing objects: 100% (35/35), 2.17 MiB | 602.00 KiB/s, done.
 Total 35 (delta 7), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (7/7), done.
-To https://github.com/amira-khan/zipf.git
- * [new branch]      master -&gt; master
+To https://github.com/you/zipf.git
+ * [new branch]      main -&gt; main
 </pre></div>
 </div>
 <p>If we view our GitHub repository in the browser, it now includes all of our project files, along with all of the commits we have made so far (<a class="reference internal" href="#git-cmdline-history"><span class="std std-ref">Figure - Git cmdline history</span></a>).</p>
 <figure class="align-default" id="git-cmdline-history">
 <img alt="../_images/repo-history.png" src="../_images/repo-history.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Git Commandline History</span><a class="headerlink" href="#git-cmdline-history" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Git Commandline History</span><a class="headerlink" href="#git-cmdline-history" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>\newpage</p>
 <p>We can also <strong>pull</strong> from the remote repository to the local one:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>master
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>From https://github.com/amira-khan/zipf
- * branch            master     -&gt; FETCH_HEAD
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>From https://github.com/you/zipf
+ * branch            main     -&gt; FETCH_HEAD
 Already up-to-date.
 </pre></div>
 </div>
@@ -1275,29 +1121,20 @@ The “absolute” version is the unique identifier that Git gives to each commi
 These identifiers are 40 characters long, but in most situations Git will let us use just the first half dozen characters or so.
 For example, if we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> right now, it shows us something like this:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>commit ee8684ca123e1e829fc995d672e3d7e4b00f2610
-(HEAD -&gt; master, origin/master)
-Author: Amira Khan &lt;amira@zipf.org&gt;
+(HEAD -&gt; main, origin/master)
+Author: You Youn &lt;you@mail.org&gt;
 Date:   Sat Dec 19 09:52:04 2020 -0800
 
-    Update dracula plot
+    Update test.txt
 
 commit 582f7f6f536d520b1328c04c9d41e24b54170656
-Author: Amira Khan &lt;amira@zipf.org&gt;
+Author: You You &lt;you@email.org&gt;
 Date:   Sat Dec 19 09:37:25 2020 -0800
 
-    Plot frequency against rank on log-log axes
+    spelling fix
 
 commit 851d590a214c7859eafa0998c6c951f8e0eb359b
-Author: Amira Khan &lt;amira@zipf.org&gt;
-Date:   Sat Dec 19 09:32:41 2020 -0800
-
-    Add plot of word counts for &#39;Dracula&#39;
-
-commit 173222bf90216b408c8997f4e143572b99637750
-Author: Amira Khan &lt;amira@zipf.org&gt;
-Date:   Sat Dec 19 09:30:23 2020 -0800
-
-    Add scripts, novels, word counts, and plots
+.....
 </pre></div>
 </div>
 <p>The commit in which we changed <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>
@@ -1315,69 +1152,53 @@ to describe the changes in each commit:</p>
 we have truncated the rest,
 since it is very long:</p>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>commit ee8684ca123e1e829fc995d672e3d7e4b00f2610
-(HEAD -&gt; master, origin/master)
-Author: Amira Khan &lt;amira@zipf.org&gt;
+(HEAD -&gt; main, origin/master)
+Author: You You &lt;you@mail.org&gt;
 Date:   Sat Dec 19 09:52:04 2020 -0800
 
-<span class="w"> </span>   Update dracula plot
+<span class="w"> </span>   Update hello.txt
 
 <span class="gh">diff --git a/results/dracula.png b/results/dracula.png</span>
 <span class="gh">index c1f62fd..57a7b70 100644</span>
-Binary files a/results/dracula.png and 
-b/results/dracula.png differ
+Binary files a/hello.txt and 
+b/hello.txt differ
 ...
 </pre></div>
 </div>
 <p>Alternatively,
 we can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> directly to examine the differences between files at any stage in the repository’s history.
-Let’s explore this with the <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> file.
-We no longer need the line of code in <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>
-that calculates the inverse rank:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;inverse_rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rank&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>If we delete that line from <code class="docutils literal notranslate"><span class="pre">bin/plotcounts.py</span></code>,
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> on its own will show
-the difference between the file as it is now and the most recent version:</p>
-<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/bin/plotcounts.py b/bin/plotcounts.py</span>
+Let’s explore this with the <code class="docutils literal notranslate"><span class="pre">hello.txt</span></code> file.</p>
+<p>the difference between the file as it is now and the most recent version:</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/hello.txt b/hello.txt</span>
 <span class="gh">index c4c5b5a..c511da1 100644</span>
-<span class="gd">--- a/bin/plotcounts.py</span>
-<span class="gi">+++ b/bin/plotcounts.py</span>
+<span class="gd">--- a/hello.txt</span>
+<span class="gi">+++ b/hello.txt</span>
 <span class="gu">@@ -11,7 +11,6 @@ def main(args):</span>
-<span class="w"> </span>                     names=(&#39;word&#39;, &#39;word_frequency&#39;))
-<span class="w"> </span>    df[&#39;rank&#39;] = df[&#39;word_frequency&#39;].rank(ascending=False,
-<span class="w"> </span>                                           method=&#39;max&#39;)
-<span class="gd">-    df[&#39;inverse_rank&#39;] = 1 / df[&#39;rank&#39;]</span>
-<span class="w"> </span>    ax = df.plot.scatter(x=&#39;word_frequency&#39;,
-<span class="w"> </span>                         y=&#39;rank&#39;, loglog=True,
-<span class="w"> </span>                         figsize=[12, 6],
+<span class="gd">-    Jello World</span>
+<span class="w"> </span>    Hello World
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">582f7f6</span></code>,
 on the other hand,
 shows the difference between the current state
 and the commit referenced by the short identifier:</p>
-<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/bin/plotcounts.py b/bin/plotcounts.py</span>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/hello.txt b/hello.txt</span>
 <span class="gh">index c4c5b5a..c511da1 100644</span>
-<span class="gd">--- a/bin/plotcounts.py</span>
-<span class="gi">+++ b/bin/plotcounts.py</span>
+<span class="gd">--- a/hello.txt</span>
+<span class="gi">+++ b/hello.txt</span>
 <span class="gu">@@ -11,7 +11,6 @@ def main(args):</span>
-<span class="w"> </span>                     names=(&#39;word&#39;, &#39;word_frequency&#39;))
-<span class="w"> </span>    df[&#39;rank&#39;] = df[&#39;word_frequency&#39;].rank(ascending=False,
-<span class="w"> </span>                                           method=&#39;max&#39;)
-<span class="gd">-    df[&#39;inverse_rank&#39;] = 1 / df[&#39;rank&#39;]</span>
-<span class="w"> </span>    ax = df.plot.scatter(x=&#39;word_frequency&#39;,
-<span class="w"> </span>                         y=&#39;rank&#39;, loglog=True,
-<span class="w"> </span>                         figsize=[12, 6],
-<span class="gh">diff --git a/results/dracula.png b/results/dracula.png</span>
+<span class="gd">-    Jello World</span>
+<span class="w"> </span>    Hello World
+
+<span class="gh">diff --git a/hello.txt b/hello.txt</span>
 <span class="gh">index c1f62fd..57a7b70 100644</span>
-Binary files a/results/dracula.png and 
-b/results/dracula.png differ
+Binary files a/hello.png and 
+b/hello.png differ
 </pre></div>
 </div>
 <p>Note that you will need to reference your <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> to replace <code class="docutils literal notranslate"><span class="pre">582f7f6</span></code> in the code above,
 since Git assigned your commit a different unique identifier.
-Note also that we have <em>not</em> committed the last change to <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>;
+Note also that we have <em>not</em> committed the last change to <code class="docutils literal notranslate"><span class="pre">hello.txt</span></code>;
 we will look at ways of undoing it in the next section.</p>
 <p>The “relative” version of history relies on a special identifier called <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>, which always refers to the most recent version in the repository.
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">HEAD</span></code> therefore shows the same thing as <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>,
@@ -1389,49 +1210,19 @@ by separating their identifiers with two dots <code class="docutils literal notr
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>diff<span class="w"> </span>HEAD~1..HEAD~2
 </pre></div>
 </div>
-<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/bin/plotcounts.py b/bin/plotcounts.py</span>
-<span class="gh">index c4c5b5a..f274473 100644</span>
-<span class="gd">--- a/bin/plotcounts.py</span>
-<span class="gi">+++ b/bin/plotcounts.py</span>
-<span class="gu">@@ -13,7 +13,7 @@ def main(args):</span>
-<span class="w"> </span>                                           method=&#39;max&#39;)
-<span class="w"> </span>    df[&#39;inverse_rank&#39;] = 1 / df[&#39;rank&#39;]
-<span class="w"> </span>    ax = df.plot.scatter(x=&#39;word_frequency&#39;,
-<span class="gd">-                         y=&#39;rank&#39;, loglog=True,</span>
-<span class="gi">+                         y=&#39;inverse_rank&#39;,</span>
-<span class="w"> </span>                         figsize=[12, 6],
-<span class="w"> </span>                         grid=True,
-<span class="w"> </span>                         xlim=args.xlim)
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/hello.txt b/hello.txt</span>
+<span class="gh">index c4c5b5a..c511da1 100644</span>
+<span class="gd">--- a/hello.txt</span>
+<span class="gi">+++ b/hello.txt</span>
+<span class="gu">@@ -11,7 +11,6 @@ def main(args):</span>
+<span class="gd">-    Jello World</span>
+<span class="w"> </span>    Hello World
 </pre></div>
 </div>
 <p>If we want to see the changes made in a particular commit, we can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span></code> with an identifier and a filename:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>show<span class="w"> </span>HEAD~1<span class="w"> </span>bin/plotcounts.py
-</pre></div>
-</div>
-<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>commit 582f7f6f536d520b1328c04c9d41e24b54170656
-Author: Amira Khan &lt;amira@zipf.org&gt;
-Date:   Sat Dec 19 09:37:25 2020 -0800
-
-<span class="w"> </span>   Plot frequency against rank on log-log axes
-
-<span class="gh">diff --git a/bin/plotcounts.py b/bin/plotcounts.py</span>
-<span class="gh">index f274473..c4c5b5a 100644</span>
-<span class="gd">--- a/bin/plotcounts.py</span>
-<span class="gi">+++ b/bin/plotcounts.py</span>
-<span class="gu">@@ -13,7 +13,7 @@ def main(args):</span>
-<span class="w"> </span>                                           method=&#39;max&#39;)
-<span class="w"> </span>    df[&#39;inverse_rank&#39;] = 1 / df[&#39;rank&#39;]
-<span class="w"> </span>    ax = df.plot.scatter(x=&#39;word_frequency&#39;,
-<span class="gd">-                         y=&#39;inverse_rank&#39;,</span>
-<span class="gi">+                         y=&#39;rank&#39;, loglog=True,</span>
-<span class="w"> </span>                         figsize=[12, 6],
-<span class="w"> </span>                         grid=True,
-<span class="w"> </span>                         xlim=args.xlim)
-</pre></div>
-</div>
 <p>If we wanted to view the contents of a file at a given point in the version history, we could use the same command,
 but separating the identifier and file with a colon:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>show<span class="w"> </span>HEAD~1:bin/plotcounts.py
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>show<span class="w"> </span>HEAD~1:hello.txt
 </pre></div>
 </div>
 <p>This allows us to look through the file using a paging program.</p>
@@ -1446,24 +1237,24 @@ before we add or commit it.
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch main
 Changes not staged for commit:
   (use &quot;git add &lt;file&gt;...&quot; to update what will be 
   committed)
   (use &quot;git restore &lt;file&gt;...&quot; to discard changes in 
   working directory)
-	modified:   bin/plotcounts.py
+	modified:   hello.txt
 
 no changes added to commit (use &quot;git add&quot; or &quot;git commit -a&quot;)
 </pre></div>
 </div>
 <p>We can put things back the way they were in the last saved revision
 using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code>, as the screen output suggests:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>restore<span class="w"> </span>bin/plotcounts.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>restore<span class="w"> </span>hello.txt
 $<span class="w"> </span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch main
 nothing to commit, working tree clean
 </pre></div>
 </div>
@@ -1478,27 +1269,12 @@ you may see a suggestion for <code class="docutils literal notranslate"><span cl
 As of Git version 2.29,
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code> is still an experimental command,
 and operates as a specialized form of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>.
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">HEAD</span> <span class="pre">bin/plotcounts.py</span></code> is equivalent to the last command run.\index{Git commands!checkout}</p>
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">HEAD</span> <span class="pre">hello.txt</span></code> is equivalent to the last command run.</p>
 </div></blockquote>
-<p>We can confirm the file has been restored
-by printing the relevant lines of the file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">19</span><span class="w"> </span>bin/plotcounts.py<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">8</span>
-</pre></div>
-</div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>    df[&#39;rank&#39;] = df[&#39;word_frequency&#39;].rank(ascending=False,
-                                           method=&#39;max&#39;)
-    df[&#39;inverse_rank&#39;] = 1 / df[&#39;rank&#39;]
-    ax = df.plot.scatter(x=&#39;word_frequency&#39;,
-                         y=&#39;rank&#39;, loglog=True,
-                         figsize=[12, 6],
-                         grid=True,
-                         xlim=args.xlim)
-</pre></div>
-</div>
 <p>Because <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code> is designed to restore working files,
 we’ll need to use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> to revert to earlier versions of files.\index{Git commands!checkout}
 We can use a specific commit identifier rather than <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> to go back as far as we want:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>851d590<span class="w"> </span>bin/plotcounts.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>851d590<span class="w"> </span>hello.txt
 </pre></div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Updated 1 path from c8d6a33
@@ -1514,51 +1290,23 @@ it replaces the content of the file with the old content:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
 Changes to be committed:
   (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
-	  modified:   bin/plotcounts.py
+	  modified:   hello.txt
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">19</span><span class="w"> </span>bin/plotcounts.py<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">8</span>
-</pre></div>
-</div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>    df[&#39;rank&#39;] = df[&#39;word_frequency&#39;].rank(ascending=False,
-                                           method=&#39;max&#39;)
-    df[&#39;inverse_rank&#39;] = 1 / df[&#39;rank&#39;]
-    ax = df.plot.scatter(x=&#39;word_frequency&#39;,
-                         y=&#39;inverse_rank&#39;,
-                         figsize=[12, 6],
-                         grid=True,
-                         xlim=args.xlim)
-</pre></div>
-</div>
-<p>If we change our mind again,
-we can use the suggestion in the output to restore the earlier version.
-Because checking out the changes added them to the staging area,
+<p>Because checking out the changes added them to the staging area,
 we need to first remove them from the staging area:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>restore<span class="w"> </span>--staged<span class="w"> </span>bin/plotcounts.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>restore<span class="w"> </span>--staged<span class="w"> </span>hello.txt
 </pre></div>
 </div>
 <p>However,
 the changes have been unstaged but still exist in the file.
 We can return the file to the state of the most recent commit:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>restore<span class="w"> </span>bin/plotcounts.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>restore<span class="w"> </span>hello.txt
 $<span class="w"> </span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch master
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On branch main
 nothing to commit, working tree clean
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">19</span><span class="w"> </span>bin/plotcounts.py<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">8</span>
-</pre></div>
-</div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>    df[&#39;rank&#39;] = df[&#39;word_frequency&#39;].rank(ascending=False,
-                                           method=&#39;max&#39;)
-    df[&#39;inverse_rank&#39;] = 1 / df[&#39;rank&#39;]
-    ax = df.plot.scatter(x=&#39;word_frequency&#39;,
-                         y=&#39;rank&#39;, loglog=True,
-                         figsize=[12, 6],
-                         grid=True,
-                         xlim=args.xlim)
 </pre></div>
 </div>
 <p>We have restored the most recent commit. Since we didn’t commit the change that removed the line that calculates the inverse rank, that work is now lost:
