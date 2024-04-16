@@ -10,14 +10,16 @@ parts:
   - caption: Python, Bash and Git Basics 
     chapters:
       # intro file
-      - file: exercises/python_refresh.ipynb
+      - file: exercises/python_refresher.ipynb
       
       - file: chapters/introduction/bash.md
         sections:
           - file: chapters/bash_basics.md
+          - file: exercises/bash_basics.ipynb
           - file: chapters/bash_tools.md
+          - file: exercises/bash_tools.ipynb
           - file: chapters/bash_advanced.md
-          - file: exercises/bash.ipynb
+          - file: exercises/bash_advanced.ipynb       
       
       - file: chapters/introduction/vcs.md
         sections: 

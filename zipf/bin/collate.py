@@ -2,15 +2,12 @@
 Combine multiple word count CSV-files
 into a single cumulative count.
 """
-
 import csv
 import argparse
 from collections import Counter
 import logging
 
 import utilities as util
-
-
 def update_counts(reader, word_counts):
     """Update word counts with data from another reader/file."""
     for word, count in csv.reader(reader):

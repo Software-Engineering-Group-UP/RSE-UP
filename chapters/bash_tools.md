@@ -13,13 +13,11 @@ and how to repeat commands to process as many files as we want automatically.
 
  
 
-We'll be continuing to work in the `zipf` project,
-which should contain the following files after the previous chapter:
+We'll be working with `zipf` project (found [here](https://gitup.uni-potsdam.de/seg/rse_course/rse_course_materials/labs/lab_02)), which should contain the following files:
 
 ```text
 zipf/
 └── data
-    ├── README.md
     ├── dracula.txt
     ├── frankenstein.txt
     ├── jane_eyre.txt
@@ -1060,7 +1058,6 @@ which should contain the following files after the previous chapter:
 ```text
 zipf/
 └── data
-    ├── README.md
     ├── dracula.txt
     ├── frankenstein.txt
     ├── jane_eyre.txt
