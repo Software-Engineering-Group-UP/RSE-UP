@@ -510,17 +510,15 @@ document.write(`
 <h1>Using Git at the Command Line<a class="headerlink" href="#using-git-at-the-command-line" title="Link to this heading">#</a></h1>
 <p>To show how Git works, we will apply it to the Zipf’s Law project. Our project directory should currently include:
 We’ll be working with <code class="docutils literal notranslate"><span class="pre">zipf</span></code> project (found <a class="reference external" href="https://gitup.uni-potsdam.de/seg/rse_course/rse_course_materials/labs/lab_02">here</a>), which should contain the following files:</p>
-<p><strong>FOR THOSE FOLLOWING THE RSE COURSE AT UNIVERSITY OF POTSDAM</strong> use these instructions below as guideline to setup your first project repository on GitUP!</p>
+<p><strong>Use the instructions below as guideline rather than a 1:1 copy paste exercise</strong></p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zipf/
-├── bin
-│   ├── book_summary.sh
+├── bin_pycodestyle
+│   ├── ...
 ├── data
-│   ├── README.md
 │   ├── dracula.txt
 │   ├── frankenstein.txt
 │   └── ...
-└── results
-    └── ...
+└── ...
 </pre></div>
 </div>
 <section id="setting-up">
@@ -586,7 +584,7 @@ Let’s make sure we are in the top-level directory of our project:</p>
 $<span class="w"> </span>ls
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span> bin       data      results
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span> bin_pycodestyle     data 
 </pre></div>
 </div>
 <p>We want to make this directory a <strong>repository</strong> i.e.,
@@ -602,14 +600,14 @@ We do this using the <code class="docutils literal notranslate"><span class="pre
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bin     data    results
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bin_pycodestyle    data   
 </pre></div>
 </div>
 <p>but if we add the <code class="docutils literal notranslate"><span class="pre">-a</span></code> flag to show everything, we can see that Git has created a hidden directory within <code class="docutils literal notranslate"><span class="pre">zipf</span></code> called <code class="docutils literal notranslate"><span class="pre">.git</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-a
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.       ..      .git    bin     data    results
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.       ..      .git    bin_pycodestyle     data  
 </pre></div>
 </div>
 <p>Git stores information about the project in this special subdirectory.
@@ -626,9 +624,8 @@ Untracked files:
   (use &quot;git add &lt;file&gt;...&quot; to include in what will be
   committed)
 
-        bin/
+        bin_pycodestyle/
         data/
-        results/
 
 nothing added to commit but untracked files
 present (use &quot;git add&quot; to track)
@@ -642,11 +639,11 @@ there are things in <code class="docutils literal notranslate"><span class="pre"
 <p>Now that our project is a repository, we can tell Git to start recording its history.
 To do this, we add things to the list of things Git is tracking using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>.
 We can do this for single files:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>bin/countwords.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>bin_pycodestyle/wordcount.py
 </pre></div>
 </div>
 <p>or entire directories:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>bin
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>bin_pycodestyle
 </pre></div>
 </div>
 <p>The easiest thing to do with an existing project
@@ -664,13 +661,9 @@ No commits yet
 
 Changes to be committed:
   (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
-	  new file:   bin/book_summary.sh
-	  new file:   bin/collate.py
-	  new file:   bin/countwords.py
-	  new file:   bin/plotcounts.py
-	  new file:   bin/script_template.py
-	  new file:   bin/utilities.py
-	  new file:   data/README.md
+	  new file:   bin_pycodestyle
+	  new file:   bin_pycodestyle/countwords.py
+	  new file:   bin_pycodestyle/plotcounts.py
 	  new file:   data/dracula.txt
 	  new file:   data/frankenstein.txt
 	  new file:   data/jane_eyre.txt
@@ -678,47 +671,40 @@ Changes to be committed:
 	  new file:   data/sense_and_sensibility.txt
 	  new file:   data/sherlock_holmes.txt
 	  new file:   data/time_machine.txt
-	  new file:   results/dracula.csv
-	  new file:   results/jane_eyre.csv
-	  new file:   results/jane_eyre.png
-	  new file:   results/moby_dick.csv
-</pre></div>
-</div>
-<p>Adding all of our existing files this way is easy, but we can accidentally add things that should never be in version control,
-such as files containing passwords or other sensitive information.
-The output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> tells us that we can remove such files from the list of things to be saved using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">--cached</span></code>; we will practice this in <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/version_control.html#removing-before-saving">Exercise on removing files</a></p>
-<blockquote>
-<div><p><strong>What to Save</strong></p>
-<p>We always want to save programs, manuscripts,
-and everything else we have created by hand
-in version control.
-In this project,
-we have also chosen to save our data files
-and the results we have generated
-(including our plots).
-This is a project-specific decision:
-if these files are very large,
-for example,
-we may decide to save them elsewhere,
-while if they are easy to re-create,
-we may not save them at all.
-We will explore this issue further in Chapter &#64;ref(provenance).</p>
-</div></blockquote>
-<p>We no longer have any untracked files,
-but the tracked files haven’t been <strong>committed</strong> (i.e., saved permanently in our project’s history). We can do this using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add scripts, novels, word counts, and plots&quot;</span>
+	```
+
+Adding all of our existing files this way is easy, but we can accidentally add things that should never be in version control,
+such as files containing passwords or other sensitive information. 
+The output of `git status` tells us that we can remove such files from the list of things to be saved using `git rm --cached`; we will practice this in [Exercise on removing files](https://software-engineering-group-up.github.io/RSE-UP/exercises/version_control.html#removing-before-saving)
+&gt; **What to Save**
+&gt;
+&gt; We always want to save programs, manuscripts,
+&gt; and everything else we have created by hand
+&gt; in version control.
+&gt; In this project,
+&gt; we have also chosen to save our data files
+&gt; and the results we have generated
+&gt; (including our plots).
+&gt; This is a project-specific decision:
+&gt; if these files are very large,
+&gt; for example,
+&gt; we may decide to save them elsewhere,
+&gt; while if they are easy to re-create,
+&gt; we may not save them at all.
+&gt; We will explore this issue further in Chapter \@ref(provenance).
+
+We no longer have any untracked files,
+but the tracked files haven&#39;t been **committed** (i.e., saved permanently in our project&#39;s history). We can do this using `git commit`:
+
+```bash
+$ git commit -m &quot;Add scripts, novels, word counts, and plots&quot;
 </pre></div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[master (root-commit) 173222b] Add scripts, novels, word 
     counts, and plots
  18 files changed, 145296 insertions(+)
- create mode 100644 bin/book_summary.sh
- create mode 100644 bin/collate.py
- create mode 100644 bin/countwords.py
- create mode 100644 bin/plotcounts.py
- create mode 100644 bin/script_template.py
- create mode 100644 bin/utilities.py
- create mode 100644 data/README.md
+ create mode 100644 bin_pycodestyle/countwords.py
+ create mode 100644 bin_pycodestyle/plotcounts.py
  create mode 100644 data/dracula.txt
  create mode 100644 data/frankenstein.txt
  create mode 100644 data/jane_eyre.txt

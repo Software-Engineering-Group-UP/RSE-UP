@@ -4,19 +4,18 @@
 To show how Git works, we will apply it to the Zipf's Law project. Our project directory should currently include:
 We'll be working with `zipf` project (found [here](https://gitup.uni-potsdam.de/seg/rse_course/rse_course_materials/labs/lab_02)), which should contain the following files:
 
-**FOR THOSE FOLLOWING THE RSE COURSE AT UNIVERSITY OF POTSDAM** use these instructions below as guideline to setup your first project repository on GitUP!
+**Use the instructions below as guideline rather than a 1:1 copy paste exercise** 
 
 ```text
 zipf/
-├── bin
-│   ├── book_summary.sh
+├── bin_pycodestyle
+│   ├── ...
 ├── data
-│   ├── README.md
 │   ├── dracula.txt
 │   ├── frankenstein.txt
 │   └── ...
-└── results
-    └── ...
+└── ...
+
 ```
 
 ## Setting Up
@@ -94,7 +93,7 @@ $ ls
 ```
 
 ```text
- bin       data      results
+ bin_pycodestyle     data 
 ```
 
 We want to make this directory a **repository** i.e.,
@@ -116,7 +115,7 @@ $ ls
 ```
 
 ```text
-bin     data    results
+bin_pycodestyle    data   
 ```
 
 but if we add the `-a` flag to show everything, we can see that Git has created a hidden directory within `zipf` called `.git`:
@@ -126,7 +125,7 @@ $ ls -a
 ```
 
 ```text
-.       ..      .git    bin     data    results
+.       ..      .git    bin_pycodestyle     data  
 ```
 
 Git stores information about the project in this special subdirectory.
@@ -147,9 +146,8 @@ Untracked files:
   (use "git add <file>..." to include in what will be
   committed)
 
-        bin/
+        bin_pycodestyle/
         data/
-        results/
 
 nothing added to commit but untracked files
 present (use "git add" to track)
@@ -165,13 +163,13 @@ To do this, we add things to the list of things Git is tracking using `git add`.
 We can do this for single files:
 
 ```bash
-$ git add bin/countwords.py
+$ git add bin_pycodestyle/wordcount.py
 ```
 
 or entire directories:
 
 ```bash
-$ git add bin
+$ git add bin_pycodestyle
 ```
 
 The easiest thing to do with an existing project
@@ -194,13 +192,9 @@ No commits yet
 
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
-	  new file:   bin/book_summary.sh
-	  new file:   bin/collate.py
-	  new file:   bin/countwords.py
-	  new file:   bin/plotcounts.py
-	  new file:   bin/script_template.py
-	  new file:   bin/utilities.py
-	  new file:   data/README.md
+	  new file:   bin_pycodestyle
+	  new file:   bin_pycodestyle/countwords.py
+	  new file:   bin_pycodestyle/plotcounts.py
 	  new file:   data/dracula.txt
 	  new file:   data/frankenstein.txt
 	  new file:   data/jane_eyre.txt
@@ -208,11 +202,7 @@ Changes to be committed:
 	  new file:   data/sense_and_sensibility.txt
 	  new file:   data/sherlock_holmes.txt
 	  new file:   data/time_machine.txt
-	  new file:   results/dracula.csv
-	  new file:   results/jane_eyre.csv
-	  new file:   results/jane_eyre.png
-	  new file:   results/moby_dick.csv
-```
+	```
 
 Adding all of our existing files this way is easy, but we can accidentally add things that should never be in version control,
 such as files containing passwords or other sensitive information. 
@@ -245,13 +235,8 @@ $ git commit -m "Add scripts, novels, word counts, and plots"
 [master (root-commit) 173222b] Add scripts, novels, word 
     counts, and plots
  18 files changed, 145296 insertions(+)
- create mode 100644 bin/book_summary.sh
- create mode 100644 bin/collate.py
- create mode 100644 bin/countwords.py
- create mode 100644 bin/plotcounts.py
- create mode 100644 bin/script_template.py
- create mode 100644 bin/utilities.py
- create mode 100644 data/README.md
+ create mode 100644 bin_pycodestyle/countwords.py
+ create mode 100644 bin_pycodestyle/plotcounts.py
  create mode 100644 data/dracula.txt
  create mode 100644 data/frankenstein.txt
  create mode 100644 data/jane_eyre.txt
