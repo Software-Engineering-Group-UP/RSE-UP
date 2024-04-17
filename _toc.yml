@@ -30,6 +30,7 @@ parts:
   - caption: Writing Clean Code
     chapters:
       - file: chapters/clean_readable_code.md
+      - file: exercises/clean_code.md
       - file: chapters/writing_documentation.md     
 
 # 3  
