@@ -43,7 +43,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -544,7 +544,7 @@ it lets us combine programs to create pipelines
 that can handle large volumes of data.
 This lesson shows how to do that,
 and how to repeat commands to process as many files as we want automatically.</p>
-<p>We’ll be working with <code class="docutils literal notranslate"><span class="pre">zipf</span></code> project (found <a class="reference external" href="https://gitup.uni-potsdam.de/seg/rse_course/rse_course_materials/labs/lab_02">here</a>), which should contain the following files:</p>
+<p>We’ll be working with <code class="docutils literal notranslate"><span class="pre">zipf</span></code> project (found <a class="reference external" href="https://gitup.uni-potsdam.de/seg/rse_course/rse_course_materials">here</a>), which should contain the following files:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zipf/
 └── data
     ├── dracula.txt
@@ -1989,8 +1989,8 @@ we can type <kbd>Ctrl</kbd>+<kbd>R</kbd> again to go further back.</p></li>
 </ul>
 <p>If we use <code class="docutils literal notranslate"><span class="pre">history</span></code>, <kbd>↑</kbd>, or <kbd>Ctrl</kbd>+<kbd>R</kbd>
 we will quickly notice that loops don’t have to be broken across lines.
-Instead,
-their parts can be separated with semi-colons:</p>
+Instead,</p>
+<!-- their parts can be separated with semi-colons: -->
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span>s*.txt<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="nv">$filename</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">8</span><span class="p">;</span>
 <span class="k">done</span>
 </pre></div>
