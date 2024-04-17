@@ -11,7 +11,7 @@ This chapter extends those ideas to show
 how we can create new tools by saving commands in files
 and how to use a more powerful version of **wildcards** to extract data from files.
 
-We'll be working with `zipf` project (found [here](https://gitup.uni-potsdam.de/seg/rse_course/rse_course_materials/labs/lab_02)), which should contain the following files:
+We'll be working with `zipf` project (found [here](https://gitup.uni-potsdam.de/seg/rse_course/rse_course_materials)), which should contain the following files:
 
 
 ```text

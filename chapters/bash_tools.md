@@ -13,7 +13,7 @@ and how to repeat commands to process as many files as we want automatically.
 
  
 
-We'll be working with `zipf` project (found [here](https://gitup.uni-potsdam.de/seg/rse_course/rse_course_materials/labs/lab_02)), which should contain the following files:
+We'll be working with `zipf` project (found [here](https://gitup.uni-potsdam.de/seg/rse_course/rse_course_materials)), which should contain the following files:
 
 ```text
 zipf/
@@ -1703,7 +1703,7 @@ that the shell gives us several ways to do it:
 If we use `history`, <kbd>↑</kbd>, or <kbd>Ctrl</kbd>+<kbd>R</kbd>
 we will quickly notice that loops don't have to be broken across lines.
 Instead,
-their parts can be separated with semi-colons:
+<!-- their parts can be separated with semi-colons: -->
 
 ```bash
 $ for filename in s*.txt; do head -n 17 $filename | tail -n 8;
