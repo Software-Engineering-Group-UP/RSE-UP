@@ -528,13 +528,13 @@ Where could you look for more information about them?</p>
 <h2>4) Creating the same file twice<a class="headerlink" href="#creating-the-same-file-twice" title="Link to this heading">#</a></h2>
 <p>Create a branch called <code class="docutils literal notranslate"><span class="pre">same</span></code>.
 In it, create a file called <code class="docutils literal notranslate"><span class="pre">same.txt</span></code> that contains your name and the date.</p>
-<p>Switch back to <code class="docutils literal notranslate"><span class="pre">master</span></code>.
+<p>Switch back to <code class="docutils literal notranslate"><span class="pre">main</span></code>.
 Check that <code class="docutils literal notranslate"><span class="pre">same.txt</span></code> does not exist,
 then create the same file with exactly the same contents.</p>
 <ol class="arabic simple">
-<li><p>What will <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">master..same</span></code> show?
+<li><p>What will <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">main..same</span></code> show?
 (Try to answer the question <em>before</em> running the command.)</p></li>
-<li><p>What will <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">same</span> <span class="pre">master</span></code> do?
+<li><p>What will <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">same</span> <span class="pre">main</span></code> do?
 (Try to answer the question <em>before</em> running the command.)</p></li>
 </ol>
 </section>
@@ -562,20 +562,20 @@ and clones it to their desktop.</p></li>
 and clones their copy to their desktop.</p></li>
 <li><p>Fuchsia adds a file <code class="docutils literal notranslate"><span class="pre">fuchsia.txt</span></code> to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of their desktop repository
 and pushes that change to their repository on GitHub.</p></li>
-<li><p>Fuchsia creates a pull request from the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of their repository on GitHub
-to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of Chartreuse’s repository on GitHub.</p></li>
+<li><p>Fuchsia creates a pull request from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch of their repository on GitHub
+to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch of Chartreuse’s repository on GitHub.</p></li>
 <li><p>Chartreuse does <em>not</em> merge Fuchsia’s PR.
 Instead,
-they add a file <code class="docutils literal notranslate"><span class="pre">chartreuse.txt</span></code> to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of their desktop repository
+they add a file <code class="docutils literal notranslate"><span class="pre">chartreuse.txt</span></code> to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch of their desktop repository
 and push that change to their repository on GitHub.</p></li>
 <li><p>Fuchsia adds a remote to their desktop repository called <code class="docutils literal notranslate"><span class="pre">upstream</span></code>
 that points at Chartreuse’s repository on GitHub
-and runs <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">upstream</span> <span class="pre">master</span></code>,
+and runs <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">upstream</span> <span class="pre">main</span></code>,
 then merges any changes or conflicts.</p></li>
-<li><p>Fuchsia pushes from the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of their desktop repository
-to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of their GitHub repository.</p></li>
+<li><p>Fuchsia pushes from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch of their desktop repository
+to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch of their GitHub repository.</p></li>
 <li><p>Chartreuse merges Fuchsia’s pull request.</p></li>
-<li><p>Chartreuse runs <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">master</span></code> on the desktop.</p></li>
+<li><p>Chartreuse runs <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">main</span></code> on the desktop.</p></li>
 </ol>
 </section>
 </section>
