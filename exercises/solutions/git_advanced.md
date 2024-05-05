@@ -69,10 +69,10 @@ and set aside time to do more reading.
 
 ### Exercise 4 
 
-1.  `git diff master..same` does not print anything
+1.  `git diff main..same` does not print anything
     because there are no differences between the two branches.
 
-2.  `git merge same master` prints `merging`
+2.  `git merge same main` prints `merging`
     because Git combines histories even when the files themselves do not differ.
     After running this command,
     `git history` shows a commit for the merge.
