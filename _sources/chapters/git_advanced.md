@@ -886,7 +886,7 @@ When you click on the button, Gitlab displays a page showing the default source 
 Start a merge request
 ```
 
-If you click on the changes tab, you can see a summary of the changes that will be in the merge request ([Figure: merge request summary](git-advanced-pull-request-summary)).
+If you click on the changes tab, you can see a summary of the changes that will be in the merge request ([Figure: merge request summary](gitlab-advanced-pull-request-summary)).
 
 ```{figure} ../figures/git-advanced/gitlab_after-merge-request.png
 :name: gitlab-advanced-pull-request-summary
@@ -899,7 +899,7 @@ before clicking on "Create Merge Request"
 
 ([Figure: fill in merge request](gitlab-advanced-pull-request-fill-in)).
 When they do, Gitlab displays a page showing the new merge request,
-which has a unique serial number ([Figure :New merge request](gitlab-advanced-pull-request-new)).
+which has a unique serial number ([Figure: New merge request](gitlab-advanced-pull-request-new)).
 **Note** that this merge request is displayed in our repository rather than yours, since it is our repository that will be affected if the merge request is merged.
 
 On the left sidebar we can see that there is a new merge request, when clicking on it a list of merge requests will be opened. 
@@ -911,7 +911,7 @@ Git pull request list
 
 Next we need to approve that request:
 
-```{figure} ../figures/gitlab-advanced/gitlab_merge-approve.png
+```{figure} ../figures/git-advanced/gitlab_merge-approve.png
 :name: gitlab-advanced-pull-request-new
 Gitlab Merge request approval
 ```
@@ -926,11 +926,11 @@ Gitlab view changes
 ```
 
 If we move our mouse over particular lines, a comment symbol appears near the numbers to indicate that we can add comments
-([Figure: Merge request - comment marker](git-advanced-pull-request-comment-marker)).
+([Figure: Merge request - comment marker](gitlab-advanced-pull-request-comment-marker)).
 We click on the marker beside our own name and write a comment. These comments will then be inserted and automatically displayed. 
 
 ```{figure} ../figures/git-advanced/gitlab_merge-comment.png
-:name: git-advanced-pull-request-comment-marker
+:name: gitlab-advanced-pull-request-comment-marker
 Add comments to changes.
 ```
 
@@ -940,7 +940,7 @@ As explained above, a merge request is a note asking that two branches be merged
 Depending on the comment, you either need to create a fix or explain further what your change does. After this has been done we can approve the merge request and merge it. 
 
 ```{figure} ../figures/git-advanced/gitlab_merge-success.png
-:name: git-advanced-pull-request-successful-merge
+:name: gitlab-advanced-pull-request-successful-merge
 Successful merge
 ```
 
