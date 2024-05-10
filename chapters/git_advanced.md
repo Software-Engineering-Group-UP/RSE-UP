@@ -614,7 +614,7 @@ The hardest thing about using a branch-per-feature workflow is sticking to it fo
 
 ## Using Other People's Work
 
-**NOTE** the following instructions are created using the University of Potsdam Gitlab server. Non University Members, while having access, can not contribute or fork. For instructions on how this works on Github please click [here](). Instructions will be similar, furthermore, they will use the original material from the Research Software Engineering with Python book by Irving.   
+**NOTE** the following instructions are created using the University of Potsdam Gitlab server. Non University Members, while having access, can not contribute or fork. For instructions on how this works on Github please click [here](https://software-engineering-group-up.github.io/RSE-UP/chapters/git_advanced_github.html). Instructions will be similar, furthermore, they will use the original material from the Research Software Engineering with Python book by Irving.   
 
 So far we have used Git to manage individual work,
 but it really comes into its own when we are working with other people.
@@ -633,9 +633,9 @@ The first approach works well for teams of up to half a dozen people who are all
 
 Git itself doesn't have any notion of a "main repository", but like Github, Gitlab, Bitbucket or selfhosted solutions like Gitea all encourage people to use Git in ways that effectively create one.
 Suppose, for example, that you want to contribute to the Zipf's Law code that we are hosting on Gitlab at `https://gitup.uni-potsdam.de/seg/rse_course/zipf`.
-You can go to that URL and click on the "Fork" button in the upper right corner ([Figure: fork button](git-advanced-fork-button)).
+You can go to that URL and click on the "Fork" button in the upper right corner ([Figure: fork button](gitlab-advanced-fork-button)).
 ```{figure} ../figures/git-advanced/gitlab_fork-button.png
-:name: git-advanced-fork-button
+:name: gitlab-advanced-fork-button
 
 Gitlab git fork button
 ```
@@ -645,7 +645,7 @@ While Github immediately creates a copy of a repository, on the university gitla
 Public means that everyone, even non university members will be able to view the repository. Internal means that anybody that is logged in with their university of potsdam account is able to view and interact with the repository. And private means that only you have access. 
 
 ```{figure} ../figures/git-advanced/gitlab_fork-choice.png
-:name: git-advanced-fork-choice
+:name: gitlab-advanced-fork-choice
 
 Gitlab git fork settings  
 ```
@@ -653,12 +653,12 @@ Gitlab git fork settings
 After clicking the fork button at the bottom the process should complete with your chosen project settings
 
 
-When the command completes, the setup on Gitlab now looks like [Figure: after fork](git-advanced-after-fork).Nothing has happened yet on your own machine:
+When the command completes, the setup on Gitlab now looks like [Figure: after fork](gitlab-advanced-after-fork).Nothing has happened yet on your own machine:
 the new repository exists only on GitHub.
 When you explores its history, they see that it contains all of the changes we made.
 
 ```{figure} ../figures/git-advanced/gitlab_after-fork.png
-:name: git-advanced-after-fork
+:name: gitlab-advanced-after-fork
 
 Gitlab git: After Fork
 ```
@@ -871,25 +871,25 @@ https://gitup.uni-potsdam.de/nbertrand/zipf
  * [new branch]      adding-email -> adding-email
 ```
 
-When you go to your Gitlab repository in the browser, Gitlab notices that they have just pushed a new branch and asks them if they want to create a merge request ([Figure: after push](git-advanced-after-sami-pushes)). (On Github this is called a pull request)
+When you go to your Gitlab repository in the browser, Gitlab notices that they have just pushed a new branch and asks them if they want to create a merge request ([Figure: after push](gitlab-advanced-after-sami-pushes)). (On Github this is called a pull request)
 
 ```{figure} ../figures/git-advanced/gitlab_after-push.png
-:name: git-advanced-after-sami-pushes
+:name: gitlab-advanced-after-sami-pushes
 
 Git after Push
 ```
 
-When you click on the button, Gitlab displays a page showing the default source and destination of the merge request and a pair of editable boxes for the pull request's title and a longer comment ([Figure: merge request start](git-advanced-pull-request-start)). 
+When you click on the button, Gitlab displays a page showing the default source and destination of the merge request and a pair of editable boxes for the pull request's title and a longer comment ([Figure: merge request start](gitlab-advanced-pull-request-start)). 
 
 ```{figure} ../figures/git-advanced/gitlab_merge-request2.png
-:name: git-advanced-pull-request-start
+:name: gitlab-advanced-pull-request-start
 Start a merge request
 ```
 
 If you click on the changes tab, you can see a summary of the changes that will be in the merge request ([Figure: merge request summary](git-advanced-pull-request-summary)).
 
 ```{figure} ../figures/git-advanced/gitlab_after-merge-request.png
-:name: git-advanced-pull-request-summary
+:name: gitlab-advanced-pull-request-summary
 Git merge request summary
 ```
 
@@ -897,31 +897,31 @@ The top (title) box is autofilled with the previous commit message,
 so you add an extended explanation to provide additional context
 before clicking on "Create Merge Request"
 
-([Figure: fill in merge request](git-advanced-pull-request-fill-in)).
+([Figure: fill in merge request](gitlab-advanced-pull-request-fill-in)).
 When they do, Gitlab displays a page showing the new merge request,
-which has a unique serial number ([Figure :New merge request](git-advanced-pull-request-new)).
+which has a unique serial number ([Figure :New merge request](gitlab-advanced-pull-request-new)).
 **Note** that this merge request is displayed in our repository rather than yours, since it is our repository that will be affected if the merge request is merged.
 
 On the left sidebar we can see that there is a new merge request, when clicking on it a list of merge requests will be opened. 
 
 ```{figure} ../figures/git-advanced/gitlab_merge_request-list.png
-:name: git-advanced-pull-request-list
+:name: gitlab-advanced-pull-request-list
 Git pull request list
 ```
 
 Next we need to approve that request:
 
-```{figure} ../figures/git-advanced/gitlab_merge-approve.png
-:name: git-advanced-pull-request-new
+```{figure} ../figures/gitlab-advanced/gitlab_merge-approve.png
+:name: gitlab-advanced-pull-request-new
 Gitlab Merge request approval
 ```
 
 
 Since there are no conflicts, Gitlab will let us merge the merge request immediately using the "Merge merge request" button. We could also discard or reject it without merging using the "Close merge request" button. Instead, we could also click on the "Files changed" tab to see what you have changed
-([Figure: Merge request - request changes](git-advanced-pull-request-changes)).
+([Figure: Merge request - request changes](gitlab-advanced-pull-request-changes)).
 
 ```{figure} ../figures/git-advanced/gitlab_pr-changes.png
-:name: git-advanced-pull-request-changes
+:name: gitlab-advanced-pull-request-changes
 Gitlab view changes
 ```
 
@@ -929,7 +929,7 @@ If we move our mouse over particular lines, a comment symbol appears near the nu
 ([Figure: Merge request - comment marker](git-advanced-pull-request-comment-marker)).
 We click on the marker beside our own name and write a comment. These comments will then be inserted and automatically displayed. 
 
-```{figure} ../figures/git-advanced/gitlab_merge_comment.png
+```{figure} ../figures/git-advanced/gitlab_merge-comment.png
 :name: git-advanced-pull-request-comment-marker
 Add comments to changes.
 ```
