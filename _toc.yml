@@ -25,7 +25,10 @@ parts:
         sections: 
           - file: chapters/intro_version_control.md
           - file: exercises/version_control.ipynb
+          - file: chapters/create_ssh-key.md
+          - file: chapters/commit_messages.md
           - file: chapters/git_advanced.md
+          - file: chapters/git_advanced_github.md 
           - file: exercises/git_advanced.ipynb      # 2
   - caption: Writing Clean Code
     chapters:
