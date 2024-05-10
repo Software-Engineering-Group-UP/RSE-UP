@@ -1009,7 +1009,7 @@ those changes are considered a single feature and should be done in one branch.<
 </section>
 <section id="using-other-people-s-work">
 <h2>Using Other People’s Work<a class="headerlink" href="#using-other-people-s-work" title="Link to this heading">#</a></h2>
-<p><strong>NOTE</strong> the following instructions are created using the University of Potsdam Gitlab server. Non University Members, while having access, can not contribute or fork. For instructions on how this works on Github please click <a class="reference internal" href="#"><span class="xref myst">here</span></a>. Instructions will be similar, furthermore, they will use the original material from the Research Software Engineering with Python book by Irving.</p>
+<p><strong>NOTE</strong> the following instructions are created using the University of Potsdam Gitlab server. Non University Members, while having access, can not contribute or fork. For instructions on how this works on Github please click <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/git_advanced_github.html">here</a>. Instructions will be similar, furthermore, they will use the original material from the Research Software Engineering with Python book by Irving.</p>
 <p>So far we have used Git to manage individual work,
 but it really comes into its own when we are working with other people.
 We can do this in two ways:</p>
@@ -1025,29 +1025,29 @@ and then submit their changes to the main repository.</p></li>
 <p>The first approach works well for teams of up to half a dozen people who are all comfortable using Git, but if the project is larger, or if contributors are worried that they might make a mess in the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, the second approach is safer.</p>
 <p>Git itself doesn’t have any notion of a “main repository”, but like Github, Gitlab, Bitbucket or selfhosted solutions like Gitea all encourage people to use Git in ways that effectively create one.
 Suppose, for example, that you want to contribute to the Zipf’s Law code that we are hosting on Gitlab at <code class="docutils literal notranslate"><span class="pre">https://gitup.uni-potsdam.de/seg/rse_course/zipf</span></code>.
-You can go to that URL and click on the “Fork” button in the upper right corner (<a class="reference internal" href="git_advanced_github.html#git-advanced-fork-button"><span class="std std-ref">Figure: fork button</span></a>).</p>
-<figure class="align-default" id="git-advanced-fork-button">
+You can go to that URL and click on the “Fork” button in the upper right corner (<a class="reference internal" href="#gitlab-advanced-fork-button"><span class="std std-ref">Figure: fork button</span></a>).</p>
+<figure class="align-default" id="gitlab-advanced-fork-button">
 <img alt="figures/git-advanced/gitlab_fork-button.png" src="figures/git-advanced/gitlab_fork-button.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Gitlab git fork button</span><a class="headerlink" href="#git-advanced-fork-button" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Gitlab git fork button</span><a class="headerlink" href="#gitlab-advanced-fork-button" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>While Github immediately creates a copy of a repository, on the university gitlab server you will have a choice at the next step, whether or not the repository is private, internal or public.</p>
 <p>Public means that everyone, even non university members will be able to view the repository. Internal means that anybody that is logged in with their university of potsdam account is able to view and interact with the repository. And private means that only you have access.</p>
-<figure class="align-default" id="git-advanced-fork-choice">
+<figure class="align-default" id="gitlab-advanced-fork-choice">
 <img alt="../_images/gitlab_fork-choice.png" src="../_images/gitlab_fork-choice.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Gitlab git fork settings</span><a class="headerlink" href="#git-advanced-fork-choice" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Gitlab git fork settings</span><a class="headerlink" href="#gitlab-advanced-fork-choice" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>After clicking the fork button at the bottom the process should complete with your chosen project settings</p>
-<p>When the command completes, the setup on Gitlab now looks like <a class="reference internal" href="git_advanced_github.html#git-advanced-after-fork"><span class="std std-ref">Figure: after fork</span></a>.Nothing has happened yet on your own machine:
+<p>When the command completes, the setup on Gitlab now looks like <a class="reference internal" href="#gitlab-advanced-after-fork"><span class="std std-ref">Figure: after fork</span></a>.Nothing has happened yet on your own machine:
 the new repository exists only on GitHub.
 When you explores its history, they see that it contains all of the changes we made.</p>
-<figure class="align-default" id="git-advanced-after-fork">
+<figure class="align-default" id="gitlab-advanced-after-fork">
 <img alt="../_images/gitlab_after-fork.png" src="../_images/gitlab_after-fork.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Gitlab git: After Fork</span><a class="headerlink" href="#git-advanced-after-fork" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Gitlab git: After Fork</span><a class="headerlink" href="#gitlab-advanced-after-fork" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>A copy of a repository is called a <strong>clone</strong> In order to start working on the project, Sami needs a clone of <em>their</em> repository (not Amira’s) on their own computer. We will modify your prompt to include their desktop user ID (<code class="docutils literal notranslate"><span class="pre">your</span> <span class="pre">user</span> <span class="pre">name</span></code>
@@ -1217,61 +1217,61 @@ https://gitup.uni-potsdam.de/nbertrand/zipf
  * [new branch]      adding-email -&gt; adding-email
 </pre></div>
 </div>
-<p>When you go to your Gitlab repository in the browser, Gitlab notices that they have just pushed a new branch and asks them if they want to create a merge request (<a class="reference internal" href="git_advanced_github.html#git-advanced-after-sami-pushes"><span class="std std-ref">Figure: after push</span></a>). (On Github this is called a pull request)</p>
-<figure class="align-default" id="git-advanced-after-sami-pushes">
+<p>When you go to your Gitlab repository in the browser, Gitlab notices that they have just pushed a new branch and asks them if they want to create a merge request (<a class="reference internal" href="#gitlab-advanced-after-sami-pushes"><span class="std std-ref">Figure: after push</span></a>). (On Github this is called a pull request)</p>
+<figure class="align-default" id="gitlab-advanced-after-sami-pushes">
 <img alt="../_images/gitlab_after-push.png" src="../_images/gitlab_after-push.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Git after Push</span><a class="headerlink" href="#git-advanced-after-sami-pushes" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Git after Push</span><a class="headerlink" href="#gitlab-advanced-after-sami-pushes" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>When you click on the button, Gitlab displays a page showing the default source and destination of the merge request and a pair of editable boxes for the pull request’s title and a longer comment (<a class="reference internal" href="git_advanced_github.html#git-advanced-pull-request-start"><span class="std std-ref">Figure: merge request start</span></a>).</p>
-<figure class="align-default" id="git-advanced-pull-request-start">
+<p>When you click on the button, Gitlab displays a page showing the default source and destination of the merge request and a pair of editable boxes for the pull request’s title and a longer comment (<a class="reference internal" href="#gitlab-advanced-pull-request-start"><span class="std std-ref">Figure: merge request start</span></a>).</p>
+<figure class="align-default" id="gitlab-advanced-pull-request-start">
 <img alt="../_images/gitlab_merge-request2.png" src="../_images/gitlab_merge-request2.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Start a merge request</span><a class="headerlink" href="#git-advanced-pull-request-start" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Start a merge request</span><a class="headerlink" href="#gitlab-advanced-pull-request-start" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>If you click on the changes tab, you can see a summary of the changes that will be in the merge request (<a class="reference internal" href="git_advanced_github.html#git-advanced-pull-request-summary"><span class="std std-ref">Figure: merge request summary</span></a>).</p>
-<figure class="align-default" id="git-advanced-pull-request-summary">
+<figure class="align-default" id="gitlab-advanced-pull-request-summary">
 <img alt="../_images/gitlab_after-merge-request.png" src="../_images/gitlab_after-merge-request.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Git merge request summary</span><a class="headerlink" href="#git-advanced-pull-request-summary" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Git merge request summary</span><a class="headerlink" href="#gitlab-advanced-pull-request-summary" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The top (title) box is autofilled with the previous commit message,
 so you add an extended explanation to provide additional context
 before clicking on “Create Merge Request”</p>
-<p>(<a class="reference internal" href="git_advanced_github.html#git-advanced-pull-request-fill-in"><span class="std std-ref">Figure: fill in merge request</span></a>).
+<p>(<a class="reference internal" href="#gitlab-advanced-pull-request-fill-in"><span class="xref myst">Figure: fill in merge request</span></a>).
 When they do, Gitlab displays a page showing the new merge request,
-which has a unique serial number (<a class="reference internal" href="git_advanced_github.html#git-advanced-pull-request-new"><span class="std std-ref">Figure :New merge request</span></a>).
+which has a unique serial number (<a class="reference internal" href="#gitlab-advanced-pull-request-new"><span class="std std-ref">Figure :New merge request</span></a>).
 <strong>Note</strong> that this merge request is displayed in our repository rather than yours, since it is our repository that will be affected if the merge request is merged.</p>
 <p>On the left sidebar we can see that there is a new merge request, when clicking on it a list of merge requests will be opened.</p>
-<figure class="align-default" id="git-advanced-pull-request-list">
+<figure class="align-default" id="gitlab-advanced-pull-request-list">
 <img alt="figures/git-advanced/gitlab_merge_request-list.png" src="figures/git-advanced/gitlab_merge_request-list.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Git pull request list</span><a class="headerlink" href="#git-advanced-pull-request-list" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Git pull request list</span><a class="headerlink" href="#gitlab-advanced-pull-request-list" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Next we need to approve that request:</p>
-<figure class="align-default" id="git-advanced-pull-request-new">
-<img alt="../_images/gitlab_merge-approve.png" src="../_images/gitlab_merge-approve.png" />
+<figure class="align-default" id="gitlab-advanced-pull-request-new">
+<img alt="figures/gitlab-advanced/gitlab_merge-approve.png" src="figures/gitlab-advanced/gitlab_merge-approve.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Gitlab Merge request approval</span><a class="headerlink" href="#git-advanced-pull-request-new" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Gitlab Merge request approval</span><a class="headerlink" href="#gitlab-advanced-pull-request-new" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Since there are no conflicts, Gitlab will let us merge the merge request immediately using the “Merge merge request” button. We could also discard or reject it without merging using the “Close merge request” button. Instead, we could also click on the “Files changed” tab to see what you have changed
-(<a class="reference internal" href="git_advanced_github.html#git-advanced-pull-request-changes"><span class="std std-ref">Figure: Merge request - request changes</span></a>).</p>
-<figure class="align-default" id="git-advanced-pull-request-changes">
+(<a class="reference internal" href="#gitlab-advanced-pull-request-changes"><span class="std std-ref">Figure: Merge request - request changes</span></a>).</p>
+<figure class="align-default" id="gitlab-advanced-pull-request-changes">
 <img alt="../_images/gitlab_pr-changes.png" src="../_images/gitlab_pr-changes.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Gitlab view changes</span><a class="headerlink" href="#git-advanced-pull-request-changes" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Gitlab view changes</span><a class="headerlink" href="#gitlab-advanced-pull-request-changes" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>If we move our mouse over particular lines, a comment symbol appears near the numbers to indicate that we can add comments
 (<a class="reference internal" href="git_advanced_github.html#git-advanced-pull-request-comment-marker"><span class="std std-ref">Figure: Merge request - comment marker</span></a>).
 We click on the marker beside our own name and write a comment. These comments will then be inserted and automatically displayed.</p>
 <figure class="align-default" id="git-advanced-pull-request-comment-marker">
-<img alt="figures/git-advanced/gitlab_merge_comment.png" src="figures/git-advanced/gitlab_merge_comment.png" />
+<img alt="../_images/gitlab_merge-comment.png" src="../_images/gitlab_merge-comment.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 22 </span><span class="caption-text">Add comments to changes.</span><a class="headerlink" href="#git-advanced-pull-request-comment-marker" title="Link to this image">#</a></p>
 </figcaption>
