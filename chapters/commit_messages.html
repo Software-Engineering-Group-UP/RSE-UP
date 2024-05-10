@@ -1,0 +1,886 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Writing good commit messages &#8212; RSE-UP</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css?v=c89437f7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/commit_messages';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/commit_messages.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Going Further with Git" href="git_advanced.html" />
+    <link rel="prev" title="Using SSH on Gitlab and Github" href="create_ssh-key.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="welcome.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RSE-UP</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python, Bash and Git Basics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresher.html">Python Refresher</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/bash.html">Introduction to Bash</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="bash_basics.html">The Basics of the Unix Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/bash_basics.html">Bash Basics Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash_tools.html">Building Tools with the Unix Shell</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../exercises/bash_tools.html">Bash Tool Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash_advanced.html">Bash Advanced</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/bash_advanced.html">Bash Advanced Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction/vcs.html">Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro_version_control.html">Using Git at the Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/version_control.html">Exercise Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_ssh-key.html">Using SSH on Gitlab and Github</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Writing good commit messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git_advanced.html">Going Further with Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git_advanced_github.html">Forking on Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/git_advanced.html">Exercises Git Advanced</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="clean_readable_code.html">Writing Readable Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/clean_code.html">Exercises - Clean Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_documentation.html">Documenting Programs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction/documentation.html">Introduction to writing Documentation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computational Narrative</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction/jupyter.html">Introduction to Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anaconda.html">Working with Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comp_narative.html">Story Telling with Data Computational Narrative</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Licenses, Software Citation and FAIR</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="license.html">Licenses, Software Citation and FAIR</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Working in teams</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="working_in_teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/work_teams.html">Exercise - Work Teams</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Requirements, Architecture and Design</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/requirements_architecture_design.html">Application Classes, Software Requirements, Architecture and Design</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="application_classes.html">Application Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirements.html">Software Development Process and Requirements Engineering in RSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_design.html">Architecture and Design</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing, Error Handling and CLI Apps using Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/testing.html">Introduction to Testing</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing_programs.html">Testing Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/testing.html">Exercises - Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/error_handling.html">Introduction to Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="error_handling.html">Handling Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/error_handling.html">Exercises - Error Handling</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/python_cli.html">Introduction to CLI application using Python</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_building_cli.html">Building Command-Line Tools with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/python_cli.html">Exercises - Scripting Python for CLI tools</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuration and Packaging</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/config.html">Introduction to Configuration</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">YAML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/packaging.html">Introduction to Packaging Python Software</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows and Automation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/workflows.html">Introduction to Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Introduction to Make and Snakemake</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snakemake_continued.html">Snakemake Continued</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="introduction/cicd.html">Introduction to CI/CD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tracking_provenance.html">Tracking Provenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/provenance.html">Exercises - Provenance</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="solutions.html">Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="working_remotely.html">Working Remotely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tree.html">Project Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/commit_messages.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/commit_messages.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Writing good commit messages</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conventional-commits-1-0-0">Conventional Commits 1.0.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-with-description-and-breaking-change-footer">Commit message with description and breaking change footer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-with-to-draw-attention-to-breaking-change">Commit message with <code class="docutils literal notranslate"><span class="pre">!</span></code> to draw attention to breaking change</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-with-scope-and-to-draw-attention-to-breaking-change">Commit message with scope and <code class="docutils literal notranslate"><span class="pre">!</span></code> to draw attention to breaking change</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-with-both-and-breaking-change-footer">Commit message with both <code class="docutils literal notranslate"><span class="pre">!</span></code> and BREAKING CHANGE footer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-with-no-body">Commit message with no body</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-with-scope">Commit message with scope</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-with-multi-paragraph-body-and-multiple-footers">Commit message with multi-paragraph body and multiple footers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specification">Specification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-conventional-commits">Why Use Conventional Commits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faq">FAQ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-should-i-deal-with-commit-messages-in-the-initial-development-phase">How should I deal with commit messages in the initial development phase?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-types-in-the-commit-title-uppercase-or-lowercase">Are the types in the commit title uppercase or lowercase?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-do-if-the-commit-conforms-to-more-than-one-of-the-commit-types">What do I do if the commit conforms to more than one of the commit types?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doesnt-this-discourage-rapid-development-and-fast-iteration">Doesn’t this discourage rapid development and fast iteration?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#might-conventional-commits-lead-developers-to-limit-the-type-of-commits-they-make-because-they-ll-be-thinking-in-the-types-provided">Might Conventional Commits lead developers to limit the type of commits they make because they’ll be thinking in the types provided?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-this-relate-to-semver">How does this relate to SemVer?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-should-i-version-my-extensions-to-the-conventional-commits-specification-e-g-jameswomack-conventional-commit-spec">How should I version my extensions to the Conventional Commits Specification, e.g. <code class="docutils literal notranslate"><span class="pre">@jameswomack/conventional-commit-spec</span></code>?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-do-if-i-accidentally-use-the-wrong-commit-type">What do I do if I accidentally use the wrong commit type?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#when-you-used-a-type-that-s-of-the-spec-but-not-the-correct-type-e-g-fix-instead-of-feat">When you used a type that’s of the spec but not the correct type, e.g. <code class="docutils literal notranslate"><span class="pre">fix</span></code> instead of <code class="docutils literal notranslate"><span class="pre">feat</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#when-you-used-a-type-not-of-the-spec-e-g-feet-instead-of-feat">When you used a type <em>not</em> of the spec, e.g. <code class="docutils literal notranslate"><span class="pre">feet</span></code> instead of <code class="docutils literal notranslate"><span class="pre">feat</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-all-my-contributors-need-to-use-the-conventional-commits-specification">Do all my contributors need to use the Conventional Commits specification?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-conventional-commits-handle-revert-commits">How does Conventional Commits handle revert commits?</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="writing-good-commit-messages">
+<h1>Writing good commit messages<a class="headerlink" href="#writing-good-commit-messages" title="Link to this heading">#</a></h1>
+<p>We follow the commit message standard as described <a class="reference external" href="https://www.conventionalcommits.org/en/v1.0.0/">here</a>. We habe also included version 1.0 below</p>
+<section id="conventional-commits-1-0-0">
+<h2>Conventional Commits 1.0.0<a class="headerlink" href="#conventional-commits-1-0-0" title="Link to this heading">#</a></h2>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>The Conventional Commits specification is a lightweight convention on top of commit messages.
+It provides an easy set of rules for creating an explicit commit history;
+which makes it easier to write automated tools on top of.
+This convention dovetails with <a class="reference external" href="http://semver.org">SemVer</a>,
+by describing the features, fixes, and breaking changes made in commit messages.</p>
+<p>The commit message should be structured as follows:</p>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nb">type</span><span class="o">&gt;</span><span class="p">[</span><span class="n">optional</span> <span class="n">scope</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">description</span><span class="o">&gt;</span>
+
+<span class="p">[</span><span class="n">optional</span> <span class="n">body</span><span class="p">]</span>
+
+<span class="p">[</span><span class="n">optional</span> <span class="n">footer</span><span class="p">(</span><span class="n">s</span><span class="p">)]</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<br />
+The commit contains the following structural elements, to communicate intent to the
+consumers of your library:
+<ol class="arabic simple">
+<li><p><strong>fix:</strong> a commit of the <em>type</em> <code class="docutils literal notranslate"><span class="pre">fix</span></code> patches a bug in your codebase (this correlates with <a class="reference external" href="http://semver.org/#summary"><code class="docutils literal notranslate"><span class="pre">PATCH</span></code></a> in Semantic Versioning).</p></li>
+<li><p><strong>feat:</strong> a commit of the <em>type</em> <code class="docutils literal notranslate"><span class="pre">feat</span></code> introduces a new feature to the codebase (this correlates with <a class="reference external" href="http://semver.org/#summary"><code class="docutils literal notranslate"><span class="pre">MINOR</span></code></a> in Semantic Versioning).</p></li>
+<li><p><strong>BREAKING CHANGE:</strong> a commit that has a footer <code class="docutils literal notranslate"><span class="pre">BREAKING</span> <span class="pre">CHANGE:</span></code>, or appends a <code class="docutils literal notranslate"><span class="pre">!</span></code> after the type/scope, introduces a breaking API change (correlating with <a class="reference external" href="http://semver.org/#summary"><code class="docutils literal notranslate"><span class="pre">MAJOR</span></code></a> in Semantic Versioning).
+A BREAKING CHANGE can be part of commits of any <em>type</em>.</p></li>
+<li><p><em>types</em> other than <code class="docutils literal notranslate"><span class="pre">fix:</span></code> and <code class="docutils literal notranslate"><span class="pre">feat:</span></code> are allowed, for example <a class="reference external" href="https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional">&#64;commitlint/config-conventional</a> (based on the <a class="reference external" href="https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines">Angular convention</a>) recommends <code class="docutils literal notranslate"><span class="pre">build:</span></code>, <code class="docutils literal notranslate"><span class="pre">chore:</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ci:</span></code>, <code class="docutils literal notranslate"><span class="pre">docs:</span></code>, <code class="docutils literal notranslate"><span class="pre">style:</span></code>, <code class="docutils literal notranslate"><span class="pre">refactor:</span></code>, <code class="docutils literal notranslate"><span class="pre">perf:</span></code>, <code class="docutils literal notranslate"><span class="pre">test:</span></code>, and others.</p></li>
+<li><p><em>footers</em> other than <code class="docutils literal notranslate"><span class="pre">BREAKING</span> <span class="pre">CHANGE:</span> <span class="pre">&lt;description&gt;</span></code> may be provided and follow a convention similar to
+<a class="reference external" href="https://git-scm.com/docs/git-interpret-trailers">git trailer format</a>.</p></li>
+</ol>
+<p>Additional types are not mandated by the Conventional Commits specification, and have no implicit effect in Semantic Versioning (unless they include a BREAKING CHANGE).
+<br /><br />
+A scope may be provided to a commit’s type, to provide additional contextual information and is contained within parenthesis, e.g., <code class="docutils literal notranslate"><span class="pre">feat(parser):</span> <span class="pre">add</span> <span class="pre">ability</span> <span class="pre">to</span> <span class="pre">parse</span> <span class="pre">arrays</span></code>.</p>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<section id="commit-message-with-description-and-breaking-change-footer">
+<h3>Commit message with description and breaking change footer<a class="headerlink" href="#commit-message-with-description-and-breaking-change-footer" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>feat: allow provided config object to extend other configs
+
+BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+</pre></div>
+</div>
+</section>
+<section id="commit-message-with-to-draw-attention-to-breaking-change">
+<h3>Commit message with <code class="docutils literal notranslate"><span class="pre">!</span></code> to draw attention to breaking change<a class="headerlink" href="#commit-message-with-to-draw-attention-to-breaking-change" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>feat!: send an email to the customer when a product is shipped
+</pre></div>
+</div>
+</section>
+<section id="commit-message-with-scope-and-to-draw-attention-to-breaking-change">
+<h3>Commit message with scope and <code class="docutils literal notranslate"><span class="pre">!</span></code> to draw attention to breaking change<a class="headerlink" href="#commit-message-with-scope-and-to-draw-attention-to-breaking-change" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>feat(api)!: send an email to the customer when a product is shipped
+</pre></div>
+</div>
+</section>
+<section id="commit-message-with-both-and-breaking-change-footer">
+<h3>Commit message with both <code class="docutils literal notranslate"><span class="pre">!</span></code> and BREAKING CHANGE footer<a class="headerlink" href="#commit-message-with-both-and-breaking-change-footer" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>chore!: drop support for Node 6
+
+BREAKING CHANGE: use JavaScript features not available in Node 6.
+</pre></div>
+</div>
+</section>
+<section id="commit-message-with-no-body">
+<h3>Commit message with no body<a class="headerlink" href="#commit-message-with-no-body" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docs</span><span class="p">:</span> <span class="n">correct</span> <span class="n">spelling</span> <span class="n">of</span> <span class="n">CHANGELOG</span>
+</pre></div>
+</div>
+</section>
+<section id="commit-message-with-scope">
+<h3>Commit message with scope<a class="headerlink" href="#commit-message-with-scope" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">feat</span><span class="p">(</span><span class="n">lang</span><span class="p">):</span> <span class="n">add</span> <span class="n">Polish</span> <span class="n">language</span>
+</pre></div>
+</div>
+</section>
+<section id="commit-message-with-multi-paragraph-body-and-multiple-footers">
+<h3>Commit message with multi-paragraph body and multiple footers<a class="headerlink" href="#commit-message-with-multi-paragraph-body-and-multiple-footers" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span><span class="p">:</span> <span class="n">prevent</span> <span class="n">racing</span> <span class="n">of</span> <span class="n">requests</span>
+
+<span class="n">Introduce</span> <span class="n">a</span> <span class="n">request</span> <span class="nb">id</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">reference</span> <span class="n">to</span> <span class="n">latest</span> <span class="n">request</span><span class="o">.</span> <span class="n">Dismiss</span>
+<span class="n">incoming</span> <span class="n">responses</span> <span class="n">other</span> <span class="n">than</span> <span class="kn">from</span> <span class="nn">latest</span> <span class="n">request</span><span class="o">.</span>
+
+<span class="n">Remove</span> <span class="n">timeouts</span> <span class="n">which</span> <span class="n">were</span> <span class="n">used</span> <span class="n">to</span> <span class="n">mitigate</span> <span class="n">the</span> <span class="n">racing</span> <span class="n">issue</span> <span class="n">but</span> <span class="n">are</span>
+<span class="n">obsolete</span> <span class="n">now</span><span class="o">.</span>
+
+<span class="n">Reviewed</span><span class="o">-</span><span class="n">by</span><span class="p">:</span> <span class="n">Z</span>
+<span class="n">Refs</span><span class="p">:</span> <span class="c1">#123</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="specification">
+<h2>Specification<a class="headerlink" href="#specification" title="Link to this heading">#</a></h2>
+<p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in <a class="reference external" href="https://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>.</p>
+<ol class="arabic simple">
+<li><p>Commits MUST be prefixed with a type, which consists of a noun, <code class="docutils literal notranslate"><span class="pre">feat</span></code>, <code class="docutils literal notranslate"><span class="pre">fix</span></code>, etc., followed
+by the OPTIONAL scope, OPTIONAL <code class="docutils literal notranslate"><span class="pre">!</span></code>, and REQUIRED terminal colon and space.</p></li>
+<li><p>The type <code class="docutils literal notranslate"><span class="pre">feat</span></code> MUST be used when a commit adds a new feature to your application or library.</p></li>
+<li><p>The type <code class="docutils literal notranslate"><span class="pre">fix</span></code> MUST be used when a commit represents a bug fix for your application.</p></li>
+<li><p>A scope MAY be provided after a type. A scope MUST consist of a noun describing a
+section of the codebase surrounded by parenthesis, e.g., <code class="docutils literal notranslate"><span class="pre">fix(parser):</span></code></p></li>
+<li><p>A description MUST immediately follow the colon and space after the type/scope prefix.
+The description is a short summary of the code changes, e.g., <em>fix: array parsing issue when multiple spaces were contained in string</em>.</p></li>
+<li><p>A longer commit body MAY be provided after the short description, providing additional contextual information about the code changes. The body MUST begin one blank line after the description.</p></li>
+<li><p>A commit body is free-form and MAY consist of any number of newline separated paragraphs.</p></li>
+<li><p>One or more footers MAY be provided one blank line after the body. Each footer MUST consist of
+a word token, followed by either a <code class="docutils literal notranslate"><span class="pre">:&lt;space&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;space&gt;#</span></code> separator, followed by a string value (this is inspired by the
+<a class="reference external" href="https://git-scm.com/docs/git-interpret-trailers">git trailer convention</a>).</p></li>
+<li><p>A footer’s token MUST use <code class="docutils literal notranslate"><span class="pre">-</span></code> in place of whitespace characters, e.g., <code class="docutils literal notranslate"><span class="pre">Acked-by</span></code> (this helps differentiate
+the footer section from a multi-paragraph body). An exception is made for <code class="docutils literal notranslate"><span class="pre">BREAKING</span> <span class="pre">CHANGE</span></code>, which MAY also be used as a token.</p></li>
+<li><p>A footer’s value MAY contain spaces and newlines, and parsing MUST terminate when the next valid footer
+token/separator pair is observed.</p></li>
+<li><p>Breaking changes MUST be indicated in the type/scope prefix of a commit, or as an entry in the
+footer.</p></li>
+<li><p>If included as a footer, a breaking change MUST consist of the uppercase text BREAKING CHANGE, followed by a colon, space, and description, e.g.,
+<em>BREAKING CHANGE: environment variables now take precedence over config files</em>.</p></li>
+<li><p>If included in the type/scope prefix, breaking changes MUST be indicated by a
+<code class="docutils literal notranslate"><span class="pre">!</span></code> immediately before the <code class="docutils literal notranslate"><span class="pre">:</span></code>. If <code class="docutils literal notranslate"><span class="pre">!</span></code> is used, <code class="docutils literal notranslate"><span class="pre">BREAKING</span> <span class="pre">CHANGE:</span></code> MAY be omitted from the footer section,
+and the commit description SHALL be used to describe the breaking change.</p></li>
+<li><p>Types other than <code class="docutils literal notranslate"><span class="pre">feat</span></code> and <code class="docutils literal notranslate"><span class="pre">fix</span></code> MAY be used in your commit messages, e.g., <em>docs: update ref docs.</em></p></li>
+<li><p>The units of information that make up Conventional Commits MUST NOT be treated as case sensitive by implementors, with the exception of BREAKING CHANGE which MUST be uppercase.</p></li>
+<li><p>BREAKING-CHANGE MUST be synonymous with BREAKING CHANGE, when used as a token in a footer.</p></li>
+</ol>
+</section>
+<section id="why-use-conventional-commits">
+<h2>Why Use Conventional Commits<a class="headerlink" href="#why-use-conventional-commits" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Automatically generating CHANGELOGs.</p></li>
+<li><p>Automatically determining a semantic version bump (based on the types of commits landed).</p></li>
+<li><p>Communicating the nature of changes to teammates, the public, and other stakeholders.</p></li>
+<li><p>Triggering build and publish processes.</p></li>
+<li><p>Making it easier for people to contribute to your projects, by allowing them to explore
+a more structured commit history.</p></li>
+</ul>
+</section>
+<section id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Link to this heading">#</a></h2>
+<section id="how-should-i-deal-with-commit-messages-in-the-initial-development-phase">
+<h3>How should I deal with commit messages in the initial development phase?<a class="headerlink" href="#how-should-i-deal-with-commit-messages-in-the-initial-development-phase" title="Link to this heading">#</a></h3>
+<p>We recommend that you proceed as if you’ve already released the product. Typically <em>somebody</em>, even if it’s your fellow software developers, is using your software. They’ll want to know what’s fixed, what breaks etc.</p>
+</section>
+<section id="are-the-types-in-the-commit-title-uppercase-or-lowercase">
+<h3>Are the types in the commit title uppercase or lowercase?<a class="headerlink" href="#are-the-types-in-the-commit-title-uppercase-or-lowercase" title="Link to this heading">#</a></h3>
+<p>Any casing may be used, but it’s best to be consistent.</p>
+</section>
+<section id="what-do-i-do-if-the-commit-conforms-to-more-than-one-of-the-commit-types">
+<h3>What do I do if the commit conforms to more than one of the commit types?<a class="headerlink" href="#what-do-i-do-if-the-commit-conforms-to-more-than-one-of-the-commit-types" title="Link to this heading">#</a></h3>
+<p>Go back and make multiple commits whenever possible. Part of the benefit of Conventional Commits is its ability to drive us to make more organized commits and PRs.</p>
+</section>
+<section id="doesnt-this-discourage-rapid-development-and-fast-iteration">
+<h3>Doesn’t this discourage rapid development and fast iteration?<a class="headerlink" href="#doesnt-this-discourage-rapid-development-and-fast-iteration" title="Link to this heading">#</a></h3>
+<p>It discourages moving fast in a disorganized way. It helps you be able to move fast long term across multiple projects with varied contributors.</p>
+</section>
+<section id="might-conventional-commits-lead-developers-to-limit-the-type-of-commits-they-make-because-they-ll-be-thinking-in-the-types-provided">
+<h3>Might Conventional Commits lead developers to limit the type of commits they make because they’ll be thinking in the types provided?<a class="headerlink" href="#might-conventional-commits-lead-developers-to-limit-the-type-of-commits-they-make-because-they-ll-be-thinking-in-the-types-provided" title="Link to this heading">#</a></h3>
+<p>Conventional Commits encourages us to make more of certain types of commits such as fixes. Other than that, the flexibility of Conventional Commits allows your team to come up with their own types and change those types over time.</p>
+</section>
+<section id="how-does-this-relate-to-semver">
+<h3>How does this relate to SemVer?<a class="headerlink" href="#how-does-this-relate-to-semver" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">fix</span></code> type commits should be translated to <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> releases. <code class="docutils literal notranslate"><span class="pre">feat</span></code> type commits should be translated to <code class="docutils literal notranslate"><span class="pre">MINOR</span></code> releases. Commits with <code class="docutils literal notranslate"><span class="pre">BREAKING</span> <span class="pre">CHANGE</span></code> in the commits, regardless of type, should be translated to <code class="docutils literal notranslate"><span class="pre">MAJOR</span></code> releases.</p>
+</section>
+<section id="how-should-i-version-my-extensions-to-the-conventional-commits-specification-e-g-jameswomack-conventional-commit-spec">
+<h3>How should I version my extensions to the Conventional Commits Specification, e.g. <code class="docutils literal notranslate"><span class="pre">&#64;jameswomack/conventional-commit-spec</span></code>?<a class="headerlink" href="#how-should-i-version-my-extensions-to-the-conventional-commits-specification-e-g-jameswomack-conventional-commit-spec" title="Link to this heading">#</a></h3>
+<p>We recommend using SemVer to release your own extensions to this specification (and
+encourage you to make these extensions!)</p>
+</section>
+<section id="what-do-i-do-if-i-accidentally-use-the-wrong-commit-type">
+<h3>What do I do if I accidentally use the wrong commit type?<a class="headerlink" href="#what-do-i-do-if-i-accidentally-use-the-wrong-commit-type" title="Link to this heading">#</a></h3>
+<section id="when-you-used-a-type-that-s-of-the-spec-but-not-the-correct-type-e-g-fix-instead-of-feat">
+<h4>When you used a type that’s of the spec but not the correct type, e.g. <code class="docutils literal notranslate"><span class="pre">fix</span></code> instead of <code class="docutils literal notranslate"><span class="pre">feat</span></code><a class="headerlink" href="#when-you-used-a-type-that-s-of-the-spec-but-not-the-correct-type-e-g-fix-instead-of-feat" title="Link to this heading">#</a></h4>
+<p>Prior to merging or releasing the mistake, we recommend using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">-i</span></code> to edit the commit history. After release, the cleanup will be different according to what tools and processes you use.</p>
+</section>
+<section id="when-you-used-a-type-not-of-the-spec-e-g-feet-instead-of-feat">
+<h4>When you used a type <em>not</em> of the spec, e.g. <code class="docutils literal notranslate"><span class="pre">feet</span></code> instead of <code class="docutils literal notranslate"><span class="pre">feat</span></code><a class="headerlink" href="#when-you-used-a-type-not-of-the-spec-e-g-feet-instead-of-feat" title="Link to this heading">#</a></h4>
+<p>In a worst case scenario, it’s not the end of the world if a commit lands that does not meet the Conventional Commits specification. It simply means that commit will be missed by tools that are based on the spec.</p>
+</section>
+</section>
+<section id="do-all-my-contributors-need-to-use-the-conventional-commits-specification">
+<h3>Do all my contributors need to use the Conventional Commits specification?<a class="headerlink" href="#do-all-my-contributors-need-to-use-the-conventional-commits-specification" title="Link to this heading">#</a></h3>
+<p>No! If you use a squash based workflow on Git lead maintainers can clean up the commit messages as they’re merged—adding no workload to casual committers.
+A common workflow for this is to have your git system automatically squash commits from a pull request and present a form for the lead maintainer to enter the proper git commit message for the merge.</p>
+</section>
+<section id="how-does-conventional-commits-handle-revert-commits">
+<h3>How does Conventional Commits handle revert commits?<a class="headerlink" href="#how-does-conventional-commits-handle-revert-commits" title="Link to this heading">#</a></h3>
+<p>Reverting code can be complicated: are you reverting multiple commits? if you revert a feature, should the next release instead be a patch?</p>
+<p>Conventional Commits does not make an explicit effort to define revert behavior. Instead we leave it to tooling
+authors to use the flexibility of <em>types</em> and <em>footers</em> to develop their logic for handling reverts.</p>
+<p>One recommendation is to use the <code class="docutils literal notranslate"><span class="pre">revert</span></code> type, and a footer that references the commit SHAs that are being reverted:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">revert</span><span class="p">:</span> <span class="n">let</span> <span class="n">us</span> <span class="n">never</span> <span class="n">again</span> <span class="n">speak</span> <span class="n">of</span> <span class="n">the</span> <span class="n">noodle</span> <span class="n">incident</span>
+
+<span class="n">Refs</span><span class="p">:</span> <span class="mi">676104</span><span class="n">e</span><span class="p">,</span> <span class="n">a215868</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="create_ssh-key.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Using SSH on Gitlab and Github</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="git_advanced.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Going Further with Git</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conventional-commits-1-0-0">Conventional Commits 1.0.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-with-description-and-breaking-change-footer">Commit message with description and breaking change footer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-with-to-draw-attention-to-breaking-change">Commit message with <code class="docutils literal notranslate"><span class="pre">!</span></code> to draw attention to breaking change</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-with-scope-and-to-draw-attention-to-breaking-change">Commit message with scope and <code class="docutils literal notranslate"><span class="pre">!</span></code> to draw attention to breaking change</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-with-both-and-breaking-change-footer">Commit message with both <code class="docutils literal notranslate"><span class="pre">!</span></code> and BREAKING CHANGE footer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-with-no-body">Commit message with no body</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-with-scope">Commit message with scope</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-with-multi-paragraph-body-and-multiple-footers">Commit message with multi-paragraph body and multiple footers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specification">Specification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-conventional-commits">Why Use Conventional Commits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faq">FAQ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-should-i-deal-with-commit-messages-in-the-initial-development-phase">How should I deal with commit messages in the initial development phase?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-types-in-the-commit-title-uppercase-or-lowercase">Are the types in the commit title uppercase or lowercase?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-do-if-the-commit-conforms-to-more-than-one-of-the-commit-types">What do I do if the commit conforms to more than one of the commit types?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doesnt-this-discourage-rapid-development-and-fast-iteration">Doesn’t this discourage rapid development and fast iteration?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#might-conventional-commits-lead-developers-to-limit-the-type-of-commits-they-make-because-they-ll-be-thinking-in-the-types-provided">Might Conventional Commits lead developers to limit the type of commits they make because they’ll be thinking in the types provided?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-this-relate-to-semver">How does this relate to SemVer?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-should-i-version-my-extensions-to-the-conventional-commits-specification-e-g-jameswomack-conventional-commit-spec">How should I version my extensions to the Conventional Commits Specification, e.g. <code class="docutils literal notranslate"><span class="pre">@jameswomack/conventional-commit-spec</span></code>?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-do-if-i-accidentally-use-the-wrong-commit-type">What do I do if I accidentally use the wrong commit type?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#when-you-used-a-type-that-s-of-the-spec-but-not-the-correct-type-e-g-fix-instead-of-feat">When you used a type that’s of the spec but not the correct type, e.g. <code class="docutils literal notranslate"><span class="pre">fix</span></code> instead of <code class="docutils literal notranslate"><span class="pre">feat</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#when-you-used-a-type-not-of-the-spec-e-g-feet-instead-of-feat">When you used a type <em>not</em> of the spec, e.g. <code class="docutils literal notranslate"><span class="pre">feet</span></code> instead of <code class="docutils literal notranslate"><span class="pre">feat</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-all-my-contributors-need-to-use-the-conventional-commits-specification">Do all my contributors need to use the Conventional Commits specification?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-conventional-commits-handle-revert-commits">How does Conventional Commits handle revert commits?</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Software Engineering Group - University of Potsdam
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

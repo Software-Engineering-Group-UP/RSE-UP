@@ -1,0 +1,1044 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Forking on Github &#8212; RSE-UP</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css?v=c89437f7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/git_advanced_github';</script>
+    <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/git_advanced_github.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exercises Git Advanced" href="../exercises/git_advanced.html" />
+    <link rel="prev" title="Going Further with Git" href="git_advanced.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="welcome.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RSE-UP</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python, Bash and Git Basics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../exercises/python_refresher.html">Python Refresher</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/bash.html">Introduction to Bash</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="bash_basics.html">The Basics of the Unix Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/bash_basics.html">Bash Basics Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash_tools.html">Building Tools with the Unix Shell</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../exercises/bash_tools.html">Bash Tool Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash_advanced.html">Bash Advanced</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/bash_advanced.html">Bash Advanced Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction/vcs.html">Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro_version_control.html">Using Git at the Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/version_control.html">Exercise Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_ssh-key.html">Using SSH on Gitlab and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commit_messages.html">Writing good commit messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git_advanced.html">Going Further with Git</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Forking on Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/git_advanced.html">Exercises Git Advanced</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing Clean Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="clean_readable_code.html">Writing Readable Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/clean_code.html">Exercises - Clean Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_documentation.html">Documenting Programs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction/documentation.html">Introduction to writing Documentation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computational Narrative</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction/jupyter.html">Introduction to Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anaconda.html">Working with Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comp_narative.html">Story Telling with Data Computational Narrative</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Licenses, Software Citation and FAIR</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="license.html">Licenses, Software Citation and FAIR</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Working in teams</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="working_in_teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/work_teams.html">Exercise - Work Teams</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Requirements, Architecture and Design</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/requirements_architecture_design.html">Application Classes, Software Requirements, Architecture and Design</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="application_classes.html">Application Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirements.html">Software Development Process and Requirements Engineering in RSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_design.html">Architecture and Design</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing, Error Handling and CLI Apps using Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/testing.html">Introduction to Testing</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing_programs.html">Testing Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/testing.html">Exercises - Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/error_handling.html">Introduction to Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="error_handling.html">Handling Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/error_handling.html">Exercises - Error Handling</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/python_cli.html">Introduction to CLI application using Python</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_building_cli.html">Building Command-Line Tools with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/python_cli.html">Exercises - Scripting Python for CLI tools</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuration and Packaging</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/config.html">Introduction to Configuration</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuring Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">YAML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/config.html">Exercises - Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/packaging.html">Introduction to Packaging Python Software</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_packaging.html">Creating Packages with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/packaging.html">Exercises - Packaging</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows and Automation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/workflows.html">Introduction to Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Introduction to Make and Snakemake</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snakemake_continued.html">Snakemake Continued</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="introduction/cicd.html">Introduction to CI/CD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tracking_provenance.html">Tracking Provenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/provenance.html">Exercises - Provenance</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="solutions.html">Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="working_remotely.html">Working Remotely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tree.html">Project Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Software-Engineering-Group-UP/RSE-UP/issues/new?title=Issue%20on%20page%20%2Fchapters/git_advanced_github.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/git_advanced_github.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Forking on Github</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-other-people-s-work-github-version">Using Other People’s Work - GITHUB version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests">Pull Requests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-conflicts-in-pull-requests">Handling Conflicts in Pull Requests</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="forking-on-github">
+<h1>Forking on Github<a class="headerlink" href="#forking-on-github" title="Link to this heading">#</a></h1>
+<p>Since some of the readers are not University of Potsdam members, and thereby have no UoP Gitlab account we have included the original Github instructions used in the book by Irving et all.</p>
+<section id="using-other-people-s-work-github-version">
+<h2>Using Other People’s Work - GITHUB version<a class="headerlink" href="#using-other-people-s-work-github-version" title="Link to this heading">#</a></h2>
+<p>So far we have used Git to manage individual work,
+but it really comes into its own when we are working with other people.
+We can do this in two ways:</p>
+<ol class="arabic simple">
+<li><p>Everyone has read and write access to a single shared repository.</p></li>
+<li><p>Everyone can read from the project’s main repository,
+but only a few people can commit changes to it.
+The project’s other contributors <strong>fork</strong> the main repository
+to create one that they own,
+do their work in that,
+and then submit their changes to the main repository.</p></li>
+</ol>
+<p>The first approach works well for teams of up to half a dozen people
+who are all comfortable using Git, but if the project is larger,
+or if contributors are worried that they might make a mess in the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch, the second approach is safer.</p>
+<p>Git itself doesn’t have any notion of a “main repository”,
+but \gref{forges}{forge} like Github, Gitlab, Bitbucket or selfhosted solutions like Gitea all encourage people to use Git in ways that effectively create one.
+Suppose, for example, that Sami wants to contribute to the Zipf’s Law code that
+Amira is hosting on GitHub at <code class="docutils literal notranslate"><span class="pre">https://github.com/amira-khan/zipf</span></code>.
+Sami can go to that URL and click on the “Fork” button in the upper right corner
+(<a class="reference internal" href="#git-advanced-fork-button"><span class="std std-ref">Figure: fork button</span></a>).
+GitHub immediately creates a copy of Amira’s repository within Sami’s account on GitHub’s own servers.</p>
+<figure class="align-default" id="git-advanced-fork-button">
+<img alt="../_images/fork-button.png" src="../_images/fork-button.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Git Fork button</span><a class="headerlink" href="#git-advanced-fork-button" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>When the command completes, the setup on GitHub now looks like <a class="reference internal" href="#git-advanced-after-fork"><span class="std std-ref">Figure: after fork</span></a>.Nothing has happened yet on Sami’s own machine:
+the new repository exists only on GitHub.
+When Sami explores its history, they see that it contains all of the changes Amira made.</p>
+<figure class="align-default" id="git-advanced-after-fork">
+<img alt="../_images/after-fork.png" src="../_images/after-fork.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Git: After Fork</span><a class="headerlink" href="#git-advanced-after-fork" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>A copy of a repository is called a <strong>clone</strong> In order to start working on the project, Sami needs a clone of <em>their</em> repository (not Amira’s) on their own computer. We will modify Sami’s prompt to include their desktop user ID (<code class="docutils literal notranslate"><span class="pre">sami</span></code>
+and working directory (initially <code class="docutils literal notranslate"><span class="pre">~</span></code>) to make it easier to follow what’s happening:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sami:~<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sami-virtanen/zipf.git
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;zipf&#39;...
+remote: Enumerating objects: 64, done.
+remote: Counting objects: 100% (64/64), done.
+remote: Compressing objects: 100% (43/43), done.
+remote: Total 64 (delta 20), reused 63 (delta 19), pack-reused 0
+Receiving objects: 100% (64/64), 2.20 MiB | 2.66 MiB/s, done.
+Resolving deltas: 100% (20/20), done.
+</pre></div>
+</div>
+<p>This command creates a new directory with the same name as the project,
+i.e., <code class="docutils literal notranslate"><span class="pre">zipf</span></code>. When Sami goes into this directory and runs <code class="docutils literal notranslate"><span class="pre">ls</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>,
+they see that all of the project’s files and history are there:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sami:~<span class="w"> </span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>zipf
+sami:~/zipf<span class="w"> </span>$<span class="w"> </span>ls
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>README.md       bin             data             results
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sami:~/zipf<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>-n<span class="w"> </span><span class="m">4</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>55c63d0 (HEAD -&gt; master, origin/master, origin/HEAD) 
+        Merging README additions
+45a576b Added contributor list
+a0b88e5 Added repository overview
+232b564 Initial commit of README file
+</pre></div>
+</div>
+<p>Sami also sees that Git has automatically created a <strong>remote</strong> for their repository that points back at their repository on GitHub:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sami:~/zipf<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>-v
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>origin  https://github.com/sami-virtanen/zipf.git (fetch)
+origin  https://github.com/sami-virtanen/zipf.git (push)
+</pre></div>
+</div>
+<p>Sami can pull changes from their fork and push work back there, but needs to do one more thing before getting the changes from Amira’s repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sami:~/zipf<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream
+<span class="w">              </span>https://github.com/amira-khan/zipf.git
+sami:~/zipf<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>-v
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>origin      https://github.com/sami-virtanen/zipf.git (fetch)
+origin      https://github.com/sami-virtanen/zipf.git (push)
+upstream    https://github.com/amira-khan/zipf.git (fetch)
+upstream    https://github.com/amira-khan/zipf.git (push)
+</pre></div>
+</div>
+<p>Sami has called their new remote <code class="docutils literal notranslate"><span class="pre">upstream</span></code> because it points at the repository
+from which theirs is derived. They could use any name, but <code class="docutils literal notranslate"><span class="pre">upstream</span></code> is a nearly universal convention.</p>
+<p>With this remote in place, Sami is finally set up. Suppose, for example,
+that Amira has modified the project’s <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file to add Sami as a contributor. (Again, we show Amira’s user ID and working directory in her prompt to make it clear who’s doing what):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># Zipf&#39;s Law
+
+These Zipf&#39;s Law scripts tally the occurrences of words in text
+files and plot each word&#39;s rank versus its frequency.
+
+## Contributors
+
+- Amira Khan &lt;amira@zipf.org&gt;
+- Sami Virtanen
+</pre></div>
+</div>
+<p>Amira commits her changes and pushes them to <em>her</em> repository on GitHub:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>amira:~/zipf<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Adding Sami as a contributor&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[master 35fca86] Adding Sami as a contributor
+ 1 file changed, 1 insertion(+)
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>amira:~/zipf<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 315 bytes | 315.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local
+        objects.
+To https://github.com/amira-khan/zipf.git
+   55c63d0..35fca86  master -&gt; master
+</pre></div>
+</div>
+<p>\newpage</p>
+<p>Amira’s changes are now on her desktop and in her GitHub repository
+but not in either of Sami’s repositories (local or remote).
+Since Sami has created a remote that points at Amira’s GitHub repository,
+though, they can easily pull those changes to their desktop:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sami:~/zipf<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>upstream<span class="w"> </span>master
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>From https://github.com/amira-khan/zipf
+ * branch            master     -&gt; FETCH_HEAD
+ * [new branch]      master     -&gt; upstream/master
+Updating 55c63d0..35fca86
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+</pre></div>
+</div>
+<p>Pulling from a repository owned by someone else is no different than pulling from a repository we own. In either case, Git merges the changes and asks us to resolve any conflicts that arise.
+The only significant difference is that, as with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>,
+we have to specify both a remote and a branch:
+in this case, <code class="docutils literal notranslate"><span class="pre">upstream</span></code> and <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p>
+</section>
+<section id="pull-requests">
+<h2>Pull Requests<a class="headerlink" href="#pull-requests" title="Link to this heading">#</a></h2>
+<p>Sami can now get Amira’s work, but how can Amira get Sami’s?
+She could create a remote that pointed at Sami’s repository on GitHub
+and periodically pull in Sami’s changes, but that would lead to chaos, since we could never be sure that everyone’s work was in any one place at the same time.
+Instead,
+almost everyone uses <strong>pull requests</strong>. They aren’t part of Git itself,
+but are supported by all major online <strong>forges</strong>.</p>
+<p>A pull request is essentially a note saying, “Someone would like to merge branch A of repository B into branch X of repository Y.”
+The pull request does not contain the changes, but instead points at two particular branches. That way, the difference displayed is always up to date
+if either branch changes.</p>
+<p>But a pull request can store more than just the source and destination branches:
+it can also store comments people have made about the proposed merge.
+Users can comment on the pull request as a whole, or on particular lines,
+and mark comments as out of date if the author of the pull request updates the code that the comment is attached to. Complex changes can go through several rounds of review and revision before being merged,
+which makes pull requests the review system we all wish journals actually had.</p>
+<p>To see this in action, suppose Sami wants to add their email address to <code class="docutils literal notranslate"><span class="pre">README.md</span></code>. They create a new branch and switch to it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sami:~/zipf<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>adding-email
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Switched to a new branch &#39;adding-email&#39;
+</pre></div>
+</div>
+<p>then make a change and commit it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sami:~/zipf<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Adding my email address&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[adding-email 3e73dc0] Adding my email address
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sami:~/zipf<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>diff<span class="w"> </span>HEAD~1
+</pre></div>
+</div>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/README.md b/README.md</span>
+<span class="gh">index e8281ee..e1bf630 100644</span>
+<span class="gd">--- a/README.md</span>
+<span class="gi">+++ b/README.md</span>
+<span class="gu">@@ -6,4 +6,4 @@ and plot each word&#39;s rank versus its frequency.</span>
+<span class="w"> </span>## Contributors
+<span class="w"> </span>
+<span class="w"> </span>- Amira Khan &lt;amira@zipf.org&gt;
+<span class="gd">-- Sami Virtanen</span>
+<span class="gi">+- Sami Virtanen &lt;sami@zipf.org&gt;</span>
+</pre></div>
+</div>
+<p>Sami’s changes are only in their local repository. They cannot create a pull request until those changes are on GitHub, so they push their new branch to their repository on GitHub:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sami:~/zipf<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>adding-email
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 315 bytes | 315.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local
+  objects.
+remote: 
+remote: Create a pull request for &#39;adding-email&#39; on GitHub by
+  visiting:
+  https://github.com/sami-virtanen/zipf/pull/new/adding-email
+remote: 
+To https://github.com/sami-virtanen/zipf.git
+ * [new branch]      adding-email -&gt; adding-email
+</pre></div>
+</div>
+<p>When Sami goes to their GitHub repository in the browser, GitHub notices that they have just pushed a new branch and asks them if they want to create a pull request (<a class="reference internal" href="#git-advanced-after-sami-pushes"><span class="std std-ref">Figure: after push</span></a>).</p>
+<figure class="align-default" id="git-advanced-after-sami-pushes">
+<img alt="../_images/after-sami-pushes.png" src="../_images/after-sami-pushes.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Git after Push</span><a class="headerlink" href="#git-advanced-after-sami-pushes" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>When Sami clicks on the button, GitHub displays a page showing the default source and destination of the pull request and a pair of editable boxes for the pull request’s title and a longer comment (<a class="reference internal" href="#git-advanced-pull-request-start"><span class="std std-ref">Figure: pull request start</span></a>).</p>
+<figure class="align-default" id="git-advanced-pull-request-start">
+<img alt="../_images/open-pull-request.png" src="../_images/open-pull-request.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Start a pull request</span><a class="headerlink" href="#git-advanced-pull-request-start" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If they scroll down, Sami can see a summary of the changes that will be in the pull request (<a class="reference internal" href="#git-advanced-pull-request-summary"><span class="std std-ref">Figure: pull request summary</span></a>).</p>
+<figure class="align-default" id="git-advanced-pull-request-summary">
+<img alt="../_images/open-pull-request-detail.png" src="../_images/open-pull-request-detail.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Git pull request summary</span><a class="headerlink" href="#git-advanced-pull-request-summary" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The top (title) box is autofilled with the previous commit message,
+so Sami adds an extended explanation to provide additional context
+before clicking on “Create Pull Request”
+(<a class="reference internal" href="#git-advanced-pull-request-fill-in"><span class="std std-ref">Figure: fill in pull request</span></a>).
+When they do, GitHub displays a page showing the new pull request,
+which has a unique serial number (<a class="reference internal" href="#git-advanced-pull-request-new"><span class="std std-ref">Figure :New pull request</span></a>).
+Note that this pull request is displayed in Amira’s repository rather than Sami’s, since it is Amira’s repository that will be affected if the pull request is merged.</p>
+<figure class="align-default" id="git-advanced-pull-request-fill-in">
+<img alt="../_images/fill-in-pull-request.png" src="../_images/fill-in-pull-request.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Git Fill in pull request</span><a class="headerlink" href="#git-advanced-pull-request-fill-in" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="git-advanced-pull-request-new">
+<img alt="../_images/new-pull-request.png" src="../_images/new-pull-request.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Git new pull request</span><a class="headerlink" href="#git-advanced-pull-request-new" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Amira’s repository now shows a new pull request
+(<a class="reference internal" href="#git-advanced-pull-request-viewing"><span class="std std-ref">Figure: view Pull requests</span></a>).
+Clicking on the “Pull requests” tab brings up a list of PRs
+(<a class="reference internal" href="#git-advanced-pull-request-list"><span class="std std-ref">Figure: list pull requests</span></a>)
+and clicking on the pull request link itself displays its details
+(<a class="reference internal" href="#git-advanced-pull-request-details"><span class="std std-ref">Figure: pull request details</span></a>).
+Sami and Amira can both see and interact with these pages,
+though only Amira has permission to merge.</p>
+<figure class="align-default" id="git-advanced-pull-request-viewing">
+<img alt="../_images/viewing-new-pull-request.png" src="../_images/viewing-new-pull-request.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">View pull request</span><a class="headerlink" href="#git-advanced-pull-request-viewing" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="git-advanced-pull-request-list">
+<img alt="../_images/pr-list.png" src="../_images/pr-list.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Git pull request list</span><a class="headerlink" href="#git-advanced-pull-request-list" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="git-advanced-pull-request-details">
+<img alt="../_images/pr-details.png" src="../_images/pr-details.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Git pull request details</span><a class="headerlink" href="#git-advanced-pull-request-details" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Since there are no conflicts,GitHub will let Amira merge the PR immediately using the “Merge pull request” button. She could also discard or reject it without merging using the “Close pull request” button. Instead,
+she clicks on the “Files changed” tab to see what Sami has changed
+(<a class="reference internal" href="#git-advanced-pull-request-changes"><span class="std std-ref">Figure: Pull request - request changes</span></a>).</p>
+<figure class="align-default" id="git-advanced-pull-request-changes">
+<img alt="../_images/pr-changes.png" src="../_images/pr-changes.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Pull request changes</span><a class="headerlink" href="#git-advanced-pull-request-changes" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If she moves her mouse over particular lines, a white-on-blue cross appears near the numbers to indicate that she can add comments
+(<a class="reference internal" href="#git-advanced-pull-request-comment-marker"><span class="std std-ref">Figure: Pull request - comment marker</span></a>).
+She clicks on the marker beside her own name and writes a comment:
+She only wants to make one comment rather than write a lengthier multi-comment review, so she chooses “Add single comment” (<a class="reference internal" href="#git-advanced-pull-request-write-comment"><span class="std std-ref">Figure: Pull request - write a comment</span></a>).
+GitHub redisplays the page with her remarks inserted (<a class="reference internal" href="#git-advanced-pull-request-pr-with-comment"><span class="std std-ref">Figure: Pull Request with comment</span></a>).</p>
+<figure class="align-default" id="git-advanced-pull-request-comment-marker">
+<img alt="../_images/pr-comment-marker.png" src="../_images/pr-comment-marker.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Pull request comment marker</span><a class="headerlink" href="#git-advanced-pull-request-comment-marker" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="git-advanced-pull-request-write-comment">
+<img alt="../_images/pr-writing-comment.png" src="../_images/pr-writing-comment.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Pull request write a comment</span><a class="headerlink" href="#git-advanced-pull-request-write-comment" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="git-advanced-pull-request-pr-with-comment">
+<img alt="../_images/pr-with-comment.png" src="../_images/pr-with-comment.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Pull request with comment</span><a class="headerlink" href="#git-advanced-pull-request-pr-with-comment" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>While Amira is working, GitHub has been emailing notifications to both Sami and Amira. When Sami clicks on the link in their email notification, it takes them to the PR and shows Amira’s comment. Sami changes <code class="docutils literal notranslate"><span class="pre">README.md</span></code>, commits, and pushes, but does <em>not</em> create a new pull request or do anything to the existing one.
+As explained above, a PR is a note asking that two branches be merged,
+so if either end of the merge changes, the PR updates automatically.</p>
+<p>Sure enough, when Amira looks at the PR again a few moments later she sees Sami’s changes (<a class="reference internal" href="#git-advanced-pull-request-pr-with-fix"><span class="std std-ref">Figure: Pull Request with fix</span></a>).
+Satisfied, she goes back to the “Conversation” tab and clicks on “Merge”.
+The icon at the top of the PR’s page changes text and color to show that the merge was successful
+(<a class="reference internal" href="#git-advanced-pull-request-successful-merge"><span class="std std-ref">Figure: - Pull Request - succesfull merge</span></a>).</p>
+<figure class="align-default" id="git-advanced-pull-request-pr-with-fix">
+<img alt="../_images/pr-with-fix.png" src="../_images/pr-with-fix.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Pull request with fix</span><a class="headerlink" href="#git-advanced-pull-request-pr-with-fix" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="git-advanced-pull-request-successful-merge">
+<img alt="../_images/pr-successful-merge.png" src="../_images/pr-successful-merge.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text">PR successful merge</span><a class="headerlink" href="#git-advanced-pull-request-successful-merge" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To get those changes from GitHub to her desktop repository,
+Amira uses <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>amira:~/zipf<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>master
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>From https://github.com/amira-khan/zipf
+ * branch            master     -&gt; FETCH_HEAD
+Updating 35fca86..a04e3b9
+Fast-forward
+ README.md | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+</pre></div>
+</div>
+<p>To get the change they just made from their <code class="docutils literal notranslate"><span class="pre">adding-email</span></code> branch into their <code class="docutils literal notranslate"><span class="pre">master</span></code> branch, Sami could use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code> on the command line. It’s a little clearer, though, if they also use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> from their <code class="docutils literal notranslate"><span class="pre">upstream</span></code> repository (i.e., Amira’s repository) so that they’re sure to get any other changes that Amira may have merged:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sami:~/zipf<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>master
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;master&#39;
+Your branch is up to date with &#39;origin/master&#39;.
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sami:~/zipf<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>upstream<span class="w"> </span>master
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>From https://github.com/amira-khan/zipf
+ * branch            master     -&gt; FETCH_HEAD
+Updating 35fca86..a04e3b9
+Fast-forward
+ README.md | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+</pre></div>
+</div>
+<p>Finally, Sami can push their changes back to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch
+in their own remote repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sami:~/zipf<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/sami-virtanen/zipf.git
+   35fca86..a04e3b9  master -&gt; master
+</pre></div>
+</div>
+<p>All four repositories are now synchronized.</p>
+</section>
+<section id="handling-conflicts-in-pull-requests">
+<h2>Handling Conflicts in Pull Requests<a class="headerlink" href="#handling-conflicts-in-pull-requests" title="Link to this heading">#</a></h2>
+<p>Finally, suppose that Amira and Sami have decided to collaborate more extensively on this project.
+Amira has added Sami as a collaborator to the GitHub repository.
+Now Sami can make contributions directly to the repository,
+rather than via a pull request from a forked repository.</p>
+<p>Sami makes a change to <code class="docutils literal notranslate"><span class="pre">README.md</span></code> in the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch on GitHub.
+Meanwhile, Amira is making a conflicting change to the same file in a different branch. When Amira creates her pull request, GitHub will detect the conflict and report that the PR cannot be merged automatically (<a class="reference internal" href="#git-advanced-pr-conflict"><span class="std std-ref">Figure: - Pull Request Conflict</span></a>).</p>
+<figure class="align-default" id="git-advanced-pr-conflict">
+<img alt="../_images/pr-conflict.png" src="../_images/pr-conflict.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Pull request conflict</span><a class="headerlink" href="#git-advanced-pr-conflict" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Amira can solve this problem with the tools she already has.
+If she has made her changes in a branch called <code class="docutils literal notranslate"><span class="pre">editing-readme</span></code>, the steps are:</p>
+<ol class="arabic simple">
+<li><p>Pull Sami’s changes from the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of the GitHub repository
+into the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of her desktop repository.</p></li>
+<li><p>Merge <em>from</em> the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of her desktop repository
+<em>to</em> the <code class="docutils literal notranslate"><span class="pre">editing-readme</span></code> branch in the same repository.</p></li>
+<li><p>Push her updated <code class="docutils literal notranslate"><span class="pre">editing-readme</span></code> branch to her repository on GitHub.
+The pull request from there back to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of the main repository
+will update automatically.</p></li>
+</ol>
+<p>GitHub and other forges do allow people to merge conflicts through their browser-based interfaces, but doing it on our desktop means we can use our favorite editor to resolve the conflict.
+It also means that if the change affects the project’s code,
+we can run everything to make sure it still works.</p>
+<p>But what if Sami or someone else merges another change while Amira is resolving this one, so that by the time she pushes to her repository there is another, different, conflict? In theory this cycle could go on forever;
+in practice, it reveals a communication problem that Amira (or someone) needs to address. If two or more people are constantly making incompatible changes to the same files, they should discuss who’s supposed to be doing what,
+or rearrange the project’s contents so that they aren’t stepping on each other’s toes.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="git_advanced.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Going Further with Git</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../exercises/git_advanced.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercises Git Advanced</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-other-people-s-work-github-version">Using Other People’s Work - GITHUB version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests">Pull Requests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-conflicts-in-pull-requests">Handling Conflicts in Pull Requests</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Software Engineering Group - University of Potsdam
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

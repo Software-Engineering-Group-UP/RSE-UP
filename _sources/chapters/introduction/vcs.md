@@ -1,7 +1,7 @@
 # Version Control
 
 
-> +++ Divide By Cucumber Error. Please Reinstall Universe And Reboot +++
+> Divide By Cucumber Error. Please Reinstall Universe And Reboot
 >
 > --- Terry Pratchett
 

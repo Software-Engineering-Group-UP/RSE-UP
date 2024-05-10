@@ -614,6 +614,8 @@ The hardest thing about using a branch-per-feature workflow is sticking to it fo
 
 ## Using Other People's Work
 
+**NOTE** the following instructions are created using the University of Potsdam Gitlab server. Non University Members, while having access, can not contribute or fork. For instructions on how this works on Github please click [here](). Instructions will be similar, furthermore, they will use the original material from the Research Software Engineering with Python book by Irving.   
+
 So far we have used Git to manage individual work,
 but it really comes into its own when we are working with other people.
 We can do this in two ways:
@@ -627,32 +629,38 @@ We can do this in two ways:
     do their work in that,
     and then submit their changes to the main repository.
 
-The first approach works well for teams of up to half a dozen people
-who are all comfortable using Git, but if the project is larger,
-or if contributors are worried that they might make a mess in the `main` branch, the second approach is safer.
+The first approach works well for teams of up to half a dozen people who are all comfortable using Git, but if the project is larger, or if contributors are worried that they might make a mess in the `main` branch, the second approach is safer.
 
-Git itself doesn't have any notion of a "main repository",
-but like Github, Gitlab, Bitbucket or selfhosted solutions like Gitea all encourage people to use Git in ways that effectively create one.
-Suppose, for example, that you want to contribute to the Zipf's Law code that
-Amira is hosting on GitHub at `https://github.com/amira-khan/zipf`.
-You can go to that URL and click on the "Fork" button in the upper right corner
-([Figure: fork button](git-advanced-fork-button)).
-GitHub immediately creates a copy of Amira's repository within Sami's account on GitHub's own servers.
-
-```{figure} ../figures/git-advanced/fork-button.png
+Git itself doesn't have any notion of a "main repository", but like Github, Gitlab, Bitbucket or selfhosted solutions like Gitea all encourage people to use Git in ways that effectively create one.
+Suppose, for example, that you want to contribute to the Zipf's Law code that we are hosting on Gitlab at `https://gitup.uni-potsdam.de/seg/rse_course/zipf`.
+You can go to that URL and click on the "Fork" button in the upper right corner ([Figure: fork button](git-advanced-fork-button)).
+```{figure} ../figures/git-advanced/gitlab_fork-button.png
 :name: git-advanced-fork-button
 
-Git Fork button
+Gitlab git fork button
 ```
 
-When the command completes, the setup on GitHub now looks like [Figure: after fork](git-advanced-after-fork).Nothing has happened yet on your own machine:
-the new repository exists only on GitHub.
-When you explores its history, they see that it contains all of the changes Amira made.
+While Github immediately creates a copy of a repository, on the university gitlab server you will have a choice at the next step, whether or not the repository is private, internal or public. 
 
-```{figure} ../figures/git-advanced/after-fork.png
+Public means that everyone, even non university members will be able to view the repository. Internal means that anybody that is logged in with their university of potsdam account is able to view and interact with the repository. And private means that only you have access. 
+
+```{figure} ../figures/git-advanced/gitlab_fork-choice.png
+:name: git-advanced-fork-choice
+
+Gitlab git fork settings  
+```
+
+After clicking the fork button at the bottom the process should complete with your chosen project settings
+
+
+When the command completes, the setup on Gitlab now looks like [Figure: after fork](git-advanced-after-fork).Nothing has happened yet on your own machine:
+the new repository exists only on GitHub.
+When you explores its history, they see that it contains all of the changes we made.
+
+```{figure} ../figures/git-advanced/gitlab_after-fork.png
 :name: git-advanced-after-fork
 
-Git: After Fork
+Gitlab git: After Fork
 ```
 
 A copy of a repository is called a **clone** In order to start working on the project, Sami needs a clone of *their* repository (not Amira's) on their own computer. We will modify your prompt to include their desktop user ID (`your user name`
@@ -660,7 +668,7 @@ A copy of a repository is called a **clone** In order to start working on the pr
 
 
 ```bash
-$ git clone https://github.com/YOUR_USER_NAME/zipf.git
+$ git clone git@gitup.uni-potsdam.de:YOUR_USERNAME/zipf.git
 ```
 
 ```text
@@ -698,37 +706,35 @@ a0b88e5 Added repository overview
 232b564 Initial commit of README file
 ```
 
-Sami also sees that Git has automatically created a **remote** for their repository that points back at their repository on GitHub:
+You can also see that Git has automatically created a **remote** for their repository that points back at their repository on Gitlab:
 
 ```bash
 $ git remote -v
 ```
 
 ```text
-origin  https://github.com/YOUR USERNAME/zipf.git (fetch)
-origin  https://github.com/YOUR USERNAME/zipf.git (push)
+origin  git@gitup.uni-potsdam.de:YOUR_NAME/zipf.git (fetch)
+origin  git@gitup.uni-potsdam.de:YOUR_NAME/zipf.git (push)
 ```
 
-Sami can pull changes from their fork and push work back there, but needs to do one more thing before getting the changes from Amira's repository:
+You can pull changes from your fork and push work back there, but you need to do one more thing before getting the changes from our repository:
 
 ```bash
-$ git remote add upstream
-              https://github.com/amira-khan/zipf.git
+$ git remote add upstream  https://gitup.uni-potsdam.de/seg/rse_course/zipf.git
 $ git remote -v
 ```
 
 ```text
 origin      https://github.com/YOUR_USERNAME/zipf.git (fetch)
 origin      https://github.com/YOUR_USERNAME/zipf.git (push)
-upstream    https://github.com/amira-khan/zipf.git (fetch)
-upstream    https://github.com/amira-khan/zipf.git (push)
+upstream    https://gitup.uni-potsdam.de/seg/rse_course/zipf.git (fetch)
+upstream    https://gitup.uni-potsdam.de/seg/rse_course/zipf.git (push)
 ```
 
-Sami has called their new remote `upstream` because it points at the repository
-from which theirs is derived. They could use any name, but `upstream` is a nearly universal convention. 
+In this example we have called the new remote `upstream` because it points at the repository
+from which the fork is derived. You could use any name, but `upstream` is a nearly universal convention. 
 
-With this remote in place, you are finally set up. Suppose, for example,
-that Amira has modified the project's `README.md` file to add you as a contributor. (Again, we show Amira's user ID and working directory in her prompt to make it clear who's doing what):
+With this remote in place, you are finally set up. Suppose, for example, that we habe modified the project's `README.md` file to add you as a contributor.:
 
 ```text
 
@@ -737,7 +743,7 @@ that Amira has modified the project's `README.md` file to add you as a contribut
 - YOU
 ```
 
-Amira commits her changes and pushes them to *her* repository on GitHub:
+We commit the changes and push them to our repository on Gitlab:
 
 ```bash
 $ git commit -a -m "Adding *you* as a contributor"
@@ -761,21 +767,21 @@ Writing objects: 100% (3/3), 315 bytes | 315.00 KiB/s, done.
 Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (2/2), completed with 2 local
         objects.
-To https://github.com/amira-khan/zipf.git
+To https://gitup.uni-potsdam.de/seg/rse_course/zipf.git
    55c63d0..35fca86  main -> main
 ```
 
-Amira's changes are now on her desktop and in her GitHub repository
-but not in either of Sami's repositories (local or remote).
-Since you created a remote that points at Amira's GitHub repository,
-though, they can easily pull those changes to their desktop:
+Our changes are now on our desktop and in our Gitlab repository
+but not in either of your repositories (local or remote).
+Since you created a remote that points at our Gitlab repository,
+though, you can easily pull those changes to your local version:
 
 ```bash
 $ git pull upstream main
 ```
 
 ```text
-From https://github.com/amira-khan/zipf
+From https://gitup.uni-potsdam.de/seg/rse_course/zipf
  * branch            main     -> FETCH_HEAD
  * [new branch]      main     -> upstream/master
 Updating 55c63d0..35fca86
@@ -791,12 +797,8 @@ in this case, `upstream` and `main`.
 
 ## Pull Requests
 
-You can now get Amira's work, but how can Amira get yours?
-She could create a remote that pointed at your repository on GitHub
-and periodically pull in your changes, but that would lead to chaos, since we could never be sure that everyone's work was in any one place at the same time.
-Instead,
-almost everyone uses **pull requests**. They aren't part of Git itself,
-but are supported by all major online **forges**.
+You can now get our work, but how can we get yours?
+We could create a remote that pointed at your repository on Gitlab and periodically pull in your changes, but that would lead to chaos, since we could never be sure that everyone's work was in any one place at the same time. Instead, almost everyone uses **pull requests**. They aren't part of Git itself, but are supported by all major online **forges**.
 
 A pull request is essentially a note saying, "Someone would like to merge branch A of repository B into branch X of repository Y."
 The pull request does not contain the changes, but instead points at two particular branches. That way, the difference displayed is always up to date
@@ -808,7 +810,7 @@ Users can comment on the pull request as a whole, or on particular lines,
 and mark comments as out of date if the author of the pull request updates the code that the comment is attached to. Complex changes can go through several rounds of review and revision before being merged,
 which makes pull requests the review system we all wish journals actually had.
 
-To see this in action, suppose Sami wants to add their email address to `README.md`. They create a new branch and switch to it:
+To see this in action, suppose you want to add your email address to the `README.md`. You create a new branch and switch to it:
 
 ```bash
 $ git checkout -b adding-email
@@ -841,15 +843,14 @@ index e8281ee..e1bf630 100644
 @@ -6,4 +6,4 @@ and plot each word's rank versus its frequency.
  ## Contributors
  
-
 -- You
 +- You <yourEMAIL@zipf.org>
 ```
 
-Sami's changes are only in their local repository. They cannot create a pull request until those changes are on GitHub, so they push their new branch to their repository on GitHub:
+Your changes are only in your local repository. You cannot create a pull request until those changes are on Gitlab, so you push your new branch to your repository on Gitlab:
 
 ```bash
-$ git push origin adding-email
+$ git push --set-upstream origin adding-email
 ```
 
 ```text
@@ -864,136 +865,94 @@ remote: Resolving deltas: 100% (2/2), completed with 2 local
 remote: 
 remote: Create a pull request for 'adding-email' on GitHub by
   visiting:
-  https://github.com/YOUR_USERNAME/zipf/pull/new/adding-email
+  https://gitup.uni-potsdam.de/nbertrand/zipf
 remote: 
-To https://github.com/YOUR_USERNAME/zipf.git
+https://gitup.uni-potsdam.de/nbertrand/zipf
  * [new branch]      adding-email -> adding-email
 ```
 
-When Sami goes to their GitHub repository in the browser, GitHub notices that they have just pushed a new branch and asks them if they want to create a pull request ([Figure: after push](git-advanced-after-sami-pushes)).
+When you go to your Gitlab repository in the browser, Gitlab notices that they have just pushed a new branch and asks them if they want to create a merge request ([Figure: after push](git-advanced-after-sami-pushes)). (On Github this is called a pull request)
 
-```{figure} ../figures/git-advanced/after-sami-pushes.png
+```{figure} ../figures/git-advanced/gitlab_after-push.png
 :name: git-advanced-after-sami-pushes
 
 Git after Push
 ```
 
-When you click on the button, GitHub displays a page showing the default source and destination of the pull request and a pair of editable boxes for the pull request's title and a longer comment ([Figure: pull request start](git-advanced-pull-request-start)).
+When you click on the button, Gitlab displays a page showing the default source and destination of the merge request and a pair of editable boxes for the pull request's title and a longer comment ([Figure: merge request start](git-advanced-pull-request-start)). 
 
-```{figure} ../figures/git-advanced/open-pull-request.png
+```{figure} ../figures/git-advanced/gitlab_merge-request2.png
 :name: git-advanced-pull-request-start
-Start a pull request
+Start a merge request
 ```
 
-If they scroll down, Sami can see a summary of the changes that will be in the pull request ([Figure: pull request summary](git-advanced-pull-request-summary)).
+If you click on the changes tab, you can see a summary of the changes that will be in the merge request ([Figure: merge request summary](git-advanced-pull-request-summary)).
 
-```{figure} ../figures/git-advanced/open-pull-request-detail.png
+```{figure} ../figures/git-advanced/gitlab_after-merge-request.png
 :name: git-advanced-pull-request-summary
-Git pull request summary
+Git merge request summary
 ```
 
 The top (title) box is autofilled with the previous commit message,
 so you add an extended explanation to provide additional context
-before clicking on "Create Pull Request"
-([Figure: fill in pull request](git-advanced-pull-request-fill-in)).
-When they do, GitHub displays a page showing the new pull request,
-which has a unique serial number ([Figure :New pull request](git-advanced-pull-request-new)).
-Note that this pull request is displayed in Amira's repository rather than Sami's, since it is Amira's repository that will be affected if the pull request is merged.
+before clicking on "Create Merge Request"
 
-```{figure} ../figures/git-advanced/fill-in-pull-request.png
-:name: git-advanced-pull-request-fill-in
-Git Fill in pull request
-```
+([Figure: fill in merge request](git-advanced-pull-request-fill-in)).
+When they do, Gitlab displays a page showing the new merge request,
+which has a unique serial number ([Figure :New merge request](git-advanced-pull-request-new)).
+**Note** that this merge request is displayed in our repository rather than yours, since it is our repository that will be affected if the merge request is merged.
 
-```{figure} ../figures/git-advanced/new-pull-request.png
-:name: git-advanced-pull-request-new
-Git new pull request
-```
+On the left sidebar we can see that there is a new merge request, when clicking on it a list of merge requests will be opened. 
 
-Amira's repository now shows a new pull request
-([Figure: view Pull requests](git-advanced-pull-request-viewing)).
-Clicking on the "Pull requests" tab brings up a list of PRs
-([Figure: list pull requests](git-advanced-pull-request-list))
-and clicking on the pull request link itself displays its details
-([Figure: pull request details](git-advanced-pull-request-details)).
-Sami and Amira can both see and interact with these pages,
-though only Amira has permission to merge.
-
-```{figure} ../figures/git-advanced/viewing-new-pull-request.png
-:name: git-advanced-pull-request-viewing
-View pull request
-```
-
-```{figure} ../figures/git-advanced/pr-list.png
+```{figure} ../figures/git-advanced/gitlab_merge_request-list.png
 :name: git-advanced-pull-request-list
 Git pull request list
 ```
 
-```{figure} ../figures/git-advanced/pr-details.png
-:name: git-advanced-pull-request-details
+Next we need to approve that request:
 
-Git pull request details
+```{figure} ../figures/git-advanced/gitlab_merge-approve.png
+:name: git-advanced-pull-request-new
+Gitlab Merge request approval
 ```
 
-Since there are no conflicts,GitHub will let Amira merge the PR immediately using the "Merge pull request" button. She could also discard or reject it without merging using the "Close pull request" button. Instead,
-she clicks on the "Files changed" tab to see what Sami has changed
-([Figure: Pull request - request changes](git-advanced-pull-request-changes)).
 
-```{figure} ../figures/git-advanced/pr-changes.png
+Since there are no conflicts, Gitlab will let us merge the merge request immediately using the "Merge merge request" button. We could also discard or reject it without merging using the "Close merge request" button. Instead, we could also click on the "Files changed" tab to see what you have changed
+([Figure: Merge request - request changes](git-advanced-pull-request-changes)).
+
+```{figure} ../figures/git-advanced/gitlab_pr-changes.png
 :name: git-advanced-pull-request-changes
-Pull request changes
+Gitlab view changes
 ```
 
-If she moves her mouse over particular lines, a white-on-blue cross appears near the numbers to indicate that she can add comments
-([Figure: Pull request - comment marker](git-advanced-pull-request-comment-marker)).
-She clicks on the marker beside her own name and writes a comment:
-She only wants to make one comment rather than write a lengthier multi-comment review, so she chooses "Add single comment" ([Figure: Pull request - write a comment](git-advanced-pull-request-write-comment)).
-GitHub redisplays the page with her remarks inserted ([Figure: Pull Request with comment](git-advanced-pull-request-pr-with-comment)).
+If we move our mouse over particular lines, a comment symbol appears near the numbers to indicate that we can add comments
+([Figure: Merge request - comment marker](git-advanced-pull-request-comment-marker)).
+We click on the marker beside our own name and write a comment. These comments will then be inserted and automatically displayed. 
 
-
-```{figure} ../figures/git-advanced/pr-comment-marker.png
+```{figure} ../figures/git-advanced/gitlab_merge_comment.png
 :name: git-advanced-pull-request-comment-marker
-Pull request comment marker
+Add comments to changes.
 ```
 
-```{figure} ../figures/git-advanced/pr-writing-comment.png
-:name: git-advanced-pull-request-write-comment
-Pull request write a comment
-```
+While we are working, Gitlab has been emailing notifications to us and you. When you click on the link in the email notification, it takes you to the PR and shows our comment. Your changes `README.md`, commits, and pushes, but does *not* create a new merge request or do anything to the existing one.
+As explained above, a merge request is a note asking that two branches be merged, so if either end of the merge changes, the merge updates automatically.
 
-```{figure} ../figures/git-advanced/pr-with-comment.png
-:name: git-advanced-pull-request-pr-with-comment
-Pull request with comment
-```
+Depending on the comment, you either need to create a fix or explain further what your change does. After this has been done we can approve the merge request and merge it. 
 
-While Amira is working, GitHub has been emailing notifications to both Amira and you. When you click on the link in their email notification, it takes them to the PR and shows Amira's comment. Your changes `README.md`, commits, and pushes, but does *not* create a new pull request or do anything to the existing one.
-As explained above, a PR is a note asking that two branches be merged,
-so if either end of the merge changes, the PR updates automatically.
-
-Sure enough, when Amira looks at the PR again a few moments later she sees your changes ([Figure: Pull Request with fix](git-advanced-pull-request-pr-with-fix)).
-Satisfied, she goes back to the "Conversation" tab and clicks on "Merge".
-The icon at the top of the PR's page changes text and color to show that the merge was successful
-([Figure: - Pull Request - succesfull merge](git-advanced-pull-request-successful-merge)).
-
-```{figure} ../figures/git-advanced/pr-with-fix.png
-:name: git-advanced-pull-request-pr-with-fix
-Pull request with fix
-```
-
-```{figure} ../figures/git-advanced/pr-successful-merge.png
+```{figure} ../figures/git-advanced/gitlab_merge-success.png
 :name: git-advanced-pull-request-successful-merge
-PR successful merge
+Successful merge
 ```
 
-To get those changes from GitHub to her desktop repository,
-Amira uses `git pull`:
+To get those changes from Gitlab to our local repository,
+we uses `git pull`:
 
 ```bash
 $ git pull origin main
 ```
 
 ```text
-From https://github.com/amira-khan/zipf
+From https://gitup.uni-potsdam.de/seg/rse_course/zipf.git
  * branch            main     -> FETCH_HEAD
 Updating 35fca86..a04e3b9
 Fast-forward
@@ -1001,10 +960,10 @@ Fast-forward
  1 file changed, 2 insertions(+), 2 deletions(-)
 ```
 
-To get the change they just made from their `adding-email` branch into their `main` branch, Sami could use `git merge` on the command line. It's a little clearer, though, if they also use `git pull` from their `upstream` repository (i.e., Amira's repository) so that they're sure to get any other changes that Amira may have merged:
+To get the changes we just made from your `adding-email` branch into our `main` branch, you could use `git merge` on the command line. It's a little clearer, though, if you also use `git pull` from your `upstream` repository (our repository) so that you can be sure to get any other changes that we may have merged:
 
 ```bash
-$ git checkout master
+$ git checkout main
 ```
 
 ```text
@@ -1017,7 +976,7 @@ $ git pull upstream main
 ```
 
 ```text
-From https://github.com/amira-khan/zipf
+From https://gitup.uni-potsdam.de/seg/rse_course/zipf.git
  * branch            main     -> FETCH_HEAD
 Updating 35fca86..a04e3b9
 Fast-forward
@@ -1034,7 +993,7 @@ $ git push origin main
 
 ```text
 Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
-To https://github.com/YOUR_USERNAME/zipf.git
+To https://gitup.uni-potsdam.de/YOUR_NAME/zipf.git
    35fca86..a04e3b9  main -> main
 ```
 
@@ -1048,24 +1007,19 @@ Now you can make contributions directly to the repository,
 rather than via a pull request from a forked repository.
 
 You make a change to `README.md` in the `main` branch on GitHub.
-Meanwhile, Amira is making a conflicting change to the same file in a different branch. When Amira creates her pull request, GitHub will detect the conflict and report that the PR cannot be merged automatically ([Figure: - Pull Request Conflict](git-advanced-pr-conflict)).
+Meanwhile, Amira is making a conflicting change to the same file in a different branch. When Amira creates her pull request, GitHub will detect the conflict and report that the PR cannot be merged automatically.
 
-```{figure} ../figures/git-advanced/pr-conflict.png
-:name: git-advanced-pr-conflict
-Pull request conflict
-```
+We can solve this problem with the tools we already have.
+If you have made your changes in a branch called `editing-readme`, the steps are:
 
-Amira can solve this problem with the tools she already has.
-If she has made her changes in a branch called `editing-readme`, the steps are:
+1.  Pull your changes from the `main` branch of the Gitlab repository
+    into the `main` branch of your local repository.
 
-1.  Pull Sami's changes from the `main` branch of the GitHub repository
-    into the `main` branch of her desktop repository.
-
-2.  Merge *from* the `main` branch of her desktop repository
+2.  Merge *from* the `main` branch of your local repository
     *to* the `editing-readme` branch in the same repository.
 
-3.  Push her updated `editing-readme` branch to her repository on GitHub.
-    The pull request from there back to the `main` branch of the main repository
+3.  Push your updated `editing-readme` branch to your repository on Gitlab.
+    The merge request from there back to the `main` branch of the main repository
     will update automatically.
 
 GitHub and other forges do allow people to merge conflicts through their browser-based interfaces, but doing it on our desktop means we can use our favorite editor to resolve the conflict.
