@@ -8,24 +8,22 @@ zipf/
 ├── CONDUCT.md
 ├── CONTRIBUTING.md
 ├── LICENSE.md
-├── Makefile
 ├── README.md
 ├── bin
-│   ├── book_summary.sh
 │   ├── collate.py
-│   ├── countwords.py
-│   ├── plotcounts.py
+│   ├── wordcount.py
+│   ├── plotcount.py
 │   ├── plotparams.yml
-│   ├── script_template.py
-│   └── utilities.py
+│   ├── template.py
+│   └── ...
 ├── data
 │   ├── README.md
 │   ├── dracula.txt
 │   └── ...
 └── results
-    ├── collated.csv
+    ├── collated.txt
     ├── collated.png
-    ├── dracula.csv
+    ├── dracula.txt
     ├── dracula.png
     └── ...
 ```
@@ -821,11 +819,11 @@ it's probably enough to check that it handles tables with:
 -   rows having keys that are supposed to be unique, but aren't
 -   rows that contain nothing but missing values
 
-Some projects develop **checklists**} like this one to remind programmers what they ought to test.
+Some projects develop **checklists** like this one to remind programmers what they ought to test.
 These checklists can be a bit daunting for newcomers,
 but they are a great way to pass on hard-earned experience.
-
-## Continuous Integration **TODO** MOVE SECTION TO WORKFLOW
+<!-->
+### Continuous Integration 
 
 Now that we have a set of tests,
 we could run `pytest` every now and again to check our code.
@@ -835,7 +833,7 @@ or if we are making changes over weeks or months,
 we might forget to run the tests
 or it might be difficult to identify which change is responsible for a test failure.
 
-The solution is **continuous integration** (CI),\index which runs tests automatically whenever a change is made.
+The solution is **continuous integration** (CI), which runs tests automatically whenever a change is made.
 CI tells developers immediately if changes have caused problems,
 which makes them much easier to fix.
 CI can also be set up to run tests with several different configurations of the software
@@ -982,7 +980,7 @@ Build pass
 This example shows one of the other benefits of CI:
 it forces us to be explicit about what we are doing and how we do it,
 just as writing a Makefile forces us to be explicit about exactly how we produce results {cite:p}`Zamp2020`.
-
+-->
 ## When to Write Tests 
 
 We have now met the three major types of test: unit, integration, and regression.
