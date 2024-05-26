@@ -69,7 +69,7 @@ parts:
     chapters: 
       - file: chapters/introduction/python_cli.md
         sections:
-          - file: chapters/python_building_cli.ipynb
+          - file: chapters/python_cli.md
           - file: exercises/python_cli.ipynb 
       - file: chapters/introduction/testing.md
         sections:
