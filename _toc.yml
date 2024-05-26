@@ -66,7 +66,11 @@ parts:
           - file: chapters/architecture_design.md
   # 8  
   - caption: Testing, Error Handling and CLI Apps using Python
-    chapters:
+    chapters: 
+      - file: chapters/introduction/python_cli.md
+        sections:
+          - file: chapters/python_building_cli.ipynb
+          - file: exercises/python_cli.ipynb 
       - file: chapters/introduction/testing.md
         sections:
           - file: chapters/testing_programs.md
@@ -75,10 +79,7 @@ parts:
         sections:
           - file: chapters/error_handling.md
           - file: exercises/error_handling.ipynb  
-      - file: chapters/introduction/python_cli.md
-        sections:
-          - file: chapters/python_building_cli.ipynb
-          - file: exercises/python_cli.ipynb  
+      
 # 9
   - caption: Configuration and Packaging
     chapters:

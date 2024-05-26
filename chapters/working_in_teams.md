@@ -1001,7 +1001,7 @@ This information may be included as sections in the existing `README` file or pu
     wherever they go,
     remember that the easier it is for people to get set up and contribute,
     the more likely they are to do so {cite:p}`Stei2014`.
-
+te
 -   `GOVERNANCE`
     explains how the project is run (Section [teams martha](https://software-engineering-group-up.github.io/RSE-UP/chapters/working_in_teams.html#making-decisions)).
     It is still uncommon for this to be in a file of its own---it is more often included
@@ -1109,7 +1109,7 @@ and ask the supervisor to arrange a meeting to resolve the issue.
 
 > **Hitchhikers**
 >
-> \gref{Hitchhikers}{hitchhiker} who show up but never actually do anything
+> Hitchhikers who show up but never actually do anything
 > are particularly difficult to manage,
 > in part because they are usually very good at appearing reasonable.
 > They will nod as we present our case,
