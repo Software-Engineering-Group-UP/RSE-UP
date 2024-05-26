@@ -487,6 +487,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licenses">Licenses</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-software-licenses">Types of software licenses</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#permissive-licenses">Permissive licenses:</a></li>
@@ -559,6 +560,58 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="licenses-software-citation-and-fair">
 <h1>Licenses, Software Citation and FAIR<a class="headerlink" href="#licenses-software-citation-and-fair" title="Link to this heading">#</a></h1>
 <p>In this chapter we will talk about what Licenses are and how they can be applied to research software. Furthermore, in this chapter we will explore the FAIR principles for research software including a pragmatic approach to FAIR.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>While a Code of Conduct describes how contributors should interact with each other, a license dictates how project materials can be used and redistributed.
+If the license or a publication agreement makes it difficult for people to contribute, the project is less likely to attract new members, so the choice of license is crucial to the project’s long-term sustainability.</p>
+<blockquote>
+<div><p><strong>Open Except…</strong></p>
+<p>Projects that are only developing software may not have any problem making everything open.
+Teams working with sensitive data, on the other hand,
+must be careful to ensure that what should be private isn’t inadvertently shared.
+In particular,
+people who are new to Git (and even people who aren’t)
+occasionally add raw data files containing personal identifying information to repositories.
+It’s possible to rewrite the project’s history to remove things when this happens,
+but that doesn’t automatically erase copies people may have in forked repositories.</p>
+</div></blockquote>
+<p>Every creative work has some sort of license;
+the only question is whether authors and users know what it is and choose to enforce it.
+Choosing a license for a project can be complex,
+not least because the law hasn’t kept up with everyday practice.
+<span id="id1">[<a class="reference internal" href="references.html#id62" title="Andrew Morin, Jennifer Urban, and Piotr Sliz. A Quick Guide to Software Licensing for the Scientist-Programmer. PLoS Computational Biology, 8(7):e1002598, Jul 2012. A short introduction to software licensing for non-specialists. doi:10.1371/journal.pcbi.1002598.">Morin <em>et al.</em>, 2012</a>]</span> and <span id="id2">[<a class="reference internal" href="references.html#id81" title="Jake VanderPlas. The Whys and Hows of Licensing Scientific Code. 2014. URL: https://www.astrobetter.com/blog/2014/03/10/the-whys-and-hows-of-licensing-scientific-code/.">VanderPlas, 2014</a>]</span> are good starting points
+to understand licensing and intellectual property from a researcher’s point of view, while <span id="id3">[<a class="reference internal" href="references.html#id52" title="Van Lindberg. Intellectual Property and Open Source: A Practical Guide to Protecting Code. O'Reilly Media, 2008. ISBN 978-0596517960. A thorough dive into intellectual property issues related to open source software.">Lindberg, 2008</a>]</span> is a deeper dive for those who want details.
+Depending on country, institution, and job role, most creative works are automatically eligible for intellectual property protection.
+However, members of the team may have different levels of copyright protection.
+For example, students and faculty may have a copyright on the research work they produce, but university staff members may not, since their employment agreement may state that what they create on the job belongs to their employer.</p>
+<p>To avoid legal messiness, every project should include an explicit license.
+This license should be chosen early, since changing a license can be complicated. For example, each collaborator may hold copyright on their work
+and therefore need to be asked for approval when a license is changed.
+Similarly, changing a license does not change it retroactively,
+so different users may wind up operating under different licensing structures.</p>
+<blockquote>
+<div><p><strong>Leave It to the Professionals</strong></p>
+<p>Don’t write your own license.
+Legalese is a highly technical language,
+and words don’t mean what you think they do.</p>
+</div></blockquote>
+<p>To make license selection for code as easy as possible,
+GitHub allows us to select one of several common software licenses when creating a repository.
+The Open Source Initiative maintains <a class="reference external" href="https://opensource.org/licenses">a list</a> of <strong>open licenses</strong>,
+and <a class="reference external" href="https://choosealicense.com/">choosealicense.com</a> will help us find a license that suits our needs. Some of the things we need to think about are:</p>
+<ol class="arabic simple">
+<li><p>Do we want to license the work at all?</p></li>
+<li><p>Is the content we are licensing source code?</p></li>
+<li><p>Do we require people distributing derivative works to also distribute their code?</p></li>
+<li><p>Do we want to address patent rights?</p></li>
+<li><p>Is our license compatible with the licenses of the software we depend on?</p></li>
+<li><p>Do our institutions have any policies that may overrule our choices?</p></li>
+<li><p>Are there any copyright experts within our institution who can assist us?</p></li>
+</ol>
+<p>Unfortunately,GitHub’s list does not include common licenses for data or written works like papers and reports.
+Those can be added in manually, but it’s often hard to understand the interactions among multiple licenses on different kinds of material <span id="id4">[<a class="reference internal" href="references.html#id10" title="Daniel A. Almeida, Gail C. Murphy, Greg Wilson, and Mike Hoye. Do Software Developers Understand Open Source Licenses? In Proceedings of the 25th International Conference on Program Comprehension, 1–11. IEEE Press, 2017. Found that developers understand single licenses well, but frequently misunderstand the interactions between multiple licenses. URL: https://doi.org/10.1109/ICPC.2017.7, doi:10.1109/ICPC.2017.7.">Almeida <em>et al.</em>, 2017</a>]</span>.</p>
+<p>Just as the project’s Code of Conduct is usually placed in a root-level file called <code class="docutils literal notranslate"><span class="pre">CONDUCT.md</span></code>, its license is usually put in a file called <code class="docutils literal notranslate"><span class="pre">LICENSE.md</span></code> that is also in the project’s root directory.</p>
+</section>
 <section id="licenses">
 <h2>Licenses<a class="headerlink" href="#licenses" title="Link to this heading">#</a></h2>
 <p>Software licenses are crucial tools for both creators and users, they can be outlined as follows:</p>
@@ -780,7 +833,7 @@ By following these strategies, you can effectively publish your software and gai
 </section>
 <section id="fair-principles-for-research-software-fair4rs">
 <h2>FAIR Principles for Research Software (FAIR4RS)<a class="headerlink" href="#fair-principles-for-research-software-fair4rs" title="Link to this heading">#</a></h2>
-<p>In the age of information overload, ensuring the quality and usefulness of data is paramount. The FAIR principles offer a framework for managing data effectively, promoting its findability, accessibility, interoperability, and reusability. <span id="id1">[<a class="reference internal" href="references.html#id8" title="Mark D Wilkinson, Michel Dumontier, IJsbrand Jan Aalbersberg, Gabrielle Appleton, Myles Axton, Arie Baak, Niklas Blomberg, Jan-Willem Boiten, Luiz Bonino da Silva Santos, Philip E Bourne, and others. The fair guiding principles for scientific data management and stewardship. Scientific data, 3(1):1–9, 2016.">Wilkinson <em>et al.</em>, 2016</a>]</span></p>
+<p>In the age of information overload, ensuring the quality and usefulness of data is paramount. The FAIR principles offer a framework for managing data effectively, promoting its findability, accessibility, interoperability, and reusability. <span id="id5">[<a class="reference internal" href="references.html#id8" title="Mark D Wilkinson, Michel Dumontier, IJsbrand Jan Aalbersberg, Gabrielle Appleton, Myles Axton, Arie Baak, Niklas Blomberg, Jan-Willem Boiten, Luiz Bonino da Silva Santos, Philip E Bourne, and others. The fair guiding principles for scientific data management and stewardship. Scientific data, 3(1):1–9, 2016.">Wilkinson <em>et al.</em>, 2016</a>]</span></p>
 <figure class="align-default" id="fair-princeples">
 <img alt="../_images/fair.png" src="../_images/fair.png" />
 <figcaption>
@@ -888,7 +941,7 @@ By following these strategies, you can effectively publish your software and gai
 </section>
 <section id="fair4rs-principles">
 <h3>FAIR4RS Principles<a class="headerlink" href="#fair4rs-principles" title="Link to this heading">#</a></h3>
-<p>The FAIR4RS Principles (Findable, Accessible, Interoperable, and Reusable for Research Software) <span id="id2">[<a class="reference internal" href="references.html#id6" title="Michelle Barker, Neil P Chue Hong, Daniel S Katz, Anna-Lena Lamprecht, Carlos Martinez-Ortiz, Fotis Psomopoulos, Jennifer Harrow, Leyla Jael Castro, Morane Gruenpeter, Paula Andrea Martinez, and others. Introducing the fair principles for research software. Scientific Data, 9(1):622, 2022.">Barker <em>et al.</em>, 2022</a>, <a class="reference internal" href="references.html#id5">Hong <em>et al.</em>, 2022</a>, <a class="reference internal" href="references.html#id7" title="Anna-Lena Lamprecht, Leyla Garcia, Mateusz Kuzak, Carlos Martinez, Ricardo Arcila, Eva Martin Del Pico, Victoria Dominguez Del Angel, Stephanie Van De Sandt, Jon Ison, Paula Andrea Martinez, and others. Towards fair principles for research software. Data Science, 3(1):37–59, 2020.">Lamprecht <em>et al.</em>, 2020</a>]</span> aim to improve the sharing and reuse of research software, ultimately leading to more transparent, reproducible, and robust research. Developed by a collaborative effort from the Research Data Alliance, FORCE11, and Research Software Alliance, these principles provide a framework for researchers, developers, and other stakeholders to create and manage research software effectively.</p>
+<p>The FAIR4RS Principles (Findable, Accessible, Interoperable, and Reusable for Research Software) <span id="id6">[<a class="reference internal" href="references.html#id6" title="Michelle Barker, Neil P Chue Hong, Daniel S Katz, Anna-Lena Lamprecht, Carlos Martinez-Ortiz, Fotis Psomopoulos, Jennifer Harrow, Leyla Jael Castro, Morane Gruenpeter, Paula Andrea Martinez, and others. Introducing the fair principles for research software. Scientific Data, 9(1):622, 2022.">Barker <em>et al.</em>, 2022</a>, <a class="reference internal" href="references.html#id5">Hong <em>et al.</em>, 2022</a>, <a class="reference internal" href="references.html#id7" title="Anna-Lena Lamprecht, Leyla Garcia, Mateusz Kuzak, Carlos Martinez, Ricardo Arcila, Eva Martin Del Pico, Victoria Dominguez Del Angel, Stephanie Van De Sandt, Jon Ison, Paula Andrea Martinez, and others. Towards fair principles for research software. Data Science, 3(1):37–59, 2020.">Lamprecht <em>et al.</em>, 2020</a>]</span> aim to improve the sharing and reuse of research software, ultimately leading to more transparent, reproducible, and robust research. Developed by a collaborative effort from the Research Data Alliance, FORCE11, and Research Software Alliance, these principles provide a framework for researchers, developers, and other stakeholders to create and manage research software effectively.</p>
 <section id="key-points-of-the-fair4rs-principles">
 <h4>Key Points of the FAIR4RS Principles<a class="headerlink" href="#key-points-of-the-fair4rs-principles" title="Link to this heading">#</a></h4>
 <ul class="simple">
@@ -1016,6 +1069,7 @@ R3: Software meets domain-relevant community standards.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licenses">Licenses</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-software-licenses">Types of software licenses</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#permissive-licenses">Permissive licenses:</a></li>

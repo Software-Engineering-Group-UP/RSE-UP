@@ -14,7 +14,6 @@ and introduce a few ways to manage projects and teams as they develop.
 Our recommendations draw on {cite:p}`Foge2005`, which describes how good open source software projects are run, and on {cite:p}`Boll2014`, which explains what a **commons** is and when it's the right model to use.
 
 At this point, the Zipf's Law project should include:
-**TODO recheck directory** 
 ```text
 zipf/
 ├── .gitignore
@@ -22,10 +21,9 @@ zipf/
 ├── bin
 │   ├── book_summary.sh
 │   ├── collate.py
-│   ├── countwords.py
+│   ├── wordcount.py
 │   ├── plotcounts.py
-│   ├── script_template.py
-│   └── utilities.py
+│   ├── template.py
 ├── data
 │   ├── README.md
 │   ├── dracula.txt
@@ -91,7 +89,7 @@ More importantly, it is the right thing to do.
 > **Terminology**
 >
 > **Privilege** is an unearned advantage given to some people but not all,
-> while **oppression**is systemic inequality that benefits the privileged
+> while **oppression** is systemic inequality that benefits the privileged
 > and harms those without privilege {cite:p}`Auro2018`.
 > In Europe, the Americas, Australia, and New Zealand,
 > a straight, white, affluent, physically able male
@@ -296,8 +294,9 @@ the consequences of non-compliance,
 and the mechanics of reporting and handling violations.
 The third part is as important as the first two,
 since rules are meaningless without a method to enforce them;
-@Auro2018 is a short, practical guide that every project lead should read.
+{cite:p}`Auro2018` is a short, practical guide that every project lead should read.
 
+<!-->
 > **In-Person Events**
 >
 > The Contributor Covenant works well for interactions that are largely online,
@@ -309,62 +308,7 @@ since rules are meaningless without a method to enforce them;
 > it may already have Code of Conduct:
 > the Human Resources department is usually the most helpful place to ask.
 
-## Include a License 
-
-While a Code of Conduct describes how contributors should interact with each other, a license dictates how project materials can be used and redistributed.
-If the license or a publication agreement makes it difficult for people to contribute, the project is less likely to attract new members, so the choice of license is crucial to the project's long-term sustainability.
-
-> **Open Except...**
->
-> Projects that are only developing software may not have any problem making everything open.
-> Teams working with sensitive data, on the other hand,
-> must be careful to ensure that what should be private isn't inadvertently shared.
-> In particular,
-> people who are new to Git (and even people who aren't)
-> occasionally add raw data files containing personal identifying information to repositories.
-> It's possible to rewrite the project's history to remove things when this happens,
-> but that doesn't automatically erase copies people may have in forked repositories.
-
-Every creative work has some sort of license;
-the only question is whether authors and users know what it is and choose to enforce it.
-Choosing a license for a project can be complex,
-not least because the law hasn't kept up with everyday practice.
-{cite:p}`Mori2012` and {cite:p}`Vand2014` are good starting points
-to understand licensing and intellectual property from a researcher's point of view, while {cite:p}`Lind2008` is a deeper dive for those who want details.
-Depending on country, institution, and job role, most creative works are automatically eligible for intellectual property protection.
-However, members of the team may have different levels of copyright protection.
-For example, students and faculty may have a copyright on the research work they produce, but university staff members may not, since their employment agreement may state that what they create on the job belongs to their employer.
-
-To avoid legal messiness, every project should include an explicit license.
-This license should be chosen early, since changing a license can be complicated. For example, each collaborator may hold copyright on their work
-and therefore need to be asked for approval when a license is changed.
-Similarly, changing a license does not change it retroactively,
-so different users may wind up operating under different licensing structures.
-
-> **Leave It to the Professionals**
->
-> Don't write your own license.
-> Legalese is a highly technical language,
-> and words don't mean what you think they do.
-
-To make license selection for code as easy as possible,
-GitHub allows us to select one of several common software licenses when creating a repository.
-The Open Source Initiative maintains [a list](https://opensource.org/licenses) of **open licenses**,
-and [choosealicense.com](https://choosealicense.com/) will help us find a license that suits our needs. Some of the things we need to think about are:
-
-1.  Do we want to license the work at all?
-2.  Is the content we are licensing source code?
-3.  Do we require people distributing derivative works to also distribute their code?
-4.  Do we want to address patent rights?
-5.  Is our license compatible with the licenses of the software we depend on?
-6.  Do our institutions have any policies that may overrule our choices?
-7.  Are there any copyright experts within our institution who can assist us?
-
-Unfortunately,GitHub's list does not include common licenses for data or written works like papers and reports. 
-Those can be added in manually, but it's often hard to understand the interactions among multiple licenses on different kinds of material {cite:p}`Alme2017`.
-
-Just as the project's Code of Conduct is usually placed in a root-level file called `CONDUCT.md`, its license is usually put in a file called `LICENSE.md` that is also in the project's root directory.
-
+-->
 ### Software 
 
 In order to choose the right license for our software, we need to understand the difference between two kinds of license.
@@ -441,7 +385,7 @@ It does not negate the scholarly tradition and requirement of citing sources;
 it just doesn't make it a legal requirement.
 
 The next step up from CC-0 is the Creative Commons--Attribution license,
-usually referred to as **{CC-BY**.
+usually referred to as **CC-BY**.
 This allows people to do whatever they want to with the work as long as they cite the original source. 
 This is the best license to use for manuscripts: we want people to share them widely but also want to get credit for our work.
 
@@ -546,8 +490,7 @@ To write a good bug report:
     we could well fix the problem ourselves.
 
 2.  Try to come up with a **reproducible example** 
-    or "reprex"\index{reproducible example (reprex)}\index{reprex (reproducible example)}
-    that includes only the steps needed to make the problem happen,
+    or "reprex" that includes only the steps needed to make the problem happen,
     and that (if possible) uses simplified data rather than a complete dataset.
     Again,
     we can often solve the problem ourselves as we trim down the steps to create one.
@@ -563,7 +506,7 @@ To write a good bug report:
     the operating system we were running on,
     which version of the programming language we ran it with,
     and anything else that might affect behavior.
-    If the software in question uses a logging framework (Section **TODO** ref(errors-logging)),
+    If the software in question uses a logging framework in section [on error logging](https://software-engineering-group-up.github.io/RSE-UP/chapters/error_handling.html#reporting-errors),
     turn debugging output on and include it with the issue.
 
 6.  Describe each problem separately so that each one can be tackled on its own.
@@ -720,7 +663,7 @@ with smaller items,
 it's easier to see how much headway is being made.)
 
 To decide which issues to work on in the next sprint,
-a team can construct an impact/effort matrix**([ Figure teams impact/effor matrix](teams-impact-effort)).
+a team can construct an **impact/effort matrix**([ Figure teams impact/effor matrix](teams-impact-effort)).
 Impact measures how important the issue is to reaching the team's goals,
 and is typically measured on a low--medium--high scale.
 (Some teams use ratings from 1 to 10,
@@ -730,7 +673,7 @@ Since this can't always be estimated accurately,
 it's common to classify things as "an hour," "a day," or "multiple days."
 Again, anything that's likely to take longer than multiple days should be broken down so that planning and progress tracking can be more accurate.
 
-```{figure} ../figures/teams/effort-impact-matrix.pdf
+```{figure} ../figures/teams/effort-impact-matrix.png
 :name: teams-impact-effort
 Teams impact effort matrix
 ```
@@ -834,8 +777,7 @@ End early.
     aim to end at 10:50 to give people a break before whatever they're doing next.
 
 As soon as the meeting is over,
-circulate the minutes by emailing them to everyone\index{project!meeting minutes}\index{meetings!minutes}
-or adding a text file to the project's repository:
+circulate the minutes by emailing them to everyone or adding a text file to the project's repository:
 
 People who weren't at the meeting can follow what's going on.
 :   We all have to juggle tasks from several projects or courses,
@@ -868,7 +810,7 @@ People can be held accountable at subsequent meetings.
 One of the problems in a synchronous meeting
 is the tendency of some people to speak far more than others.
 Other meeting members may be so accustomed to this
-that they don't speak up even when they have valuable points to make.\index{meetings!how to run}
+that they don't speak up even when they have valuable points to make.
 
 One way to combat this is to give everyone **three sticky notes** at the start of the meeting.
 Every time they speak, they have to give up one sticky note.
@@ -926,7 +868,7 @@ in which everyone knows everyone else.
 Beyond that, groups need to spell out
 who has the authority to make which decisions
 and how to achieve consensus.
-In short, they need explicit **governance**. **Martha's Rules** } are a practical way to do this in groups of up to a few dozen members {cite:p}`Mina1986`:
+In short, they need explicit **governance**. **Martha's Rules**  are a practical way to do this in groups of up to a few dozen members {cite:p}`Mina1986`:
 
 1.  Before each meeting, anyone who wishes may sponsor a proposal.
     Proposals must be filed at least 24 hours before a meeting
