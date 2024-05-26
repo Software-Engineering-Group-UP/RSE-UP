@@ -270,18 +270,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows and Automation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/workflows.html">Introduction to Workflows</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="workflow.html">Introduction to Workflows</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Introduction to Make and Snakemake</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="snakemake_continued.html">Snakemake Continued</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="introduction/workflows.html">Introduction to Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction/automation.html">Introduction to Make and Snakemake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snakemake_continued.html">Snakemake Continued</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction/cicd.html">Introduction to CI/CD</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
@@ -496,8 +491,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-floating-point-values">Testing Floating-Point Values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-testing">Integration Testing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-testing">Regression Testing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coverage">Test Coverage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration-todo-move-section-to-workflow">Continuous Integration <strong>TODO</strong> MOVE SECTION TO WORKFLOW</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coverage">Test Coverage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration">Continuous Integration</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-write-tests">When to Write Tests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
@@ -519,24 +516,22 @@ document.write(`
 ├── CONDUCT.md
 ├── CONTRIBUTING.md
 ├── LICENSE.md
-├── Makefile
 ├── README.md
 ├── bin
-│   ├── book_summary.sh
 │   ├── collate.py
-│   ├── countwords.py
-│   ├── plotcounts.py
+│   ├── wordcount.py
+│   ├── plotcount.py
 │   ├── plotparams.yml
-│   ├── script_template.py
-│   └── utilities.py
+│   ├── template.py
+│   └── ...
 ├── data
 │   ├── README.md
 │   ├── dracula.txt
 │   └── ...
 └── results
-    ├── collated.csv
+    ├── collated.txt
     ├── collated.png
-    ├── dracula.csv
+    ├── dracula.txt
     ├── dracula.png
     └── ...
 </pre></div>
@@ -1259,12 +1254,12 @@ it’s probably enough to check that it handles tables with:</p>
 <li><p>rows having keys that are supposed to be unique, but aren’t</p></li>
 <li><p>rows that contain nothing but missing values</p></li>
 </ul>
-<p>Some projects develop <strong>checklists</strong>} like this one to remind programmers what they ought to test.
+<p>Some projects develop <strong>checklists</strong> like this one to remind programmers what they ought to test.
 These checklists can be a bit daunting for newcomers,
 but they are a great way to pass on hard-earned experience.</p>
-</section>
-<section id="continuous-integration-todo-move-section-to-workflow">
-<h2>Continuous Integration <strong>TODO</strong> MOVE SECTION TO WORKFLOW<a class="headerlink" href="#continuous-integration-todo-move-section-to-workflow" title="Link to this heading">#</a></h2>
+<!-->
+<section id="continuous-integration">
+<h3>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Link to this heading">#</a></h3>
 <p>Now that we have a set of tests,
 we could run <code class="docutils literal notranslate"><span class="pre">pytest</span></code> every now and again to check our code.
 This is probably sufficient for short-lived projects,
@@ -1272,7 +1267,7 @@ but if several people are involved,
 or if we are making changes over weeks or months,
 we might forget to run the tests
 or it might be difficult to identify which change is responsible for a test failure.</p>
-<p>The solution is <strong>continuous integration</strong> (CI),\index which runs tests automatically whenever a change is made.
+<p>The solution is <strong>continuous integration</strong> (CI), which runs tests automatically whenever a change is made.
 CI tells developers immediately if changes have caused problems,
 which makes them much easier to fix.
 CI can also be set up to run tests with several different configurations of the software
@@ -1409,7 +1404,9 @@ repository name
 </figure>
 <p>This example shows one of the other benefits of CI:
 it forces us to be explicit about what we are doing and how we do it,
-just as writing a Makefile forces us to be explicit about exactly how we produce results <span id="id2">[<a class="reference internal" href="references.html#id88" title="Fiorella Zampetti, Carmine Vassallo, Sebastiano Panichella, Gerardo Canfora, Harald Gall, and Massimiliano Di Penta. An Empirical Characterization of Bad Practices in Continuous Integration. Empirical Software Engineering, 25(2):1095–1135, Jan 2020. Presents and categorizes common errors in continuous integration. URL: https://doi.org/10.1007/s10664-019-09785-8, doi:10.1007/s10664-019-09785-8.">Zampetti <em>et al.</em>, 2020</a>]</span>.</p>
+just as writing a Makefile forces us to be explicit about exactly how we produce results <span id="id2">[<a class="reference internal" href="references.html#id88" title="Fiorella Zampetti, Carmine Vassallo, Sebastiano Panichella, Gerardo Canfora, Harald Gall, and Massimiliano Di Penta. An Empirical Characterization of Bad Practices in Continuous Integration. Empirical Software Engineering, 25(2):1095–1135, Jan 2020. Presents and categorizes common errors in continuous integration. URL: https://doi.org/10.1007/s10664-019-09785-8, doi:10.1007/s10664-019-09785-8.">Zampetti <em>et al.</em>, 2020</a>]</span>.
+–&gt;</p>
+</section>
 </section>
 <section id="when-to-write-tests">
 <h2>When to Write Tests<a class="headerlink" href="#when-to-write-tests" title="Link to this heading">#</a></h2>
@@ -1566,8 +1563,10 @@ and to make tolerances on “enough” explicit.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-floating-point-values">Testing Floating-Point Values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-testing">Integration Testing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-testing">Regression Testing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coverage">Test Coverage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration-todo-move-section-to-workflow">Continuous Integration <strong>TODO</strong> MOVE SECTION TO WORKFLOW</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coverage">Test Coverage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration">Continuous Integration</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-write-tests">When to Write Tests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>

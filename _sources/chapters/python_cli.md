@@ -11,7 +11,6 @@ zipf/
 │   ├── Wordcount.py
 │   ├── zipf_test.py
 │   ├── requirements.txt
-│   └── book_summary.sh **TODO** RECECK
 └── data
     ├── README.md
     ├── dracula.txt
