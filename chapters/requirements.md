@@ -4,10 +4,40 @@ The software development process typically consists of several central phases, w
 
 Here is a brief introduction to the central phases of the software development process:
 
+The Software Development Life Cycle (SDLC) is a structured process for planning, creating, testing, and deploying software. Here's a breakdown of the key phases, incorporating your requested points:
+
+1. Planning and Requirements Gathering:
+
+This initial phase is crucial for understanding and documenting the needs and expectations of all stakeholders, including clients, end-users, and other relevant parties. The goal is to define the software's functionality, features, and constraints in detail. This ensures the final product meets everyone's expectations.
+
+2. Analysis:
+
+Following requirements gathering, a thorough analysis takes place. This involves dissecting the collected information to identify the system's functionalities, user types, data needs, and potential interactions. This analysis lays the groundwork for the design phase.
+
+3. Design:
+
+With a clear understanding of the requirements, the system design phase begins.  Here, the overall architecture and structure of the software are planned. This includes high-level design decisions like choosing the technology stack, defining data structures, and outlining the software's components and modules.
+
+4. Implementation:
+
+This is where the development team translates the design specifications into functional code. Developers follow coding standards, best practices, and use the chosen programming languages to create the software.
+
+5. Testing and Integration:
+
+The software undergoes rigorous testing to ensure it meets the specified requirements and functions correctly. Various testing methods are employed, such as unit testing (individual components), integration testing (how components work together), and system testing (overall functionality). This phase identifies and fixes defects, guaranteeing the software's reliability.
+
+6. Maintenance:
+
+Once the software is deployed to a production environment for actual use, the work isn't over.  The maintenance phase involves addressing issues, bugs, and updates.  This includes providing support, troubleshooting problems, and releasing updates or patches to improve the software based on user feedback and evolving requirements.
+
+
+<!--
+TODO CREATE NEW IMAGE
 ```{figure} ../figures/app_classes/software_dev_phases.png
 :name: Software_dev_cycle
 Software Development Process
 ```
+
 
 
 1. Requirements Gathering:
@@ -36,6 +66,7 @@ This phase involves setting up the necessary infrastructure, configuring servers
 
 After deployment, ongoing maintenance is required to address issues, bugs, and updates. This phase involves providing support, troubleshooting, and releasing updates or patches to improve or enhance the software based on user feedback and changing requirements.
 
+-->
 ### Documentation
 
 Throughout the entire software development process, documentation is crucial. It includes requirements documents, design documents, and user manuals to provide clear guidelines for understanding, using, and maintaining the software.
@@ -106,9 +137,9 @@ Adaptability: Particularly useful for eliciting feedback on the design and user 
 
 ```{figure} ../figures/app_classes/mock_up.png
 :name: mock_up
-Porsche example mock up
+Web Desing example mock up
 ```
-_(image can be found [here](https://pixabay.com/de/illustrations/lamborghini-gallardo-lp-560-1651701/))_
+_(image can be found [here](https://www.appcues.com/blog/ui-mockups-and-tools))_
 
 - **Use Cases:**
 
@@ -188,44 +219,59 @@ Taxonomy of UML diagramming notations.. PLOS ONE. Figure.
 When it comes to capturing and analyzing requirements, several key UML diagrams play a crucial role:
 
 - **Use Case Diagrams**:
+*Purpose: Use case diagrams provide a high-level view of the system's functionality from the end-users' perspective.*
 
-Purpose: Use case diagrams provide a high-level view of the system's functionality from the end-users' perspective.
+*Content: They depict actors, representing external entities, and use cases, representing specific functionalities or features of the system.*
 
-Content: They depict actors, representing external entities, and use cases, representing specific functionalities or features of the system.
-
-Benefit for Requirements: Use case diagrams help identify and clarify user requirements by illustrating the interactions between users and the system, highlighting the main functionalities required.
+*Benefit for Requirements: Use case diagrams help identify and clarify user requirements by illustrating the interactions between users and the system, highlighting the main functionalities required.*
 
 - **Activity Diagrams:**
 
-Purpose: Activity diagrams model the flow of activities within a system, illustrating how different tasks are performed and how they relate to each other.
+*Purpose: Activity diagrams model the flow of activities within a system, illustrating how different tasks are performed and how they relate to each other.*
 
-Content: Nodes represent activities, and transitions depict the flow of control between them.
+*Content: Nodes represent activities, and transitions depict the flow of control between them.*
 
-Benefit for Requirements: Activity diagrams are useful for understanding the dynamic aspects of a system, helping to refine and elaborate on requirements by visualizing the sequence of actions and decision points.
+*Benefit for Requirements: Activity diagrams are useful for understanding the dynamic aspects of a system, helping to refine and elaborate on requirements by visualizing the sequence of actions and decision points.*
+
+UML Activity Diagrams are used to represent the conceptual workflow steps of a functionality, without specifying concrete tools or implementations. 
+These diagrams include activity nodes for each step and edges that illustrate the order of execution, dependencies, and conditional branchings. 
+Additional information, such as data, can also be incorporated. 
+They serve as a foundation for implementation in a workflow management system, like Snakemake. 
+Additionally, a plain text list of non-functional requirements should be considered in the process.
+
+```{figure} ../figures/app_classes/uml_workflow.png
+:name: UML_WORKFLOW
+.UML Workflow  Activity Diagramm [https://academic.oup.com/nar/article/40/7/2846/1187540](https://academic.oup.com/nar/article/40/7/2846/1187540)
+```
+
+And here you have an description on the connections between activities:
+ 
+```{figure} ../figures/app_classes/uml_meaning.png
+:name: UML_meaning
+Activity Diagram - Building Blocks - from [https://www.drawio.com/blog/uml-activity-diagrams](https://www.drawio.com/blog/uml-activity-diagrams)
+```
+
 
 - **Class Diagrams:**
 
-Purpose: Class diagrams provide a static view of the system, depicting the structure and relationships among classes.
+*Purpose: Class diagrams provide a static view of the system, depicting the structure and relationships among classes.*
 
-Content: Classes, attributes, and associations between classes are represented in class diagrams.
+*Content: Classes, attributes, and associations between classes are represented in class diagrams.*
 
-Benefit for Requirements: Class diagrams help in understanding the data and object-oriented aspects of the system, facilitating the identification and organization of key entities and their relationships.
+*Benefit for Requirements: Class diagrams help in understanding the data and object-oriented aspects of the system, facilitating the identification and organization of key entities and their relationships.*
 
 - **State Machine Diagrams:**
 
-Purpose: State machine diagrams model the behavior of a system in response to external stimuli, illustrating the different states a system can be in and the transitions between them.
+*Purpose: State machine diagrams model the behavior of a system in response to external stimuli, illustrating the different states a system can be in and the transitions between them.*
 
-Content: States, transitions, and events are key elements in state machine diagrams.
+*Content: States, transitions, and events are key elements in state machine diagrams.*
 
-Benefit for Requirements: State machine diagrams assist in capturing and refining the requirements related to the dynamic behavior of the system, particularly when the system's response depends on its current state.
-
+*Benefit for Requirements: State machine diagrams assist in capturing and refining the requirements related to the dynamic behavior of the system, particularly when the system's response depends on its current state.*
 - **Sequence Diagrams:**
 
-Purpose: Sequence diagrams focus on the interactions between objects over time, illustrating the order of messages exchanged between them.
-
-Content: Objects, lifelines, and messages are fundamental components of sequence diagrams.
-
-Benefit for Requirements: Sequence diagrams help in understanding the flow of communication and collaboration between different components of the system, aiding in the refinement and validation of requirements related to system interactions.
+*Purpose: Sequence diagrams focus on the interactions between objects over time, illustrating the order of messages exchanged between them.*
+*Content: Objects, lifelines, and messages are fundamental components of sequence diagrams.*
+*Benefit for Requirements: Sequence diagrams help in understanding the flow of communication and collaboration between different components of the system, aiding in the refinement and validation of requirements related to system interactions.*
 
 
 ## Where to put this in the repo?
