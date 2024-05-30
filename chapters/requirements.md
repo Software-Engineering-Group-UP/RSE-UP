@@ -245,7 +245,7 @@ Additionally, a plain text list of non-functional requirements should be conside
 ```
 
 And here you have an description on the connections between activities:
- 
+
 ```{figure} ../figures/app_classes/uml_meaning.png
 :name: UML_meaning
 Activity Diagram - Building Blocks - from [https://www.drawio.com/blog/uml-activity-diagrams](https://www.drawio.com/blog/uml-activity-diagrams)
@@ -270,7 +270,9 @@ Activity Diagram - Building Blocks - from [https://www.drawio.com/blog/uml-activ
 - **Sequence Diagrams:**
 
 *Purpose: Sequence diagrams focus on the interactions between objects over time, illustrating the order of messages exchanged between them.*
+
 *Content: Objects, lifelines, and messages are fundamental components of sequence diagrams.*
+
 *Benefit for Requirements: Sequence diagrams help in understanding the flow of communication and collaboration between different components of the system, aiding in the refinement and validation of requirements related to system interactions.*
 
 
