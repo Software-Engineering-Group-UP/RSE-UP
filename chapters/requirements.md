@@ -219,6 +219,7 @@ Taxonomy of UML diagramming notations.. PLOS ONE. Figure.
 When it comes to capturing and analyzing requirements, several key UML diagrams play a crucial role:
 
 - **Use Case Diagrams**:
+
 *Purpose: Use case diagrams provide a high-level view of the system's functionality from the end-users' perspective.*
 
 *Content: They depict actors, representing external entities, and use cases, representing specific functionalities or features of the system.*
@@ -267,6 +268,7 @@ Activity Diagram - Building Blocks - from [https://www.drawio.com/blog/uml-activ
 *Content: States, transitions, and events are key elements in state machine diagrams.*
 
 *Benefit for Requirements: State machine diagrams assist in capturing and refining the requirements related to the dynamic behavior of the system, particularly when the system's response depends on its current state.*
+
 - **Sequence Diagrams:**
 
 *Purpose: Sequence diagrams focus on the interactions between objects over time, illustrating the order of messages exchanged between them.*

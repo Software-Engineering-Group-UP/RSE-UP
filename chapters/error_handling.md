@@ -13,25 +13,26 @@ zipf/
 ├── README.md
 ├── requirements.txt
 ├── bin
-│   ├── book_summary.sh
-│   ├── collate.py
-│   ├── countwords.py
-│   ├── plotcounts.py
+│   ├── zipf.ipynb
+│   ├── plotcount.py
+│   ├── wordcount.py
+│   ├── zipf_test.py.py
 │   ├── plotparams.yml
-│   ├── script_template.py
-│   ├── test_zipfs.py
-│   └── utilities.py
+│   ├── template.py
+│   
 ├── data
-│   ├── README.md
 │   ├── dracula.txt
 │   └── ...
 ├── results
-│   ├── dracula.csv
+│   ├── dracula.txt
 │   ├── dracula.png
 │   └── ...
-└── test_data
-    ├── random_words.txt
-    └── risk.txt
+├── test_data
+│   ├── risk.txt
+│   └── ...
+├── test
+│   ├── test_countwords.txt
+│   └── ...
 ```
 
 ## Exceptions 
@@ -129,7 +130,6 @@ but an `except` that catches an `OverflowError`
 The Python documentation describes all of [the built-in exception types](https://docs.python.org/3/library/exceptions.html#exception-hierarchy);
 in practice,the ones that people handle most often are:
 
-\newpage
 
 -   `ArithmeticError`:
     something has gone wrong in a calculation.
@@ -205,7 +205,7 @@ if we try to read a file that does not exist,
 the `open` function throws a `FileNotFoundError`:
 
 ```bash
-$ python bin/collate.py results/none.csv results/dracula.csv
+$ python bin/collate.py results/none.txt results/dracula.txt
 ```
 
 ```text
@@ -219,7 +219,7 @@ FileNotFoundError: [Errno 2] No such file or directory:
 ```
 
 But what happens if we try to read a file that exists,
-but was not created by `countwords.py`?
+but was not created by `wordcount.py`?
 
 
 ```bash
@@ -250,7 +250,7 @@ for fname in args.infiles:
         with open(fname, 'r') as reader:
             update_counts(reader, word_counts)
     except ValueError as e:
-        print(f'{fname} is not a CSV file.')
+        print(f'{fname} is not a txt file.')
         print(f'ValueError: {e}')
 ```
 
@@ -259,7 +259,7 @@ $ python bin/collate.py Makefile
 ```
 
 ```text
-Makefile is not a CSV file.
+Makefile is not a txt file.
 ValueError: not enough values to unpack (expected 2, got 1)
 ```
 
@@ -273,8 +273,8 @@ only if some other kind of file is specified as an input:
 
 ```python
 for fname in args.infiles:
-    if fname[-4:] != '.csv':
-        raise OSError(f'{fname} is not a CSV file.')
+    if fname[-4:] != '.txt':
+        raise OSError(f'{fname} is not a txt file.')
     with open(fname, 'r') as reader:
         update_counts(reader, word_counts)
 ```
@@ -293,7 +293,7 @@ OSError: Makefile is not a CSV file.
 ```
 
 This approach is still not perfect:
-we are checking that the file's suffix is `.csv`
+we are checking that the file's suffix is `.txt`
 instead of checking the content of the file
 and confirming that it is what we require.
 What we *should* do is check that there are two columns separated by a comma,
@@ -343,7 +343,7 @@ OSError: Unsupported file type.
 This tells us the problem is with the type of file we're trying to process,
 but it still doesn't tell us what file types are supported,
 which means we have to rely on guesswork or read the source code.
-Telling the user "*filename* is not a CSV file"
+Telling the user "*filename* is not a TXT file"
 (as we did in the previous section)
 makes it clear that the program only works with CSV files,
 but since we don't actually check the content of the file,
@@ -351,7 +351,7 @@ this message could confuse someone who has comma-separated values saved in a `.t
 An even better message would therefore be:
 
 ```text
-OSError: File must end in .csv
+OSError: File must end in .txt
 ```
 
 This message tells us exactly what the criteria are to avoid the error.
@@ -403,15 +403,15 @@ That last suggestion deserves a little elaboration.
 Most people write error messages directly in their code:
 
 ```python
-if fname[-4:] != '.csv':
-    raise OSError(f'{fname}: File must end in .csv')
+if fname[-4:] != '.txt':
+    raise OSError(f'{fname}: File must end in .txt')
 ```
 
 A better approach is to put all the error messages in a dictionary:
 
 ```python
 ERRORS = {
-    'not_csv_suffix' : '{fname}: File must end in .csv',
+    'not_txt_suffix' : '{fname}: File must end in .txt',
     'config_corrupted' : '{config_name} corrupted',
     # ...more error messages...
     }
@@ -420,8 +420,8 @@ ERRORS = {
 and then only use messages from that dictionary:
 
 ```python
-if fname[-4:] != '.csv':
-    raise OSError(ERRORS['not_csv_suffix'].format(fname=fname))
+if fname[-4:] != '.txt':
+    raise OSError(ERRORS['not_txt_suffix'].format(fname=fname))
 ```
 
 Doing this makes it much easier to ensure that messages are consistent.
@@ -430,12 +430,12 @@ It also makes it much easier to give messages in the user's preferred language:
 ```python
 ERRORS = {
   'en' : {
-    'not_csv_suffix' : '{fname}: File must end in .csv',
+    'not_txt_suffix' : '{fname}: File must end in .txt',
     'config_corrupted' : '{config_name} corrupted',
     # ...more error messages in English...
   },
   'fr' : {
-    'not_csv_suffix' : '{fname}: Doit se terminer par .csv',
+    'not_txt_suffix' : '{fname}: Doit se terminer par .txt',
     'config_corrupted' : f'{config_name} corrompu',
     # ...more error messages in French...
   }
@@ -446,7 +446,7 @@ ERRORS = {
 The error report is then looked up and formatted as:
 
 ```python
-ERRORS[user_language]['not_csv_suffix'].format(fname=fname)
+ERRORS[user_language]['not_txt_suffix'].format(fname=fname)
 ```
 
 where `user_language` is a two-letter code for the user's preferred language.
@@ -538,8 +538,8 @@ if LOG_LEVEL >= 0:
 for fname in args.infiles:
     if LOG_LEVEL >= 1:
         print(f'Reading in {fname}...')
-    if fname[-4:] != '.csv':
-        msg = ERRORS['not_csv_suffix'].format(fname=fname)
+    if fname[-4:] != '.txt':
+        msg = ERRORS['not_txt_suffix'].format(fname=fname)
         raise OSError(msg)
     with open(fname, 'r') as reader:
         if LOG_LEVEL >= 1:
@@ -598,8 +598,8 @@ import logging
 logging.info('Processing files...')
 for fname in args.infiles:
     logging.debug(f'Reading in {fname}...')
-    if fname[-4:] != '.csv':
-        msg = ERRORS['not_csv_suffix'].format(fname=fname)
+    if fname[-4:] != '.txt':
+        msg = ERRORS['not_txt_suffix'].format(fname=fname)
         raise OSError(msg)
     with open(fname, 'r') as reader:
         logging.debug('Computing word counts...')
