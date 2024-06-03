@@ -492,10 +492,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-floating-point-values">Testing Floating-Point Values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-testing">Integration Testing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-testing">Regression Testing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coverage">Test Coverage</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration">Continuous Integration</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coverage">Test Coverage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-write-tests">When to Write Tests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
@@ -1256,156 +1253,6 @@ it’s probably enough to check that it handles tables with:</p>
 <p>Some projects develop <strong>checklists</strong> like this one to remind programmers what they ought to test.
 These checklists can be a bit daunting for newcomers,
 but they are a great way to pass on hard-earned experience.</p>
-<!-->
-<section id="continuous-integration">
-<h3>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Link to this heading">#</a></h3>
-<p>Now that we have a set of tests,
-we could run <code class="docutils literal notranslate"><span class="pre">pytest</span></code> every now and again to check our code.
-This is probably sufficient for short-lived projects,
-but if several people are involved,
-or if we are making changes over weeks or months,
-we might forget to run the tests
-or it might be difficult to identify which change is responsible for a test failure.</p>
-<p>The solution is <strong>continuous integration</strong> (CI), which runs tests automatically whenever a change is made.
-CI tells developers immediately if changes have caused problems,
-which makes them much easier to fix.
-CI can also be set up to run tests with several different configurations of the software
-or on several different operating systems,
-so that a programmer using Windows
-can be warned that a change breaks things for Mac users and vice versa.</p>
-<p>One popular CI tool is <strong>Travis CI</strong>, which integrates well with
-<strong>GitHub</strong>. If Travis CI has been set up,
-then every time a change is committed to a GitHub repository,
-Travis CI creates a fresh environment,
-makes a fresh clone of the repository (<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/git_advanced.html#using-other-people-s-work">Section on working with others work</a>),
-and runs whatever commands the project’s managers have set up.</p>
-<p>Before setting up our account with Travis CI, however,
-we need to prepare our repository to be recognized by the tool.
-We’ll first add a file called <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code> to our repository,
-which includes instructions for Travis CI.
-(The leading <code class="docutils literal notranslate"><span class="pre">.</span></code> in the name hides the file from casual listings on Mac or Linux,
-but not on Windows.)
-This file must be in the root directory of the repository,
-and is written in <strong>YAML</strong>
-(<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/configuration.html#configuration-file-formats">Section config formats</a> and Appendix <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/yaml.html">YAML</a>.
-For our project,
-we add the following lines:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span>
-
-<span class="nt">python</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;3.6&quot;</span>
-
-<span class="nt">install</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
-
-<span class="nt">script</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pytest</span>
-</pre></div>
-</div>
-<blockquote>
-<div><p><strong>Python 3.6?</strong></p>
-<p>An early draft of the book used Python 3.6,
-and we later updated to 3.7.
-Over the life of a real project,
-software versions change,
-and it’s not always feasible or possible to re-do all parts of the project.
-In this case,
-our first build in Travis CI used Python 3.6,
-so that’s what we’ve shown here,
-and later checked that updating to 3.7 didn’t break anything.
-We can’t expect our software will be perfect the first time around,
-but we can do our best to document what’s changed and confirm
-our results are still accurate.</p>
-</div></blockquote>
-<p>The <code class="docutils literal notranslate"><span class="pre">language</span></code> key tells Travis CI which programming language to use,
-so that it knows which of its standard <strong>virtual machines</strong> to use as a starting point for the project.
-The <code class="docutils literal notranslate"><span class="pre">python</span></code> key specifies the version or versions of Python to use,
-while the <code class="docutils literal notranslate"><span class="pre">install</span></code> key indicates the name of the file (<code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>)
-listing the libraries that need to be installed.
-The <code class="docutils literal notranslate"><span class="pre">script</span></code> key lists the commands to run—in this case, <code class="docutils literal notranslate"><span class="pre">pytest</span></code>—which
-in turn executes our project scripts
-(i.e., <code class="docutils literal notranslate"><span class="pre">test_zipfs.py</span></code>, <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>, <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code> and <code class="docutils literal notranslate"><span class="pre">utilities.py</span></code>).
-These scripts import a number of packages that don’t come with the
-<a class="reference external" href="https://docs.python.org/3/library/">Python Standard Library</a>,
-so these are what comprise <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>numpy
-pandas
-matplotlib
-scipy
-pytest
-pyyaml
-</pre></div>
-</div>
-<p>Be sure to save both <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code>
-to your project’s root directory,
-commit to your repository,
-and push to GitHub,
-or Travis CI will not be able to recognize your project.</p>
-<p>We’re now ready to set up CI for our project.
-The basic steps are as follows:</p>
-<ol class="arabic simple">
-<li><p>Create an account on <strong>Travis CLI</strong> (if we don’t already have one).</p></li>
-<li><p>Link our Travis CI account to our GitHub account (if we haven’t done so already).</p></li>
-<li><p>Tell Travis CI to watch the repository that contains our project.</p></li>
-</ol>
-<p>Creating an account with an online service is probably a familiar process,
-but linking our Travis CI account to our GitHub account may be something new.
-We only have to do this once
-to allow Travis CI to access all our GitHub repositories,
-but we should always be careful when giving sites access to other sites,
-and only trust well-established and widely used services.</p>
-<p>We can tell Travis CI which repository we want it to watch
-by clicking the “+” next to the “My Repositories” link
-on the left-hand side of the Travis CI homepage (<a class="reference internal" href="#testing-add-repo"><span class="std std-ref">Figure Travis adding a repo</span></a>).</p>
-<figure class="align-default" id="testing-add-repo">
-<img alt="../_images/travis-add-repo.png" src="../_images/travis-add-repo.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 65 </span><span class="caption-text">Travis Adding a repo</span><a class="headerlink" href="#testing-add-repo" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>To add the GitHub repository we have been using throughout this book,
-find it in the repository list
-(<a class="reference internal" href="#testing-list-repos"><span class="xref myst">Figure listing repos</span></a>).
-If the repository doesn’t show up,
-re-synchronize the list using the green “Sync account” button on the left sidebar.
-If it still doesn’t appear,
-the repository may belong to someone else or be private,
-or your required files may be incorrect.
-Click the “Trigger a build” button to initiate your first test using Travis CI.</p>
-<figure class="align-default" id="testing-list-repo">
-<img alt="../_images/travis-list-repos.png" src="../_images/travis-list-repos.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 66 </span><span class="caption-text">List repos</span><a class="headerlink" href="#testing-list-repo" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Once your repository has been activated,
-Travis CI follows the instructions in <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code>
-and reports whether the build passed (shown in green)
-or produced warnings or errors (shown in red).
-To create this report, Travis CI has done the following:</p>
-<ol class="arabic simple">
-<li><p>Created a new Linux virtual machine.</p></li>
-<li><p>Installed the desired version of Python.</p></li>
-<li><p>Run the commands below the <code class="docutils literal notranslate"><span class="pre">script</span></code> key.</p></li>
-<li><p>Reported the results at <code class="docutils literal notranslate"><span class="pre">https://travis-ci.com/USER/REPO</span></code>,
-where <code class="docutils literal notranslate"><span class="pre">USER/REPO</span></code>
-identifies the repository for a given user.</p></li>
-</ol>
-<p>Our tests pass and the build completes successfully.
-We can view additional details about the test by clicking on the
-repository name
-(<a class="reference internal" href="#testing-build-pass"><span class="std std-ref">Figure Build pass</span></a>).</p>
-<figure class="align-default" id="testing-build-pass">
-<img alt="../_images/travis-build-pass.png" src="../_images/travis-build-pass.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 67 </span><span class="caption-text">Build pass</span><a class="headerlink" href="#testing-build-pass" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>This example shows one of the other benefits of CI:
-it forces us to be explicit about what we are doing and how we do it,
-just as writing a Makefile forces us to be explicit about exactly how we produce results <span id="id2">[<a class="reference internal" href="references.html#id88" title="Fiorella Zampetti, Carmine Vassallo, Sebastiano Panichella, Gerardo Canfora, Harald Gall, and Massimiliano Di Penta. An Empirical Characterization of Bad Practices in Continuous Integration. Empirical Software Engineering, 25(2):1095–1135, Jan 2020. Presents and categorizes common errors in continuous integration. URL: https://doi.org/10.1007/s10664-019-09785-8, doi:10.1007/s10664-019-09785-8.">Zampetti <em>et al.</em>, 2020</a>]</span>.
-–&gt;</p>
-</section>
 </section>
 <section id="when-to-write-tests">
 <h2>When to Write Tests<a class="headerlink" href="#when-to-write-tests" title="Link to this heading">#</a></h2>
@@ -1431,7 +1278,7 @@ instead of trying to uncover errors.</p></li>
 </ol>
 <p>These arguments are plausible.
 However,
-studies such as <span id="id3">[<a class="reference internal" href="references.html#id36" title="Davide Fucci, Giuseppe Scanniello, Simone Romano, Martin Shepperd, Boyce Sigweni, Fernando Uyaguari, Burak Turhan, Natalia Juristo, and Markku Oivo. An External Replication on the Effects of Test-driven Development Using a Multi-site Blind Analysis Approach. In Proc. 10th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM'16). ACM Press, 2016. The latest in a long line of studies to find that test-driven development (TDD) has little or no impact on development time or code quality. doi:10.1145/2961111.2962592.">Fucci <em>et al.</em>, 2016</a>]</span> and <span id="id4">[<a class="reference internal" href="references.html#id37" title="Davide Fucci, Hakan Erdogmus, Burak Turhan, Markku Oivo, and Natalia Juristo. A Dissection of the Test-Driven Development Process: Does It Really Matter to Test-First or to Test-Last? IEEE Transactions on Software Engineering, 43(7):597-614, Jul 2017. An evidence-based look at whether writing tests first produces better code faster. doi:10.1109/tse.2016.2616877.">Fucci <em>et al.</em>, 2017</a>]</span> don’t support them:
+studies such as <span id="id2">[<a class="reference internal" href="references.html#id36" title="Davide Fucci, Giuseppe Scanniello, Simone Romano, Martin Shepperd, Boyce Sigweni, Fernando Uyaguari, Burak Turhan, Natalia Juristo, and Markku Oivo. An External Replication on the Effects of Test-driven Development Using a Multi-site Blind Analysis Approach. In Proc. 10th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM'16). ACM Press, 2016. The latest in a long line of studies to find that test-driven development (TDD) has little or no impact on development time or code quality. doi:10.1145/2961111.2962592.">Fucci <em>et al.</em>, 2016</a>]</span> and <span id="id3">[<a class="reference internal" href="references.html#id37" title="Davide Fucci, Hakan Erdogmus, Burak Turhan, Markku Oivo, and Natalia Juristo. A Dissection of the Test-Driven Development Process: Does It Really Matter to Test-First or to Test-Last? IEEE Transactions on Software Engineering, 43(7):597-614, Jul 2017. An evidence-based look at whether writing tests first produces better code faster. doi:10.1109/tse.2016.2616877.">Fucci <em>et al.</em>, 2017</a>]</span> don’t support them:
 in practice,
 writing tests first or last doesn’t appear to affect productivity.
 What <em>does</em> have an impact is working in small, interleaved increments,
@@ -1468,7 +1315,7 @@ runnable assertions can’t fall out of step with what the code is actually doin
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>Testing data analysis pipelines is often harder than testing mainstream software applications,
-since data analysts often don’t know what the right answer is [<span id="id5">[<a class="reference internal" href="references.html#id20" title="Houssem Ben Braiek and Foutse Khomh. On Testing Machine Learning Programs. 2018. Looks at how developers (don't) test machine learning programs. URL: https://arxiv.org/abs/1812.02257.">Braiek and Khomh, 2018</a>]</span>].
+since data analysts often don’t know what the right answer is [<span id="id4">[<a class="reference internal" href="references.html#id20" title="Houssem Ben Braiek and Foutse Khomh. On Testing Machine Learning Programs. 2018. Looks at how developers (don't) test machine learning programs. URL: https://arxiv.org/abs/1812.02257.">Braiek and Khomh, 2018</a>]</span>].
 (If we did,
 we would have submitted our report and moved on to the next problem already.)
 The key distinction is the difference between <strong>validation</strong>,
@@ -1562,10 +1409,7 @@ and to make tolerances on “enough” explicit.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-floating-point-values">Testing Floating-Point Values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-testing">Integration Testing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-testing">Regression Testing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coverage">Test Coverage</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration">Continuous Integration</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coverage">Test Coverage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-write-tests">When to Write Tests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
