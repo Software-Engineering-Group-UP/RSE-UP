@@ -628,7 +628,7 @@ that would be more difficult to interpret/debug.</p>
     <span class="k">return</span> <span class="n">alpha</span>
 </pre></div>
 </div>
-<p>Update <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> with the assertion described above.
+<p>Update <code class="docutils literal notranslate"><span class="pre">plotcount.py</span></code> with the assertion described above.
 You’ll see additional examples of assertions throughout this chapter.</p>
 </section>
 <section id="unit-testing">
@@ -640,19 +640,23 @@ a <strong>unit test</strong> checks the correctness of a single unit of software
 Exactly what constitutes a “unit” is subjective,
 but it typically means the behavior of a single function in one situation.
 In our Zipf’s Law software,
-the <code class="docutils literal notranslate"><span class="pre">count_words</span></code> function in <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code> is
+the <code class="docutils literal notranslate"><span class="pre">count_words</span></code> function in <code class="docutils literal notranslate"><span class="pre">wordcount.py</span></code> is
 a good candidate for unit testing:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_words</span><span class="p">(</span><span class="n">reader</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Count the occurrence of each word in a string.&quot;&quot;&quot;</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="n">chunks</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-    <span class="n">npunc</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">chunks</span><span class="p">]</span>
-    <span class="n">word_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">npunc</span> <span class="k">if</span> <span class="n">word</span><span class="p">]</span>
-    <span class="n">word_counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">word_list</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">word_counts</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">word_count</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load a file, calculate the frequencies of each word in the file and</span>
+<span class="sd">    save in a new file the words, counts and percentages of the total  in</span>
+<span class="sd">    descending order. Only words whose length is &gt;= min_length are</span>
+<span class="sd">    included.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">load_text</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">calculate_word_counts</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="n">sorted_counts</span> <span class="o">=</span> <span class="n">word_count_dict_to_tuples</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+    <span class="n">sorted_counts</span> <span class="o">=</span> <span class="n">filter_word_counts</span><span class="p">(</span><span class="n">sorted_counts</span><span class="p">,</span> <span class="n">min_length</span><span class="p">)</span>
+    <span class="n">percentage_counts</span> <span class="o">=</span> <span class="n">calculate_percentages</span><span class="p">(</span><span class="n">sorted_counts</span><span class="p">)</span>
+    <span class="n">save_word_counts</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="n">percentage_counts</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>\newpage</p>
 <p>A single unit test will typically have:</p>
 <ul class="simple">
 <li><p>a <strong>fixture</strong>,
@@ -699,12 +703,11 @@ to blossom.
 <p>We then generate the actual result by calling <code class="docutils literal notranslate"><span class="pre">count_words</span></code>,
 and use an assertion to check if it is what we expected:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;/Users/amira/zipf/bin&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">countwords</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;/LOCATION/.../zipf/bin&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">wordcount</span>
 
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test_data/risk.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
-    <span class="n">actual_result</span> <span class="o">=</span> <span class="n">countwords</span><span class="o">.</span><span class="n">count_words</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">wordcount</span><span class="o">.</span><span class="n">load_text</span><span class="p">(</span><span class="n">test_data</span><span class="o">/</span><span class="n">risk</span><span class="o">.</span><span class="n">txt</span><span class="p">)</span>
+<span class="n">actual_result</span> <span class="o">=</span> <span class="n">wordcount</span><span class="o">.</span><span class="n">calculate_word_counts</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">actual_result</span> <span class="o">==</span> <span class="n">expected_result</span>
 </pre></div>
 </div>
@@ -737,11 +740,11 @@ The most widely used test framework for Python is called <a class="reference ext
 <li><p>These functions use <code class="docutils literal notranslate"><span class="pre">assert</span></code> to check results.</p></li>
 </ol>
 <p>Following these rules,
-we can create a <code class="docutils literal notranslate"><span class="pre">test_zipfs.py</span></code> script in your <code class="docutils literal notranslate"><span class="pre">bin</span></code> directory
+we can create a <code class="docutils literal notranslate"><span class="pre">test_wordcount.py</span></code> script in your newly created <code class="docutils literal notranslate"><span class="pre">test</span></code> directory
 that contains the test we just developed:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 
-<span class="kn">import</span> <span class="nn">countwords</span>
+<span class="kn">import</span> <span class="nn">wordcount</span>
 
 
 <span class="k">def</span> <span class="nf">test_word_count</span><span class="p">():</span>
@@ -755,8 +758,8 @@ that contains the test we just developed:</p>
       <span class="s1">&#39;more&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;painful&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;than&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;it&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;took&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s1">&#39;blossom&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
     <span class="n">expected_result</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">risk_poem_counts</span><span class="p">)</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test_data/risk.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
-        <span class="n">actual_result</span> <span class="o">=</span> <span class="n">countwords</span><span class="o">.</span><span class="n">count_words</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">wordcount</span><span class="o">.</span><span class="n">load_text</span><span class="p">(</span><span class="n">test_data</span><span class="o">/</span><span class="n">risk</span><span class="o">.</span><span class="n">txt</span><span class="p">)</span>
+    <span class="n">actual_result</span> <span class="o">=</span> <span class="n">wordcount</span><span class="o">.</span><span class="n">calculate_word_counts</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">actual_result</span> <span class="o">==</span> <span class="n">expected_result</span>
 </pre></div>
 </div>
@@ -771,25 +774,24 @@ we can use the command <code class="docutils literal notranslate"><span class="p
 </pre></div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>==================== test session starts ======================
-platform darwin -- Python 3.7.6, pytest-6.2.0, py-1.10.0,
-pluggy-0.13.1
-rootdir: /Users/amira
+platform linux -- Python 3.12.3, pytest-7.4.3, pluggy-1.5.0
+rootdir: /home/nibe/PROJECTS/zipf/
 collected 1 item
 
-bin/test_zipfs.py .                                     [100%]
+test/test_word_count.py  .                                     [100%]
 
 ===================== 1 passed in 0.02s =======================
 </pre></div>
 </div>
+<p><strong>HINT</strong>: it is good practice to run pytest from the root directory, especially when tests have to access files. Running the test from the root directory allows a more straightforward path management.</p>
 <p>To add more tests,
-we simply write more <code class="docutils literal notranslate"><span class="pre">test_</span></code> functions in <code class="docutils literal notranslate"><span class="pre">test_zipfs.py</span></code>.
+we simply write more <code class="docutils literal notranslate"><span class="pre">test_</span></code> functions in <code class="docutils literal notranslate"><span class="pre">test_wordcount.py</span></code>.
 For instance,
 besides counting words,
 the other critical part of our code is the calculation of the <span class="math notranslate nohighlight">\(\alpha\)</span> parameter.
 Earlier we defined a power law relating <span class="math notranslate nohighlight">\(\alpha\)</span>
 to the word frequency <span class="math notranslate nohighlight">\(f\)</span>,
-the word rank <span class="math notranslate nohighlight">\(r\)</span>,
-and a constant of proportionality <span class="math notranslate nohighlight">\(c\)</span> (<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/configuration.html#configuration-file-formats">Section Git advanced</a>):</p>
+the word rank <span class="math notranslate nohighlight">\(r\)</span>, and a constant of proportionality <span class="math notranslate nohighlight">\(c\)</span> :</p>
 <p><span class="math notranslate nohighlight">\(
 r = cf^{\frac{-1}{\alpha}}
 \)</span></p>
@@ -818,15 +820,15 @@ with a constant of proportionality set to a hypothetical maximum word frequency 
 </div>
 <p>(We use <code class="docutils literal notranslate"><span class="pre">np.floor</span></code> to round down to the nearest whole number,
 because we can’t have fractional word counts.)
-Passing this test fixture to <code class="docutils literal notranslate"><span class="pre">get_power_law_params</span></code> in <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>
+Passing this test fixture to <code class="docutils literal notranslate"><span class="pre">get_power_law_params</span></code> in <code class="docutils literal notranslate"><span class="pre">plotcount.py</span></code>
 should give us a value of 1.0.
-To test this, we can add a second test to <code class="docutils literal notranslate"><span class="pre">test_zipfs.py</span></code>:</p>
+To test this, we can add a second test to <code class="docutils literal notranslate"><span class="pre">test_countwords.py</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">import</span> <span class="nn">plotcounts</span>
-<span class="kn">import</span> <span class="nn">countwords</span>
+<span class="kn">import</span> <span class="nn">plotcount</span>
+<span class="kn">import</span> <span class="nn">wordcount</span>
 
 
 <span class="k">def</span> <span class="nf">test_alpha</span><span class="p">():</span>
@@ -844,7 +846,7 @@ To test this, we can add a second test to <code class="docutils literal notransl
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">max_freq</span> <span class="o">=</span> <span class="mi">600</span>
     <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">max_freq</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_freq</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
-    <span class="n">actual_alpha</span> <span class="o">=</span> <span class="n">plotcounts</span><span class="o">.</span><span class="n">get_power_law_params</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+    <span class="n">actual_alpha</span> <span class="o">=</span> <span class="n">plotcount</span><span class="o">.</span><span class="n">get_power_law_params</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
     <span class="n">expected_alpha</span> <span class="o">=</span> <span class="mf">1.0</span>
     <span class="k">assert</span> <span class="n">actual_alpha</span> <span class="o">==</span> <span class="n">expected_alpha</span>
 
@@ -857,41 +859,42 @@ To test this, we can add a second test to <code class="docutils literal notransl
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pytest
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>==================== test session starts ======================
-platform darwin -- Python 3.7.6, pytest-6.2.1, py-1.10.0,
-pluggy-0.13.1
-rootdir: /Users/amira
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zipf on  main [✘!?] took 19s
+✦ ❯ pytest
+================================================================================================ test session starts ================================================================================================
+platform linux -- Python 3.12.3, pytest-7.4.3, pluggy-1.5.0
+rootdir: /home/nibe/PROJECTS/zipf
 collected 2 items
 
-bin/test_zipfs.py F.                                    [100%]
+test/test_word_count.py  F.                                                                                                                                                                                    [100%]
 
-========================== FAILURES ===========================
-_________________________ test_alpha __________________________
+===================================================================================================== FAILURES ======================================================================================================
+____________________________________________________________________________________________________ test_alpha _____________________________________________________________________________________________________
 
-  def test_alpha():
-      &quot;&quot;&quot;Test the calculation of the alpha parameter.
-    
-      The test word counts satisfy the relationship,
-        r = cf**(-1/alpha), where
-        r is the rank,
-        f the word count, and
-        c is a constant of proportionality.
-    
-      To generate test word counts for an expected alpha of
-        1.0, a maximum word frequency of 600 is used
-        (i.e. c = 600 and r ranges from 1 to 600)
-      &quot;&quot;&quot;
-      max_freq = 600
-      counts = np.floor(max_freq / np.arange(1, max_freq + 1))
-      actual_alpha = plotcounts.get_power_law_params(counts)
-      expected_alpha = 1.0
-&gt;     assert actual_alpha == expected_alpha
-E     assert 0.9951524579316625 == 1.0
+    def test_alpha():
+        &quot;&quot;&quot;Test the calculation of the alpha parameter.
 
-bin/test_zipfs.py:26: AssertionError
-=================== short test summary info ===================
-FAILED bin/test_zipfs.py::test_alpha - assert 0.99515246 == 1.0
-================= 1 failed, 1 passed in 3.98s =================
+        The test word counts satisfy the relationship,
+          r = cf**(-1/alpha), where
+          r is the rank,
+          f the word count, and
+          c is a constant of proportionality.
+
+        To generate test word counts for an expected alpha of
+          1.0, a maximum word frequency of 600 is used
+          (i.e. c = 600 and r ranges from 1 to 600)
+        &quot;&quot;&quot;
+        max_freq = 600
+        counts = np.floor(max_freq / np.arange(1, max_freq + 1))
+        actual_alpha = plotcount.get_power_law_params(counts)
+        expected_alpha = 1.0
+&gt;       assert actual_alpha == expected_alpha
+E       assert 0.9951524579316625 == 1.0
+
+test/test_countwords.py:27: AssertionError
+============================================================================================== short test summary info ==============================================================================================
+FAILED test/test_countwords.py::test_alpha - assert 0.9951524579316625 == 1.0
+============================================================================================ 1 failed, 1 passed in 0.62s ===========================================================================================
 </pre></div>
 </div>
 <p>The output tells us that one test failed but the other test passed.
@@ -981,12 +984,11 @@ both tests now pass:</p>
 </pre></div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>==================== test session starts ======================
-platform darwin -- Python 3.7.6, pytest-6.2.0, py-1.10.0,
-pluggy-0.13.1
-rootdir: /Users/amira
+platform linux -- Python 3.12.3, pytest-7.4.3, pluggy-1.5.0
+rootdir: /home/nibe/PROJECTS/zipf
 collected 2 items
 
-bin/test_zipfs.py ..                                    [100%]
+btest/test_word_count.py  ..                                    [100%]
 
 ===================== 2 passed in 0.69s =======================
 </pre></div>
@@ -1044,7 +1046,7 @@ with a frequency distribution that corresponds to an <span class="math notransla
 <span class="n">random_words</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">getList</span><span class="p">(</span><span class="n">num_of_words</span><span class="o">=</span><span class="n">max_freq</span><span class="p">)</span>
 <span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test_data/random_words.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_freq</span><span class="p">):</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">word_counts</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">calculate_word_counts</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
     <span class="n">word_sequence</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">random_words</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="si">}</span><span class="s1"> &#39;</span> <span class="o">*</span> <span class="n">count</span>
     <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">word_sequence</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -1061,13 +1063,13 @@ DGLpfTIitu
 KALSfPkrga
 </pre></div>
 </div>
-<p>We can then add this integration test to <code class="docutils literal notranslate"><span class="pre">test_zipfs.py</span></code>:</p>
+<p>We can then add this integration test to <code class="docutils literal notranslate"><span class="pre">test_wordcount.py</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_integration</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Test the full word count to alpha parameter workflow.&quot;&quot;&quot;</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test_data/random_words.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
-        <span class="n">word_counts_dict</span> <span class="o">=</span> <span class="n">countwords</span><span class="o">.</span><span class="n">count_words</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+        <span class="n">word_counts_dict</span> <span class="o">=</span> <span class="n">countwords</span><span class="o">.</span><span class="n">calculate_word_counts</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
     <span class="n">counts_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">word_counts_dict</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
-    <span class="n">actual_alpha</span> <span class="o">=</span> <span class="n">plotcounts</span><span class="o">.</span><span class="n">get_power_law_params</span><span class="p">(</span><span class="n">counts_array</span><span class="p">)</span>
+    <span class="n">actual_alpha</span> <span class="o">=</span> <span class="n">plotcount</span><span class="o">.</span><span class="n">get_power_law_params</span><span class="p">(</span><span class="n">counts_array</span><span class="p">)</span>
     <span class="n">expected_alpha</span> <span class="o">=</span> <span class="n">pytest</span><span class="o">.</span><span class="n">approx</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">abs</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">actual_alpha</span> <span class="o">==</span> <span class="n">expected_alpha</span>
 </pre></div>
@@ -1078,12 +1080,11 @@ we re-run <code class="docutils literal notranslate"><span class="pre">pytest</s
 </pre></div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>===================== test session starts =====================
-platform darwin -- Python 3.7.6, pytest-6.2.0, py-1.10.0,
-pluggy-0.13.1
-rootdir: /Users/amira
+platform linux -- Python 3.12.3, pytest-7.4.3, pluggy-1.5.0
+rootdir: /home/nibe/PROJECTS/zipf
 collected 3 items
 
-bin/test_zipfs.py ...                                   [100%]
+test/test_word_count.py ...                               [100%]
 
 ======================= 3 passed in 0.48s =====================
 </pre></div>
@@ -1113,7 +1114,7 @@ Let’s use that value to add a regression test to <code class="docutils literal
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_regression</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Regression test for Dracula.&quot;&quot;&quot;</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/dracula.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
-        <span class="n">word_counts_dict</span> <span class="o">=</span> <span class="n">countwords</span><span class="o">.</span><span class="n">count_words</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+        <span class="n">word_counts_dict</span> <span class="o">=</span> <span class="n">countwords</span><span class="o">.</span><span class="n">calculate_word_countss</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
     <span class="n">counts_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">word_counts_dict</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
     <span class="n">actual_alpha</span> <span class="o">=</span> <span class="n">plotcounts</span><span class="o">.</span><span class="n">get_power_law_params</span><span class="p">(</span><span class="n">counts_array</span><span class="p">)</span>
     <span class="n">expected_alpha</span> <span class="o">=</span> <span class="n">pytest</span><span class="o">.</span><span class="n">approx</span><span class="p">(</span><span class="mf">1.087</span><span class="p">,</span> <span class="nb">abs</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
@@ -1124,9 +1125,8 @@ Let’s use that value to add a regression test to <code class="docutils literal
 </pre></div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>===================== test session starts =====================
-platform darwin -- Python 3.7.6, pytest-6.2.0, py-1.10.0,
-pluggy-0.13.1
-rootdir: /Users/amira
+platform linux -- Python 3.12.3, pytest-7.4.3, pluggy-1.5.0
+rootdir: /home/nibe/PROJECTS/zipf
 collected 4 items
 
 bin/test_zipfs.py ....                                  [100%]
@@ -1153,12 +1153,11 @@ we can use it to run <code class="docutils literal notranslate"><span class="pre
 </pre></div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>===================== test session starts =====================
-platform darwin -- Python 3.7.6, pytest-6.2.0, py-1.10.0,
-pluggy-0.13.1
-rootdir: /Users/amira
+platform linux -- Python 3.12.3, pytest-7.4.3, pluggy-1.5.0
+rootdir: /home/nibe/PROJECTS/zipf
 collected 4 items
 
-bin/test_zipfs.py ....                                  [100%]
+bin/test_countwords.py ....                                  [100%]
 
 ====================== 4 passed in 0.72s ======================
 </pre></div>
@@ -1172,17 +1171,16 @@ we run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>coverage<span class="w"> </span>report<span class="w"> </span>-m
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bin/countwords.py      20      7    65%   25-26, 30-38
-bin/plotcounts.py      58     37    36%   48-55, 75-77, 82-83, 
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bin/wordcount.py      20      7    65%   25-26, 30-38
+bin/plotcount.py      58     37    36%   48-55, 75-77, 82-83, 
                                           88-118, 122-140
-bin/test_zipfs.py      31      0   100%
-bin/utilities.py        8      5    38%   18-22
+bin/testzipf.py      31      0   100%
 -------------------------------------------------
 TOTAL                 117     49    58%
 </pre></div>
 </div>
 <p>This summary shows us that
-some lines of <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code> or <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>
+some lines of <code class="docutils literal notranslate"><span class="pre">wordcount.py</span></code> or <code class="docutils literal notranslate"><span class="pre">plotcount.py</span></code>
 were not executed when we ran the tests:
 in fact,
 only 65% and 36% of the lines were run respectively.
@@ -1194,7 +1192,7 @@ that our unit, integration, and regression tests focus on.</p>
 <p>To make sure that’s the case,
 we can get a more complete report by running <code class="docutils literal notranslate"><span class="pre">coverage</span> <span class="pre">html</span></code> at the command line
 and opening <code class="docutils literal notranslate"><span class="pre">htmlcov/index.html</span></code>.
-Clicking on the name of our <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code> script, for instance,
+Clicking on the name of our <code class="docutils literal notranslate"><span class="pre">wordcount.py</span></code> script, for instance,
 produces the colorized line-by-line display shown in <a class="reference internal" href="#python-coverage"><span class="std std-ref">Figure python coverage</span></a>.</p>
 <figure class="align-default" id="python-coverage">
 <img alt="../_images/python-coverage.png" src="../_images/python-coverage.png" />

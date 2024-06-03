@@ -126,7 +126,7 @@ def get_power_law_params(word_counts):
     return alpha
 ```
 
-Update `plotcounts.py` with the assertion described above.
+Update `plotcount.py` with the assertion described above.
 You'll see additional examples of assertions throughout this chapter.
 
 ## Unit Testing 
@@ -138,21 +138,24 @@ a **unit test** checks the correctness of a single unit of software.
 Exactly what constitutes a "unit" is subjective,
 but it typically means the behavior of a single function in one situation.
 In our Zipf's Law software,
-the `count_words` function in `countwords.py` is
+the `count_words` function in `wordcount.py` is
 a good candidate for unit testing:
 
 ```python
-def count_words(reader):
-    """Count the occurrence of each word in a string."""
-    text = reader.read()
-    chunks = text.split()
-    npunc = [word.strip(string.punctuation) for word in chunks]
-    word_list = [word.lower() for word in npunc if word]
-    word_counts = Counter(word_list)
-    return word_counts
+def word_count(input_file, output_file, min_length=1):
+    """
+    Load a file, calculate the frequencies of each word in the file and
+    save in a new file the words, counts and percentages of the total  in
+    descending order. Only words whose length is >= min_length are
+    included.
+    """
+    lines = load_text(input_file)
+    counts = calculate_word_counts(lines)
+    sorted_counts = word_count_dict_to_tuples(counts)
+    sorted_counts = filter_word_counts(sorted_counts, min_length)
+    percentage_counts = calculate_percentages(sorted_counts)
+    save_word_counts(output_file, percentage_counts)
 ```
-
-\newpage
 
 A single unit test will typically have:
 
@@ -207,12 +210,11 @@ and use an assertion to check if it is what we expected:
 
 ```python
 import sys
-sys.path.append('/Users/amira/zipf/bin')
-import countwords
+sys.path.append('/LOCATION/.../zipf/bin')
+import wordcount
 
-
-with open('test_data/risk.txt', 'r') as reader:
-    actual_result = countwords.count_words(reader)
+lines = wordcount.load_text(test_data/risk.txt)
+actual_result = wordcount.calculate_word_counts(lines)
 assert actual_result == expected_result
 ```
 
@@ -245,13 +247,13 @@ The most widely used test framework for Python is called [`pytest`](https://pyte
 3.  These functions use `assert` to check results.
 
 Following these rules,
-we can create a `test_zipfs.py` script in your `bin` directory
+we can create a `test_wordcount.py` script in your newly created `test` directory
 that contains the test we just developed:
 
 ```python
 from collections import Counter
 
-import countwords
+import wordcount
 
 
 def test_word_count():
@@ -265,8 +267,8 @@ def test_word_count():
       'more': 1, 'painful': 1, 'than': 1, 'it': 1, 'took': 1,
       'blossom': 1}
     expected_result = Counter(risk_poem_counts)
-    with open('test_data/risk.txt', 'r') as reader:
-        actual_result = countwords.count_words(reader)
+    lines = wordcount.load_text(test_data/risk.txt)
+    actual_result = wordcount.calculate_word_counts(lines)
     assert actual_result == expected_result
 ```
 
@@ -283,25 +285,24 @@ $ pytest
 ```
 ```text
 ==================== test session starts ======================
-platform darwin -- Python 3.7.6, pytest-6.2.0, py-1.10.0,
-pluggy-0.13.1
-rootdir: /Users/amira
+platform linux -- Python 3.12.3, pytest-7.4.3, pluggy-1.5.0
+rootdir: /home/nibe/PROJECTS/zipf/
 collected 1 item
 
-bin/test_zipfs.py .                                     [100%]
+test/test_word_count.py  .                                     [100%]
 
 ===================== 1 passed in 0.02s =======================
 ```
+**HINT**: it is good practice to run pytest from the root directory, especially when tests have to access files. Running the test from the root directory allows a more straightforward path management.
 
 To add more tests,
-we simply write more `test_` functions in `test_zipfs.py`.
+we simply write more `test_` functions in `test_wordcount.py`.
 For instance,
 besides counting words,
 the other critical part of our code is the calculation of the $\alpha$ parameter.
 Earlier we defined a power law relating $\alpha$
 to the word frequency $f$,
-the word rank $r$,
-and a constant of proportionality $c$ ([Section Git advanced](https://software-engineering-group-up.github.io/RSE-UP/chapters/configuration.html#configuration-file-formats)):
+the word rank $r$, and a constant of proportionality $c$ :
 
 $
 r = cf^{\frac{-1}{\alpha}}
@@ -337,17 +338,17 @@ print(counts)
 
 (We use `np.floor` to round down to the nearest whole number,
 because we can't have fractional word counts.)
-Passing this test fixture to `get_power_law_params` in `plotcounts.py`
+Passing this test fixture to `get_power_law_params` in `plotcount.py`
 should give us a value of 1.0.
-To test this, we can add a second test to `test_zipfs.py`:
+To test this, we can add a second test to `test_countwords.py`:
 
 ```python
 from collections import Counter
 
 import numpy as np
 
-import plotcounts
-import countwords
+import plotcount
+import wordcount
 
 
 def test_alpha():
@@ -365,7 +366,7 @@ def test_alpha():
     """
     max_freq = 600
     counts = np.floor(max_freq / np.arange(1, max_freq + 1))
-    actual_alpha = plotcounts.get_power_law_params(counts)
+    actual_alpha = plotcount.get_power_law_params(counts)
     expected_alpha = 1.0
     assert actual_alpha == expected_alpha
 
@@ -381,41 +382,42 @@ $ pytest
 ```
 
 ```text
-==================== test session starts ======================
-platform darwin -- Python 3.7.6, pytest-6.2.1, py-1.10.0,
-pluggy-0.13.1
-rootdir: /Users/amira
+zipf on  main [✘!?] took 19s
+✦ ❯ pytest
+================================================================================================ test session starts ================================================================================================
+platform linux -- Python 3.12.3, pytest-7.4.3, pluggy-1.5.0
+rootdir: /home/nibe/PROJECTS/zipf
 collected 2 items
 
-bin/test_zipfs.py F.                                    [100%]
+test/test_word_count.py  F.                                                                                                                                                                                    [100%]
 
-========================== FAILURES ===========================
-_________________________ test_alpha __________________________
+===================================================================================================== FAILURES ======================================================================================================
+____________________________________________________________________________________________________ test_alpha _____________________________________________________________________________________________________
 
-  def test_alpha():
-      """Test the calculation of the alpha parameter.
-    
-      The test word counts satisfy the relationship,
-        r = cf**(-1/alpha), where
-        r is the rank,
-        f the word count, and
-        c is a constant of proportionality.
-    
-      To generate test word counts for an expected alpha of
-        1.0, a maximum word frequency of 600 is used
-        (i.e. c = 600 and r ranges from 1 to 600)
-      """
-      max_freq = 600
-      counts = np.floor(max_freq / np.arange(1, max_freq + 1))
-      actual_alpha = plotcounts.get_power_law_params(counts)
-      expected_alpha = 1.0
->     assert actual_alpha == expected_alpha
-E     assert 0.9951524579316625 == 1.0
+    def test_alpha():
+        """Test the calculation of the alpha parameter.
 
-bin/test_zipfs.py:26: AssertionError
-=================== short test summary info ===================
-FAILED bin/test_zipfs.py::test_alpha - assert 0.99515246 == 1.0
-================= 1 failed, 1 passed in 3.98s =================
+        The test word counts satisfy the relationship,
+          r = cf**(-1/alpha), where
+          r is the rank,
+          f the word count, and
+          c is a constant of proportionality.
+
+        To generate test word counts for an expected alpha of
+          1.0, a maximum word frequency of 600 is used
+          (i.e. c = 600 and r ranges from 1 to 600)
+        """
+        max_freq = 600
+        counts = np.floor(max_freq / np.arange(1, max_freq + 1))
+        actual_alpha = plotcount.get_power_law_params(counts)
+        expected_alpha = 1.0
+>       assert actual_alpha == expected_alpha
+E       assert 0.9951524579316625 == 1.0
+
+test/test_countwords.py:27: AssertionError
+============================================================================================== short test summary info ==============================================================================================
+FAILED test/test_countwords.py::test_alpha - assert 0.9951524579316625 == 1.0
+============================================================================================ 1 failed, 1 passed in 0.62s ===========================================================================================
 
 ```
 
@@ -514,12 +516,11 @@ $ pytest
 
 ```text
 ==================== test session starts ======================
-platform darwin -- Python 3.7.6, pytest-6.2.0, py-1.10.0,
-pluggy-0.13.1
-rootdir: /Users/amira
+platform linux -- Python 3.12.3, pytest-7.4.3, pluggy-1.5.0
+rootdir: /home/nibe/PROJECTS/zipf
 collected 2 items
 
-bin/test_zipfs.py ..                                    [100%]
+btest/test_word_count.py  ..                                    [100%]
 
 ===================== 2 passed in 0.69s =======================
 ```
@@ -583,7 +584,7 @@ rw = RandomWord()
 random_words = rw.getList(num_of_words=max_freq)
 writer = open('test_data/random_words.txt', 'w')
 for index in range(max_freq):
-    count = int(word_counts[index])
+    count = int(calculate_word_counts[index])
     word_sequence = f'{random_words[index]} ' * count
     writer.write(word_sequence + '\n')
 writer.close()
@@ -603,15 +604,15 @@ DGLpfTIitu
 KALSfPkrga
 ```
 
-We can then add this integration test to `test_zipfs.py`:
+We can then add this integration test to `test_wordcount.py`:
 
 ```python
 def test_integration():
     """Test the full word count to alpha parameter workflow."""
     with open('test_data/random_words.txt', 'r') as reader:
-        word_counts_dict = countwords.count_words(reader)
+        word_counts_dict = countwords.calculate_word_counts(reader)
     counts_array = np.array(list(word_counts_dict.values()))
-    actual_alpha = plotcounts.get_power_law_params(counts_array)
+    actual_alpha = plotcount.get_power_law_params(counts_array)
     expected_alpha = pytest.approx(1.0, abs=0.01)
     assert actual_alpha == expected_alpha
 ```
@@ -625,12 +626,11 @@ $ pytest
 
 ```text
 ===================== test session starts =====================
-platform darwin -- Python 3.7.6, pytest-6.2.0, py-1.10.0,
-pluggy-0.13.1
-rootdir: /Users/amira
+platform linux -- Python 3.12.3, pytest-7.4.3, pluggy-1.5.0
+rootdir: /home/nibe/PROJECTS/zipf
 collected 3 items
 
-bin/test_zipfs.py ...                                   [100%]
+test/test_word_count.py ...                               [100%]
 
 ======================= 3 passed in 0.48s =====================
 ```
@@ -663,7 +663,7 @@ Let's use that value to add a regression test to `test_zipfs.py`:
 def test_regression():
     """Regression test for Dracula."""
     with open('data/dracula.txt', 'r') as reader:
-        word_counts_dict = countwords.count_words(reader)
+        word_counts_dict = countwords.calculate_word_countss(reader)
     counts_array = np.array(list(word_counts_dict.values()))
     actual_alpha = plotcounts.get_power_law_params(counts_array)
     expected_alpha = pytest.approx(1.087, abs=0.001)
@@ -676,9 +676,8 @@ $ pytest
 
 ```text
 ===================== test session starts =====================
-platform darwin -- Python 3.7.6, pytest-6.2.0, py-1.10.0,
-pluggy-0.13.1
-rootdir: /Users/amira
+platform linux -- Python 3.12.3, pytest-7.4.3, pluggy-1.5.0
+rootdir: /home/nibe/PROJECTS/zipf
 collected 4 items
 
 bin/test_zipfs.py ....                                  [100%]
@@ -709,12 +708,11 @@ $ coverage run -m pytest
 
 ```text
 ===================== test session starts =====================
-platform darwin -- Python 3.7.6, pytest-6.2.0, py-1.10.0,
-pluggy-0.13.1
-rootdir: /Users/amira
+platform linux -- Python 3.12.3, pytest-7.4.3, pluggy-1.5.0
+rootdir: /home/nibe/PROJECTS/zipf
 collected 4 items
 
-bin/test_zipfs.py ....                                  [100%]
+bin/test_countwords.py ....                                  [100%]
 
 ====================== 4 passed in 0.72s ======================
 ```
@@ -731,17 +729,16 @@ $ coverage report -m
 ```
 
 ```text
-bin/countwords.py      20      7    65%   25-26, 30-38
-bin/plotcounts.py      58     37    36%   48-55, 75-77, 82-83, 
+bin/wordcount.py      20      7    65%   25-26, 30-38
+bin/plotcount.py      58     37    36%   48-55, 75-77, 82-83, 
                                           88-118, 122-140
-bin/test_zipfs.py      31      0   100%
-bin/utilities.py        8      5    38%   18-22
+bin/testzipf.py      31      0   100%
 -------------------------------------------------
 TOTAL                 117     49    58%
 ```
 
 This summary shows us that
-some lines of `countwords.py` or `plotcounts.py`
+some lines of `wordcount.py` or `plotcount.py`
 were not executed when we ran the tests:
 in fact,
 only 65% and 36% of the lines were run respectively.
@@ -754,7 +751,7 @@ that our unit, integration, and regression tests focus on.
 To make sure that's the case,
 we can get a more complete report by running `coverage html` at the command line
 and opening `htmlcov/index.html`.
-Clicking on the name of our `countwords.py` script, for instance,
+Clicking on the name of our `wordcount.py` script, for instance,
 produces the colorized line-by-line display shown in [Figure python coverage](python-coverage).
 
 ```{figure} ../figures/testing/python-coverage.png
