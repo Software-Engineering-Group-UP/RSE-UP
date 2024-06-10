@@ -269,14 +269,18 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows and Automation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../chapters/introduction/workflows.html">Introduction to Workflows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/introduction/automation.html">Introduction to Make and Snakemake</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/intro_make.html">Automating Analyses with Make</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro_make.html">Exercises - Make</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/intro_snakemake.html">Introduction to Snakemake</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/snakemake_continued.html">Snakemake Continued</a></li>
-<li class="toctree-l1"><a class="reference internal" href="snakemake.html">Snakemake Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/introduction/cicd.html">Introduction to CI/CD</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapters/introduction/automation.html">Introduction to Make and Snakemake</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapters/intro_make.html">Automating Analyses with Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_make.html">Exercises - Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapters/intro_snakemake.html">Introduction to Snakemake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapters/snakemake_continued.html">Snakemake Continued</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snakemake.html">Snakemake Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapters/introduction/cicd.html">Introduction to CI/CD</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapters/cicd_basics.html">CI/CD Basics</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
 <ul class="nav bd-sidenav">
@@ -484,11 +488,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-with-plotting-parameters">1) Building with plotting parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-different-plot-styles">2) Using different plot styles</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-configurations">3) Saving configurations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ini-syntax">4) Using INI syntax</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-consistency">5) Configuration consistency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-different-plot-styles">1) Using different plot styles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-configurations">2) Saving configurations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ini-syntax">3) Using INI syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-consistency">4) Configuration consistency</a></li>
 </ul>
             </nav>
         </div>
@@ -502,30 +505,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="exercises-configuration">
 <h1>Exercises - Configuration<a class="headerlink" href="#exercises-configuration" title="Link to this heading">#</a></h1>
-<section id="building-with-plotting-parameters">
-<h2>1) Building with plotting parameters<a class="headerlink" href="#building-with-plotting-parameters" title="Link to this heading">#</a></h2>
-<p>In the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> created in Chapter <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/automate/intro_make.html#">Automation using Make</a>,
-the build rule involving <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> was defined as:</p>
-<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="c">## results/collated.png: plot the collated results.</span>
-<span class="nf">results/collated.png </span><span class="o">:</span><span class="w"> </span><span class="n">results</span>/<span class="n">collated</span>.<span class="n">csv</span>
-<span class="w">	</span>python<span class="w"> </span><span class="k">$(</span>PLOT<span class="k">)</span><span class="w"> </span>$&lt;<span class="w"> </span>--outfile<span class="w"> </span><span class="nv">$@</span>
-</pre></div>
-</div>
-<p>Update the build rule to include the new <code class="docutils literal notranslate"><span class="pre">--plotparams</span></code> option.
-Make sure <code class="docutils literal notranslate"><span class="pre">plotparams.yml</span></code> is added as a second prerequisite in the updated build rule
-so that the appropriate commands will be re-run if the plotting parameters change.</p>
-<p>Hint: We use the automatic variable <code class="docutils literal notranslate"><span class="pre">$&lt;</span></code> to access the first prerequisite,
-but you’ll need <code class="docutils literal notranslate"><span class="pre">$(word</span> <span class="pre">2,$^)</span></code> to access the second.
-Read about automatic variables (<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/automate/intro_make.html#automatic-variables">Section Automatic variables</a>) and
-<a class="reference external" href="https://www.gnu.org/software/make/manual/html_node/Text-Functions.html#Text-Functions">functions for string substitution and analysis</a>
-to understand what that command is doing.</p>
-</section>
 <section id="using-different-plot-styles">
-<h2>2) Using different plot styles<a class="headerlink" href="#using-different-plot-styles" title="Link to this heading">#</a></h2>
-<p>There are many pre-defined matplotlib styles (Section &#64;ref(config-user)),
-as illustrated at the <a class="reference external" href="https://python-graph-gallery.com/199-matplotlib-style-sheets/">Python Graph Gallery</a>.</p>
+<h2>1) Using different plot styles<a class="headerlink" href="#using-different-plot-styles" title="Link to this heading">#</a></h2>
+<p>There are many pre-defined matplotlib styles as illustrated at the <a class="reference external" href="https://python-graph-gallery.com/199-matplotlib-style-sheets/">Python Graph Gallery</a>.</p>
 <ol class="arabic simple">
-<li><p>Add a new option <code class="docutils literal notranslate"><span class="pre">--style</span></code> to <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> that allows the user
+<li><p>Add a new option <code class="docutils literal notranslate"><span class="pre">--style</span></code> to <code class="docutils literal notranslate"><span class="pre">plotcount.py</span></code> that allows the user
 to pick a style from the list of pre-defined matplotlib styles.</p></li>
 </ol>
 <p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">choices</span></code> parameter discussed in Section &#64;ref(config-command-line)
@@ -540,7 +524,7 @@ when using the <code class="docutils literal notranslate"><span class="pre">--st
 </ol>
 </section>
 <section id="saving-configurations">
-<h2>3) Saving configurations<a class="headerlink" href="#saving-configurations" title="Link to this heading">#</a></h2>
+<h2>2) Saving configurations<a class="headerlink" href="#saving-configurations" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Add an option <code class="docutils literal notranslate"><span class="pre">--saveconfig</span> <span class="pre">filename</span></code> to <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>
 that writes all of its configuration to a file.
@@ -553,7 +537,7 @@ is working.</p></li>
 </ol>
 </section>
 <section id="using-ini-syntax">
-<h2>4) Using INI syntax<a class="headerlink" href="#using-ini-syntax" title="Link to this heading">#</a></h2>
+<h2>3) Using INI syntax<a class="headerlink" href="#using-ini-syntax" title="Link to this heading">#</a></h2>
 <p>If we used <a class="reference external" href="https://en.wikipedia.org/wiki/INI_file">Windows INI format</a> instead of YAML
 for our plot parameters configuration file
 (i.e., <code class="docutils literal notranslate"><span class="pre">plotparams.ini</span></code> instead of <code class="docutils literal notranslate"><span class="pre">plotparams.yml</span></code>)
@@ -577,7 +561,7 @@ handle a configuration file in INI rather than YAML format.</p>
 <p>Note: the code modified in this exercise is not required for the rest of the book.</p>
 </section>
 <section id="configuration-consistency">
-<h2>5) Configuration consistency<a class="headerlink" href="#configuration-consistency" title="Link to this heading">#</a></h2>
+<h2>4) Configuration consistency<a class="headerlink" href="#configuration-consistency" title="Link to this heading">#</a></h2>
 <p>In order for a data processing pipeline to work correctly,
 some of the configuration parameters for Program A and Program B must be the same.
 However,
@@ -651,11 +635,10 @@ What steps could you take to ensure the required consistency?</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-with-plotting-parameters">1) Building with plotting parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-different-plot-styles">2) Using different plot styles</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-configurations">3) Saving configurations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ini-syntax">4) Using INI syntax</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-consistency">5) Configuration consistency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-different-plot-styles">1) Using different plot styles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-configurations">2) Saving configurations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ini-syntax">3) Using INI syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-consistency">4) Configuration consistency</a></li>
 </ul>
   </nav></div>
 

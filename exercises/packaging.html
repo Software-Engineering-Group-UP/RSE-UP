@@ -62,7 +62,7 @@
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/exercises/packaging.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction to Workflows" href="../chapters/introduction/workflows.html" />
+    <link rel="next" title="Introduction to Make and Snakemake" href="../chapters/introduction/automation.html" />
     <link rel="prev" title="Creating Packages with Python" href="../chapters/python_packaging.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -269,14 +269,18 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows and Automation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../chapters/introduction/workflows.html">Introduction to Workflows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/introduction/automation.html">Introduction to Make and Snakemake</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/intro_make.html">Automating Analyses with Make</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro_make.html">Exercises - Make</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/intro_snakemake.html">Introduction to Snakemake</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/snakemake_continued.html">Snakemake Continued</a></li>
-<li class="toctree-l1"><a class="reference internal" href="snakemake.html">Snakemake Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/introduction/cicd.html">Introduction to CI/CD</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapters/introduction/automation.html">Introduction to Make and Snakemake</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapters/intro_make.html">Automating Analyses with Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_make.html">Exercises - Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapters/intro_snakemake.html">Introduction to Snakemake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapters/snakemake_continued.html">Snakemake Continued</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snakemake.html">Snakemake Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapters/introduction/cicd.html">Introduction to CI/CD</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapters/cicd_basics.html">CI/CD Basics</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
 <ul class="nav bd-sidenav">
@@ -503,7 +507,8 @@ document.write(`
 <h1>Exercises - Packaging<a class="headerlink" href="#exercises-packaging" title="Link to this heading">#</a></h1>
 <section id="package-metadata">
 <h2>1) Package metadata<a class="headerlink" href="#package-metadata" title="Link to this heading">#</a></h2>
-<p>In a number of places on our TestPyPI webpage, it says that no project description was provided  (<a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/packaging/packaging.html#packaging-testpypi">Figure Test PyPi</a>).</p>
+<p>In a number of places on our TestPyPI webpage, it says that no project description was provided
+<img alt="TestPyPi" src="../_images/testpypi.png" /></p>
 <p>How could we edit our <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file to include a description?</p>
 <p>What other metadata would you add?</p>
 <p>Hint: The <a class="reference external" href="https://packaging.python.org/guides/distributing-packages-using-setuptools/#setup-args"><code class="docutils literal notranslate"><span class="pre">setup()</span> <span class="pre">args</span></code> documentation</a> might be useful.</p>
@@ -602,11 +607,11 @@ and once the package has been installed the user should be able to run:</p>
       </div>
     </a>
     <a class="right-next"
-       href="../chapters/introduction/workflows.html"
+       href="../chapters/introduction/automation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to Workflows</p>
+        <p class="prev-next-title">Introduction to Make and Snakemake</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -5,30 +5,25 @@ We will continue with our Zipf's Law project, which should include the following
 ```text
 zipf/
 ├── .gitignore
-├── .travis.yml
 ├── CONDUCT.md
 ├── CONTRIBUTING.md
-├── KhanVirtanen2020.md
 ├── LICENSE.md
-├── Makefile
 ├── README.md
-├── environment.yml
 ├── requirements.txt
 ├── bin
-│   ├── book_summary.sh
 │   ├── collate.py
-│   ├── countwords.py
-│   ├── plotcounts.py
+│   ├── wordcount.py
+│   ├── plotcount.py
 │   ├── plotparams.yml
-│   ├── script_template.py
-│   ├── test_zipfs.py
-│   └── utilities.py
+│   ├── template.py
+│   ├── testzipfs.py
+│   └── zipf.ipynb
 ├── data
 │   ├── README.md
 │   ├── dracula.txt
 │   └── ...
 ├── results
-│   ├── dracula.csv
+│   ├── dracula.txt
 │   ├── dracula.png
 │   └── ...
 └── test_data
@@ -107,9 +102,9 @@ $ mv bin pyzipf
 > local repository could still be synchronized with GitHub: 
 >
 > ```bash
-> $ git remote set-url origin 
->   https://github.com/amira-khan/pyzipf.git  
+> $ git remote set-url origin https://gitlab.com/../YOUR_NAME/pyzipf.git  
 > ```
+*URL used is only an example*
 
 
 
@@ -125,7 +120,7 @@ from setuptools import setup
 setup(
     name='pyzipf',
     version='0.1.0',
-    author='Amira Khan',
+    author='YOUR NAME',
     packages=['pyzipf'])
 ```
 
@@ -178,123 +173,25 @@ Virtual environments also help with package development:
     By installing and running our package in a completely empty environment,
     we can ensure that we're not accidentally relying on other packages being installed.
 
-We can manage virtual environments using [`conda`](https://conda.io/) (Appendix [Anaconda](https://software-engineering-group-up.github.io/RSE-UP/chapters/anaconda.html)).
-To create a new virtual environment called `pyzipf` we run `conda create`,
-specifying the environment's name with the `-n` or `--name` flag
-and including `pip` and our current version of Python in the new environment:
+There are multiple ways to manage virtual environments: 
 
-```bash
-$ conda create -n pyzipf pip python=3.7.6
-```
+You can manage virtual environments using [`conda`](https://conda.io/) (Appendix [Anaconda](https://software-engineering-group-up.github.io/RSE-UP/chapters/anaconda.html)) or you can use [`pyenv`](https://github.com/pyenv/pyenv). 
 
-```text
-Collecting package metadata (current_repodata.json): done
-Solving environment: done
-
-## Package Plan ##
-
-  environment location: /Users/amira/anaconda3/envs/pyzipf
-
-  added / updated specs:
-    - pip
-    - python=3.7.6
-
-
-The following packages will be downloaded:
-...list of packages...
-
-The following NEW packages will be INSTALLED:
-...list of packages...
-
-Proceed ([y]/n)? y
-
-...
-
-Preparing transaction: done
-Verifying transaction: done
-Executing transaction: done
-#
-# To activate this environment, use
-#
-#     $ conda activate pyzipf
-#
-# To deactivate an active environment, use
-#
-#     $ conda deactivate
-```
-
-`conda` creates the directory `/Users/amira/anaconda3/envs/pyzipf`,
-which contains the subdirectories needed for a minimal Python installation,
-such as `bin` and `lib`.
-It also creates `/Users/amira/anaconda3/envs/pyzipf/bin/python`,
-which checks for packages in these directories before checking the main installation.
-
-> **`conda` Variations**
->
-> As with many of the other tools we've explored in this book,
-> the behavior of some `conda` commands differ depending on the operating system.
-> There are multiple ways to accomplish some of the tasks we present in this chapter.
-> The options we present here represent the approaches most likely to work across multiple platforms.
-> 
-> Additionally, the path for Anaconda differs among operating systems.
-> Our examples show the default path for Anaconda installed via the Unix shell 
-> on MacOS (`/Users/amira/anaconda3`),
-> but for the MacOS graphical installer it is `/Users/amira/opt/anaconda3`,
-> for Linux it is `/home/amira/anaconda3`,
-> and on Windows it is `C:\Users\amira\Anaconda3`.
-> During the installation process, users can also choose a custom location
-> if they like (Section [Getting started - Installing software](https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started.html#installing-the-software)).
-
-We can switch to the `pyzipf` environment by running:
-
-```bash
-$ conda activate pyzipf
-```
-
-Once we have done this,
-the `python` command runs the interpreter in `pyzipf/bin`:
-
-```bash
-(pyzipf)$ which python
-```
-
-```text
-/Users/amira/anaconda3/envs/pyzipf/bin/python
-```
-
-Notice that every shell command displays `(pyzipf)` when that virtual environment is active.
-Between Git branches and virtual environments,
-it can be very easy to lose track of what exactly we are working on and with.
-Prompts like this can make it a little less confusing;
-using virtual environment names that match the names of your projects
-(and branches, if you're testing different environments on different branches)
-quickly becomes essential.
-
-We can now install packages safely.
-Everything we install will go into the `pyzipf` virtual environment
-without affecting the underlying Python installation.
-When we are done,
-we can switch back to the default environment using `conda deactivate`:
-
-```bash
-(pyzipf)$ conda deactivate
-```
-
-```bash
-$ which python
-```
-
-```text
-/usr/bin/python
-```
+Follow the instructions to setup [`PYENV`](https://github.com/pyenv/pyenv)
+Or if you want to stick to Anaconda follow the tutorial [here](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).  
 
 ## Installing a Development Package 
 
 Let's install our package in this virtual environment.
 First we re-activate it:
 
+In Anaconda:
 ```bash
 $ conda activate pyzipf
+```
+in PYENV
+```bash
+$ pyenv activate pyzipf
 ```
 
 Next,
@@ -307,7 +204,7 @@ and install our package:
 ```
 
 ```text
-Obtaining file:///Users/amira/pyzipf
+Obtaining file:///Users/YOUR-NAME/pyzipf
 Installing collected packages: pyzipf
   Running setup.py develop for pyzipf
 Successfully installed pyzipf
@@ -319,7 +216,7 @@ without having to reinstall the package;
 the `.` means "install from the current directory."
 
 If we look in the location containing package installations 
-(e.g., `/Users/amira/anaconda3/envs/pyzipf/lib/python3.7/site-packages/`),
+(e.g., `/Users/YOUR-NAME/anaconda3/envs/pyzipf/lib/python3.12/site-packages/`),
 we can see the `pyzipf` package beside all the other locally installed packages.
 If we try to use the package at this stage,
 though,
@@ -338,7 +235,7 @@ from setuptools import setup
 setup(
     name='pyzipf',
     version='0.1',
-    author='Amira Khan',
+    author='YOUR-NAME',
     packages=['pyzipf'],
     install_requires=[
         'matplotlib',
@@ -368,7 +265,7 @@ we can install our package using the modified `setup.py` file:
 ```
 
 ```text
-Obtaining file:///Users/amira/pyzipf
+Obtaining file:///Users/YOUR-NAME/pyzipf
 Collecting matplotlib
   Downloading matplotlib-3.3.3-cp37-cp37m-macosx_10_9_x86_64.whl
      |████████████████████████████████| 8.5 MB 3.1 MB/s 
@@ -451,17 +348,17 @@ typing-extensions-3.7.4.3 zipp-3.4.0
 depending on which versions of our dependencies get installed.)
 
 We can now import our package in a script or a [Jupyter notebook](https://jupyter.org/) just as we would any other package.
-For example, to use the function in `utilities`, we would write:
+For example, to use the function in `zipftest`, we would write:
 
 ```python
-from pyzipf import utilities as util
+from pyzipf import zipftest as zt
 
 
-util.collection_to_csv(...)
+zt.collection_to_csv(...)
 ```
 
-To allow our functions to continue accessing `utilities.py`,
-we need to change that line in both `countwords.py` and `collate.py`.
+To allow our functions to continue accessing `zipftest.py`,
+we need to change that line in both `wordcount.py` and `collate.py`.
 
 However,
 the useful command-line scripts that we used to count and plot word counts
@@ -480,7 +377,7 @@ from setuptools import setup
 setup(
     name='pyzipf',
     version='0.1',
-    author='Amira Khan',
+    author='Your-Name',
     packages=['pyzipf'],
     install_requires=[
         'matplotlib',
@@ -490,71 +387,53 @@ setup(
         'pytest'],
     entry_points={
         'console_scripts': [
-            'countwords = pyzipf.countwords:main',
+            'wordcount= pyzipf.wordcount:main',
             'collate = pyzipf.collate:main',
-            'plotcounts = pyzipf.plotcounts:main']})
+            'plotcount = pyzipf.plotcount:main']})
 ```
 
 The right side of the `=` operator is the location of a function,
 written as `package.module:function`;
 the left side is the name we want to use to call this function from the command line.
 In this case we want to call each module's `main` function;
-right now, it requires an input argument `args`
+right now, we do not have one yet since the iput argument `args` are handled elsewhere. Thus we need to create a main function 
 containing the command-line arguments given by the user (Section [Scripting Options](https://software-engineering-group-up.github.io/RSE-UP/chapters/building_cli_python.html#handling-command-line-options)).
-For example,
-the relevant section of our `countwords.py` program is:
+
+Since we can't pass any arguments to `main` when we define entry points in our `setup.py` file,
+so we need to factor this in:
 
 ```python
-def main(args):
-    """Run the command line program."""
-    word_counts = count_words(args.infile)
-    util.collection_to_csv(word_counts, num=args.num)
-
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('infile', type=argparse.FileType('r'),
-                        nargs='?', default='-',
-                        help='Input file name')
-    parser.add_argument('-n', '--num',
-                        type=int, default=None,
-                        help='Output n most frequent words')
-    args = parser.parse_args()
-    main(args)
-```
-
-We can't pass any arguments to `main` when we define entry points in our `setup.py` file,
-so we need to change our script slightly:
-
-```python
-def parse_command_line():
-    """Parse the command line for input arguments."""
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('infile', type=argparse.FileType('r'),
-                        nargs='?', default='-',
-                        help='Input file name')
-    parser.add_argument('-n', '--num',
-                        type=int, default=None,
-                        help='Output n most frequent words')
-    args = parser.parse_args()
-    return args
-
 
 def main():
-    """Run the command line program."""
-    args = parse_command_line()
-    word_counts = count_words(args.infile)
-    util.collection_to_csv(word_counts, num=args.num)
+    parser = argparse.ArgumentParser(description="Process word counts and generate plots.")
+    parser.add_argument("input_file", type=str, help="Input file with word counts")
+    parser.add_argument("output_file", type=str, help="Output file or display mode")
+    parser.add_argument("--limit", type=int, default=10, help="Limit the number of word counts to display")
+    parser.add_argument('--plotparams', type=str, default=None, help='matplotlib parameters (YAML file)')    
+    
+    args = parser.parse_args()
 
+    counts = load_word_counts(args.input_file)
+    set_plot_params(args.plotparams)
+    
+    plot_word_counts(counts, args.limit)
 
-if __name__ == '__main__':
+    if args.output_file == "show":
+        plt.show()
+    elif args.output_file == "ascii":
+        words, counts, _ = list(zip(*counts))
+        for line in plot_ascii_bars(counts[:args.limit], words[:args.limit], truncate=False):
+            print(line)
+    else:
+        plt.savefig(args.output_file)
+
+if __name__ == "__main__":
     main()
 ```
 
-The new `parse_command_line` function handles the command-line arguments,
-so that `main()` no longer requires any input arguments.
+ `main()` does not require any input arguments.
 
-Once we have made the corresponding change in `collate.py` and `plotcounts.py`,
+Once we have made the corresponding change in `collate.py` and `plotcount.py`,
 we can re-install our package:
 
 ```bash
@@ -564,41 +443,9 @@ we can re-install our package:
 ```text
 Defaulting to user installation because normal site-packages is
   not writeable
-Obtaining file:///Users/amira/pyzipf
-Requirement already satisfied: matplotlib in
-  /usr/lib/python3.7/site-packages (from pyzipf==0.1) (3.2.1)
-Requirement already satisfied: pandas in
-  /Users/amira/.local/lib/python3.7/site-packages
-  (from pyzipf==0.1) (1.0.3)
-Requirement already satisfied: scipy in
-  /usr/lib/python3.7/site-packages (from pyzipf==0.1) (1.4.1)
-Requirement already satisfied: pyyaml in
-  /usr/lib/python3.7/site-packages (from pyzipf==0.1) (5.3.1)
-Requirement already satisfied: cycler>=0.10 in
-  /usr/lib/python3.7/site-packages
-  (from matplotlib->pyzipf==0.1) (0.10.0)
-Requirement already satisfied: kiwisolver>=1.0.1 in
-  /usr/lib/python3.7/site-packages
-  (from matplotlib->pyzipf==0.1) (1.1.0)
-Requirement already satisfied: numpy>=1.11 in
-  /usr/lib/python3.7/site-packages
-  (from matplotlib->pyzipf==0.1) (1.18.2)
-Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,
-!=2.1.6,>=2.0.1 in
-  /usr/lib/python3.7/site-packages
-  (from matplotlib->pyzipf==0.1) (2.4.6)
-Requirement already satisfied: python-dateutil>=2.1 in
-  /usr/lib/python3.7/site-packages
-  (from matplotlib->pyzipf==0.1) (2.8.1)
-Requirement already satisfied: pytz>=2017.2 in
-  /usr/lib/python3.7/site-packages
-  (from pandas->pyzipf==0.1) (2019.3)
-Requirement already satisfied: six in
-  /usr/lib/python3.7/site-packages
-  (from cycler>=0.10->matplotlib->pyzipf==0.1) (1.14.0)
-Requirement already satisfied: setuptools in
-  /usr/lib/python3.7/site-packages
-  (from kiwisolver>=1.0.1->matplotlib->pyzipf==0.1) (46.1.3)
+Obtaining ...
+....
+....
 Installing collected packages: pyzipf
   Running setup.py develop for pyzipf
 Successfully installed pyzipf
@@ -649,14 +496,7 @@ sys.path
 ```
 
 ```text
-['',
-'/Users/amira/anaconda3/envs/pyzipf/lib/python37.zip',
-'/Users/amira/anaconda3/envs/pyzipf/lib/python3.7',
-'/Users/amira/anaconda3/envs/pyzipf/lib/python3.7/lib-dynload',
-'/Users/amira/.local/lib/python3.7/site-packages',
-'/Users/amira/anaconda3/envs/pyzipf/lib/python3.7/
-site-packages',
-'/Users/amira/pyzipf']
+['', '/usr/lib64/python312.zip', '/usr/lib64/python3.12', '/usr/lib64/python3.12/lib-dynload', '/home/nibe/.local/lib/python3.12/site-packages', '/usr/lib64/python3.12/site-packages', '/usr/lib/python3.12/site-packages']
 ```
 
 The empty string at the start of the list means "the current directory."
@@ -777,7 +617,7 @@ Uploading distributions to https://test.pypi.org/legacy/
 ```
 
 ```bash
-Enter your username: amira-khan
+Enter your username: YOUR NAME
 Enter your password: *********
 ```
 
@@ -998,7 +838,7 @@ we need to think about function-level documentation.
 We want to provide users with a list of all the functions available in our package
 along with a short description of what they do and how to use them.
 We could achieve this by manually cutting and pasting function names and docstrings
-from our Python modules (i.e., `countwords.py`, `plotcounts.py`, etc.),
+from our Python modules (i.e., `wordcount.py`, `plotcount.py`, etc.),
 but that would be a time-consuming process prone to errors as more functions are added over time.
 Instead, we can use a **documentation generator** called [Sphinx](https://www.sphinx-doc.org/en/master/) that is capable of scanning Python code for function names and docstrings and can export that information to HTML format for hosting on the web.
 
@@ -1047,7 +887,7 @@ documentation.
 
 ```bash
 > Project name: pyzipf
-> Author name(s): Amira Khan
+> Author name(s): YOUR NAME
 > Project release []: 0.1
 ```
 
@@ -1296,15 +1136,14 @@ $ cat CITATION.md
 If you use the pyzipf package for work/research presented in a
 publication, we ask that you please cite:
 
-Khan A and Virtanen S, 2020. pyzipf: A Python package for word
-count analysis. *Journal of Important Software*, 5(51), 2317,
+YOUR last NAME, INITIAL YEAR
 https://doi.org/10.21105/jois.02317
 
 ### BibTeX entry
 
 @article{Khan2020,
     title={pyzipf: A Python package for word count analysis.},
-    author={Khan, Amira and Virtanen, Sami},
+    author={YOUR NAME},
     journal={Journal of Important Software},
     volume={5},
     number={51},

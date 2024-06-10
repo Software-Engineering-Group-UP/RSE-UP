@@ -269,14 +269,18 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows and Automation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduction/workflows.html">Introduction to Workflows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction/automation.html">Introduction to Make and Snakemake</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
-<li class="toctree-l1"><a class="reference internal" href="snakemake_continued.html">Snakemake Continued</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction/cicd.html">Introduction to CI/CD</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Introduction to Make and Snakemake</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snakemake_continued.html">Snakemake Continued</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">Introduction to CI/CD</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="cicd_basics.html">CI/CD Basics</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
 <ul class="nav bd-sidenav">
@@ -514,30 +518,25 @@ document.write(`
 <p>We will continue with our Zipf’s Law project, which should include the following files:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zipf/
 ├── .gitignore
-├── .travis.yml
 ├── CONDUCT.md
 ├── CONTRIBUTING.md
-├── KhanVirtanen2020.md
 ├── LICENSE.md
-├── Makefile
 ├── README.md
-├── environment.yml
 ├── requirements.txt
 ├── bin
-│   ├── book_summary.sh
 │   ├── collate.py
-│   ├── countwords.py
-│   ├── plotcounts.py
+│   ├── wordcount.py
+│   ├── plotcount.py
 │   ├── plotparams.yml
-│   ├── script_template.py
-│   ├── test_zipfs.py
-│   └── utilities.py
+│   ├── template.py
+│   ├── testzipfs.py
+│   └── zipf.ipynb
 ├── data
 │   ├── README.md
 │   ├── dracula.txt
 │   └── ...
 ├── results
-│   ├── dracula.csv
+│   ├── dracula.txt
 │   ├── dracula.png
 │   └── ...
 └── test_data
@@ -605,11 +604,11 @@ we would normally update the name of our GitHub repository to match.
 After changing the name at the GitHub website,
 we would need to update our <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span></code> so that our
 local repository could still be synchronized with GitHub:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>
-<span class="w">  </span>https://github.com/amira-khan/pyzipf.git<span class="w">  </span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>https://gitlab.com/../YOUR_NAME/pyzipf.git<span class="w">  </span>
 </pre></div>
 </div>
 </div></blockquote>
+<p><em>URL used is only an example</em></p>
 <p>Python has several ways to build an installable package.
 We will show how to use <a class="reference external" href="https://setuptools.readthedocs.io/"><code class="docutils literal notranslate"><span class="pre">setuptools</span></code></a>,
 which is the lowest common denominator and will allow everyone, regardless of what Python distribution they have, to use our package. To use <code class="docutils literal notranslate"><span class="pre">setuptools</span></code>, we must create a file called <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> in the directory <em>above</em> the root directory of the package. (This is why we require the two-level directory structure described earlier.)
@@ -620,7 +619,7 @@ which is the lowest common denominator and will allow everyone, regardless of wh
 <span class="n">setup</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s1">&#39;pyzipf&#39;</span><span class="p">,</span>
     <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.1.0&#39;</span><span class="p">,</span>
-    <span class="n">author</span><span class="o">=</span><span class="s1">&#39;Amira Khan&#39;</span><span class="p">,</span>
+    <span class="n">author</span><span class="o">=</span><span class="s1">&#39;YOUR NAME&#39;</span><span class="p">,</span>
     <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;pyzipf&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -671,107 +670,21 @@ without affecting the entire Python environment.</p></li>
 By installing and running our package in a completely empty environment,
 we can ensure that we’re not accidentally relying on other packages being installed.</p></li>
 </ul>
-<p>We can manage virtual environments using <a class="reference external" href="https://conda.io/"><code class="docutils literal notranslate"><span class="pre">conda</span></code></a> (Appendix <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/anaconda.html">Anaconda</a>).
-To create a new virtual environment called <code class="docutils literal notranslate"><span class="pre">pyzipf</span></code> we run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span></code>,
-specifying the environment’s name with the <code class="docutils literal notranslate"><span class="pre">-n</span></code> or <code class="docutils literal notranslate"><span class="pre">--name</span></code> flag
-and including <code class="docutils literal notranslate"><span class="pre">pip</span></code> and our current version of Python in the new environment:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>pyzipf<span class="w"> </span>pip<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7.6
-</pre></div>
-</div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Collecting package metadata (current_repodata.json): done
-Solving environment: done
-
-## Package Plan ##
-
-  environment location: /Users/amira/anaconda3/envs/pyzipf
-
-  added / updated specs:
-    - pip
-    - python=3.7.6
-
-
-The following packages will be downloaded:
-...list of packages...
-
-The following NEW packages will be INSTALLED:
-...list of packages...
-
-Proceed ([y]/n)? y
-
-...
-
-Preparing transaction: done
-Verifying transaction: done
-Executing transaction: done
-#
-# To activate this environment, use
-#
-#     $ conda activate pyzipf
-#
-# To deactivate an active environment, use
-#
-#     $ conda deactivate
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">conda</span></code> creates the directory <code class="docutils literal notranslate"><span class="pre">/Users/amira/anaconda3/envs/pyzipf</span></code>,
-which contains the subdirectories needed for a minimal Python installation,
-such as <code class="docutils literal notranslate"><span class="pre">bin</span></code> and <code class="docutils literal notranslate"><span class="pre">lib</span></code>.
-It also creates <code class="docutils literal notranslate"><span class="pre">/Users/amira/anaconda3/envs/pyzipf/bin/python</span></code>,
-which checks for packages in these directories before checking the main installation.</p>
-<blockquote>
-<div><p><strong><code class="docutils literal notranslate"><span class="pre">conda</span></code> Variations</strong></p>
-<p>As with many of the other tools we’ve explored in this book,
-the behavior of some <code class="docutils literal notranslate"><span class="pre">conda</span></code> commands differ depending on the operating system.
-There are multiple ways to accomplish some of the tasks we present in this chapter.
-The options we present here represent the approaches most likely to work across multiple platforms.</p>
-<p>Additionally, the path for Anaconda differs among operating systems.
-Our examples show the default path for Anaconda installed via the Unix shell
-on MacOS (<code class="docutils literal notranslate"><span class="pre">/Users/amira/anaconda3</span></code>),
-but for the MacOS graphical installer it is <code class="docutils literal notranslate"><span class="pre">/Users/amira/opt/anaconda3</span></code>,
-for Linux it is <code class="docutils literal notranslate"><span class="pre">/home/amira/anaconda3</span></code>,
-and on Windows it is <code class="docutils literal notranslate"><span class="pre">C:\Users\amira\Anaconda3</span></code>.
-During the installation process, users can also choose a custom location
-if they like (Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/getting_started.html#installing-the-software">Getting started - Installing software</a>).</p>
-</div></blockquote>
-<p>We can switch to the <code class="docutils literal notranslate"><span class="pre">pyzipf</span></code> environment by running:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>pyzipf
-</pre></div>
-</div>
-<p>Once we have done this,
-the <code class="docutils literal notranslate"><span class="pre">python</span></code> command runs the interpreter in <code class="docutils literal notranslate"><span class="pre">pyzipf/bin</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>pyzipf<span class="o">)</span>$<span class="w"> </span>which<span class="w"> </span>python
-</pre></div>
-</div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/Users/amira/anaconda3/envs/pyzipf/bin/python
-</pre></div>
-</div>
-<p>Notice that every shell command displays <code class="docutils literal notranslate"><span class="pre">(pyzipf)</span></code> when that virtual environment is active.
-Between Git branches and virtual environments,
-it can be very easy to lose track of what exactly we are working on and with.
-Prompts like this can make it a little less confusing;
-using virtual environment names that match the names of your projects
-(and branches, if you’re testing different environments on different branches)
-quickly becomes essential.</p>
-<p>We can now install packages safely.
-Everything we install will go into the <code class="docutils literal notranslate"><span class="pre">pyzipf</span></code> virtual environment
-without affecting the underlying Python installation.
-When we are done,
-we can switch back to the default environment using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">deactivate</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>pyzipf<span class="o">)</span>$<span class="w"> </span>conda<span class="w"> </span>deactivate
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>which<span class="w"> </span>python
-</pre></div>
-</div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/usr/bin/python
-</pre></div>
-</div>
+<p>There are multiple ways to manage virtual environments:</p>
+<p>You can manage virtual environments using <a class="reference external" href="https://conda.io/"><code class="docutils literal notranslate"><span class="pre">conda</span></code></a> (Appendix <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/anaconda.html">Anaconda</a>) or you can use <a class="reference external" href="https://github.com/pyenv/pyenv"><code class="docutils literal notranslate"><span class="pre">pyenv</span></code></a>.</p>
+<p>Follow the instructions to setup <a class="reference external" href="https://github.com/pyenv/pyenv"><code class="docutils literal notranslate"><span class="pre">PYENV</span></code></a>
+Or if you want to stick to Anaconda follow the tutorial <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">here</a>.</p>
 </section>
 <section id="installing-a-development-package">
 <h2>Installing a Development Package<a class="headerlink" href="#installing-a-development-package" title="Link to this heading">#</a></h2>
 <p>Let’s install our package in this virtual environment.
 First we re-activate it:</p>
+<p>In Anaconda:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>pyzipf
+</pre></div>
+</div>
+<p>in PYENV</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pyenv<span class="w"> </span>activate<span class="w"> </span>pyzipf
 </pre></div>
 </div>
 <p>Next,
@@ -781,7 +694,7 @@ and install our package:</p>
 <span class="o">(</span>pyzipf<span class="o">)</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Obtaining file:///Users/amira/pyzipf
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Obtaining file:///Users/YOUR-NAME/pyzipf
 Installing collected packages: pyzipf
   Running setup.py develop for pyzipf
 Successfully installed pyzipf
@@ -792,7 +705,7 @@ which means that any changes we make in the package code are directly available 
 without having to reinstall the package;
 the <code class="docutils literal notranslate"><span class="pre">.</span></code> means “install from the current directory.”</p>
 <p>If we look in the location containing package installations
-(e.g., <code class="docutils literal notranslate"><span class="pre">/Users/amira/anaconda3/envs/pyzipf/lib/python3.7/site-packages/</span></code>),
+(e.g., <code class="docutils literal notranslate"><span class="pre">/Users/YOUR-NAME/anaconda3/envs/pyzipf/lib/python3.12/site-packages/</span></code>),
 we can see the <code class="docutils literal notranslate"><span class="pre">pyzipf</span></code> package beside all the other locally installed packages.
 If we try to use the package at this stage,
 though,
@@ -809,7 +722,7 @@ using the <code class="docutils literal notranslate"><span class="pre">install_r
 <span class="n">setup</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s1">&#39;pyzipf&#39;</span><span class="p">,</span>
     <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.1&#39;</span><span class="p">,</span>
-    <span class="n">author</span><span class="o">=</span><span class="s1">&#39;Amira Khan&#39;</span><span class="p">,</span>
+    <span class="n">author</span><span class="o">=</span><span class="s1">&#39;YOUR-NAME&#39;</span><span class="p">,</span>
     <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;pyzipf&#39;</span><span class="p">],</span>
     <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span>
         <span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span>
@@ -835,7 +748,7 @@ we can install our package using the modified <code class="docutils literal notr
 <span class="o">(</span>pyzipf<span class="o">)</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Obtaining file:///Users/amira/pyzipf
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Obtaining file:///Users/YOUR-NAME/pyzipf
 Collecting matplotlib
   Downloading matplotlib-3.3.3-cp37-cp37m-macosx_10_9_x86_64.whl
      |████████████████████████████████| 8.5 MB 3.1 MB/s 
@@ -917,15 +830,15 @@ typing-extensions-3.7.4.3 zipp-3.4.0
 <p>(The precise output of this command will change
 depending on which versions of our dependencies get installed.)</p>
 <p>We can now import our package in a script or a <a class="reference external" href="https://jupyter.org/">Jupyter notebook</a> just as we would any other package.
-For example, to use the function in <code class="docutils literal notranslate"><span class="pre">utilities</span></code>, we would write:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyzipf</span> <span class="kn">import</span> <span class="n">utilities</span> <span class="k">as</span> <span class="n">util</span>
+For example, to use the function in <code class="docutils literal notranslate"><span class="pre">zipftest</span></code>, we would write:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyzipf</span> <span class="kn">import</span> <span class="n">zipftest</span> <span class="k">as</span> <span class="n">zt</span>
 
 
-<span class="n">util</span><span class="o">.</span><span class="n">collection_to_csv</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="n">zt</span><span class="o">.</span><span class="n">collection_to_csv</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>To allow our functions to continue accessing <code class="docutils literal notranslate"><span class="pre">utilities.py</span></code>,
-we need to change that line in both <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code> and <code class="docutils literal notranslate"><span class="pre">collate.py</span></code>.</p>
+<p>To allow our functions to continue accessing <code class="docutils literal notranslate"><span class="pre">zipftest.py</span></code>,
+we need to change that line in both <code class="docutils literal notranslate"><span class="pre">wordcount.py</span></code> and <code class="docutils literal notranslate"><span class="pre">collate.py</span></code>.</p>
 <p>However,
 the useful command-line scripts that we used to count and plot word counts
 are no longer accessible directly from the Unix shell.
@@ -941,7 +854,7 @@ We tell <code class="docutils literal notranslate"><span class="pre">setuptools<
 <span class="n">setup</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s1">&#39;pyzipf&#39;</span><span class="p">,</span>
     <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.1&#39;</span><span class="p">,</span>
-    <span class="n">author</span><span class="o">=</span><span class="s1">&#39;Amira Khan&#39;</span><span class="p">,</span>
+    <span class="n">author</span><span class="o">=</span><span class="s1">&#39;Your-Name&#39;</span><span class="p">,</span>
     <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;pyzipf&#39;</span><span class="p">],</span>
     <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span>
         <span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span>
@@ -951,107 +864,58 @@ We tell <code class="docutils literal notranslate"><span class="pre">setuptools<
         <span class="s1">&#39;pytest&#39;</span><span class="p">],</span>
     <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
         <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s1">&#39;countwords = pyzipf.countwords:main&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;wordcount= pyzipf.wordcount:main&#39;</span><span class="p">,</span>
             <span class="s1">&#39;collate = pyzipf.collate:main&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;plotcounts = pyzipf.plotcounts:main&#39;</span><span class="p">]})</span>
+            <span class="s1">&#39;plotcount = pyzipf.plotcount:main&#39;</span><span class="p">]})</span>
 </pre></div>
 </div>
 <p>The right side of the <code class="docutils literal notranslate"><span class="pre">=</span></code> operator is the location of a function,
 written as <code class="docutils literal notranslate"><span class="pre">package.module:function</span></code>;
 the left side is the name we want to use to call this function from the command line.
 In this case we want to call each module’s <code class="docutils literal notranslate"><span class="pre">main</span></code> function;
-right now, it requires an input argument <code class="docutils literal notranslate"><span class="pre">args</span></code>
-containing the command-line arguments given by the user (Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/building_cli_python.html#handling-command-line-options">Scripting Options</a>).
-For example,
-the relevant section of our <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code> program is:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run the command line program.&quot;&quot;&quot;</span>
-    <span class="n">word_counts</span> <span class="o">=</span> <span class="n">count_words</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">infile</span><span class="p">)</span>
-    <span class="n">util</span><span class="o">.</span><span class="n">collection_to_csv</span><span class="p">(</span><span class="n">word_counts</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">num</span><span class="p">)</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;infile&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">FileType</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">),</span>
-                        <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>
-                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Input file name&#39;</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--num&#39;</span><span class="p">,</span>
-                        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Output n most frequent words&#39;</span><span class="p">)</span>
-    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
-    <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>We can’t pass any arguments to <code class="docutils literal notranslate"><span class="pre">main</span></code> when we define entry points in our <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file,
-so we need to change our script slightly:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parse_command_line</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse the command line for input arguments.&quot;&quot;&quot;</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;infile&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">FileType</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">),</span>
-                        <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>
-                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Input file name&#39;</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--num&#39;</span><span class="p">,</span>
-                        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Output n most frequent words&#39;</span><span class="p">)</span>
-    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">args</span>
-
-
+right now, we do not have one yet since the iput argument <code class="docutils literal notranslate"><span class="pre">args</span></code> are handled elsewhere. Thus we need to create a main function
+containing the command-line arguments given by the user (Section <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/building_cli_python.html#handling-command-line-options">Scripting Options</a>).</p>
+<p>Since we can’t pass any arguments to <code class="docutils literal notranslate"><span class="pre">main</span></code> when we define entry points in our <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file,
+so we need to factor this in:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run the command line program.&quot;&quot;&quot;</span>
-    <span class="n">args</span> <span class="o">=</span> <span class="n">parse_command_line</span><span class="p">()</span>
-    <span class="n">word_counts</span> <span class="o">=</span> <span class="n">count_words</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">infile</span><span class="p">)</span>
-    <span class="n">util</span><span class="o">.</span><span class="n">collection_to_csv</span><span class="p">(</span><span class="n">word_counts</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">num</span><span class="p">)</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Process word counts and generate plots.&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;input_file&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Input file with word counts&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;output_file&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Output file or display mode&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--limit&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Limit the number of word counts to display&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plotparams&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;matplotlib parameters (YAML file)&#39;</span><span class="p">)</span>    
+    
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">load_word_counts</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">input_file</span><span class="p">)</span>
+    <span class="n">set_plot_params</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">plotparams</span><span class="p">)</span>
+    
+    <span class="n">plot_word_counts</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">limit</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">output_file</span> <span class="o">==</span> <span class="s2">&quot;show&quot;</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">output_file</span> <span class="o">==</span> <span class="s2">&quot;ascii&quot;</span><span class="p">:</span>
+        <span class="n">words</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">counts</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">plot_ascii_bars</span><span class="p">(</span><span class="n">counts</span><span class="p">[:</span><span class="n">args</span><span class="o">.</span><span class="n">limit</span><span class="p">],</span> <span class="n">words</span><span class="p">[:</span><span class="n">args</span><span class="o">.</span><span class="n">limit</span><span class="p">],</span> <span class="n">truncate</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">output_file</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>The new <code class="docutils literal notranslate"><span class="pre">parse_command_line</span></code> function handles the command-line arguments,
-so that <code class="docutils literal notranslate"><span class="pre">main()</span></code> no longer requires any input arguments.</p>
-<p>Once we have made the corresponding change in <code class="docutils literal notranslate"><span class="pre">collate.py</span></code> and <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>,
+<p><code class="docutils literal notranslate"><span class="pre">main()</span></code> does not require any input arguments.</p>
+<p>Once we have made the corresponding change in <code class="docutils literal notranslate"><span class="pre">collate.py</span></code> and <code class="docutils literal notranslate"><span class="pre">plotcount.py</span></code>,
 we can re-install our package:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>pyzipf<span class="o">)</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </pre></div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is
   not writeable
-Obtaining file:///Users/amira/pyzipf
-Requirement already satisfied: matplotlib in
-  /usr/lib/python3.7/site-packages (from pyzipf==0.1) (3.2.1)
-Requirement already satisfied: pandas in
-  /Users/amira/.local/lib/python3.7/site-packages
-  (from pyzipf==0.1) (1.0.3)
-Requirement already satisfied: scipy in
-  /usr/lib/python3.7/site-packages (from pyzipf==0.1) (1.4.1)
-Requirement already satisfied: pyyaml in
-  /usr/lib/python3.7/site-packages (from pyzipf==0.1) (5.3.1)
-Requirement already satisfied: cycler&gt;=0.10 in
-  /usr/lib/python3.7/site-packages
-  (from matplotlib-&gt;pyzipf==0.1) (0.10.0)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in
-  /usr/lib/python3.7/site-packages
-  (from matplotlib-&gt;pyzipf==0.1) (1.1.0)
-Requirement already satisfied: numpy&gt;=1.11 in
-  /usr/lib/python3.7/site-packages
-  (from matplotlib-&gt;pyzipf==0.1) (1.18.2)
-Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,
-!=2.1.6,&gt;=2.0.1 in
-  /usr/lib/python3.7/site-packages
-  (from matplotlib-&gt;pyzipf==0.1) (2.4.6)
-Requirement already satisfied: python-dateutil&gt;=2.1 in
-  /usr/lib/python3.7/site-packages
-  (from matplotlib-&gt;pyzipf==0.1) (2.8.1)
-Requirement already satisfied: pytz&gt;=2017.2 in
-  /usr/lib/python3.7/site-packages
-  (from pandas-&gt;pyzipf==0.1) (2019.3)
-Requirement already satisfied: six in
-  /usr/lib/python3.7/site-packages
-  (from cycler&gt;=0.10-&gt;matplotlib-&gt;pyzipf==0.1) (1.14.0)
-Requirement already satisfied: setuptools in
-  /usr/lib/python3.7/site-packages
-  (from kiwisolver&gt;=1.0.1-&gt;matplotlib-&gt;pyzipf==0.1) (46.1.3)
+Obtaining ...
+....
+....
 Installing collected packages: pyzipf
   Running setup.py develop for pyzipf
 Successfully installed pyzipf
@@ -1095,14 +959,7 @@ In theory we can “install” packages by manually copying source code into the
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span>
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[&#39;&#39;,
-&#39;/Users/amira/anaconda3/envs/pyzipf/lib/python37.zip&#39;,
-&#39;/Users/amira/anaconda3/envs/pyzipf/lib/python3.7&#39;,
-&#39;/Users/amira/anaconda3/envs/pyzipf/lib/python3.7/lib-dynload&#39;,
-&#39;/Users/amira/.local/lib/python3.7/site-packages&#39;,
-&#39;/Users/amira/anaconda3/envs/pyzipf/lib/python3.7/
-site-packages&#39;,
-&#39;/Users/amira/pyzipf&#39;]
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[&#39;&#39;, &#39;/usr/lib64/python312.zip&#39;, &#39;/usr/lib64/python3.12&#39;, &#39;/usr/lib64/python3.12/lib-dynload&#39;, &#39;/home/nibe/.local/lib/python3.12/site-packages&#39;, &#39;/usr/lib64/python3.12/site-packages&#39;, &#39;/usr/lib/python3.12/site-packages&#39;]
 </pre></div>
 </div>
 <p>The empty string at the start of the list means “the current directory.”
@@ -1210,7 +1067,7 @@ using the <code class="docutils literal notranslate"><span class="pre">--reposit
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Uploading distributions to https://test.pypi.org/legacy/
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Enter<span class="w"> </span>your<span class="w"> </span>username:<span class="w"> </span>amira-khan
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Enter<span class="w"> </span>your<span class="w"> </span>username:<span class="w"> </span>YOUR<span class="w"> </span>NAME
 Enter<span class="w"> </span>your<span class="w"> </span>password:<span class="w"> </span>*********
 </pre></div>
 </div>
@@ -1419,7 +1276,7 @@ we need to think about function-level documentation.
 We want to provide users with a list of all the functions available in our package
 along with a short description of what they do and how to use them.
 We could achieve this by manually cutting and pasting function names and docstrings
-from our Python modules (i.e., <code class="docutils literal notranslate"><span class="pre">countwords.py</span></code>, <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>, etc.),
+from our Python modules (i.e., <code class="docutils literal notranslate"><span class="pre">wordcount.py</span></code>, <code class="docutils literal notranslate"><span class="pre">plotcount.py</span></code>, etc.),
 but that would be a time-consuming process prone to errors as more functions are added over time.
 Instead, we can use a <strong>documentation generator</strong> called <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a> that is capable of scanning Python code for function names and docstrings and can export that information to HTML format for hosting on the web.</p>
 <p>To start, let’s install Sphinx and create a <code class="docutils literal notranslate"><span class="pre">docs/</span></code> directory at the top of our repository:</p>
@@ -1459,7 +1316,7 @@ documentation.
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>Project<span class="w"> </span>name:<span class="w"> </span>pyzipf
-&gt;<span class="w"> </span>Author<span class="w"> </span>name<span class="o">(</span>s<span class="o">)</span>:<span class="w"> </span>Amira<span class="w"> </span>Khan
+&gt;<span class="w"> </span>Author<span class="w"> </span>name<span class="o">(</span>s<span class="o">)</span>:<span class="w"> </span>YOUR<span class="w"> </span>NAME
 &gt;<span class="w"> </span>Project<span class="w"> </span>release<span class="w"> </span><span class="o">[]</span>:<span class="w"> </span><span class="m">0</span>.1
 </pre></div>
 </div>
@@ -1682,15 +1539,14 @@ This is traditionally done by adding a <code class="docutils literal notranslate
 If you use the pyzipf package for work/research presented in a
 publication, we ask that you please cite:
 
-Khan A and Virtanen S, 2020. pyzipf: A Python package for word
-count analysis. *Journal of Important Software*, 5(51), 2317,
+YOUR last NAME, INITIAL YEAR
 https://doi.org/10.21105/jois.02317
 
 ### BibTeX entry
 
 @article{Khan2020,
     title={pyzipf: A Python package for word count analysis.},
-    author={Khan, Amira and Virtanen, Sami},
+    author={YOUR NAME},
     journal={Journal of Important Software},
     volume={5},
     number={51},

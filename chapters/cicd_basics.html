@@ -62,6 +62,8 @@
     <link rel="canonical" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/cicd_basics.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tracking Provenance" href="tracking_provenance.html" />
+    <link rel="prev" title="Introduction to CI/CD" href="introduction/cicd.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +125,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -268,15 +268,19 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows and Automation</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduction/workflows.html">Introduction to Workflows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction/automation.html">Introduction to Make and Snakemake</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
-<li class="toctree-l1"><a class="reference internal" href="snakemake_continued.html">Snakemake Continued</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction/cicd.html">Introduction to CI/CD</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Introduction to Make and Snakemake</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snakemake_continued.html">Snakemake Continued</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction/cicd.html">Introduction to CI/CD</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">CI/CD Basics</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
 <ul class="nav bd-sidenav">
@@ -461,9 +465,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -479,40 +481,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exit-codes">Exit Codes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-by-exiting">Start by Exiting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exit-code-is-not-a-boolean">Exit Code is not a Boolean</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-exit-codes">Printing Exit Codes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snake-charming">Snake Charming</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-exit-codes">Setting Exit Codes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shell">Shell</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignoring-exit-codes">Ignoring Exit Codes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overriding-exit-codes">Overriding Exit Codes</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gitlab-ci-yaml">GitLab CI YAML</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#script-commands"><code class="docutils literal notranslate"><span class="pre">script</span></code> commands</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-structure">Overall Structure</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-or-serial-execution">Parallel or Serial Execution?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#job-parameters">Job Parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-reference">Understanding the Reference</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -524,6 +492,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ci-cd-basics">
 <h1>CI/CD Basics<a class="headerlink" href="#ci-cd-basics" title="Link to this heading">#</a></h1>
+<p><em>## THIS WHOLE CHAPTER IS A WORK IN PROGRESS</em></p>
 <p>There are tons of different CI/CD solutions some of the more popular are:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.gitlab.com/ee/ci/">Native GitLab CI/CD</a></p></li>
@@ -537,243 +506,285 @@ document.write(`
 <li><p><a class="reference external" href="https://codeship.com/">CodeShip</a></p></li>
 <li><p><a class="reference external" href="https://g.codefresh.io/">CodeFresh</a></p></li>
 </ul>
-<p>But for the purpose of this course, we’ll only focus on GitLab’s solution. However, be aware that all the concepts are taught: including pipelines, stages, jobs, artifacts; all exist in other solutions by similar/different names. For example, GitLab supports two features known as caching and artifacts; but Travis doesn’t quite implement the same thing for caching and has no native support for artifacts. Therefore, while it is not discouraged to try out other solutions, there’s no “one size fits all” when designing your own CI/CD workflow.</p>
-<section id="exit-codes">
-<h2>Exit Codes<a class="headerlink" href="#exit-codes" title="Link to this heading">#</a></h2>
-<p>In this section you will learn:</p>
-<ul class="simple">
-<li><p>Understand exit codes</p></li>
-<li><p>How to print exit codes</p></li>
-<li><p>How to set exit codes in a script</p></li>
-<li><p>How to ignore exit codes</p></li>
-<li><p>Create a script that terminates in success/error</p></li>
-</ul>
-<p>keypoints:</p>
-<ul class="simple">
-<li><p>Exit codes are used to identify if a command or script executed with errors or not</p></li>
-<li><p>Not everyone respects exit codes</p></li>
-</ul>
-<section id="start-by-exiting">
-<h3>Start by Exiting<a class="headerlink" href="#start-by-exiting" title="Link to this heading">#</a></h3>
-<p><em><strong>Please follow allow with your terminal, while going through the sections!</strong></em></p>
-<p>How does a general task know whether or not a script finished correctly or not? You could parse (<code class="docutils literal notranslate"><span class="pre">grep</span></code>) the output:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>nonexistent-file
-</pre></div>
-</div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">ls: cannot access &#39;nonexistent-file&#39;: No such file or directory</span>
-</pre></div>
-</div>
-<p>or somtheing like this:</p>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">&quot;nonexistent-file&quot;: No such file or directory (os error 2)</span>
-</pre></div>
-</div>
-<p>But every command outputs something differently. Instead, scripts also have an (invisible) exit code:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
-</pre></div>
-</div>
-<p>{: .source}</p>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">2</span>
-</pre></div>
-</div>
-<p>The exit code is <code class="docutils literal notranslate"><span class="pre">2</span></code> indicating failure. What about on success? The exit code is <code class="docutils literal notranslate"><span class="pre">0</span></code> like so:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span>
-<span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
-</pre></div>
-</div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">0</span>
-</pre></div>
-</div>
-<p>But this works for any command you run on the command line! For example, if I mistyped <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
-<span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
-</pre></div>
-</div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">git: &#39;stauts&#39; is not a git command. See &#39;git --help&#39;.</span>
+<p>We’ll only focus on Github’s solution. At this time we can not run any runners on our universities gitlab instance (at least not to students frreely available ones).</p>
+<p>However, be aware that all the concepts are taught: including pipelines, stages, jobs, artifacts; all exist in other solutions by similar/different names. For example, GitLab supports two features known as caching and artifacts; but Travis doesn’t quite implement the same thing for caching and has no native support for artifacts. Therefore, while it is not discouraged to try out other solutions, there’s no “one size fits all” when designing your own CI/CD workflow.</p>
+<p>For now follow a tutorial at the carpentries <a class="reference external" href="https://awesome-workshop.github.io/continuous-integration-deployment-gitlab/">here</a></p>
+<!--
+## Exit Codes
 
-<span class="go">The most similar command is</span>
-<span class="go">  status</span>
-<span class="go">1</span>
-</pre></div>
-</div>
-<p>and there, the exit code is non-zero – a failure.</p>
-</section>
-<section id="exit-code-is-not-a-boolean">
-<h3>Exit Code is not a Boolean<a class="headerlink" href="#exit-code-is-not-a-boolean" title="Link to this heading">#</a></h3>
-<p>You’ve probably trained your intuition to think of <code class="docutils literal notranslate"><span class="pre">0</span></code> as falsy. However, exit code of <code class="docutils literal notranslate"><span class="pre">0</span></code> means there was no error. If you feel queasy about remembering this, imagine that the question asked is “Was there an error in executing the command?” <code class="docutils literal notranslate"><span class="pre">0</span></code> means “no” and non-zero (<code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, …) means “yes”.</p>
-<p>Try out some other commands on your system, and see what things look like.</p>
-</section>
-</section>
-<section id="printing-exit-codes">
-<h2>Printing Exit Codes<a class="headerlink" href="#printing-exit-codes" title="Link to this heading">#</a></h2>
-<p>As you’ve seen above, the exit code from the last executed command is stored in the <code class="docutils literal notranslate"><span class="pre">$?</span></code> environment variable. Accessing from a shell is easy <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$?</span></code>. What about from python? There are many different ways depending on which library you use. Using similar examples above, we can use the (note: deprecated) <code class="docutils literal notranslate"><span class="pre">os.system</span></code> call:</p>
-<section id="snake-charming">
-<h3>Snake Charming<a class="headerlink" href="#snake-charming" title="Link to this heading">#</a></h3>
-<p>To enter the Python interpreter, simply type <code class="docutils literal notranslate"><span class="pre">python</span></code> in your command line.
-Once inside the Python interpreter, simply type <code class="docutils literal notranslate"><span class="pre">exit()</span></code> then press enter, to exit.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span><span class="nn">subprocess</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">WEXITSTATUS</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
-<span class="mi">0</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;ls nonexistent-file&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">WEXITSTATUS</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
-<span class="mi">1</span>
-</pre></div>
-</div>
-<p>One will note that this returned a different exit code than from the command line (indicating there’s some internal implementation in Python). All you need to be concerned with is that the exit code was non-zero (there was an error).</p>
-</section>
-</section>
-<section id="setting-exit-codes">
-<h2>Setting Exit Codes<a class="headerlink" href="#setting-exit-codes" title="Link to this heading">#</a></h2>
-<p>So now that we can get those exit codes, how can we set them? Let’s explore this in <code class="docutils literal notranslate"><span class="pre">shell</span></code> and in <code class="docutils literal notranslate"><span class="pre">python</span></code>.</p>
-<section id="shell">
-<h3>Shell<a class="headerlink" href="#shell" title="Link to this heading">#</a></h3>
-<p>Create a file called <code class="docutils literal notranslate"><span class="pre">bash_exit.sh</span></code> with the following content:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+In this section you will learn: 
 
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="w"> </span><span class="o">]</span>
-<span class="k">then</span>
-<span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
-<span class="k">else</span>
-<span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">59</span>
-<span class="k">fi</span>
-</pre></div>
-</div>
-<p>and then make it exectuable <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">bash_exit.sh</span></code>. Now, try running it with <code class="docutils literal notranslate"><span class="pre">./bash_exit.sh</span> <span class="pre">hello</span></code> and <code class="docutils literal notranslate"><span class="pre">./bash_exit.sh</span> <span class="pre">goodbye</span></code> and see what those exit codes are.</p>
-</section>
-<section id="python">
-<h3>Python<a class="headerlink" href="#python" title="Link to this heading">#</a></h3>
-<p>Create a file called <code class="docutils literal notranslate"><span class="pre">python_exit.py</span></code> with the following content:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+  - Understand exit codes
+  - How to print exit codes
+  - How to set exit codes in a script
+  - How to ignore exit codes
+  - Create a script that terminates in success/error
 
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;hello&quot;</span><span class="p">:</span>
-  <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-  <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">59</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>and then make it executable <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">python_exit.py</span></code>. Now, try running it with <code class="docutils literal notranslate"><span class="pre">./python_exit.py</span> <span class="pre">hello</span></code> and <code class="docutils literal notranslate"><span class="pre">./python_exit.py</span> <span class="pre">goodbye</span></code> and see what those exit codes are. Déjà vu?</p>
-</section>
-</section>
-<section id="ignoring-exit-codes">
-<h2>Ignoring Exit Codes<a class="headerlink" href="#ignoring-exit-codes" title="Link to this heading">#</a></h2>
-<p>To finish up this section, one thing you’ll notice sometimes (in ATLAS or CMS) is that a script you run doesn’t seem to respect exit codes. A notable example in ATLAS is the use of <code class="docutils literal notranslate"><span class="pre">setupATLAS</span></code> which returns non-zero exit status codes even though it runs successfully! This can be very annoying when you start development with the assumption that exit status codes are meaningful (such as with CI). In these cases, you’ll need to ignore the exit code. An easy way to do this is to execute a second command that always gives <code class="docutils literal notranslate"><span class="pre">exit</span> <span class="pre">0</span></code> if the first command doesn’t, like so:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>:<span class="o">(){</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span><span class="p">;</span>:<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span>ignore<span class="w"> </span>failure
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">command_1</span> <span class="pre">||</span> <span class="pre">command_2</span></code> operator means to execute <code class="docutils literal notranslate"><span class="pre">command_2</span></code> only if <code class="docutils literal notranslate"><span class="pre">command_1</span></code> has failed (non-zero exit code). Similarly, the <code class="docutils literal notranslate"><span class="pre">command_1</span> <span class="pre">&amp;&amp;</span> <span class="pre">command_2</span></code> operator means to execute <code class="docutils literal notranslate"><span class="pre">command_2</span></code> only if <code class="docutils literal notranslate"><span class="pre">command_1</span></code> has succeeded. Try this out using one of scripts you made in the previous session:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>./python_exit.py<span class="w"> </span>goodbye<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span>ignore
-</pre></div>
-</div>
-<p>What does that give you?</p>
-<section id="overriding-exit-codes">
-<h3>Overriding Exit Codes<a class="headerlink" href="#overriding-exit-codes" title="Link to this heading">#</a></h3>
-<p>It’s not really recommended to ‘hack’ the exit codes like this, but this example is provided so that you are aware of how to do it, if you ever run into this situation. Assume that scripts respect exit codes, until you run into one that does not.</p>
-<p><strong>Please have a look at <a class="reference external" href="https://software-engineering-group-up.github.io/RSE-UP/chapters/yaml.html">YAML chapter</a>before continueing</strong></p>
-</section>
-</section>
-<section id="gitlab-ci-yaml">
-<h2>GitLab CI YAML<a class="headerlink" href="#gitlab-ci-yaml" title="Link to this heading">#</a></h2>
-<p>The GitLab CI configurations are specified using a YAML file called <code class="docutils literal notranslate"><span class="pre">.gitlab-ci.yml</span></code>. Here is an example:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rikorose/gcc-cmake</span>
+keypoints:
+  - Exit codes are used to identify if a command or script executed with errors or not
+  - Not everyone respects exit codes
 
-<span class="nt">before_script</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdir build</span>
+### Start by Exiting
 
-<span class="nt">build_code</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cd build</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cmake ../src</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cmake --build .</span>
-</pre></div>
-</div>
-<section id="script-commands">
-<h3><code class="docutils literal notranslate"><span class="pre">script</span></code> commands<a class="headerlink" href="#script-commands" title="Link to this heading">#</a></h3>
-<p>Sometimes, <code class="docutils literal notranslate"><span class="pre">script</span></code> commands will need to be wrapped in single or double quotes. For example, commands that contain a colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>) need to be wrapped in quotes so that the YAML parser knows to interpret the whole thing as a string rather than a “key: value” pair. Be careful when using special characters: <code class="docutils literal notranslate"><span class="pre">:</span></code>, <code class="docutils literal notranslate"><span class="pre">{</span></code>, <code class="docutils literal notranslate"><span class="pre">}</span></code>, <code class="docutils literal notranslate"><span class="pre">[</span></code>, <code class="docutils literal notranslate"><span class="pre">]</span></code>, <code class="docutils literal notranslate"><span class="pre">,</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">#</span></code>, <code class="docutils literal notranslate"><span class="pre">?</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">=</span></code>, <code class="docutils literal notranslate"><span class="pre">!</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code>, <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>, ```.</p>
-<p>This is the simplest possible configuration that will work for most code using minimal dependencies with <code class="docutils literal notranslate"><span class="pre">cmake</span></code> and <code class="docutils literal notranslate"><span class="pre">make</span></code>:</p>
-<ol class="arabic simple">
-<li><p>Define one job <code class="docutils literal notranslate"><span class="pre">build_code</span></code> (the job names are arbitrary) with different commands to be executed.</p></li>
-<li><p>Before every job, the commands defined by <code class="docutils literal notranslate"><span class="pre">before_script</span></code> are executed.</p></li>
-</ol>
-<p>The <code class="docutils literal notranslate"><span class="pre">.gitlab-ci.yml</span></code> file defines sets of jobs with constraints of how and when they should be run. The jobs are defined as top-level elements with a name (in our case <code class="docutils literal notranslate"><span class="pre">build_code</span></code>) and always have to contain the <code class="docutils literal notranslate"><span class="pre">script</span></code> keyword. Let’s explore this structure in more depth.</p>
-</section>
-<section id="overall-structure">
-<h3>Overall Structure<a class="headerlink" href="#overall-structure" title="Link to this heading">#</a></h3>
-<p>Every single parameter we consider for all configurations are keys under jobs. The YAML is structured using job names. For example, we can define three jobs that run in parallel (more on parallel/serial later) with different sets of parameters.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">job1</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">param1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
-<span class="w">  </span><span class="nt">param2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+***Please follow allow with your terminal, while going through the sections!*** 
 
-<span class="nt">job2</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">param1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
-<span class="w">  </span><span class="nt">param3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+How does a general task know whether or not a script finished correctly or not? You could parse (`grep`) the output:
 
-<span class="nt">job3</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">param2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
-<span class="w">  </span><span class="nt">param4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
-<span class="w">  </span><span class="nt">param5</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
-</pre></div>
-</div>
-</section>
-<section id="parallel-or-serial-execution">
-<h3>Parallel or Serial Execution?<a class="headerlink" href="#parallel-or-serial-execution" title="Link to this heading">#</a></h3>
-<p>Note that by default, all jobs you define run in parallel. If you want them to run in serial, or a mix of parallel and serial, or as a directed acyclic graph, we’ll cover this in a later section.</p>
-<p>What can you not use as job names? There are a few reserved keywords (because these are used as global parameters for configuration, in addition to being job-specific parameters):</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">default</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">image</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">services</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stages</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">types</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">before_script</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">after_script</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">variables</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cache</span></code></p></li>
-</ul>
-<p>Global parameters mean that you can set parameters at the top-level of the YAML file. What does that actually mean? Here’s another example:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rikorose/gcc-cmake</span>
+```bash
+ls nonexistent-file
+```
 
-<span class="nt">stages</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">build</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">test</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">deploy</span><span class="p p-Indicator">]</span>
 
-<span class="nt">job1</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">make</span>
+```output
+ls: cannot access 'nonexistent-file': No such file or directory
+```
+or somtheing like this:
 
-<span class="nt">job2</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rikorose/gcc-cmake:gcc-6</span>
-<span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">make</span>
-</pre></div>
-</div>
-<p>where <code class="docutils literal notranslate"><span class="pre">image</span></code> and <code class="docutils literal notranslate"><span class="pre">stages</span></code> are global parameters being used. Note that <code class="docutils literal notranslate"><span class="pre">job2:image</span></code> overrides <code class="docutils literal notranslate"><span class="pre">:image</span></code>.</p>
-</section>
-<section id="job-parameters">
-<h3>Job Parameters<a class="headerlink" href="#job-parameters" title="Link to this heading">#</a></h3>
-<p>What are some of the parameters that can be used in a job? Rather than copy/pasting from the reference (linked below in this session), we’ll go to the <a class="reference external" href="https://docs.gitlab.com/ee/ci/yaml/#configuration-parameters">Configuration parameters</a> section in the GitLab docs. The most important parameter, and the only one needed to define a job, is <code class="docutils literal notranslate"><span class="pre">script</span></code></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">job one</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">make</span>
+```output
+"nonexistent-file": No such file or directory (os error 2)
+```
 
-<span class="nt">job two</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python test.py</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coverage</span>
-</pre></div>
-</div>
-</section>
-<section id="understanding-the-reference">
-<h3>Understanding the Reference<a class="headerlink" href="#understanding-the-reference" title="Link to this heading">#</a></h3>
-<p>One will notice that the reference uses colons like <code class="docutils literal notranslate"><span class="pre">:job:image:name</span></code> to refer to parameter names. This is represented in yaml like:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">job</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">image</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rikorose/gcc-cmake:gcc-6</span>
-</pre></div>
-</div>
-<p>where the colon refers to a child key.</p>
-</section>
-<section id="reference">
-<h3>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h3>
-<p>The reference guide for all GitLab CI/CD pipeline configurations is found at <a class="reference external" href="https://docs.gitlab.com/ee/ci/yaml/">https://docs.gitlab.com/ee/ci/yaml/</a>. This contains all the different parameters you can assign to a job.</p>
-<p>You should also have a look at: <a class="reference external" href="https://docs.gitlab.com/ee/ci/yaml/">https://docs.gitlab.com/ee/ci/yaml/</a></p>
-</section>
-</section>
+But every command outputs something differently. Instead, scripts also have an (invisible) exit code:
+
+~~~bash
+echo $?
+~~~
+{: .source}
+
+~~~output
+2
+~~~
+
+The exit code is `2` indicating failure. What about on success? The exit code is `0` like so:
+
+```bash
+echo
+echo $?
+```
+```output
+
+0
+```
+
+
+But this works for any command you run on the command line! For example, if I mistyped `git status`:
+
+```bash
+git status
+echo $?
+```
+
+
+```output
+git: 'stauts' is not a git command. See 'git --help'.
+
+The most similar command is
+  status
+1
+```
+
+and there, the exit code is non-zero -- a failure.
+
+### Exit Code is not a Boolean
+You've probably trained your intuition to think of `0` as falsy. However, exit code of `0` means there was no error. If you feel queasy about remembering this, imagine that the question asked is "Was there an error in executing the command?" `0` means "no" and non-zero (`1`, `2`, ...) means "yes".
+
+Try out some other commands on your system, and see what things look like.
+
+## Printing Exit Codes
+
+As you've seen above, the exit code from the last executed command is stored in the `$?` environment variable. Accessing from a shell is easy `echo $?`. What about from python? There are many different ways depending on which library you use. Using similar examples above, we can use the (note: deprecated) `os.system` call:
+
+### Snake Charming
+To enter the Python interpreter, simply type `python` in your command line.
+Once inside the Python interpreter, simply type `exit()` then press enter, to exit.
+
+
+```Python
+>>> import os,subprocess
+>>> ret = os.system('ls')
+>>> os.WEXITSTATUS(ret)
+0
+>>> ret = os.system('ls nonexistent-file')
+>>> os.WEXITSTATUS(ret)
+1
+```
+
+One will note that this returned a different exit code than from the command line (indicating there's some internal implementation in Python). All you need to be concerned with is that the exit code was non-zero (there was an error).
+
+## Setting Exit Codes
+
+So now that we can get those exit codes, how can we set them? Let's explore this in `shell` and in `python`.
+
+### Shell
+
+Create a file called `bash_exit.sh` with the following content:
+
+```bash
+#!/usr/bin/env bash
+
+if [ $1 == "hello" ]
+then
+  exit 0
+else
+  exit 59
+fi
+```
+
+and then make it exectuable `chmod +x bash_exit.sh`. Now, try running it with `./bash_exit.sh hello` and `./bash_exit.sh goodbye` and see what those exit codes are.
+
+### Python
+
+Create a file called `python_exit.py` with the following content:
+
+```Python
+#!/usr/bin/env python
+
+import sys
+if sys.argv[1] == "hello":
+  sys.exit(0)
+else:
+  sys.exit(59)
+```
+
+and then make it executable `chmod +x python_exit.py`. Now, try running it with `./python_exit.py hello` and `./python_exit.py goodbye` and see what those exit codes are. Déjà vu?
+
+## Ignoring Exit Codes
+
+To finish up this section, one thing you'll notice sometimes (in ATLAS or CMS) is that a script you run doesn't seem to respect exit codes. A notable example in ATLAS is the use of `setupATLAS` which returns non-zero exit status codes even though it runs successfully! This can be very annoying when you start development with the assumption that exit status codes are meaningful (such as with CI). In these cases, you'll need to ignore the exit code. An easy way to do this is to execute a second command that always gives `exit 0` if the first command doesn't, like so:
+
+```bash
+:(){ return 1; };: || echo ignore failure
+```
+
+The `command_1 || command_2` operator means to execute `command_2` only if `command_1` has failed (non-zero exit code). Similarly, the `command_1 && command_2` operator means to execute `command_2` only if `command_1` has succeeded. Try this out using one of scripts you made in the previous session:
+
+```bash
+> ./python_exit.py goodbye || echo ignore
+```
+
+What does that give you?
+
+### Overriding Exit Codes
+It's not really recommended to 'hack' the exit codes like this, but this example is provided so that you are aware of how to do it, if you ever run into this situation. Assume that scripts respect exit codes, until you run into one that does not.
+
+**Please have a look at [YAML chapter](https://software-engineering-group-up.github.io/RSE-UP/chapters/yaml.html)before continueing**
+
+
+## GitLab CI YAML
+
+The GitLab CI configurations are specified using a YAML file called `.gitlab-ci.yml`. Here is an example:
+
+```yaml
+image: rikorose/gcc-cmake
+
+before_script:
+  - mkdir build
+
+build_code:
+  script:
+    - cd build
+    - cmake ../src
+    - cmake --build .
+```
+
+### `script` commands
+
+Sometimes, `script` commands will need to be wrapped in single or double quotes. For example, commands that contain a colon (`:`) need to be wrapped in quotes so that the YAML parser knows to interpret the whole thing as a string rather than a “key: value” pair. Be careful when using special characters: `:`, `{`, `}`, `[`, `]`, `,`, `&`, `*`, `#`, `?`, `|`, `-`, `<`, `>`, `=`, `!`, `%`, `@`, `\``.
+
+This is the simplest possible configuration that will work for most code using minimal dependencies with `cmake` and `make`:
+
+1. Define one job `build_code` (the job names are arbitrary) with different commands to be executed.
+2. Before every job, the commands defined by `before_script` are executed.
+
+The `.gitlab-ci.yml` file defines sets of jobs with constraints of how and when they should be run. The jobs are defined as top-level elements with a name (in our case `build_code`) and always have to contain the `script` keyword. Let's explore this structure in more depth.
+
+### Overall Structure
+
+Every single parameter we consider for all configurations are keys under jobs. The YAML is structured using job names. For example, we can define three jobs that run in parallel (more on parallel/serial later) with different sets of parameters.
+
+```yaml
+job1:
+  param1: null
+  param2: null
+
+job2:
+  param1: null
+  param3: null
+
+job3:
+  param2: null
+  param4: null
+  param5: null
+```
+
+
+### Parallel or Serial Execution?
+
+Note that by default, all jobs you define run in parallel. If you want them to run in serial, or a mix of parallel and serial, or as a directed acyclic graph, we'll cover this in a later section.
+
+
+What can you not use as job names? There are a few reserved keywords (because these are used as global parameters for configuration, in addition to being job-specific parameters):
+
+- `default`
+- `image`
+- `services`
+- `stages`
+- `types`
+- `before_script`
+- `after_script`
+- `variables`
+- `cache`
+
+Global parameters mean that you can set parameters at the top-level of the YAML file. What does that actually mean? Here's another example:
+
+```yaml
+image: rikorose/gcc-cmake
+
+stages: [build, test, deploy]
+
+job1:
+  script: make
+
+job2:
+  image: rikorose/gcc-cmake:gcc-6
+  script: make
+```
+
+where `image` and `stages` are global parameters being used. Note that `job2:image` overrides `:image`.
+
+### Job Parameters
+
+What are some of the parameters that can be used in a job? Rather than copy/pasting from the reference (linked below in this session), we'll go to the [Configuration parameters](https://docs.gitlab.com/ee/ci/yaml/#configuration-parameters) section in the GitLab docs. The most important parameter, and the only one needed to define a job, is `script`
+
+```yaml
+job one:
+  script: make
+
+job two:
+  script:
+    - python test.py
+    - coverage
+```
+
+
+### Understanding the Reference
+One will notice that the reference uses colons like `:job:image:name` to refer to parameter names. This is represented in yaml like:
+```yaml
+job:
+  image:
+    name: rikorose/gcc-cmake:gcc-6
+```
+where the colon refers to a child key.
+
+
+### Reference
+
+The reference guide for all GitLab CI/CD pipeline configurations is found at [https://docs.gitlab.com/ee/ci/yaml/](https://docs.gitlab.com/ee/ci/yaml/). This contains all the different parameters you can assign to a job.
+
+You should also have a look at: [https://docs.gitlab.com/ee/ci/yaml/](https://docs.gitlab.com/ee/ci/yaml/)
+
+
+-->
 </section>
 
     <script type="text/x-thebe-config">
@@ -806,53 +817,30 @@ Once inside the Python interpreter, simply type <code class="docutils literal no
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="introduction/cicd.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to CI/CD</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tracking_provenance.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tracking Provenance</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exit-codes">Exit Codes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-by-exiting">Start by Exiting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exit-code-is-not-a-boolean">Exit Code is not a Boolean</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-exit-codes">Printing Exit Codes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snake-charming">Snake Charming</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-exit-codes">Setting Exit Codes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shell">Shell</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignoring-exit-codes">Ignoring Exit Codes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overriding-exit-codes">Overriding Exit Codes</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gitlab-ci-yaml">GitLab CI YAML</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#script-commands"><code class="docutils literal notranslate"><span class="pre">script</span></code> commands</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-structure">Overall Structure</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-or-serial-execution">Parallel or Serial Execution?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#job-parameters">Job Parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-reference">Understanding the Reference</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

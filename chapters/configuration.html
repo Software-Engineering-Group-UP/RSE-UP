@@ -269,14 +269,18 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows and Automation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduction/workflows.html">Introduction to Workflows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction/automation.html">Introduction to Make and Snakemake</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
-<li class="toctree-l1"><a class="reference internal" href="snakemake_continued.html">Snakemake Continued</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction/cicd.html">Introduction to CI/CD</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/automation.html">Introduction to Make and Snakemake</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro_make.html">Automating Analyses with Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/intro_make.html">Exercises - Make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_snakemake.html">Introduction to Snakemake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snakemake_continued.html">Snakemake Continued</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/snakemake.html">Snakemake Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction/cicd.html">Introduction to CI/CD</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="cicd_basics.html">CI/CD Basics</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking Provenance</span></p>
 <ul class="nav bd-sidenav">
@@ -516,12 +520,12 @@ and ultimately decide to apply one of them.</p>
 ├── Makefile
 ├── README.md
 ├── bin
-│   ├── book_summary.sh
+│   ├── zipf.ipynb
 │   ├── collate.py
-│   ├── countwords.py
-│   ├── plotcounts.py
-│   ├── script_template.py
-│   └── utilities.py
+│   ├── wordcount.py
+│   ├── plotcount.py
+│   ├── template.py
+│   └── zipftest.py
 ├── data
 │   ├── README.md
 │   ├── dracula.txt
@@ -614,14 +618,18 @@ We can find it on our system by running this command:</p>
 <span class="n">mpl</span><span class="o">.</span><span class="n">matplotlib_fname</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>If for example you use <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> the location could be as follows:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/Users/amira/anaconda3/lib/python3.7/site-packages/matplotlib/
 mpl-data/matplotlibrc
 </pre></div>
 </div>
-<p>In this case the file is located in the Python installation directory (<code class="docutils literal notranslate"><span class="pre">anaconda3</span></code>).
-All the different Python packages installed with Anaconda
+<p>All the different Python packages installed with Anaconda
 live in a <code class="docutils literal notranslate"><span class="pre">python3.7/site-packages</span></code> directory,
 including Matplotlib.</p>
+<p>If not using Anaconda your output could look instead like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/home/nibe/.local/lib/python3.12/site-packages/matplotlib/mpl-data/matplotlibrc
+</pre></div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">matplotlibrc</span></code> lists all the default settings as comments.
 The default size of the X and Y axis labels is “medium”,
 as is the size of the tick labels:</p>
@@ -672,14 +680,7 @@ Matplotlib defines several carefully designed styles for plots:</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">available</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[&#39;seaborn-dark&#39;, &#39;seaborn-darkgrid&#39;, &#39;seaborn-ticks&#39;,
-&#39;fivethirtyeight&#39;, &#39;seaborn-whitegrid&#39;, &#39;classic&#39;,
-&#39;_classic_test&#39;, &#39;fast&#39;, &#39;seaborn-talk&#39;, &#39;seaborn-dark-palette&#39;,
-&#39;seaborn-bright&#39;, &#39;seaborn-pastel&#39;, &#39;grayscale&#39;,
-&#39;seaborn-notebook&#39;, &#39;ggplot&#39;, &#39;seaborn-colorblind&#39;,
-&#39;seaborn-muted&#39;, &#39;seaborn&#39;, &#39;Solarize_Light2&#39;, &#39;seaborn-paper&#39;,
-&#39;bmh&#39;, &#39;tableau-colorblind10&#39;, &#39;seaborn-white&#39;,
-&#39;dark_background&#39;, &#39;seaborn-poster&#39;, &#39;seaborn-deep&#39;]
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[&#39;Solarize_Light2&#39;, &#39;_classic_test_patch&#39;, &#39;_mpl-gallery&#39;, &#39;_mpl-gallery-nogrid&#39;, &#39;bmh&#39;, &#39;classic&#39;, &#39;dark_background&#39;, &#39;fast&#39;, &#39;fivethirtyeight&#39;, &#39;ggplot&#39;, &#39;grayscale&#39;, &#39;seaborn-v0_8&#39;, &#39;seaborn-v0_8-bright&#39;, &#39;seaborn-v0_8-colorblind&#39;, &#39;seaborn-v0_8-dark&#39;, &#39;seaborn-v0_8-dark-palette&#39;, &#39;seaborn-v0_8-darkgrid&#39;, &#39;seaborn-v0_8-deep&#39;, &#39;seaborn-v0_8-muted&#39;, &#39;seaborn-v0_8-notebook&#39;, &#39;seaborn-v0_8-paper&#39;, &#39;seaborn-v0_8-pastel&#39;, &#39;seaborn-v0_8-poster&#39;, &#39;seaborn-v0_8-talk&#39;, &#39;seaborn-v0_8-ticks&#39;, &#39;seaborn-v0_8-white&#39;, &#39;seaborn-v0_8-whitegrid&#39;, &#39;tableau-colorblind10&#39;]
 </pre></div>
 </div>
 <p>In order to make the labels bigger in all of our Zipf’s Law plots,
@@ -690,11 +691,11 @@ That directory can be located by running the following command:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mpl</span><span class="o">.</span><span class="n">get_configdir</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/Users/amira/.matplotlib
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&#39;/home/nibe/.config/matplotlib&#39;
 </pre></div>
 </div>
 <p>Once we’ve created the new sub-directory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>/Users/amira/.matplotlib/stylelib
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>/home/nibe/.config/matplotlib/stylelib
 </pre></div>
 </div>
 <p>we can add a new file called <code class="docutils literal notranslate"><span class="pre">big-labels.mplstyle</span></code>
@@ -705,7 +706,7 @@ that has the same YAML format as the <code class="docutils literal notranslate">
 </pre></div>
 </div>
 <p>To use this new style,
-we would just need to add one line to <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>:</p>
+we would just need to add one line to <code class="docutils literal notranslate"><span class="pre">plotcount.py</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;big-labels&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -718,7 +719,7 @@ it doesn’t solve the problem of ensuring that other people can reproduce our p
 <section id="adding-command-line-options">
 <h2>Adding Command-Line Options<a class="headerlink" href="#adding-command-line-options" title="Link to this heading">#</a></h2>
 <p>A third way to change the plot’s properties
-is to add some new command-line arguments to <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>.
+is to add some new command-line arguments to <code class="docutils literal notranslate"><span class="pre">plotcount.py</span></code>.
 The <code class="docutils literal notranslate"><span class="pre">choices</span></code> parameter of <code class="docutils literal notranslate"><span class="pre">add_argument</span></code> lets us tell <code class="docutils literal notranslate"><span class="pre">argparse</span></code>
 that the user is only allowed to specify a value from a predefined list:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mpl_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;xx-small&#39;</span><span class="p">,</span> <span class="s1">&#39;x-small&#39;</span><span class="p">,</span> <span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="s1">&#39;medium&#39;</span><span class="p">,</span>
@@ -734,7 +735,7 @@ that the user is only allowed to specify a value from a predefined list:</p>
                     <span class="n">help</span><span class="o">=</span><span class="s1">&#39;fontsize of the y tick labels&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We can then add a few lines after the <code class="docutils literal notranslate"><span class="pre">ax</span></code> variable is defined in <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>
+<p>We can then add a few lines after the <code class="docutils literal notranslate"><span class="pre">ax</span></code> variable is defined in <code class="docutils literal notranslate"><span class="pre">plotcount.py</span></code>
 to update the label sizes according to the user input:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_fontsize</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">labelsize</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_fontsize</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">labelsize</span><span class="p">)</span>
@@ -763,7 +764,7 @@ if we want to tweak other aspects of the plot.</p>
 <section id="a-job-control-file">
 <h2>A Job Control File<a class="headerlink" href="#a-job-control-file" title="Link to this heading">#</a></h2>
 <p>The final option for configuring our plots—the one we will actually adopt in this case—is
-to pass a YAML file full of Matplotlib parameters to <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code>.
+to pass a YAML file full of Matplotlib parameters to <code class="docutils literal notranslate"><span class="pre">plotcount.py</span></code>.
 First,
 we save the parameters we want to change in a file inside our project directory.
 We can call it anything,
@@ -777,48 +778,13 @@ We’ll store it in <code class="docutils literal notranslate"><span class="pre"
 </div>
 <p>Because this file is located in our project directory
 instead of the user-specific style sheet directory,
-we need to add one new option to <code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> to load it:</p>
+we need to add one new option to <code class="docutils literal notranslate"><span class="pre">plotcount_argparse.py</span></code> to load it:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plotparams&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                     <span class="n">help</span><span class="o">=</span><span class="s1">&#39;matplotlib parameters (YAML file)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>We can use Python’s <code class="docutils literal notranslate"><span class="pre">yaml</span></code> library to read that file:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;plotparams.yml&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
-    <span class="n">plot_params</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">reader</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">BaseLoader</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">plot_params</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{&#39;axes.labelsize&#39;: &#39;x-large&#39;,
- &#39;xtick.labelsize&#39;: &#39;large&#39;,
- &#39;ytick.labelsize&#39;: &#39;large&#39;}
-</pre></div>
-</div>
-<p>and then loop over each item in <code class="docutils literal notranslate"><span class="pre">plot_params</span></code> to update Matplotlib’s <code class="docutils literal notranslate"><span class="pre">mpl.rcParams</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="n">param_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="n">param</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">plotcounts.py</span></code> now looks like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Plot word counts.&quot;&quot;&quot;</span>
-
-<span class="kn">import</span> <span class="nn">argparse</span>
-
-<span class="kn">import</span> <span class="nn">yaml</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize_scalar</span>
-
-
-<span class="k">def</span> <span class="nf">nlog_likelihood</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">counts</span><span class="p">):</span>
-    <span class="c1"># ...as before...</span>
-
-
-<span class="k">def</span> <span class="nf">get_power_law_params</span><span class="p">(</span><span class="n">word_counts</span><span class="p">):</span>
-    <span class="c1"># ...as before...</span>
-
-
-<span class="k">def</span> <span class="nf">set_plot_params</span><span class="p">(</span><span class="n">param_file</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_plot_params</span><span class="p">(</span><span class="n">param_file</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Set the matplotlib parameters.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">param_file</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">param_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
@@ -829,56 +795,36 @@ we need to add one new option to <code class="docutils literal notranslate"><spa
     <span class="k">for</span> <span class="n">param</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">param_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="n">param</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
 
+<span class="c1"># ... as before.. </span>
 
-<span class="k">def</span> <span class="nf">plot_fit</span><span class="p">(</span><span class="n">curve_xmin</span><span class="p">,</span> <span class="n">curve_xmax</span><span class="p">,</span> <span class="n">max_rank</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
-    <span class="c1"># ...as before...</span>
-
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run the command line program.&quot;&quot;&quot;</span>
-    <span class="n">set_plot_params</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">plotparams</span><span class="p">)</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">infile</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                     <span class="n">names</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;word&#39;</span><span class="p">,</span> <span class="s1">&#39;word_frequency&#39;</span><span class="p">))</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;word_frequency&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                                           <span class="n">method</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">)</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;word_frequency&#39;</span><span class="p">,</span>
-                         <span class="n">y</span><span class="o">=</span><span class="s1">&#39;rank&#39;</span><span class="p">,</span> <span class="n">loglog</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                         <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
-                         <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                         <span class="n">xlim</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">xlim</span><span class="p">)</span>
-
-    <span class="n">word_counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;word_frequency&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
-    <span class="n">alpha</span> <span class="o">=</span> <span class="n">get_power_law_params</span><span class="p">(</span><span class="n">word_counts</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;alpha:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
-
-    <span class="c1"># Since the ranks are already sorted, we can take the last</span>
-    <span class="c1"># one instead of computing which row has the highest rank</span>
-    <span class="n">max_rank</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rank&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-
-    <span class="c1"># Use the range of the data as the boundaries</span>
-    <span class="c1"># when drawing the power law curve</span>
-    <span class="n">curve_xmin</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;word_frequency&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-    <span class="n">curve_xmax</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;word_frequency&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-
-    <span class="n">plot_fit</span><span class="p">(</span><span class="n">curve_xmin</span><span class="p">,</span> <span class="n">curve_xmax</span><span class="p">,</span> <span class="n">max_rank</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">outfile</span><span class="p">)</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;infile&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">FileType</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">),</span>
-                        <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>
-                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Word count csv file name&#39;</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--outfile&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
-                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;plotcounts.png&#39;</span><span class="p">,</span>
-                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Output image file name&#39;</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--xlim&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-                        <span class="n">metavar</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;XMIN&#39;</span><span class="p">,</span> <span class="s1">&#39;XMAX&#39;</span><span class="p">),</span>
-                        <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;X-axis limits&#39;</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plotparams&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;matplotlib parameters (YAML file)&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Process word counts and generate plots.&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;input_file&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> 
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Input file with word counts&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;output_file&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> 
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Output file or display mode&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--limit&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                         <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Limit the number of word counts to display&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plotparams&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;matplotlib parameters (YAML file)&#39;</span><span class="p">)</span>    
     <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
-    <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">load_word_counts</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">input_file</span><span class="p">)</span>
+
+    <span class="c1"># SET PLOT PARAMS</span>
+    <span class="n">set_plot_params</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">plotparams</span><span class="p">)</span> 
+    
+    <span class="n">plot_word_counts</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">limit</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">output_file</span> <span class="o">==</span> <span class="s2">&quot;show&quot;</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">output_file</span> <span class="o">==</span> <span class="s2">&quot;ascii&quot;</span><span class="p">:</span>
+        <span class="n">words</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">counts</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">plot_ascii_bars</span><span class="p">(</span><span class="n">counts</span><span class="p">[:</span><span class="n">args</span><span class="o">.</span><span class="n">limit</span><span class="p">],</span> <span class="n">words</span><span class="p">[:</span><span class="n">args</span><span class="o">.</span><span class="n">limit</span><span class="p">],</span> <span class="n">truncate</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">output_file</span><span class="p">)</span>
+
 </pre></div>
 </div>
 </section>
@@ -916,6 +862,27 @@ each of which overrides previous layers.</p></li>
 <li><p>Use <strong>YAML</strong> or some other standard syntax to write configuration files.</p></li>
 <li><p>Save configuration information to make your research <strong>reproducible</strong>.</p></li>
 </ul>
+<!-- Exercise can be used Later
+## 1) Building with plotting parameters 
+In the `Makefile` created in Chapter [Automation using Make](https://software-engineering-group-up.github.io/RSE-UP/chapters/automate/intro_make.html#),
+the build rule involving `plotcount.py` was defined as:
+
+```makefile
+## results/collated.png: plot the collated results.
+results/collated.png : results/collated.csv
+	python $(PLOT) $< --outfile $@
+```
+
+Update the build rule to include the new `--plotparams` option.
+Make sure `plotparams.yml` is added as a second prerequisite in the updated build rule
+so that the appropriate commands will be re-run if the plotting parameters change.
+
+Hint: We use the automatic variable `$<` to access the first prerequisite,
+but you'll need `$(word 2,$^)` to access the second.
+Read about automatic variables ([Section Automatic variables](https://software-engineering-group-up.github.io/RSE-UP/chapters/automate/intro_make.html#automatic-variables)) and
+[functions for string substitution and analysis](https://www.gnu.org/software/make/manual/html_node/Text-Functions.html#Text-Functions)
+to understand what that command is doing.
+-->
 </section>
 </section>
 
