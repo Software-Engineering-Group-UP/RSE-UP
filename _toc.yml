@@ -96,17 +96,18 @@ parts:
   # 10, 11 
   - caption: Workflows and Automation
     chapters:
-      - file: chapters/introduction/workflows.md
+      # - file: chapters/introduction/workflows.md
       - file: chapters/introduction/automation.md
-      - file: chapters/intro_make.md 
-      - file: exercises/intro_make.ipynb 
-      - file: chapters/intro_snakemake.md
-      - file: chapters/snakemake_continued.md
+        sections:
+          - file: chapters/intro_make.md
+          - file: exercises/intro_make.ipynb 
+          - file: chapters/intro_snakemake.md
+          - file: chapters/snakemake_continued.md
       #- file: chapters/snakemake_advanced.md
-      - file: exercises/snakemake.md
+          - file: exercises/snakemake.md
       - file: chapters/introduction/cicd.md
-      #  sections:
-      #  - file: chapters/cicd_basics.md
+        sections:
+        - file: chapters/cicd_basics.md
       #  - file: chapters/cicd_gitlab.md
 
   # 12

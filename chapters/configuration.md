@@ -14,12 +14,12 @@ zipf/
 ├── Makefile
 ├── README.md
 ├── bin
-│   ├── book_summary.sh
+│   ├── zipf.ipynb
 │   ├── collate.py
-│   ├── countwords.py
-│   ├── plotcounts.py
-│   ├── script_template.py
-│   └── utilities.py
+│   ├── wordcount.py
+│   ├── plotcount.py
+│   ├── template.py
+│   └── zipftest.py
 ├── data
 │   ├── README.md
 │   ├── dracula.txt
@@ -118,16 +118,21 @@ We can find it on our system by running this command:
 import matplotlib as mpl
 mpl.matplotlib_fname()
 ```
-
+If for example you use `Anaconda` the location could be as follows:
 ```text
 /Users/amira/anaconda3/lib/python3.7/site-packages/matplotlib/
 mpl-data/matplotlibrc
 ```
-
-In this case the file is located in the Python installation directory (`anaconda3`).
 All the different Python packages installed with Anaconda
 live in a `python3.7/site-packages` directory,
 including Matplotlib.
+
+
+If not using Anaconda your output could look instead like this:
+
+```text
+/home/nibe/.local/lib/python3.12/site-packages/matplotlib/mpl-data/matplotlibrc
+```
 
 `matplotlibrc` lists all the default settings as comments.
 The default size of the X and Y axis labels is "medium",
@@ -187,14 +192,7 @@ print(plt.style.available)
 ```
 
 ```text
-['seaborn-dark', 'seaborn-darkgrid', 'seaborn-ticks',
-'fivethirtyeight', 'seaborn-whitegrid', 'classic',
-'_classic_test', 'fast', 'seaborn-talk', 'seaborn-dark-palette',
-'seaborn-bright', 'seaborn-pastel', 'grayscale',
-'seaborn-notebook', 'ggplot', 'seaborn-colorblind',
-'seaborn-muted', 'seaborn', 'Solarize_Light2', 'seaborn-paper',
-'bmh', 'tableau-colorblind10', 'seaborn-white',
-'dark_background', 'seaborn-poster', 'seaborn-deep']
+['Solarize_Light2', '_classic_test_patch', '_mpl-gallery', '_mpl-gallery-nogrid', 'bmh', 'classic', 'dark_background', 'fast', 'fivethirtyeight', 'ggplot', 'grayscale', 'seaborn-v0_8', 'seaborn-v0_8-bright', 'seaborn-v0_8-colorblind', 'seaborn-v0_8-dark', 'seaborn-v0_8-dark-palette', 'seaborn-v0_8-darkgrid', 'seaborn-v0_8-deep', 'seaborn-v0_8-muted', 'seaborn-v0_8-notebook', 'seaborn-v0_8-paper', 'seaborn-v0_8-pastel', 'seaborn-v0_8-poster', 'seaborn-v0_8-talk', 'seaborn-v0_8-ticks', 'seaborn-v0_8-white', 'seaborn-v0_8-whitegrid', 'tableau-colorblind10']
 ```
 
 In order to make the labels bigger in all of our Zipf's Law plots,
@@ -208,13 +206,13 @@ mpl.get_configdir()
 ```
 
 ```text
-/Users/amira/.matplotlib
+'/home/nibe/.config/matplotlib'
 ```
 
 Once we've created the new sub-directory:
 
 ```bash
-$ mkdir /Users/amira/.matplotlib/stylelib
+$ mkdir /home/nibe/.config/matplotlib/stylelib
 ```
 
 we can add a new file called `big-labels.mplstyle`
@@ -227,7 +225,7 @@ ytick.labelsize  : large    ## fontsize of the tick labels
 ```
 
 To use this new style,
-we would just need to add one line to `plotcounts.py`:
+we would just need to add one line to `plotcount.py`:
 
 ```python
 plt.style.use('big-labels')
@@ -242,7 +240,7 @@ it doesn't solve the problem of ensuring that other people can reproduce our plo
 ## Adding Command-Line Options 
 
 A third way to change the plot's properties
-is to add some new command-line arguments to `plotcounts.py`.
+is to add some new command-line arguments to `plotcount.py`.
 The `choices` parameter of `add_argument` lets us tell `argparse`
 that the user is only allowed to specify a value from a predefined list:
 
@@ -260,7 +258,7 @@ parser.add_argument('--yticksize', type=str, default='large',
                     help='fontsize of the y tick labels')
 ```
 
-We can then add a few lines after the `ax` variable is defined in `plotcounts.py`
+We can then add a few lines after the `ax` variable is defined in `plotcount.py`
 to update the label sizes according to the user input:
 
 ```python
@@ -293,7 +291,7 @@ if we want to tweak other aspects of the plot.
 ## A Job Control File 
 
 The final option for configuring our plots---the one we will actually adopt in this case---is
-to pass a YAML file full of Matplotlib parameters to `plotcounts.py`.
+to pass a YAML file full of Matplotlib parameters to `plotcount.py`.
 First,
 we save the parameters we want to change in a file inside our project directory.
 We can call it anything,
@@ -309,7 +307,7 @@ ytick.labelsize  : large    ## fontsize of the tick labels
 
 Because this file is located in our project directory
 instead of the user-specific style sheet directory,
-we need to add one new option to `plotcounts.py` to load it:
+we need to add one new option to `plotcount_argparse.py` to load it:
 
 ```python
 parser.add_argument('--plotparams', type=str, default=None,
@@ -319,46 +317,6 @@ parser.add_argument('--plotparams', type=str, default=None,
 We can use Python's `yaml` library to read that file:
 
 ```python
-with open('plotparams.yml', 'r') as reader:
-    plot_params = yaml.load(reader, Loader=yaml.BaseLoader)
-print(plot_params)
-```
-
-```text
-{'axes.labelsize': 'x-large',
- 'xtick.labelsize': 'large',
- 'ytick.labelsize': 'large'}
-```
-
-and then loop over each item in `plot_params` to update Matplotlib's `mpl.rcParams`:
-
-```python
-for (param, value) in param_dict.items():
-    mpl.rcParams[param] = value
-```
-
-`plotcounts.py` now looks like this:
-
-```python
-"""Plot word counts."""
-
-import argparse
-
-import yaml
-import numpy as np
-import pandas as pd
-import matplotlib as mpl
-from scipy.optimize import minimize_scalar
-
-
-def nlog_likelihood(beta, counts):
-    # ...as before...
-
-
-def get_power_law_params(word_counts):
-    # ...as before...
-
-
 def set_plot_params(param_file):
     """Set the matplotlib parameters."""
     if param_file:
@@ -370,56 +328,36 @@ def set_plot_params(param_file):
     for param, value in param_dict.items():
         mpl.rcParams[param] = value
 
+# ... as before.. 
 
-def plot_fit(curve_xmin, curve_xmax, max_rank, beta, ax):
-    # ...as before...
-
-
-def main(args):
-    """Run the command line program."""
-    set_plot_params(args.plotparams)
-    df = pd.read_csv(args.infile, header=None,
-                     names=('word', 'word_frequency'))
-    df['rank'] = df['word_frequency'].rank(ascending=False,
-                                           method='max')
-    ax = df.plot.scatter(x='word_frequency',
-                         y='rank', loglog=True,
-                         figsize=[12, 6],
-                         grid=True,
-                         xlim=args.xlim)
-
-    word_counts = df['word_frequency'].to_numpy()
-    alpha = get_power_law_params(word_counts)
-    print('alpha:', alpha)
-
-    # Since the ranks are already sorted, we can take the last
-    # one instead of computing which row has the highest rank
-    max_rank = df['rank'].to_numpy()[-1]
-
-    # Use the range of the data as the boundaries
-    # when drawing the power law curve
-    curve_xmin = df['word_frequency'].min()
-    curve_xmax = df['word_frequency'].max()
-
-    plot_fit(curve_xmin, curve_xmax, max_rank, alpha, ax)
-    ax.figure.savefig(args.outfile)
-
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('infile', type=argparse.FileType('r'),
-                        nargs='?', default='-',
-                        help='Word count csv file name')
-    parser.add_argument('--outfile', type=str,
-                        default='plotcounts.png',
-                        help='Output image file name')
-    parser.add_argument('--xlim', type=float, nargs=2,
-                        metavar=('XMIN', 'XMAX'),
-                        default=None, help='X-axis limits')
-    parser.add_argument('--plotparams', type=str, default=None,
-                        help='matplotlib parameters (YAML file)')
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Process word counts and generate plots.")
+    parser.add_argument("input_file", type=str, 
+                        help="Input file with word counts")
+    parser.add_argument("output_file", type=str, 
+                        help="Output file or display mode")
+    parser.add_argument("--limit", type=int, default=10,
+                         help="Limit the number of word counts to display")
+    parser.add_argument('--plotparams', type=str, default=None, 
+                        help='matplotlib parameters (YAML file)')    
     args = parser.parse_args()
-    main(args)
+
+    counts = load_word_counts(args.input_file)
+
+    # SET PLOT PARAMS
+    set_plot_params(args.plotparams) 
+    
+    plot_word_counts(counts, args.limit)
+    
+    if args.output_file == "show":
+        plt.show()
+    elif args.output_file == "ascii":
+        words, counts, _ = list(zip(*counts))
+        for line in plot_ascii_bars(counts[:args.limit], words[:args.limit], truncate=False):
+            print(line)
+    else:
+        plt.savefig(args.output_file)
+
 ```
 
 ## Summary 
@@ -450,3 +388,24 @@ but knowing what it entails allows us to make a conscious, thoughtful choice.
 ```{include} keypoints/configuration.md
 
 ```
+<!-- Exercise can be used Later
+## 1) Building with plotting parameters 
+In the `Makefile` created in Chapter [Automation using Make](https://software-engineering-group-up.github.io/RSE-UP/chapters/automate/intro_make.html#),
+the build rule involving `plotcount.py` was defined as:
+
+```makefile
+## results/collated.png: plot the collated results.
+results/collated.png : results/collated.csv
+	python $(PLOT) $< --outfile $@
+```
+
+Update the build rule to include the new `--plotparams` option.
+Make sure `plotparams.yml` is added as a second prerequisite in the updated build rule
+so that the appropriate commands will be re-run if the plotting parameters change.
+
+Hint: We use the automatic variable `$<` to access the first prerequisite,
+but you'll need `$(word 2,$^)` to access the second.
+Read about automatic variables ([Section Automatic variables](https://software-engineering-group-up.github.io/RSE-UP/chapters/automate/intro_make.html#automatic-variables)) and
+[functions for string substitution and analysis](https://www.gnu.org/software/make/manual/html_node/Text-Functions.html#Text-Functions)
+to understand what that command is doing.
+-->

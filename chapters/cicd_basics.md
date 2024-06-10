@@ -1,5 +1,7 @@
 # CI/CD Basics 
 
+*## THIS WHOLE CHAPTER IS A WORK IN PROGRESS*
+
 There are tons of different CI/CD solutions some of the more popular are:
 
 - [Native GitLab CI/CD](https://docs.gitlab.com/ee/ci/)
@@ -13,8 +15,12 @@ There are tons of different CI/CD solutions some of the more popular are:
 - [CodeShip](https://codeship.com/)
 - [CodeFresh](https://g.codefresh.io/)
 
-But for the purpose of this course, we'll only focus on GitLab's solution. However, be aware that all the concepts are taught: including pipelines, stages, jobs, artifacts; all exist in other solutions by similar/different names. For example, GitLab supports two features known as caching and artifacts; but Travis doesn't quite implement the same thing for caching and has no native support for artifacts. Therefore, while it is not discouraged to try out other solutions, there's no "one size fits all" when designing your own CI/CD workflow.
+We'll only focus on Github's solution. At this time we can not run any runners on our universities gitlab instance (at least not to students frreely available ones). 
 
+ However, be aware that all the concepts are taught: including pipelines, stages, jobs, artifacts; all exist in other solutions by similar/different names. For example, GitLab supports two features known as caching and artifacts; but Travis doesn't quite implement the same thing for caching and has no native support for artifacts. Therefore, while it is not discouraged to try out other solutions, there's no "one size fits all" when designing your own CI/CD workflow.
+
+For now follow a tutorial at the carpentries [here](https://awesome-workshop.github.io/continuous-integration-deployment-gitlab/)
+<!--
 ## Exit Codes
 
 In this section you will learn: 
@@ -289,3 +295,4 @@ The reference guide for all GitLab CI/CD pipeline configurations is found at [ht
 You should also have a look at: [https://docs.gitlab.com/ee/ci/yaml/](https://docs.gitlab.com/ee/ci/yaml/)
 
 
+-->
