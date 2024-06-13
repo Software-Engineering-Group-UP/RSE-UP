@@ -103,6 +103,7 @@ parts:
           - file: exercises/intro_make.ipynb 
           - file: chapters/intro_snakemake.md
           - file: chapters/snakemake_continued.md
+          - file: chapters/snakemake_continued_2.md
       #- file: chapters/snakemake_advanced.md
           - file: exercises/snakemake.md
       - file: chapters/introduction/cicd.md
