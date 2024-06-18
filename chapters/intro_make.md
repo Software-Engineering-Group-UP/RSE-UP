@@ -1,5 +1,7 @@
 # Automating Analyses with Make 
 
+This Chapter on Make is not relevant for the taught course but we decided to keep it here just in case somebody would be interessted! 
+
 Our Zipf's Law project currently includes these files:
 
 ```text
